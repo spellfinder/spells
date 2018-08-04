@@ -171,7 +171,8 @@ agile-feet:
   casting: [fS]
   trigger: You Step or Stride
   description:
-    For the Stride, you're accelerated 5 feet and ignore difficult terrain. For the Step, you ignore difficult terrain.
+    main:
+      For the Stride, you're accelerated 5 feet and ignore difficult terrain. For the Step, you ignore difficult terrain.
 air-bubble:
   name: Air Bubble
   traits: [conjuration]
@@ -353,7 +354,7 @@ ant-haul:
   level: 1
   traits: [transmutation]
   casting: [aS, aV]
-  range: touch;
+  range: touch
   target: one creature
   duration: 8 hours
   description:
