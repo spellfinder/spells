@@ -4,19 +4,33 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<title>PF2e Playtest - Spell finder</title>
+	<title>PF2e Playtest &ndash; Spell finder</title>
 </head>
-<body>
-	<h1>Spell finder</h1>
-	<fieldset>
-		<h3>Filters</h3>
-		<label for="levelfilter_min">Min. Spell level</label>
-		<input id="levelfilter_min" class="filters" type="number" min="0" max="10" value="0"/>
-		<label for="levelfilter_max">Max. Spell level</label>
-		<input id="levelfilter_max" class="filters" type="number" min="0" max="10" value="10"/>
-	</fieldset>
-	<ul id="spell-list" class="list-unstyled container"></ul>
-	<footer>
+<body class="bg-dark">
+	<h1 style="padding: 12px;" class="text-white bg-primary rounded-bottom">Spell finder <small>Pathfinder Playtest</small></h1>
+	<form class="container rounded bg-light" style="margin-bottom: 30px;">
+		<h3 class="col-12" data-toggle="collapse" data-target="#filters-coll">Filters</h3>
+		<div class="collapse container" id="filters-coll">
+		<fieldset class="col-4">
+			<label for="levelfilter_min">Min. Spell level</label>
+			<input id="levelfilter_min" class="filters form-control" type="number" min="0" max="10" value="0"/>
+			<label for="levelfilter_max">Max. Spell level</label>
+			<input id="levelfilter_max" class="filters form-control" type="number" min="0" max="10" value="10"/>
+		</fieldset>
+		<fieldset class="col-4">
+			<label for="name_filter">Spell name:</label>
+			<input id="name_filter" class="filters form-control" type="text"/>
+		</fieldset>
+		<fieldset class="col-4">
+			<label for="list_filter">Spell list:</label>
+			<select id="list_filter" class="filters form-control">
+				<option value="">All</option>
+			</select>
+		</fieldset>
+		</div>
+	</form>
+	<ul id="spell-list" class="list-group container"></ul>
+	<footer class="bg-white container" style="margin-top: 30px;">
 		<ul class="list-unstyled">
 			<li><a href="./LICENSE">License information</a></li>
 			<li><small class="text-muted">This application uses trademarks and/or copyrights owned by Paizo Inc., which are used under Paizo's Community Use Policy. We are expressly prohibited from charging you to use or access this content. This application is not published, endorsed, or specifically approved by Paizo Inc. For more information about Paizo's Community Use Policy, please visit <a href="http://paizo.com/communityuse">paizo.com/communityuse</a>. For more information about Paizo Inc. and Paizo products, please visit <a href="http://paizo.com">paizo.com</a>.</small>
