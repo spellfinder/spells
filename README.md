@@ -1,3 +1,3 @@
 # PF2e Spell Finder
 
-[Web application](https://shin-.github.io/spells)
+[Web application](https://spellfinder.github.io/spells)
