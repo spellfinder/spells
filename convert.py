@@ -8,7 +8,7 @@ import yaml
 
 def get_yaml_data():
     raw_data = None
-    with open('./all.yaml', 'r', encoding='utf-8') as ymldata:
+    with open('./data/all.yaml', 'r', encoding='utf-8') as ymldata:
         raw_data = yaml.load(ymldata)
     return raw_data
 
@@ -22,6 +22,10 @@ type_checks = {
     'heightened': dict,
     'traits': list,
 }
+
+
+def to_id(name):
+    return re.sub(r'[^A-Za-z]', '-', name).lower()
 
 
 def validate(data):
@@ -42,20 +46,31 @@ def validate(data):
         for key in mandatory_keys:
             if key not in v:
                 errors.append(
-                    'Missing "{key}" key in {spellid}'.format(key=key, spellid=k)
+                    'Missing "{key}" key in {spellid}'.format(
+                        key=key, spellid=k
+                    )
                 )
+        if to_id(v['name']) != k:
+            errors.append(
+                'Spell ID {id} does not match spell name {name}'.format(
+                    id=k, name=v['name']
+                )
+            )
+
         for key, expect_type in type_checks.items():
             if key in v and not isinstance(v[key], expect_type):
                 errors.append(
-                    'Invalid type for "{key}" in {spellid}: {ktype} (should be {expect_type})'.format(
-                        key=key, spellid=k, ktype=type(v[key]), expect_type=expect_type
+                    'Invalid type for "{key}" in {spellid}: {ktype}'
+                    ' (should be {expect_type})'.format(
+                        key=key, spellid=k, ktype=type(v[key]),
+                        expect_type=expect_type
                     )
                 )
     return errors
 
 
 def save_json(data):
-    with open('./all.json', 'w') as jsonf:
+    with open('./data/all.json', 'w') as jsonf:
         json.dump(data, jsonf)
 
 
