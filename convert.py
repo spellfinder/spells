@@ -3,7 +3,7 @@
 import json
 import re
 import sys
-import yaml
+import ruamel.yaml as yaml
 
 
 def get_yaml_data():

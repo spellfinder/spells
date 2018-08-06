@@ -157,8 +157,8 @@ function render_heighten(data) {
 }
 
 function populate(event) {
-	var spell_id = $(this).data('spellid');
-	var target = $('#' + spell_id);
+	var spell_id = this.id;
+	var target = $(this);
 	if (target.hasClass('populated')) {
 		target.children('.spell-detail').toggle();
 		return false;
@@ -184,11 +184,11 @@ $(document).ready(function() {
 			var o = data[k]
 			$("#spell-list").append(
 				'<li class="row justify-content-center list-group-item list-group-item-action spellcard" id="' + k +
-				'"><h5 data-spellid="' + k + '" class="spellcard-header">' + capitalize(o.name) +
+				'"><h5 data-spellid="' + k + '" class="w-100 spellcard-header">' + capitalize(o.name) +
 				' <span class="badge badge-dark">' + capitalize(o.type) + ' ' + o.level + '</span></h5></li>'
 			);
 		}
-		$(".spellcard-header").on('click', populate);
+		$(".spellcard").on('click', populate);
 		$(".filters").on('change', update_filters);
 		$('#name_filter').keyup(update_filters);
 	});
