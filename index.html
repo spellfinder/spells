@@ -8,8 +8,13 @@
 	<title>PF2e Playtest &ndash; Spell finder</title>
 </head>
 <body class="bg-dark">
-	<h1 id="titlebar" class="text-white bg-primary rounded-bottom">Spell finder <small>Pathfinder Playtest</small></h1>
-	<form id="filters_form" class="container rounded bg-light">
+	<header id="titlebar" class="text-white bg-primary rounded-bottom mb-3 p-2">
+		<h1>
+			Spell finder
+			<small><a class="text-white" href="http://paizo.com/pathfinderplaytest">Pathfinder Playtest</a></small>
+		</h1>
+	</header>
+	<form id="filters_form" class="container rounded bg-light mb-3 p-1">
 		<h3 class="col-12" data-toggle="collapse" data-target="#filters-coll">Filters</h3>
 		<div class="collapse show container form-inline" id="filters-coll">
 			<label for="levelfilter_min">Min. Spell level</label>
@@ -22,12 +27,18 @@
 			<select id="list_filter" class="filters form-control">
 				<option value="">All</option>
 			</select>
+			<label for="type_filter">Type:</label>
+			<select id="type_filter" class="filters form-control">
+				<option value="">All</option>
+				<option value="power">Power</option>
+				<option value="spell">Spell</option>
+			</select>
 		</div>
 	</form>
 	<div class="container">
 		<ul id="spell-list" class="list-group container"></ul>
 	</div>
-	<footer class="bg-white container">
+	<footer class="bg-white container mt-3">
 		<ul class="list-unstyled">
 			<li><a href="./LICENSE">License information</a></li>
 			<li><small class="text-muted">This application uses trademarks and/or copyrights owned by Paizo Inc., which are used under Paizo's Community Use Policy. We are expressly prohibited from charging you to use or access this content. This application is not published, endorsed, or specifically approved by Paizo Inc. For more information about Paizo's Community Use Policy, please visit <a href="http://paizo.com/communityuse">paizo.com/communityuse</a>. For more information about Paizo Inc. and Paizo products, please visit <a href="http://paizo.com">paizo.com</a>.</small>

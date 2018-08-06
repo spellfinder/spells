@@ -3,6 +3,7 @@ var filter_map = {
 	level_max: 10,
 	name: "",
 	list: "",
+	type: "",
 };
 var data = {};
 var by_list = {};
@@ -18,6 +19,7 @@ function update_filters() {
 	filter_map.level_max = $('#levelfilter_max').val();
 	filter_map.name = $('#name_filter').val();
 	filter_map.list = $("#list_filter").val();
+	filter_map.type = $('#type_filter').val();
 	filter_list();
 	return false;
 }
@@ -37,6 +39,10 @@ function filter_list() {
 			continue;
 		}
 		if (filter_map.list && by_list[filter_map.list].indexOf(k) < 0) {
+			hide(k);
+			continue;
+		}
+		if (filter_map.type && filter_map.type != data[k].type.toLowerCase()) {
 			hide(k);
 			continue;
 		}
@@ -134,7 +140,7 @@ function format_text(txt) {
 function render_traits(traits) {
 	result = '';
 	for (trait of traits) {
-		result += '<li class="badge badge-info trait-badge">' + trait + '</li>';
+		result += '<li class="badge badge-info trait-badge mr-1">' + trait + '</li>';
 	}
 	return result;
 }
@@ -151,12 +157,12 @@ function render_heighten(data) {
 }
 
 function populate(event) {
-	var target = $(this);
+	var spell_id = $(this).data('spellid');
+	var target = $('#' + spell_id);
 	if (target.hasClass('populated')) {
 		target.children('.spell-detail').toggle();
 		return false;
 	}
-	var spell_id = this.id;
 	var spell_data = data[spell_id];
 	target.append('<div class="spell-detail">' +
 		'<ul class="list-inline">' +
@@ -178,11 +184,11 @@ $(document).ready(function() {
 			var o = data[k]
 			$("#spell-list").append(
 				'<li class="row justify-content-center list-group-item list-group-item-action spellcard" id="' + k +
-				'"><h5>' + capitalize(o.name) +
+				'"><h5 data-spellid="' + k + '" class="spellcard-header">' + capitalize(o.name) +
 				' <span class="badge badge-dark">' + capitalize(o.type) + ' ' + o.level + '</span></h5></li>'
 			);
 		}
-		$(".spellcard").on('click', populate);
+		$(".spellcard-header").on('click', populate);
 		$(".filters").on('change', update_filters);
 		$('#name_filter').keyup(update_filters);
 	});
