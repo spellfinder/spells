@@ -9,7 +9,7 @@ import ruamel.yaml as yaml
 def get_yaml_data():
     raw_data = None
     with open('./data/all.yaml', 'r', encoding='utf-8') as ymldata:
-        raw_data = yaml.load(ymldata)
+        raw_data = yaml.safe_load(ymldata)
     return raw_data
 
 mandatory_keys = [
