@@ -3,6 +3,7 @@ aberrant-whispers:
   traits: [auditory, enchantment, mental]
   level: 3
   type: power
+  rarity: 1
   casting: [aS, aV]
   area: 15-foot aura
   target: each enemy in the area
@@ -21,6 +22,7 @@ abyssal-plague:
   traits: [attack, chaotic, disease, evil, necromancy]
   type: spell
   level: 5
+  rarity: 0
   casting: [aS, aV]
   range: touch
   target: one creature
@@ -40,6 +42,7 @@ abyssal-wrath:
   name: Abyssal Wrath
   traits: [evocation]
   level: 5
+  rarity: 1
   type: power
   casting: [aS, aV]
   area: 60-foot cone
@@ -72,6 +75,7 @@ acid-arrow:
   traits: [acid, attack, evocation]
   type: spell
   level: 2
+  rarity: 0
   casting: [aS, aV]
   range: 120 feet
   target: one creature or object
@@ -87,6 +91,7 @@ acid-splash:
   name: Acid Splash
   traits: [acid, cantrip, evocation]
   level: 0
+  rarity: 0
   type: spell
   casting: [aS, aV]
   range: 30 feet
@@ -107,6 +112,7 @@ acquisitive-s-fortune:
   traits: [divination, fortune]
   type: power
   level: 1
+  rarity: 1
   casting: [M, S, V]
   casting-time: 10 minutes
   range: 30 feet
@@ -122,6 +128,7 @@ aerial-form:
   traits: [polymorph, transmutation]
   type: spell
   level: 4
+  rarity: 0
   casting: [aS, aV]
   duration: 1 minute or until dismissed
   description:
@@ -168,6 +175,7 @@ agile-feet:
   traits: [transmutation]
   type: power
   level: 1
+  rarity: 1
   casting: [fS]
   trigger: You Step or Stride
   description:
@@ -178,6 +186,7 @@ air-bubble:
   traits: [conjuration]
   type: spell
   level: 1
+  rarity: 0
   casting: [rV]
   trigger: A creature within range enters an environment where it can't breathe
   range: 60 feet
@@ -192,6 +201,7 @@ air-walk:
   traits: [transmutation]
   type: spell
   level: 4
+  rarity: 0
   casting: [aS, aV]
   range: touch
   target: one creature
@@ -205,6 +215,7 @@ alarm:
   traits: [abjuration]
   type: spell
   level: 1
+  rarity: 0
   casting: [M, S, V]
   casting-time: 10 minutes
   requirements: 3gp silver bell focus
@@ -227,6 +238,7 @@ allegro:
   traits: [cantrip, composition, emotion, enchantment, mental]
   type: spell
   level: 0
+  rarity: 1
   casting: [aV]
   range: 30 feet
   target: one ally
@@ -240,6 +252,7 @@ alter-reality:
   casting: [aM, aS, aV]
   type: spell
   level: 10
+  rarity: 1
   description:
     main:
       "You use your occult lore and the power of your mind to manipulate the spiritual multiverse, resulting in any
@@ -255,6 +268,7 @@ ancestral-surge:
   traits: [enchantment]
   type: power
   level: 1
+  rarity: 1
   casting: [aV]
   duration: 1 round
   description:
@@ -268,6 +282,7 @@ angelic-halo:
   duration: 1 minute
   type: power
   level: 1
+  rarity: 1
   description:
     main: You gain the effects of protection against evil.
   heightened:
@@ -277,6 +292,7 @@ angelic-wings:
   name: Angelic Wings
   type: power
   level: 3
+  rarity: 1
   traits: [evocation, light]
   duration: 3 rounds
   casting: [aS, aV]
@@ -292,6 +308,7 @@ animal-form:
   name: Animal Form
   type: spell
   level: 3
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -334,6 +351,7 @@ animal-messenger:
   name: ANIMAL MESSENGER
   type: SPELL
   level: 2
+  rarity: 0
   casting-time: 1 minute
   casting: [M, S, V]
   range: 120 feet
@@ -352,6 +370,7 @@ ant-haul:
   name: ANT HAUL
   type: SPELL
   level: 1
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
@@ -366,6 +385,7 @@ antimagic-field:
   name: ANTIMAGIC FIELD
   type: SPELL
   level: 8
+  rarity: 2
   casting: [aM, aS, aV]
   area: 10-foot aura
   duration: concentration, up to 1 minute
@@ -391,6 +411,7 @@ arcane-countermeasure:
   name: ARCANE COUNTERMEASURE
   type: POWER
   level: 5
+  rarity: 1
   casting: [rS]
   trigger: A creature within range that you can see casts a spell.
   range: 120 feet
@@ -408,6 +429,7 @@ artistic-flourish:
   name: ARTISTIC FLOURISH
   type: POWER
   level: 2
+  rarity: 1
   casting-time: 10 minutes
   casting: [M, S, V]
   range: touch
@@ -431,6 +453,7 @@ athletic-exploit:
   name: ATHLETIC EXPLOIT
   type: POWER
   level: 1
+  rarity: 1
   casting: [aS]
   description:
     main:
@@ -442,6 +465,7 @@ augment-summoning:
   name: AUGMENT SUMMONING
   type: POWER
   level: 1
+  rarity: 1
   casting: [fV]
   trigger: You complete an arcane spell that summons a creature.
   description:
@@ -453,6 +477,7 @@ augury:
   name: AUGURY
   type: SPELL
   level: 2
+  rarity: 0
   casting-time: 10 minutes
   casting: [M, S, V]
   description:
@@ -473,6 +498,7 @@ avatar:
   name: AVATAR
   type: SPELL
   level: 10
+  rarity: 1
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -526,6 +552,7 @@ baleful-polymorph:
   name: BALEFUL POLYMORPH
   type: SPELL
   level: 6
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   range: 30 feet
@@ -550,6 +577,7 @@ bane:
   name: BANE
   type: SPELL
   level: 1
+  rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
   area: 30-foot aura
@@ -563,6 +591,7 @@ banishment:
   name: BANISHMENT
   type: SPELL
   level: 5
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: 30 feet
@@ -586,6 +615,7 @@ barkskin:
   name: BARKSKIN
   type: SPELL
   level: 2
+  rarity: 0
   traits: [abjuration, plant]
   casting: [aS, aV]
   range: touch
@@ -601,6 +631,7 @@ bind-soul:
   name: BIND SOUL
   type: SPELL
   level: 9
+  rarity: 1
   casting: [aS, aV]
   traits: [evil, necromancy]
   requirements: black sapphire with a gp value of at least the target's level × 100
@@ -620,6 +651,7 @@ bind-undead:
   name: BIND UNDEAD
   type: SPELL
   level: 3
+  rarity: 0
   casting: [aS, aV]
   range: 30 feet
   target: one mindless undead creature with a level no greater than bind undead's spell level
@@ -632,6 +664,7 @@ bit-of-luck:
   name: BIT OF LUCK
   type: POWER
   level: 1
+  rarity: 1
   traits: [fortune, divination]
   casting: [rS]
   trigger: You or an ally within range fails an attack roll, saving throw, or skill check by 1 and did not benefit from a conditional bonus.
@@ -644,6 +677,7 @@ black-tentacles:
   name: BLACK TENTACLES
   type: SPELL
   level: 5
+  rarity: 0
   traits: [conjuration]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -664,6 +698,7 @@ blade-barrier:
   name: BLADE BARRIER
   type: SPELL
   level: 6
+  rarity: 0
   traits: [evocation, force]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -689,6 +724,7 @@ bless:
   name: BLESS
   type: SPELL
   level: 1
+  rarity: 0
   casting: [aS, aV]
   traits: [enchantment, mental]
   area: 30-foot aura
@@ -702,6 +738,7 @@ blind-ambition:
   name: BLIND AMBITION
   type: POWER
   level: 1
+  rarity: 1
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -732,6 +769,7 @@ blindness:
   name: BLINDNESS
   type: SPELL
   level: 3
+  rarity: 0
   traits: [necromancy]
   casting: [aS, aV]
   range: 30 feet
@@ -749,6 +787,7 @@ blink:
   name: BLINK
   type: SPELL
   level: 4
+  rarity: 0
   traits: [conjuration, teleportation]
   casting: [aS, aV]
   duration: 1 minute
@@ -763,6 +802,7 @@ blur:
   name: BLUR
   type: SPELL
   level: 2
+  rarity: 0
   traits: [illusion, visual]
   casting: [aS, aV]
   range: touch
@@ -774,6 +814,7 @@ breath-of-life:
   name: BREATH OF LIFE
   type: SPELL
   level: 5
+  rarity: 0
   traits: [healing, necromancy, positive]
   casting: [rV]
   trigger: A living creature within range would die.
@@ -789,6 +830,7 @@ burning-hands:
   name: BURNING HANDS
   type: SPELL
   level: 1
+  rarity: 0
   traits: [evocation, fire]
   casting: [aS, aV]
   area: 15-foot cone
@@ -807,6 +849,7 @@ call-of-the-grave:
   name: CALL OF THE GRAVE
   type: POWER
   level: 1
+  rarity: 1
   traits: [arcane, attack, fear, necromancy, wizard]
   casting: [aS, aV]
   range: 30 feet
@@ -821,6 +864,7 @@ calm-emotions:
   name: CALM EMOTIONS
   type: SPELL
   level: 2
+  rarity: 0
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 120 feet
@@ -839,6 +883,7 @@ captivating-adoration:
   name: CAPTIVATING ADORATION
   type: POWER
   level: 2
+  rarity: 1
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   area: 15-foot aura
@@ -858,6 +903,7 @@ celestial-brand:
   name: CELESTIAL BRAND
   type: POWER
   level: 5
+  rarity: 1
   traits: [curse, necromancy]
   casting: [aS, aV]
   range: 30 feet
@@ -876,6 +922,7 @@ chain-lightning:
   name: CHAIN LIGHTNING
   type: SPELL
   level: 6
+  rarity: 0
   traits: [evocation, electricity]
   casting: [aS, aV]
   range: 500 feet
@@ -902,6 +949,7 @@ charm:
   name: CHARM
   type: SPELL
   level: 1
+  rarity: 0
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -935,6 +983,7 @@ charming-touch:
   name: CHARMING TOUCH
   type: POWER
   level: 1
+  rarity: 1
   traits: [attack, evocation, enchantment, mental]
   casting: [aS]
   range: 30 feet
@@ -960,6 +1009,7 @@ charming-words:
   name: CHARMING WORDS
   type: POWER
   level: 1
+  rarity: 1
   traits: [auditory, enchantment, lingual, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -978,6 +1028,7 @@ chill-touch:
   name: CHILL TOUCH
   type: SPELL
   level: 0
+  rarity: 0
   traits: [attack, necromancy, negative]
   casting: [aS, aV]
   range: touch
@@ -999,6 +1050,7 @@ chromatic-wall:
   name: CHROMATIC WALL
   type: SPELL
   level: 5
+  rarity: 0
   traits: [abjuration]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -1054,6 +1106,7 @@ circle-of-protection:
   name: CIRCLE OF PROTECTION
   type: SPELL
   level: 3
+  rarity: 1
   traits: [abjuration]
   casting: [aM, aS, aV]
   range: touch
@@ -1075,6 +1128,7 @@ clairaudience:
   name: CLAIRAUDIENCE
   type: SPELL
   level: 3
+  rarity: 0
   traits: [divination, scrying]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -1089,6 +1143,7 @@ clairvoyance:
   name: CLAIRVOYANCE
   type: SPELL
   level: 4
+  rarity: 0
   traits: [divination, scrying]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -1103,6 +1158,7 @@ cloak-of-colors:
   name: CLOAK OF COLORS
   type: SPELL
   level: 5
+  rarity: 0
   traits: [illusion, visual]
   casting: [aS, aV]
   range: 30 feet
@@ -1122,6 +1178,7 @@ cloudkill:
   name: CLOUDKILL
   type: SPELL
   level: 5
+  rarity: 0
   traits: [death, necromancy, poison]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -1146,6 +1203,7 @@ collective-transposition:
   name: COLLECTIVE TRANSPOSITION
   type: SPELL
   level: 6
+  rarity: 0
   traits: [conjuration, teleportation]
   casting: [aS, aV]
   area: 30-foot aura
@@ -1166,6 +1224,7 @@ color-spray:
   name: COLOR SPRAY
   type: SPELL
   level: 1
+  rarity: 0
   traits: [illusion, visual]
   casting: [aS, aV]
   area: 15-foot cone
@@ -1181,6 +1240,7 @@ command:
   name: COMMAND
   type: SPELL
   level: 1
+  rarity: 0
   traits: [auditory, enchantment, lingual, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -1202,6 +1262,7 @@ commanding-lash:
   name: COMMANDING LASH
   type: POWER
   level: 2
+  rarity: 1
   traits: [enchantment, mental]
   casting: [aV]
   requirements: Your last action must have been a Strike that dealt damage to a target.
@@ -1211,6 +1272,7 @@ competitive-edge:
   name: COMPETITIVE EDGE
   type: POWER
   level: 2
+  rarity: 1
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   duration: 1 minute
@@ -1226,6 +1288,7 @@ comprehend-language:
   name: COMPREHEND LANGUAGE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [divination]
   casting: [aS, aV]
   range: 30 feet
@@ -1243,6 +1306,7 @@ cone-of-cold:
   name: CONE OF COLD
   type: SPELL
   level: 5
+  rarity: 0
   traits: [cold, evocation]
   casting: [aS, aV]
   area: 30-foot cone
@@ -1263,6 +1327,7 @@ confusion:
   name: CONFUSION
   type: SPELL
   level: 4
+  rarity: 0
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -1284,6 +1349,7 @@ contingency:
   name: CONTINGENCY
   type: SPELL
   level: 7
+  rarity: 1
   traits: [abjuration]
   casting-time: 10 minutes
   casting: [M, S, V0]
@@ -1311,6 +1377,7 @@ continual-flame:
   name: CONTINUAL FLAME
   type: SPELL
   level: 2
+  rarity: 0
   traits: [evocation, light]
   casting: [aM, aS, aV]
   cost: 6 gp worth of ruby dust
@@ -1330,6 +1397,7 @@ control-water:
   name: CONTROL WATER
   type: SPELL
   level: 5
+  rarity: 0
   traits: [evocation, water]
   casting: [aS, aV]
   range: 500 feet
@@ -1342,6 +1410,7 @@ counter-performance:
   name: COUNTER PERFORMANCE
   type: POWER
   level: 1
+  rarity: 1
   traits: [composition, enchantment, fortune, mental, power]
   casting: [rV, rS]
   trigger: You or an ally within 60 feet must roll a saving throw against an auditory or visual effect.
@@ -1357,6 +1426,7 @@ create-food:
   name: CREATE FOOD
   type: SPELL
   level: 2
+  rarity: 0
   traits: [conjuration]
   casting-time: 10 minutes
   casting: [S, V]
@@ -1378,6 +1448,7 @@ create-water:
   name: CREATE WATER
   type: SPELL
   level: 1
+  rarity: 0
   traits: [conjuration, water]
   casting: [aS, aV]
   range: touch
@@ -1389,6 +1460,7 @@ creation:
   name: CREATION
   type: SPELL
   level: 4
+  rarity: 0
   traits: [conjuration]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -1408,6 +1480,7 @@ crisis-of-faith:
   name: CRISIS OF FAITH
   type: SPELL
   level: 3
+  rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -1431,6 +1504,7 @@ crusade:
   name: CRUSADE
   type: SPELL
   level: 9
+  rarity: 1
   traits: [enchantment, lingual, mental]
   casting: [aS, aV]
   range: 60 feet
@@ -1460,6 +1534,7 @@ crushing-despair:
   name: CRUSHING DESPAIR
   type: SPELL
   level: 5
+  rarity: 0
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   area: 30-foot cone
@@ -1481,6 +1556,7 @@ dancing-lights:
   name: DANCING LIGHTS
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, evocation, light]
   casting: [aS, aV]
   range: 120 feet
@@ -1495,6 +1571,7 @@ darkened-eyes:
   name: DARKENED EYES
   type: POWER
   level: 2
+  rarity: 1
   traits: [darkness, transmutation]
   casting: [aS, aV]
   range: 60 feet
@@ -1517,6 +1594,7 @@ darkness:
   name: DARKNESS
   type: SPELL
   level: 2
+  rarity: 0
   traits: [darkness, evocation]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -1537,6 +1615,7 @@ darkvision:
   name: DARKVISION
   type: SPELL
   level: 2
+  rarity: 0
   traits: [divination]
   casting: [aS, aV]
   duration: 1 hour
@@ -1548,6 +1627,7 @@ daze:
   name: DAZE
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, enchantment, mental]
   casting: [aS, aV]
   range: 60 feet
@@ -1563,6 +1643,7 @@ dazzling-flash:
   name: DAZZLING FLASH
   type: POWER
   level: 2
+  rarity: 1
   traits: [evocation, light]
   casting: [aM, aV]
   area: 20-foot cone
@@ -1579,6 +1660,7 @@ deafness:
   name: DEAFNESS
   type: SPELL
   level: 2
+  rarity: 0
   traits: [necromancy]
   casting: [aS, aV]
   range: 30 feet
@@ -1596,6 +1678,7 @@ death-knell:
   name: DEATH KNELL
   type: SPELL
   level: 2
+  rarity: 0
   traits: [attack, death, necromancy]
   casting: [aS, aV]
   range: touch
@@ -1613,6 +1696,7 @@ death-ward:
   name: DEATH WARD
   type: SPELL
   level: 5
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
@@ -1628,6 +1712,7 @@ death-s-call:
   name: DEATH'S CALL
   type: POWER
   level: 2
+  rarity: 1
   traits: [necromancy]
   casting: [rV]
   trigger: You reduce an enemy to 0 HP.
@@ -1640,6 +1725,7 @@ delusional-pride:
   name: DELUSIONAL PRIDE
   type: POWER
   level: 2
+  rarity: 1
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -1662,6 +1748,7 @@ destructive-aura:
   name: DESTRUCTIVE AURA
   type: POWER
   level: 2
+  rarity: 1
   traits: [evocation]
   casting: [aS, aV]
   area: 10-foot aura
@@ -1675,6 +1762,7 @@ destructive-cry:
   name: DESTRUCTIVE CRY
   type: POWER
   level: 1
+  rarity: 1
   traits: [evocation]
   casting: [aV]
   requirements: Your last action was a Strike that dealt damage.
@@ -1684,6 +1772,7 @@ detect-alignment:
   name: DETECT ALIGNMENT
   type: SPELL
   level: 1
+  rarity: 1
   traits: [detection, divination]
   casting: [aS, aV]
   area: 30-foot aura
@@ -1701,6 +1790,7 @@ detect-magic:
   name: DETECT MAGIC
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, detection, divination]
   casting: [aS, aV]
   area: 30-foot aura
@@ -1729,6 +1819,7 @@ detect-poison:
   name: DETECT POISON
   type: SPELL
   level: 1
+  rarity: 1
   traits: [detection, divination]
   casting: [aS, aV]
   range: 30 feet
@@ -1746,6 +1837,7 @@ detect-scrying:
   name: DETECT SCRYING
   type: SPELL
   level: 4
+  rarity: 1
   traits: [detection, divination]
   casting: [aS, aV]
   area: 30-foot aura
@@ -1761,6 +1853,7 @@ dimension-door:
   name: DIMENSION DOOR
   type: SPELL
   level: 4
+  rarity: 0
   traits: [conjuration, teleportation]
   casting: [aS, aV]
   range: 60 feet
@@ -1779,6 +1872,7 @@ dimensional-anchor:
   name: DIMENSIONAL ANCHOR
   type: SPELL
   level: 4
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: 30 feet
@@ -1798,6 +1892,7 @@ dimensional-lock:
   name: DIMENSIONAL LOCK
   type: SPELL
   level: 7
+  rarity: 1
   traits: [abjuration]
   casting: [aS, aV]
   range: 120 feet
@@ -1816,6 +1911,7 @@ dimensional-steps:
   name: DIMENSIONAL STEPS
   type: POWER
   level: 4
+  rarity: 1
   traits: [conjuration, teleportation]
   casting: [aS]
   range: 10 feet or more
@@ -1831,6 +1927,7 @@ dinosaur-form:
   name: DINOSAUR FORM
   type: SPELL
   level: 4
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -1887,6 +1984,7 @@ dirge-of-doom:
   name: DIRGE OF DOOM
   type: CANTRIP
   level: 0
+  rarity: 1
   casting: [aV]
   area: 30-foot aura
   duration: 1 round
@@ -1898,6 +1996,7 @@ disappearance:
   name: DISAPPEARANCE
   type: SPELL
   level: 8
+  rarity: 0
   casting: [aM, aS]
   range: touch
   target: one creature
@@ -1909,6 +2008,7 @@ discern-lies:
   name: DISCERN LIES
   type: SPELL
   level: 4
+  rarity: 1
   traits: [divination, mental, revelation]
   casting: [aS, aV]
   duration: 10 minutes
@@ -1918,6 +2018,7 @@ discern-location:
   name: DISCERN LOCATION
   type: SPELL
   level: 8
+  rarity: 1
   traits: [detection, divination]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -1935,6 +2036,7 @@ disintegrate:
   name: DISINTEGRATE
   type: SPELL
   level: 6
+  rarity: 0
   traits: [evocation]
   casting: [aS, aV]
   range: 120 feet
@@ -1959,6 +2061,7 @@ disjunction:
   name: DISJUNCTION
   type: SPELL
   level: 9
+  rarity: 1
   traits: [abjuration]
   casting: [aS, aV]
   range: 120 feet
@@ -1972,6 +2075,7 @@ dispel-magic:
   name: DISPEL MAGIC
   type: SPELL
   level: 3
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: 120 feet
@@ -1987,6 +2091,7 @@ disrupt-undead:
   name: DISRUPT UNDEAD
   type: SPELL
   level: 0
+  rarity: 0
   traits: [necromancy, positive]
   casting: [aS, aV]
   range: 30 feet
@@ -2009,6 +2114,7 @@ disrupting-weapons:
   name: DISRUPTING WEAPONS
   type: SPELL
   level: 1
+  rarity: 0
   traits: [necromancy, positive]
   casting: [aS, aV]
   range: touch
@@ -2023,6 +2129,7 @@ divine-aura:
   name: DIVINE AURA
   type: SPELL
   level: 8
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   area: 10-foot aura
@@ -2047,6 +2154,7 @@ divine-decree:
   name: DIVINE DECREE
   type: SPELL
   level: 7
+  rarity: 0
   traits: [evocation]
   casting: [aS, aV]
   range: 40 feet
@@ -2077,6 +2185,7 @@ divine-inspiration:
   name: DIVINE INSPIRATION
   type: SPELL
   level: 8
+  rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: touch
@@ -2091,6 +2200,7 @@ divine-vessel:
   name: DIVINE VESSEL
   type: POWER
   level: 1
+  rarity: 1
   traits: [enchantment]
   casting: [fS]
   trigger: You cast a noncantrip spell that targets a single ally.
@@ -2105,6 +2215,7 @@ divine-ward:
   name: DIVINE WARD
   type: POWER
   level: 1
+  rarity: 1
   traits: [abjuration]
   casting: [rS]
   trigger: An ally in range takes damage.
@@ -2121,6 +2232,7 @@ divine-wrath:
   name: DIVINE WRATH
   type: SPELL
   level: 4
+  rarity: 0
   traits: [evocation]
   casting: [aS, aV]
   range: 120 feet
@@ -2143,6 +2255,7 @@ diviner-s-sight:
   name: DIVINER'S SIGHT
   type: POWER
   level: 1
+  rarity: 1
   traits: [concentrate, divination, fortune]
   casting: [aV]
   range: 30 feet
@@ -2158,6 +2271,7 @@ dominate:
   name: DOMINATE
   type: SPELL
   level: 6
+  rarity: 1
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -2184,6 +2298,7 @@ downpour:
   name: DOWNPOUR
   type: POWER
   level: 2
+  rarity: 1
   traits: [evocation, water]
   casting: [aV, aS]
   range: 120 feet
@@ -2201,6 +2316,7 @@ dragon-breath:
   name: DRAGON BREATH
   type: POWER
   level: 3
+  rarity: 1
   traits: [evocation]
   casting: [aS, aV]
   area: 30-foot cone or 60-foot line originating from you
@@ -2234,6 +2350,7 @@ dragon-claws:
   name: DRAGON CLAWS
   type: POWER
   level: 1
+  rarity: 1
   traits: [morph, transmutation]
   casting: [aV]
   duration: 1 minute
@@ -2268,6 +2385,7 @@ dragon-form:
   name: DRAGON FORM
   type: SPELL
   level: 6
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -2365,6 +2483,7 @@ dragon-wings:
   name: DRAGON WINGS
   type: POWER
   level: 5
+  rarity: 1
   traits: [morph, transmutation]
   casting: [aS, aV]
   duration: 1 minute
@@ -2383,6 +2502,7 @@ dread-aura:
   name: DREAD AURA
   type: POWER
   level: 4
+  rarity: 1
   traits: [enchantment, emotion, fear, mental]
   casting: [aS, aV]
   area: 30-foot-radius aura centered on you
@@ -2397,6 +2517,7 @@ dream-council:
   name: DREAM COUNCIL
   type: SPELL
   level: 8
+  rarity: 0
   traits: [illusion, mental]
   casting-time: 10 minutes
   casting: [S, V]
@@ -2415,6 +2536,7 @@ dream-message:
   name: DREAM MESSAGE
   type: SPELL
   level: 3
+  rarity: 0
   traits: [enchantment, mental]
   casting-time: 10 minutes
   casting: [S, V]
@@ -2437,6 +2559,7 @@ dreaming-potential:
   name: DREAMING POTENTIAL
   type: POWER
   level: 2
+  rarity: 1
   traits: [enchantment, mental]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -2456,6 +2579,7 @@ drop-dead:
   name: DROP DEAD
   type: SPELL
   level: 5
+  rarity: 1
   traits: [illusion, visual]
   casting: [rS]
   trigger: A creature within range is hit by an attack from an enemy.
@@ -2478,6 +2602,7 @@ duplicate-foe:
   name: DUPLICATE FOE
   type: SPELL
   level: 7
+  rarity: 0
   traits: [conjuration]
   casting: [M, S, V]
   range: 30 feet
@@ -2517,6 +2642,7 @@ earthbind:
   name: EARTHBIND
   type: SPELL
   level: 3
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: 120 feet
@@ -2540,6 +2666,7 @@ earthquake:
   name: EARTHQUAKE
   type: SPELL
   level: 8
+  rarity: 0
   traits: [earth, evocation]
   casting: [aS, aV]
   range: 500 feet
@@ -2576,6 +2703,7 @@ echoing-nightmare:
   name: ECHOING NIGHTMARE
   type: SPELL
   level: 2
+  rarity: 1
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -2597,6 +2725,7 @@ electric-arc:
   name: ELECTRIC ARC
   type: CANTRIP
   level: 0
+  rarity: 0
   traits: [attack, cantrip, electricity, evocation]
   casting: [aS, aV]
   range: 30 feet
@@ -2619,6 +2748,7 @@ elemental-form:
   name: ELEMENTAL FORM
   type: SPELL
   level: 5
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -2674,6 +2804,7 @@ elemental-tempest:
   name: ELEMENTAL TEMPEST
   type: POWER
   level: 4
+  rarity: 1
   traits: [evocation]
   casting: [fV]
   trigger: You cast an evocation wizard spell that deals acid, cold, electricity, or fire damage.
@@ -2691,6 +2822,7 @@ empty-body:
   name: EMPTY BODY
   type: POWER
   level: 9
+  rarity: 1
   traits: [conjuration, teleportation]
   casting: [aS, aV]
   duration: 1 minute
@@ -2701,6 +2833,7 @@ endure-elements:
   name: ENDURE ELEMENTS
   type: SPELL
   level: 2
+  rarity: 0
   traits: [abjuration]
   casting-time: 10 minutes
   casting: [S, V]
@@ -2718,6 +2851,7 @@ enduring-might:
   name: ENDURING MIGHT
   type: POWER
   level: 2
+  rarity: 1
   traits: [abjuration]
   casting: [rS]
   trigger: An attack or effect would deal you damage.
@@ -2729,6 +2863,7 @@ energy-absorption:
   name: ENERGY ABSORPTION
   type: POWER
   level: 4
+  rarity: 1
   traits: [abjuration]
   casting: [rV]
   trigger: An effect deals acid, cold, electricity, or fire damage to you.
@@ -2745,6 +2880,7 @@ energy-aegis:
   name: ENERGY AEGIS
   type: SPELL
   level: 7
+  rarity: 0
   traits: [abjuration]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -2761,6 +2897,7 @@ enervation:
   name: ENERVATION
   type: SPELL
   level: 4
+  rarity: 0
   traits: [attack, necromancy, negative]
   casting: [aS, aV]
   range: 30 feet
@@ -2780,6 +2917,7 @@ enhance-victuals:
   name: ENHANCE VICTUALS
   type: POWER
   level: 1
+  rarity: 1
   traits: [transmutation]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -2799,6 +2937,7 @@ enlarge:
   name: ENLARGE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   range: 30 feet
@@ -2822,6 +2961,7 @@ entangle:
   name: ENTANGLE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [plant, transmutation]
   casting: [aS, aV]
   range: 120 feet
@@ -2838,6 +2978,7 @@ enthrall:
   name:  ENTHRALL
   type: SPELL
   level: 3
+  rarity: 0
   traits: [auditory, enchantment, emotion]
   casting: [aS, aV]
   range: 120 feet
@@ -2872,6 +3013,7 @@ ethereal-jaunt:
   name: ETHEREAL JAUNT
   type: SPELL
   level: 7
+  rarity: 1
   traits: [conjuration, teleportation]
   casting: [aS, aV]
   duration: concentration, up to 1 minute
@@ -2898,6 +3040,7 @@ fabricate:
   name: FABRICATE
   type: POWER
   level: 1
+  rarity: 1
   traits: [conjuration]
   casting: [aS, aV]
   duration: 1 minute
@@ -2913,6 +3056,7 @@ fabricated-truth:
   name: FABRICATED TRUTH
   type: SPELL
   level: 10
+  rarity: 1
   traits: [enchantment, mental]
   casting: [aM, aS, aV]
   range: 100 feet
@@ -2939,6 +3083,7 @@ face-in-the-crowd:
   name: FACE IN THE CROWD
   type: POWER
   level: 1
+  rarity: 1
   traits: [illusion, visual]
   casting: [aS, aV]
   duration: 1 minute
@@ -2952,6 +3097,7 @@ faerie-dust:
   name: FAERIE DUST
   type: POWER
   level: 1
+  rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -2973,6 +3119,7 @@ faerie-fire:
   name: FAERIE FIRE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [evocation, light]
   casting: [aS, aV]
   range: 120 feet
@@ -2988,6 +3135,7 @@ false-life:
   name: FALSE LIFE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [necromancy]
   casting: [aS, aV]
   duration: 1 day
@@ -3001,6 +3149,7 @@ false-vision:
   name: FALSE VISION
   type: SPELL
   level: 5
+  rarity: 1
   traits: [illusion]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -3020,6 +3169,7 @@ fatal-aria:
   name: FATAL ARIA
   type: POWER
   level: 10
+  rarity: 1
   casting: [aV]
   range: 30 feet
   target: one creature
@@ -3040,6 +3190,7 @@ fear:
   name: FEAR
   type: SPELL
   level: 1
+  rarity: 0
   casting: [aS, aV]
   range: 30 feet
   target: one creature
@@ -3058,6 +3209,7 @@ feather-fall:
   name: FEATHER FALL
   type: SPELL
   level: 1
+  rarity: 0
   traits: [abjuration]
   casting: [rV]
   trigger: A creature within range is falling.
@@ -3075,6 +3227,7 @@ feeblemind:
   name: FEEBLEMIND
   type: SPELL
   level: 6
+  rarity: 0
   traits: [curse, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -3100,6 +3253,7 @@ feet-to-fins:
   name: FEET TO FINS
   type: SPELL
   level: 3
+  rarity: 0
   traits: [morph, transmutation]
   casting: [aS, aV]
   range: touch
@@ -3114,6 +3268,7 @@ fey-disappearance:
   name: FEY DISAPPEARANCE
   type: POWER
   level: 3
+  rarity: 1
   traits: [enchantment]
   casting: [aS, aV]
   duration: 1 round
@@ -3129,6 +3284,7 @@ field-of-life:
   name: FIELD OF LIFE
   type: SPELL
   level: 6
+  rarity: 0
   traits: [healing, necromancy, positive]
   casting: [aS, aV]
   range: 30 feet
@@ -3146,6 +3302,7 @@ fiery-body:
   name: FIERY BODY
   type: SPELL
   level: 7
+  rarity: 0
   traits: [fire, polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute
@@ -3171,6 +3328,7 @@ finger-of-death:
   name: FINGER OF DEATH
   type: SPELL
   level: 7
+  rarity: 0
   traits: [death, necromancy]
   casting: [aS, aV]
   range: 30 feet
@@ -3192,6 +3350,7 @@ fire-ray:
   name: FIRE RAY
   type: POWER
   level: 1
+  rarity: 1
   traits: [evocation, fire]
   casting: [aS, aV]
   range: 60 feet
@@ -3208,6 +3367,7 @@ fire-seeds:
   name: FIRE SEEDS
   type: SPELL
   level: 6
+  rarity: 0
   traits: [evocation, fire, plant]
   casting: [aS, aV]
   duration: 1 minute
@@ -3238,6 +3398,7 @@ fire-shield:
   name: FIRE SHIELD
   type: SPELL
   level: 4
+  rarity: 0
   traits: [evocation, fire]
   casting: [aS, aV]
   duration: 1 minute
@@ -3253,6 +3414,7 @@ fireball:
   name: FIREBALL
   type: SPELL
   level: 3
+  rarity: 0
   traits: [evocation, fire]
   casting: [aS, aV]
   range: 500 feet
@@ -3272,6 +3434,7 @@ flame-barrier:
   name: FLAME BARRIER
   type: POWER
   level: 2
+  rarity: 1
   traits: [abjuration, fire]
   casting: [rV]
   trigger: An effect deals fire damage to either you or an ally within range.
@@ -3286,6 +3449,7 @@ flame-strike:
   name: FLAME STRIKE
   type: SPELL
   level: 5
+  rarity: 0
   traits: [evocation, fire]
   casting: [aS, aV]
   range: 120 feet
@@ -3311,6 +3475,7 @@ flaming-sphere:
   name: FLAMING SPHERE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [evocation, fire]
   casting: [aS, aV]
   range: 30 feet
@@ -3335,6 +3500,7 @@ fleet-step:
   name: FLEET STEP
   type: SPELL
   level: 1
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   duration: 1 minute
@@ -3344,6 +3510,7 @@ flesh-to-stone:
   name: FLESH TO STONE
   type: SPELL
   level: 6
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: 120 feet
@@ -3370,6 +3537,7 @@ floating-disk:
   name: FLOATING DISK
   type: SPELL
   level: 1
+  rarity: 0
   traits: [conjuration]
   casting: [aS, aV]
   duration: 1 hour or until dismissed
@@ -3389,6 +3557,7 @@ fly:
   name: FLY
   type: SPELL
   level: 4
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
@@ -3402,6 +3571,7 @@ forbidding-ward:
   name: FORBIDDING WARD
   type: CANTRIP
   level: 0
+  rarity: 0
   traits: [abjuration, cantrip]
   casting: [aS, aV]
   range: 30 feet
@@ -3420,6 +3590,7 @@ force-bolt:
   name: FORCE BOLT
   type: POWER
   level: 1
+  rarity: 1
   traits: [attack, evocation, force]
   casting: [aS, aV]
   range: 30 feet
@@ -3439,6 +3610,7 @@ forced-quiet:
   name: FORCED QUIET
   type: POWER
   level: 1
+  rarity: 1
   traits: [abjuration]
   casting: [aM, aV]
   range: 30 feet
@@ -3463,6 +3635,7 @@ foresight:
   name: FORESIGHT
   type: SPELL
   level: 9
+  rarity: 0
   traits: [divination, mental, prediction]
   casting: [aS, aV]
   range: touch
@@ -3490,6 +3663,7 @@ freedom-of-movement:
   name: FREEDOM OF MOVEMENT
   type: SPELL
   level: 4
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
@@ -3506,6 +3680,7 @@ gaseous-form:
   name: GASEOUS FORM
   type: SPELL
   level: 4
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   range: touch
@@ -3523,6 +3698,7 @@ gate:
   name: GATE
   type: SPELL
   level: 10
+  rarity: 1
   traits: [conjuration, teleportation]
   casting: [aS, aV]
   range: 120 feet
@@ -3541,6 +3717,7 @@ gentle-repose:
   name: GENTLE REPOSE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [necromancy]
   casting: [aS, aV]
   range: touch
@@ -3560,6 +3737,7 @@ ghost-sound:
   name: GHOST SOUND
   type: SPELL
   level: 0
+  rarity: 0
   traits: [auditory, cantrip, illusion]
   casting: [aS, aV]
   range: 30 feet
@@ -3576,6 +3754,7 @@ ghostly-weapon:
   name: GHOSTLY WEAPON
   type: SPELL
   level: 3
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
@@ -3590,6 +3769,7 @@ ghoulish-cravings:
   name: GHOULISH CRAVINGS
   type: SPELL
   level: 2
+  rarity: 0
   traits: [attack, disease, evil, necromancy]
   casting: [aS, aV]
   range: touch
@@ -3616,6 +3796,7 @@ glimpse-the-truth:
   name: GLIMPSE THE TRUTH
   type: POWER
   level: 2
+  rarity: 1
   traits: [divination]
   casting: [aS]
   duration: 1 round
@@ -3630,6 +3811,7 @@ glitterdust:
   name: GLITTERDUST
   type: SPELL
   level: 2
+  rarity: 0
   traits: [evocation]
   casting: [aS, aV]
   range: 120 feet
@@ -3654,6 +3836,7 @@ globe-of-invulnerability:
   name: GLOBE OF INVULNERABILITY
   type: SPELL
   level: 4
+  rarity: 1
   traits: [abjuration]
   casting: [aS, aV]
   area: 10-foot burst centered on one corner of your space
@@ -3675,6 +3858,7 @@ glutton-s-jaws:
   name: GLUTTON'S JAWS
   type: POWER
   level: 1
+  rarity: 1
   traits: [necromancy]
   casting: [aS, aV]
   duration: 1 minute
@@ -3703,6 +3887,7 @@ glyph-of-warding:
   name: GLYPH OF WARDING
   type: SPELL
   level: 3
+  rarity: 0
   traits: [abjuration]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -3733,6 +3918,7 @@ goblin-pox:
   name: GOBLIN POX
   type: SPELL
   level: 1
+  rarity: 0
   traits: [attack, disease, necromancy]
   casting: [aS, aV]
   range: touch
@@ -3754,6 +3940,7 @@ goodberry:
   name: GOODBERRY
   type: POWER
   level: 1
+  rarity: 1
   traits: [healing, necromancy]
   casting-time: 10 minutes
   casting: [S, V]
@@ -3774,6 +3961,7 @@ grim-tendrils:
   name: GRIM TENDRILS
   type: SPELL
   level: 1
+  rarity: 0
   traits: [necromancy, negative]
   casting: [aS, aV]
   area: 30-foot line
@@ -3794,6 +3982,7 @@ grease:
   name: GREASE
   type: SPELL
   level: 1
+  rarity: 0
   traits: [conjuration]
   casting: [aS, aV]
   range: 30 feet
@@ -3823,6 +4012,7 @@ guidance:
   name: GUIDANCE
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, divination]
   casting: [aS, aV]
   range: touch
@@ -3839,6 +4029,7 @@ gust-of-wind:
   name: GUST OF WIND
   type: SPELL
   level: 1
+  rarity: 0
   casting: [aS, aV]
   traits: [air, evocation]
   area: 60-foot line
@@ -3865,6 +4056,7 @@ hallucination:
   name: HALLUCINATION
   type: SPELL
   level: 5
+  rarity: 0
   traits: [illusion, mental]
   casting: [aM, aS]
   range: 30 feet
@@ -3893,6 +4085,7 @@ hallucinatory-terrain:
   name: HALLUCINATORY TERRAIN
   type: SPELL
   level: 4
+  rarity: 1
   traits: [illusion]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -3914,6 +4107,7 @@ hand-of-the-apprentice:
   name: HAND OF THE APPRENTICE
   type: POWER
   level: 1
+  rarity: 1
   traits: [attack, evocation]
   casting: [aS, aV]
   range: 30 feet
@@ -3929,6 +4123,7 @@ harm:
   name: HARM
   type: SPELL
   level: 1
+  rarity: 0
   traits: [necromancy, negative]
   casting: [aS, or more]
   range: touch, Range 30 feet, or Area 30-foot aura (see text)
@@ -3960,6 +4155,7 @@ harmonize:
   name: HARMONIZE
   type: POWER
   level: 3
+  rarity: 1
   traits: [enchantment]
   casting: [fV]
   trigger: You finish casting a composition.
@@ -3974,6 +4170,7 @@ haste:
   name: HASTE
   type: SPELL
   level: 3
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: 30 feet
@@ -3989,6 +4186,7 @@ heal:
   name: HEAL
   type: SPELL
   level: 1
+  rarity: 0
   traits: [healing, necromancy, positive]
   casting: [aS, or more]
   range: touch, Range 30 feet, or Area 30-foot aura (see text)
@@ -4021,6 +4219,7 @@ heal-animal:
   name: HEAL ANIMAL
   type: POWER
   level: 1
+  rarity: 0
   traits: [healing, necromancy, positive]
   casting: [aS, or more]
   range: touch or Range 30 feet (see text)
@@ -4039,6 +4238,7 @@ healer-s-blessing:
   name: HEALER'S BLESSING
   type: POWER
   level: 1
+  rarity: 1
   traits: [necromancy]
   casting: [fS]
   trigger: You cast a heal spell to heal a living creature.
@@ -4051,6 +4251,7 @@ healing-font:
   name: HEALING FONT
   type: POWER
   level: 2
+  rarity: 1
   traits: [necromancy]
   casting: [fS]
   trigger: You use channel energy to cast a heal spell.
@@ -4062,6 +4263,7 @@ heroism:
   name: HEROISM
   type: SPELL
   level: 3
+  rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: touch
@@ -4078,6 +4280,7 @@ hero-s-defiance:
   name: HERO'S DEFIANCE
   type: POWER
   level: 10
+  rarity: 1
   traits: [healing, necromancy, positive]
   casting: [fV]
   trigger:
@@ -4094,6 +4297,7 @@ hideous-laughter:
   name: HIDEOUS LAUGHTER
   type: SPELL
   level: 2
+  rarity: 0
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -4114,6 +4318,7 @@ horrid-wilting:
   name: HORRID WILTING
   type: SPELL
   level: 8
+  rarity: 0
   traits: [necromancy, negative]
   casting: [aS, aV]
   range: 500 feet
@@ -4138,6 +4343,7 @@ house-of-imaginary-walls:
   name: HOUSE OF IMAGINARY WALLS
   type: SPELL
   level: 0
+  rarity: 1
   traits: [cantrip, composition, illusion, visual]
   casting: [aS]
   range: touch
@@ -4158,6 +4364,7 @@ humanoid-form:
   name: HUMANOID FORM
   type: SPELL
   level: 2
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 10 minutes or until dismissed
@@ -4189,6 +4396,7 @@ hurtling-stone:
   name: HURTLING STONE
   type: POWER
   level: 1
+  rarity: 1
   traits: [attack, earth, evocation]
   casting: [aS]
   description:
@@ -4203,6 +4411,7 @@ hypercognition:
   name: HYPERCOGNITION
   type: SPELL
   level: 3
+  rarity: 0
   traits: [divination]
   casting: [aV]
   description:
@@ -4216,6 +4425,7 @@ hypnotic-pattern:
   name: HYPNOTIC PATTERN
   type: SPELL
   level: 3
+  rarity: 0
   traits: [illusion, visual]
   casting: [aM, aS]
   range: 120 feet
@@ -4237,6 +4447,7 @@ illusory-creature:
   name: ILLUSORY CREATURE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [auditory, illusory, visual]
   casting: [aS, aV]
   range: 500 feet
@@ -4288,6 +4499,7 @@ illusory-disguise:
   name: ILLUSORY DISGUISE
   type: SPELL
   level: 1
+  rarity: 0
   casting: [aS, aV]
   traits: [illusion, visual]
   duration: 1 hour or until dismissed
@@ -4319,6 +4531,7 @@ illusory-object:
   name: ILLUSORY OBJECT
   type: SPELL
   level: 1
+  rarity: 0
   traits: [illusion, visual]
   casting: [aS, aV]
   range: 500 feet
@@ -4343,6 +4556,7 @@ illusory-scene:
   name: ILLUSORY SCENE
   type: SPELL
   level: 5
+  rarity: 0
   traits: [auditory, illusion, visual]
   casting-time: 10 minutes
   casting: [V, S]
@@ -4389,6 +4603,7 @@ implosion:
   name: IMPLOSION
   type: SPELL
   level: 9
+  rarity: 0
   traits: [evocation]
   casting: [aS, aV]
   range: 30 feet
@@ -4414,6 +4629,7 @@ insect-form:
   name: INSECT FORM
   type: SPELL
   level: 3
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -4483,6 +4699,7 @@ inspire-competence:
   name: INSPIRE COMPETENCE
   type: SPELL
   level: 0
+  rarity: 1
   traits: [cantrip, composition, emotion, enchantment, mental]
   casting: [aV]
   range: 60 feet
@@ -4507,6 +4724,7 @@ inspire-courage:
   name: INSPIRE COURAGE
   type: SPELL
   level: 0
+  rarity: 1
   traits: [cantrip, composition, emotion, enchantment, mental]
   casting: [aV]
   area: 60-foot aura
@@ -4521,6 +4739,7 @@ inspire-heroics:
   name: INSPIRE HEROICS
   type: POWER
   level: 4
+  rarity: 1
   traits: [enchantment, power]
   casting: [fV]
   trigger: You finish casting inspire courage.
@@ -4540,6 +4759,7 @@ invisibility:
   name: INVISIBILITY
   type: SPELL
   level: 2
+  rarity: 0
   traits: [illusion, visual]
   casting: [aM, aS]
   range: touch
@@ -4558,6 +4778,7 @@ invisibility-cloak:
   name: INVISIBILITY CLOAK
   type: POWER
   level: 4
+  rarity: 1
   traits: [illusion]
   casting: [aM, aS]
   duration: concentration or until dismissed, up to 1 minute
@@ -4574,6 +4795,7 @@ invisibility-sphere:
   name: INVISIBILITY SPHERE
   type: SPELL
   level: 3
+  rarity: 0
   traits: [illusion, visual]
   casting: [aM, aS]
   area: 10-foot aura
@@ -4598,6 +4820,7 @@ item-facade:
   name: ITEM FACADE
   type: SPELL
   level: 1
+  rarity: 0
   traits: [illusion, visual]
   casting: [aS, aV]
   range: touch
@@ -4623,6 +4846,7 @@ jump:
   name: JUMP
   type: SPELL
   level: 1
+  rarity: 0
   traits: [move, transmutation]
   casting: [aS]
   description:
@@ -4643,6 +4867,7 @@ ki-blast:
   name: KI BLAST
   type: POWER
   level: 3
+  rarity: 1
   traits: [attack, evocation, force]
   casting: [aS, aV]
   area: 30-foot cone
@@ -4662,6 +4887,7 @@ ki-strike:
   name: KI STRIKE
   type: POWER
   level: 1
+  rarity: 1
   traits: [transmutation]
   casting: [fV]
   trigger: You start to attempt an attack roll for an unarmed Strike.
@@ -4671,6 +4897,7 @@ knock:
   name: KNOCK
   type: SPELL
   level: 2
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: 30 feet
@@ -4688,6 +4915,7 @@ know-direction:
   name: KNOW DIRECTION
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, detection, divination]
   casting: [aS, aV]
   description:
@@ -4704,6 +4932,7 @@ know-the-enemy:
   name: KNOW THE ENEMY
   type: POWER
   level: 2
+  rarity: 1
   traits: [divination, fortune]
   casting: [fS]
   trigger: You hit a creature with a melee Strike.
@@ -4716,6 +4945,7 @@ lay-on-hands:
   name: LAY ON HANDS
   type: POWER
   level: 1
+  rarity: 1
   traits: [healing, necromancy, positive]
   casting: [aS]
   range: touch
@@ -4736,6 +4966,7 @@ leng-s-sting:
   name: LENG'S STING
   type: SPELL
   level: 7
+  rarity: 0
   traits: [attack, necromancy, poison]
   casting: [aS, aV]
   range: touch
@@ -4757,6 +4988,7 @@ levitate:
   name: LEVITATE
   type: SPELL
   level: 3
+  rarity: 0
   traits: [evocation]
   casting: [aS, aV]
   range: touch
@@ -4778,6 +5010,7 @@ life-siphon:
   name: LIFE SIPHON
   type: POWER
   level: 4
+  rarity: 1
   traits: [healing, necromancy]
   casting: [rV]
   trigger:
@@ -4791,6 +5024,7 @@ light:
   name: LIGHT
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, evocation, light]
   casting: [aS, aV]
   range: touch
@@ -4807,6 +5041,7 @@ lightning-bolt:
   name: LIGHTNING BOLT
   type: SPELL
   level: 3
+  rarity: 0
   traits: [electricity, evocation]
   casting: [aS, aV]
   area: 60-foot line
@@ -4825,6 +5060,7 @@ lingering-composition:
   name: LINGERING COMPOSITION
   type: POWER
   level: 1
+  rarity: 1
   traits: [enchantment, power]
   casting: [fV]
   trigger: You finish casting a cantrip composition with a duration of 1 round.
@@ -4843,6 +5079,7 @@ litany-against-sloth:
   name: LITANY AGAINST SLOTH
   type: POWER
   level: 5
+  rarity: 1
   traits: [evocation, litany, good]
   casting: [aV]
   range: 30 feet
@@ -4866,6 +5103,7 @@ litany-against-wrath:
   name: LITANY AGAINST WRATH
   type: POWER
   level: 3
+  rarity: 1
   traits: [evocation, litany, good]
   casting: [aV]
   range: 30 feet
@@ -4898,6 +5136,7 @@ litany-of-righteousness:
   name: LITANY OF RIGHTEOUSNESS
   type: POWER
   level: 7
+  rarity: 1
   traits: [evocation, litany, good]
   casting: [aV]
   range: 30 feet
@@ -4914,6 +5153,7 @@ localized-quake:
   name: LOCALIZED QUAKE
   type: POWER
   level: 2
+  rarity: 1
   traits: [earth, transmutation]
   casting: [aS, aV]
   area: 15-foot aura
@@ -4925,6 +5165,7 @@ locate:
   name: LOCATE
   type: SPELL
   level: 3
+  rarity: 1
   traits: [detection, divination]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -4951,6 +5192,7 @@ lock:
   name: LOCK
   type: SPELL
   level: 1
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
@@ -4977,6 +5219,7 @@ longstrider:
   name: LONGSTRIDER
   type: SPELL
   level: 1
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   duration: 1 hour
@@ -4988,6 +5231,7 @@ lorekeeper-s-fortune:
   name: LOREKEEPER'S FORTUNE
   type: POWER
   level: 1
+  rarity: 1
   traits: [divination, fortune]
   casting: [fV]
   trigger: You spend a Seek or Recall Knowledge action.
@@ -5001,6 +5245,7 @@ loremaster-s-recall:
   name: LOREMASTER'S RECALL
   type: POWER
   level: 1
+  rarity: 1
   traits: [divination, fortune]
   casting: [fS]
   trigger: You spend the Recall Knowledge action.
@@ -5012,6 +5257,7 @@ lucky-break:
   name: LUCKY BREAK
   type: POWER
   level: 2
+  rarity: 1
   traits: [divination, fortune]
   casting: [rV]
   trigger:
@@ -5023,6 +5269,7 @@ mage-armor:
   name: MAGE ARMOR
   type: SPELL
   level: 1
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   duration: 1 day
@@ -5041,6 +5288,7 @@ mage-hand:
   name: MAGE HAND
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, evocation]
   casting: [aS, aV]
   range: 30 feet
@@ -5060,6 +5308,7 @@ magic-aura:
   name: MAGIC AURA
   type: SPELL
   level: 1
+  rarity: 1
   traits: [illusion]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -5087,6 +5336,7 @@ magic-fang:
   name: MAGIC FANG
   type: SPELL
   level: 1
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
@@ -5102,6 +5352,7 @@ magic-missile:
   name: MAGIC MISSILE
   type: SPELL
   level: 1
+  rarity: 0
   traits: [evocation, force]
   casting: [aV, or more]
   range: 120 feet
@@ -5120,6 +5371,7 @@ magic-mouth:
   name: MAGIC MOUTH
   type: SPELL
   level: 2
+  rarity: 0
   traits: [auditory, illusion, visual]
   casting: [aS, aV]
   range: touch
@@ -5135,6 +5387,7 @@ magic-weapon:
   name: MAGIC WEAPON
   type: SPELL
   level: 1
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
@@ -5149,6 +5402,7 @@ magnificent-mansion:
   name: MAGNIFICENT MANSION
   type: SPELL
   level: 7
+  rarity: 1
   traits: [conjuration, extradimensional]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -5183,6 +5437,7 @@ mariner-s-curse:
   name: MARINER'S CURSE
   type: SPELL
   level: 5
+  rarity: 0
   traits: [attack, curse, necromancy]
   casting: [aS, aV]
   range: touch
@@ -5201,6 +5456,7 @@ mask-of-terror:
   name: MASK OF TERROR
   type: SPELL
   level: 7
+  rarity: 0
   traits: [emotion, fear, illusion, mental, visual]
   casting: [aS, aV]
   range: 30 feet
@@ -5230,6 +5486,7 @@ master-s-illusion:
   name: MASTER'S ILLUSION
   type: POWER
   level: 2
+  rarity: 1
   traits: [illusion]
   casting: [aM, aV]
   range: 30 feet
@@ -5241,6 +5498,7 @@ maze:
   name: MAZE
   type: SPELL
   level: 8
+  rarity: 0
   traits: [conjuration, extradimensional, teleportation]
   casting: [aS, aV]
   range: 30 feet
@@ -5274,6 +5532,7 @@ meld-into-stone:
   name: MELD INTO STONE
   type: SPELL
   level: 3
+  rarity: 0
   traits: [earth, transmutation]
   casting: [aS, aV]
   duration: 10 minutes or until dismissed
@@ -5292,6 +5551,7 @@ mending:
   name: MENDING
   type: SPELL
   level: 1
+  rarity: 0
   traits: [transmutation]
   casting-time: 1 hour
   casting: [S, V]
@@ -5310,6 +5570,7 @@ message:
   name: MESSAGE
   type: SPELL
   level: 0
+  rarity: 0
   traits: [auditory, cantrip, illusion, lingual, mental]
   casting: [aV]
   range: 120 feet
@@ -5330,6 +5591,7 @@ metamagician-s-shortcut:
   name: METAMAGICIAN'S SHORTCUT
   type: POWER
   level: 3
+  rarity: 1
   traits: [enchantment]
   casting: [aS, aV]
   duration: 1 hour
@@ -5345,6 +5607,7 @@ meteor-swarm:
   name: METEOR SWARM
   type: SPELL
   level: 9
+  rarity: 0
   traits: [evocation, fire]
   casting: [aS, aV]
   range: 500 feet
@@ -5370,6 +5633,7 @@ mind-blank:
   name: MIND BLANK
   type: SPELL
   level: 8
+  rarity: 1
   traits: [abjuration]
   casting: [aS, aV]
   range: 30 feet
@@ -5384,6 +5648,7 @@ mind-probe:
   name: MIND PROBE
   type: SPELL
   level: 5
+  rarity: 1
   traits: [divination, lingual, mental]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -5411,6 +5676,7 @@ mind-reading:
   name: MIND READING
   type: SPELL
   level: 3
+  rarity: 1
   traits: [detection, divination, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -5440,6 +5706,7 @@ mindlink:
   name: MINDLINK
   type: SPELL
   level: 1
+  rarity: 0
   traits: [divination, mental]
   casting: [aS, aV]
   range: touch
@@ -5453,6 +5720,7 @@ miracle:
   name: MIRACLE
   type: SPELL
   level: 10
+  rarity: 1
   traits: [divination]
   casting: [aM, aS, aV]
   description:
@@ -5473,6 +5741,7 @@ mirror-image:
   name: MIRROR IMAGE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [illusion, visual]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -5493,6 +5762,7 @@ misdirection:
   name: MISDIRECTION
   type: SPELL
   level: 2
+  rarity: 0
   traits: [illusion]
   casting-time: 1 minute
   casting: [S, V]
@@ -5511,6 +5781,7 @@ mislead:
   name: MISLEAD
   type: SPELL
   level: 6
+  rarity: 0
   traits: [illusion]
   casting: [aS, aV]
   duration: concentration, up to 1 minute
@@ -5541,6 +5812,7 @@ modify-memory:
   name: MODIFY MEMORY
   type: SPELL
   level: 4
+  rarity: 1
   traits: [divination, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -5581,6 +5853,7 @@ moment-of-renewal:
   name: MOMENT OF RENEWAL
   type: SPELL
   level: 8
+  rarity: 0
   traits: [healing, necromancy]
   casting: [aS, aV]
   range: touch
@@ -5598,6 +5871,7 @@ money-talks:
   name: MONEY TALKS
   type: POWER
   level: 2
+  rarity: 1
   traits: [transmutation]
   casting: [fS]
   trigger: You Cast a Spell that has a cost with a value measured in gp.
@@ -5607,6 +5881,7 @@ monstrosity-form:
   name: MONSTROSITY FORM
   type: SPELL
   level: 8
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -5673,6 +5948,7 @@ moon-frenzy:
   name: MOON FRENZY
   type: SPELL
   level: 5
+  rarity: 0
   traits: [morph, transmutation]
   casting: [aS, aV]
   range: 30 feet
@@ -5707,6 +5983,7 @@ moonbeam:
   name: MOONBEAM
   type: POWER
   level: 2
+  rarity: 1
   traits: [attack, evocation, fire, light]
   casting: [aS, aV]
   range: 120 feet
@@ -5725,6 +6002,7 @@ moonlight-glow:
   name: MOONLIGHT GLOW
   type: POWER
   level: 1
+  rarity: 1
   traits: [evocation, light]
   casting: [aS, aV]
   area: 60-foot burst centered on you
@@ -5740,6 +6018,7 @@ mystic-beacon:
   name: MYSTIC BEACON
   type: POWER
   level: 2
+  rarity: 1
   traits: [evocation]
   casting: [aS]
   range: 30 feet
@@ -5754,6 +6033,7 @@ nature-incarnate:
   name: NATURE INCARNATE
   type: SPELL
   level: 10
+  rarity: 1
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -5815,6 +6095,7 @@ nature-s-bounty:
   name: NATURE'S BOUNTY
   type: POWER
   level: 2
+  rarity: 1
   traits: [conjuration, plant]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -5836,6 +6117,7 @@ nature-s-enmity:
   name: NATURE'S ENMITY
   type: SPELL
   level: 9
+  rarity: 0
   traits: [enchantment]
   casting: [aS, aV]
   range: 100 feet
@@ -5868,6 +6150,7 @@ negate-aroma:
   name: NEGATE AROMA
   type: SPELL
   level: 1
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
@@ -5885,6 +6168,7 @@ neutralize-poison:
   name: NEUTRALIZE POISON
   type: SPELL
   level: 3
+  rarity: 0
   traits: [healing, necromancy]
   casting: [aS, aV]
   range: touch
@@ -5897,6 +6181,7 @@ nightmare:
   name: NIGHTMARE
   type: SPELL
   level: 4
+  rarity: 1
   traits: [illusion, mental]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -5919,6 +6204,7 @@ nondetection:
   name: NONDETECTION
   type: SPELL
   level: 3
+  rarity: 1
   traits: [abjuration]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -5937,6 +6223,7 @@ obscuring-mist:
   name: OBSCURING MIST
   type: SPELL
   level: 2
+  rarity: 0
   traits: [conjuration, water]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -5951,6 +6238,7 @@ outcast-s-curse:
   name: OUTCAST'S CURSE
   type: SPELL
   level: 4
+  rarity: 0
   traits: [attack, curse, enchantment, mental, misfortune]
   casting: [aS, aV]
   range: touch
@@ -5976,6 +6264,7 @@ overwhelming-presence:
   name: OVERWHELMING PRESENCE
   type: SPELL
   level: 9
+  rarity: 0
   traits: [auditory, enchantment, mental, visual]
   casting: [aS, aV]
   area: 40-foot burst; Targets any number of creatures
@@ -6006,6 +6295,7 @@ paladin-s-sacrifice:
   name: PALADIN'S SACRIFICE
   type: POWER
   level: 6
+  rarity: 1
   traits: [abjuration]
   casting: [rS]
   trigger:
@@ -6024,6 +6314,7 @@ paralyze:
   name: PARALYZE
   type: SPELL
   level: 3
+  rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -6050,6 +6341,7 @@ paranoia:
   name: PARANOIA
   type: SPELL
   level: 2
+  rarity: 0
   traits: [illusion, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -6082,6 +6374,7 @@ pass-without-trace:
   name: PASS WITHOUT TRACE
   type: SPELL
   level: 1
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   duration: 1 hour
@@ -6102,6 +6395,7 @@ passwall:
   name: PASSWALL
   type: SPELL
   level: 5
+  rarity: 1
   traits: [conjuration, earth]
   casting: [aS, aV]
   range: touch
@@ -6130,6 +6424,7 @@ perfected-form:
   name: PERFECTED FORM
   type: POWER
   level: 2
+  rarity: 1
   traits: [abjuration, fortune]
   casting: [rS]
   trigger:
@@ -6142,6 +6437,7 @@ perfected-mind:
   name: PERFECTED MIND
   type: POWER
   level: 1
+  rarity: 1
   traits: [abjuration]
   casting: [aS, aV]
   description:
@@ -6156,6 +6452,7 @@ pest-form:
   name: PEST FORM
   type: SPELL
   level: 2
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 10 minutes or until dismissed
@@ -6197,6 +6494,7 @@ phantasmal-calamity:
   name: PHANTASMAL CALAMITY
   type: SPELL
   level: 6
+  rarity: 0
   traits: [illusion, mental]
   casting: [aS, aV]
   range: 500 feet
@@ -6226,6 +6524,7 @@ phantasmal-killer:
   name: PHANTASMAL KILLER
   type: SPELL
   level: 4
+  rarity: 0
   traits: [death, emotion, fear, illusion, mental]
   casting: [aS, aV]
   range: 120 feet
@@ -6254,6 +6553,7 @@ phantom-pain:
   name: PHANTOM PAIN
   type: SPELL
   level: 1
+  rarity: 0
   traits: [illusion, mental, nonlethal]
   casting: [aS, aV]
   range: 30 feet
@@ -6279,6 +6579,7 @@ phantom-steed:
   name: PHANTOM STEED
   type: SPELL
   level: 2
+  rarity: 0
   traits: [conjuration]
   casting-time: 10 minutes
   casting: [S, V]
@@ -6309,6 +6610,7 @@ physical-boost:
   name: PHYSICAL BOOST
   type: POWER
   level: 1
+  rarity: 1
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
@@ -6323,6 +6625,7 @@ plane-shift:
   name: PLANE SHIFT
   type: SPELL
   level: 7
+  rarity: 1
   traits: [conjuration, teleportation]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -6351,6 +6654,7 @@ plant-form:
   name: PLANT FORM
   type: SPELL
   level: 5
+  rarity: 0
   traits: [plant, polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -6410,6 +6714,7 @@ polar-ray:
   name: POLAR RAY
   type: SPELL
   level: 8
+  rarity: 0
   traits: [cold, evocation]
   casting: [aS, aV]
   range: 120 feet
@@ -6426,6 +6731,7 @@ possession:
   name: POSSESSION
   type: SPELL
   level: 7
+  rarity: 1
   traits: [mental, necromancy, possession]
   casting: [aS, aV]
   range: 30 feet
@@ -6457,6 +6763,7 @@ power-word-blind:
   name: POWER WORD BLIND
   type: SPELL
   level: 7
+  rarity: 1
   traits: [auditory, enchantment, mental]
   casting: [aV]
   range: 30 feet
@@ -6478,6 +6785,7 @@ power-word-kill:
   name: POWER WORD KILL
   type: SPELL
   level: 9
+  rarity: 1
   traits: [auditory, death, enchantment, mental]
   casting: [aV]
   range: 30 feet
@@ -6504,6 +6812,7 @@ power-word-stun:
   name: POWER WORD STUN
   type: SPELL
   level: 8
+  rarity: 1
   traits: [auditory, enchantment, mental]
   casting: [aV]
   range: 30 feet
@@ -6525,6 +6834,7 @@ prepare-for-battle:
   name: PREPARE FOR BATTLE
   type: POWER
   level: 2
+  rarity: 1
   traits: [enchantment, mental]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -6542,6 +6852,7 @@ prestidigitation:
   name: PRESTIDIGITATION
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, evocation]
   casting: [aS, aV]
   range: 10 feet
@@ -6574,6 +6885,7 @@ primal-herd:
   name: PRIMAL HERD
   type: SPELL
   level: 10
+  rarity: 1
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   range: 30 feet
@@ -6626,6 +6938,7 @@ primal-phenomenon:
   name: PRIMAL PHENOMENON
   type: SPELL
   level: 10
+  rarity: 1
   traits: [divination]
   casting: [aM, aS, aV]
   description:
@@ -6646,6 +6959,7 @@ prismatic-sphere:
   name: PRISMATIC SPHERE
   type: SPELL
   level: 9
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: 10 feet
@@ -6660,6 +6974,7 @@ prismatic-spray:
   name: PRISMATIC SPRAY
   type: SPELL
   level: 7
+  rarity: 0
   traits: [evocation]
   casting: [aS, aV]
   area: 30-foot cone
@@ -6691,6 +7006,7 @@ prismatic-wall:
   name: PRISMATIC WALL
   type: SPELL
   level: 8
+  rarity: 0
   traits: [abjuration, light]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -6723,6 +7039,7 @@ private-sanctum:
   name: PRIVATE SANCTUM
   type: SPELL
   level: 4
+  rarity: 1
   traits: [abjuration]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -6740,6 +7057,7 @@ produce-flame:
   name: PRODUCE FLAME
   type: SPELL
   level: 0
+  rarity: 0
   traits: [attack, cantrip, evocation, fire]
   casting: [aS, aV]
   range: 30 feet
@@ -6760,6 +7078,7 @@ project-image:
   name: PROJECT IMAGE
   type: SPELL
   level: 7
+  rarity: 0
   traits: [illusion, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -6780,6 +7099,7 @@ protection:
   name: PROTECTION
   type: SPELL
   level: 1
+  rarity: 1
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
@@ -6800,6 +7120,7 @@ protective-aura:
   name: PROTECTIVE AURA
   type: POWER
   level: 2
+  rarity: 1
   traits: [abjuration]
   casting: [aM, aS, aV]
   area: 15-foot aura
@@ -6813,6 +7134,7 @@ protective-ward:
   name: PROTECTIVE WARD
   type: POWER
   level: 1
+  rarity: 1
   traits: [abjuration]
   casting: [aS, aV]
   area: 10-foot-radius burst centered on you
@@ -6825,6 +7147,7 @@ prying-eye:
   name: PRYING EYE
   type: SPELL
   level: 5
+  rarity: 0
   traits: [divination, scrying]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -6846,6 +7169,7 @@ punishing-winds:
   name: PUNISHING WINDS
   type: SPELL
   level: 8
+  rarity: 0
   traits: [air, evocation]
   casting: [aM, aS, aV]
   range: 100 feet
@@ -6868,6 +7192,7 @@ purify-food-and-drink:
   name: PURIFY FOOD AND DRINK
   type: SPELL
   level: 1
+  rarity: 0
   traits: [necromancy]
   casting: [aS, aV]
   range: touch
@@ -6881,6 +7206,7 @@ purple-worm-sting:
   name: PURPLE WORM STING
   type: SPELL
   level: 6
+  rarity: 0
   traits: [attack, necromancy, poison]
   casting: [aS, aV]
   range: touch
@@ -6904,6 +7230,7 @@ pushing-gust:
   name: PUSHING GUST
   type: POWER
   level: 1
+  rarity: 1
   traits: [air, conjuration]
   casting: [aS]
   range: 500 feet
@@ -6919,6 +7246,7 @@ quivering-palm:
   name: QUIVERING PALM
   type: POWER
   level: 8
+  rarity: 1
   traits: [attack, necromancy]
   casting: [aS, aV]
   duration: 1 month
@@ -6941,6 +7269,7 @@ raise-dead:
   name: RAISE DEAD
   type: SPELL
   level: 6
+  rarity: 1
   traits: [healing, necromancy]
   casting-time: 10 minutes
   casting: [M,S,V]
@@ -6986,6 +7315,7 @@ ray-of-enfeeblement:
   name: RAY OF ENFEEBLEMENT
   type: SPELL
   level: 1
+  rarity: 0
   traits: [attack, necromancy]
   casting: [aS, aV]
   range: 30 feet
@@ -7007,6 +7337,7 @@ ray-of-frost:
   name: RAY OF FROST
   type: SPELL
   level: 0
+  rarity: 0
   traits: [attack, cantrip, cold, evocation]
   casting: [aS, aV]
   range: 60 feet
@@ -7025,6 +7356,7 @@ read-aura:
   name: READ AURA
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, detection, divination]
   casting-time: 10 minutes
   casting: [S, V]
@@ -7044,6 +7376,7 @@ read-fate:
   name: READ FATE
   type: POWER
   level: 1
+  rarity: 1
   traits: [divination, prediction]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -7067,6 +7400,7 @@ read-omens:
   name: READ OMENS
   type: SPELL
   level: 4
+  rarity: 1
   traits: [divination, prediction]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -7080,6 +7414,7 @@ regenerate:
   name: REGENERATE
   type: SPELL
   level: 7
+  rarity: 0
   traits: [healing, necromancy]
   casting: [aS, aV]
   range: touch
@@ -7103,6 +7438,7 @@ remove-curse:
   name: REMOVE CURSE
   type: SPELL
   level: 4
+  rarity: 0
   traits: [healing, necromancy]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -7119,6 +7455,7 @@ remove-disease:
   name: REMOVE DISEASE
   type: SPELL
   level: 3
+  rarity: 0
   traits: [healing, necromancy]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -7132,6 +7469,7 @@ remove-fear:
   name: REMOVE FEAR
   type: SPELL
   level: 2
+  rarity: 0
   traits: [enchantment]
   casting: [aS, aV]
   range: touch
@@ -7149,6 +7487,7 @@ remove-paralysis:
   name: REMOVE PARALYSIS
   type: SPELL
   level: 2
+  rarity: 0
   traits: [healing, necromancy]
   casting: [aS, aV]
   range: touch
@@ -7165,6 +7504,7 @@ repulsion:
   name: REPULSION
   type: SPELL
   level: 6
+  rarity: 0
   traits: [abjuration, mental]
   casting: [aS, aV]
   range: aura up to 40 feet
@@ -7188,6 +7528,7 @@ resilient-sphere:
   name: RESILIENT SPHERE
   type: SPELL
   level: 4
+  rarity: 0
   traits: [abjuration, force]
   casting: [aS, aV]
   range: 30 feet
@@ -7214,6 +7555,7 @@ resist-energy:
   name: RESIST ENERGY
   type: SPELL
   level: 2
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
@@ -7230,6 +7572,7 @@ resplendent-mansion:
   name: RESPLENDENT MANSION
   type: SPELL
   level: 9
+  rarity: 0
   traits: [conjuration]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -7276,6 +7619,7 @@ restoration:
   name: RESTORATION
   type: SPELL
   level: 2
+  rarity: 0
   traits: [healing, necromancy]
   casting-time: 10 minutes
   casting: [S, V]
@@ -7312,6 +7656,7 @@ restore-senses:
   name: RESTORE SENSES
   type: SPELL
   level: 2
+  rarity: 0
   traits: [healing, necromancy]
   casting: [aS, aV]
   range: touch
@@ -7332,6 +7677,7 @@ retributive-pain:
   name: RETRIBUTIVE PAIN
   type: POWER
   level: 2
+  rarity: 1
   traits: [abjuration, mental, nonlethal]
   casting: [rS]
   trigger: A creature in retributive pain’s range deals damage to you.
@@ -7355,6 +7701,7 @@ retrocognition:
   name: RETROCOGNITION
   type: SPELL
   level: 7
+  rarity: 0
   traits: [divination]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -7387,6 +7734,7 @@ reverse-gravity:
   name: REVERSE GRAVITY
   type: SPELL
   level: 7
+  rarity: 1
   traits: [evocation]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -7411,6 +7759,7 @@ revival:
   name: REVIVAL
   type: SPELL
   level: 9
+  rarity: 1
   traits: [healing, necromancy]
   casting: [aS, aV]
   range: 30 feet
@@ -7432,6 +7781,7 @@ ridiculous-notion:
   name: RIDICULOUS NOTION
   type: POWER
   level: 5
+  rarity: 1
   traits: [emotion, enchantment, mental]
   casting: [aV]
   area: 30-foot aura
@@ -7450,6 +7800,7 @@ righteous-might:
   name: RIGHTEOUS MIGHT
   type: SPELL
   level: 6
+  rarity: 0
   casting: [aS, aV]
   traits: [polymorph, transmutation]
   requirements: You have a deity.
@@ -7501,6 +7852,7 @@ rope-trick:
   name: ROPE TRICK
   type: SPELL
   level: 4
+  rarity: 1
   traits: [conjuration, extradimensional, space]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -7529,6 +7881,7 @@ safeguard-secret:
   name: SAFEGUARD SECRET
   type: POWER
   level: 2
+  rarity: 1
   traits: [abjuration, mental]
   casting-time: 1 minute
   casting: [S, V]
@@ -7548,6 +7901,7 @@ sanctified-ground:
   name: SANCTIFIED GROUND
   type: SPELL
   level: 3
+  rarity: 0
   traits: [abjuration, consecration]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -7565,6 +7919,7 @@ sanctuary:
   name: SANCTUARY
   type: SPELL
   level: 1
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
@@ -7588,6 +7943,7 @@ savor-the-sting:
   name: SAVOR THE STING
   type: POWER
   level: 1
+  rarity: 1
   traits: [attack, enchantment, mental, nonlethal]
   casting: [aS, aV]
   range: touch
@@ -7609,6 +7965,7 @@ scintillating-pattern:
   name: SCINTILLATING PATTERN
   type: SPELL
   level: 8
+  rarity: 0
   traits: [illusion, visual]
   casting: [aM, aS]
   range: 120 feet
@@ -7633,6 +7990,7 @@ scrying:
   name: SCRYING
   type: SPELL
   level: 6
+  rarity: 1
   traits: [divination, scrying]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -7665,6 +8023,7 @@ searing-light:
   name: SEARING LIGHT
   type: SPELL
   level: 3
+  rarity: 0
   traits: [attack, evocation, fire, good, light]
   casting: [aS, aV]
   range: 120 feet
@@ -7687,6 +8046,7 @@ secret-page:
   name: SECRET PAGE
   type: SPELL
   level: 3
+  rarity: 0
   traits: [illusion, visual]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -7708,6 +8068,7 @@ see-invisibility:
   type: SPELL
   traits: [divination, revelation]
   level: 2
+  rarity: 0
   casting: [aS, aV]
   duration: 10 minutes
   description:
@@ -7720,6 +8081,7 @@ sending:
   name: SENDING
   type: SPELL
   level: 5
+  rarity: 0
   traits: [divination]
   casting: [aM, aS, aV]
   range: planetary
@@ -7732,6 +8094,7 @@ shadow-blast:
   name: SHADOW BLAST
   type: SPELL
   level: 5
+  rarity: 1
   traits: [evocation, shadow]
   casting: [aS, aV]
   range: varies
@@ -7755,6 +8118,7 @@ shadow-siphon:
   name: SHADOW SIPHON
   type: SPELL
   level: 5
+  rarity: 0
   traits: [illusion, shadow]
   casting: [rV]
   trigger: a spell or magical effect deals damage
@@ -7771,6 +8135,7 @@ shadow-walk:
   name: SHADOW WALK
   type: SPELL
   level: 5
+  rarity: 1
   traits: [conjuration, shadow, teleportation]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -7796,6 +8161,7 @@ shape-stone:
   name: SHAPE STONE
   type: SPELL
   level: 4
+  rarity: 0
   traits: [earth, transmutation]
   casting: [aS, aV]
   range: touch
@@ -7814,6 +8180,7 @@ shape-wood:
   name: SHAPE WOOD
   type: SPELL
   level: 2
+  rarity: 0
   traits: [plant, transmutation]
   casting: [aS, aV]
   range: touch
@@ -7826,6 +8193,7 @@ shapechange:
   name: SHAPECHANGE
   type: SPELL
   level: 9
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -7842,6 +8210,7 @@ shield:
   name: SHIELD
   type: SPELL
   level: 0
+  rarity: 0
   traits: [abjuration, cantrip, force]
   casting: [aV]
   duration: until your next turn or until dismissed
@@ -7865,6 +8234,7 @@ shield-other:
   name: SHIELD OTHER
   type: SPELL
   level: 2
+  rarity: 0
   traits: [necromancy]
   casting: [aS, aV]
   range: 30 feet
@@ -7883,6 +8253,7 @@ shifting-form:
   name: SHIFTING FORM
   type: POWER
   level: 4
+  rarity: 1
   traits: [morph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -7900,6 +8271,7 @@ shillelagh:
   name: SHILLELAGH
   type: SPELL
   level: 1
+  rarity: 0
   traits: [plant, transmutation]
   casting: [aS, aV]
   range: touch
@@ -7918,6 +8290,7 @@ shocking-grasp:
   name: SHOCKING GRASP
   type: SPELL
   level: 1
+  rarity: 0
   traits: [attack, electricity, evocation]
   casting: [aS, aV]
   range: touch
@@ -7937,6 +8310,7 @@ shrink:
   name: SHRINK
   type: SPELL
   level: 2
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   range: 30 feet
@@ -7953,6 +8327,7 @@ shrink-item:
   name: SHRINK ITEM
   type: SPELL
   level: 3
+  rarity: 0
   traits: [polymorph, transmutation]
   casting-time: 10 minutes
   casting: [S, V]
@@ -7973,6 +8348,7 @@ sigil:
   name: SIGIL
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, transmutation]
   casting: [aS, aV]
   range: touch
@@ -7997,6 +8373,7 @@ silence:
   name: SILENCE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [illusion]
   casting: [aS, aV]
   range: touch
@@ -8023,6 +8400,7 @@ skin-of-thorns:
   name: SKIN OF THORNS
   type: POWER
   level: 1
+  rarity: 1
   traits: [enchantment, mental]
   casting: [aS, aV]
   duration: 1 minute
@@ -8038,6 +8416,7 @@ sleep:
   name: SLEEP
   type: SPELL
   level: 1
+  rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -8065,6 +8444,7 @@ slow:
   name: SLOW
   type: SPELL
   level: 3
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: 30 feet
@@ -8083,6 +8463,7 @@ solid-fog:
   name: SOLID FOG
   type: SPELL
   level: 4
+  rarity: 0
   traits: [conjuration, water]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -8094,6 +8475,7 @@ soothe:
   name: SOOTHE
   type: SPELL
   level: 1
+  rarity: 0
   traits: [healing, mental, necromancy, positive]
   casting: [aS, aV]
   range: touch
@@ -8111,6 +8493,7 @@ soothing-ballad:
   name: SOOTHING BALLAD
   type: POWER
   level: 7
+  rarity: 1
   traits: [bard, composition, emotion, enchantment, healing, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -8136,6 +8519,7 @@ soothing-words:
   name: SOOTHING WORDS
   type: POWER
   level: 1
+  rarity: 1
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -8148,6 +8532,7 @@ sound-burst:
   name: SOUND BURST
   type: SPELL
   level: 2
+  rarity: 0
   traits: [evocation, sonic]
   casting: [aS, aV]
   range: 30 feet
@@ -8167,6 +8552,7 @@ speak-with-animals:
   name: SPEAK WITH ANIMALS
   type: SPELL
   level: 2
+  rarity: 0
   traits: [divination]
   casting: [aS, aV]
   duration: 10 minutes
@@ -8180,6 +8566,7 @@ speak-with-plants:
   name: SPEAK WITH PLANTS
   type: SPELL
   level: 4
+  rarity: 0
   traits: [divination, plant]
   casting: [aS, aV]
   duration: 10 minutes
@@ -8196,6 +8583,7 @@ spectral-hand:
   name: SPECTRAL HAND
   type: SPELL
   level: 2
+  rarity: 0
   traits: [necromancy]
   casting: [aS, aV]
   range: 120 feet
@@ -8215,6 +8603,7 @@ spell-immunity:
   name: SPELL IMMUNITY
   type: SPELL
   level: 4
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
@@ -8232,6 +8621,7 @@ spell-turning:
   name: SPELL TURNING
   type: SPELL
   level: 7
+  rarity: 1
   traits: [abjuration]
   casting: [aS, aV]
   duration: 1 hour
@@ -8252,6 +8642,7 @@ spellwrack:
   name: SPELLWRACK
   type: SPELL
   level: 6
+  rarity: 0
   traits: [abjuration, curse, force]
   casting: [aS, aV]
   range: 30 feet
@@ -8278,6 +8669,7 @@ spider-climb:
   name: SPIDER CLIMB
   type: SPELL
   level: 2
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
@@ -8289,6 +8681,7 @@ spider-sting:
   name: SPIDER STING
   type: SPELL
   level: 1
+  rarity: 0
   traits: [attack, necromancy, poison]
   casting: [aS, aV]
   range: touch
@@ -8311,6 +8704,7 @@ spirit-blast:
   name: SPIRIT BLAST
   type: SPELL
   level: 6
+  rarity: 0
   traits: [necromancy]
   casting: [aS, aV]
   range: 30 feet
@@ -8335,6 +8729,7 @@ spiritual-epidemic:
   name: SPIRITUAL EPIDEMIC
   type: SPELL
   level: 8
+  rarity: 0
   traits: [curse, necromancy]
   casting: [aS, aV]
   range: 120 feet
@@ -8357,6 +8752,7 @@ spiritual-guardian:
   name: SPIRITUAL GUARDIAN
   type: SPELL
   level: 5
+  rarity: 0
   traits: [attack, abjuration, force]
   casting: [aS, aV]
   requirements: You have a deity.
@@ -8410,6 +8806,7 @@ spiritual-weapon:
   name: SPIRITUAL WEAPON
   type: SPELL
   level: 2
+  rarity: 0
   traits: [attack, evocation, force]
   casting: [aS, aV]
   requirements: You must have a deity.
@@ -8447,6 +8844,7 @@ stabilize:
   name: STABILIZE
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, healing, necromancy, positive]
   casting: [aS, aV]
   range: 30 feet
@@ -8461,6 +8859,7 @@ status:
   name: STATUS
   type: SPELL
   level: 2
+  rarity: 0
   traits: [detection, divination]
   casting: [aS, aV]
   range: touch
@@ -8477,6 +8876,7 @@ stinking-cloud:
   name: STINKING CLOUD
   type: SPELL
   level: 3
+  rarity: 0
   traits: [conjuration, poison]
   casting: [aS, aV]
   range: 120 feet
@@ -8496,6 +8896,7 @@ stone-tell:
   name: STONE TELL
   type: SPELL
   level: 6
+  rarity: 1
   traits: [divination, earth]
   casting: [aS, aV]
   duration: 10 minutes
@@ -8514,6 +8915,7 @@ stone-to-flesh:
   name: STONE TO FLESH
   type: SPELL
   level: 6
+  rarity: 0
   traits: [earth, transmutation]
   casting: [aS, aV]
   range: touch
@@ -8527,6 +8929,7 @@ stoneskin:
   name: STONESKIN
   type: SPELL
   level: 4
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
@@ -8546,6 +8949,7 @@ storm-lord:
   name: STORM LORD
   type: POWER
   level: 9
+  rarity: 1
   traits: [air, electricity, evocation]
   casting: [aS, aV]
   area: 100-foot spread
@@ -8581,6 +8985,7 @@ storm-of-vengeance:
   name: STORM OF VENGEANCE
   type: SPELL
   level: 9
+  rarity: 0
   traits: [air, electricity, evocation]
   casting: [aM, aS, aV]
   range: 800 feet
@@ -8621,6 +9026,7 @@ stormwind-flight:
   name: STORMWIND FLIGHT
   type: POWER
   level: 4
+  rarity: 1
   traits: [morph, transmutation]
   casting: [aS, aV]
   duration: 1 minute
@@ -8637,6 +9043,7 @@ sudden-shift:
   name: SUDDEN SHIFT
   type: POWER
   level: 1
+  rarity: 1
   traits: [abjuration, move]
   casting: [fS]
   trigger: An enemy misses you with a melee attack.
@@ -8646,6 +9053,7 @@ suggestion:
   name: SUGGESTION
   type: SPELL
   level: 4
+  rarity: 0
   traits: [enchantment, linguistic, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -8674,6 +9082,7 @@ summon-monster:
   name: SUMMON MONSTER
   type: SPELL
   level: 1
+  rarity: 0
   traits: [conjuration]
   casting: [aM, aS, aV]
   range: 30 feet
@@ -8721,6 +9130,7 @@ summon-nature-s-ally:
   name: SUMMON NATURE'S ALLY
   type: SPELL
   level: 1
+  rarity: 0
   traits: [conjuration]
   casting: [aM, aS, aV]
   range: 30 feet
@@ -8768,6 +9178,7 @@ sunburst:
   name: SUNBURST
   type: SPELL
   level: 7
+  rarity: 0
   traits: [evocation, fire, light, positive]
   casting: [aS, aV]
   range: 500 feet
@@ -8793,6 +9204,7 @@ swamp-of-sloth:
   name: SWAMP OF SLOTH
   type: POWER
   level: 3
+  rarity: 1
   traits: [conjuration]
   casting: [aM, aV, aS]
   range: 120 feet
@@ -8816,6 +9228,7 @@ sweet-dreams:
   name: SWEET DREAMS
   type: POWER
   level: 1
+  rarity: 1
   traits: [enchantment, mental]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -8835,6 +9248,7 @@ synaptic-pulse:
   name: SYNAPTIC PULSE
   type: SPELL
   level: 5
+  rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -8853,6 +9267,7 @@ synesthesia:
   name: SYNESTHESIA
   type: SPELL
   level: 5
+  rarity: 0
   traits: [divination, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -8882,6 +9297,7 @@ take-its-course:
   name: TAKE ITS COURSE
   type: POWER
   level: 2
+  rarity: 1
   traits: [necromancy]
   casting: [aS, aV]
   range: touch
@@ -8900,6 +9316,7 @@ talking-corpse:
   name: TALKING CORPSE
   type: SPELL
   level: 4
+  rarity: 1
   traits: [necromancy]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -8938,6 +9355,7 @@ tanglefoot:
   name: TANGLEFOOT
   type: SPELL
   level: 0
+  rarity: 0
   traits: [cantrip, conjuration, plant]
   casting: [aS, aV]
   range: 30 feet
@@ -8961,6 +9379,7 @@ tangling-creepers:
   name: TANGLING CREEPERS
   type: SPELL
   level: 6
+  rarity: 0
   traits: [conjuration, plant]
   casting: [aM, aS, aV]
   range: 500 feet
@@ -8982,6 +9401,7 @@ telekinetic-haul:
   name: TELEKINETIC HAUL
   type: SPELL
   level: 5
+  rarity: 0
   traits: [evocation]
   casting: [aS, aV]
   range: 120 feet
@@ -8997,6 +9417,7 @@ telekinetic-maneuver:
   name: TELEKINETIC MANEUVER
   type: SPELL
   level: 2
+  rarity: 0
   traits: [attack, evocation, force]
   casting: [aS, aV]
   range: 30 feet
@@ -9010,6 +9431,7 @@ telekinetic-projectile:
   name: TELEKINETIC PROJECTILE
   type: SPELL
   level: 0
+  rarity: 0
   traits: [attack, cantrip, evocation]
   casting: [aS, aV]
   range: 30 feet
@@ -9039,6 +9461,7 @@ telepathic-bond:
   name: TELEPATHIC BOND
   type: SPELL
   level: 5
+  rarity: 1
   traits: [divination, mental]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -9053,6 +9476,7 @@ telepathy:
   name: TELEPATHY
   type: SPELL
   level: 4
+  rarity: 0
   traits: [divination, linguistic, mental]
   casting: [aS, aV]
   duration: 10 minutes
@@ -9072,6 +9496,7 @@ teleport:
   name: TELEPORT
   type: SPELL
   level: 6
+  rarity: 1
   traits: [conjuration, teleportation]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -9110,6 +9535,7 @@ tempest-surge:
   name: TEMPEST SURGE
   type: POWER
   level: 1
+  rarity: 1
   traits: [air, electricity, evocation]
   casting: [aS, aV]
   range: 30 feet
@@ -9131,6 +9557,7 @@ tempt-fate:
   name: TEMPT FATE
   type: POWER
   level: 2
+  rarity: 1
   traits: [divination, fortune]
   casting: [fS]
   trigger: You or an ally within range attempts a saving throw.
@@ -9149,6 +9576,7 @@ tentacular-limbs:
   name: TENTACULAR LIMBS
   type: POWER
   level: 1
+  rarity: 1
   traits: [morph, transmutation]
   casting: [aS, aV]
   duration: 1 minute
@@ -9162,6 +9590,7 @@ thunder-shield:
   name: THUNDER SHIELD
   type: POWER
   level: 4
+  rarity: 1
   traits: [air, electricity, evocation]
   casting: [aS, aV]
   duration: concentration, up to 1 minute or until dismissed
@@ -9185,6 +9614,7 @@ tidal-surge:
   name: TIDAL SURGE
   type: POWER
   level: 1
+  rarity: 1
   traits: [evocation, water]
   casting: [aS]
   range: 60 feet
@@ -9205,6 +9635,7 @@ time-stop:
   name: TIME STOP
   type: SPELL
   level: 10
+  rarity: 1
   traits: [transmutation]
   casting: [aM, aS, aV]
   description:
@@ -9227,6 +9658,7 @@ tongues:
   name: TONGUES
   type: SPELL
   level: 5
+  rarity: 1
   traits: [divination]
   casting: [aS, aV]
   range: touch
@@ -9244,6 +9676,7 @@ touch-of-idiocy:
   name: TOUCH OF IDIOCY
   type: SPELL
   level: 2
+  rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: touch
@@ -9257,6 +9690,7 @@ touch-of-obedience:
   name: TOUCH OF OBEDIENCE
   type: POWER
   level: 1
+  rarity: 0
   traits: [attack, enchantment, mental]
   casting: [aS]
   range: touch
@@ -9274,6 +9708,7 @@ touch-of-shadows:
   name: TOUCH OF SHADOWS
   type: POWER
   level: 1
+  rarity: 1
   traits: [attack, evocation, shadows]
   casting: [aS]
   range: touch
@@ -9290,6 +9725,7 @@ touch-of-undeath:
   name: TOUCH OF UNDEATH
   type: POWER
   level: 2
+  rarity: 1
   traits: [attack, necromancy, negative]
   casting: [aS]
   range: touch
@@ -9314,6 +9750,7 @@ tree-shape:
   name: TREE SHAPE
   type: SPELL
   level: 2
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 8 hours
@@ -9332,6 +9769,7 @@ tree-stride:
   name: TREE STRIDE
   type: SPELL
   level: 5
+  rarity: 0
   traits: [conjuration, teleportation]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -9356,6 +9794,7 @@ triple-time:
   name: TRIPLE TIME
   type: SPELL
   level: 0
+  rarity: 1
   traits: [cantrip, composition, emotion, enchantment, mental]
   casting: [aS]
   area: 60-foot aura
@@ -9369,6 +9808,7 @@ true-seeing:
   name: TRUE SEEING
   type: SPELL
   level: 6
+  rarity: 0
   traits: [divination, revelation]
   casting: [aS, aV]
   duration: 1 minute
@@ -9384,6 +9824,7 @@ true-strike:
   name: TRUE STRIKE
   type: SPELL
   level: 1
+  rarity: 0
   traits: [divination, fortune]
   casting: [aV]
   duration: until the end of your turn
@@ -9397,6 +9838,7 @@ uncontrollable-dance:
   name: UNCONTROLLABLE DANCE
   type: SPELL
   level: 8
+  rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: touch
@@ -9418,6 +9860,7 @@ undead-s-bane:
   name: UNDEAD'S BANE
   type: POWER
   level: 1
+  rarity: 1
   traits: [necromancy]
   casting: [fV]
   trigger: You cast a heal spell to damage undead creatures.
@@ -9430,6 +9873,7 @@ undetectable-alignment:
   name: UNDETECTABLE ALIGNMENT
   type: SPELL
   level: 2
+  rarity: 1
   traits: [abjuration]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -9444,6 +9888,7 @@ unfathomable-song:
   name: UNFATHOMABLE SONG
   type: SPELL
   level: 9
+  rarity: 0
   traits: [auditory, emotion, enchantment, fear, mental]
   casting: [aS, aV]
   range: 120 feet
@@ -9476,6 +9921,7 @@ unfettered-pack:
   name: UNFETTERED PACK
   type: SPELL
   level: 7
+  rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: 30 feet
@@ -9493,6 +9939,7 @@ unimpeded-stride:
   name: UNIMPEDED STRIDE
   type: POWER
   level: 1
+  rarity: 1
   traits: [transmutation]
   casting: [fS]
   trigger: You use a Step or Stride action.
@@ -9506,6 +9953,7 @@ unity:
   name: UNITY
   type: POWER
   level: 2
+  rarity: 1
   traits: [abjuration, fortune]
   casting: [rV]
   trigger: You and one or more allies within range are targeted by a spell or ability that allows a saving throw.
@@ -9519,6 +9967,7 @@ unlife-s-blessing:
   name: UNLIFE'S BLESSING
   type: POWER
   level: 1
+  rarity: 1
   traits: [necromancy]
   casting: [fS]
   trigger: You cast a harm spell to heal an undead creature.
@@ -9531,6 +9980,7 @@ unrelenting-observation:
   name: UNRELENTING OBSERVATION
   type: SPELL
   level: 8
+  rarity: 0
   traits: [divination, scrying]
   casting: [aS, aV]
   range: 100 feet
@@ -9564,6 +10014,7 @@ unseen-servant:
   name: UNSEEN SERVANT
   type: SPELL
   level: 1
+  rarity: 0
   traits: [conjuration]
   casting: [aM, aS, aV]
   range: 60 feet
@@ -9580,6 +10031,7 @@ unusual-anatomy:
   name: UNUSUAL ANATOMY
   type: POWER
   level: 5
+  rarity: 1
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   duration: 1 minute
@@ -9605,6 +10057,7 @@ vampiric-exsanguination:
   name: VAMPIRIC EXSANGUINATION
   type: SPELL
   level: 6
+  rarity: 0
   traits: [death, necromancy, negative]
   casting: [aS, aV]
   area: 30-foot cone
@@ -9627,6 +10080,7 @@ vampiric-touch:
   name: VAMPIRIC TOUCH
   type: SPELL
   level: 3
+  rarity: 0
   traits: [attack, death, necromancy, negative]
   casting: [aS, aV]
   range: touch
@@ -9644,6 +10098,7 @@ veil:
   name: VEIL
   type: SPELL
   level: 4
+  rarity: 0
   traits: [illusion, visual]
   casting: [aS, aV]
   range: 30 feet
@@ -9677,6 +10132,7 @@ veil-of-confidence:
   name: VEIL OF CONFIDENCE
   type: POWER
   level: 1
+  rarity: 1
   traits: [enchantment, mental]
   casting: [aS, aV]
   duration: 1 minute
@@ -9694,6 +10150,7 @@ ventriloquism:
   name: VENTRILOQUISM
   type: SPELL
   level: 1
+  rarity: 0
   traits: [auditory, illusion]
   casting: [aS, aV]
   duration: 1 minute
@@ -9712,6 +10169,7 @@ vibrant-pattern:
   name: VIBRANT PATTERN
   type: SPELL
   level: 6
+  rarity: 0
   traits: [illusion, visual]
   casting: [aM, aS]
   range: 120 feet
@@ -9737,6 +10195,7 @@ vigilant-eye:
   name: VIGILANT EYE
   type: POWER
   level: 4
+  rarity: 1
   traits: [divination]
   casting: [aS, aV]
   range: sight or 1 foot
@@ -9754,6 +10213,7 @@ visions-of-danger:
   name: VISIONS OF DANGER
   type: SPELL
   level: 7
+  rarity: 0
   traits: [auditory, illusion, visual]
   casting: [aM, aS, aV]
   range: 500 feet
@@ -9780,6 +10240,7 @@ volcanic-eruption:
   name: VOLCANIC ERUPTION
   type: SPELL
   level: 7
+  rarity: 0
   traits: [evocation, fire]
   casting: [aS, aV]
   range: 120 feet
@@ -9813,6 +10274,7 @@ waking-nightmare:
   name: WAKING NIGHTMARE
   type: SPELL
   level: 1
+  rarity: 1
   traits: [divination, mental]
   casting: [aS]
   range: touch
@@ -9834,6 +10296,7 @@ wail-of-the-banshee:
   name: WAIL OF THE BANSHEE
   type: SPELL
   level: 9
+  rarity: 0
   traits: [auditory, death, necromancy]
   casting: [aS, aV]
   area: 40-foot aura; Targets any number of creatures
@@ -9851,6 +10314,7 @@ walk-on-air:
   name: WALK ON AIR
   type: POWER
   level: 2
+  rarity: 1
   traits: [air, conjuration]
   casting: [aS]
   description:
@@ -9861,6 +10325,7 @@ wall-of-fire:
   name: WALL OF FIRE
   type: SPELL
   level: 4
+  rarity: 0
   traits: [evocation, fire]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -9881,6 +10346,7 @@ wall-of-force:
   name: WALL OF FORCE
   type: SPELL
   level: 6
+  rarity: 0
   traits: [evocation, force]
   casting: [aM, aS, aV]
   range: 30 feet
@@ -9907,6 +10373,7 @@ wall-of-ice:
   name: WALL OF ICE
   type: SPELL
   level: 5
+  rarity: 0
   traits: [cold, evocation, water]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -9939,6 +10406,7 @@ wall-of-stone:
   name: WALL OF STONE
   type: SPELL
   level: 5
+  rarity: 0
   traits: [conjuration, earth]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -9959,6 +10427,7 @@ wall-of-thorns:
   name: WALL OF THORNS
   type: SPELL
   level: 3
+  rarity: 0
   traits: [conjuration, plant]
   casting: [aM, aS, aV]
   range: 60 feet
@@ -9982,6 +10451,7 @@ wall-of-wind:
   name: WALL OF WIND
   type: SPELL
   level: 3
+  rarity: 0
   traits: [air, evocation]
   casting: [aM, aS, aV]
   range: 120 feet
@@ -10014,6 +10484,7 @@ wanderer-s-guide:
   name: WANDERER'S GUIDE
   type: POWER
   level: 2
+  rarity: 1
   traits: [divination]
   casting-time: 1 minute
   casting: [M,S,V]
@@ -10031,6 +10502,7 @@ warp-mind:
   name: WARP MIND
   type: SPELL
   level: 7
+  rarity: 0
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 120 feet
@@ -10051,6 +10523,7 @@ warped-terrain:
   name: WARPED TERRAIN
   type: POWER
   level: 1
+  rarity: 1
   traits: [illusion, visual]
   casting: [aS, aV]
   range: 60 feet
@@ -10075,6 +10548,7 @@ watching-the-watchers:
   name: WATCHING THE WATCHERS
   type: POWER
   level: 2
+  rarity: 1
   traits: [detection, divination]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -10093,6 +10567,7 @@ water-breathing:
   name: WATER BREATHING
   type: SPELL
   level: 2
+  rarity: 0
   traits: [transmutation]
   casting-time: 1 minute
   casting: [S, V]
@@ -10108,6 +10583,7 @@ water-walk:
   name: WATER WALK
   type: SPELL
   level: 2
+  rarity: 0
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
@@ -10125,6 +10601,7 @@ weakening-ground:
   name: WEAKENING GROUND
   type: SPELL
   level: 7
+  rarity: 0
   traits: [abjuration, consecration]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -10144,6 +10621,7 @@ weapon-of-judgment:
   name: WEAPON OF JUDGMENT
   type: SPELL
   level: 9
+  rarity: 0
   traits: [evocation, force]
   casting: [aS, aV]
   requirements: You have a deity.
@@ -10190,6 +10668,7 @@ weapon-storm:
   name: WEAPON STORM
   type: SPELL
   level: 4
+  rarity: 0
   traits: [evocation]
   casting: [aS, aV]
   area: 30-foot cone or 10-foot aura
@@ -10217,6 +10696,7 @@ weapon-surge:
   name: WEAPON SURGE
   type: POWER
   level: 1
+  rarity: 1
   traits: [evocation]
   casting: [aS]
   description:
@@ -10232,6 +10712,7 @@ web:
   name: WEB
   type: SPELL
   level: 2
+  rarity: 0
   traits: [conjuration]
   casting: [aM, aS, aV]
   range: 30 feet
@@ -10271,6 +10752,7 @@ weird:
   name: WEIRD
   type: SPELL
   level: 9
+  rarity: 0
   traits: [death, emotion, fear, illusion, mental]
   casting: [aS, aV]
   range: 120 feet
@@ -10294,6 +10776,7 @@ wholeness-of-body:
   name: WHOLENESS OF BODY
   type: POWER
   level: 2
+  rarity: 1
   traits: [healing, necromancy, positive]
   casting: [aV]
   description:
@@ -10310,6 +10793,7 @@ wild-claws:
   name: WILD CLAWS
   type: POWER
   level: 1
+  rarity: 1
   traits: [morph, transmutation]
   casting: [aS, aV]
   duration: 1 minute or until dismissed
@@ -10321,12 +10805,12 @@ wild-claws:
       hands while they’re transformed by this spell, but you cannot
       hold an item while attacking.
   heightened:
-    2nd: 
+    2nd:
       The claws radiate primal energy. They count as
       a +1 magic weapon, gaining a +1 item bonus on attack rolls and
       dealing another die of damage on a hit.
     4th: The claws count as a +2 magic weapon.
-    5th: 
+    5th:
       The claws count as a +2 magic weapon and
       leave terrible, ragged wounds that deal 1d6 persistent bleed
       damage on a hit.
@@ -10336,6 +10820,7 @@ wild-winds-gust:
   name: WILD WINDS GUST
   type: POWER
   level: 7
+  rarity: 1
   traits: [attack, evocation]
   casting: [aS, aV]
   requirements: You are in wild winds stance.
@@ -10350,6 +10835,7 @@ wild-winds-stance:
   name: WILD WINDS STANCE
   type: POWER
   level: 4
+  rarity: 1
   traits: [evocation, open, stance]
   casting: [aS]
   duration: until you leave the stance
@@ -10367,6 +10853,7 @@ wind-jump:
   name: WIND JUMP
   type: POWER
   level: 5
+  rarity: 1
   traits: [transmutation]
   casting: [aV]
   duration: 1 minute
@@ -10383,6 +10870,7 @@ wind-walk:
   name: WIND WALK
   type: SPELL
   level: 8
+  rarity: 0
   traits: [air, transmutation]
   casting-time: 10 minutes
   casting: [M, S, V]
@@ -10403,6 +10891,7 @@ wish:
   name: WISH
   type: SPELL
   level: 10
+  rarity: 1
   traits: [divination]
   casting: [aM, aS, aV]
   description:
@@ -10420,6 +10909,7 @@ word-of-freedom:
   name: WORD OF FREEDOM
   type: POWER
   level: 2
+  rarity: 1
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
@@ -10438,6 +10928,7 @@ word-of-truth:
   name: WORD OF TRUTH
   type: POWER
   level: 1
+  rarity: 1
   traits: [divination]
   casting: [aV]
   description:
@@ -10451,6 +10942,7 @@ zone-of-truth:
   name: ZONE OF TRUTH
   type: SPELL
   level: 3
+  rarity: 1
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
