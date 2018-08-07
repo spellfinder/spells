@@ -4,6 +4,7 @@ var filter_map = {
 	name: "",
 	list: "",
 	type: "",
+	rarity: -1
 };
 var data = {};
 var by_list = {};
@@ -20,6 +21,7 @@ function update_filters() {
 	filter_map.name = $('#name_filter').val();
 	filter_map.list = $("#list_filter").val();
 	filter_map.type = $('#type_filter').val();
+	filter_map.rarity = $('#rarity_filter').val();
 	filter_list();
 	return false;
 }
@@ -43,6 +45,10 @@ function filter_list() {
 			continue;
 		}
 		if (filter_map.type && filter_map.type != data[k].type.toLowerCase()) {
+			hide(k);
+			continue;
+		}
+		if (filter_map.rarity >= 0 && filter_map.rarity != data[k].rarity) {
 			hide(k);
 			continue;
 		}

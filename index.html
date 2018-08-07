@@ -12,25 +12,34 @@
 			Spell finder
 			<small><a class="text-white" href="http://paizo.com/pathfinderplaytest">Pathfinder Playtest</a></small>
 		</h1>
+		<div><a class="text-white" href="./Changelog.txt">v1.1 (Changelog)</a></div>
 	</header>
 	<form id="filters_form" class="container rounded bg-light mb-3 p-1">
 		<h3 class="col-12" data-toggle="collapse" data-target="#filters-coll">Filters</h3>
 		<div class="collapse show container form-inline" id="filters-coll">
 			<label for="levelfilter_min">Min. Spell level</label>
-			<input id="levelfilter_min" class="filters form-control" type="number" min="0" max="10" value="0"/>
+			<input id="levelfilter_min" class="filters form-control mx-1" type="number" min="0" max="10" value="0"/>
 			<label for="levelfilter_max">Max. Spell level</label>
-			<input id="levelfilter_max" class="filters form-control" type="number" min="0" max="10" value="10"/>
+			<input id="levelfilter_max" class="filters form-control mx-1" type="number" min="0" max="10" value="10"/>
 			<label for="name_filter">Spell name:</label>
-			<input id="name_filter" class="filters form-control" type="text"/>
+			<input id="name_filter" class="filters form-control mx-1" type="text"/>
 			<label for="list_filter">Spell list:</label>
-			<select id="list_filter" class="filters form-control">
+			<select id="list_filter" class="filters form-control mx-1">
 				<option value="">All</option>
 			</select>
 			<label for="type_filter">Type:</label>
-			<select id="type_filter" class="filters form-control">
+			<select id="type_filter" class="filters form-control mx-1">
 				<option value="">All</option>
 				<option value="power">Power</option>
 				<option value="spell">Spell</option>
+			</select>
+			<label for="rarity_filter">Rarity:</label>
+			<select id="rarity_filter" class="filters form-control mx-1">
+				<option value="-1">All</option>
+				<option value="0">Common</option>
+				<option value="1">Uncommon</option>
+				<option value="2">Rare</option>
+				<option value="3">Unique</option>
 			</select>
 		</div>
 	</form>
