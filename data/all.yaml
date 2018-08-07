@@ -1982,7 +1982,7 @@ dinosaur-form:
       double damage dice; 25 temporary HP; Athletics +24.
 dirge-of-doom:
   name: DIRGE OF DOOM
-  type: CANTRIP
+  type: SPELL
   level: 0
   rarity: 1
   casting: [aV]
@@ -2723,7 +2723,7 @@ echoing-nightmare:
       crit-fail: The target is confused for 1 minute.
 electric-arc:
   name: ELECTRIC ARC
-  type: CANTRIP
+  type: SPELL
   level: 0
   rarity: 0
   traits: [attack, cantrip, electricity, evocation]
@@ -3569,7 +3569,7 @@ fly:
     7th:  The duration increases to 1 hour.
 forbidding-ward:
   name: FORBIDDING WARD
-  type: CANTRIP
+  type: SPELL
   level: 0
   rarity: 0
   traits: [abjuration, cantrip]
