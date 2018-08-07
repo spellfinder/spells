@@ -4,10 +4,12 @@ var filter_map = {
 	name: "",
 	list: "",
 	type: "",
-	rarity: -1
+	rarity: -1,
+	traits: new Set()
 };
 var data = {};
 var by_list = {};
+var traits = new Set();
 
 function capitalize(str) {
 	words = str.split(' ');
@@ -31,12 +33,13 @@ function filter_list() {
 		return $("#" + k).hide();
 	}
 	for (k in data) {
-		level = data[k].level
+		var o = data[k];
+		var level = o.level;
 		if (level < filter_map.level_min || level > filter_map.level_max) {
 			hide(k);
 			continue;
 		}
-		if (data[k].name.toLowerCase().indexOf(filter_map.name.toLowerCase()) < 0) {
+		if (o.name.toLowerCase().indexOf(filter_map.name.toLowerCase()) < 0) {
 			hide(k);
 			continue;
 		}
@@ -44,13 +47,20 @@ function filter_list() {
 			hide(k);
 			continue;
 		}
-		if (filter_map.type && filter_map.type != data[k].type.toLowerCase()) {
+		if (filter_map.type && filter_map.type != o.type.toLowerCase()) {
 			hide(k);
 			continue;
 		}
-		if (filter_map.rarity >= 0 && filter_map.rarity != data[k].rarity) {
+		if (filter_map.rarity >= 0 && filter_map.rarity != o.rarity) {
 			hide(k);
 			continue;
+		}
+		if (filter_map.traits.size) {
+			let filter_traits = Array.from(filter_map.traits);
+			if (!filter_traits.every(function(item) { return o.traits.indexOf(item) >= 0; })) {
+				hide(k);
+				continue;
+			}
 		}
 		$("#" + k).show();
 	}
@@ -183,6 +193,30 @@ function populate(event) {
 	target.addClass('populated');
 }
 
+function add_trait() {
+	var trait_name = $('#traits_filter').val();
+	if (filter_map.traits.has(trait_name)) {
+		return false;
+	}
+	filter_map.traits.add(trait_name);
+	$('#active_trait_filters').append(
+		'<span class="badge badge-secondary mr-1" id="active-' + trait_name + '">' + trait_name +
+		'<a href="#" class="text-white remove-trait" data-trait="' + trait_name + '">&times;</a>' +
+		'</span>'
+	);
+	$('#active-' + trait_name).children('.remove-trait').click(remove_trait);
+	filter_list();
+	return false;
+}
+
+function remove_trait() {
+	var name = $(this).data('trait');
+	$('#active-' + name).remove();
+	filter_map.traits.delete(name);
+	filter_list();
+	return false;
+}
+
 $(document).ready(function() {
 	$.getJSON("data/all.json", null, function(json_data, status) {
 		data = json_data;
@@ -193,10 +227,17 @@ $(document).ready(function() {
 				'"><h5 data-spellid="' + k + '" class="w-100 spellcard-header">' + capitalize(o.name) +
 				' <span class="badge badge-dark">' + capitalize(o.type) + ' ' + o.level + '</span></h5></li>'
 			);
+			for (let trait of o.traits) {
+				traits.add(trait);
+			}
+		}
+		for (let trait of traits) {
+			$("#traits_list").append('<option value="' + trait + '"/>');
 		}
 		$(".spellcard").on('click', populate);
 		$(".filters").on('change', update_filters);
 		$('#name_filter').keyup(update_filters);
+		$('#traits_add').on('click', add_trait);
 	});
 
 	$.getJSON("data/by-list.json", function(json_data, status) {

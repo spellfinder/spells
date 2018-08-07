@@ -1,3 +1,8 @@
+v1.2
+----
+
+- Added trait-based filtering
+
 v1.1
 ----
 

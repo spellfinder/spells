@@ -12,11 +12,12 @@
 			Spell finder
 			<small><a class="text-white" href="http://paizo.com/pathfinderplaytest">Pathfinder Playtest</a></small>
 		</h1>
-		<div><a class="text-white" href="./Changelog.txt">v1.1 (Changelog)</a></div>
+		<div><a class="text-white" href="./Changelog.txt">v1.2 (Changelog)</a></div>
 	</header>
 	<form id="filters_form" class="container rounded bg-light mb-3 p-1">
 		<h3 class="col-12" data-toggle="collapse" data-target="#filters-coll">Filters</h3>
-		<div class="collapse show container form-inline" id="filters-coll">
+		<div class="collapse show container" id="filters-coll">
+			<div class="form-inline">
 			<label for="levelfilter_min">Min. Spell level</label>
 			<input id="levelfilter_min" class="filters form-control mx-1" type="number" min="0" max="10" value="0"/>
 			<label for="levelfilter_max">Max. Spell level</label>
@@ -41,6 +42,16 @@
 				<option value="2">Rare</option>
 				<option value="3">Unique</option>
 			</select>
+			</div>
+			<div class="mt-2 traits-section">
+				<div class="form-inline">
+					<h4 class="mr-2"><label for="traits_filter">Traits</label></h4>
+					<input id="traits_filter" class="form-control w-25 mr-2" list="traits_list"/>
+					<a href="#" id="traits_add" class="btn btn-primary">Add trait</a>
+					<datalist id="traits_list"></datalist>
+				</div>
+				<div id="active_trait_filters"></div>
+			</div>
 		</div>
 	</form>
 	<div class="container">
