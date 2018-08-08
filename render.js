@@ -11,6 +11,9 @@ var data = {};
 var by_list = {};
 var traits = new Set();
 
+const rarities = ['common', 'uncommon', 'rare', 'unique'];
+const rarity_class = ['badge-secondary', 'badge-warning', 'badge-danger', 'badge-primary'];
+
 function capitalize(str) {
 	words = str.split(' ');
 	words = words.map(function(word) { return word[0].toUpperCase() + word.substr(1).toLowerCase(); });
@@ -250,6 +253,7 @@ $(document).ready(function() {
 				'<li class="row justify-content-center list-group-item list-group-item-action spellcard" id="' + k +
 				'"><h5 data-spellid="' + k + '" class="w-100 spellcard-header">' + capitalize(o.name) +
 				' <span class="badge badge-dark">' + capitalize(o.type) + ' ' + o.level + '</span>' +
+				' <span class="badge ' + rarity_class[o.rarity] + '">' + capitalize(rarities[o.rarity]) + '</span>' +
 				'</h5></li>'
 			);
 			for (let trait of o.traits) {
