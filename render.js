@@ -217,6 +217,30 @@ function remove_trait() {
 	return false;
 }
 
+const sort_methods = {
+	'alpha-asc': function(a, b) {
+		return (a.id > b.id) ? 1 : -1;
+	},
+	'alpha-desc': function(a, b) {
+		return (a.id < b.id) ? 1 : -1;
+	},
+	'level-asc': function(a, b) {
+			return data[a.id].level - data[b.id].level;
+	},
+	'level-desc': function(a, b) {
+			return data[b.id].level - data[a.id].level;
+	}
+}
+
+function reorder() {
+	var sort_order = $('#sort-box').val();
+	console.log(sort_order)
+	var items = $('#spell-list').children('li');
+	items.detach().sort(sort_methods[sort_order]);
+	$('#spell-list').append(items);
+	return false;
+}
+
 $(document).ready(function() {
 	$.getJSON("data/all.json", null, function(json_data, status) {
 		data = json_data;
@@ -225,7 +249,8 @@ $(document).ready(function() {
 			$("#spell-list").append(
 				'<li class="row justify-content-center list-group-item list-group-item-action spellcard" id="' + k +
 				'"><h5 data-spellid="' + k + '" class="w-100 spellcard-header">' + capitalize(o.name) +
-				' <span class="badge badge-dark">' + capitalize(o.type) + ' ' + o.level + '</span></h5></li>'
+				' <span class="badge badge-dark">' + capitalize(o.type) + ' ' + o.level + '</span>' +
+				'</h5></li>'
 			);
 			for (let trait of o.traits) {
 				traits.add(trait);
@@ -238,6 +263,7 @@ $(document).ready(function() {
 		$(".filters").on('change', update_filters);
 		$('#name_filter').keyup(update_filters);
 		$('#traits_add').on('click', add_trait);
+		$('#sort-box').on('change', reorder);
 	});
 
 	$.getJSON("data/by-list.json", function(json_data, status) {

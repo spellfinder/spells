@@ -43,9 +43,9 @@
 				<option value="3">Unique</option>
 			</select>
 			</div>
-			<div class="mt-2 traits-section">
+			<div class="mt-2 traits-section form-group">
 				<div class="form-inline">
-					<h4 class="mr-2"><label for="traits_filter">Traits</label></h4>
+					<h5 class="mr-2"><label for="traits_filter">Traits</label></h5>
 					<input id="traits_filter" class="form-control w-25 mr-2" list="traits_list"/>
 					<a href="#" id="traits_add" class="btn btn-primary">Add trait</a>
 					<datalist id="traits_list"></datalist>
@@ -53,6 +53,15 @@
 				<div id="active_trait_filters"></div>
 			</div>
 		</div>
+	</form>
+	<form id="sort" class="form-inline mb-3 p-2 container rounded bg-light">
+		<label for="sort-box">Sort by:</label>
+		<select id="sort-box" class="form-control w-25 ml-2">
+			<option value="alpha-asc">A -&gt; Z</option>
+			<option value="alpha-desc">Z -&gt; A</option>
+			<option value="level-asc"> Level 0 -&gt; 10</option>
+			<option value="level-desc">Level 10 -&gt; 0</option>
+		</select>
 	</form>
 	<div class="container">
 		<ul id="spell-list" class="list-group container"></ul>
