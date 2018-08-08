@@ -112,26 +112,18 @@ function translate_subsection_title(sub) {
 	return sub;
 }
 
-function render_subsections(spell_data) {
-	if (!spell_data.description.subsections) {
-		return ''
-	}
+function _render_dl(list) {
 	var result = [];
-	var subs = spell_data.description.subsections
-
-	for (sub in subs) {
+	for (sub in list) {
 		var title = translate_subsection_title(sub);
-		result.push('<dt class="col-sm-3">' + title + '</dt><dd class="col-sm-9">' + subs[sub] + '</dd>');
+		result.push('<dt class="col-sm-3">' + title + '</dt><dd class="col-sm-9">' + list[sub] + '</dd>');
 	}
 	return '<dl class="row">' + result.join("") + "</dl>";
-	}
+}
 
-function render_table(spell_data) {
-	if (!spell_data.table) {
-		return ''
-	}
-	var headers = spell_data.table.headers;
-	var rows = spell_data.table.rows;
+function _render_table(table) {
+	var headers = table.headers;
+	var rows = table.rows;
 
 	var result = '<table class="table table-striped table-sm">';
 	if (headers) {
@@ -149,11 +141,39 @@ function render_table(spell_data) {
 		}
 		result += '</tr>'
 	}
-	return result + '</tbody></table>'
+	return result + '</tbody></table>';
 }
 
-function format_text(txt) {
-	return txt.replace(/ [-•] /g, '<br /> - ');
+function _render_list(lst) {
+	var result = '<ul>';
+	for (let item of lst) {
+		result += '<li>' + item + '</li>';
+	}
+	return result + '</ul>';
+}
+
+function render_subsection(sub) {
+	var result = '';
+	if (sub.type == 'dl') {
+		return _render_dl(sub.content);
+	}
+	if (sub.type == 'table') {
+		return _render_table(sub.content);
+	}
+
+	if (sub.type == 'list') {
+		return _render_list(sub.content);
+	}
+
+	return result;
+}
+
+function format_text(desc) {
+	let txt = desc.main, subsections = desc.subsections;
+	for (k in subsections) {
+		txt = txt.replace('${subsection.' + k + '}', render_subsection(subsections[k]));
+	}
+	return txt;
 }
 
 function render_traits(traits) {
@@ -188,9 +208,7 @@ function populate(event) {
 			render_traits(spell_data.traits) +
 			property_tags(spell_data) +
 		'</ul>' + '<hr></hr>' +
-		'<p>' + format_text(spell_data.description.main) + '</p>' +
-		render_table(spell_data) +
-		render_subsections(spell_data) +
+		'<p>' + format_text(spell_data.description) + '</p>' +
 		render_heighten(spell_data) +
 	'</div>');
 	target.addClass('populated');
