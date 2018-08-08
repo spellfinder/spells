@@ -1,3 +1,9 @@
+v1.3
+----
+
+- Added sort (alphabetical, level)
+- Added rarity info to spell cards
+
 v1.2
 ----
 
