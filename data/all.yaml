@@ -524,15 +524,20 @@ augury:
       You ask about the results of a particular course of
       action. The spell can predict results up to 30 minutes into the future,
       and reveals the GM's best guess among the following outcomes.
-      • Weal The results will be good.
-      • Woe The results will be bad.
-      • Weal and Woe The results will be a mix of good and bad.
-      • Nothing There won't be particularly good or bad results.
+      ${subsection.outcomes}
       The GM rolls a secret DC 6 flat check. On a failure, the result
       is always "nothing." This makes it impossible to tell whether a
       "nothing" result is accurate. If anyone casts augury on the same
       topic, use the secret roll result from the first casting. It's possible
       to get a different result if circumstances change.
+    subsections:
+      outcomes:
+        type: dl
+        content:
+          Weal: The results will be good.
+          Woe: The results will be bad.
+          Weal and Woe: The results will be a mix of good and bad.
+          Nothing: There won't be particularly good or bad results.
 avatar:
   name: AVATAR
   type: SPELL
@@ -1638,16 +1643,18 @@ crusade:
       cause can't force the targets to harm one another or themselves.
       They become completely dedicated to that cause, depending on
       their levels. They choose their own actions, but they favor direct
-      action over inaction or indirect action.
-      • 13th or Lower The target is so dedicated to the cause that it will
-      pursue it to the death (unless you say otherwise).
-      • 14th The target is dedicated to the cause, but the spell ends for
-      the target if it's reduced to 50 Hit Points or fewer.
-      • 15th As 14th, plus the target can attempt a Will save at the end
-      of each turn to end the spell for itself.
+      action over inaction or indirect action. ${subsection.effects}
       The spell ends for all creatures if you or one of your allies acts
       hostile toward a target, or the cause is complete. The GM might
       determine this spell has alignment traits befitting the cause.
+    subsections:
+      effects:
+        type: dl
+        content:
+          13th or Lower: The target is so dedicated to the cause that it will pursue it to the death (unless you say otherwise).
+          14th: The target is dedicated to the cause, but the spell ends for the target if it's reduced to 50 Hit Points or fewer.
+          15th: As 14th, plus the target can attempt a Will save at the end of each turn to end the spell for itself.
+
   heightened:
     10th: The level limit for each category increases by 2.
 crushing-despair:
@@ -2083,13 +2090,7 @@ dinosaur-form:
       addition to your normal traits. Your gear is absorbed into you; the
       constant abilities of your gear still function, but you can’t activate
       it. When you transform, you gain the following:
-      • AC 25 (TAC 22), ignore armor’s check penalty and reduced Speed.
-      • One or more natural melee attacks, which are the only types of
-      attacks you can use. You’re trained with them. Your attack modifier
-      is +14; your damage bonus is +9. These are Strength based.
-      • 15 temporary Hit Points while you have the form.
-      • Low-light vision and scent.
-      • Athletics bonus of +14 unless your own bonus is higher.
+      ${subsection.stats}
       These special statistics can be adjusted only by penalties,
       circumstance bonuses, and conditional bonuses. Your battle form
       prevents casting spells, speaking, or using most actions with the
@@ -2100,6 +2101,16 @@ dinosaur-form:
       choose the specific type of animal (such as allosaurus instead of
       tyrannosaurus). This has no effect on size or statistics. ${subsection.forms}"
     subsections:
+      stats:
+        type: list
+        content:
+          - AC 25 (TAC 22), ignore armor’s check penalty and reduced Speed.
+          - One or more natural melee attacks, which are the only types of
+            attacks you can use. You’re trained with them. Your attack modifier
+            is +14; your damage bonus is +9. These are Strength based.
+          - 15 temporary Hit Points while you have the form.
+          - Low-light vision and scent.
+          - Athletics bonus of +14 unless your own bonus is higher.
       forms:
         type: dl
         content:
@@ -2576,25 +2587,7 @@ dragon-form:
       addition to your normal traits. Your gear is absorbed into you; the
       constant abilities of your gear still function, but you can’t activate
       it. When you transform, you gain the following:
-        • Blindsense 60 feet and darkvision.
-        • Athletics bonus of +20 unless your own bonus is higher.
-        • AC 27 (TAC 24), ignore armor’s check penalty and reduced Speed.
-        • 10 temporary Hit Points while you have the form.
-        • Resistance 10 against the damage type of your breath weapon.
-        • Speed 40 feet and fly Speed 100 feet.
-        • One or more natural melee attacks, which are the only types
-        of attacks you can use. You’re trained with them. Your attack
-        modifier is +20 and your damage bonus is +6. These are
-        Strength based (for the purposes of enfeebled, for example).
-        • You can activate a breath weapon by spending 2 actions.
-        A creature that succeeds at a DC 24 saving throw takes half
-        damage, or no damage on a critical success. The saving throw
-        is a Reflex save unless stated otherwise in the special ability
-        description below. Once activated, your breath weapon can’t be
-        used again for 1d4 rounds. Your breath weapon is an arcane
-        evocation with the appropriate damage trait. The shape,
-        damage, and damage type depend on your specific dragon form
-        (see below).
+        ${subsection.stats}
       These special statistics can be adjusted only by penalties,
       circumstance bonuses, and conditional bonuses. Your battle form
       prevents casting spells or taking most actions with the manipulate
@@ -2605,6 +2598,28 @@ dragon-form:
       special abilities listed below for the corresponding form.
       ${subsection.dragontype}"
     subsections:
+      stats:
+        type: list
+        content:
+          - Blindsense 60 feet and darkvision.
+          - Athletics bonus of +20 unless your own bonus is higher.
+          - AC 27 (TAC 24), ignore armor’s check penalty and reduced Speed.
+          - 10 temporary Hit Points while you have the form.
+          - Resistance 10 against the damage type of your breath weapon.
+          - Speed 40 feet and fly Speed 100 feet.
+          - One or more natural melee attacks, which are the only types
+            of attacks you can use. You’re trained with them. Your attack
+            modifier is +20 and your damage bonus is +6. These are
+            Strength based (for the purposes of enfeebled, for example).
+          - You can activate a breath weapon by spending 2 actions.
+            A creature that succeeds at a DC 24 saving throw takes half
+            damage, or no damage on a critical success. The saving throw
+            is a Reflex save unless stated otherwise in the special ability
+            description below. Once activated, your breath weapon can’t be
+            used again for 1d4 rounds. Your breath weapon is an arcane
+            evocation with the appropriate damage trait. The shape,
+            damage, and damage type depend on your specific dragon form
+            (see below).
       dragontype:
         type: dl
         content:
@@ -2866,25 +2881,11 @@ earthquake:
   description:
     main:
       You shake the ground, topple creatures, and shatter structures.
-        • Shaking Ground The ground is difficult terrain, and creatures on
-        it take a –2 circumstance penalty to attack rolls and skill checks.
-        • Fissures Each creature on the ground must attempt a Reflex
-        save at the start of its turn to keep footing and avoid falling into
-        40-foot-deep fissures that open. The fissures are permanent,
-        and their walls require DC 15 Athletics to Climb.
-        • Collapse Structures and ceilings might collapse. The GM rolls
-        a flat check for each (DC 16 for a sturdy structure, DC 14 for
-        an average structure and most natural formations, DC 9 for
-        a shoddy structure, or higher or lower as the GM sees fit). A
-        collapse deals 11d6 bludgeoning damage; each creature caught
-        in a collapse must attempt a Reflex save to escape it.
+      ${subsection.effects}
       ${subsection.save}
       The GM might add additional effects in certain areas. Cliffs
       might collapse, causing creatures to fall, or a lake might drain as
       fissures open up below its surface, leaving a morass of quicksand.
-      Heightened (10th) You create a massive earthquake that can
-      devastate a settlement. The range increases to half a mile and the
-      area to a quarter-mile burst.
     subsections:
       save:
         type: dl
@@ -2893,6 +2894,29 @@ earthquake:
           crit: Half collapse damage.
           failure: Full collapse damage and falls prone.
           crit-fail: Full collapse damage and falls into a fissure.
+      effects:
+        type: dl
+        content:
+          Shaking Ground:
+            The ground is difficult terrain, and creatures on
+            it take a –2 circumstance penalty to attack rolls and skill checks.
+          Fissures:
+            Each creature on the ground must attempt a Reflex
+            save at the start of its turn to keep footing and avoid falling into
+            40-foot-deep fissures that open. The fissures are permanent,
+            and their walls require DC 15 Athletics to Climb.
+          Collapse:
+            Structures and ceilings might collapse. The GM rolls
+            a flat check for each (DC 16 for a sturdy structure, DC 14 for
+            an average structure and most natural formations, DC 9 for
+            a shoddy structure, or higher or lower as the GM sees fit). A
+            collapse deals 11d6 bludgeoning damage; each creature caught
+            in a collapse must attempt a Reflex save to escape it.
+  heightened:
+    10th:
+      You create a massive earthquake that can
+      devastate a settlement. The range increases to half a mile and the
+      area to a quarter-mile burst.
 
 echoing-nightmare:
   name: ECHOING NIGHTMARE
@@ -2959,16 +2983,7 @@ elemental-form:
       You count as an elemental in addition to your normal traits. Your
       gear is absorbed into you; the constant abilities still function, but
       you can’t activate it. When you transform, you gain the following:
-        • Darkvision.
-        • Acrobatics (air or fire) or Athletics (earth or water) bonus of +17;
-        ignore this change if your own bonus is higher.
-        • AC 28 (TAC 26), ignore armor’s check penalty and reduced Speed.
-        • 10 temporary Hit Points while you have the form.
-        • Resistance 5 to critical hits and precision damage.
-        • One or more natural melee attacks, which are the only types
-        of attacks you can use. You’re trained with them. Your attack
-        modifier is +15 and your damage bonus is +9. These are
-        Dexterity based (air or fire) or Strength based (earth or water).
+      ${subsection.stats}
       These special statistics can be adjusted only by penalties,
       circumstance bonuses, and conditional bonuses. Your battle form
       prevents casting spells or using most actions with the manipulate
@@ -2978,6 +2993,19 @@ elemental-form:
       in battle form, you gain the attacks, movement types, and special
       abilities listed. ${subsection.forms}"
     subsections:
+      stats:
+        type: list
+        content:
+          - Darkvision.
+          - Acrobatics (air or fire) or Athletics (earth or water) bonus of +17;
+            ignore this change if your own bonus is higher.
+          - AC 28 (TAC 26), ignore armor’s check penalty and reduced Speed.
+          - 10 temporary Hit Points while you have the form.
+          - Resistance 5 to critical hits and precision damage.
+          - One or more natural melee attacks, which are the only types
+            of attacks you can use. You’re trained with them. Your attack
+            modifier is +15 and your damage bonus is +9. These are
+            Dexterity based (air or fire) or Strength based (earth or water).
       forms:
         type: dl
         content:
@@ -4267,22 +4295,30 @@ grease:
   description:
     main:
       You conjure greasy goo, with effects based on your target.
-        • Target an Area Each creature within the area must attempt
-        an Acrobatics check to Maintain Balance against your spell
-        DC. Creatures later entering a square within the area must
-        also attempt an Acrobatics check to Balance. A creature that
-        takes a Step doesn’t have to Balance.
-        • Target an Object If you cast the spell on an unattended
-        object, those trying to pick up the object must succeed at an
-        Acrobatics check against your spell DC to do so. If you target an
-        attended object, the creature that has the object must attempt
-        an Acrobatics check. On a failure, the holder or wielder takes
-        a –2 circumstance penalty to any attack roll or to any check
-        attempted that involves using the object; on a critical failure,
-        the holder or wielder drops the item. The object lands in an
-        adjacent square of the GM’s choice. If the object is worn, the
-        wearer gains a +2 circumstance bonus to Fortitude saving
-        throws against attempts to grapple or shove them.
+      ${subsection.effects}
+    subsections:
+      effects:
+        type: dl
+        content:
+          "Target an Area":
+            Each creature within the area must attempt
+            an Acrobatics check to Maintain Balance against your spell
+            DC. Creatures later entering a square within the area must
+            also attempt an Acrobatics check to Balance. A creature that
+            takes a Step doesn’t have to Balance.
+          "Target an Object":
+            If you cast the spell on an unattended
+            object, those trying to pick up the object must succeed at an
+            Acrobatics check against your spell DC to do so. If you target an
+            attended object, the creature that has the object must attempt
+            an Acrobatics check. On a failure, the holder or wielder takes
+            a –2 circumstance penalty to any attack roll or to any check
+            attempted that involves using the object; on a critical failure,
+            the holder or wielder drops the item. The object lands in an
+            adjacent square of the GM’s choice. If the object is worn, the
+            wearer gains a +2 circumstance bonus to Fortitude saving
+            throws against attempts to grapple or shove them.
+
 guidance:
   name: GUIDANCE
   type: SPELL
@@ -4413,19 +4449,25 @@ harm:
       You restore Hit Points equal to 1d8 plus your spellcasting ability
       modifier to a willing undead target, or deal that amount of negative
       damage to a living target. The number of actions spent Casting this
-      Spell determines its targets, range, area, and other parameters.
-      • Somatic Casting The spell has a range of touch. You must
-      succeed at a melee touch attack to damage a living target.
-      • Somatic Casting, Verbal Casting The spell has a range
-      of 30 feet and doesn’t require a touch attack when targeting
-      a living creature. A living target must attempt a Fortitude
-      save, taking half damage on a success, no damage on a critical
-      success, or double damage on a critical failure.
-      • Material Casting, Somatic Casting, Verbal Casting
-      You disperse negative energy in a 30-foot aura. This has the
-      same effect as the two-action version, but it targets all living
-      and undead creatures in the burst and reduces the amount of
-      healing or damage to your spellcasting ability modifier.
+      Spell determines its targets, range, area, and other parameters.\
+      ${subsection.effects}
+    subsections:
+      effects:
+        type: dl
+        content:
+          "Somatic Casting":
+            The spell has a range of touch. You must
+            succeed at a melee touch attack to damage a living target.
+          "Somatic Casting, Verbal Casting":
+            The spell has a range of 30 feet and doesn’t require a touch attack
+            when targeting a living creature. A living target must attempt a
+            Fortitude save, taking half damage on a success, no damage on a
+            critical success, or double damage on a critical failure.
+          "Material Casting, Somatic Casting, Verbal Casting":
+            You disperse negative energy in a 30-foot aura. This has the
+            same effect as the two-action version, but it targets all living
+            and undead creatures in the burst and reduces the amount of
+            healing or damage to your spellcasting ability modifier.
   heightened:
     "+1":
       the amount of healing or damage increases by 1d8,
@@ -4477,19 +4519,24 @@ heal:
       ability modifier to a willing living target, or deal that amount of
       positive damage to an undead target. The number of actions you
       spend when Casting this Spell determines its targets, range, area,
-      and other parameters.
-      • Somatic Casting The spell has a range of touch. You must
-      succeed at a melee touch attack to damage an undead target.
-      • Somatic Casting, Verbal Casting The spell has a range of
-      30 feet and doesn’t require a touch attack when targeting an
-      undead creature. An undead target must attempt a Fortitude
-      save, taking half damage on a success, no damage on a critical
-      success, or double damage on a critical failure.
-      • Material Casting, Somatic Casting, Verbal Casting
-      You disperse positive energy in a 30-foot aura. This has the
-      same effect as the two-action version, but it targets all living
-      and undead creatures in the burst and reduces the amount of
-      healing or damage to your spellcasting ability modifier.
+      and other parameters. ${subsection.effects}
+    subsections:
+      effects:
+        type: dl
+        content:
+          "Somatic Casting":
+            The spell has a range of touch. You must
+            succeed at a melee touch attack to damage an undead target.
+          "Somatic Casting, Verbal Casting":
+            The spell has a range of 30 feet and doesn’t require a touch attack
+            when targeting an undead creature. An undead target must attempt a
+            Fortitude save, taking half damage on a success, no damage on a
+            critical success, or double damage on a critical failure.
+          "Material Casting, Somatic Casting, Verbal Casting":
+            You disperse positive energy in a 30-foot aura. This has the
+            same effect as the two-action version, but it targets all living
+            and undead creatures in the burst and reduces the amount of
+            healing or damage to your spellcasting ability modifier.
   heightened:
     "+1":
       The amount of healing or damage increases by 1d8,
@@ -4508,9 +4555,13 @@ heal-animal:
       You channel positive energy to heal the target, restoring Hit Points
       equal to 1d8 plus your spellcasting action modifier to the target. The
       number of actions spent Casting this Spell determines its range.
-      • Somatic Casting The spell has a range of touch.
-      • Somatic Casting, Verbal Casting The spell has a range
-      of 30 feet.
+      ${subsection.effects}
+    subsections:
+      effects:
+        type: dl
+        content:
+          "Somatic Casting": The spell has a range of touch.
+          "Somatic Casting, Verbal Casting": The spell has a range of 30 feet.
   heightened:
     "+1": The amount of healing increases by 2d8.
 healer-s-blessing:
@@ -4931,19 +4982,7 @@ insect-form:
       animal in addition to your normal traits while in this form. Your
       gear is absorbed into your form; the constant abilities of your
       gear still function, but you can’t activate any item abilities. When
-      you transform, you gain the following:
-        • Low-light vision.
-        • Treat your Athletics bonus as +12, unless your own bonus is
-        already higher.
-        • AC 23 (TAC 20), ignore armor’s check penalty and reduced Speed.
-        • 10 temporary Hit Points that go away when you leave your
-        battle form.
-        • Each form grants one or more natural melee attacks, as detailed
-        in the insect types below, which are the only types of attacks
-        you can use. You’re trained with them. When attacking with
-        them, your attack modifier is +10 and your damage bonus is
-        +2. These are Strength-based attacks (for the purposes of the
-        enfeebled condition, for example).
+      you transform, you gain the following: ${subsection.stats}
       The special statistics of your battle form can be adjusted only
       by penalties, circumstance bonuses, and conditional bonuses.
       Your battle form prevents you from casting spells, speaking, or
@@ -4958,6 +4997,21 @@ insect-form:
       has no effect on your battle form’s size or statistics.
       ${subsection.forms}"
     subsections:
+      stats:
+        type: list
+        content:
+          - Low-light vision.
+          - Treat your Athletics bonus as +12, unless your own bonus is
+            already higher.
+          - AC 23 (TAC 20), ignore armor’s check penalty and reduced Speed.
+          - 10 temporary Hit Points that go away when you leave your
+            battle form.
+          - Each form grants one or more natural melee attacks, as detailed
+            in the insect types below, which are the only types of attacks
+            you can use. You’re trained with them. When attacking with
+            them, your attack modifier is +10 and your damage bonus is
+            +2. These are Strength-based attacks (for the purposes of the
+            enfeebled condition, for example).
       forms:
         type: dl
         content:
@@ -6074,13 +6128,18 @@ miracle:
       line with its nature and might choose to grant a different request
       (potentially more powerful or better fitting its nature) than the
       one you asked for. A miracle can do any of the following things.
-        • Duplicate any divine spell of 9th level or lower.
-        • Duplicate any non-divine spell of 7th level or lower.
-        • Produce any effect whose power level is in line with the
-        above effects.
+      ${subsection.options}
       The GM might allow you to try using miracle to produce
       greater effects than these, but doing so may be dangerous, or
       the spell may have only a partial effect.
+    subsections:
+      options:
+        type: list
+        content:
+          - Duplicate any divine spell of 9th level or lower.
+          - Duplicate any non-divine spell of 7th level or lower.
+          - Produce any effect whose power level is in line with the
+            above effects.
 mirror-image:
   name: MIRROR IMAGE
   type: SPELL
@@ -6241,19 +6300,7 @@ monstrosity-form:
       normal traits while in this form. Your gear is absorbed into your
       form; your constant abilities of your gear still function, but you
       can’t activate any item abilities. When you transform, you gain
-      the following:
-        • AC 36 (TAC 33) and ignore your armor’s check penalty and
-        Speed reduction.
-        • One or more natural melee attacks, which are the only
-        types of attacks you can use. You’re trained with them.
-        When attacking with them, your attack modifier is +26 and
-        the damage bonus is listed with your attacks. These are
-        Strength-based attacks (for the purposes of the enfeebled
-        condition, for example).
-        • 20 temporary Hit Points that go away when you leave your
-        battle form.
-        • Darkvision.
-        • Athletics +27 (unless your own total modifier is higher).
+      the following: ${subsection.stats}
       The special statistics of your battle form can be adjusted only
       by penalties, circumstance bonuses, and conditional bonuses.
       Your battle form prevents you from casting spells, speaking, or
@@ -6266,6 +6313,21 @@ monstrosity-form:
       gain the attacks, movement types, and special abilities listed.
       ${subsection.forms}"
     subsections:
+      stats:
+        type: list
+        content:
+          - AC 36 (TAC 33) and ignore your armor’s check penalty and
+            Speed reduction.
+          - One or more natural melee attacks, which are the only
+            types of attacks you can use. You’re trained with them.
+            When attacking with them, your attack modifier is +26 and
+            the damage bonus is listed with your attacks. These are
+            Strength-based attacks (for the purposes of the enfeebled
+            condition, for example).
+          - 20 temporary Hit Points that go away when you leave your
+            battle form.
+          - Darkvision.
+          - Athletics +27 (unless your own total modifier is higher).
       forms:
         type: dl
         content:
@@ -6399,20 +6461,7 @@ nature-incarnate:
       in this form. Your gear is absorbed into your form; your constant
       abilities of your gear still function, but you can’t activate any item
       abilities. When you transform, you gain the following:
-        • AC 43 (TAC 39) and ignore your armor’s check penalty and
-        Speed reduction.
-        • One or more natural attacks, which are the only types
-        of attacks you can use. You’re trained with them. When
-        attacking with them, your attack modifier is +31 and the
-        damage bonus is listed with your attacks. Melee attacks
-        you gain are Strength-based attacks (for the purposes of
-        the enfeebled condition, for example), and ranged attacks
-        you gain are Dexterity-based attacks. They all target the
-        enemy’s AC.
-        • 30 temporary Hit Points that go away when you leave your
-        battle form.
-        • Darkvision.
-        • Athletics +32 (unless your own total modifier is higher).
+      ${subsection.stats}
       The special statistics of your battle form can be adjusted only
       by penalties, circumstance bonuses, and conditional bonuses.
       Your battle form prevents you from casting spells or using most
@@ -6423,6 +6472,23 @@ nature-incarnate:
       and special abilities listed below for the form you chose.
       ${subsection.forms}"
     subsections:
+      stats:
+        type: list
+        content:
+          - AC 43 (TAC 39) and ignore your armor’s check penalty and
+            Speed reduction.
+          - One or more natural attacks, which are the only types
+            of attacks you can use. You’re trained with them. When
+            attacking with them, your attack modifier is +31 and the
+            damage bonus is listed with your attacks. Melee attacks
+            you gain are Strength-based attacks (for the purposes of
+            the enfeebled condition, for example), and ranged attacks
+            you gain are Dexterity-based attacks. They all target the
+            enemy’s AC.
+          - 30 temporary Hit Points that go away when you leave your
+            battle form.
+          - Darkvision.
+          - Athletics +32 (unless your own total modifier is higher).
       forms:
         type: dl
         content:
@@ -6482,26 +6548,30 @@ nature-s-enmity:
   description:
     main:
       Animals, plants and weather in the area turn against the targets.
-      Each target suffers from the following effects.
-      • Vegetation springs up from any surface, making targets
-      entangled any time they’re adjacent to a plant or a surface
-      of stone or earth.
-      • Aggressive animals attack unpredictably then depart. At
-      the start of its turn, each target rolls a DC 8 flat check. On
-      a failure, it’s attacked by swarming creatures that deal 2d10
-      slashing damage. The target can attempt a Reflex save, taking
-      half damage on a success, no damage on a critical success, or
-      double damage on a critical failure. The target is flat-footed
-      for 1 round on any result other than a critical success.
-      • The target also loses any connection to nature or natural
-      creatures. Any animal or plant creature becomes hostile to
-      it, even a companion creature like an animal companion.
-      The target also has to succeed at a DC 5 flat check when
-      casting any primal spell or the spell fails.
+      Each target suffers from the following effects. ${subsection.effects}
       The GM might determine that you can’t subject some
       creatures to the ire of nature. For example, a primal spellcaster
       of your level or higher or an avatar of nature might be immune
       to these effects.
+    subsections:
+      effects:
+        type: list
+        content:
+          - Vegetation springs up from any surface, making targets
+            entangled any time they’re adjacent to a plant or a surface
+            of stone or earth.
+          - Aggressive animals attack unpredictably then depart. At
+            the start of its turn, each target rolls a DC 8 flat check. On
+            a failure, it’s attacked by swarming creatures that deal 2d10
+            slashing damage. The target can attempt a Reflex save, taking
+            half damage on a success, no damage on a critical success, or
+            double damage on a critical failure. The target is flat-footed
+            for 1 round on any result other than a critical success.
+          - The target also loses any connection to nature or natural
+            creatures. Any animal or plant creature becomes hostile to
+            it, even a companion creature like an animal companion.
+            The target also has to succeed at a DC 5 flat check when
+            casting any primal spell or the spell fails.
 negate-aroma:
   name: NEGATE AROMA
   type: SPELL
@@ -6839,21 +6909,7 @@ pest-form:
       is absorbed into your form; the constant abilities of your gear
       still function, but you can’t activate any item abilities. When you
       transform, you gain the following abilities:
-        • AC 13 (TAC 13) and ignore your armor’s check penalty and
-        Speed reduction.
-        • One or more natural melee attacks, which are the only
-        types of attacks you can use. You’re trained with them.
-        When attacking with them, your attack modifier is +6
-        and your attacks deal 1 piercing damage (or another type
-        depending on your form, as the GM sees fit). These are
-        Dexterity-based attacks (for the purposes of the sluggish
-        condition, for example).
-        • Weakness 5 to all physical damage. (If you take physical
-        damage while in this form, you take 5 additional damage.)
-        • Speed 10 feet.
-        • Low-light vision, scent.
-        • Acrobatics +10 and Stealth +10 (unless your own total
-        modifiers are higher); Athletics –4.
+      ${subsection.stats}
       The special statistics of your pest form can be adjusted only
       by penalties, circumstance bonuses, and conditional bonuses.
       Your pest form prevents you from casting spells, speaking, or
@@ -6861,6 +6917,25 @@ pest-form:
       your hands (the GM determines which manipulate actions you
       can spend if there’s doubt). You can dismiss this spell by using an
       action (this action has the concentrate trait)."
+    subsections:
+      stats:
+        type: list
+        content:
+        - AC 13 (TAC 13) and ignore your armor’s check penalty and
+          Speed reduction.
+        - One or more natural melee attacks, which are the only
+          types of attacks you can use. You’re trained with them.
+          When attacking with them, your attack modifier is +6
+          and your attacks deal 1 piercing damage (or another type
+          depending on your form, as the GM sees fit). These are
+          Dexterity-based attacks (for the purposes of the sluggish
+          condition, for example).
+        - Weakness 5 to all physical damage. (If you take physical
+          damage while in this form, you take 5 additional damage.)
+        - Speed 10 feet.
+        - Low-light vision, scent.
+        - Acrobatics +10 and Stealth +10 (unless your own total
+          modifiers are higher); Athletics –4.
   heightened:
     4th: You can turn into a flying creature, such as a bird. You also gain a fly Speed of 20 feet.
 phantasmal-calamity:
@@ -7048,18 +7123,7 @@ plant-form:
       constant abilities of your gear still function, but you can’t
       activate any item abilities. When you transform, you gain the
       following abilities:
-      • AC (TAC 24) and ignore your armor’s check penalty and
-      Speed reduction.
-      • One or more natural melee attacks, which are the only types
-      of attacks you can use. You’re trained with them. When
-      attacking with them, your attack modifier is +15 and your
-      damage bonus is +11. These are Strength-based attacks (for
-      the purposes of the enfeebled condition, for example).
-      • 12 temporary Hit Points that go away when you leave your
-      battle form.
-      • Resistance 10 to poison.
-      • Low-light vision.
-      • Athletics +17 (unless your own total modifier is higher).
+      ${subsection.stats}
       The special statistics of your battle form can be adjusted only
       by penalties, circumstance bonuses, and conditional bonuses.
       Your battle form prevents you from casting spells, speaking, or
@@ -7074,6 +7138,21 @@ plant-form:
       a pitcher plant instead of a flytrap). This has no effect on your
       battle form’s size or statistics. ${subsection.forms}"
     subsections:
+      stats:
+        type: list
+        content:
+          - AC (TAC 24) and ignore your armor’s check penalty and
+            Speed reduction.
+          - One or more natural melee attacks, which are the only types
+            of attacks you can use. You’re trained with them. When
+            attacking with them, your attack modifier is +15 and your
+            damage bonus is +11. These are Strength-based attacks (for
+            the purposes of the enfeebled condition, for example).
+          - 12 temporary Hit Points that go away when you leave your
+            battle form.
+          - Resistance 10 to poison.
+          - Low-light vision.
+          - Athletics +17 (unless your own total modifier is higher).
       forms:
         type: dl
         content:
@@ -7261,23 +7340,29 @@ prestidigitation:
       Concentrate on the Spell. The effects are minor and have severe
       limitations. Each time you Concentrate on the Spell, you can
       choose one of four options, based on your type of magic.
-        • Cook (arcane, primal) Chill, warm, or flavor 1 pound of
-        nonliving material.
-        • Lift (arcane, divine, occult) Slowly lift an unattended object
-        of light Bulk or less 1 foot off the ground.
-        • Make (arcane, divine, occult) Create an object of negligible
-        Bulk, made of congealed magical substance and temporary
-        in nature. The object looks crude and artificial and is
-        extremely fragile—it crumbles if put under too much strain
-        and can’t be used as a tool, weapon, or spell component.
-        • Tidy (arcane, primal) Color, clean, or soil an object of light
-        or less Bulk. You can affect an object of 1 Bulk with 10
-        rounds of concentration or a larger object, such as a suit of
-        armor, with 5 minutes of concentration.
+      ${subsection.options}
       Prestidigitation can’t deal damage or cause adverse conditions.
       Any actual change to an object (beyond just moving, cleaning,
       coloring, or soiling it) persists only as long as you Concentrate
       on the Spell.
+    subsections:
+      options:
+        type: dl
+        content:
+          "Cook (arcane, primal)":
+            Chill, warm, or flavor 1 pound of nonliving material.
+          "Lift (arcane, divine, occult)":
+            Slowly lift an unattended object of light Bulk or less 1 foot off
+            the ground.
+          "Make (arcane, divine, occult)":
+            Create an object of negligible Bulk, made of congealed magical
+            substance and temporary in nature. The object looks crude and
+            artificial and is extremely fragile — it crumbles if put under too
+            much strain and can’t be used as a tool, weapon, or spell component.
+          "Tidy (arcane, primal)":
+            Color, clean, or soil an object of light or less Bulk. You can affect
+            an object of 1 Bulk with 10 rounds of concentration or a larger
+            object, such as a suit of armor, with 5 minutes of concentration.
 primal-herd:
   name: PRIMAL HERD
   type: SPELL
@@ -7297,19 +7382,7 @@ primal-herd:
       targets’ gear is absorbed into their forms; the constant abilities of
       the gear still function, but targets can’t activate any item abilities.
       When targets transform, each target gains the following abilities:
-      • AC 41 (TAC 38) and ignores armor’s check penalty and
-      Speed reduction.
-      • New attacks, which are the only types of attacks they
-      can use. They’re trained with them. When attacking with
-      them, they use their attack modifier with the proficiency
-      and item bonus of their most favorable weapon or unarmed
-      Strike, and the damage bonus is listed with the attacks. All
-      attacks are Strength-based attacks (for the purposes of the
-      enfeebled condition, for example).
-      • 20 temporary Hit Points that go away when they leave
-      their battle form.
-      • Low-light vision.
-      • Athletics +28 (unless their own total modifiers are higher).
+      ${subsection.stats}
       The special statistics of the battle form can be adjusted only
       by penalties, circumstance bonuses, and conditional bonuses.
       The battle form prevents the targets from casting spells, or
@@ -7320,6 +7393,22 @@ primal-herd:
       When in battle form, each target gains the attacks, movement
       types, and special abilities listed below. ${subsection.forms}"
     subsections:
+      stats:
+        type: list
+        content:
+          - AC 41 (TAC 38) and ignores armor’s check penalty and
+            Speed reduction.
+          - New attacks, which are the only types of attacks they
+            can use. They’re trained with them. When attacking with
+            them, they use their attack modifier with the proficiency
+            and item bonus of their most favorable weapon or unarmed
+            Strike, and the damage bonus is listed with the attacks. All
+            attacks are Strength-based attacks (for the purposes of the
+            enfeebled condition, for example).
+          - 20 temporary Hit Points that go away when they leave
+            their battle form.
+          - Low-light vision.
+          - Athletics +28 (unless their own total modifiers are higher).
       forms:
         type: dl
         content:
@@ -7348,13 +7437,18 @@ primal-phenomenon:
       might choose to grant a different request (potentially more
       powerful or better fitting its nature) than the one you asked for.
       A primal phenomenon spell can do any of the following things.
-        • Duplicate any primal spell of 9th level or lower.
-        • Duplicate any non-primal spell of 7th level or lower.
-        • Produce any effect whose power level is in line with the
-      above effects.
+      ${subsection.effects}
       At the GM’s discretion, you can try to use primal phenomenon
       to produce greater effects than these, but doing so may be
       dangerous or the spell may have only a partial effect.
+    subsections:
+      effects:
+        type: list
+        content:
+          - Duplicate any primal spell of 9th level or lower.
+          - Duplicate any non-primal spell of 7th level or lower.
+          - Produce any effect whose power level is in line with the
+            above effects.
 prismatic-sphere:
   name: PRISMATIC SPHERE
   type: SPELL
@@ -8248,26 +8342,7 @@ righteous-might:
       divine armaments granted by your deity. Your gear is absorbed
       into your form; the constant abilities of your gear still function,
       but you can’t activate any items. When you transform, you gain
-      the following.
-        • AC 27 (Touch 24) and ignore your armor’s check penalty
-        and Speed reduction
-        • A special attack with a righteous armament version of your
-        favored weapon, which is the only type of attack you can
-        use. When attacking with the special weapon, your attack
-        modifier is +20 and your damage bonus is +4 (or +2 for a
-        ranged attack). Use four of your weapon’s normal damage
-        dice, or one damage die higher if your weapon is a simple
-        weapon with a d4 or d6 damage die. The weapon has
-        one of the following properties that matches your deity’s
-        alignment: anarchic, axiomatic, holy, unholy. If your deity
-        is true neutral, you instead gain access to the weapon’s
-        critical specialization effect.
-        • 10 temporary Hit Points that go away when you leave your
-        battle form.
-        • Resistance 3 against physical damage.
-        • Darkvision.
-        • Speed of 40 feet.
-        • Athletics +20 unless your own total modifier is higher.
+      the following. ${subsection.stats}
       The special statistics of your battle form can be adjusted only
       by penalties, circumstance bonuses, and conditional bonuses.
       Your battle form prevents you from casting spells or using most
@@ -8275,6 +8350,29 @@ righteous-might:
       GM determines which manipulate actions you can spend if
       there’s doubt). You can dismiss this spell by using an action (this
       action has the concentrate trait)."
+    subsections:
+      stats:
+        type: list
+        content:
+          - AC 27 (Touch 24) and ignore your armor’s check penalty
+            and Speed reduction
+          - "A special attack with a righteous armament version of your
+            favored weapon, which is the only type of attack you can
+            use. When attacking with the special weapon, your attack
+            modifier is +20 and your damage bonus is +4 (or +2 for a
+            ranged attack). Use four of your weapon’s normal damage
+            dice, or one damage die higher if your weapon is a simple
+            weapon with a d4 or d6 damage die. The weapon has
+            one of the following properties that matches your deity’s
+            alignment: anarchic, axiomatic, holy, unholy. If your deity
+            is true neutral, you instead gain access to the weapon’s
+            critical specialization effect."
+          - 10 temporary Hit Points that go away when you leave your
+            battle form.
+          - Resistance 3 against physical damage.
+          - Darkvision.
+          - Speed of 40 feet.
+          - Athletics +20 unless your own total modifier is higher.
   heightened:
     8th:
       "Your battle form is Large, your attacks have
@@ -8720,12 +8818,17 @@ shifting-form:
     main:
       You gain one of the following abilities of your choice. You can dismiss
       this spell by using an action (this action has the concentrate trait).
-      • Accelerated 10.
-      • Swim Speed equal to half your Speed.
-      • Darkvision.
-      • You gain a pair of claws. These are agile unarmed attacks that
-      deal 2d6 slashing damage. You’re an expert with these attacks.
-      • Scent 60 feet.
+      ${subsection.stats}
+    subsections:
+      stats:
+        type: list
+        content:
+          - Accelerated 10.
+          - Swim Speed equal to half your Speed.
+          - Darkvision.
+          - You gain a pair of claws. These are agile unarmed attacks that
+            deal 2d6 slashing damage. You’re an expert with these attacks.
+          - Scent 60 feet.
 shillelagh:
   name: SHILLELAGH
   type: SPELL
@@ -8968,12 +9071,17 @@ soothing-ballad:
     main:
       "You draw upon the power of your muse to soothe
       your allies. Choose one of the following three effects:
-        • The spell attempts to counteract fear effects
-        on the targets.
-        • The spell attempts to counteract paralysis effects on the
-        targets.
-        • Soothing ballad restores Hit Points equal to 7d6 plus your
-        spellcasting ability modifier to the targets."
+      ${subsection.effects}"
+    subsection:
+      effects:
+        content:
+          - The spell attempts to counteract fear effects
+            on the targets.
+          - The spell attempts to counteract paralysis effects on the
+            targets.
+          - Soothing ballad restores Hit Points equal to 7d6 plus your
+            spellcasting ability modifier to the targets.
+        type: list
   heightened:
     8th:
       When healing, soothing ballad restores Hit
@@ -9796,15 +9904,19 @@ synesthesia:
       causing them to process noises as bursts of color, smells as
       sounds, and so on. This has three effects, depending on the
       target’s Will save.
-        • Due to the distraction, the target must succeed at a DC 5
-        flat check each time it uses a concentrate action or reaction,
-        or that action or reaction fails.
-        • The reprocessing of the target’s visual senses make all
-        creatures and objects concealed from it.
-        • The creature has trouble moving effectively, making it
-        sluggish 3 and hampered 10 feet.
+      ${subsection.effects}
       ${subsection.save}
     subsections:
+      effects:
+        type: list
+        content:
+          - Due to the distraction, the target must succeed at a DC 5
+            flat check each time it uses a concentrate action or reaction,
+            or that action or reaction fails.
+          - The reprocessing of the target’s visual senses make all
+            creatures and objects concealed from it.
+          - The creature has trouble moving effectively, making it
+            sluggish 3 and hampered 10 feet.
       save:
         type: dl
         content:
@@ -10603,18 +10715,22 @@ unusual-anatomy:
     main:
       "You transform your flesh and organs into a bizarre amalgam
       of glistening skin, rough scales, tufts of hair, and tumorous
-      protuberances. This has three effects:
-        • You gain resistance 10 to precision damage and resistance
-        10 to extra damage from critical hits. If the resistance
-        is greater than the extra damage, it reduces the extra
-        damage to 0 but doesn’t reduce the attack’s normal
-        damage. Any creature attacking you should calculate the
-        normal damage and extra damage separately while your
-        anatomy is altered.
-        • You gain darkvision.
-        • Acid oozes from your skin. Any creature that hits you with
-        an unarmed attack or with a non-reach weapon takes 2d6
-        acid damage."
+      protuberances. This has three effects: ${subsection.effects}"
+    subsections:
+      effects:
+        type: list
+        content:
+          - You gain resistance 10 to precision damage and resistance
+            10 to extra damage from critical hits. If the resistance
+            is greater than the extra damage, it reduces the extra
+            damage to 0 but doesn’t reduce the attack’s normal
+            damage. Any creature attacking you should calculate the
+            normal damage and extra damage separately while your
+            anatomy is altered.
+          - You gain darkvision.
+          - Acid oozes from your skin. Any creature that hits you with
+            an unarmed attack or with a non-reach weapon takes 2d6
+            acid damage.
   heightened:
     "+2": The resistances increase by 5 and the acid damage by 1d6.
 vampiric-exsanguination:
@@ -11384,11 +11500,15 @@ wholeness-of-body:
   description:
     main:
       You heal yourself in one of the following ways,
-      chosen by you when you cast the spell.
-      • You regain Hit Points equal to 1d8 plus your spellcasting
-      ability modifier.
-      • You attempt to cure one toxin afflicting you; attempt to
-      counteract the condition.
+      chosen by you when you cast the spell. ${subsection.effects}
+    subsections:
+      effects:
+        type: list
+        content:
+          - You regain Hit Points equal to 1d8 plus your spellcasting
+            ability modifier.
+          - You attempt to cure one toxin afflicting you; attempt to
+            counteract the condition.
   heightened:
     "+1": If you choose to regain Hit Points, the Hit Points regained increase by 2d8.
 wild-claws:
@@ -11500,13 +11620,18 @@ wish:
     main:
       You pronounce a wish, making your greatest desire come true.
       A wish spell can produce any one of the following effects.
-        • Duplicate any arcane spell of 9th level or lower.
-        • Duplicate any non-arcane spell of 7th level or lower.
-        • Produce any effect whose power level is in line with the
-        above effects.
+      ${subsection.effects}
       The GM might allow you to try using wish to produce greater
       effects than these, but doing so might be dangerous or the spell
       might have only a partial effect.
+    subsections:
+      effects:
+        type: list
+        content:
+          - Duplicate any arcane spell of 9th level or lower.
+          - Duplicate any non-arcane spell of 7th level or lower.
+          - Produce any effect whose power level is in line with the
+            above effects.
 word-of-freedom:
   name: WORD OF FREEDOM
   type: POWER
