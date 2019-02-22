@@ -50,6 +50,30 @@ def validate(data):
                         key=key, spellid=k
                     )
                 )
+
+        for name, sub in (v['description'].get('subsections') or {}).items():
+            if sorted(sub.keys()) != ['content', 'type']:
+                errors.append(
+                    'Invalid subsection "{sub}" format in {k}:'
+                    ' Needs exactly "type" and "content"'.format(
+                        k=k,
+                        sub=name
+                    )
+                )
+            if sub['type'] not in ('list', 'dl', 'table'):
+                errors.append(
+                    'Invalid subsection type in "{k}: {sub}": {type}'.format(
+                        k=k, sub=name, type=sub['type'],
+                    )
+                )
+
+            if 'subsection.{name}'.format(name=name) not in \
+                    v['description']['main']:
+                errors.append(
+                    'Subsection "{sub}" is declared in {k} but never used in '
+                    'main'.format(k=k, sub=name)
+                )
+
         if to_id(v['name']) != k:
             errors.append(
                 'Spell ID {id} does not match spell name {name}'.format(
