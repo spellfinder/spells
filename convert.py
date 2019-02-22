@@ -60,6 +60,19 @@ def validate(data):
                         sub=name
                     )
                 )
+            if sub['type'] not in ('list', 'dl', 'table'):
+                errors.append(
+                    'Invalid subsection type in "{k}: {sub}": {type}'.format(
+                        k=k, sub=name, type=sub['type'],
+                    )
+                )
+
+            if 'subsection.{name}'.format(name=name) not in \
+                    v['description']['main']:
+                errors.append(
+                    'Subsection "{sub}" is declared in {k} but never used in '
+                    'main'.format(k=k, sub=name)
+                )
 
         if to_id(v['name']) != k:
             errors.append(
