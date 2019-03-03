@@ -5898,7 +5898,7 @@ maze:
       extradimensional maze of eldritch origin. Once each turn, the
       target can spend 1 action to attempt a Survival check or Perception
       check against your spell DC to escape the maze.
-      The possible outcomes of the Survival check are as follows.
+      The possible outcomes of the Survival check or Perception check are as follows.
       ${subsection.outcomes}
       Teleportation magic doesn't help the creature escape unless
       the magic can transport across planes, such as plane shift. When
