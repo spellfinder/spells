@@ -1,3 +1,8 @@
+v1.5
+----
+
+- Updated spell text and damage to match the update document v1.6
+
 v1.4
 ----
 

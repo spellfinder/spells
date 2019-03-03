@@ -100,7 +100,7 @@ acid-arrow:
   target: one creature or object
   description:
     main:
-      Make a ranged touch attack against the target. On a hit, you deal acid damage equal to 1d8 plus your
+      Make a ranged touch attack against the target. On a hit, you deal acid damage equal to 2d8 plus your
       spellcasting ability modifier plus 1d6 persistent acid damage. On a critical hit, double the damage, but
       not the persistent damage.
   heightened:
@@ -338,7 +338,7 @@ angelic-wings:
 animal-form:
   name: Animal Form
   type: spell
-  level: 3
+  level: 2
   rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
@@ -350,34 +350,37 @@ animal-form:
       When you transform, you gain the following: ${subsection.stats}
       These special statistics can be adjusted only by penalties, circumstance bonuses, and conditional bonuses.
       Your battle form prevents casting spells, speaking, or using most actions with the manipulate trait that require
-      hands. (The GM decides if there's doubt.) You can dismiss the spell with a concentrate action. If you prepare
-      this spell, choose from the options below. You gain the attacks, Speeds, and special abilities listed. You can
-      choose the specific type of animal (such as lion or snow leopard for cat). This has no effect on size or statistics.
+      hands. (The GM decides if there's doubt.) You can dismiss the spell with a concentrate action.
+      If you prepare this spell, choose from the options below. You gain the attacks, Speeds, and special abilities
+      listed. You can choose the specific type of animal (such as lion or snow leopard for cat). This has no effect
+      on size or statistics.
       ${subsection.forms}"
     subsections:
       stats:
         type: list
         content:
-          - AC 22 (TAC 20), ignore armor's check penalty and reduced Speed.
+          - AC 19 (TAC 17), ignore armor's check penalty and reduced Speed.
           - One or more unarmed melee attacks, which are the only types of attacks you can use.
-            You're trained with them. Your attack modifier is +10 and your damage bonus is +5. These are Strength based
+            You're trained with them. Your attack modifier is +7 and your damage bonus is +1. These are Strength based
             (for the purpose of enfeebled, for example).
-          - 10 temporary Hit Points while you have the form.
+          - 5 temporary Hit Points while you have the form.
           - Low-light vision.
-          - Athletics bonus of +11 unless your own is higher.
+          - Athletics bonus of +7 unless your own is higher.
       forms:
         type: dl
         content:
-          Ape: Speed 25 feet, climb Speed 20 feet; scent; fist, Damage 2d6 bludgeoning
-          Bear: Speed 25 feet; scent; jaws, Damage 2d8 piercing; claw (agile), Damage 1d8 slashing.
-          Bull: Speed 30 feet; scent; horn, Damage 2d8 piercing.
-          Canine: Speed 40 feet; scent; jaws, Damage 2d8 piercing.
-          Cat: Speed 40 feet; scent; jaws, Damage 2d6 piercing; claw (agile), Damage 1d10 slashing.
-          Deer: Speed 45 feet; scent; antler, Damage 2d6 piercing.
-          Frog: Speed 25 feet, swim, Speed 25 feet; scent; jaws, Damage 2d6 bludgeoning; tongue (reach 15 feet), Damage 2d4 bludgeoning.
-          Shark: swim Speed 35 feet; scent; jaws, Damage 2d8 piercing.
-          Snake: Speed 20 feet, climb Speed 20 feet, swim Speed 20 feet; scent; fangs, Damage 2d4 piercing plus 1d6 poison
+          Ape: Speed 25 feet, climb Speed 20 feet; scent 30 feet; fist, Damage 2d6 bludgeoning
+          Bear: Speed 25 feet; scent 30 feet; jaws, Damage 2d8 piercing; claw (agile), Damage 1d8 slashing.
+          Bull: Speed 30 feet; scent 30 feet; horn, Damage 2d8 piercing.
+          Canine: Speed 40 feet; scent 30 feet; jaws, Damage 2d8 piercing.
+          Cat: Speed 40 feet; scent 30 feet; jaws, Damage 2d6 piercing; claw (agile), Damage 1d10 slashing.
+          Deer: Speed 45 feet; scent 30 feet; antler, Damage 2d6 piercing.
+          Frog: Speed 25 feet, swim, Speed 25 feet; scent 30 feet; jaws, Damage 2d6 bludgeoning; tongue (reach 15 feet), Damage 2d4 bludgeoning.
+          Shark: swim Speed 35 feet; scent 30 feet; jaws, Damage 2d8 piercing.
+          Snake: Speed 20 feet, climb Speed 20 feet, swim Speed 20 feet; scent 30 feet; fangs, Damage 2d4 piercing plus 1d6 poison
   heightened:
+    3rd:
+      Your statistics are AC 23 (TAC 21); attack modifier +11; damage bonus +5; 10 temporary HP; Athletics +12
     4th:
       Your battle form is Large and your attacks have 10-foot reach. You must have enough space to expand or the spell
       is lost. Your statistics are AC 25 (TAC 22); attack modifier +14; damage bonus +9; 15 temporary HP; Athletics +14.
@@ -744,7 +747,7 @@ black-tentacles:
     main:
       Tentacles rise and attempt to Grapple each creature in the area.
       Make spell rolls against the Fortitude DC of each creature. Any
-      creature you succeed against is grabbed and takes 2d6 bludgeoning
+      creature you succeed against is grabbed and takes 3d6 bludgeoning
       damage. Whenever a creature ends its turn in the tentacles, the
       tentacles attempt to grab that creature if they haven't already, and
       deal 1d6 bludgeoning damage to any creature grabbed.
@@ -764,7 +767,7 @@ blade-barrier:
     main:
       Blades of force form a churning wall. The wall is a straight line 20
       feet high, 120 feet long, and 2 inches thick and provides cover. You
-      deal 6d8 force damage to each creature in its space when the wall
+      deal 8d8 force damage to each creature in its space when the wall
       is created, that attempts to pass through the wall, or that ends its
       turn inside the wall; the creature must attempt a Reflex save. A
       creature that succeeds when the wall is created is pushed to the
@@ -890,10 +893,10 @@ breath-of-life:
   target: the triggering creature
   description:
     main:
-      The target regains 4d8 plus your spellcasting ability modifier
-      Hit Points, reduces its dying condition to dying 3, and gets a +2
-      conditional bonus to its next recovery save. You can't use breath of
-      life if the triggering effect was disintegrate or a death effect.
+      You prevent the target from
+      dying, and heal the target 4d8 plus your spellcasting ability
+      modifier Hit Points. You can't use breath of life if the triggering
+      effect was disintegrate or a death effect.
 burning-hands:
   name: BURNING HANDS
   type: SPELL
@@ -904,7 +907,7 @@ burning-hands:
   area: 15-foot cone
   description:
     main:
-      Gouts of flame rush from your hands. You deal 2d6 fire damage to
+      Gouts of flame rush from your hands. You deal 3d6 fire damage to
       creatures in the area; they must each attempt a Reflex save.
       ${subsection.save}
     subsections:
@@ -1012,12 +1015,12 @@ chain-lightning:
   description:
     main:
       You discharge a powerful bolt of lightning at the target, dealing
-      7d12 electricity damage unless it succeeds at a Reflex save. The
+      9d12 electricity damage unless it succeeds at a Reflex save. The
       electricity arcs to another creature within 30 feet of the first
       target, jumps to another creature within 30 feet of that target,
       and so on. You can end the chain at any point. You can't target the
       same creature more than once, and you must have line of effect to
-      all targets. Targets after the first take 6d12 electricity damage and
+      all targets. Targets after the first take 8d12 electricity damage and
       must attempt a Reflex save. Roll the damage only once and apply
       it to each target (halving or doubling when necessary).
       ${subsection.save}
@@ -1119,7 +1122,7 @@ chill-touch:
   type: SPELL
   level: 0
   rarity: 0
-  traits: [attack, necromancy, negative]
+  traits: [attack, cantrip, necromancy, negative]
   casting: [aS, aV]
   range: touch
   target: one living or undead creature
@@ -1167,16 +1170,16 @@ chromatic-wall:
         content:
           "1: Red":
             Destroys ranged weapon ammunition (such as arrows
-            and crossbow bolts) that would pass through, and deals 15 fire
+            and crossbow bolts) that would pass through, and deals 20 fire
             damage to anyone passing through (Reflex half, or none on a
             critical success). Dispelled by cone of cold.
           "2: Orange":
             Destroys thrown weapons that would pass through,
-            and deals 20 acid damage to anyone passing through (Reflex
+            and deals 25 acid damage to anyone passing through (Reflex
             half, or none on a critical success). Dispelled by gust of wind.
           "3: Yellow":
             Stops acid, cold, electricity, fire, force, negative, positive,
-            and sonic effects from passing through, and deals 25 electricity
+            and sonic effects from passing through, and deals 35 electricity
             damage to anyone passing through (Reflex half, or none on a
             critical success). Dispelled by disintegrate.
           "4: Green":
@@ -1290,7 +1293,7 @@ cloudkill:
     main:
       You conjure a moving bank of poisonous fog. This functions as
       obscuring mist, except the area moves 10 feet away from you each
-      round. You deal 5d6 poison damage to each breathing creature
+      round. You deal 7d6 poison damage to each breathing creature
       that starts its turn in the spell's area; each creature must attempt
       a Fortitude save. ${subsection.save}
     subsections:
@@ -1426,7 +1429,7 @@ cone-of-cold:
   area: 30-foot cone
   description:
     main:
-      Icy cold rushes forth from your hands. You deal 11d6 cold damage to
+      Icy cold rushes forth from your hands. You deal 14d6 cold damage to
       creatures in the area; they must each attempt a Reflex save.
       When casting this Spell, you can add a Material Casting action to include a
       small crystal or icicle. If you do, increase the area to a 60-foot cone.
@@ -1609,7 +1612,7 @@ crisis-of-faith:
   description:
     main:
       You assault the target's faith, riddling the creature with doubt and
-      mental turmoil for 6d4 mental damage, or 6d6 mental damage if it
+      mental turmoil for 8d4 mental damage, or 8d6 mental damage if it
       can cast divine spells. The effects are determined by its Will save.
       ${subsection.save}
       To many deities, casting this spell on a follower of your own deity without
@@ -2203,7 +2206,7 @@ disintegrate:
   description:
     main:
       You fire a green ray at your target. Make a ranged touch attack.
-      You deal 12d10 damage and the target must attempt a Fortitude
+      You deal 16d10 damage and the target must attempt a Fortitude
       save. On a critical hit, treat the save result as one degree worse. A
       creature reduced to 0 HP is reduced to fine powder; gear remains.
       An object you hit is destroyed (no save), regardless of Hardness,
@@ -2331,8 +2334,8 @@ divine-decree:
     main:
       You utter potent words linked to your faith. Choose an alignment
       your deity has (chaotic, evil, good, or lawful). You can’t cast this spell
-      if you don’t have a deity or your deity is true neutral. You deal 7d6
-      damage to creatures of that alignment in the area; each creature
+      if you don’t have a deity or your deity is true neutral. You deal 9d6
+      damage to creatures in the area; each creature
       must attempt a Will save. Creatures that match the alignment are
       unaffected. Those that neither match nor oppose it don’t suffer
       effects other than damage and treat their result as one degree better.
@@ -2411,8 +2414,8 @@ divine-wrath:
   description:
     main:
       Choose an alignment your deity has (chaotic, evil, good, or lawful).
-      You can’t cast this spell if you don’t have a deity or your deity
-      your deity is true neutral. You deal 4d8 damage of that alignment.
+      You can’t cast this spell if you don’t have a deity or
+      your deity is true neutral. You deal 5d8 damage of that alignment.
       Creatures that match the alignment are unaffected. Those that
       neither match nor oppose it treat their result as one degree better.
       ${subsection.save}
@@ -2603,13 +2606,13 @@ dragon-form:
         content:
           - Blindsense 60 feet and darkvision.
           - Athletics bonus of +20 unless your own bonus is higher.
-          - AC 27 (TAC 24), ignore armor’s check penalty and reduced Speed.
+          - AC 29 (TAC 26), ignore armor’s check penalty and reduced Speed.
           - 10 temporary Hit Points while you have the form.
           - Resistance 10 against the damage type of your breath weapon.
           - Speed 40 feet and fly Speed 100 feet.
           - One or more natural melee attacks, which are the only types
             of attacks you can use. You’re trained with them. Your attack
-            modifier is +20 and your damage bonus is +6. These are
+            modifier is +20 and your damage bonus is +11. These are
             Strength based (for the purposes of enfeebled, for example).
           - You can activate a breath weapon by spending 2 actions.
             A creature that succeeds at a DC 24 saving throw takes half
@@ -2675,8 +2678,8 @@ dragon-form:
     8th:
       Your battle form is Huge, your fly Speed is
       accelerated 20, and your attacks have 10-foot reach (15 if they
-      previously had 10). Your statistics are Athletics +26; AC 34 (TAC 30);
-      15 temporary HP; attack modifier +26; damage bonus +12; breath
+      previously had 10). Your statistics are Athletics +26; AC 35 (TAC 31);
+      15 temporary HP; attack modifier +26; damage bonus +17; breath
       weapon DC 30; +14 conditional bonus to breath weapon damage.
 dragon-wings:
   name: DRAGON WINGS
@@ -3589,7 +3592,7 @@ finger-of-death:
   description:
     main:
       You point your finger toward the target and speak
-      a word of slaying. You deal 50 negative damage to the target, and
+      a word of slaying. You deal 65 negative damage to the target, and
       the target must attempt a Fortitude save. If the damage from finger
       of death reduces the target to 0 Hit Points, the target dies instantly.
       ${subsection.save}
@@ -3633,7 +3636,7 @@ fire-seeds:
       Four acorns grow in your hand, their shells streaked
       with red patterns. You or anyone else who has one of the acorns
       can toss it up to 30 feet with an action that has the manipulate
-      trait. It explodes in a 5-foot burst, dealing 4d6 fire damage, and
+      trait. It explodes in a 5-foot burst, dealing 5d6 fire damage, and
       each creature in the area must attempt a Reflex save. The save
       uses your spell DC, even if someone else throws the acorn.
        ${subsection.save}
@@ -3682,7 +3685,7 @@ fireball:
   area: 20-foot burst
   description:
     main:
-      A burst of fire explodes, dealing 6d6 fire damage;
+      A burst of fire explodes, dealing 8d6 fire damage;
       creatures in the area must attempt a Reflex save. ${subsection.save}
     subsections:
       save:
@@ -3721,7 +3724,7 @@ flame-strike:
   description:
     main:
       You call a rain of divine fire that plummets down from above,
-      dealing 8d6 fire damage. Each creature in the area must attempt
+      dealing 11d6 fire damage. Each creature in the area must attempt
       a Reflex save. Because the flame is infused with divine energy,
       creatures in the area apply only half their usual fire resistance.
       Creatures that are immune to fire treat their result on the saving
@@ -3751,7 +3754,7 @@ flaming-sphere:
   description:
     main:
       You create a sphere of flame in a square within range. The sphere
-      deals 3d6 fire damage to each creature in the sphere’s square;
+      deals 4d6 fire damage to each creature in the sphere’s square;
       each creature must attempt a Reflex save. Once per round when
       you Concentrate on this Spell, you can direct the sphere to roll
       to a spot within range and deal 3d6 fire damage; each creature
@@ -4268,7 +4271,7 @@ grim-tendrils:
     main:
       Black shadows curl out from your fingertips and race through
       the air, taking the form of ephemeral vines spiked with thorns.
-      You deal 2d4 negative damage and 1 persistent bleed damage
+      You deal 3d4 negative damage and 1 persistent bleed damage
       to living creature in the line, depending on their Fortitude saves.
       ${subsection.save}
     subsections:
@@ -4301,11 +4304,13 @@ grease:
         type: dl
         content:
           "Target an Area":
-            Each creature within the area must attempt
-            an Acrobatics check to Maintain Balance against your spell
-            DC. Creatures later entering a square within the area must
-            also attempt an Acrobatics check to Balance. A creature that
-            takes a Step doesn’t have to Balance.
+            Any solid ground in the area is covered with
+            grease. Each creature standing on the greasy surface must
+            succeed at a Reflex save or an Acrobatics check to Maintain
+            Balance against your spell DC or fall prone. Creatures
+            moving onto the greasy surface after the spell is cast must
+            also attempt an Acrobatics check to Balance. A creature
+            that takes a Step doesn’t have to attempt a check or save.
           "Target an Object":
             If you cast the spell on an unattended
             object, those trying to pick up the object must succeed at an
@@ -4326,7 +4331,7 @@ guidance:
   rarity: 0
   traits: [cantrip, divination]
   casting: [aS, aV]
-  range: touch
+  range: 30 feet
   target: one creature
   duration: until the start of your next turn or until dismissed
   description:
@@ -4658,7 +4663,7 @@ horrid-wilting:
   target: any number of living creatures
   description:
     main:
-      You pull the moisture from the targets’ bodies, dealing 9d10 negative
+      You pull the moisture from the targets’ bodies, dealing 12d10 negative
       damage. Each target must attempt a Fortitude save to avoid
       withering in this fashion. Creatures made of water (such as water
       elementals) and plant creatures automatically treat their outcomes
@@ -4952,7 +4957,7 @@ implosion:
   description:
     main:
       You crush the target by causing it to collapse in on itself, dealing
-      75 damage. The target must attempt a Fortitude save. Each time
+      100 damage. The target must attempt a Fortitude save. Each time
       you Concentrate on the Spell, you must choose a new target to
       be subject to the same effect. You can’t affect more than one
       creature per turn with implosion. You can’t target a creature
@@ -5097,7 +5102,7 @@ inspire-heroics:
     main:
       You call on your muse to greatly increase your inspire courage
       composition’s benefits. Attempt a Performance check. The DC
-      is usually a high-difficulty DC of a level equal to that of the
+      is usually a hard-difficulty DC of a level equal to that of the
       highest-level target of your composition, but the GM can assign
       a different DC based on the circumstances. The effect of your
       inspire courage depends on the result of your check.
@@ -5330,7 +5335,7 @@ leng-s-sting:
   target: one creature
   description:
     main:
-      You deal 7d4 piercing damage to the touched
+      You deal 9d4 piercing damage to the touched
       creature and afflict it with Leng spider venom, depending on its
       Fortitude save. ${subsection.save} ${subsection.poison}
     subsections:
@@ -5411,7 +5416,7 @@ lightning-bolt:
   description:
     main:
       All creatures in the area must attempt a Reflex save to avoid
-      taking 4d12 electricity damage. ${subsection.save}
+      taking 5d12 electricity damage. ${subsection.save}
     subsections:
       save:
         type: dl
@@ -5434,7 +5439,7 @@ lingering-composition:
     main:
       You attempt to add a flourish to your composition to extend
       its benefits. Attempt a Performance check. The DC is usually a
-      high-difficulty DC of a level equal to the highest-level target of
+      hard-difficulty DC of a level equal to the highest-level target of
       your composition, but the GM can assign a different DC based on
       the circumstances. The effect depends on the result of your check.
       ${subsection.result}
@@ -5891,8 +5896,8 @@ maze:
     main:
       When you cast maze, you transport the target into an
       extradimensional maze of eldritch origin. Once each turn, the
-      target can spend 1 action to attempt a Survival check against
-      your spell DC to escape the maze.
+      target can spend 1 action to attempt a Survival check or Perception
+      check against your spell DC to escape the maze.
       The possible outcomes of the Survival check are as follows.
       ${subsection.outcomes}
       Teleportation magic doesn’t help the creature escape unless
@@ -6003,9 +6008,9 @@ meteor-swarm:
   description:
     main:
       You call down four blazing meteors that explode. Each meteor deals
-      3d10 bludgeoning damage to any creatures in the 10-foot burst at
+      4d10 bludgeoning damage to any creatures in the 10-foot burst at
       the center of each area of effect; the meteor then explodes, dealing
-      14d6 fire damage to any creatures in each 40-foot burst. The
+      19d6 fire damage to any creatures in each 40-foot burst. The
       meteors’ central 10-foot bursts can’t overlap, and a creature takes
       the same amount of fire damage no matter how many overlapping
       explosions it’s caught in. Each creature in the area can attempt a
@@ -6358,6 +6363,10 @@ monstrosity-form:
             you’re adjacent to at any point during your movement takes
             4d8+10 slashing damage (Reflex DC 30 for half damage, or
             no damage on a critical success)."
+  heightened:
+    9th:
+      Your statistics are AC 29 (TAC 26); attack modifier of +28; add 1 additional damage die
+      on all Strikes; 25 temporary HP; Athletics +29.
 moon-frenzy:
   name: MOON FRENZY
   type: SPELL
@@ -6894,7 +6903,7 @@ perfected-mind:
 pest-form:
   name: PEST FORM
   type: SPELL
-  level: 2
+  level: 1
   rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
@@ -6937,6 +6946,7 @@ pest-form:
         - Acrobatics +10 and Stealth +10 (unless your own total
           modifiers are higher); Athletics –4.
   heightened:
+    2nd: The duration increases to 1 hour.
     4th: You can turn into a flying creature, such as a bird. You also gain a fly Speed of 20 feet.
 phantasmal-calamity:
   name: PHANTASMAL CALAMITY
@@ -6952,7 +6962,7 @@ phantasmal-calamity:
       A vision of apocalyptic destruction fills the mind of each
       target. Each creature in the area sees its own version of
       the calamity tailored to its worst fears, and must attempt
-      a Will saving throw. This vision deals 11d6 mental damage
+      a Will saving throw. This vision deals 15d6 mental damage
       and inflicts other effects, depending on the outcome of each
       creature’s saving throw.
       It must succeed at a Reflex saving throw or believe it’s
@@ -6994,12 +7004,12 @@ phantasmal-killer:
         content:
           success: The target is frightened 1.
           crit: The target is unaffected.
-          failure: The target takes 8d6 mental damage and is frightened 2.
+          failure: The target takes 11d6 mental damage and is frightened 2.
           crit-fail:
             The target is so afraid it might instantly die.
             It must attempt a Fortitude saving throw; if the target
             fails, it is reduced to 0 Hit Points and dies. On a successful
-            Fortitude save, the target still takes 12d6 mental damage,
+            Fortitude save, the target still takes 16d6 mental damage,
             is fleeing until the end of its next turn, and is frightened 4.
   heightened:
     "+1": The damage on a failure increases by 2d6 and on a critical failure by 3d6.
@@ -7015,7 +7025,7 @@ phantom-pain:
   duration: 1 minute
   description:
     main:
-      Pain wracks the target, dealing 1d4 mental damage and 1d4
+      Pain wracks the target, dealing 1d4 mental damage and 2d4
       persistent mental damage. The target must attempt a Will
       saving throw. ${subsection.save}
     subsections:
@@ -7188,7 +7198,7 @@ polar-ray:
       You fire a blue-white ray of freezing air and swirling sleet from
       your finger that can chill its target to the bones. You must
       succeed at a ranged touch attack to affect the target, which then
-      takes 8d8 cold damage and is drained 2.
+      takes 13d8 cold damage and is drained 2.
   heightened:
     "+1": The damage increases by 2d8.
 possession:
@@ -7273,11 +7283,11 @@ power-word-kill:
         content:
           "14th or Lower": The target dies instantly.
           "15th":
-            If the target had 50 Hit Points or fewer, it dies instantly;
+            If the target had 65 Hit Points or fewer, it dies instantly;
             otherwise, it drops to 0 Hit Points and gains dying 1 or
             increases its dying condition by 1 if it’s already dying.
           "16th or Higher":
-            The target takes 50 damage; if this brings the
+            The target takes 65 damage; if this brings the
             target to 0 Hit Points, the target dies instantly.
   heightened:
     "+1": The levels at which each outcome applies increase by 2.
@@ -7491,10 +7501,10 @@ prismatic-spray:
             - Save
             - Effect (Traits)
           rows:
-            - [1, Red, Reflex, 30 fire damage (fire)]
-            - [2, Orange, Reflex, 40 acid damage (acid)]
-            - [3, Yellow, Reflex, 50 electricity damage (electricity)]
-            - [4, Green, Fortitude, 20 poison damage and enfeebled 1 for 1 minute (poison)]
+            - [1, Red, Reflex, 40 fire damage (fire)]
+            - [2, Orange, Reflex, 50 acid damage (acid)]
+            - [3, Yellow, Reflex, 65 electricity damage (electricity)]
+            - [4, Green, Fortitude, 25 poison damage and enfeebled 1 for 1 minute (poison)]
             - [5, Blue, Fortitude, Affected as if by flesh to stone]
             - [6, Indigo, Will, "Confused, per the warp mind spell (mental)"]
             - [7, Violet, Will, "Slowed 1 for 1 minute sent to another plane, per plane shift, on a critical failure (teleportation)"]
@@ -7710,7 +7720,7 @@ purple-worm-sting:
   target: one creature
   description:
     main:
-      You deal 6d4 piercing damage to the touched
+      You deal 8d4 piercing damage to the touched
       creature and afflict it with purple worm venom, depending on
       the outcome of its Fortitude save. ${subsection.save} ${subsection.poison}
     subsections:
@@ -7870,7 +7880,7 @@ read-aura:
   level: 0
   rarity: 0
   traits: [cantrip, detection, divination]
-  casting-time: 10 minutes
+  casting-time: 1 minute
   casting: [S, V]
   range: 30 feet
   target: one object
@@ -8582,8 +8592,8 @@ searing-light:
     main:
       You shoot a blazing-hot ray of light tinged with
       holy energy. Make a ranged touch attack against
-      the target. If you hit, you deal 4d6 fire damage. If
-      the target is a fiend or undead, you deal 4d6 additional good
+      the target. If you hit, you deal 5d6 fire damage. If
+      the target is a fiend or undead, you deal 5d6 additional good
       damage to it. On a critical hit, double all the damage.
       If the light passes through an area of magical darkness or
       targets a creature affected by magical darkness, searing light
@@ -8655,7 +8665,7 @@ shadow-blast:
       Plane into a deadly blast. Choose acid, bludgeoning, cold,
       electricity, fire, piercing, or slashing, and choose a 30-foot cone,
       a 15-foot burst within 120 feet, or a 50-foot line. The blast deals
-      5d8 damage of the type you chose to creatures in the area; these
+      7d8 damage of the type you chose to creatures in the area; these
       creatures must attempt their choice of a Reflex or Will save.
       ${subsection.save}
     subsections:
@@ -8863,7 +8873,7 @@ shocking-grasp:
       equal to 1d12 plus your spellcasting ability modifier. If the
       target is wearing metal armor or is made of metal, you gain
       a +1 circumstance bonus to your attack roll with shocking
-      grasp and the target takes 1d4 persistent electricity damage
+      grasp and the target takes 1d6 persistent electricity damage
       on a hit. On a critical hit, double the damage, but not the
       persistent damage.
   heightened:
@@ -9047,7 +9057,7 @@ soothe:
   rarity: 0
   traits: [healing, mental, necromancy, positive]
   casting: [aS, aV]
-  range: touch
+  range: 30 feet
   target: one willing or unconscious living creature
   duration: 1 minute
   description:
@@ -9113,7 +9123,7 @@ sound-burst:
   area: 10-foot burst
   description:
     main:
-      You deal 2d8 sonic damage to creatures in the area, depending
+      You deal 3d8 sonic damage to creatures in the area, depending
       on their Fortitude saves. ${subsection.save}
     subsections:
       save:
@@ -9269,7 +9279,7 @@ spider-sting:
   target: one creature
   description:
     main:
-      You deal 1d4 piercing damage to the touched
+      You deal 2d4 piercing damage to the touched
       creature and afflict it with spider venom, depending on its
       Fortitude save. ${subsection.save} ${subsection.poison}
     subsections:
@@ -9298,7 +9308,7 @@ spirit-blast:
   description:
     main:
       You concentrate ethereal energy and attack a creature’s spirit,
-      dealing 12d6 force damage. It must attempt a Fortitude save.
+      dealing 16d6 force damage. It must attempt a Fortitude save.
       Because spirit blast affects the creature’s spirit, it can damage
       a target projecting its consciousness or possessing another
       creature even if the target’s body is elsewhere. The possessed
@@ -9444,10 +9454,9 @@ stabilize:
   target: one dying creature
   description:
     main:
-      A single touch shuts death’s door. The target goes
-      from 0 Hit Points to 1 Hit Point.
-  heightened:
-    4th: You also reduce the target’s dying value by 1.
+      The soft glow of positive energy shuts death’s door.
+      The target loses the dying condition, though it remains
+      unconscious at 0 Hit Points.
 status:
   name: STATUS
   type: SPELL
@@ -9609,15 +9618,15 @@ storm-of-vengeance:
       effects:
         type: dl
         content:
-          "Acid Rain": Each creature in the storm takes 3d8 acid damage with no saving throw.
+          "Acid Rain": Each creature in the storm takes 4d8 acid damage with no saving throw.
           "Hail":
-            The storm deals 3d10 bludgeoning damage to creatures
+            The storm deals 4d10 bludgeoning damage to creatures
             beneath it. A successful Fortitude save reduces the damage
             to half (no damage on a critical success).
           Lightning:
             Up to 10 bolts of lightning strike down, targeting
             creatures of your choice in the storm. No more than one bolt
-            can target any one creature. Each bolt deals 5d6 electricity
+            can target any one creature. Each bolt deals 4d12 electricity
             damage ( half damage on a successful Reflex save, no damage
             on a critical success, and double damage on a critical failure).
           "Rain and Wind":
@@ -9804,8 +9813,8 @@ sunburst:
   description:
     main:
       A globe of searing sunlight explodes in the area,
-      dealing 7d8 fire damage to creatures and objects
-      in the area, plus 7d8 additional positive damage to undead
+      dealing 9d8 fire damage to creatures and objects
+      in the area, plus 9d8 additional positive damage to undead
       creatures. Creatures and objects in the area must attempt a
       Reflex save. ${subsection.save}
       If the globe overlaps with an area of magical darkness or affects
@@ -10744,7 +10753,7 @@ vampiric-exsanguination:
   description:
     main:
       You draw blood and life force from creatures and
-      shoot it out through your outstretched arms. You deal 10d6
+      shoot it out through your outstretched arms. You deal 13d6
       negative damage to living creatures in the area, based on their
       Fortitude saves. ${subsection.save}
       You gain half as many Hit Points as the maximum damage done
@@ -10770,7 +10779,7 @@ vampiric-touch:
   target: one living creature
   description:
     main:
-      You deal 3d6 negative damage to the target
+      You deal 4d6 negative damage to the target
       (double damage on a critical hit). You gain
       temporary Hit Points equal to the negative damage the target
       takes (after applying resistances and the like). You lose any
@@ -10913,7 +10922,7 @@ visions-of-danger:
       with a specific appearance of your choice, such as hellish flies or
       animated saw blades. Any creature that’s inside the burst when
       it’s created, enters the burst, or ends its turn inside the burst
-      must attempt a Will save to avoid taking 8d8 mental damage. A
+      must attempt a Will save to avoid taking 11d8 mental damage. A
       creature that tries to Interact with the monsters or observes one
       with a Seek action can attempt to disbelieve the illusion.
       ${subsection.save}
@@ -10939,8 +10948,8 @@ volcanic-eruption:
   description:
     main:
       The ground opens up, spraying a column of lava high into the
-      air in a vertical cylinder, dealing 13d6 fire damage. Creatures in
-      the area must attempt a Reflex save or take 13d6 fire damage.
+      air in a vertical cylinder, dealing 17d6 fire damage. Creatures in
+      the area must attempt a Reflex save or take 17d6 fire damage.
       The lava rapidly cools, and creatures in the area might become
       partially encased in rock depending on their Reflex saves. A
       creature encased in rock is sluggish 1, is hampered 5 feet,
@@ -11000,7 +11009,7 @@ wail-of-the-banshee:
   description:
     main:
       Your scream chills the souls of enemies that hear it.
-      Each living enemy in the burst takes 5d10 damage and is drained
+      Each living enemy in the burst takes 9d10 damage and is drained
       1d4, depending on its Fortitude save. ${subsection.save}
     subsections:
       save:
@@ -11039,7 +11048,7 @@ wall-of-fire:
       wall can be of a shorter length or height. Everything on each
       side of the wall is concealed from creatures on the opposite
       side. Any creature crossing the wall or occupying the wall’s
-      area at the start of its turn takes 3d6 fire damage.
+      area at the start of its turn takes 4d6 fire damage.
   heightened:
     "+1": The fire damage increases by 1d6.
 wall-of-force:
@@ -11140,7 +11149,7 @@ wall-of-thorns:
       height. Everything on each side of the wall has cover from
       creatures on the opposite side, and the wall’s space counts as
       difficult terrain. For every move action a creature uses that
-      enters at least one of the wall’s spaces, that creature takes 3d4
+      enters at least one of the wall’s spaces, that creature takes 4d4
       piercing damage.
       Each 5-foot-by-5-foot section of the wall has AC 10, TAC 6,
       and Hardness 9. A broken section can be moved through freely.
@@ -11385,7 +11394,7 @@ weapon-storm:
       weapon you’re holding that you’re trained with, so you can use
       the Somatic Casting action even if you don’t have a hand free.
       The weapon magically multiplies into duplicates that swipe at all
-      creatures in either a cone or an aura, dealing four dice of damage
+      creatures in either a cone or an aura, dealing five dice of damage
       to creatures in the area. This damage has the same type as the
       chosen weapon and uses the same die size. Determine the die
       size as if you were attacking with the weapon; for instance, if
@@ -11437,21 +11446,20 @@ web:
       damage or 1 fire damage. A square has AC 5 and TAC 5, and it
       automatically fails its saving throws.
       Each time a creature begins to use a move action while in the
-      web, it must attempt an Athletics check against your spell DC to
-      avoid being entangled or immobilized. A creature that gets out of
-      the web ceases to be entangled by it. ${subsection.save}
+      web, it must attempt an Athletics check or Reflex save against your
+      spell DC to avoid being entangled or immobilized. A creature that
+      gets out of the web ceases to be entangled by it. ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success:
-            The creature is unaffected and clears the web from
-            every square it leaves after leaving the square.
+            The creature is unaffected. If it used an Athletics check,
+            it clears the web from every square it leaves after leaving
+            the square
           crit:
-            The creature is unaffected and doesn’t need
-            to attempt further saving throws against the web this turn.
-            It clears the web from every square it leaves after leaving
-            the square.
+            As success, and it doesn’t need to attempt further saving throws
+            against the web this turn
           failure:
             The creature is entangled until the start of its next
             turn but doesn’t need to attempt further saving throws
@@ -11483,7 +11491,7 @@ weird:
         type: dl
         content:
           success: Unaffected.
-          failure: The target takes 16d6 mental damage and is frightened 2.
+          failure: The target takes 21d6 mental damage and is frightened 2.
           crit-fail:
             The target is so afraid, it might instantly die.
             It must attempt a Fortitude saving throw. On a successful
