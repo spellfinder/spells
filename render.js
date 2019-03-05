@@ -72,11 +72,11 @@ function filter_list() {
 function translate_casting(casting) {
 	var items = casting.map(function(item) {
 		return item.replace(
-			/^a/, '[[A]] '
+			/a([VSM])/g, '[[A]] $1'
 		).replace(
-			/^f/, '[[F]] '
+			/f([VSM])/g, '[[F]] $1'
 		).replace(
-			/^r/, '[[R]] '
+			/r([VSM])/g, '[[R]] $1'
 		)
 	})
 	return items.join(', ')
