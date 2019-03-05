@@ -4647,7 +4647,7 @@ hellfire-plume:
     main:
       You call a plume of hellfire that erupts from below,
       dealing 5d4 fire damage and 5d4 evil damage. Each creature in the
-      area must attempt a Reflex save. ${subsection.saves}
+      area must attempt a Reflex save. ${subsection.save}
     subsections:
       save:
         type: dl
@@ -11614,7 +11614,7 @@ wild-morph:
       You morph your body based on your wild order training, choosing one
       of the following effects based on your wild order feats.
       ${subsection.effects}
-    subsection:
+    subsections:
       effects:
         type: list
         content:
