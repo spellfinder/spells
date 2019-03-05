@@ -1,3 +1,9 @@
+v1.5.1
+------
+
+- Several corrections and additions from the errata document that were missed
+  in v1.5. Thanks /u/Descriptvist for the detailed report!
+
 v1.5
 ----
 

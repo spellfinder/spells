@@ -894,8 +894,10 @@ breath-of-life:
   description:
     main:
       You prevent the target from
-      dying, and heal the target 4d8 plus your spellcasting ability
-      modifier Hit Points. You can't use breath of life if the triggering
+      dying, restore Hit Points equal to 4d8 plus your spellcasting
+      ability modifier to it, reduce its dying condition to dying 3,
+      and reduce the DC of its next recovery roll to 8 + its dying
+      value. You can't use breath of life if the triggering
       effect was disintegrate or a death effect.
 burning-hands:
   name: BURNING HANDS
@@ -1536,7 +1538,7 @@ counter-performance:
   level: 1
   rarity: 1
   traits: [composition, enchantment, fortune, mental, power]
-  casting: [rV, rS]
+  casting: ["rV or rS"]
   trigger: You or an ally within 60 feet must roll a saving throw against an auditory or visual effect.
   area: 60-foot aura
   description:
@@ -2000,6 +2002,23 @@ detect-scrying:
       scrying creature and learn its approximate distance and direction.
   heightened:
     6th: The duration increases to 24 hours.
+diabolic-edict:
+  name: DIABOLIC EDICT
+  type: POWER
+  level: 1
+  rarity: 1
+  traits: [auditory, enchantment, lingual]
+  casting: [aV]
+  range: 30 feet
+  target: one willing living creature
+  duration: 1 round
+  description:
+    main:
+      "You issue a diabolic edict, demanding the target perform a particular
+      task and offering rewards for its fulfillment. It gains a +1 conditional
+      bonus to attack rolls and skill checks related to performing the task.
+      If it refuses to perform the task you proclaimed, it instead takes a –1
+      conditional penalty to all its attack rolls and skill checks."
 dimension-door:
   name: DIMENSION DOOR
   type: SPELL
@@ -2415,7 +2434,8 @@ divine-wrath:
     main:
       Choose an alignment your deity has (chaotic, evil, good, or lawful).
       You can't cast this spell if you don't have a deity or
-      your deity is true neutral. You deal 5d8 damage of that alignment.
+      your deity is true neutral. You deal 5d8 damage of that alignment,
+      depending on the Fortitude saves of creatures in the area.
       Creatures that match the alignment are unaffected. Those that
       neither match nor oppose it treat their result as one degree better.
       ${subsection.save}
@@ -3053,6 +3073,26 @@ elemental-tempest:
       deals multiple eligible types). This dismisses the spell.
   heightened:
     6th:  The damage is 2d8 per triggering spell level.
+embrace-the-pit:
+  name: EMBRACE THE PIT
+  type: POWER
+  level: 3
+  rarity: 1
+  traits: [evil, morph, transmutation]
+  duration: 1 minute
+  casting: [aS, aV]
+  description:
+    main:
+      "Horns grow from your skull and your skin takes on
+      features of the devil responsible for your diabolic bloodline. You gain
+      resistance 5 to evil, fire, and poison, and resistance 1 to physical
+      damage (except silver). You gain weakness 5 to good damage, and can
+      take good damage even if you are good."
+  heightened:
+    "+2":
+        Increase the resistance to evil, fire, and poison by
+        5, the resistance to physical damage (except silver) by 1, and the
+        weakness to good damage by 5.
 empty-body:
   name: EMPTY BODY
   type: POWER
@@ -4254,7 +4294,7 @@ goodberry:
       You imbue the target berry with the bounty of nature, allowing
       it to heal and sustain far beyond its normal capacity. A living
       creature that eats the berry with an Interact action gains as much
-      nourishment as a square meal for a typical human and regains 1d4
+      nourishment as a square meal for a typical human and regains 1d6
       Hit Points plus your spellcasting ability modifier. If not consumed
       during the duration, the berry withers away.
   heightened:
@@ -4594,6 +4634,30 @@ healing-font:
     main:
       You draw power from your pool of Spell Points to cast heal, and
       thus this casting of heal doesn't expend a use of channel energy.
+hellfire-plume:
+  name: HELLFIRE PLUME
+  type: POWER
+  level: 5
+  rarity: 1
+  traits: [evil, evocation, fire]
+  casting: [aS, aV]
+  range: 60 feet
+  area: 10-foot radius, 60-foot-tall cylinder
+  description:
+    main:
+      You call a plume of hellfire that erupts from below,
+      dealing 5d4 fire damage and 5d4 evil damage. Each creature in the
+      area must attempt a Reflex save. ${subsection.saves}
+    subsections:
+      save:
+        type: dl
+        content:
+          success: The creature takes half damage.
+          crit: The creature is unaffected.
+          failure: The creature takes full damage.
+          crit-fail: The creature takes double damage.
+  heightened:
+    "+1": The damage increases by 1d4 fire damage and 1d4 good damage
 heroism:
   name: HEROISM
   type: SPELL
@@ -5245,16 +5309,34 @@ ki-blast:
           crit-fail: Double damage and pushed 10 feet.
   heightened:
     "+1": The damage increases by 2d4.
+ki-rush:
+  name: KI RUSH
+  type: POWER
+  level: 1
+  rarity: 0
+  traits: [transmutation]
+  casting: [aV]
+  description:
+    main:
+      "Accelerated by the magic of your ki, you move with incredible speed
+      and become so swift you’re a blur. Move twice: two Strides, two Steps,
+      or one Stride and one Step (in either order). You gain concealment
+      during this movement and until the start of your next turn."
 ki-strike:
   name: KI STRIKE
   type: POWER
   level: 1
-  rarity: 1
+  rarity: 0
   traits: [transmutation]
-  casting: [fV]
-  trigger: You start to attempt an attack roll for an unarmed Strike.
+  casting: [aV]
   description:
-    main: You gain a +1 conditional bonus to the triggering attack roll.
+    main:
+      "You focus your ki into magical attacks. Make an unarmed Strike or
+      Flurry of Blows (this doesn’t change the limit on using Flurry of Blows
+      once per round). The Strike or Strikes get a +1 conditional bonus to
+      attack rolls and deal 1d6 extra damage. This damage can be any of
+      the following types of your choice, chosen each time you Strike: force,
+      lawful (only if you’re lawful), negative, or positive."
 knock:
   name: KNOCK
   type: SPELL
@@ -5317,13 +5399,13 @@ lay-on-hands:
       Your hands become infused with positive energy as you lay them
       on the target, healing a living target or damaging an undead target.
       If you use lay on hands on a willing living target, you restore Hit
-      Points equal to 1d4 plus your spellcasting ability modifier, and if
+      Points equal to 1d6 plus your spellcasting ability modifier, and if
       the target is an ally, he gains a +1 conditional bonus to AC for 1
       round. Against an undead target, you deal the same amount of
       positive damage if you succeed at a melee touch attack, and the
       target takes a –1 conditional penalty to AC for 1 round.
   heightened:
-    "+1": The amount of healing (or damage to undead) increases by 2d4.
+    "+1": The amount of healing (or damage to undead) increases by 2d6.
 leng-s-sting:
   name: LENG'S STING
   type: SPELL
@@ -11519,8 +11601,8 @@ wholeness-of-body:
             counteract the condition.
   heightened:
     "+1": If you choose to regain Hit Points, the Hit Points regained increase by 2d8.
-wild-claws:
-  name: WILD CLAWS
+wild-morph:
+  name: WILD MORPH
   type: POWER
   level: 1
   rarity: 1
@@ -11529,23 +11611,43 @@ wild-claws:
   duration: 1 minute or until dismissed
   description:
     main:
-      Your hands transform into incredibly sharp claws. These claws
-      are an unarmed attack you're trained in, dealing 1d6 slashing
-      damage (agile, finesse). You can still hold and use items with your
-      hands while they're transformed by this spell, but you cannot
-      hold an item while attacking.
+      You morph your body based on your wild order training, choosing one
+      of the following effects based on your wild order feats.
+      ${subsection.effects}
+    subsection:
+      effects:
+        type: list
+        content:
+          - If you have Wild Shape, you can morph your hands into wild
+            claws. Your hands transform into incredibly sharp claws.
+            These claws are an unarmed attack you’re trained in, dealing
+            1d6 slashing damage (agile, finesse). You can still hold and use
+            items with your hands while they’re transformed by this spell,
+            but you cannot hold an item while attacking. If you have Insect
+            Shape, you can instead transform your mouth into wild jaws, an
+            unarmed attack with the same damage and traits.
+          - If you have Elemental Shape, you can morph your body to be
+            partially composed of elemental matter, granting you resistance
+            5 to critical hits and precision damage.
+          - If you have Plant Shape, you can morph your arms into long
+            vines, increasing your reach to 10 feet (or 15 feet with a reach
+            weapon).
+          - If you have Soaring Shape, you can grow wings from your back.
+            These wings allow you to fly with a fly Speed of 30 feet.
   heightened:
     2nd:
-      The claws radiate primal energy. They count as
-      a +1 magic weapon, gaining a +1 item bonus on attack rolls and
-      dealing another die of damage on a hit.
-    4th: The claws count as a +2 magic weapon.
+      Your wild claws or wild jaws radiate primal energy.
+      They work like a +1 magic weapon, granting a +1 item bonus to attack
+      rolls and dealing another die of damage on a hit.
+    4th: Your wild claws or wild jaws work like a +2 magic weapon.
     5th:
-      The claws count as a +2 magic weapon and
-      leave terrible, ragged wounds that deal 1d6 persistent bleed
-      damage on a hit.
-    6th: The claws count as a +3 magic weapon and deal 2d6 persistent bleed damage on a hit.
-    8th: The claws count as a +4 magic weapon and deal 3d6 persistent bleed damage on a hit.
+      Your wild claws or wild jaws work like a +2 magic
+      weapon. Wild claws leave terrible, ragged wounds that deal 1d6
+      persistent bleed damage on a hit, and wild jaws are envenomed,
+      dealing 1d6 persistent poison damage on a hit.
+    6th: Your wild claws or wild jaws work like a +3 magic weapon and deal 2d6 persistent damage on a hit.
+    8th: Your wild claws or wild jaws work like a +4 magic weapon and deal 3d6 persistent damage on a hit.
+    10th: Your wild claws or wild jaws work like a +5 magic weapon and deal 4d6 persistent damage on a hit.
 wild-winds-gust:
   name: WILD WINDS GUST
   type: POWER
