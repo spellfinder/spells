@@ -5,7 +5,7 @@ import Header from './components/Header';
 import FiltersForm from './components/FiltersForm';
 import SortForm from './components/SortForm';
 import SpellList from './components/SpellList';
-import { getAllSpells } from './lib/data'
+import { getAllSpells, getByList } from './lib/data'
 
 const sortMethods = {
   'alpha-asc': (a, b) => (a[0] > b[0]) ? 1 : -1,
@@ -19,16 +19,59 @@ class App extends React.Component {
   constructor(props, context) {
     super(props, context)
 
-    this.state = {}
+    this.state = {
+      currentSortCriteria: 'alpha-asc',
+      spellLists: [],
+    }
   }
 
   componentDidMount() {
-    getAllSpells().then(all => this.setState({ filteredSpells: Object.entries(all), spellData: all }))
+    getAllSpells().then(
+      all => this.setState({ filteredSpells: Object.entries(all), spellData: all })
+    )
+
+    getByList().then(
+      byList => this.setState({ spellsByList: byList, spellLists: Object.keys(byList) })
+    )
   }
 
   reorderList(criteria) {
+    this.setState((state, props) => ({
+      filteredSpells: this.state.filteredSpells.sort(sortMethods[criteria]),
+      currentSortCriteria: criteria
+    }));
+  }
+
+  filterList(filters) {
+    const newList = [];
+
+    for (const k in this.state.spellData) {
+      const o = this.state.spellData[k];
+      if (o.level < filters.spellMinLevel || o.level > filters.spellMaxLevel) {
+        continue;
+      }
+      if (o.name.toLowerCase().indexOf(filters.spellName.toLowerCase()) < 0) {
+        continue;
+      }
+      if (filters.spellList && this.state.spellsByList[filters.spellList].indexOf(k) < 0) {
+        continue;
+      }
+      if (filters.spellType && filters.spellType != o.type.toLowerCase()) {
+        continue;
+      }
+      if (filters.spellRarity >= 0 && filters.spellRarity != o.rarity) {
+        continue;
+      }
+      if (filters.spellTraits.length) {
+        if (!filters.spellTraits.every(function(item) { return o.traits.indexOf(item) >= 0; })) {
+          continue;
+        }
+      }
+      newList.push([k, o]);
+    }
+
     this.setState({
-      filteredSpells: this.state.filteredSpells.sort(sortMethods[criteria])
+      filteredSpells: newList.sort(sortMethods[this.state.currentSortCriteria])
     })
   }
 
@@ -36,7 +79,7 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <FiltersForm spellLists={['arcane']}/>
+        <FiltersForm spellLists={this.state.spellLists} onChange={this.filterList.bind(this)} />
         <SortForm onChange={this.reorderList.bind(this)} />
         <SpellList spellData={this.state.filteredSpells} />
         <Footer />

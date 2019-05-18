@@ -11,6 +11,15 @@ class FiltersForm extends React.Component {
 
     this.state = {
       open: true,
+      filters: {
+        minSpellLevel: 0,
+        maxSpellLevel: 10,
+        spellName: "",
+        spellList: "",
+        spellType: "",
+        spellRarity: -1,
+        spellTraits: [],
+      }
     }
   }
 
@@ -18,8 +27,20 @@ class FiltersForm extends React.Component {
     return ''
   }
 
+  handleValueChange(ev) {
+    const filters = this.state.filters;
+    filters[ev.target.id] = ev.target.value;
+    this.setState({
+      filters: filters
+    })
+
+    this.props.onChange(filters);
+  }
+
   render() {
     const open = this.state.open
+    const changeHandler = this.handleValueChange.bind(this);
+
     return (
       <Container className="rounded bg-light mb-3 p-1">
         <h3
@@ -33,20 +54,20 @@ class FiltersForm extends React.Component {
           <Form inline>
             <Form.Group controlId="minSpellLevel">
               <Form.Label>Min. Spell level</Form.Label>
-              <Form.Control className="filters mx-1" type="number" min="0" max="10" defaultValue="0"/>
+              <Form.Control onChange={changeHandler} className="filters mx-1" type="number" min="0" max="10" defaultValue="0"/>
             </Form.Group>
             <Form.Group controlId="maxSpellLevel">
               <Form.Label>Max. Spell level</Form.Label>
-              <Form.Control className="filters form-control mx-1" type="number" min="0" max="10" defaultValue="10"/>
+              <Form.Control onChange={changeHandler} className="filters mx-1" type="number" min="0" max="10" defaultValue="10"/>
             </Form.Group>
             <Form.Group controlId="spellName">
               <Form.Label>Spell name:</Form.Label>
-              <Form.Control className="filters form-control mx-1" type="text"/>
+              <Form.Control onChange={changeHandler} className="filters mx-1" type="text"/>
             </Form.Group>
             <Form.Group controlId="spellList">
               <Form.Label>Spell list:</Form.Label>
-              <Form.Control as="select" className="filters mx-1">
-                <option value="">All</option>
+              <Form.Control as="select" onChange={changeHandler} className="filters mx-1">
+                <option key="" value="">All</option>
                 {this.props.spellLists.map(list => (
                   <option key={list} value={list}>{list}</option>
                 ))}
@@ -54,7 +75,7 @@ class FiltersForm extends React.Component {
             </Form.Group>
             <Form.Group controlId="spellType">
               <Form.Label>Type:</Form.Label>
-              <Form.Control as="select" className="filters mx-1">
+              <Form.Control as="select" onChange={changeHandler} className="filters mx-1">
                 <option value="">All</option>
                 <option value="power">Power</option>
                 <option value="spell">Spell</option>
@@ -62,7 +83,7 @@ class FiltersForm extends React.Component {
             </Form.Group>
             <Form.Group controlId="spellRarity">
               <Form.Label>Rarity:</Form.Label>
-              <Form.Control as="select" className="filters mx-1">
+              <Form.Control as="select" onChange={changeHandler} className="filters mx-1">
                 <option value="-1">All</option>
                 <option value="0">Common</option>
                 <option value="1">Uncommon</option>
@@ -72,7 +93,7 @@ class FiltersForm extends React.Component {
             </Form.Group>
           </Form>
           <Form inline>
-            <Form.Group className="mt-2 traits-section">
+            <Form.Group controlId="spellTraits" className="mt-2 traits-section">
               <Form.Label>Traits</Form.Label>
               <Form.Control type="text"></Form.Control>
               <Button href="#" variant="primary">Add trait</Button>
