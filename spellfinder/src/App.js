@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import FiltersForm from './components/FiltersForm';
 import SortForm from './components/SortForm';
+import SpellList from './components/SpellList';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <FiltersForm spellLists={['arcane']}/>
       <SortForm />
+      <SpellList />
       <Footer />
     </>
   );

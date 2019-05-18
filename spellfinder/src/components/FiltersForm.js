@@ -48,13 +48,13 @@ class FiltersForm extends React.Component {
               <Form.Control as="select" className="filters mx-1">
                 <option value="">All</option>
                 {this.props.spellLists.map(list => (
-                  <option value={list}>{list}</option>
+                  <option key={list} value={list}>{list}</option>
                 ))}
               </Form.Control>
             </Form.Group>
             <Form.Group controlId="spellType">
               <Form.Label>Type:</Form.Label>
-              <Form.Control as="select" class="filters mx-1">
+              <Form.Control as="select" className="filters mx-1">
                 <option value="">All</option>
                 <option value="power">Power</option>
                 <option value="spell">Spell</option>
@@ -74,10 +74,7 @@ class FiltersForm extends React.Component {
           <Form inline>
             <Form.Group className="mt-2 traits-section">
               <Form.Label>Traits</Form.Label>
-              <Autosuggest
-                datalist={['auditory', '']}
-                placeholder='Find trait...'
-              />
+              <Form.Control type="text"></Form.Control>
               <Button href="#" variant="primary">Add trait</Button>
               <div id="active_trait_filters">
                 {this.renderTraitBadges()}
