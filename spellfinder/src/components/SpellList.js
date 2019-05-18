@@ -3,21 +3,10 @@ import Container from 'react-bootstrap/Container'
 import ListGroup from 'react-bootstrap/ListGroup'
 
 import SpellCard from './SpellCard'
-import { getAllSpells } from '../lib/data'
 
 class SpellList extends React.Component {
-  constructor(props, context) {
-    super(props, context)
-
-    this.state = {}
-  }
-
-  componentDidMount() {
-    getAllSpells().then(all => this.setState({ spellData: all }))
-  }
-
   render() {
-    const spellData = this.state.spellData;
+    const spellData = this.props.spellData;
     if (!spellData) {
       return null;
     }
