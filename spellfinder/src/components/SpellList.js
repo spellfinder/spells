@@ -13,7 +13,7 @@ class SpellList extends React.Component {
     return (
       <Container>
         <ListGroup className="container">
-          {Object.entries(spellData).map(([k, o]) => {
+          {spellData.map(([k, o]) => {
             return (<SpellCard key={k} details={o} />)
           })}
         </ListGroup>
