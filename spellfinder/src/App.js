@@ -22,13 +22,22 @@ class App extends React.Component {
     this.state = {
       currentSortCriteria: 'alpha-asc',
       spellLists: [],
+      traits: [],
     }
   }
 
   componentDidMount() {
-    getAllSpells().then(
-      all => this.setState({ filteredSpells: Object.entries(all), spellData: all })
-    )
+    getAllSpells().then(all => {
+      const traits = new Set();
+      Object.values(all).forEach(o => {
+        o.traits.forEach(trait => traits.add(trait))
+      })
+      this.setState({
+        filteredSpells: Object.entries(all),
+        spellData: all,
+        traits: Array.from(traits).sort(),
+      });
+    })
 
     getByList().then(
       byList => this.setState({ spellsByList: byList, spellLists: Object.keys(byList) })
@@ -79,7 +88,11 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <FiltersForm spellLists={this.state.spellLists} onChange={this.filterList.bind(this)} />
+        <FiltersForm
+          traits={this.state.traits}
+          spellLists={this.state.spellLists}
+          onChange={this.filterList.bind(this)}
+        />
         <SortForm onChange={this.reorderList.bind(this)} />
         <SpellList spellData={this.state.filteredSpells} />
         <Footer />

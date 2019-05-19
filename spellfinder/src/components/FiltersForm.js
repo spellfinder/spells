@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button'
 import Collapse from 'react-bootstrap/Collapse'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
+import Select from 'react-select'
 
 class FiltersForm extends React.Component {
   constructor(props, context) {
@@ -32,6 +32,16 @@ class FiltersForm extends React.Component {
     this.setState({
       filters: filters
     })
+
+    this.props.onChange(filters);
+  }
+
+  handleTraitChange(values, action) {
+    const filters = this.state.filters;
+    filters['spellTraits'] = values.map(o => o.value);
+    this.setState({
+      filters: filters
+    });
 
     this.props.onChange(filters);
   }
@@ -90,16 +100,13 @@ class FiltersForm extends React.Component {
                 <option value="3">Unique</option>
               </Form.Control>
             </Form.Group>
-          </Form>
-          <Form inline>
-            <Form.Group controlId="spellTraits" className="mt-2 traits-section">
-              <Form.Label>Traits</Form.Label>
-              <Form.Control type="text"></Form.Control>
-              <Button href="#" variant="primary">Add trait</Button>
-              <div id="active_trait_filters">
-                {this.renderTraitBadges()}
-              </div>
-            </Form.Group>
+            <Select
+              onChange={this.handleTraitChange.bind(this)}
+              placeholder="Spell traits..."
+              className="w-50 my-1 mx-1"
+              options={this.props.traits.map(t => ({value: t, label: t}))}
+              isMulti
+            />
           </Form>
         </div></Collapse>
       </Container>
