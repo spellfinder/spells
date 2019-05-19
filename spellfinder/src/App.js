@@ -47,7 +47,7 @@ class App extends React.Component {
 
     for (const k in this.state.spellData) {
       const o = this.state.spellData[k];
-      if (o.level < filters.spellMinLevel || o.level > filters.spellMaxLevel) {
+      if (o.level < filters.minSpellLevel || o.level > filters.maxSpellLevel) {
         continue;
       }
       if (o.name.toLowerCase().indexOf(filters.spellName.toLowerCase()) < 0) {
