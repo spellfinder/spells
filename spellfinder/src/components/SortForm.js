@@ -14,7 +14,7 @@ class SortForm extends React.Component {
         <Form inline>
           <Form.Group controlId="sortBox">
           <Form.Label>Sort by:</Form.Label>
-          <Form.Control as="select" className="w-25 ml-2" onChange={this.handleChange.bind(this)}>
+          <Form.Control as="select" onChange={this.handleChange.bind(this)}>
             <option value="alpha-asc">A -&gt; Z</option>
             <option value="alpha-desc">Z -&gt; A</option>
             <option value="level-asc"> Level 0 -&gt; 10</option>
