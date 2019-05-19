@@ -59,7 +59,7 @@ class App extends React.Component {
       if (filters.spellType && filters.spellType !== o.type.toLowerCase()) {
         continue;
       }
-      if (filters.spellRarity >= 0 && filters.spellRarity !== o.rarity) {
+      if (filters.spellRarity >= 0 && filters.spellRarity != o.rarity) {
         continue;
       }
       if (filters.spellTraits.length) {
