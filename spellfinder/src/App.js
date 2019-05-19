@@ -56,10 +56,10 @@ class App extends React.Component {
       if (filters.spellList && this.state.spellsByList[filters.spellList].indexOf(k) < 0) {
         continue;
       }
-      if (filters.spellType && filters.spellType != o.type.toLowerCase()) {
+      if (filters.spellType && filters.spellType !== o.type.toLowerCase()) {
         continue;
       }
-      if (filters.spellRarity >= 0 && filters.spellRarity != o.rarity) {
+      if (filters.spellRarity >= 0 && filters.spellRarity !== o.rarity) {
         continue;
       }
       if (filters.spellTraits.length) {

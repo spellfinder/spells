@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button'
 import Collapse from 'react-bootstrap/Collapse'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
-import Autosuggest from 'react-bootstrap-autosuggest'
 
 class FiltersForm extends React.Component {
   constructor(props, context) {
