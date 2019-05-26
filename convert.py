@@ -93,8 +93,8 @@ def validate(data):
     return errors
 
 
-def save_json(data):
-    with open('./data/all.json', 'w') as jsonf:
+def save_json(data, destination):
+    with open(destination, 'w') as jsonf:
         json.dump(data, jsonf)
 
 
@@ -105,8 +105,8 @@ def main():
         for err in validation_errs:
             print(err)
         sys.exit(1)
-    print('File validation complete, writing all.json')
-    save_json(data)
+    print('File validation complete, writing output file')
+    save_json(data, sys.argv[1])
 
 if __name__ == '__main__':
     main()
