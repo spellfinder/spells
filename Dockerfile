@@ -7,9 +7,9 @@ RUN mkdir ./data
 COPY data ./data/
 RUN python convert.py ./all.json
 
-FROM node:10-alpine AS app
+FROM node:10-alpine AS build
 WORKDIR /app
-RUN npm install -g yarn serve
+RUN npm install -g yarn
 COPY package.json yarn.lock ./
 RUN yarn install
 RUN mkdir -p public/data/ src/
@@ -20,4 +20,8 @@ COPY --from=converter /app/all.json ./public/data/
 COPY --from=converter /app/data/by-list.json ./public/data/
 RUN yarn build
 
+FROM node:10-alpine AS run
+WORKDIR /app
+RUN npm install -g serve
+COPY --from=build /app/build ./build/
 CMD serve build -l 5151
