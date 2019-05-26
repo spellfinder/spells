@@ -7,7 +7,7 @@ function Header() {
         Spell finder{' '}
         <small><a className="text-white" href="http://paizo.com/pathfinderplaytest">Pathfinder Playtest</a></small>
       </h1>
-      <div><a className="text-white" href="/Changelog.txt">v1.5.1 (Changelog)</a></div>
+      <div><a className="text-white" href="/Changelog.txt">v2.0.0 (Changelog)</a></div>
     </header>
   );
 }
