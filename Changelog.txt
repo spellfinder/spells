@@ -1,3 +1,9 @@
+v2.0.0
+------
+
+- The codebase has been rewritten to use React, which should make it more
+  maintainable going forward.
+
 v1.5.1
 ------
 
