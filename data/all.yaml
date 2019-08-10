@@ -39,7 +39,7 @@ abyssal-plague:
         type: dl
         content:
           success:
-            –2 conditional penalty on saves vs. Abyssal plague for 1 day or she contracts it, whichever comes first.
+            -2 conditional penalty on saves vs. Abyssal plague for 1 day or she contracts it, whichever comes first.
           crit:  The target is unaffected
           failure: Afflicted with Abyssal plague at stage 1
           crit-fail: Afflicted with Abyssal plague at stage 2
@@ -117,14 +117,17 @@ acid-splash:
   target: one creature or object
   description:
     main:
-      You splash a glob of acid. Make a ranged touch attack. If you hit, you deal 1d4 acid damage
-      plus 1 splash damage. On a critical success, the target also takes 1 persistent acid damage.
-      The damage increases depending on your level.
+      You splash a glob of acid that splatters creatures and objects alike. Make a spell attack.
+      If you hit, you deal 1d6 acid damage plus 1 splash acid damage. On a critical success, the
+      target also takes 1 persistent acid damage.
   heightened:
-    3rd: Damage increases to 1d4 + your spellcasting ability modifier, persistent damage increases to 2
-    5th: Damage increases to 2d4 + your spellcasting ability modifier, persistent damage increases to 3
-    7th: Damage increases to 3d4 + your spellcasting ability modifier, persistent damage increases to 4
-    9th: Damage increases to 4d4 + your spellcasting ability modifier, persistent damage increases to 5
+    3rd: Damage increases to 1d6 + your spellcasting ability modifier, and the persistent damage increases to 2
+    5th: Damage increases to 2d6 + your spellcasting ability modifier,
+         the persistent damage increases to 3, and the splash damage increases to 2
+    7th: Damage increases to 3d6 + your spellcasting ability modifier,
+         the persistent damage increases to 4, and the splash damage increases to 3
+    9th: Damage increases to 4d6 + your spellcasting ability modifier,
+         the persistent damage increases to 5, and the splash damage increases to 4
 
 acquisitive-s-fortune:
   name: Acquisitive's Fortune
@@ -430,7 +433,7 @@ antimagic-field:
   rarity: 2
   casting: [aM, aS, aV]
   area: 10-foot aura
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       Spells can't penetrate the area, magic items cease to function within
@@ -638,11 +641,11 @@ bane:
   casting: [aS, aV]
   area: 30-foot aura
   target: enemies in the aura
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       Divine censure makes it difficult for your enemies to attack. Targets
-      take a –1 conditional penalty to attack rolls. Bane can dispel bless.
+      take a -1 conditional penalty to attack rolls. Bane can dispel bless.
 banishment:
   name: BANISHMENT
   type: SPELL
@@ -656,7 +659,7 @@ banishment:
     main:
       You send the target back to its home plane, to the place it was
       before leaving. The effect depends on the target's Will save. You can
-      add a Material Casting action to give the creature a –2 circumstance
+      add a Material Casting action to give the creature a -2 circumstance
       penalty to its save. The component must be a specially gathered
       object that is anathema to the creature, not from a spell component
       pouch. You can cast this spell only when you're on your home plane.
@@ -792,7 +795,7 @@ bless:
   traits: [enchantment, mental]
   area: 30-foot aura
   target: you and allies in the aura
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       Blessings from beyond make your companions potent. They gain a
@@ -949,14 +952,14 @@ calm-emotions:
   casting: [aS, aV]
   range: 120 feet
   area: 10-foot burst
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main: Creatures in the area become calm, depending on their Will saves. ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Calming urges give a –1 conditional penalty to attack rolls.
+          success: Calming urges give a -1 conditional penalty to attack rolls.
           crit: The creature is unaffected.
           failure:
             You suppress emotion effects and prevent the creature from acting hostile.
@@ -982,7 +985,7 @@ captivating-adoration:
       save:
         type: dl
         content:
-          success: The creature takes a –1 conditional penalty to Perception and skill checks not directed at you.
+          success: The creature takes a -1 conditional penalty to Perception and skill checks not directed at you.
           crit: The creature is unaffected.
           failure: The creature is fascinated.
           crit-fail: The creature is fascinated and its attitude toward you improves by one step.
@@ -1089,7 +1092,7 @@ charming-touch:
       You infuse your target with love or lust, causing it to
       act friendlier. On a successful touch attack roll, the target attempts a
       Will save, with a +4 circumstance bonus if you or your allies recently
-      threatened or acted hostile to it and a –2 circumstance penalty if
+      threatened or acted hostile to it and a -2 circumstance penalty if
       you critically succeed on the attack roll or it allows you to touch it.
       You can dismiss the spell with a Verbal Casting action. If you act
       hostile to the target, the spell ends. When the spell ends, the target
@@ -1128,23 +1131,21 @@ chill-touch:
   casting: [aS, aV]
   range: touch
   target: one living or undead creature
+  save: fortitude
   description:
     main:
-      Your touch weakens the living and disorients undead.
-      Make a melee touch attack. The effect of a hit depends on whether
-      the target is living or undead. Heightening increases the damage.
+      Siphoning negative energy into yourself, your hand radiates a pale darkness. Your touch
+      weakens the living and disorients undead, possibly even causing them to flee. The effect
+      depends on whether the target is living or undead.
       ${subsection.target}
     subsections:
       target:
         type: dl
         content:
-          "Living Creature": 1d8 negative damage. On a critical hit, double damage and enfeebled 1 for 1 round.
-          "Undead Creature": Flat-footed for 1 round. On a critical hit, it's also fleeing for 1 round unless it succeeds at a Will save.
+          "Living Creature": The spell deals negative damage equal to 1d4 plus your spellcasting modifier. The target attempts a basic Fortitude save, but is also enfeebled 1 for 1 round on a critical failure.
+          "Undead Creature": The target is flat-footed for 1 round on a failed Fortitude save. On a critical failure, the target is also fleeing for 1 round unless it succeeds at a Will save.
   heightened:
-    3rd: Damage of 1d8 + your spellcasting ability modifier.
-    5th: Damage of 2d8 + your spellcasting ability modifier.
-    7th: Damage of 3d8 + your spellcasting ability modifier.
-    9th: Damage of 4d8 + your spellcasting ability modifier.
+    "+1": The negative damage to living creatures increases by 1d4.
 chromatic-wall:
   name: CHROMATIC WALL
   type: SPELL
@@ -1695,13 +1696,13 @@ dancing-lights:
   traits: [cantrip, evocation, light]
   casting: [aS, aV]
   range: 120 feet
-  duration: concentration
+  duration: sustained
   description:
     main:
       You create up to four floating lights, no two of which are more than
-      10 feet apart. Each sheds light like a torch. When you Concentrate
-      on the Spell, you can move each light up to 60 feet. Each light must
-      remain within range and within 10 feet of all others, or it winks out.
+      10 feet apart. Each sheds light like a torch. When you Sustain the Spell,
+      you can move any number of lights up to 60 feet. Each light must
+      remain within 120 feet of you and within 10 feet of all others, or it winks out.
 darkened-eyes:
   name: DARKENED EYES
   type: POWER
@@ -1766,20 +1767,19 @@ daze:
   type: SPELL
   level: 0
   rarity: 0
-  traits: [cantrip, enchantment, mental]
+  traits: [cantrip, enchantment, mental, nonlethal]
   casting: [aS, aV]
   range: 60 feet
   target: 1 creature
   duration: 1 round
+  save: will
   description:
-    main: You cloud the target's mind with effects determined by its Will save. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: The target is unaffected.
-          failure: The target is flat-footed.
-          crit-fail: The target is flat-footed and slowed 1.
+    main:
+      You cloud the target's mind and daze it with a mental jolt. The jolt deals mental
+      damage equal to your spellcasting ability modifier; the target must attempt a basic
+      Will save. If the target critically fails the save, it is also stunned 1.
+    heightened:
+      "+2": The damage increases by 1d6.
 dazzling-flash:
   name: DAZZLING FLASH
   type: POWER
@@ -1884,10 +1884,10 @@ delusional-pride:
   description:
     main:
       You supercharge the target's confidence, causing it to rationalize
-      failures as sour grapes. It takes a –2 conditional penalty to skill
+      failures as sour grapes. It takes a -2 conditional penalty to skill
       checks to retry a task it attempted and failed during the duration.
-      On its turn, it takes a –1 conditional penalty to attack rolls if it
-      failed its first attack, or –2 if it failed both of its first two attacks.
+      On its turn, it takes a -1 conditional penalty to attack rolls if it
+      failed its first attack, or -2 if it failed both of its first two attacks.
       The duration depends on its Will save, and it's bolstered. ${subsection.save}
     subsections:
       save:
@@ -1946,18 +1946,15 @@ detect-magic:
   rarity: 0
   traits: [cantrip, detection, divination]
   casting: [aS, aV]
-  area: 30-foot aura
+  area: 30-foot emanation
   description:
     main:
-      You send out a magical pulse that registers the
-      presence of magic. You receive no information beyond presence or
-      absence of magic. You can choose to ignore magic you're fully aware
-      of, such as you and your allies' magic items and ongoing spells.
-      You detect illusion magic only if that magic's effect has a lower
-      level than the level of your detect magic spell. However, items that
-      have an illusion aura but aren't deceptive in appearance (such as
-      an invisibility potion) typically get detected normally.
-
+      You send out a pulse that registers the presence of magic. You receive no information beyond
+      the presence or absence of magic. You can choose to ignore magic you're fully aware of, such
+      as the magic items and ongoing spells of you and your allies.
+      You detect illusion magic only if that magic's effect has a lower level than the level of
+      your detect magic spell. However, items that have an illusion aura but aren't deceptive in
+      appearance (such as an invisibility potion) typically are detected normally.
   heightened:
     3rd:
       You learn the school of magic for the highest level
@@ -1965,9 +1962,9 @@ detect-magic:
       effects are equally strong, the GM determines which you learn.
     4th:
       As 3rd level, but you also pinpoint the source of
-      the highest-level magic. You don't learn the exact location but can
-      narrow down the source to within a 5-foot cube. If the source is
-      larger than that, you identify only the cube nearest to you.
+      the highest-level magic. Like for an imprecise sense, you don't learn the
+      exact location, but can narrow down the source to within a 5-foot cube
+      (or the nearest if larger than that).
 detect-poison:
   name: DETECT POISON
   type: SPELL
@@ -2017,7 +2014,7 @@ diabolic-edict:
       "You issue a diabolic edict, demanding the target perform a particular
       task and offering rewards for its fulfillment. It gains a +1 conditional
       bonus to attack rolls and skill checks related to performing the task.
-      If it refuses to perform the task you proclaimed, it instead takes a –1
+      If it refuses to perform the task you proclaimed, it instead takes a -1
       conditional penalty to all its attack rolls and skill checks."
 dimension-door:
   name: DIMENSION DOOR
@@ -2323,7 +2320,7 @@ divine-aura:
   casting: [aS, aV]
   area: 10-foot aura
   target: allies in the aura
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       Divine power wards the targets, granting a +1 conditional bonus to
@@ -2807,7 +2804,7 @@ drop-dead:
   trigger: A creature within range is hit by an attack from an enemy.
   range: 120 feet
   target: one creature
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       The target appears to fall down dead, though it actually turns
@@ -2829,7 +2826,7 @@ duplicate-foe:
   casting: [M, S, V]
   range: 30 feet
   target: one enemy of level 16 or lower
-  duration: concentration, up to 1 minute or until dismissed
+  duration: sustained, up to 1 minute or until dismissed
   description:
     main:
       You try to create a temporary duplicate of an enemy. The target
@@ -2922,7 +2919,7 @@ earthquake:
         content:
           Shaking Ground:
             The ground is difficult terrain, and creatures on
-            it take a –2 circumstance penalty to attack rolls and skill checks.
+            it take a -2 circumstance penalty to attack rolls and skill checks.
           Fissures:
             Each creature on the ground must attempt a Reflex
             save at the start of its turn to keep footing and avoid falling into
@@ -2971,27 +2968,17 @@ electric-arc:
   type: SPELL
   level: 0
   rarity: 0
-  traits: [attack, cantrip, electricity, evocation]
+  traits: [cantrip, electricity, evocation]
   casting: [aS, aV]
   range: 30 feet
   target: one or two creatures
+  save: reflex
   description:
     main:
-      You deal 1d6 electricity damage; each target must
-      attempt a Reflex save. Heightening increases damage. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: The target takes half damage.
-          crit: The target takes no damage.
-          failure: The target takes full damage.
-          crit-fail: The target takes double damage.
+      An arc of lightning leaps from one target to another. You deal electricity
+      damage equal to 1d4 plus your spellcasting ability modifier.
   heightened:
-    3rd:  Damage of 1d6 + your spellcasting ability modifier.
-    5th:  Damage of 2d6 + your spellcasting ability modifier.
-    7th:  Damage of 3d6 + your spellcasting ability modifier.
-    9th:  Damage of 4d6 + your spellcasting ability modifier.
+    "+1": The damage increases by 1d4.
 elemental-form:
   name: ELEMENTAL FORM
   type: SPELL
@@ -3262,7 +3249,7 @@ enthrall:
   casting: [aS, aV]
   range: 120 feet
   target: creatures in range
-  duration: concentration, up to 10 minutes
+  duration: sustained, up to 10 minutes
   description:
     main:
       You speak or sing without interruption throughout the casting and
@@ -3299,7 +3286,7 @@ ethereal-jaunt:
   rarity: 1
   traits: [conjuration, teleportation]
   casting: [aS, aV]
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       You travel to the Ethereal Plane, which overlaps the Material Plane.
@@ -3400,7 +3387,7 @@ faerie-dust:
         content:
           success: The creature is unaffected.
           failure:
-            The creature can't use reactions and takes a –2
+            The creature can't use reactions and takes a -2
             conditional penalty to Perception checks.
           crit-fail:
             The target falls asleep. It automatically awakens
@@ -3540,7 +3527,7 @@ feeblemind:
           crit-fail:
             The target's intellect is permanently reduced
             below that of an animal, and it treats its Charisma,
-            Intelligence, and Wisdom modifiers as –5. It loses all class abilities that
+            Intelligence, and Wisdom modifiers as -5. It loses all class abilities that
             require mental faculties, including all spellcasting. If the target is a PC,
             she becomes an NPC under the GM's control.
   heightened:
@@ -3585,7 +3572,7 @@ field-of-life:
   casting: [aS, aV]
   range: 30 feet
   area: 20-foot burst
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       A field of positive energy fills the area, exuding warmth and
@@ -3790,7 +3777,7 @@ flaming-sphere:
   casting: [aS, aV]
   range: 30 feet
   area: one 5-foot square
-  duration: concentration or until dismissed (see below)
+  duration: sustained or until dismissed (see below)
   description:
     main:
       You create a sphere of flame in a square within range. The sphere
@@ -3894,7 +3881,7 @@ forbidding-ward:
   range: 30 feet
   target: one ally and one enemy
 
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       You ward your ally against the attacks and hostile spells of
@@ -4025,7 +4012,7 @@ gate:
   traits: [conjuration, teleportation]
   casting: [aS, aV]
   range: 120 feet
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       You tear open a rift to another plane, creating a portal that
@@ -4064,12 +4051,13 @@ ghost-sound:
   traits: [auditory, cantrip, illusion]
   casting: [aS, aV]
   range: 30 feet
-  duration: concentration
+  duration: sustained
   description:
     main:
-      You create simple sounds up to a maximum volume of four normal
-      humans shouting, emanating from a square you designate within
-      range. You can't create intelligible words or other intricate sounds.
+      You create an auditory illusion of simple sounds that has a maximum volume equal
+      to four normal humans shouting. The sounds emanate from a square you designate
+      within range. You can't create intelligible words or other intricate sounds
+      (such as music).
   heightened:
     3rd: The range increases to 60 feet.
     5th: The range increases to 120 feet.
@@ -4107,7 +4095,7 @@ ghoulish-cravings:
         type: dl
         content:
           success:
-            The target takes a –2 conditional penalty to saving
+            The target takes a -2 conditional penalty to saving
             throws against ghoul fever for 1 day or until she contracts
             it, whichever comes first.
           crit: unaffected
@@ -4357,7 +4345,7 @@ grease:
             Acrobatics check against your spell DC to do so. If you target an
             attended object, the creature that has the object must attempt
             an Acrobatics check. On a failure, the holder or wielder takes
-            a –2 circumstance penalty to any attack roll or to any check
+            a -2 circumstance penalty to any attack roll or to any check
             attempted that involves using the object; on a critical failure,
             the holder or wielder drops the item. The object lands in an
             adjacent square of the GM's choice. If the object is worn, the
@@ -4701,7 +4689,7 @@ hideous-laughter:
   casting: [aS, aV]
   range: 30 feet
   target: one living creature
-  duration: concentration
+  duration: sustained
   description:
     main:
       The target is overtaken with uncontrollable laughter, based on
@@ -4835,7 +4823,7 @@ hypnotic-pattern:
   casting: [aM, aS]
   range: 120 feet
   area: 10-foot burst
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       You create a pattern of shifting colors that hovers in the air.
@@ -4860,7 +4848,7 @@ illusory-creature:
   traits: [auditory, illusory, visual]
   casting: [aS, aV]
   range: 500 feet
-  duration: concentration
+  duration: sustained
   description:
     main:
       You create an illusory image of a Huge or smaller creature. It
@@ -5017,7 +5005,7 @@ implosion:
   casting: [aS, aV]
   range: 30 feet
   target: one corporeal creature
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       You crush the target by causing it to collapse in on itself, dealing
@@ -5204,7 +5192,7 @@ invisibility-cloak:
   rarity: 1
   traits: [illusion]
   casting: [aM, aS]
-  duration: concentration or until dismissed, up to 1 minute
+  duration: sustained or until dismissed, up to 1 minute
   description:
     main:
       You become invisible, with the same restrictions as the 2nd-level
@@ -5403,7 +5391,7 @@ lay-on-hands:
       the target is an ally, he gains a +1 conditional bonus to AC for 1
       round. Against an undead target, you deal the same amount of
       positive damage if you succeed at a melee touch attack, and the
-      target takes a –1 conditional penalty to AC for 1 round.
+      target takes a -1 conditional penalty to AC for 1 round.
   heightened:
     "+1": The amount of healing (or damage to undead) increases by 2d6.
 leng-s-sting:
@@ -5449,7 +5437,7 @@ levitate:
       You levitate the target 5 feet off the ground. For the duration,
       you can spend a Somatic Casting action to move the target up
       or down 10 feet. A creature floating in the air from levitate takes
-      a –2 circumstance penalty to attack rolls. A floating creature
+      a -2 circumstance penalty to attack rolls. A floating creature
       can spend an Interact action to stabilize itself and negate these
       penalties for the remainder of its turn. If the target is adjacent to
       a fixed object or terrain of suitable stability, it can move across
@@ -5478,15 +5466,15 @@ light:
   traits: [cantrip, evocation, light]
   casting: [aS, aV]
   range: touch
-  target: one unattended, nonmagical object of 1 Bulk or less
-  duration: 1 day or until dismissed
+  target: 1 unattended, nonmagical object of 1 Bulk or less
+  duration: until the next time you make your daily preparations
   description:
     main:
-      The object begins to glow with pure light, casting bright light in a
-      20-foot radius like a torch. If you cast this spell again on another
-      object, the light on the last object you cast it on is dismissed.
+      The object glows, casting bright light in a 20-foot radius
+      (and dim light for the next 20 feet) like a torch. If you cast this spell
+      again on a second object, the light spell on the first object ends.
   heightened:
-    4th: The object instead sheds bright light in a 60-foot radius.
+    4th: The object instead sheds bright light in a 60-foot radius (and dim light for the next 60 feet).
 lightning-bolt:
   name: LIGHTNING BOLT
   type: SPELL
@@ -5554,7 +5542,7 @@ litany-against-sloth:
         type: dl
         content:
           success:
-            The target takes a –1 conditional penalty to all attack rolls
+            The target takes a -1 conditional penalty to all attack rolls
             attempted as part of reactions (such as Attacks of Opportunity).
           crit: The target is unaffected.
           failure: The target can't spend reactions.
@@ -5634,7 +5622,7 @@ locate:
   casting: [M, S, V]
   range: 500 feet
   target: one specific object or type of object
-  duration: concentration
+  duration: sustained
   description:
     main:
       You learn the direction to the target (if you picked a specific object,
@@ -5756,17 +5744,18 @@ mage-hand:
   casting: [aS, aV]
   range: 30 feet
   target: one unattended object of light Bulk or less
-  duration: concentration
+  duration: sustained
   description:
     main:
-      You create a single arcane hand, either invisible or ghostlike, that
+      You create a single magical hand, either invisible or ghostlike, that
       grasps the target object and moves it slowly up to 20 feet. Because
       you're levitating the object, you can move it in any direction. When
-      you Concentrate on the Spell, you can move the object an additional
-      20 feet. When the spell ends, the object falls if it's in the air.
+      you Sustain the Spell, you can move the object an additional
+      20 feet. If the object is in the air when the spell ends, the object falls.
   heightened:
     3rd: You can target an unattended object with a Bulk of 1 or less.
-    7th: The range increases to 60 feet, and you can target an unattended object with a Bulk of 1 or less.
+    5th: The range increases to 60 feet, and you can target an unattended object with a Bulk of 1 or less.
+    7th: The range increases to 60 feet, and you can target an unattended object with a Bulk of 2 or less.
 magic-aura:
   name: MAGIC AURA
   type: SPELL
@@ -5973,7 +5962,7 @@ maze:
   casting: [aS, aV]
   range: 30 feet
   target: one creature
-  duration: concentration, up to 10 minutes or until dismissed
+  duration: sustained, up to 10 minutes or until dismissed
   description:
     main:
       When you cast maze, you transport the target into an
@@ -6046,7 +6035,7 @@ message:
   type: SPELL
   level: 0
   rarity: 0
-  traits: [auditory, cantrip, illusion, lingual, mental]
+  traits: [auditory, cantrip, illusion, linguistic, mental]
   casting: [aV]
   range: 120 feet
   target: one creature
@@ -6054,12 +6043,14 @@ message:
   description:
     main:
       You mouth words, but instead of coming out of
-      your mouth, they're transferred to the ears of the
-      target. Though others cannot hear your words, the target can as
-      if she were standing next to you. She can give a brief response as
-      a reaction, or as a free action on her next turn if she wishes, but
-      she must be able to see you and be within range to do so. If she
-      responds, per the original missive only you can hear her response.
+      your mouth, they're transferred directly to the ears of the
+      target. While others cannot hear your words any better than if you
+      normally mouthed them, the target can hear your words as
+      if they were standing next to you. The target can give a brief response as
+      a reaction, or as a free action on her next turn if they wish, but
+      they must be able to see you and be within range to do so. If they
+      respond, their response is delivered directly to your ear, just like the
+      original message.
   heightened:
     3rd: The spell's range increases to 500 feet.
 metamagician-s-shortcut:
@@ -6151,7 +6142,7 @@ mind-probe:
             answer, and on a critical success, the target sends you a
             false answer that you believe is a truthful answer.
           crit-fail:
-            Per failure, but the target takes a –4
+            Per failure, but the target takes a -4
             circumstance penalty to Deception checks against
             questions you ask as part of the probe.
 mind-reading:
@@ -6242,8 +6233,8 @@ mirror-image:
       attack that would hit you has a random chance of hitting one of
       your images instead. If you have all three images up, there is a 1 in
       4 chance of hitting you (1 on a 1d4). With two images up, there is a
-      1 in 3 chance of hitting you (1–2 on a 1d6). With only one image the
-      chances are 1 in 2 (1–3 on a 1d6). If an image is hit, it is destroyed.
+      1 in 3 chance of hitting you (1-2 on a 1d6). With only one image the
+      chances are 1 in 2 (1-3 on a 1d6). If an image is hit, it is destroyed.
       If the attack roll is a critical success and would hit one of the
       images, it becomes a success against you and one of the images
       is also destroyed. Once all the images are destroyed, the spell
@@ -6274,7 +6265,7 @@ mislead:
   rarity: 0
   traits: [illusion]
   casting: [aS, aV]
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       You turn yourself invisible and create an illusory duplicate of
@@ -7026,7 +7017,7 @@ pest-form:
         - Speed 10 feet.
         - Low-light vision, scent.
         - Acrobatics +10 and Stealth +10 (unless your own total
-          modifiers are higher); Athletics –4.
+          modifiers are higher); Athletics -4.
   heightened:
     2nd: The duration increases to 1 hour.
     4th: You can turn into a flying creature, such as a bird. You also gain a fly Speed of 20 feet.
@@ -7292,7 +7283,7 @@ possession:
   casting: [aS, aV]
   range: 30 feet
   target: one living creature
-  duration: concentration up to 1 minute
+  duration: sustained up to 1 minute
   description:
     main:
       You send your mind and soul into the target's body, attempting
@@ -7339,7 +7330,7 @@ power-word-blind:
         type: dl
         content:
           "12th or Lower": Blinded permanently.
-          "13th–14th": Blinded for 1d4 minutes.
+          "13th-14th": Blinded for 1d4 minutes.
           "15th or Higher": Dazzled for 1 minute.
   heightened:
     "+1": The levels at which each outcome applies increase by 2.
@@ -7394,7 +7385,7 @@ power-word-stun:
         type: dl
         content:
           "13th or Lower": Stunned for 1d6 rounds.
-          "14th–15th": Stunned for 1 round.
+          "14th-15th": Stunned for 1 round.
           "16th or Higher": Slowed 1 for 1 round instead of stunned.
   heightened:
     "+1": The levels at which each outcome applies increase by 2.
@@ -7425,36 +7416,33 @@ prestidigitation:
   casting: [aS, aV]
   range: 10 feet
   target: one object (cook, lift, or tidy only)
-  duration: concentration
+  duration: sustained
   description:
     main:
-      You can perform simple magical effects for as long as you
-      Concentrate on the Spell. The effects are minor and have severe
-      limitations. Each time you Concentrate on the Spell, you can
-      choose one of four options, based on your type of magic.
+      The simplest magic does your bidding. You can perform simple magical effects for as long
+      as you Sustain the Spell. Each time you Sustain the Spell, you can choose one of four
+      options.
       ${subsection.options}
       Prestidigitation can't deal damage or cause adverse conditions.
-      Any actual change to an object (beyond just moving, cleaning,
-      coloring, or soiling it) persists only as long as you Concentrate
-      on the Spell.
+      Any actual change to an object (beyond what is noted above) persists only as long as you
+      Sustain the Spell.
     subsections:
       options:
         type: dl
         content:
-          "Cook (arcane, primal)":
-            Chill, warm, or flavor 1 pound of nonliving material.
-          "Lift (arcane, divine, occult)":
-            Slowly lift an unattended object of light Bulk or less 1 foot off
+          "Cook":
+            Cool, warm, or flavor 1 pound of nonliving material.
+          "Lift Slowly":
+            lift an unattended object of light Bulk or less 1 foot off
             the ground.
-          "Make (arcane, divine, occult)":
-            Create an object of negligible Bulk, made of congealed magical
-            substance and temporary in nature. The object looks crude and
-            artificial and is extremely fragile — it crumbles if put under too
-            much strain and can't be used as a tool, weapon, or spell component.
-          "Tidy (arcane, primal)":
-            Color, clean, or soil an object of light or less Bulk. You can affect
-            an object of 1 Bulk with 10 rounds of concentration or a larger
-            object, such as a suit of armor, with 5 minutes of concentration.
+          "Make":
+            Create a temporary object of negligible Bulk, made of congealed magical
+            substance. The object looks crude and artificial and is extremely fragile — it
+            can't be used as a tool, weapon, or spell component.
+          "Tidy":
+            Color, clean, or soil an object of light Bulk or less. You can affect
+            an object of 1 Bulk with 10 rounds of concentration and a larger
+            object a 1 minute per Bulk.
 primal-herd:
   name: PRIMAL HERD
   type: SPELL
@@ -7650,19 +7638,17 @@ produce-flame:
   traits: [attack, cantrip, evocation, fire]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   description:
     main:
-      A flame appears in your palm. Make a melee or
-      ranged touch attack. On a success, you deal 1d4
-      fire damage. On a critical success, the target takes 1d4 persistent
-      fire damage in addition to the cantrip dealing double damage.
-      Heightening this spell increases its damage.
+      A small ball of flame appears in the palm of your hand, and you lash out with
+      it either in melee or at range. Make a spell attack roll against your target's AC.
+      This is normally a ranged attack, but you can also make a melee attack against a
+      creature in your unarmed reach. On a success, you deal 1d4 fire damage plus your
+      spellcasting ability modifier. On a critical success, the target takes double damage and
+      1d4 persistent fire damage.
   heightened:
-    3rd: 1d6 + your spellcasting ability modifier.
-    5th: 2d6 + your spellcasting ability modifier, and double damage + 2d4 persistent fire damage on a critical hit.
-    7th: 3d6 + your spellcasting ability modifier and double damage + 3d4 persistent fire damage on a critical hit.
-    9th: 4d6 + your spellcasting ability modifier and double damage + 4d4 persistent fire damage on a critical hit.
+    "+1": Increase the damage by 1d4 and the persistent damage on a critical hit by 1d4.
 project-image:
   name: PROJECT IMAGE
   type: SPELL
@@ -7671,7 +7657,7 @@ project-image:
   traits: [illusion, mental]
   casting: [aS, aV]
   range: 30 feet
-  duration: concentration up to 1 minute
+  duration: sustained up to 1 minute
   description:
     main:
       You project an illusory image of yourself. You must stay within
@@ -7727,7 +7713,7 @@ protective-ward:
   traits: [abjuration]
   casting: [aS, aV]
   area: 10-foot-radius burst centered on you
-  duration: concentration up to 1 minute
+  duration: sustained up to 1 minute
   description:
     main:
       You emanate a shimmering aura of protection magic. You and any
@@ -7741,7 +7727,7 @@ prying-eye:
   casting-time: 10 minutes
   casting: [M, S, V]
   range: see text
-  duration: concentration, up to 10 minutes
+  duration: sustained, up to 10 minutes
   description:
     main:
       You create an invisible, floating eye, 1 inch in diameter, at a location
@@ -7763,7 +7749,7 @@ punishing-winds:
   casting: [aM, aS, aV]
   range: 100 feet
   area: 30-foot radius, 100-foot-tall cylinder
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       Violent winds and a powerful downdraft fill the area, forming a
@@ -7948,14 +7934,15 @@ ray-of-frost:
   target: one creature
   description:
     main:
-      Make a ranged touch attack against the target. If you
-      hit, you deal 1d8 cold damage. Double the damage
-      on a critical hit. Heightening this spell increases its damage.
+      You blast an icy ray. Make a spell attack roll. The ray deals cold damage
+      equal to 1d4 + your spellcasting ability modifier.
+      ${subsection.save}
+    subsections:
+      save:
+        "Critical Success": The target takes double damage and takes a -10-foot status penalty to its Speeds for 1 round.
+        "Success": The target takes normal damage.
   heightened:
-    3rd: The cold damage increases to 1d8 + your spellcasting ability modifier.
-    5th: The cold damage increases to 2d8 + your spellcasting ability modifier.
-    7th: The cold damage increases to 3d8 + your spellcasting ability modifier.
-    9th: The cold damage increases to 4d8 + your spellcasting ability modifier.
+    "+1": The damage increases by 1d4
 read-aura:
   name: READ AURA
   type: SPELL
@@ -7968,11 +7955,11 @@ read-aura:
   target: one object
   description:
     main:
-      You focus on the target object. When the casting is
-      complete, you know whether or not that item is magical and, if it
-      is, you learn the school of magic (see page 194).
-      If the object is illusory, you detect this only if the effect has a
-      lower level than the level of your read aura spell.
+      You focus on the target object, opening your mind to perceive magical auras.
+      When the casting is complete, you know whether that item is magical,
+      and if it is, you learn the school of magic (pages 297-298).
+      If the object is illusory, you detect this only if the effect's level
+      is lower than the level of your read aura spell.
   heightened:
     3rd: You can target up to 10 objects.
     6th: You can target any number of objects.
@@ -8324,7 +8311,7 @@ retrocognition:
   traits: [divination]
   casting-time: 1 minute
   casting: [M, S, V]
-  duration: concentration, up to 10 minutes
+  duration: sustained, up to 10 minutes
   description:
     main:
       This spell allows you to gain impressions from past events
@@ -8334,7 +8321,7 @@ retrocognition:
       by impressions from the next day back the next minute you
       concentrate, and so on. If you witness a traumatic or turbulent
       event through an impression, you lose concentration on the spell
-      unless you succeed at a Will save with a DC of 30–35, depending
+      unless you succeed at a Will save with a DC of 30-35, depending
       on the severity of the event. The GM determines whether an event
       is traumatic and chooses the DC.
   heightened:
@@ -8383,7 +8370,7 @@ revival:
   casting: [aS, aV]
   range: 30 feet
   target: dead creatures and living creatures of your choice in range
-  duration: concentration, up to 10 rounds
+  duration: sustained, up to 10 rounds
   description:
     main:
       All living targets regain Hit Points equal to 9d8 plus your
@@ -8604,7 +8591,7 @@ scintillating-pattern:
   casting: [aM, aS]
   range: 120 feet
   area: 20-foot burst
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       A field of vibrant, ever-changing colors manifests in the air.
@@ -8634,7 +8621,7 @@ scrying:
   casting: [M, S, V]
   range: planetary
   target: one creature
-  duration: concentration, up to 10 minutes
+  duration: sustained, up to 10 minutes
   description:
     main:
       Scrying works like clairvoyance, except that the image you
@@ -8862,23 +8849,22 @@ shield:
   rarity: 0
   traits: [abjuration, cantrip, force]
   casting: [aV]
-  duration: until your next turn or until dismissed
+  duration: until the start of your next turn
   description:
     main:
-      You raise a magical shield of force to protect you.
-      This counts as using the Raise a Shield action (see the sidebar) to
-      gain a +1 circumstance bonus to AC until the start of your next
-      turn, though it doesn't require a hand to use.
-      While the spell is in effect, you can also use the Shield Block
-      reaction with your magic shield. The shield has Hardness 4. After
-      you use Shield Block, the spell is dismissed and you can't cast it
-      again for 10 minutes. Unlike a normal Shield Block, you can use
-      the spell's reaction against the magic missile spell.
-      Heightening the spell increases the Hardness.
+      You raise a magical shield of force. This counts as using the Raise a Shield action,
+      giving you a +1 circumstance bonus to AC until the start of your next turn,
+      but it doesn't require a hand to use.
+      While the spell is in effect, you can use the Shield Block reaction with your magic shield.
+      The shield has Hardness 5. After you use Shield Block, the spell ends and you can't cast it
+      again for 10 minutes. Unlike a normal Shield Block, you can use the spell's reaction against
+      the magic missile spell.
+      Heightening the spell increases the shield's Hardness.
   heightened:
     3rd: Hardness 10.
     5th: Hardness 15.
     7th: Hardness 20.
+    9th: Hardness 25.
 shield-other:
   name: SHIELD OTHER
   type: SPELL
@@ -9011,10 +8997,10 @@ sigil:
   description:
     main:
       You harmlessly place your unique magical sigil, which is about
-      1 square inch in size, on the touched creature or object. The
+      1 square inch in size, on the targeted creature or object. The
       mark can be visible or invisible, and you can change it from
-      one state to another by spending a Somatic Casting action
-      during which you touch the target.
+      one state to another by using an Interact action
+      to touch the target.
       The mark can be scrubbed or scraped off with 5 minutes of
       work. If it's on a creature, it fades naturally over the course of
       a week. The time before the mark fades increases depending
@@ -9087,7 +9073,7 @@ sleep:
       save:
         type: dl
         content:
-          success: –1 conditional penalty to Perception checks for 1 round.
+          success: -1 conditional penalty to Perception checks for 1 round.
           crit: Unaffected.
           failure: It falls asleep. If it's still asleep after 1 minute, it wakes up automatically.
           crit-fail: It falls asleep. If it's still asleep after 1 hour, it wakes up automatically.
@@ -9442,7 +9428,7 @@ spiritual-guardian:
   casting: [aS, aV]
   requirements: You have a deity.
   range: 120 feet
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       A Medium guardian made of pure magical force manifests
@@ -9496,7 +9482,7 @@ spiritual-weapon:
   casting: [aS, aV]
   requirements: You must have a deity.
   range: 120 feet
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       A weapon made of pure magical force manifests and attacks foes
@@ -9641,7 +9627,7 @@ storm-lord:
   traits: [air, electricity, evocation]
   casting: [aS, aV]
   area: 100-foot spread
-  duration: concentration, up to 1 minute or until dismissed
+  duration: sustained, up to 1 minute or until dismissed
   description:
     main:
       The sky above you darkens in a matter of moments, swirling with
@@ -9664,11 +9650,11 @@ storm-lord:
           Fog: Heavy fog rolls in, concealing the area per obscuring mist.
           Rain:
             Torrential rain falls from the clouds above, dousing
-            ordinary flames. Creatures in the area take a –2 penalty to
+            ordinary flames. Creatures in the area take a -2 penalty to
             Acrobatics and Perception checks.
           Wind:
             Powerful winds buffet the area in all directions.
-            Ranged attacks take a –4 penalty and all flying is against
+            Ranged attacks take a -4 penalty and all flying is against
             the wind and counts as moving through difficult terrain.
       save:
         type: dl
@@ -9686,11 +9672,11 @@ storm-of-vengeance:
   casting: [aM, aS, aV]
   range: 800 feet
   area: 360-foot burst
-  duration: concentration, up to 10 rounds
+  duration: sustained, up to 10 rounds
   description:
     main:
       A massive storm cloud forms in the air in a 360-foot burst. Beneath
-      it, rain begins to fall, and whipping winds impose a –4 circumstance
+      it, rain begins to fall, and whipping winds impose a -4 circumstance
       penalty to physical ranged attacks and weapon ranged attacks.
       When you cast this spell and the first time each round you
       Concentrate on the Spell, you can choose one of the following
@@ -9789,7 +9775,7 @@ summon-monster:
   traits: [conjuration]
   casting: [aM, aS, aV]
   range: 30 feet
-  duration: concentration, up to 1 minute or until dismissed
+  duration: sustained, up to 1 minute or until dismissed
   description:
     main:
       You summon a level 0 creature from the summon monster list. This
@@ -9840,7 +9826,7 @@ summon-nature-s-ally:
   traits: [conjuration]
   casting: [aM, aS, aV]
   range: 30 feet
-  duration: concentration, up to 1 minute or until dismissed
+  duration: sustained, up to 1 minute or until dismissed
   description:
     main:
       You summon a level 0 creature from the summon nature's ally list.
@@ -10035,7 +10021,7 @@ take-its-course:
       unwilling creature, you must hit it with a melee touch Strike. On a
       willing or unconscious creature or on a critical hit against an unwilling
       creature, you can grant the creature either a +2 conditional bonus or
-      a –2 conditional penalty to its saving throw against the toxin.
+      a -2 conditional penalty to its saving throw against the toxin.
 talking-corpse:
   name: TALKING CORPSE
   type: SPELL
@@ -10077,7 +10063,7 @@ talking-corpse:
             you can ask all your questions.
           crit-fail:
             Per failure, but the target's answers are more
-            direct and less repetitive, though still cryptic. It takes a –2
+            direct and less repetitive, though still cryptic. It takes a -2
             conditional penalty to Deception checks to deceive you.
 tanglefoot:
   name: TANGLEFOOT
@@ -10092,17 +10078,19 @@ tanglefoot:
     main:
       A vine covered in sticky sap appears from thin air,
       flicking from your hand and lashing itself to the target. Attempt
-      a ranged touch attack against the target. ${subsection.outcomes}
+      a spell attack against the target. ${subsection.outcomes}
     subsections:
       outcomes:
         type: dl
         content:
           success:
-            The target is entangled. It can attempt an Acrobatics
-            or Athletics check against your spell DC to remove the
-            entangled condition (and immobile condition, if necessary).
-          crit: Per success, and the target immobile as long as it's entangled.
-          failure: No effect.
+            The target takes a -10-foot circumstance penalty to its Speeds for 1 round.
+            It can attempt to Escape against your spell DC to remove the penalty.
+          crit:
+            The target gains the immobilized condition and takes a -10-foot circumstance
+            penalty to its Speeds for 1 round. It can attempt to Escape against your spell DC
+            to remove the penalty and the immobilized condition.
+          failure: The target is unaffected.
   heightened:
     2nd: The entangled condition lasts for 2 rounds.
     4th: The entangled condition lasts for 1 minute.
@@ -10137,7 +10125,7 @@ telekinetic-haul:
   casting: [aS, aV]
   range: 120 feet
   target: one object weighing up to 500 pounds and with no dimension longer than 20 feet
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       When you cast this spell, you move the target up to 20 feet,
@@ -10169,29 +10157,20 @@ telekinetic-projectile:
   target: one creature
   description:
     main:
-      You hurl a loose, unattended object in range at the
-      target. The spell gains the trait of a damage type appropriate to the
-      object (bludgeoning, piercing, or slashing). Make a ranged attack
-      against the target. If you hit, you deal 1d10 damage of the given
-      type; you deal double damage on a critical hit. No special traits or
-      magic properties of the hurled item affect the attack or damage.
-      You can heighten the spell to hurl more objects, though you
-      attempt only one attack roll and target only one creature, and
-      your salvo of projectiles deals damage all at once for the purposes
-      of resistances, weaknesses, and the like. Only one damage type
-      applies regardless of how many objects you hurl.
+      You hurl a loose, unattended object that is within range and that has 1 Bulk or less
+      at the target. Make a ranged attack against the target. If you hit, you deal
+      bludgeoning, piercing, or slashing damage—as appropriate for the object you hurled—equal
+      to 1d6 plus your spellcasting ability modifier. No specific traits or magic properties of
+      the hurled item affect the attack or the damage.
       ${subsection.outcomes}
     subsections:
       outcomes:
         type: dl
         content:
-          success: Full damage.
-          crit: Double damage.
+          success: You deal full damage.
+          crit: You deal double damage.
   heightened:
-    3rd: The damage increases to 1d8 + your spellcasting ability modifier.
-    5th: You hurl two objects at once, dealing total damage equal to 2d10 + your spellcasting ability modifier.
-    7th: You hurl three objects at once, dealing total damage equal to 3d10 + your spellcasting ability modifier.
-    9th: You hurl four objects at once, dealing total damage equal to 4d10 + your spellcasting ability modifier.
+    "+1": The damage increased by 1d6.
 telepathic-bond:
   name: TELEPATHIC BOND
   type: SPELL
@@ -10331,12 +10310,12 @@ thunder-shield:
   rarity: 1
   traits: [air, electricity, evocation]
   casting: [aS, aV]
-  duration: concentration, up to 1 minute or until dismissed
+  duration: sustained, up to 1 minute or until dismissed
   description:
     main:
       You become surrounded by a cloud of swirling fog, punctuated
       by occasional sparks of lightning and thunderous booms. You
-      become concealed, but take a –2 penalty to Stealth checks.
+      become concealed, but take a -2 penalty to Stealth checks.
       You deal electricity damage equal to 3d6 plus your spellcasting
       ability modifier to any creature that hits you with an unarmed
       attack or with a non-reach weapon. ${subsection.save}
@@ -10449,7 +10428,7 @@ touch-of-obedience:
         type: dl
         content:
           success: Stupefied 1.
-          crit: Stupefied 1, and it takes a –2 conditional penalty to Will saves against mental effects.
+          crit: Stupefied 1, and it takes a -2 conditional penalty to Will saves against mental effects.
           failure: The target is unaffected.
 touch-of-shadows:
   name: TOUCH OF SHADOWS
@@ -10651,7 +10630,7 @@ unfathomable-song:
   casting: [aS, aV]
   range: 120 feet
   target: up to five creatures
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       Fleeting notes of a strange and unnatural song
@@ -10785,7 +10764,7 @@ unseen-servant:
   traits: [conjuration]
   casting: [aM, aS, aV]
   range: 60 feet
-  duration: concentration, up to 1 minute or until dismissed
+  duration: sustained, up to 1 minute or until dismissed
   description:
     main:
       You summon an unseen servant (see the sidebar), which you
@@ -10948,7 +10927,7 @@ vibrant-pattern:
   casting: [aM, aS]
   range: 120 feet
   area: 10-foot burst
-  duration: concentration, up to 1 minute
+  duration: sustained, up to 1 minute
   description:
     main:
       You create a pattern of lights in the air that pulses with intense
@@ -11078,8 +11057,8 @@ waking-nightmare:
         content:
           success: +1 conditional bonus.
           crit: +2 conditional bonus.
-          failure: –1 conditional penalty.
-          crit-fail: –2 conditional penalty.
+          failure: -1 conditional penalty.
+          crit-fail: -2 conditional penalty.
 wail-of-the-banshee:
   name: WAIL OF THE BANSHEE
   type: SPELL
@@ -11257,7 +11236,7 @@ wall-of-wind:
       Physical ranged attacks, such as arrows, bolts, sling bullets,
       and other similarly sized ammunition, can't pass through the
       wall. Attacks from bigger ranged weapons, such as javelins,
-      take a –2 circumstance penalty to their attack rolls if their path
+      take a -2 circumstance penalty to their attack rolls if their path
       passes through the wall. Massive ranged weapons and spell
       effects that don't create physical objects pass through the wall
       without trouble.
@@ -11801,12 +11780,12 @@ zone-of-truth:
       save:
         type: dl
         content:
-          success: The target takes a –1 conditional penalty to Deception checks.
+          success: The target takes a -1 conditional penalty to Deception checks.
           crit: Unaffected.
           failure:
             The target can't speak any deliberate and intentional
-            lies and takes a –1 conditional penalty to Deception checks.
+            lies and takes a -1 conditional penalty to Deception checks.
           crit-fail:
             The target can't speak any deliberate and
-            intentional lies and takes a –4 conditional penalty to
+            intentional lies and takes a -4 conditional penalty to
             Deception checks.
