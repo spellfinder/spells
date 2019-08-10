@@ -217,14 +217,14 @@ air-bubble:
   level: 1
   rarity: 0
   casting: [rV]
-  trigger: A creature within range enters an environment where it can't breathe
+  trigger: A creature within range enters an environment where it can't breathe.
   range: 60 feet
   target: the triggering creature
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
       A bubble of pure air appears around the target's head, allowing it to breathe normally.
-      The spell is dismissed as soon as the target returns to an environment where it can breathe normally.
+      The effect ends as soon as the target returns to an environment where it can breathe normally.
 air-walk:
   name: Air Walk
   traits: [transmutation]
@@ -253,15 +253,18 @@ alarm:
   duration: 8 hours
   description:
     main:
-      The focus is whisked away until the magic is broken or the spell expires. When you cast alarm, select a password.
-      Whenever a Small or larger corporeal creature enters the spell's area without speaking the password, alarm sends
-      your choice of a mental alert that awakens you (in which case the spell gains the mental trait) or an audible
-      alarm with the sound and volume of a hand bell (in which case the spell gains the auditory trait).
-      Either option automatically awakens you, and the bell allows each creature in the area to awake if it succeeds at
-      a DC 15 Perception check. A creature aware of the alarm must succeed at a Stealth check against the spell's DC or
-      trigger the alarm when moving into the area.
+      You ward an area to alert you when creatures enter without your permission.
+      When you cast alarm, select a password. Whenever a Small or larger corporeal
+      creature enters the spell's area without speaking the password, alarm sends
+      your choice of a mental alert (in which case the spell gains the mental trait)
+      or an audible alarm with the sound and volume of a hand bell
+      (in which case the spell gains the auditory trait). Either option automatically
+      awakens you, and the bell allows each creature in the area to attempt
+      a DC 15 Perception check to wake up. A creature aware of the alarm must succeed
+      at a Stealth check against the spell's DC or trigger the spell when moving into
+      the area.
   heightened:
-    3rd: You can specify criteria for creatures that sound the alarm. For instance, orcs or people with red hair.
+    3rd: You can specify criteria for which creatures sound the alarm spell. For instance, orcs or masked people.
 allegro:
   name: Allegro
   traits: [cantrip, composition, emotion, enchantment, mental]
@@ -423,8 +426,9 @@ ant-haul:
   duration: 8 hours
   description:
     main:
-      The target can carry 3 more Bulk than normal before becoming
-      encumbered and up to a maximum of 6 more Bulk.
+      You reinforce the target's musculoskeletal system to bear more weight.
+      The target can carry 3 more Bulk than normal before becoming encumbered
+      and up to a maximum of 6 more Bulk.
 antimagic-field:
   traits: [abjuration]
   name: ANTIMAGIC FIELD
@@ -910,19 +914,11 @@ burning-hands:
   traits: [evocation, fire]
   casting: [aS, aV]
   area: 15-foot cone
+  save: basic Reflex
   description:
     main:
-      Gouts of flame rush from your hands. You deal 3d6 fire damage to
-      creatures in the area; they must each attempt a Reflex save.
-      ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: The creature takes half damage.
-          crit: The creature takes no damage.
-          failure: The creature takes full damage.
-          crit-fail: The creature takes double damage.
+      Gouts of flame rush from your hands. You deal 2d6 fire damage to
+      creatures in the area.
   heightened:
     "+1": The damage increases by 2d6.
 call-of-the-grave:
@@ -1047,19 +1043,18 @@ charm:
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one humanoid creature
-  duration: 1 hour or until dismissed
+  target: 1 creature
+  duration: 1 hour
+  save: Will
   description:
     main:
-      To the target, your words are honey and your visage bathed in
-      dreamy haze. It must attempt a Will save, with a +4 circumstance
-      bonus if you or your allies recently threatened it or acted hostile.
-      You can dismiss charm with a Verbal Casting action. If you act
-      hostile to the target, the spell ends. When the spell ends, the target
-      doesn't necessarily realize it was charmed unless its friendship
-      with you or the actions you convinced it to take clash with its
-      expectations, which could potentially allow you to convince the
-      target to continue being your friend via mundane means.
+      To the target, your words are honey and your visage seems bathed in a dreamy haze.
+      It must attempt a Will save, with a +4 circumstance bonus if you or your allies
+      recently threatened it or used hostile actions against it.
+      You can Dismiss the spell. If you use hostile actions against the target, the spell ends.
+      When the spell ends, the target doesn't necessarily realize it was charmed unless its
+      friendship with you or the actions you convinced it to take clash with its expectations,
+      meaning you could potentially convince the target to continue being your friend via mundane means.
       ${subsection.save}
     subsections:
       save:
@@ -1072,11 +1067,11 @@ charm:
           crit: The target is unaffected and aware you tried to charm it.
           failure:
             The target's attitude becomes friendly toward you. If it was friendly, it becomes helpful.
-            It can't act hostile toward you.
-          crit-fail: Target is helpful and can't act hostile toward you.
+            It can't use hostile actions against you.
+          crit-fail: The target's attitude becomes helpful toward you, and it can't use hostile actions against you.
   heightened:
-    4th: You can target any creature, not just humanoids.
-    8th: You can target up to 10 creatures of any kind.
+    '+4': The duration lasts until the next time you make your daily preparations.
+    '+8': The duration lasts until the next time you make your daily preparations, and you can target up to 10 creatures.
 charming-touch:
   name: CHARMING TOUCH
   type: POWER
@@ -1339,20 +1334,21 @@ color-spray:
   type: SPELL
   level: 1
   rarity: 0
-  traits: [illusion, visual]
+  traits: [illusion, incapacitation, visual]
   casting: [aS, aV]
   area: 15-foot cone
   duration: 1 or more rounds (see below)
+  save: Will
   description:
     main: Swirling colors affect viewers based on their Will saves. ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Dazzled for 1 round.
-          crit: The target is unaffected.
-          failure: Blinded for 1 round, dazzled for 4 rounds.
-          crit-fail: Stunned for 1 round, blinded for 4 rounds.
+          success: The creature is dazzled for 1 round.
+          crit: The creature is unaffected.
+          failure: The creature is stunned 1, blinded for 1 round, and dazzled for 1 minute.
+          crit-fail: The creature is stunned for 1 round and blinded for 1 minute.
 command:
   name: COMMAND
   type: SPELL
@@ -1361,21 +1357,23 @@ command:
   traits: [auditory, enchantment, lingual, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: until the end of the target's next turn
+  save: Will
   description:
     main:
       You shout a command that's hard to ignore. You can
       command the target to approach you, run away (as if it had the
-      fleeing condition), drop what it's holding, drop prone, or stand in
-      place. The effects depend on the target's Will save. ${subsection.save}
+      fleeing condition), release what it's holding, drop prone, or stand in
+      place. It can't Delay or take any reactions until it has obeyed your command.
+      The effects depend on the target's Will save. ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success: The target is unaffected.
-          failure: The target spends its first action doing as you commanded, and the spell is dismissed.
-          crit-fail: The target does as you commanded, spending as many actions as possible doing so, and does nothing else.
+          failure: For the first action on its next turn, the creature must use a single action to do as you command.
+          crit-fail: The target must use all its actions on its next turn to obey your command.
   heightened:
     5th: You can target up to 10 creatures.
 commanding-lash:
@@ -1578,11 +1576,11 @@ create-water:
   rarity: 0
   traits: [conjuration, water]
   casting: [aS, aV]
-  range: touch
+  range: 0 feet
   description:
     main:
-      Cupping your hands, water begins to flow. You create 2 gallons of
-      water. If no one drinks it, it evaporates after 1 day.
+      As you cup your hands, water begins to flow forth from them.
+      You create 2 gallons of water. If no one drinks it, it evaporates after 1 day.
 creation:
   name: CREATION
   type: SPELL
@@ -3486,11 +3484,12 @@ fear:
   rarity: 0
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
+  save: Will
   duration: varies
   traits: [emotion, enchantment, fear, mental]
   description:
-    main: You plant fear in the target, with effects based on its Will save. ${subsection.save}
+    main: You plant fear in the target; it must attempt a Will save. ${subsection.save}
     subsections:
       save:
         type: dl
@@ -3511,13 +3510,14 @@ feather-fall:
   trigger: A creature within range is falling.
   range: 60 feet
   target: one falling creature
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
+      You cause the air itself to arrest a fall.
       The target's fall slows to 60 feet per round, and the portion of
       the fall during the spell's duration doesn't count when calculating
       falling damage. If the target reaches the ground while the spell is
-      in effect, it takes no damage from the fall. The spell is dismissed
+      in effect, it takes no damage from the fall. The spell ends
       as soon as the target lands.
 feeblemind:
   name: FEEBLEMIND
@@ -3822,7 +3822,7 @@ fleet-step:
   casting: [aS, aV]
   duration: 1 minute
   description:
-    main: You are accelerated 30, but this applies only to your Speed.
+    main: You gain a +30-foot status bonus to your Speed.
 flesh-to-stone:
   name: FLESH TO STONE
   type: SPELL
@@ -3860,19 +3860,16 @@ floating-disk:
   rarity: 0
   traits: [conjuration]
   casting: [aS, aV]
-  duration: 1 hour or until dismissed
+  duration: 8 hours
   description:
     main:
-      A disk of magical energy materializes adjacent to you. This disk
-      is 2 feet in diameter and follows 5 feet behind you automatically,
-      floating just above the ground. It holds up to 5 Bulk of objects
-      (though they must be able to fit and balance on its surface).
-      Any objects atop a floating disk fall to the ground when the
-      spell ends.
-      The disk is dismissed if a creature tries to ride atop it, if anyone
-      tries to lift or force the disk higher above the ground, or if you
-      move more than 30 feet away from the disk (such as by Flying or
-      Climbing above the ground).
+      A disk of magical force materializes adjacent to you. This disk is 2 feet
+      in diameter and follows 5 feet behind you, floating just above the ground.
+      It holds up to 5 Bulk of objects (though they must be able to fit and balance
+      on its surface). Any objects atop the disk fall to the ground when the spell ends.
+      The spell ends if a creature tries to ride atop the disk, if the disk is overloaded,
+      if anyone tries to lift or force the disk higher above the ground, or if you move
+      more than 30 feet away from the disk.
 fly:
   name: FLY
   type: SPELL
@@ -4261,11 +4258,12 @@ goblin-pox:
   traits: [attack, disease, necromancy]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
+  save: Fortitude
   description:
     main:
-      Your touch afflicts the target with goblin pox. The
-      effect is based on the result of the target's Fortitude save.
+      Your touch afflicts the target with goblin pox, an irritating allergenic rash.
+      The target must attempt a Fortitude save.
       ${subsection.save} ${subsection.disease}
     subsections:
       save:
@@ -4311,21 +4309,21 @@ grim-tendrils:
   traits: [necromancy, negative]
   casting: [aS, aV]
   area: 30-foot line
+  save: Fortitude
   description:
     main:
-      Black shadows curl out from your fingertips and race through
-      the air, taking the form of ephemeral vines spiked with thorns.
-      You deal 3d4 negative damage and 1 persistent bleed damage
-      to living creature in the line, depending on their Fortitude saves.
+      Tendrils of darkness curl out from your fingertips and race through the air.
+      You deal 2d4 negative damage and 1 persistent bleed damage to living creatures in the line.
+      Each living creature in the line must attempt a Fortitude save.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The creature takes half negative damage and no bleed.
+          success: The creature takes half negative damage and no persistent bleed damage.
           crit: The creature is unaffected.
           failure: The creature takes full damage.
-          crit-fail: Double negative and persistent bleed damage.
+          crit-fail: The creature takes double negative damage and double persistent bleed damage.
   heightened:
     "+1": The negative damage increases by 2d4 and the persistent bleed damage increases by 1.
 grease:
@@ -4341,33 +4339,30 @@ grease:
   duration: 1 minute
   description:
     main:
-      You conjure greasy goo, with effects based on your target.
+      You conjure greasw, with effects based on choosing area or target.
       ${subsection.effects}
     subsections:
       effects:
         type: dl
         content:
-          "Target an Area":
+          Area:
             Any solid ground in the area is covered with
             grease. Each creature standing on the greasy surface must
-            succeed at a Reflex save or an Acrobatics check to Maintain
-            Balance against your spell DC or fall prone. Creatures
-            moving onto the greasy surface after the spell is cast must
-            also attempt an Acrobatics check to Balance. A creature
-            that takes a Step doesn't have to attempt a check or save.
-          "Target an Object":
-            If you cast the spell on an unattended
-            object, those trying to pick up the object must succeed at an
-            Acrobatics check against your spell DC to do so. If you target an
-            attended object, the creature that has the object must attempt
-            an Acrobatics check. On a failure, the holder or wielder takes
-            a -2 circumstance penalty to any attack roll or to any check
-            attempted that involves using the object; on a critical failure,
-            the holder or wielder drops the item. The object lands in an
-            adjacent square of the GM's choice. If the object is worn, the
-            wearer gains a +2 circumstance bonus to Fortitude saving
-            throws against attempts to grapple or shove them.
-
+            succeed at a Reflex save or an Acrobatics check
+            against your spell DC or fall prone. Creatures using an action
+            to move onto the greasy surface during the spell's duration must
+            attempt either a Reflex save or an Acrobatics check to Balance.
+            A creature that Steps or Crawls doesn't have to attempt a check or save.
+          Target:
+            If you cast the spell on an unattended object, anyone trying to pick up
+            the object must succeed at an Acrobatics check or Reflex save against your
+            spell DC to do so. If you target an attended object, the creature that has
+            the object must attempt an Acrobatics check or Reflex save. On a failure,
+            the holder or wielder takes a –2 circumstance penalty to all checks that
+            involve using the object; on a critical failure, the holder or wielder
+            releases the item. The object lands in an adjacent square of the GM's choice.
+            If you cast this spell on a worn object, the wearer gains a +2 circumstance bonus
+            to Fortitude saves against attempts to grapple them.
 guidance:
   name: GUIDANCE
   type: SPELL
@@ -4395,27 +4390,28 @@ gust-of-wind:
   traits: [air, evocation]
   area: 60-foot line
   duration: until the start of your next turn
+  save: Fortitude
   description:
     main:
       A violent wind issues forth from your outstretched palm, blowing
       from the point where you are when you cast the spell to the
       line's opposite end. The wind extinguishes small nonmagical fires,
-      disperses fog and mist, blows around objects of light Bulk or less,
+      disperses fog and mist, blows around objects of light Bulk or less around,
       and pushes larger objects. Large or smaller creatures in the area
       must attempt a Fortitude save. Large or smaller creatures that
-      move into the gust later must attempt the save on entering.
+      later move into the gust must attempt the save on entering.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success: The creature can't move against the wind.
-          crit: Unaffected.
+          crit: The creature is unaffected.
           failure:
-            Knocked prone. If it was flying, it suffers the effects of
+            The creature is knocked prone. If it was flying, it suffers the effects of
             critical failure instead.
           crit-fail:
-            Pushed 30 feet in the wind direction, knocked
+            The creature is pushed 30 feet in the wind's direction, knocked
             prone, and takes 2d6 bludgeoning damage.
 hallucination:
   name: HALLUCINATION
@@ -4817,6 +4813,27 @@ hurtling-stone:
       damage equal to 1d10 plus your Strength modifier.
   heightened:
     "+2": The stone's base damage increases by 1d10.
+hydraulic-push:
+  name: Hydraulic Push
+  type: spell
+  level: 1
+  rarity: 0
+  traits: [attack, evocation, water]
+  casting: [aS, aV]
+  range: 60 feet
+  target: 1 creature or object
+  description:
+    main:
+      You call forth a powerful blast of pressurized water that bludgeons the target and knocks it back.
+      Make a ranged spell attack roll. ${subesction.outcomes}
+    subsections:
+      outcomes:
+        type: dl
+        content:
+          success: The target takes 3d6 bludgeoning damage and is knocked back 5 feet.
+          crit: The target takes 6d6 bludgeoning damage and is knocked back 10 feet.
+  heightened:
+    "+1": The damage increases by 2d6
 hypercognition:
   name: HYPERCOGNITION
   type: SPELL
@@ -4916,24 +4933,19 @@ illusory-disguise:
   rarity: 0
   casting: [aS, aV]
   traits: [illusion, visual]
-  duration: 1 hour or until dismissed
+  duration: 1 hour
   description:
     main:
-      Your illusion can make you appear as another creature of the
-      same body shape and roughly similar height (within 6 inches) and
-      weight (within 50 pounds). The disguise is typically good enough
-      to hide your identity, but not to impersonate a specific individual.
-      The spell doesn't change your voice, scent, or mannerisms. You
-      can also make clothing and items you wear appear different, such
-      as making your armor look like an ordinary dress. Held items are
-      unaffected, and any worn item you remove returns to its true
-      appearance until you don it again.
-      Casting illusory disguise counts as setting up a disguise for
-      the Impersonate use of Deception it ignores any circumstance
-      penalties you might take for disguising yourself as a dissimilar
-      creature, and it gives you a +4 conditional bonus to your
-      Deception checks to avoid others seeing through your disguise.
-      You can dismiss this disguise with a Verbal Casting action.
+      You create an illusion that causes you to appear as another creature of the same body shape,
+      and with roughly similar height (within 6 inches) and weight (within 50 pounds), as yourself.
+      The disguise is typically good enough to hide your identity, but not to impersonate
+      a specific individual. The spell doesn't change your voice, scent, or mannerisms.
+      You can change the appearance of your clothing and worn items, such as making your armor look
+      like a dress. Held items are unaffected, and any worn item you remove returns to its true appearance.
+      Casting illusory disguise counts as setting up a disguise for the Impersonate use of Deception;
+      it ignores any circumstance penalties you might take for disguising yourself as a dissimilar creature,
+      it gives you a +4 status bonus to Deception checks to prevent others from seeing through your disguise,
+      and you add your level even if you're untrained. You can Dismiss this spell.
   heightened:
     2nd: The spell also disguises your voice and scent, and it gains the auditory trait.
     3rd:
@@ -5252,21 +5264,17 @@ item-facade:
   traits: [illusion, visual]
   casting: [aS, aV]
   range: touch
-  target: one object no more than 10 feet by 10 feet by 10 feet
+  target: 1 object no more than 10 feet by 10 feet by 10 feet
   duration: 1 hour
   description:
     main:
-      You make the target object look and feel as though it were in
-      much better or worse shape. When you cast this spell, decide
-      whether you want to make the object look decrepit or perfect. An
-      item made to look decrepit appears broken and of poor quality.
-      Metal looks rusted, wood looks dried out and cracked, and so on.
-      An intact item made to look better appears as though its quality
-      were one step better, brand new, and highly polished or well
-      maintained. A broken item appears to be intact and functional.
-      Destroyed items can't be affected by this spell.
-      A creature who Interacts with the item get a chance to
-      disbelieve the illusion.
+      You make the target object look and feel as though it were in much better or
+      worse physical condition. When you cast this spell, decide whether you want to
+      make the object look decrepit or perfect. An item made to look decrepit appears
+      broken and shoddy. An intact item made to look better appears as though it's brand
+      new and highly polished or well maintained. A broken item appears to be intact and
+      functional. Destroyed items can't be affected by this spell. A creature that Interacts
+      with the item can attempt to disbelieve the illusion.
   heightened:
     2nd: The duration is 24 hours.
     3rd: The duration is unlimited.
@@ -5279,18 +5287,16 @@ jump:
   casting: [aS]
   description:
     main:
-      Your legs surge with strength, giving you the ability
-      to leap high and far. You jump, either vertically or horizontally (or
-      a mixture of the two) 30 feet without touching the ground. You
-      must land on a space of solid ground within 30 feet of you, or
+      Your legs surge with strength, ready to leap high and far.
+      You jump 30 feet in any direction without touching the ground.
+      You must land on a space of solid ground within 30 feet of you, or
       else you fall after taking your next action.
   heightened:
     3rd:
       The range becomes touch, the target changes
-      to one touched creature, and the duration becomes 1 minute.
-      For the duration of the spell, the target can spend a move
-      action to jump as described in the 1st-level version any number
-      of times.
+      to one touched creature, and the duration becomes 1 minute,
+      allowing the target to jump as described whenver it takes the
+      Leap action.
 ki-blast:
   name: KI BLAST
   type: POWER
@@ -5667,20 +5673,21 @@ lock:
   description:
     main:
       The target's latch mechanism clinks shut, held fast by unseen
-      magical restraints. You magically lock the target, either setting
-      the Thievery DC equal to your spell DC or using the base lock
+      magical restraints. When you magically lock the target, you set
+      an Athletics and Thievery DC to open equal to your spell DC or the base lock
       DC with a +4 conditional bonus, whichever is higher. Any key or
       combination that once opened a lock affected by this spell does
-      not do so for the duration of the spell.
-      If the lock is opened, the spell is dismissed. Assuming the target
-      is not barred in some other way, you can unlock and open it by
-      spending a Somatic Casting action during which you touch the
-      target. Doing so does not dismiss the spell. You can dismiss the spell
-      at any time and from any distance with a Verbal Casting action.
+      not do so for the duration of the spell, though the key or combination does
+      grant a +4 circumstance bonus to checks to open the door.
+      If the target is opened, the spell ends. Assuming the target
+      is not barred or locked in some other way, you can unlock and open it by
+      with an Interact action during which you touch the
+      target. This does not end the spell. You can Dismiss this spell
+      at any time and from any distance.
   heightened:
     2nd:
-      The duration increases to unlimited, but you must add a Material Casting
-      action and expend 6 gp worth of gold dust as an additional cost.
+      The duration increases to unlimited, but you must expend 6 gp worth
+      of gold dust as an additional cost.
 longstrider:
   name: LONGSTRIDER
   type: SPELL
@@ -5690,7 +5697,9 @@ longstrider:
   casting: [aS, aV]
   duration: 1 hour
   description:
-    main: Your Speed is accelerated 10 feet.
+    main:
+      You lengthen your stride beyond what should be possible.
+      You gain a +10-foot status bonus to your Speed.
   heightened:
     2nd: The duration increases to 8 hours.
 lorekeeper-s-fortune:
@@ -5738,18 +5747,17 @@ mage-armor:
   rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
-  duration: 1 day
+  duration: until the next time you make your daily preparations
   description:
     main:
       You ward yourself with shimmering magical energy, gaining a
-      +1 item bonus to AC. While wearing mage armor, you use your
-      unarmored proficiency to calculate your AC.
+      +1 item bonus to AC and a maximum Dexterity modifier of +5.
+      While wearing mage armor, you use your unarmored proficiency to calculate your AC.
   heightened:
-    2nd: The bonus increases to +2, and you gain a +1 item bonus to saving throws.
-    4th: The bonus increases to +3, and you gain a +2 item bonus to saving throws.
-    6th: The bonus increases to +4, and you gain a +3 item bonus to saving throws.
-    8th: The bonus increases to +5, and you gain a +4 item bonus to saving throws.
-    10th: The bonus increases to +6, and you gain a +5 item bonus to saving throws.
+    4th: You gain a +1 item bonus to saving throws.
+    6th: The item bonus to AC increases to +2, and you gain a +1 item bonus to saving throws.
+    8th: The item bonus to AC increases to +2, and you gain a +2 item bonus to saving throws.
+    10th: The item bonus to AC increases to +3, and you gain a +3 item bonus to saving throws.
 mage-hand:
   name: MAGE HAND
   type: SPELL
@@ -5780,25 +5788,23 @@ magic-aura:
   casting-time: 1 minute
   casting: [M, S, V]
   range: touch
-  target: one 3 Bulk or lighter object
-  duration: 1 day
+  target: 1 object of 3 Bulk or less
+  duration: until the next time you make your daily preparations
   description:
     main:
-      You can choose to have the target register as a common magic
-      item of your level in your spellcasting class or lower, or to have it
-      register as being under the effects of a spell of your choice that
-      you can cast. If the target is magical, you can instead choose to
-      have it not register as magical at all.
-      A caster using detect magic or study aura of an equal or higher
-      spell level can attempt to disbelieve the illusion of a magic aura.
-      Magic aura doesn't mask auras of spells that are 9th level or
-      higher or of items that are 19th level or higher.
+      You alter the appearance of an item's magic aura. You can choose to have the target's
+      aura appear as that of common magic item of twice magic aura's level or lower, or to
+      have it register as being under the effects of a spell of your choice of magic aura's
+      level or lower. If the target is magical, you can instead choose to have it appear as
+      entirely non-magical. A caster using detect magic or study aura of an equal or higher
+      spell level can attempt to disbelieve the illusion from magic aura. Magic aura doesn't
+      mask the aura of spells that are 9th level or higher or of items that are 19th level
+      or higher.
   heightened:
     3rd:
-      You can target a creature instead of an object.
-      When you do, you can either conceal the auras of all magic items
-      it has or have that creature register as being under the effect of
-      a spell you know.
+      You can target a creature instead of an object. When you do, you can either conceal
+      the auras of all magic items it has or have that creature's aura appear as if it were
+      under the effect of a spell you know.
 magic-fang:
   name: MAGIC FANG
   type: SPELL
@@ -5821,17 +5827,21 @@ magic-missile:
   level: 1
   rarity: 0
   traits: [evocation, force]
-  casting: [aV, or more]
+  casting: [aV, ]
   range: 120 feet
-  target: one creature
+  target: 1 creature
   description:
     main:
       You send a dart of force streaking toward a creature that you can
-      see. It automatically hits and deals 1d4+1 force damage. When
-      Casting this Spell, you can increase the casting by a Material
-      Casting action, a Somatic Casting action, or both. For each
+      see. It automatically hits and deals 1d4+1 force damage.
+      For each additional action you use when Casting the Spell, increase
+      the number of missiles you shoot by one. For each
       component you add, increase the number of missiles you shoot
-      by one. You choose the target for each missile individually.
+      by one, to a maximum of 3 missiles for 3 actions. You choose the target
+      for each missile individually.
+      If you shoot more than one missile at the same target, combine the damage
+      before applying bonuses or penalties to damage, resistances, weaknesses,
+      and so forth.
   heightened:
     "+2": You shoot one additional missile with each action you spend.
 magic-mouth:
@@ -5858,13 +5868,13 @@ magic-weapon:
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
-  target: one nonmagical weapon that is unattended or that is wielded by you or a willing ally
+  target: 1 nonmagical weapon that is unattended or that is wielded by you or a willing ally
   duration: 1 minute
   description:
     main:
       The weapon glimmers with magic and energy. The target
-      becomes a +1 magic weapon, gaining a +1 item bonus to attack
-      rolls and dealing another die of damage on a hit.
+      becomes a +1 striking weapon, gaining a +1 item bonus to attack
+      rolls and increasing the number of weapon damage dice to two.
 magnificent-mansion:
   name: MAGNIFICENT MANSION
   type: SPELL
@@ -6032,14 +6042,16 @@ mending:
   level: 1
   rarity: 0
   traits: [transmutation]
-  casting-time: 1 hour
+  casting-time: 10 minutes
   casting: [S, V]
   range: touch
-  target: nonmagical object of light Bulk or less
+  target: non-magical object of light Bulk or less
   description:
     main:
-      You remove the broken condition from the target if it is broken,
-      or repair 1 Dent it has taken if it is dented.
+      You repair the target item. You restore 5 Hit Points per spell level to the target,
+      potentially removing the broken condition if this repairs it past the item's
+      Broken Threshold. You can't replace lost pieces or repair an object that's
+      been completely destroyed.
   heightened:
     2nd: You can target a nonmagical object of 1 Bulk or less.
     3rd:
@@ -6677,14 +6689,15 @@ negate-aroma:
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
-  target: one willing or unconscious creature
+  target: 1 willing creature
   duration: 1 hour
   description:
     main:
-      The target loses its scent, preventing creatures from noticing it
-      using scent alone. A creature attempting a Perception check with
-      scent and other senses might be able to notice the lack of natural
-      scent. If the target has a stench attack, that ability is also negated.
+      The target loses its odor, preventing creatures from noticing its
+      presence via smell alone. A creature attempting a Perception check
+      to Seek with scent and other senses might notice the lack of natural
+      scent. If the target has any abilities that result from its smell,
+      such as an overpowering scent, those abilities are also negated.
   heightened:
     5th: The range increases to 30 feet, and you can target up to 10 creatures.
 neutralize-poison:
@@ -6998,44 +7011,24 @@ pest-form:
   duration: 10 minutes or until dismissed
   description:
     main:
-      "You transform into a Tiny nonthreatening animal, such as a cat,
-      rat, insect, or lizard. You count as an animal in addition to your
-      normal traits while in this form. You can choose the specific type
-      of animal you turn into (such as a rat or praying mantis). This
-      has no effect on your battle form's size or statistics. Your gear
-      is absorbed into your form; the constant abilities of your gear
-      still function, but you can't activate any item abilities. When you
-      transform, you gain the following abilities:
+      You transform into a the battle form of a Tiny animal, such as a cat, insect,
+      lizard, or rat. You can decide the specific type of animal (such as a rat or praying mantis),
+      but this has no effect on the form's Size or statistics. While in this form,
+      you gain the animal trait. You can Dismiss the spell.
       ${subsection.stats}
-      The special statistics of your pest form can be adjusted only
-      by penalties, circumstance bonuses, and conditional bonuses.
-      Your pest form prevents you from casting spells, speaking, or
-      spending most actions with the manipulate trait that require
-      your hands (the GM determines which manipulate actions you
-      can spend if there's doubt). You can dismiss this spell by using an
-      action (this action has the concentrate trait)."
     subsections:
       stats:
         type: list
         content:
-        - AC 13 (TAC 13) and ignore your armor's check penalty and
-          Speed reduction.
-        - One or more natural melee attacks, which are the only
-          types of attacks you can use. You're trained with them.
-          When attacking with them, your attack modifier is +6
-          and your attacks deal 1 piercing damage (or another type
-          depending on your form, as the GM sees fit). These are
-          Dexterity-based attacks (for the purposes of the sluggish
-          condition, for example).
-        - Weakness 5 to all physical damage. (If you take physical
+        - AC = 15 + your level. Ignore your armor's check penalty and Speed reduction.
+        - Speed 10 feet
+        - Weakness 5 to physical damage. (If you take physical
           damage while in this form, you take 5 additional damage.)
-        - Speed 10 feet.
-        - Low-light vision, scent.
-        - Acrobatics +10 and Stealth +10 (unless your own total
-          modifiers are higher); Athletics -4.
+        - Low-light vision and imprecise scent 30 feet.
+        - Acrobatics and Stealth modifiers +10 (unless your own
+          modifier is higher); Athletics -4.
   heightened:
-    2nd: The duration increases to 1 hour.
-    4th: You can turn into a flying creature, such as a bird. You also gain a fly Speed of 20 feet.
+    4th: You can turn into a flying creature, such as a bird, which grants you a fly Speed of 20 feet.
 phantasmal-calamity:
   name: PHANTASMAL CALAMITY
   type: SPELL
@@ -7921,23 +7914,25 @@ ray-of-enfeeblement:
   traits: [attack, necromancy]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: 1 minute
+  save: Fortitude
   description:
     main:
-      Attempt a ranged touch attack against the target. If you
-      succeed, that creature attempts a Fortitude save in order to
-      determine the spell's effect. If you critically succeed at your
-      attack roll, the target treats the result of its Fortitude save as
-      one degree worse. ${subsection.save}
+      A ray with the power to sap a foe's strength flashes from your hand.
+      Attempt a ranged spell attack against the target. If you succeed,
+      that creature attempts a Fortitude save in order to determine the spell's effect.
+      If you critically succeed on your attack roll, use the outcome for one degree
+      of success worse than the result of its save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The target gains enfeebled 1.
+          success: The target becomes enfeebled 1.
           crit: The target is unaffected.
-          failure: The target gains enfeebled 2.
-          crit-fail: The target gains enfeebled 3.
+          failure: The target becomes enfeebled 2.
+          crit-fail: The target becomes enfeebled 3.
 ray-of-frost:
   name: RAY OF FROST
   type: SPELL
@@ -8949,16 +8944,14 @@ shocking-grasp:
   traits: [attack, electricity, evocation]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   description:
     main:
-      On a hit, the target takes electricity damage
-      equal to 1d12 plus your spellcasting ability modifier. If the
-      target is wearing metal armor or is made of metal, you gain
-      a +1 circumstance bonus to your attack roll with shocking
-      grasp and the target takes 1d6 persistent electricity damage
-      on a hit. On a critical hit, double the damage, but not the
-      persistent damage.
+      You shroud your hands in a crackling field of lightning. Make a melee spell attack roll.
+      On a hit, the target takes 2d12 electricity damage. If the target is wearing metal armor
+      or is made of metal, you gain a +1 circumstance bonus to your attack roll with shocking
+      grasp, and the target also takes 1d4 persistent electricity damage on a hit.
+      On a critical hit, double the initial damage, but not the persistent damage.
   heightened:
     "+1": The damage increases by 1d12 and the persistent electricity damage increases by 1.
 shrink:
@@ -9072,33 +9065,32 @@ sleep:
   type: SPELL
   level: 1
   rarity: 0
-  traits: [enchantment, mental]
+  traits: [enchantment, incapacitation, mental, sleep]
   casting: [aS, aV]
   range: 30 feet
   area: 5-foot burst
   description:
     main:
-      Each target in the area becomes drowsy and might fall asleep,
-      depending on its Will save. A creature that falls asleep from
-      this spell doesn't fall prone or drop what it's holding. This spell
-      doesn't prevent creatures from waking up due to a successful
-      Perception check, making it of limited use mid-combat.
+      Each creature in the area becomes drowsy and might fall asleep.
+      A creature that falls unconscious from this spell doesn't fall prone
+      or release what it's holding. This spell doesn't prevent creatures from
+      waking up due to a successful Perception check, limiting its utility in combat.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: -1 conditional penalty to Perception checks for 1 round.
-          crit: Unaffected.
-          failure: It falls asleep. If it's still asleep after 1 minute, it wakes up automatically.
-          crit-fail: It falls asleep. If it's still asleep after 1 hour, it wakes up automatically.
+          success: The creature takes a -1 status penalty to Perception checks for 1 round.
+          crit: The creature is unaffected.
+          failure: The creature falls unconscious. If it's still unconscious after 1 minute, it wakes up automatically.
+          crit-fail: The creature falls unconscious. If it's still unconscious after 1 hour, it wakes up automatically.
   heightened:
-    3rd:
-      The targets fall into a deep slumber for 1
-      round on a failure and 1 minute on a critical failure. They fall
+    4th:
+      The creatures fall unconscious for 1
+      round on a failure or 1 minute on a critical failure. They fall
       prone and drop what they're holding, and they can't attempt
-      Perception checks to wake up. After the listed amount of time,
-      the creature is in normal sleep.
+      Perception checks to wake up. When the duration ends, the creature is
+      sleeping normally instead of automatically waking up.
 slow:
   name: SLOW
   type: SPELL
@@ -9359,12 +9351,14 @@ spider-sting:
   traits: [attack, necromancy, poison]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
+  save: Fortitude
   description:
     main:
-      You deal 2d4 piercing damage to the touched
-      creature and afflict it with spider venom, depending on its
-      Fortitude save. ${subsection.save} ${subsection.poison}
+      You magically duplicate a spider's venomous sting.
+      You deal 1d4 piercing damage to the touched creature and afflict it with spider venom.
+      The target must attempt a Fortitude save.
+      ${subsection.save} ${subsection.poison}
     subsections:
       save:
         type: dl
@@ -9782,6 +9776,53 @@ suggestion:
           crit-fail: Per failure, but the duration is 1 hour or until dismissed.
   heightened:
     8th: You can target up to 10 creatures.
+summon-animal:
+  name: Summon Animal
+  type: spell
+  level: 1
+  rarity: 0
+  traits: conjuration
+  casting: [aM, aS, aV]
+  range: 30 feet
+  duration: sustained up to 1 minute
+  description:
+    main:
+      You conjure an animal to fight for you. You summon a common creature that
+      has the animal trait and whose level is -1. Heightening the spell increases
+      the maximum level of creature you can summon.
+  heightened:
+    2nd: Level 1.
+    3rd: Level 2.
+    4th: Level 3.
+    5th: Level 5.
+    6th: Level 7.
+    7th: Level 9.
+    8th: Level 11.
+    9th: Level 13.
+    10th: Level 15.
+summon-construct:
+  name: Summon Construct
+  type: SPELL
+  level: 1
+  rarity: 0
+  casting: [aM, aS, aV]
+  duration: sustained up to 1 minute
+  range: 30 feet
+  traits: [conjuration]
+  description:
+    main:
+      You conjure a construct to fight for you. This works like summon animal,
+      except you summon a common creature that has the construct trait and whose level is –1.
+  heightened:
+    2nd: Level 1.
+    3rd: Level 2.
+    4th: Level 3.
+    5th: Level 5.
+    6th: Level 7.
+    7th: Level 9.
+    8th: Level 11.
+    9th: Level 13.
+    10th: Level 15.
 summon-monster:
   name: SUMMON MONSTER
   type: SPELL
@@ -9825,57 +9866,6 @@ summon-monster:
             - [10th, "Level 15: Phoenix; Level 14: boar demon"]
   heightened:
     2nd: Level 1.
-    3rd: Level 2.
-    4th: Level 3.
-    5th: Level 5.
-    6th: Level 7.
-    7th: Level 9.
-    8th: Level 11.
-    9th: Level 13.
-    10th: Level 15.
-summon-nature-s-ally:
-  name: SUMMON NATURE'S ALLY
-  type: SPELL
-  level: 1
-  rarity: 0
-  traits: [conjuration]
-  casting: [aM, aS, aV]
-  range: 30 feet
-  duration: sustained, up to 1 minute or until dismissed
-  description:
-    main:
-      You summon a level 0 creature from the summon nature's ally list.
-      This creature fights for you until the spell ends. The creature gains
-      the summoned trait. The spell automatically ends if the monster's
-      Hit Points drop to 0. Summoned creatures have 2 actions per turn
-      (which they use when you Concentrate on the Spell) and can't
-      use reactions. The creature attacks your enemies to the best of
-      its abilities. If you can communicate with it, you can attempt to
-      command it as part of your action to Concentrate on a Spell, but
-      the GM determines the degree to which it follows your commands.
-      Heightening the spell increases the maximum level of monster
-      you can summon. You can always summon a monster of a lower
-      level than the spell allows. ${subsection.allies}
-    subsections:
-      allies:
-        type: table
-        content:
-          headers:
-            - Spell level
-            - Allies
-          rows:
-            - [1st, "Level 0: Bloodseeker, bobcat, dog, dire rat, fire beetle, pig, pony, viper"]
-            - [2nd, "Level 1: Constrictor snake, electric eel, goblin dog, horse, hunting spider, hyena, leopard, mephit elemental, wolf"]
-            - [3rd, "Level 2: Blue shark, boar, crocodile, deinonychus, giant bat, giant snake, panther, pteranodon, warg, warhorse"]
-            - [4th, "Level 3: Ankhrav, bunyip, cockatrice, dryad, giant scorpion, grizzly bear, hyaenadon, lion, minor elemental"]
-            - [5th, "Level 5: Lesser elemental, redcap, smilodon; Level 4: great white shark, tiger"]
-            - [6th, "Level 7: Quetzalcoatlus pterosaur; Level 6: ankylosaurus, cave bear, shambler, smilodon tiger"]
-            - [7th, "Level 8: Greater elemental, megalodon, roc, giant anaconda, mastodon, treant"]
-            - [8th, "Level 11: Elder elemental, goliath spider; Level 10: tyrannosaurus"]
-            - [9th, "Level 13: Purple worm; Level 12: rusalka, sea serpent"]
-            - [10th, "Level 15: Phoenix"]
-  heightened:
-    2nd: Level 1
     3rd: Level 2.
     4th: Level 3.
     5th: Level 5.
@@ -10578,10 +10568,11 @@ true-strike:
   duration: until the end of your turn
   description:
     main:
+      A glimpse into the future ensures your next blow strikes true.
       The next time you make an attack roll before the end of your
       turn, roll the attack twice and use the better result. The attack
-      ignores circumstance penalties to the attack roll and any miss
-      chance due to the target being concealed or sensed.
+      ignores circumstance penalties to the attack roll and any flat check
+      due to the target being concealed or hidden.
 uncontrollable-dance:
   name: UNCONTROLLABLE DANCE
   type: SPELL
@@ -10782,12 +10773,11 @@ unseen-servant:
   duration: sustained, up to 1 minute or until dismissed
   description:
     main:
-      You summon an unseen servant (see the sidebar), which you
-      can command as part of Concentrating on the Spell. It serves
-      you until the duration expires
-      until its Hit Points drop to 0 or
-      below, at which point the spell is dismissed; or until you lose
-      concentration. The unseen servant gains the summoned trait.
+      You summon an unseen servant, which you
+      can command as part of Sustaining the Spell. It serves
+      you until its Hit Points are reduced to 0,
+      at which point the spell ends, or until you stop
+      Sustaining the Spell. The unseen servant gains the summoned trait.
 unusual-anatomy:
   name: UNUSUAL ANATOMY
   type: POWER
@@ -10921,18 +10911,20 @@ ventriloquism:
   rarity: 0
   traits: [auditory, illusion]
   casting: [aS, aV]
-  duration: 1 minute
+  duration: 10 minutes
   description:
     main:
-      Whenever you speak, you can make your voice seem to come
-      from somewhere else within 30 feet. Any creature that hears the
+      Whenever you speak, you can make your vocalization seem to originate
+      from somewhere else within 60 feet, and you can change that apparent
+      location freely as you vocalize. Any creature that hears the
       sound can attempt to disbelieve your illusion.
   heightened:
     2nd:
       The spell's duration increases to 1 hour,
       and you can also change the tone, quality, and other aspects
-      of your voice. A creature must succeed at a Perception check
-      against you before it can attempt to disbelieve your illusion.
+      of your voice. Before a creature can attempt to disbelieve your
+      illusion, it must actively attempt a Perception check or otherwise
+      use actions to interact with the sound.
 vibrant-pattern:
   name: VIBRANT PATTERN
   type: SPELL
