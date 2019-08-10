@@ -60,10 +60,10 @@ def validate(data):
                         sub=name
                     )
                 )
-            if sub['type'] not in ('list', 'dl', 'table'):
+            if sub.get('type') not in ('list', 'dl', 'table'):
                 errors.append(
                     'Invalid subsection type in "{k}: {sub}": {type}'.format(
-                        k=k, sub=name, type=sub['type'],
+                        k=k, sub=name, type=sub.get('type'),
                     )
                 )
 

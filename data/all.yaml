@@ -2281,6 +2281,7 @@ disrupt-undead:
     main:
       You lance the target with energy. You deal 1d6 positive damage plus your
       spellcasting ability modifier. The target must attempt a basic Fortitude save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
@@ -4825,7 +4826,7 @@ hydraulic-push:
   description:
     main:
       You call forth a powerful blast of pressurized water that bludgeons the target and knocks it back.
-      Make a ranged spell attack roll. ${subesction.outcomes}
+      Make a ranged spell attack roll. ${subsection.outcomes}
     subsections:
       outcomes:
         type: dl
@@ -7949,8 +7950,10 @@ ray-of-frost:
       ${subsection.save}
     subsections:
       save:
-        "Critical Success": The target takes double damage and takes a -10-foot status penalty to its Speeds for 1 round.
-        "Success": The target takes normal damage.
+        type: dl
+        content:
+          "Critical Success": The target takes double damage and takes a -10-foot status penalty to its Speeds for 1 round.
+          "Success": The target takes normal damage.
   heightened:
     "+1": The damage increases by 1d4
 read-aura:
@@ -9781,7 +9784,7 @@ summon-animal:
   type: spell
   level: 1
   rarity: 0
-  traits: conjuration
+  traits: [conjuration]
   casting: [aM, aS, aV]
   range: 30 feet
   duration: sustained up to 1 minute
