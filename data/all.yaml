@@ -2274,15 +2274,15 @@ disrupt-undead:
   type: SPELL
   level: 0
   rarity: 0
-  traits: [necromancy, positive]
+  traits: [cantrip, necromancy, positive]
   casting: [aS, aV]
   range: 30 feet
-  target: one undead creature
+  target: 1 undead creature
+  save: fortitude
   description:
     main:
-      You infuse the target with energy. You deal 1d10 positive damage; the
-      target must attempt a Fortitude save. Heightening increases damage.
-      ${subsection.save}
+      You lance the target with energy. You deal 1d6 positive damage plus your
+      spellcasting ability modifier. The target must attempt a basic Fortitude save.
     subsections:
       save:
         type: dl
@@ -2292,10 +2292,7 @@ disrupt-undead:
           failure: The target takes full damage.
           crit-fail: Double damage and enfeebled 1 for 1 round.
   heightened:
-    3rd: 1d10 + your spellcasting ability modifier.
-    5th: 2d10 + your spellcasting ability modifier.
-    7th: 3d10 + your spellcasting ability modifier.
-    9th: 4d10 + your spellcasting ability modifier.
+    "+1": The damage increases by 1d6.
 disrupting-weapons:
   name: DISRUPTING WEAPONS
   type: SPELL
@@ -2386,6 +2383,25 @@ divine-inspiration:
       prepares spells, it recovers one 6th-level or lower spell it previously
       cast today and can cast that spell again. If it spontaneously casts
       spells, it recovers one of its 6th-level or lower spell slots.
+divine-lance:
+  name: DIVINE LANCE
+  type: SPELL
+  level: 0
+  rarity: 0
+  traits: [attack, cantrip, evocation]
+  casting: [aS, aV]
+  target: 1 creature
+  range: 30 feet
+  description:
+    main:
+      You unleash a beam of divine energy. Choose an alignment your deity has
+      (chaotic, evil, good, or lawful). You can't cast this spell if you don't have
+      a deity or if your deity is true neutral. Make a ranged spell attack roll against
+      the target's AC. On a hit, the target takes damage of the chosen alignment type equal
+      to 1d4 + your spellcasting ability modifier (double damage on a critical hit).
+      The spell gains the trait of the alignment you chose.
+  heightened:
+    "+1": The damage increases by 1d4.
 divine-vessel:
   name: DIVINE VESSEL
   type: POWER
@@ -3881,15 +3897,15 @@ forbidding-ward:
   range: 30 feet
   target: one ally and one enemy
 
-  duration: sustained, up to 1 minute
+  duration: sustained up to 1 minute
   description:
     main:
-      You ward your ally against the attacks and hostile spells of
-      the target enemy. The target ally gains a +1 conditional bonus
+      You ward an ally against the attacks and hostile spells from
+      the target enemy. The target ally gains a +1 status bonus
       to Armor Class and saving throws against the target enemy's
       attacks, spells, and other effects.
   heightened:
-    6th:  The conditional bonus increases to +2.
+    6th:  The status bonus increases to +2.
 force-bolt:
   name: FORCE BOLT
   type: POWER
@@ -4358,17 +4374,18 @@ guidance:
   level: 0
   rarity: 0
   traits: [cantrip, divination]
-  casting: [aS, aV]
+  casting: [aV]
   range: 30 feet
-  target: one creature
-  duration: until the start of your next turn or until dismissed
+  target: 1 creature
+  duration: until the start of your next turn
   description:
     main:
-      You ask for divine guidance, granting the target a +1 conditional
+      You ask for divine guidance, granting the target a +1 status
       bonus to one attack roll, Perception check, saving throw, or skill
       check the target attempts before the duration ends. The target
       chooses which roll to use the bonus on before rolling. If the target
-      uses the bonus, the spell ends. Either way, it's bolstered.
+      uses the bonus, the spell ends. Either way, the target is then temporarily
+      immune for 1 hour.
 gust-of-wind:
   name: GUST OF WIND
   type: SPELL
@@ -5352,14 +5369,12 @@ know-direction:
   casting: [aS, aV]
   description:
     main:
-      In your mind's eye, you see a path northward. You
-      immediately know which direction is north (if there
-      is such a thing as north at your current location).
+      In your mind's eye, you see a path northward. You immediately know
+      which direction is north (if it exists at your current location).
   heightened:
     7th:
-      You can choose to instead know the direction
-      to a specific location with which you are very familiar, such as a
-      previous home, a favorite tavern, or the temple where you trained.
+      You can instead know the direction to a familiar location, such as a previous home
+      or a favorite tavern.
 know-the-enemy:
   name: KNOW THE ENEMY
   type: POWER
@@ -9519,10 +9534,10 @@ stabilize:
   traits: [cantrip, healing, necromancy, positive]
   casting: [aS, aV]
   range: 30 feet
-  target: one dying creature
+  target: 1 dying creature
   description:
     main:
-      The soft glow of positive energy shuts death's door.
+      Positive energy shuts death's door.
       The target loses the dying condition, though it remains
       unconscious at 0 Hit Points.
 status:
