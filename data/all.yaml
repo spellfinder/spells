@@ -254,17 +254,17 @@ alarm:
     3rd: You can specify criteria for which creatures sound the alarm spell. For instance, orcs or masked people.
 allegro:
   name: Allegro
-  traits: [cantrip, composition, emotion, enchantment, mental]
+  traits: [bard, cantrip, composition, emotion, enchantment, mental]
   type: spell
-  level: 0
+  level: 7
   rarity: 1
   casting: [aV]
   range: 30 feet
-  target: one ally
+  target: 1 ally
   duration: 1 round
   description:
     main:
-      You perform rapidly, speeding your ally. The ally is quick and can use the action to Strike, Stride, or Step.
+      You perform rapidly, speeding up your ally. The ally becomes quickened and can use the additional action to Strike, Stride, or Step.
 alter-reality:
   name: Alter Reality
   traits: [divination]
@@ -1426,20 +1426,19 @@ control-water:
       By imposing your will upon the water, you can raise or lower the level of water in the chosen area by 10 feet. Water creatures in the area are subjected to the effects of slow.
 counter-performance:
   name: COUNTER PERFORMANCE
-  type: POWER
+  type: FOCUS
   level: 1
   rarity: 1
-  traits: [composition, enchantment, fortune, mental, power]
+  traits: [bard, composition, enchantment, fortune, mental]
   casting: ["rV or rS"]
   trigger: You or an ally within 60 feet must roll a saving throw against an auditory or visual effect.
-  area: 60-foot aura
+  area: 60-foot emanation
   description:
     main:
-      You protect yourself and allies through performance.
-      Choose an auditory performance if the trigger was auditory or a
-      visual performance if it was visual, then roll a Performance check
-      for the chosen performance. You and allies in the area can use the
-      higher result of your Performance check or their saving throw.
+      "Your performance protects you and your allies.
+      Roll a Performance check for a type you know: an auditory performance if the trigger
+      was auditory or a visual one for a visual trigger. You and allies in the area can use the
+      better result between your Performance check and their saving throw."
 create-food:
   name: CREATE FOOD
   type: SPELL
@@ -1998,15 +1997,15 @@ dinosaur-form:
 dirge-of-doom:
   name: DIRGE OF DOOM
   type: SPELL
-  level: 0
+  level: 3
   rarity: 1
   casting: [aV]
   area: 30-foot aura
   duration: 1 round
-  traits: [composition, emotion, enchantment, fear, mental]
+  traits: [bard, composition, emotion, enchantment, fear, mental]
   description:
     main:
-      Foes within the area are frightened 1 and unable to reduce it for as long as they remain in the area.
+      Foes within the area are frightened 1. They can't reduce their frightened value below one while they remain in the area.
 disappearance:
   name: DISAPPEARANCE
   type: SPELL
@@ -3114,25 +3113,30 @@ false-vision:
       You create a false image that fools any attempts to scry on an area. Any scrying spell sees, hears, smells, and otherwise detects whatever you wish within the area, rather than what is actually in the area. You can Sustain the Spell each round to change the illusion as you desire, including playing out a complex scene. If the scrying spell is of a higher level than false vision, the scryer can attempt a Perception check to disbelieve the illusion, though even if they're successful, they can't learn what's truly going on in the area.
 fatal-aria:
   name: FATAL ARIA
-  type: POWER
+  type: focus
   level: 10
   rarity: 1
   casting: [aV]
   range: 30 feet
   target: one creature
-  traits: [composition, death, emotion, enchantment, mental, power]
+  traits: [bard, composition, death, emotion, enchantment, mental]
   description:
     main:
-      You perform music so perfect that the target dies of
-      joy or sorrow. Once targeted, the target is bolstered
-      against all castings of fatal aria. The effect of the spell
-      depends on the target's level and current Hit Points.
-      16th or Lower The target dies instantly.
-      17th If the target has 50 Hit Points or fewer, it dies instantly;
-      otherwise, the target drops to 0 Hit Points and gains dying
-      1 or, if it's already dying, increases its dying condition by 1.
-      18th or Higher The target takes 50 damage. If this brings it to 0
-      Hit Points, it dies instantly.
+      You perform music so perfect that the target may die of
+      joy or sorrow. Once targeted, the target becomes temporarily immune for 1 minute.
+      The effect of the spell depends on the target's level and current Hit Points.
+      ${subsection.effect}
+    subsection:
+      effect:
+        type: dl
+        content:
+          "16th or Lower": The target dies instantly.
+          17th:
+            If the target has 50 Hit Points or fewer, it dies instantly;
+            otherwise, it drops to 0 Hit Points and becomes dying 1.
+          18th or Higher:
+            The target takes 50 damage. If this brings it to 0
+            Hit Points, it dies instantly.
 fear:
   name: FEAR
   type: SPELL
@@ -4259,9 +4263,9 @@ horrid-wilting:
 house-of-imaginary-walls:
   name: HOUSE OF IMAGINARY WALLS
   type: SPELL
-  level: 0
+  level: 5
   rarity: 1
-  traits: [cantrip, composition, illusion, visual]
+  traits: [bard, cantrip, composition, illusion, visual]
   casting: [aS]
   range: touch
   duration: 1 round
@@ -4269,14 +4273,13 @@ house-of-imaginary-walls:
     main:
       You mime creating an invisible 10-foot-by-10-foot
       stretch of wall adjacent to you and within your reach. The wall
-      is solid to those creatures who don't disbelieve it, and you and
-      your allies can choose to believe the wall exists in order to keep
-      it solid, for instance in order to climb onto it. Even incorporeal
-      creatures who fail to disbelieve the wall can't pass through it.
-      A creature who disbelieves is bolstered against your house of
-      imaginary walls. The wall doesn't block objects or creatures who
-      didn't see your visual performance. The wall has AC 10, TAC 6,
-      and Hardness equal to twice the spell's level.
+      is solid to those creatures who don't disbelieve it, even incorporeal creatures.
+      You and your allies can choose to believe the wall exists to continue to treat
+      it as solid, for instance to climb onto it.
+      A creature who disbelieves is temporarily immune to your house of
+      imaginary walls for 1 minute. The wall doesn't block objects or creatures who
+      didn't see your visual performance. The wall has AC 10
+      and Hardness equal to twice the spell's level, and HP equal to quadruple the spell level
 humanoid-form:
   name: HUMANOID FORM
   type: SPELL
@@ -4536,24 +4539,23 @@ insect-form:
 inspire-competence:
   name: INSPIRE COMPETENCE
   type: SPELL
-  level: 0
+  level: 1
   rarity: 1
-  traits: [cantrip, composition, emotion, enchantment, mental]
+  traits: [bard, cantrip, composition, emotion, enchantment, mental]
   casting: [aV]
   range: 60 feet
   target: one ally
   duration: 1 round
   description:
     main:
-      Your encouraging words inspire your ally to
+      Your encouragement inspires your ally to
       succeed at a task. You count as having taken
       sufficient preparatory actions to Aid your ally on a skill check of
-      your choice, regardless of the circumstances. When you take the
-      Aid reaction to aid that ally on the chosen skill check, you can
-      roll Performance instead of the normal check, and if you would
-      fail or critically fail to Aid, you succeed instead. If you have
-      legendary proficiency in Performance, you instead automatically
-      critically succeed.
+      your choice, regardless of the circumstances. When you use the
+      Aid reaction, you can
+      roll Performance instead of the normal check, and if roll a failure,
+      you get a success instead. If you are
+      legendary in Performance, you automatically critically succeed.
       The GM might rule that you can't use this ability if the act of
       encouraging your ally would interfere with the ally's skill check
       (like encouraging an ally to Sneak quietly, Lie to the king, or
@@ -4561,42 +4563,48 @@ inspire-competence:
 inspire-courage:
   name: INSPIRE COURAGE
   type: SPELL
-  level: 0
+  level: 1
   rarity: 1
-  traits: [cantrip, composition, emotion, enchantment, mental]
+  traits: [bard, cantrip, composition, emotion, enchantment, mental]
   casting: [aV]
-  area: 60-foot aura
+  area: 60-foot emanation
   duration: 1 round
   description:
     main:
       You inspire your allies with words or tunes of
-      encouragement. You and all allies in the aura gain
-      a +1 conditional bonus to attack rolls, damage rolls, and saves
-      against fear.
-inspire-heroics:
-  name: INSPIRE HEROICS
-  type: POWER
-  level: 4
+      encouragement. You and all allies in the area gain
+      a +1 status bonus to attack rolls, damage rolls, and saves
+      against fear effects.
+inspire-defense:
+  name: Inspire Defense
+  type: spell
+  level: 2
   rarity: 1
-  traits: [enchantment, power]
-  casting: [fV]
-  trigger: You finish casting inspire courage.
+  traits: [bard, cantrip, composition, emotion, enchantment, mental]
+  casting: [aV]
+  area: 60-foot emanation
+  duration: 1 round
   description:
     main:
-      You call on your muse to greatly increase your inspire courage
-      composition's benefits. Attempt a Performance check. The DC
-      is usually a hard-difficulty DC of a level equal to that of the
-      highest-level target of your composition, but the GM can assign
-      a different DC based on the circumstances. The effect of your
-      inspire courage depends on the result of your check.
+      You inspire your allies to protect themselves more effectively. You and all allies in the area gain a +1 status bonus to AC and saving throws, as well as resistance equal to half the spell's level to physical damage.
+inspire-heroics:
+  name: INSPIRE HEROICS
+  type: focus
+  level: 4
+  rarity: 1
+  traits: [enchantment, bard]
+  casting: [fV]
+  description:
+    main:
+      You call upon your muse to greatly increase the benefits you provide to your allies with your inspire courage or inspire defense composition. If your next action is to cast inspire courage or inspire defense, attempt a Performance check. The DC is usually a very hard DC of a level equal to that of the highest-level target of your composition, but the GM can assign a different DC based on the circumstances. The effect of your inspire courage or inspire defense composition depends on the result of your check.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The spell bonus from inspire courage increases to +2.
-          crit: The spell bonus from your inspire courage increases to +3.
-          failure: Your inspire courage retains its normal bonus of +1.
+          success: The status bonus from inspire courage or inspire defense increases to +2.
+          crit: The status bonus from your inspire courage or inspire defense increases to +3.
+          failure: Your inspire courage or inspire defense provides only its normal bonus of +1, but you don't spend the Focus Point for casting this spell.
 invisibility:
   name: INVISIBILITY
   type: SPELL
@@ -4888,27 +4896,22 @@ lightning-bolt:
     "+1": The damage increases by 1d12.
 lingering-composition:
   name: LINGERING COMPOSITION
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
-  traits: [enchantment, power]
+  traits: [enchantment, bard]
   casting: [fV]
-  trigger: You finish casting a cantrip composition with a duration of 1 round.
   description:
     main:
-      You attempt to add a flourish to your composition to extend
-      its benefits. Attempt a Performance check. The DC is usually a
-      hard-difficulty DC of a level equal to the highest-level target of
-      your composition, but the GM can assign a different DC based on
-      the circumstances. The effect depends on the result of your check.
+      You add a flourish to your composition to extend its benefits. If your next action is to cast a cantrip composition with a duration of 1 round, attempt a Performance check. The DC is usually a standard-difficulty DC of a level equal to the highest-level target of your composition, but the GM can assign a different DC based on the circumstances. The effect depends on the result of your check.
       ${subsection.result}
     subsections:
       result:
         type: dl
         content:
-          success: The composition lasts 2 rounds.
-          crit: The composition lasts 3 rounds.
-          failure: The composition lasts 1 round.
+          success: The composition lasts 3 rounds.
+          crit: The composition lasts 4 rounds.
+          failure: The composition lasts 1 round, but you don't spend the Focus Point for casting this spell.
 litany-against-sloth:
   name: LITANY AGAINST SLOTH
   type: POWER
@@ -5074,18 +5077,19 @@ lorekeeper-s-fortune:
       that action twice and take the higher result. If you're trained in
       Arcana, Nature, or Occult, you can also use this spell on those
       checks attempted as part of a Recall Knowledge action.
-loremaster-s-recall:
-  name: LOREMASTER'S RECALL
-  type: POWER
+loremaster-s-etude:
+  name: LOREMASTER'S ETUDE
+  type: focus
   level: 1
   rarity: 1
-  traits: [divination, fortune]
+  traits: [bard, divination, fortune]
   casting: [fS]
-  trigger: You spend the Recall Knowledge action.
+  trigger: You or an ally within range attempts a skill check to Recall Knowledge
+  target: you or the triggering ally
+  range: 30 feet
   description:
     main:
-      Roll the skill check you attempt as part of the triggering action
-      twice and take the higher result.
+      You call upon your muse's deep mysteries, granting the target a greater ability to think and recall information. Roll the triggering Recall Knowledge skill check twice and use the better result.
 lucky-break:
   name: LUCKY BREAK
   type: POWER
@@ -7818,29 +7822,22 @@ soothing-ballad:
   traits: [bard, composition, emotion, enchantment, healing, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: you and up to nine allies
+  target: you and up to 9 allies
   description:
     main:
-      "You draw upon the power of your muse to soothe
-      your allies. Choose one of the following three effects:
+      "You draw upon your muse to soothe your allies. Choose one of the following three effects:
       ${subsection.effects}"
     subsection:
       effects:
         content:
           - The spell attempts to counteract fear effects
             on the targets.
-          - The spell attempts to counteract paralysis effects on the
+          - The spell attempts to counteract effects imposing paralysis on the
             targets.
-          - Soothing ballad restores Hit Points equal to 7d6 plus your
-            spellcasting ability modifier to the targets.
+          - The spell restores 7d8 Hit Points to the targets.
         type: list
   heightened:
-    8th:
-      When healing, soothing ballad restores Hit
-      Points equal to 8d6 + your spellcasting ability modifier.
-    9th:
-      When healing, soothing ballad restores Hit
-      Points equal to 9d6 + your spellcasting ability modifier.
+    "+1": When used to heal, soothing ballad restores 1d8 more Hit Points.
 soothing-words:
   name: SOOTHING WORDS
   type: POWER
@@ -9142,17 +9139,15 @@ tree-stride:
 triple-time:
   name: TRIPLE TIME
   type: SPELL
-  level: 0
+  level: 2
   rarity: 1
   traits: [cantrip, composition, emotion, enchantment, mental]
   casting: [aS]
-  area: 60-foot aura
+  area: 60-foot emanation
   duration: 1 round
   description:
     main:
-      You dance to a lively tempo, speeding up your
-      allies' movement. You and all allies in range are
-      accelerated 10 for 1 round.
+      You dance at a lively tempo, speeding your allies' movement. You and all allies in the area gain a +10-foot status bonus to all Speeds for 1 round.
 true-seeing:
   name: TRUE SEEING
   type: SPELL
