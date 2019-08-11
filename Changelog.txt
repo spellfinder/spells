@@ -1,3 +1,8 @@
+v3.0.0
+------
+
+- Updated contents to match materials newly released in the core rulebook.
+
 v2.0.0
 ------
 
