@@ -680,7 +680,7 @@ banishment:
           success: The creature resists being banished.
           crit: The creature resists being banished and you are stunned until the end of your next turn.
           failure: The creature is banished.
-          crit-failure: The creature is banished and can't return to your home plane by any means for 1 week.
+          crit-fail: The creature is banished and can't return to your home plane by any means for 1 week.
   heightened:
     9th: You can target up to 10 creatures. The extra material component affects these targets if it is anathema to them.
 barkskin:
@@ -1425,9 +1425,7 @@ comprehend-language:
   duration: 1 hour
   description:
     main:
-      The target can understand the meaning of a single language it
-      is hearing or reading when you cast the spell. This doesn't let it
-      understand codes, language couched in metaphor, and the like.
+      The target can understand the meaning of a single language it is hearing or reading when you cast the spell. This doesn't let it understand codes, language couched in metaphor, and the like (subject to GM discretion). If the target can hear multiple languages and knows that, it can choose which language to understand; otherwise, choose one of the languages randomly.
   heightened:
     3rd: The target can also speak the language.
     4th: You can target up to 10 creatures, and targets can also speak the language.
@@ -1522,8 +1520,7 @@ continual-flame:
   duration: unlimited
   description:
     main:
-      A magical flame springs up from the object, as bright as a torch. It
-      doesn't need oxygen, react to water, or generate heat.
+      A magical flame springs up from the object, as bright as a torch. It doesn't need oxygen, react to water, or generate heat.
   heightened:
     "+1":
       "The cost increases as follows: 16 gp for 3rd level;
@@ -1564,18 +1561,12 @@ create-food:
   level: 2
   rarity: 0
   traits: [conjuration]
-  casting-time: 10 minutes
+  casting-time: 1 hour
   casting: [S, V]
   range: 30 feet
   description:
     main:
-      You create enough food to feed six Medium creatures for a day;
-      it's bland and unappealing and leaves the eater unsatisfied. After 1
-      day, if no one has eaten the food, it decays and becomes inedible.
-      Most Small creatures eat one-fourth as much as a Medium creature
-      (one-sixteenth as much for most Tiny creatures), and most Large
-      creatures eat 10 times as much (100 times as much for Huge
-      creatures and so on).
+      You create enough food to feed six Medium creatures for a day. This food is bland and unappealing, but it is nourishing. After 1 day, if no one has eaten the food, it decays and becomes inedible. Most Small creatures eat one-quarter as much as a Medium creature (one-sixteenth as much for most Tiny creatures), and most Large creatures eat 10 times as much (100 times as much for Huge creatures and so on).
   heightened:
     4th: You can feed 12 Medium creatures.
     6th: You can feed 50 Medium creatures.
@@ -1751,14 +1742,11 @@ darkness:
   duration: 1 minute
   description:
     main:
-      A shroud of darkness prevents light from penetrating or emanating
-      within the area. This suppresses magical light of the spell's level or
-      lower. Light can't pass through, so creatures in the area can't see
-      outside. From outside, it appears as a globe of pure darkness.
+      You create a shroud of darkness that prevents light from penetrating or emanating within the area. Light does not enter the area and any non-magical light sources, such as a torch or lantern, do not emanate any light while inside the area, even if their light radius would extend beyond the darkness. This also suppresses magical light of your darkness spell's level or lower. Light can't pass through, so creatures in the area can't see outside. From outside, it appears as a globe of pure darkness.
   heightened:
     4th:
-      Even creatures with darkvision (but not greater darkvision) treat
-      targets seen through the darkness as concealed.
+      Even creatures with darkvision (but not greater darkvision) can barely see through the darkness.
+      They treat targets seen through the darkness as concealed.
 darkvision:
   name: DARKVISION
   type: SPELL
@@ -1768,9 +1756,12 @@ darkvision:
   casting: [aS, aV]
   duration: 1 hour
   description:
-    main: You gain darkvision.
+    main: You grant yourself supernatural sight in areas of darkness. You gain darkvision.
   heightened:
-    3rd: The spell's range is touch and it targets 1 creature.
+    3rd: The spell's range is touch and it targets 1 willing creature.
+    5th:
+      The spell's range is touch and it targets 1 willing creature.
+      The duration is until the next time you make your daily preparations.
 daze:
   name: DAZE
   type: SPELL
@@ -1817,11 +1808,12 @@ deafness:
   traits: [necromancy]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
+  save: Fortitude
   description:
     main:
-      The target loses hearing, depending on its Fortitude save, and is
-      bolstered against all castings of deafness. ${subsection.save}
+      The target loses hearing; it must attempt a Fortitude save. The target is then temporarily immune for 1 minute.
+      ${subsection.save}
     subsections:
       save:
         type: dl
@@ -2265,19 +2257,15 @@ disjunction:
 dispel-magic:
   name: DISPEL MAGIC
   type: SPELL
-  level: 3
+  level: 2
   rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
   range: 120 feet
-  target: one spell effect or unattended magic item
+  target: 1 spell effect or unattended magic item
   description:
     main:
-      Make a dispel attempt against the target (see page 197). If you
-      succeed against a spell effect, you dispel it. If you succeed against
-      a magic item, the item becomes a mundane item of its type for 10
-      minutes. This doesn't change the item's quality. If the target is an
-      artifact or similar item, you automatically fail.
+      You unravel the magic behind a spell or effect. Attempt a counteract check against the target (page 458). If you succeed against a spell effect, you counteract it. If you succeed against a magic item, the item becomes a mundane item of its type for 10 minutes. This doesn't change the item's non-magical properties. If the target is an artifact or similar item, you automatically fail.
 disrupt-undead:
   name: DISRUPT UNDEAD
   type: SPELL
@@ -3126,12 +3114,11 @@ endure-elements:
   casting-time: 10 minutes
   casting: [S, V]
   range: touch
-  target: one willing creature
-  duration: 1 day
+  target: 1 willing creature
+  duration: until the next time you make your daily preparations
   description:
     main:
-      Choose severe cold or heat. The target is protected from the
-      temperature you chose (but not extreme cold or heat).
+      You shield the target against dangerous temperatures. Choose severe cold or heat. The target is protected from the temperature you chose (but not extreme cold or heat).
   heightened:
     3rd:  The target is protected from severe cold and heat.
     5th:  The target is protected from severe cold, severe heat, extreme cold, and extreme heat.
@@ -3233,21 +3220,14 @@ enlarge:
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   range: 30 feet
-  target: one willing creature
+  target: 1 willing creature
   duration: 1 minute
   description:
     main:
-      The target grows to size Large. Its equipment grows with it but
-      returns to natural size if removed. The creature is sluggish 1. Its
-      reach increases by 5 feet (or by 10 feet if it started out Tiny) and
-      it gains a +2 conditional bonus to melee damage. This spell has no
-      effect on a Large or larger creature.
+      Bolstered by magical power, the target grows to size Large. Its equipment grows with it but returns to natural size if removed. The creature is clumsy 1. Its reach increases by 5 feet (or by 10 feet if it started out Tiny), and it gains a +2 status bonus to melee damage. This spell has no effect on a Large or larger creature.
   heightened:
     4th:
-      The creature instead grows to size Huge. The
-      conditional bonus to melee damage is +4 and reach increases by
-      10 feet (or 15 feet if the creature started out Tiny). The spell has no
-      effect on a Huge or larger creature.
+      The creature instead grows to size Huge. The status bonus to melee damage is +4 and the creature's reach increases by 10 feet (or 15 feet if the creature started out Tiny). The spell has no effect on a Huge or larger creature.
     6th:  As level 4, but you can target up to 10 creatures.
 entangle:
   name: ENTANGLE
@@ -3444,10 +3424,9 @@ false-life:
   duration: 1 day
   description:
     main:
-      You gain a number of temporary Hit Points equal to 6 plus your
-      spellcasting ability modifier.
+      You create a reservoir of vitality from necromantic energy, gaining a number of temporary Hit Points equal to 6 plus your spellcasting ability modifier.
   heightened:
-    "+2": The temporary Hit Points increase by 6.
+    "+1": The temporary Hit Points increase by 3.
 false-vision:
   name: FALSE VISION
   type: SPELL
@@ -3805,24 +3784,12 @@ flaming-sphere:
   casting: [aS, aV]
   range: 30 feet
   area: one 5-foot square
-  duration: sustained or until dismissed (see below)
+  duration: sustained up to 1 minute
+  save: Reflex
   description:
     main:
-      You create a sphere of flame in a square within range. The sphere
-      deals 4d6 fire damage to each creature in the sphere's square;
-      each creature must attempt a Reflex save. Once per round when
-      you Concentrate on this Spell, you can direct the sphere to roll
-      to a spot within range and deal 3d6 fire damage; each creature
-      in that square must attempt a Reflex save. You can't Concentrate
-      on the Spell to move the sphere during the round you create it.
-      ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: The creature is unaffected.
-          failure: The creature takes full damage.
-          crit-fail: The creature takes double damage.
+      You create a sphere of flame in a square within range. The sphere must be supported by a solid surface, such as a stone floor. The sphere deals 3d6 fire damage to each creature in the square where it first appears; each creature must attempt a basic Reflex save. On subsequent rounds, you can Sustain this Spell, leaving the sphere in its square or rolling it to another square within range and dealing 3d6 fire damage; each creature in its square must attempt a basic Reflex save.
+      Creatures that succeed at their save take no damage (instead of half).
   heightened:
     "+1": The damage increases by 1d6.
 fleet-step:
@@ -4056,18 +4023,14 @@ gentle-repose:
   traits: [necromancy]
   casting: [aS, aV]
   range: touch
-  target: one corpse
-  duration: 1 day
+  target: 1 corpse
+  duration: until the next time you make your daily preparations
   description:
     main:
-      The corpse doesn't decay, nor can it be transformed into an
-      undead. Time spent under the effect of this spell doesn't count
-      when determining the success of spells that require a fresh corpse.
+      The targeted corpse doesn't decay, nor can it be transformed into an undead. If the corpse is subject to a spell that requires the corpse to have died within a certain amount of time (for example, raise dead), do not count the duration of gentle repose against that time. This spell also prevents ordinary bugs and pests (such as maggots) from consuming the body.
   heightened:
     5th:
-      The spell's duration is permanent, but you must
-      add a Material Casting action during which you expend 6 gp
-      worth of embalming fluid as a cost.
+      The spell's duration is unlimited, but the spell takes one more action to cast and requires a material component and a cost (embalming fluid worth 6 gp).
 ghost-sound:
   name: GHOST SOUND
   type: SPELL
@@ -4160,26 +4123,23 @@ glitterdust:
   casting: [aS, aV]
   range: 120 feet
   area: 10-foot burst
+  save: Reflex
   description:
     main:
-      Creatures in the area are outlined by glittering dust, with an effect
-      depending on their Reflex save results. If a creature has its invisibility
-      negated by this spell, it is concealed instead of invisible. This applies
-      both if the creature was already invisible and if it benefits from new
-      invisibility effects before the invisibility negation effect runs out.
+      Creatures in the area are outlined by glittering dust. Each creature must attempt a Reflex save. If a creature has its invisibility negated by this spell, it is concealed instead of invisible. This applies both if the creature was already invisible and if it benefits from new invisibility effects before the end of the invisibility negation effect from this spell.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The target's invisibility is negated for 1 round.
+          success: The target's invisibility is negated for 2 rounds.
           crit: The target is unaffected.
           failure:
             The target is dazzled for 1 minute and its invisibility is
             negated for 1 minute.
           crit-fail:
             The target is blinded for 1 round and dazzled
-            for 1 minute. Its invisibility is negated for 1 minute.
+            for 10 minutes. Its invisibility is negated for 10 minutes.
 globe-of-invulnerability:
   name: GLOBE OF INVULNERABILITY
   type: SPELL
@@ -4703,22 +4663,23 @@ hideous-laughter:
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one living creature
+  target: 1 living creature
   duration: sustained
+  save: Will
   description:
     main:
-      The target is overtaken with uncontrollable laughter, based on
-      the outcome of its Will saving throw. ${subsection.save}
+      The target is overtaken with uncontrollable laughter. It must attempt a Will save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The target is plagued with fits of laugher. It can't take reactions.
-          crit: Unaffected.
-          failure: The target is overcome with fits of laughter. It is slowed 1 and can't take reactions.
+          success: The target is plagued with uncontrollable laugher. It can't use reactions.
+          crit: The target is unaffected.
+          failure: The target is slowed 1 and can't use reactions.
           crit-fail:
-            The target falls prone and can't take any actions or reactions for
-            1 round, then suffers the failure effects.
+            The target falls prone and can't use actions or reactions for
+            1 round. It then suffers the failure effects.
 horrid-wilting:
   name: HORRID WILTING
   type: SPELL
@@ -4775,26 +4736,11 @@ humanoid-form:
   rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
-  duration: 10 minutes or until dismissed
+  duration: 10 minutes
   description:
     main:
-      You transform your appearance to look like a Small or Medium
-      humanoid, such as a drow, dwarf, elf, goblin, halfling, human, orc,
-      or lizardfolk. You count as a humanoid in addition to your normal
-      traits while in this form, as well as gaining any trait related to the
-      creature's kind (such as goblin or human). If this transformation
-      reduces your size, it reduces your reach accordingly (using the
-      effects of the shrink spell). This transformation doesn't change
-      your statistics in any way. You can still wear and use your gear,
-      and it changes size to match your new form if necessary. The
-      item's size change ends immediately if the item leaves your person.
-      You don't gain the special abilities of the humanoid form you
-      assume. This spell grants you a +4 conditional bonus to Deception
-      checks to pass as a generic member of the chosen ancestry, but
-      you can't make yourself to look like a specific person. If you want
-      to Impersonate an individual, you still need to create a disguise,
-      though the GM won't factor in the difference in ancestry when
-      choosing the DC of your Deception check.
+      You transform your appearance to that of a Small or Medium humanoid, such as a dwarf, elf, goblin, halfling, human, orc, or lizardfolk. You gain the humanoid trait in addition to your other traits while in this form, as well as any trait related to the creature's kind (such as goblin or human). If this transformation reduces your size, it reduces your reach accordingly (as the shrink spell). This transformation doesn't change your statistics in any way, and you don't gain any special abilities of the humanoid form you assume. You can still wear and use your gear, which changes size (if necessary) to match your new form. If items leave your person, they return to their usual size.
+      Humanoid form grants you a +4 status bonus to Deception checks to pass as a generic member of the chosen ancestry, and you add your level even if you're untrained, but you can't make yourself look like a specific person. If you want to Impersonate an individual, you still need to create a disguise, though the GM won't factor in the difference in ancestry when determining the DC of your Deception check. You can Dismiss this spell.
   heightened:
     3rd: You gain darkvision or low-light vision if the form you assume has that ability.
     5th:
@@ -4881,53 +4827,20 @@ illusory-creature:
   type: SPELL
   level: 2
   rarity: 0
-  traits: [auditory, illusory, visual]
+  traits: [auditory, illusion, visual]
   casting: [aS, aV]
   range: 500 feet
   duration: sustained
   description:
     main:
-      You create an illusory image of a Huge or smaller creature. It
-      makes appropriate sounds, generates normal smells, and feels
-      right to the touch. If you and the image are ever farther than 500
-      feet apart, the spell ends.
-      The image can't speak, but you can use your actions to speak
-      through the creature, with the spell disguising your voice as
-      appropriate. You might need to attempt a Deception or Performance
-      check to convincingly mimic the creature, as determined by the
-      GM. This is especially likely if you're trying to imitate a specific
-      person and engage with someone that person knows.
-      In combat, the illusion counts as a creature for flanking. It uses
-      your spell roll for attack rolls and saving throws and your spell
-      DC for its AC. If the image is hit by an attack or fails a save, the
-      spell is dismissed. The creature has two actions per turn, which it
-      takes when you Concentrate on the Spell.
-      The illusion can't directly affect the physical world, though
-      its attacks can cause damage by making the target believe
-      they're real. If the illusory creature hits with a Strike, the
-      target takes mental damage equal to 1d4 plus your spellcasting
-      ability modifier. This is a mental effect. The illusion's Strikes are
-      nonlethal. If the damage doesn't correspond to the image of the
-      monster—for example, if a Large dragon dealt only 5 damage—
-      the GM might allow the target to attempt a Perception check
-      to disbelieve the spell as a free action. Any relevant resistances
-      and weaknesses apply if the target thinks they do, as judged
-      by the GM. For example, if the illusion wields a warhammer and
-      attacks a creature resistant to bludgeoning damage, the creature
-      would take less mental damage. However, illusory damage does
-      not suppress regeneration or trigger other effects that require a
-      certain damage type.
-      Any creature that touches the image or uses the Seek
-      action to examine it can attempt to disbelieve your illusion.
-      When a creature disbelieves the illusion, it recovers from half
-      the damage it had taken from it (if any) and doesn't take any
-      further damage from it. The GM should track illusory damage
-      dealt by the illusion.
+      You create an illusory image of a Large or smaller creature. It generates the appropriate sounds, smells, and feels believable to the touch. If you and the image are ever farther than 500 feet apart, the spell ends.
+      The image can't speak, but you can use your actions to speak through the creature, with the spell disguising your voice as appropriate. You might need to attempt a Deception or Performance check to mimic the creature, as determined by the GM. This is especially likely if you're trying to imitate a specific person and engage with someone that person knows.
+      In combat, the illusion can use 2 actions per turn, which it uses when you Sustain the Spell. It uses your spell attack roll for attack rolls and your spell DC for its AC. Its saving throw modifiers are equal to your spell DC – 10. It is substantial enough that it can flank other creatures. If the image is hit by an attack or fails a save, the spell ends.
+      The illusion can cause damage by making the target believe the illusion's attacks are real, but it cannot otherwise directly affect the physical world. If the illusory creature hits with a Strike, the target takes mental damage equal to 1d4 plus your spellcasting ability modifier. This is a mental effect. The illusion's Strikes are nonlethal. If the damage doesn't correspond to the image of the monster—for example, if an illusory Large dragon deals only 5 damage—the GM might allow the target to attempt a Perception check to disbelieve the spell as a free action. Any relevant resistances and weaknesses apply if the target thinks they do, as judged by the GM. For example, if the illusion wields a warhammer and attacks a creature resistant to bludgeoning damage, the creature would take less mental damage. However, illusory damage does not deactivate regeneration or trigger other effects that require a certain damage type. The GM should track illusory damage dealt by the illusion.
+      Any creature that touches the image or uses the Seek action to examine it can attempt to disbelieve your illusion. When a creature disbelieves the illusion, it recovers from half the damage it had taken from it (if any) and doesn't take any further damage from it.
   heightened:
     "+1":
-      The damage of the image's Strikes increases by
-      1d4 and the maximum size of creature you can create increases
-      by one (to a maximum of Gargantuan).
+      The damage of the image's Strikes increases by 1d4, and the maximum size of creature you can create increases by one (to a maximum of Gargantuan).
 illusory-disguise:
   name: ILLUSORY DISGUISE
   type: SPELL
@@ -5202,20 +5115,16 @@ invisibility:
   type: SPELL
   level: 2
   rarity: 0
-  traits: [illusion, visual]
+  traits: [illusion]
   casting: [aM, aS]
   range: touch
-  target: one creature
-  duration: 1 minute or until dismissed
+  target: 1 creature
+  duration: 10 minutes
   description:
     main:
-      The target becomes invisible. This makes it unseen to all
-      creatures, though they can attempt to find the target, making
-      it sensed by them instead (see page 303). If the target acts in a
-      hostile manner, the spell is dismissed after that hostile action,
-      reaction, free action, or activity is completed.
+      Cloaked in illusion, the target becomes invisible. This makes it undetected to all creatures, though the creatures can attempt to find the target, making it hidden to them instead (page 466). If the target uses a hostile action, the spell ends after that hostile action is completed.
   heightened:
-    4th: The spell is not dismissed if the target acts in a hostile manner.
+    4th: The spell lasts 1 minute, but it doesn't end if the target uses a hostile action.
 invisibility-cloak:
   name: INVISIBILITY CLOAK
   type: POWER
@@ -5358,16 +5267,12 @@ knock:
   traits: [transmutation]
   casting: [aS, aV]
   range: 30 feet
-  target: one door, lock, or container
+  target: 1 door, lock, or container
   duration: 1 minute or until dismissed
   description:
     main:
-      You make the target easier to open. Knock grants any who try
-      to open the target a +4 conditional bonus to any Thievery or
-      Athletics checks to do so. You can attempt a Thievery check to
-      open the target as part of casting knock. As soon as the target is
-      opened or unlocked, the spell is dismissed.
-      Knock dispels lock.
+      You make the target easier to open. Knock grants a +4 status bonus to any creature that tries to open the target door, lock, or container with an Athletics or a Thievery check. You can attempt a Thievery check to open the target as part of casting knock, and you add your level even if you're untrained.
+      Knock counteracts lock.
 know-direction:
   name: KNOW DIRECTION
   type: SPELL
@@ -5854,14 +5759,11 @@ magic-mouth:
   traits: [auditory, illusion, visual]
   casting: [aS, aV]
   range: touch
-  target: one creature or object
-  duration: unlimited or until dismissed
+  target: 1 creature or object
+  duration: unlimited
   description:
     main:
-      You specify a trigger stimulus (see page 197) and a message up to
-      25 words long. When the trigger stimulus occurs within 30 feet
-      of the target, an illusory mouth appears on the target and speaks
-      the message. Magic mouth is then dismissed.
+      You specify a trigger (described on page 305) and a message up to 25 words long. When the specified trigger occurs within 30 feet of the target, an illusory mouth appears on the target and speaks the message, and the magic mouth spell ends.
 magic-weapon:
   name: MAGIC WEAPON
   type: SPELL
@@ -6254,20 +6156,11 @@ mirror-image:
   rarity: 0
   traits: [illusion, visual]
   casting: [aS, aV]
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
-      Three illusory images swirl about your space, potentially causing
-      those who attack you to hit one of the images instead of you. Any
-      attack that would hit you has a random chance of hitting one of
-      your images instead. If you have all three images up, there is a 1 in
-      4 chance of hitting you (1 on a 1d4). With two images up, there is a
-      1 in 3 chance of hitting you (1-2 on a 1d6). With only one image the
-      chances are 1 in 2 (1-3 on a 1d6). If an image is hit, it is destroyed.
-      If the attack roll is a critical success and would hit one of the
-      images, it becomes a success against you and one of the images
-      is also destroyed. Once all the images are destroyed, the spell
-      is dismissed.
+      Three illusory images of you swirl about your space, potentially causing those who attack you to hit one of the images instead of you. Any attack that would hit you has a random chance of hitting one of your images instead of you. If all three images remain, there is a 1 in 4 chance of hitting you (1 on 1d4). With two images remaining, there is a 1 in 3 chance of hitting you (1–2 on 1d6). With only one image, the chances are 1 in 2 (1–3 on 1d6).
+      Once an image is hit, it is destroyed. If an attack roll fails to hit your AC but doesn't critically fail, it destroys an image but has no additional effect (even if the attack would normally have an effect on a failure). If an attack roll is a critical success and would hit one of the images, one of the images is destroyed and the attack roll becomes a success against you. Once all the images are destroyed, the spell ends.
 misdirection:
   name: MISDIRECTION
   type: SPELL
@@ -6277,16 +6170,11 @@ misdirection:
   casting-time: 1 minute
   casting: [S, V]
   range: 30 feet
-  target: two creatures or objects
+  target: 2 creatures or objects
   duration: 1 day or until dismissed
   description:
     main:
-      You designate one target as the primary target and the other
-      as the secondary target. All effects that would detect auras on
-      the primary target instead detect the same types of auras from
-      the secondary target. A creature reading the aura can attempt
-      to disbelieve the illusion. You can dismiss the spell with a Verbal
-      Casting action from up to a mile away.
+      You reshape the magic aura of one creature or object to resemble that of another. You designate one target as the primary target and the other as the secondary target. Effects that would detect auras on the primary target instead detect the same types of auras from the secondary target. A creature reading the aura can attempt to disbelieve the illusion. You can Dismiss the spell from up to a mile away.
 mislead:
   name: MISLEAD
   type: SPELL
@@ -6769,12 +6657,10 @@ obscuring-mist:
   casting: [aM, aS, aV]
   range: 120 feet
   area: 20-foot burst
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
-      You create a cloud of mist in the area that makes all creatures
-      within it concealed. You can dismiss the cloud with a Verbal
-      casting action.
+      You call forth a cloud of mist. All creatures within the mist become concealed, and all creatures outside the mist become concealed to creatures within it. You can Dismiss the cloud.
 outcast-s-curse:
   name: OUTCAST'S CURSE
   type: SPELL
@@ -7136,13 +7022,7 @@ phantom-steed:
   duration: 8 hours or until dismissed
   description:
     main:
-      You conjure a Large, magical, horselike creature that only you
-      (or another Medium or Small creature you choose when casting
-      the spell) can ride. The horse is clearly phantasmal in nature,
-      has 18 AC and 10 Hit Points, and automatically fails all saves. If
-      reduced to 0 Hit Points, it disappears and the spell is dismissed.
-      The steed has a Speed of 40 feet and can hold your body weight
-      (or the body weight of the creature you chose) plus 20 Bulk.
+      You conjure a Large, magical, equine creature that only you (or another Medium or Small creature you choose) can ride. The horse is clearly phantasmal in nature, has 20 AC and 10 Hit Points, and automatically fails all saves. If it's reduced to 0 Hit Points, it disappears and the spell ends. The steed has a Speed of 40 feet and can hold its rider's body weight, plus 20 Bulk.
   heightened:
     4th:
       The steed has a Speed of 60 feet, can walk on
@@ -7150,8 +7030,7 @@ phantom-steed:
     5th:
       The steed has a Speed of 60 feet, can walk on
       water, and ignores areas of natural difficult terrain. It can also
-      walk on air (per air walk) but must end its turn on solid ground
-      or fall.
+      air walk but must end its turn on solid ground or fall.
     6th:
       The steed can walk or fly at a Speed of 80 feet,
       can walk on water, and ignores areas of natural difficult terrain.
@@ -8170,12 +8049,11 @@ resist-energy:
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: 1 minute
   description:
     main:
-      Choose acid, cold, electricity, fire, or sonic damage. The target
-      and its gear gain resistance 5 against the damage type you chose.
+      A shield of elemental energy protects a creature against one type of energy damage. Choose acid, cold, electricity, fire, or sonic damage. The target and its gear gain resistance 5 against the damage type you chose.
   heightened:
     4th: The resistance increases to 10, and you can target up to two creatures.
     7th: The resistance increases to 15, and you can target up to five creatures.
@@ -8715,7 +8593,7 @@ see-invisibility:
   description:
     main:
       You can see invisible creatures and objects. They appear to you as
-      translucent shapes, and you treat them as if they were concealed.
+      translucent shapes, and they are concealed to you.
   heightened:
     5th: The spell has a duration of 8 hours.
 sending:
@@ -8964,15 +8842,13 @@ shrink:
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   range: 30 feet
-  target: one willing creature
-  duration: 1 minute
+  target: 1 willing creature
+  duration: 5 minutes
   description:
     main:
-      The target shrinks to size Tiny. Its equipment shrinks with it,
-      but returns to natural size if removed. The creature's reach
-      changes to 0 feet. This spell has no effect on a Tiny creature.
+      You warp space to make a creature smaller. The target shrinks to become Tiny in size. Its equipment shrinks with it but returns to its original size if removed. The creature's reach changes to 0 feet. This spell has no effect on a Tiny creature.
   heightened:
-    6th: As 2nd level, but the spell can target up to 10 creatures instead of just one.
+    6th: The spell can target up to 10 creatures.
 shrink-item:
   name: SHRINK ITEM
   type: SPELL
@@ -9253,15 +9129,7 @@ spectral-hand:
   duration: 1 minute
   description:
     main:
-      You create a semicorporeal hand out of your essence that
-      delivers touch spells for you. Whenever you Cast a Spell with a
-      range of touch, you can have the hand crawl to a target within
-      range along the ground, touch it, and then crawl back to you.
-      When making a melee touch attack with the hand, you use your
-      normal bonuses. The hand can move as far as it needs to within
-      range, and its movement doesn't trigger reactions. The hand has
-      your AC and saves, but any damage to the hand destroys it and
-      causes you to take 1d6 damage.
+      You create a semicorporeal hand out of your essence that delivers touch spells for you. Whenever you Cast a Spell with a range of touch, you can have the hand crawl to a target within range along the ground, touch it, and then crawl back to you. When making a melee spell attack with the hand, you use your normal bonuses. The hand can move as far as it needs to within range. The hand has your AC and saves, but any damage to the hand destroys it and causes you to take 1d6 damage.
 spell-immunity:
   name: SPELL IMMUNITY
   type: SPELL
@@ -9340,10 +9208,13 @@ spider-climb:
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: 10 minutes
   description:
-    main: The target gains a climb Speed of 25 feet.
+    main:
+      Tiny clinging hairs sprout across the creature's hands and feet, offering purchase on nearly any surface. The target gains a climb Speed equal to its Speed.
+  heightened:
+    5th: The duration increases to 1 hour.
 spider-sting:
   name: SPIDER STING
   type: SPELL
@@ -9849,6 +9720,28 @@ summon-construct:
     8th: Level 11.
     9th: Level 13.
     10th: Level 15.
+summon-elemental:
+  name: Summon Construct
+  type: SPELL
+  level: 2
+  rarity: 0
+  casting: [aM, aS, aV]
+  duration: sustained up to 1 minute
+  range: 30 feet
+  traits: [conjuration]
+  description:
+    main:
+      You conjure an elemental to fight for you. This works like summon animal,
+      except you summon a common creature that has the elemental trait and whose level is 1 or lower.
+  heightened:
+    3rd: Level 2.
+    4th: Level 3.
+    5th: Level 5.
+    6th: Level 7.
+    7th: Level 9.
+    8th: Level 11.
+    9th: Level 13.
+    10th: Level 15.
 summon-plant-or-fungus:
   name: Summon Plant or Fungus
   type: spell
@@ -10143,13 +10036,11 @@ telekinetic-maneuver:
   rarity: 0
   traits: [attack, evocation, force]
   casting: [aS, aV]
-  range: 30 feet
-  target: one creature
+  range: 60 feet
+  target: 1 creature
   description:
     main:
-      With a rush of telekinetic power, you move a foe or
-      something they carry. You attempt to Disarm, Shove, or Trip the
-      target. Make a spell roll instead of an Athletics check.
+      With a rush of telekinetic power, you move a foe or something they carry. You can attempt to Disarm, Shove, or Trip the target using a spell attack roll instead of an Athletics check.
 telekinetic-projectile:
   name: TELEKINETIC PROJECTILE
   type: SPELL
@@ -10411,8 +10302,13 @@ touch-of-idiocy:
   duration: 1 minute
   description:
     main:
-      You dull the target's mind with a melee touch attack. On a
-      success, the target is stupefied 2.
+      You dull the target's mind; the target must attempt a Will save.
+      ${subsection.save}
+    subsections:
+      save:
+        success: The target is unaffected.
+        failure: The target is stupefied 2.
+        crit-fail: The target is stupefied 4.
 touch-of-obedience:
   name: TOUCH OF OBEDIENCE
   type: POWER
@@ -11355,13 +11251,13 @@ water-breathing:
   casting-time: 1 minute
   casting: [S, V]
   range: 30 feet
-  target: up to five creatures
+  target: up to 5 creatures
   duration: 1 hour
   description:
     main: The targets can breathe underwater.
   heightened:
     3rd: The duration increases to 8 hours.
-    4th: The duration increases to 24 hours.
+    4th: The duration increases to until your next daily preparations.
 water-walk:
   name: WATER WALK
   type: SPELL
@@ -11370,16 +11266,16 @@ water-walk:
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: 10 minutes
   description:
     main:
       The target can walk on the surface of water and other liquids
       without falling through. It can go underwater if it wishes, but in
-      that case it must swim normally and doesn't gain the ability to
-      breathe underwater.
+      that case it must swim normally.
+      This spell doesn't grant the ability to breathe underwater.
   heightened:
-    4th: The spell's range increases to 30 feet, and you can target up to 10 creatures.
+    4th: The spell's range increases to 30 feet, the duration increases to 1 hour, and you can target up to 10 creatures.
 weakening-ground:
   name: WEAKENING GROUND
   type: SPELL
@@ -11506,34 +11402,21 @@ web:
   duration: 1 minute
   description:
     main:
-      You create a sticky web in the area that impedes creatures'
-      movement each time they try to move through it. Squares filled
-      with the web are difficult terrain. Each square can be cleared of
-      the web by a single attack or effect that deals at least 5 slashing
-      damage or 1 fire damage. A square has AC 5 and TAC 5, and it
-      automatically fails its saving throws.
-      Each time a creature begins to use a move action while in the
-      web, it must attempt an Athletics check or Reflex save against your
-      spell DC to avoid being entangled or immobilized. A creature that
-      gets out of the web ceases to be entangled by it. ${subsection.save}
+      You create a sticky web in the area that impedes creatures' movement each time they try to move through it. Squares filled with the web are difficult terrain. Each square can be cleared of the web by a single attack or effect that deals at least 5 slashing damage or 1 fire damage. A square has AC 5, and it automatically fails its saving throws.
+      Each time a creature in the web begins to use a move action or enters the web during a move action, it must attempt an Athletics check or Reflex save against your spell DC to avoid taking a circumstance penalty to its Speeds or becoming immobilized. A creature that gets out of the web ceases to take a circumstance penalty to its Speed from the web.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success:
-            The creature is unaffected. If it used an Athletics check,
-            it clears the web from every square it leaves after leaving
-            the square
+            The creature is unaffected during its action. If it used an Athletics check, it clears the web from every square it leaves after leaving the square.
           crit:
-            As success, and it doesn't need to attempt further saving throws
-            against the web this turn
+            The creature is unaffected, and it doesn't need to attempt further Athletics checks or saving throws against the web this turn. If it used an Athletics check, it clears the web from every square it leaves after leaving the square.
           failure:
-            The creature is entangled until the start of its next
-            turn but doesn't need to attempt further saving throws
-            against the web during this action.
+            The creature takes a –10-foot circumstance penalty to its Speeds until the start of its next turn.
           crit-fail:
-            The creature is immobilized until the start of
-            its next turn, after which it is entangled for 1 round.
+            The creature is immobilized until the start of its next turn, after which it takes a –10-foot circumstance penalty to its Speeds for 1 round. It can attempt to Escape to remove its immobilized condition.
   heightened:
     4th: The spell's area increases to a 20-foot burst, and its range increases to 60 feet.
 weird:
