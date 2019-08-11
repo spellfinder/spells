@@ -52,6 +52,13 @@ def validate(data):
                 )
 
         for name, sub in (v['description'].get('subsections') or {}).items():
+            if not isinstance(sub, dict):
+                errors.append(
+                    'Invalid subsection "{sub}" is not a dictionary.'.format(
+                        sub=name
+                    )
+                )
+                continue
             if sorted(sub.keys()) != ['content', 'type']:
                 errors.append(
                     'Invalid subsection "{sub}" format in {k}:'

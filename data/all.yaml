@@ -401,6 +401,20 @@ animal-messenger:
     main:
       You offer a gift of food, and an ordinary Tiny wild animal within range approaches to eat it. You imprint the image, direction, and distance of an obvious place or landmark well known to you within the animal. Optionally, you can attach a small object or note up to light Bulk to it. The animal does its best to reach the destination; if it makes it there, it waits nearby until the duration expires, allowing other nonhostile creatures to approach it and remove the attached object.
       If there are no Tiny wild animals in range, the spell is lost.
+animal-vision:
+  name: Animal Vision
+  type: spell
+  level: 3
+  rarity: 0
+  traits: [divination, mental]
+  casting: [M, S, V]
+  casting-time: 1 minute
+  range: 120 feet
+  target: 1 animal
+  duration: 1 hour
+  description:
+    main:
+      You tap into the target's senses, allowing you to see, hear, and otherwise sense whatever it senses for the spell's duration. If the target wishes to prevent you from doing so, it can attempt a Will save, negating the spell on a success, but most animals don't bother to do so. While tapping into the target's senses, you can't use your own body's senses, but you can change back and forth from your body's senses to the target's senses using a single action, which has the concentrate trait.
 ant-haul:
   name: ANT HAUL
   type: SPELL
@@ -1132,6 +1146,21 @@ chill-touch:
           "Undead Creature": The target is flat-footed for 1 round on a failed Fortitude save. On a critical failure, the target is also fleeing for 1 round unless it succeeds at a Will save.
   heightened:
     "+1": The negative damage to living creatures increases by 1d4.
+chilling-darkness:
+  name: Chilling Darkness
+  type: spell
+  level: 3
+  rarity: 0
+  traits: [attack, cold, darkness, evil, evocation]
+  cast: [aS, aV]
+  range: 120 feet
+  target: 1 creature
+  description:
+    main:
+      You shoot an utterly cold ray of darkness tinged with unholy energy. Make a ranged spell attack against the target. You deal 5d6 cold damage, plus 5d6 evil damage if the target is a celestial.
+      If the ray passes through an area of magical light or targets a creature affected by magical light, chilling darkness attempts to counteract the light. If you need to determine whether the ray passes through an area of light, draw a line between yourself and the spell's target.
+  heightened:
+    "+1": The cold damage increases by 2d6, and the evil damage against celestials increases by 2d6.
 chromatic-wall:
   name: CHROMATIC WALL
   type: SPELL
@@ -1200,18 +1229,11 @@ circle-of-protection:
   traits: [abjuration]
   casting: [aM, aS, aV]
   range: touch
-  area: 10-foot-aura centered on the touched creature
+  area: 10-foot emanation centered on the touched creature
   duration: 1 minute
   description:
     main:
-      Choose chaotic, evil, good, or lawful. If you choose chaos, this spell
-      gains the lawful trait and so on. Creatures in the area gain a +1
-      conditional bonus to AC against attacks by creatures of the chosen
-      alignment and saves against effects from such creatures. This
-      increases to +3 against effects from such creatures that directly
-      control the target and attacks made by such summoned creatures.
-      Summoned creatures of the chosen alignment can't willingly
-      enter without a Will save. Use the first result for repeated attempts.
+      You ward a creature and those nearby against a specified alignment. Choose chaotic, evil, good, or lawful; this spell gains the opposing trait. Creatures in the area gain a +1 status bonus to AC against attacks by creatures of the chosen alignment and to saves against effects from such creatures. This bonus increases to +3 against effects from such creatures that directly control the target and attacks made by summoned creatures of the chosen alignment. Summoned creatures of the chosen alignment can't willingly enter the area without succeeding at a Will save; repeated attempts use the first save result.
   heightened:
     4th: The duration increases to 1 hour.
 clairaudience:
@@ -1343,7 +1365,7 @@ command:
   type: SPELL
   level: 1
   rarity: 0
-  traits: [auditory, enchantment, lingual, mental]
+  traits: [auditory, enchantment, linguistic, mental]
   casting: [aS, aV]
   range: 30 feet
   target: 1 creature
@@ -1589,12 +1611,11 @@ crisis-of-faith:
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
+  save: Will
   description:
     main:
-      You assault the target's faith, riddling the creature with doubt and
-      mental turmoil for 8d4 mental damage, or 8d6 mental damage if it
-      can cast divine spells. The effects are determined by its Will save.
+      You assault the target's faith, riddling the creature with doubt and mental turmoil that deal 6d6 mental damage, or 6d8 mental damage if it can cast divine spells. The effects are determined by its Will save.
       ${subsection.save}
       To many deities, casting this spell on a follower of your own deity without
       significant cause is anathema.
@@ -1604,11 +1625,11 @@ crisis-of-faith:
         type: dl
         content:
           success: The target takes half damage.
-          crit: The target takes no damage.
-          failure: The target takes full damage.
-          crit-fail: The target takes double damage and can't cast divine spells for 1 round.
+          crit: The target is unaffected.
+          failure: The target takes full damage; if the target can cast divine spells, it's stupefied 1 for 1 round.
+          crit-fail: The target takes double damage, is stupefied 1 for 1 round and can't cast divine spells for 1 round.
   heightened:
-    "+1": Damage increases by 2d4 (2d6 if divine spellcaster)
+    "+1": Damage increases by 2d6 (2d8 if the target is a divine spellcaster)
 crusade:
   name: CRUSADE
   type: SPELL
@@ -3168,9 +3189,9 @@ enervation:
           crit-fail: The target is enervated 4.
 enhance-victuals:
   name: ENHANCE VICTUALS
-  type: POWER
-  level: 1
-  rarity: 1
+  type: spell
+  level: 2
+  rarity: 0
   traits: [transmutation]
   casting-time: 1 minute
   casting: [M, S, V]
@@ -4561,15 +4582,14 @@ heroism:
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: touch
-  target: one humanoid creature
+  target: 1 humanoid creature
   duration: 10 minutes
   description:
     main:
-      You tap the target's inner heroism, granting it a +1 conditional bonus
-      to attack rolls, Perception checks, saving throws, and skill checks.
+      You tap into the target's inner heroism, granting it a +1 status bonus to attack rolls, Perception checks, saving throws, and skill checks.
   heightened:
-    5th: The conditional bonus increases to +2.
-    8th: The conditional bonus increases to +3.
+    5th: The status bonus increases to +2.
+    8th: The status bonus increases to +3.
 hero-s-defiance:
   name: HERO'S DEFIANCE
   type: POWER
@@ -4724,10 +4744,9 @@ hypercognition:
   description:
     main:
       You rapidly catalog and collate information relevant to your
-      current situation. You can instantly use up to 10 Recall
-      Knowledge actions as part of Casting this Spell. If you have any
-      special abilities or free actions that would trigger when you
-      Recall Knowledge, you can't use them for these actions.
+      current situation. You can instantly use up to 6 Recall
+      Knowledge actions as part of Casting this Spell.
+      For these actions, you can't use any special abilities, reactions, or free actions that trigger when you Recall Knowledge..
 hypnotic-pattern:
   name: HYPNOTIC PATTERN
   type: SPELL
@@ -4904,76 +4923,46 @@ insect-form:
   rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
-      "You transform into a Medium animal battle form. You count as an
-      animal in addition to your normal traits while in this form. Your
-      gear is absorbed into your form; the constant abilities of your
-      gear still function, but you can't activate any item abilities. When
-      you transform, you gain the following: ${subsection.stats}
-      The special statistics of your battle form can be adjusted only
-      by penalties, circumstance bonuses, and conditional bonuses.
-      Your battle form prevents you from casting spells, speaking, or
-      using most actions with the manipulate trait that require hands
-      (the GM determines which actions of this sort you can take if
-      there's doubt).You can dismiss this spell with a Concentrate on
-      the Spell action.
-      If you prepare this spell, choose from the following options.
-      When in battle form, you gain the attacks, movement types, and
-      special abilities listed. You can choose a more specific type of
-      animal to turn into (such as a ladybug or scarab for beetle). This
-      has no effect on your battle form's size or statistics.
+      "You envision a simple bug and transform into a Medium animal battle form. When you cast this spell, choose ant, beetle, centipede, mantis, scorpion, or spider. You can decide the specific type of animal (such as such as a ladybug or scarab for beetle), but this has no effect on the form's Size or statistics. While in this form, you gain the animal trait. You can Dismiss this spell.
+      You gain the following statistics and abilities regardless of which battle form you choose:
+      ${subsection.stats}
+      You also gain specific abilities based on the form you choose:
       ${subsection.forms}"
     subsections:
       stats:
         type: list
         content:
+          - AC = 18 + your level. Ignore your armor's check penalty and Speed reduction.
+          - 10 temporary Hit Points.
           - Low-light vision.
           - Treat your Athletics bonus as +12, unless your own bonus is
             already higher.
-          - AC 23 (TAC 20), ignore armor's check penalty and reduced Speed.
-          - 10 temporary Hit Points that go away when you leave your
-            battle form.
-          - Each form grants one or more natural melee attacks, as detailed
-            in the insect types below, which are the only types of attacks
-            you can use. You're trained with them. When attacking with
-            them, your attack modifier is +10 and your damage bonus is
-            +2. These are Strength-based attacks (for the purposes of the
-            enfeebled condition, for example).
+          - One or more attacks specific to the battle form you choose, which are the only attacks you can use. You're trained with them. Your attack modifier is +13, and your damage bonus is +2. These attacks are Strength based (for the purpose of the enfeebled condition). If your unarmed attack modifier is higher, you can use it instead.
+          - Athletics modifier of +13, unless your own is higher.
       forms:
         type: dl
         content:
-          Ant: mandibles, Damage 2d6 bludgeoning; Speed 30 feet, climb 30 feet.
-          Beetle: mandibles, Damage 2d10 bludgeoning; Speed 25 feet.
+          Ant: Speed 30 feet, climb Speed 30 feet; mandibles, Damage 2d6 bludgeoning.
+          Beetle: Speed 25 feet; mandibles, Damage 2d10 bludgeoning.
           Centipede:
-            darkvision; mandibles, Damage 1d8 piercing plus 1d4 persistent poison;
-            Speed 25 feet, climb 25 feet.
-
-          Mantis: scent; foreleg, Damage 2d8 bludgeoning; Speed 40 feet.
+            Speed 25 feet; darkvision; mandibles, Damage 1d8 piercing plus 1d4 persistent poison.
+          Mantis: Speed 40 feet; imprecise scent 30 feet; foreleg, Damage 2d8 bludgeoning.
           Scorpion:
-            darkvision, tremorsense 60 feet; stinger, Damage
+            Speed 40 feet; darkvision, tremorsense 60 feet; stinger, Damage
             1d8 piercing plus 1d4 persistent poison; pincer (agile), Damage
-            1d6 bludgeoning; Speed 40 feet.
+            1d6 bludgeoning.
           Spider:
-            darkvision; fangs, Damage 1d6 piercing plus 1d4
+            Speed 25 feet, climb Speed 25 feet; darkvision; fangs, Damage 1d6 piercing plus 1d4
             persistent poison; web (touch attack, range increment 20
-            feet), Damage entangles the target for 1 round; Speed 25 feet,
-            climb 25 feet.
+            feet), Damage entangles the target for 1 round.
   heightened:
     4th:
-      "Your battle form is Large and your attacks have
-      10-foot reach. You must have enough space to expand into or the
-      spell fails and is lost. Your transformed statistics are as follows:
-      Athletics +14; AC 26 (TAC 22); 15 temporary HP; attack modifier
-      +13; damage bonus +6."
+      "Your battle form is Large, and your attacks have 10-foot reach. You must have enough space to expand into or the spell is lost. You instead gain 15 temporary HP, attack modifier +16, damage bonus +6, and Athletics +16."
     5th:
-      "Your battle form is Huge and your attacks have
-      15-foot reach. You must have enough space to expand into or the
-      spell fails and is lost. Your transformed statistics are as follows:
-      Athletics +18; AC 28 (TAC 24); 20 temporary HP; attack modifier
-      +15; damage bonus +2 and double the number of weapon damage
-      dice (including those of persistent damage)."
+      "Your battle form is Huge, and your attacks have 15-foot reach. You must have enough space to expand into or the spell is lost. You instead gain 20 temporary HP, attack modifier +18, damage bonus +2 and double damage dice (including persistent damage), and Athletics +20."
 inspire-competence:
   name: INSPIRE COMPETENCE
   type: SPELL
@@ -6483,11 +6472,10 @@ neutralize-poison:
   traits: [healing, necromancy]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   description:
     main:
-      You try to cure one poison afflicting the target. Treat this as
-      counteracting the poison (see page 319).
+      You pour healing magic through the target in an attempt to cure one poison afflicting it. Attempt a counteract check against the poison.
 nightmare:
   name: NIGHTMARE
   type: SPELL
@@ -7811,11 +7799,10 @@ remove-disease:
   casting-time: 10 minutes
   casting: [M, S, V]
   range: touch
-  target: one creature
+  target: 1 creature
   description:
     main:
-      You attempt to completely remove one disease afflicting the
-      target. Treat this as counteracting the disease (see page 319).
+      Healing magic purges disease from a creature's body. You attempt to counteract one disease afflicting the target.
 remove-fear:
   name: REMOVE FEAR
   type: SPELL
@@ -8252,14 +8239,9 @@ sanctified-ground:
   casting: [M, S, V]
   cost: 1 vial of holy water
   area: 30-foot burst centered on you
-  duration: 24 hours
   description:
     main:
-      You sanctify the area, sprinkling it with holy water and preparing
-      it to make a stand against your foes. Choose aberrations,
-      celestials, dragons, fiends, or undead. All creatures in the area
-      gain a +1 conditional bonus to AC, attack rolls, damage rolls, and
-      saving throws against the chosen creatures.
+      You sanctify the area, sprinkling it with holy water and warding it against your foes. Choose aberrations, celestials, dragons, fiends, monitors, or undead. All creatures in the area gain a +1 status bonus to AC, attack rolls, damage rolls, and saving throws against the chosen creatures.
 sanctuary:
   name: SANCTUARY
   type: SPELL
@@ -8388,21 +8370,20 @@ searing-light:
   traits: [attack, evocation, fire, good, light]
   casting: [aS, aV]
   range: 120 feet
-  target: one creature
+  target: 1 creature
   description:
     main:
-      You shoot a blazing-hot ray of light tinged with
-      holy energy. Make a ranged touch attack against
-      the target. If you hit, you deal 5d6 fire damage. If
-      the target is a fiend or undead, you deal 5d6 additional good
-      damage to it. On a critical hit, double all the damage.
-      If the light passes through an area of magical darkness or
-      targets a creature affected by magical darkness, searing light
-      attempts to dispel the darkness. If you need to determine
-      whether the light passes through an area of darkness, draw a
-      line between you and the spell's target.
+      You shoot a blazing ray of light tinged with holy energy. Make a ranged spell attack. The ray deals 5d6 fire damage. If the target is a fiend or undead, you deal an extra 5d6 good damage.
+      If the light passes through an area of magical darkness or targets a creature affected by magical darkness, searing light attempts to counteract the darkness. If you need to determine whether the light passes through an area of darkness, draw a line between yourself and the spell's target.
+      ${subsection.outcomes}
+    subsections:
+      outcomes:
+        type: dl
+        content:
+          success: The target takes full damage.
+          crit: The target takes double fire damage, as well as double good damage if a fiend or undead.
   heightened:
-    "+2": The fire damage by 3d6 and the good damage against fiends and undead increases by 3d6.
+    "+1": The fire damage increases by 2d6, and the good damage against fiends and undead increases by 2d6.
 secret-page:
   name: SECRET PAGE
   type: SPELL
@@ -10889,18 +10870,10 @@ wall-of-thorns:
   duration: 1 minute
   description:
     main:
-      You create a 5-foot-thick, 60-foot-long, and 10-foot-high wall
-      of brambles and thorns in a straight line. The wall stands
-      vertically. If you wish, the wall can be of a shorter length or
-      height. Everything on each side of the wall has cover from
-      creatures on the opposite side, and the wall's space counts as
-      difficult terrain. For every move action a creature uses that
-      enters at least one of the wall's spaces, that creature takes 4d4
-      piercing damage.
-      Each 5-foot-by-5-foot section of the wall has AC 10, TAC 6,
-      and Hardness 9. A broken section can be moved through freely.
+      Over the course of a minute, you cause a thick wall of thorny brambles to grow from the ground. You create a 5-foot-thick wall of brambles and thorns in a straight line up to 60 feet long and 10 feet high. You must create the wall in an unbroken open space so its edges don't pass through any creatures or objects, or the spell is lost. The wall stands vertically. If you wish, the wall can be of a shorter length or height. Everything on each side of the wall has cover from creatures on the opposite side, and the wall's spaces are difficult terrain. For every move action a creature uses to enter at least one of the wall's spaces, that creature takes 3d4 piercing damage.
+      Each 5-foot-by-5-foot section of the wall has AC 10, Hardness 10, and 20 Hit Points. It's immune to critical hits and precision damage. A destroyed section can be moved through freely.
   heightened:
-    "+1": The Hardness of each section of the wall increases by 2 and the piercing damage increases by 1d4.
+    "+1": The Hit Points of each section of the wall increase by 5, and the piercing damage increases by 1d4.
 
 wall-of-wind:
   name: WALL OF WIND
@@ -10934,20 +10907,14 @@ wanderer-s-guide:
   name: WANDERER'S GUIDE
   type: POWER
   level: 2
-  rarity: 1
+  rarity: 0
   traits: [divination]
   casting-time: 1 minute
   casting: [M,S,V]
-  duration: 24 hours
+  duration: until your next daily preparations
   description:
     main:
-      You call upon your deity to guide your route, allowing you
-      and allies who travel overland with you to reduce the distance
-      reduction from difficult terrain by half for the duration, as long
-      as you don't deviate from the divinely inspired route. This doesn't
-      have any effect on movement during encounters. If you use this
-      ability again before the duration is over, this effect ends and is
-      replaced by that of the new route.
+      You call upon the beyond to guide your route. When you Cast this Spell, choose a destination; you receive an inspired route to that destination, allowing you and allies who travel overland with you to reduce the movement penalty from difficult terrain by half for the duration, as long as you don't deviate from the inspired route. This doesn't have any effect on movement during encounters. If you use this ability again before the duration is over, this effect ends and is replaced by that of the new route.
 warp-mind:
   name: WARP MIND
   type: SPELL
@@ -11428,28 +11395,21 @@ zone-of-truth:
   range: 30 feet
   area: 20-foot burst
   duration: 10 minutes
+  save: Will
   description:
     main:
-      Creatures within the area or those entering it have difficulty
-      lying, depending on their Will saves. Each potentially affected
-      creature is allowed a save to avoid the effects when the spell
-      is cast or when the creature first enters the area. It keeps the
-      results of this initial save if it leaves and reenters the area.
-      Affected creatures are aware of this enchantment. Therefore,
-      they can avoid answering questions to which they would
-      normally respond with a lie, or they might be evasive as long as
-      they remain within the boundaries of the truth.
+      You designate an area in which creatures are compelled to speak only truth. Creatures within or entering the area have difficulty lying. Each potentially affected creature must attempt a Will save when the spell is cast or when the creature first enters the area. It uses the results of this initial save if it leaves and reenters the area. Affected creatures are aware of this enchantment; therefore, they can avoid answering questions to which they would normally respond with a lie, or they can be evasive as long as they remain within the boundaries of the truth.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The target takes a -1 conditional penalty to Deception checks.
-          crit: Unaffected.
+          success: The target takes a -2 status penalty to Deception checks.
+          crit: The target is unaffected.
           failure:
             The target can't speak any deliberate and intentional
-            lies and takes a -1 conditional penalty to Deception checks.
+            lies and takes a -2 status penalty to Deception checks.
           crit-fail:
             The target can't speak any deliberate and
-            intentional lies and takes a -4 conditional penalty to
+            intentional lies and takes a -4 status penalty to
             Deception checks.
