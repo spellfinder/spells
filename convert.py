@@ -51,6 +51,13 @@ def validate(data):
                     )
                 )
 
+        if 'cleric' in v['traits'] and 'domain' not in v:
+            errors.append(
+                'Missing domain for cleric focus spell "{name}"'.format(
+                    name=v['name']
+                )
+            )
+
         for name, sub in (v['description'].get('subsections') or {}).items():
             if not isinstance(sub, dict):
                 errors.append(

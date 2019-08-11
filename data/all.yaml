@@ -135,23 +135,6 @@ acid-splash:
          the persistent damage increases to 4, and the splash damage increases to 3
     9th: Damage increases to 4d6 + your spellcasting ability modifier,
          the persistent damage increases to 5, and the splash damage increases to 4
-
-acquisitive-s-fortune:
-  name: Acquisitive's Fortune
-  traits: [divination, fortune]
-  type: power
-  level: 1
-  rarity: 1
-  casting: [M, S, V]
-  casting-time: 10 minutes
-  range: 30 feet
-  target: one creature
-  duration: 24 hours
-  description:
-    main:
-      You call upon good fortune to protect from brutal calamity in daily work. If your target rolls a
-      critical failure on a Lore check to Practice a Trade, it rerolls the check and takes the second result.
-
 aerial-form:
   name: Aerial Form
   traits: [polymorph, transmutation]
@@ -310,7 +293,7 @@ anathematic-reprisal:
     "+1": The damage increases by 1d6.
 ancestral-memories:
   name: Ancestral Memories
-  type: power
+  type: focus
   level: 1
   rarity: 1
   casting: [aV]
@@ -322,25 +305,13 @@ ancestral-memories:
   heightened:
     6th:
       You temporarily become an expert in the skill you choose.
-ancestral-surge:
-  name: Ancestral Surge
-  traits: [enchantment]
-  type: power
-  level: 1
-  rarity: 1
-  casting: [aV]
-  duration: 1 round
-  description:
-    main:
-      You gain a +1 conditional bonus to spell rolls and spell DCs. If you have available Spell Points, you can spend
-      1 Spell Point and Concentrate on a Spell to extend its duration by 1 round.
 angelic-halo:
   name: Angelic Halo
   traits: [abjuration, good, sorcerer]
   casting: [aV]
   duration: 1 minute
   area: 15-foot emanation
-  type: power
+  type: focus
   level: 1
   rarity: 1
   description:
@@ -350,7 +321,7 @@ angelic-halo:
     "+1": The status bonus increases by 2.
 angelic-wings:
   name: Angelic Wings
-  type: power
+  type: focus
   level: 3
   rarity: 1
   traits: [evocation, light, sorcerer]
@@ -499,28 +470,23 @@ arcane-countermeasure:
       You undermine the target spell, making it easier to defend against. You reduce the spell's level by 1, and targets of the spell gain a +2 status bonus to any saving throws, skill checks, AC, or DC against it.
       You can't reduce the spell's level below its minimum. For example, a 5th-level cone of cold would remain 5th-level, but a 5th-level fireball would become 4th-level. Targets still gain all the other benefits, even if you don't reduce the spell's level.
 artistic-flourish:
-  traits: [transmutation]
+  traits: [cleric, transmutation]
   name: ARTISTIC FLOURISH
   type: focus
+  domain: creation
   level: 4
   rarity: 1
-  casting-time: 10 minutes
-  casting: [M, S, V]
-  range: touch
-  target: one item or work of art
-  duration: 24 hours
+  casting: [aM, aV]
+  range: 15 feet
+  target: 1 item or work of art that fits entirely within the range
+  duration: 10 minutes
   description:
     main:
-      You infuse the target with artisanal and artistic vision. Its quality
-      increases to match your proficiency rank in Crafting, to a maximum
-      of expert. The target is a beautiful and impressive piece for its new
-      quality, but the effect is obviously temporary, so it can't be sold for
-      more than normal. This doesn't allow you to use the target to Craft
-      a magic item that requires the new quality or perform any other
-      task requiring a permanent item of that quality.
+      You transform the target to make it match your artisanal and artistic vision. If you have expert proficiency in Crafting, the item grants a +1 item bonus to attack rolls if it's a weapon or skill checks if it's a skill tool. The target is a beautiful and impressive piece for its new quality, but the effect is obviously temporary, so its monetary value doesn't change.
+      When you cast this spell, any previous artistic flourish you had cast ends.
   heightened:
-    4th: If you spend 1 additional Spell Point, the maximum quality increases to master.
-    8th: If you spend 2 additional Spell Points, the maximum quality increases to legendary.
+    7th: If you have master proficiency in Crafting, the item grants a +2 item bonus instead.
+    10th: If you have legendary proficiency in Crafting, the item grants a +3 item bonus instead.
 
 athletic-rush:
   traits: [cleric, transmutation]
@@ -934,27 +900,29 @@ calm-emotions:
 captivating-adoration:
   name: CAPTIVATING ADORATION
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [emotion, enchantment, mental]
+  domain: passion
+  traits: [cleric, emotion, enchantment, mental, visual]
   casting: [aS, aV]
-  area: 15-foot aura
+  area: 15-foot emanation
+  save: Will
   duration: 1 minute
   description:
     main:
-      You become entrancingly beautiful and desirable, and creatures
-      are distracted by their feelings for you as long as they remain
-      within the area. The effect is determined by their Will saves. If a
-      creature leaves and reenters, use the original save results.
+      You become intensely entrancing, and creatures are distracted by you as long as they remain within the area. You can exclude any creatures you choose from the effects.
+      When a creature enters the area for the first time, it must attempt a Will saving throw. If a creature leaves and reenters, it uses the results of its original save.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The creature takes a -1 conditional penalty to Perception and skill checks not directed at you.
-          crit: The creature is unaffected.
-          failure: The creature is fascinated.
-          crit-fail: The creature is fascinated and its attitude toward you improves by one step.
+          crit: The creature is unaffected and temporarily immune for 1 hour.
+          success:  The creature is fascinated with you for its next action, then is temporarily immune for 1 hour.
+          failure: The creature is fascinated with you.
+          crit-fail: The creature is fascinated with you, and its attitude toward you improves by one step.
+  heightened:
+    "+1": Increase the size of the emanation by 15 feet.
 cataclysm:
   name: Cataclysm
   type: spell
@@ -1357,29 +1325,34 @@ command:
 commanding-lash:
   name: COMMANDING LASH
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [enchantment, mental]
+  domain: tyranny
+  requirements: Your most recent action dealt damage to a target
+  traits: [cleric, enchantment, incapacitation, mental]
   casting: [aV]
   requirements: Your last action must have been a Strike that dealt damage to a target.
+  save: Will
+  range: 100 feet
+  duration: until the end of your target's next turn
+  target: A creature you dealt damage to on your most recent action.
   description:
-    main: You issue a command to the target, as the spell command.
+    main:
+      With the threat of more pain, you compel a creature you've recently harmed. You issue a command to the target, with the effects of the spell command.
 competitive-edge:
   name: COMPETITIVE EDGE
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [emotion, enchantment, mental]
-  casting: [aS, aV]
-  duration: 1 minute
+  domain: ambition
+  traits: [cleric, emotion, enchantment, mental]
+  casting: [aV]
+  duration: sustained up to 1 minute
   description:
     main:
-      Your competitiveness drives you to better yourself
-      against superior opposition. You gain a +1 conditional bonus to
-      checks against a DC more than 11 greater than your total bonus
-      before competitive edge; this doesn't affect your DCs. For instance,
-      if you attempt a check at a +10 against a DC of 22 or higher, you
-      gain the bonus, but if the DC is 21 or lower, you don't.
+      Your competitiveness drives you to prove yourself against the opposition. You gain a +1 status bonus to attack rolls and skill checks. If an enemy within 20 feet critically succeeds at an attack roll or skill check, your status bonus increases to +3 attack rolls or that specific skill check (whichever the foe critically succeeded at) for 1 round.
+  heightened:
+    7th: Increase the base bonus to +2 and the increased bonus after an enemy critically succeeds to +4.
 comprehend-language:
   name: COMPREHEND LANGUAGE
   type: SPELL
@@ -1635,29 +1608,29 @@ dancing-lights:
 darkened-eyes:
   name: DARKENED EYES
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [darkness, transmutation]
+  domain: darkness
+  traits: [cleric, darkness, transmutation]
   casting: [aS, aV]
   range: 60 feet
-  target: one creature
-  duration: 1 round or 1 minute
+  target: 1 creature
+  duration: varies
+  save: Fortitude
   description:
     main:
-      You infuse a creature's vision with darkness depending on its
-      Fortitude save. The target is bolstered. ${subsection.save}
+      You infuse a creature's vision with darkness. After attempting its save, the target becomes temporarily immune for 24 hours.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success:
-            It loses darkvision and gains low-light vision for 1 round. If it didn't have darkvision,
-            it loses low-light vision instead.
           crit: The creature is unaffected.
-          failure: As success, but the effect last for 1 minute.
+          success:
+            The target's darkvision or low-light vision is suppressed for 1 round.
+          failure: As success, but the duration is 1 minute.
           crit-fail:
-            As failure, but the target loses darkvision and low-light vision, and if it had neither,
-            it's blinded for 1 minute.
+            As success, but the duration is 1 minute, and the target is also blinded for the duration. It can attempt a new save at the end of each of its turns. If it succeeds, it's no longer blinded, but its darkvision or low-light vision remains suppressed.
 darkness:
   name: DARKNESS
   type: SPELL
@@ -1829,17 +1802,18 @@ delusional-pride:
 destructive-aura:
   name: DESTRUCTIVE AURA
   type: focus
-  level: 2
+  level: 4
   rarity: 1
   traits: [evocation]
   casting: [aS, aV]
-  area: 10-foot aura
+  area: 15-foot emanation
   duration: 1 minute
+  domain: destruction
   description:
     main:
-      Reduce resistances of creatures in the aura (including you) by 1.
+      Swirling sands of divine devastation surround you, weakening the defenses of all they touch. Reduce the resistances of creatures in the area (including yourself) by 2.
   heightened:
-    "+2": Reduce resistances by an additional 1.
+    "+2": Reduce resistances by an additional 2.
 cry-of-destruction:
   name: Cry of Destruction
   type: focus
@@ -2140,6 +2114,18 @@ dispel-magic:
   description:
     main:
       You unravel the magic behind a spell or effect. Attempt a counteract check against the target (page 458). If you succeed against a spell effect, you counteract it. If you succeed against a magic item, the item becomes a mundane item of its type for 10 minutes. This doesn't change the item's non-magical properties. If the target is an artifact or similar item, you automatically fail.
+disperse-into-air:
+  name: Disperse into Air
+  type: focus
+  level: 4
+  rarity: 1
+  domain: air
+  traits: [air, cleric, polymorph, transmutation]
+  casting: [rS]
+  trigger: You take damage from an enemy or a hazard.
+  description:
+    main:
+      After taking the triggering damage, you transform into air. Until the end of the current turn, you can't be attacked or targeted, you don't take up space, you can't act, and any auras or emanations you have are suppressed. At the end of the turn, you re-form in any space you can occupy within 15 feet of where you were when you dispersed. Any auras or emanations you had are restored as long as their duration didn't run out while you were dispersed.
 disrupt-undead:
   name: DISRUPT UNDEAD
   type: SPELL
@@ -2361,19 +2347,17 @@ dominate:
 downpour:
   name: DOWNPOUR
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [evocation, water]
+  domain: water
+  traits: [cleric, evocation, water]
   casting: [aV, aS]
   range: 120 feet
-  area: 20-foot burst
+  area: 30-foot burst
   duration: 1 minute
   description:
     main:
-      You call a torrential downpour. The rain extinguishes nonmagical
-      flames. Creatures in the area are concealed and dazzled. They gain
-      fire resistance 4. Creatures with weakness to water that end their
-      turns in the area take damage equal to their weakness.
+      You call forth a torrential downpour, which extinguishes nonmagical flames. Creatures in the area are concealed and gain fire resistance 10. Creatures outside the area are concealed to those inside the area. Creatures with weakness to water that end their turns in the area take damage equal to their weakness.
   heightened:
     "+1": The amount of fire resistance increases by 2.
 dragon-breath:
@@ -2535,6 +2519,29 @@ dread-aura:
   description:
     main:
       You emit an aura of terror. Foes in the area are frightened 1 and unable to reduce the condition.
+dreamer-s-call:
+  name: Dreamer's Call
+  type: focus
+  level: 4
+  rarity: 1
+  range: 30 feet
+  traits: [cleric, enchantment, incapacitation, mental]
+  casting: [aS, aV]
+  target: 1 creature
+  save: Will
+  domain: dreams
+  description:
+    main:
+      The target becomes distracted and suggestible, inundated by vivid daydreams.
+      ${subsection.save}
+    subsections:
+      save:
+        type: dl
+        content:
+          crit: The target is unaffected.
+          success: The target's attention wavers. It becomes flat-footed and fascinated by its daydreams.
+          failure: As success, except that you appear in the dream and give a suggestion. This can be to approach you, run away (as if it had the fleeing condition), Release what it's holding, Drop Prone, or stand in place. The creature follows this course of action as its first action after you Cast the Spell.
+          crit-fail: As failure, but the target follows the course of action for as many actions as possible for the spell's duration, and it does nothing else.
 dream-council:
   name: DREAM COUNCIL
   type: SPELL
@@ -2909,15 +2916,17 @@ endure-elements:
 enduring-might:
   name: ENDURING MIGHT
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [abjuration]
+  domain: might
+  traits: [abjuration, cleric]
   casting: [rS]
-  trigger: An attack or effect would deal you damage.
+  trigger: An attack or effect would deal damage to you.
   description:
     main:
-      You gain resistance to all of that attack's damage equal to your
-      level plus your Strength modifier.
+      Your own might mingles with divine power to protect you. You gain resistance equal to 8 plus your Strength modifier against all damage from the triggering attack or effect.
+  heightened:
+    "+1": The resistance increases by 2
 energy-absorption:
   name: ENERGY ABSORPTION
   type: focus
@@ -2948,30 +2957,6 @@ energy-aegis:
       gains resistance 5 to acid, cold, electricity, fire, force, and sonic.
   heightened:
     9th:  The resistances increase to 10.
-enervation:
-  name: ENERVATION
-  type: SPELL
-  level: 4
-  rarity: 0
-  traits: [attack, necromancy, negative]
-  casting: [aS, aV]
-  range: 30 feet
-  target: one creature
-  duration: 1 minute
-  description:
-    main:
-      Make a ranged touch attack. If you succeed, the effect depends on
-      the target's Fortitude save; if you critically succeed, treat the result
-      as one degree worse. Enervated effects last for only the duration.
-      ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: The target is enervated 1.
-          crit: The target is unaffected.
-          failure: The target is enervated 2.
-          crit-fail: The target is enervated 4.
 enhance-victuals:
   name: ENHANCE VICTUALS
   type: spell
@@ -3053,6 +3038,21 @@ enthrall:
           crit-fail:
             As failure, but the target can't attempt a save to
             end the fascination if it disagrees with you.
+eradicate-undeath:
+  name: Eradicat Undeath
+  type: focus
+  level: 4
+  rarity: 1
+  traits: [cleric, necromancy, positive]
+  domain: death
+  casting: [aS, aV]
+  area: 30-foot cone
+  save: basic Fortitude
+  description:
+    main:
+      A massive deluge of life energy causes the undead to fall apart. Each undead creature in the area takes 4d12 positive damage.
+  heightened:
+    "+1": The damage increases by 1d12.
 ethereal-jaunt:
   name: ETHEREAL JAUNT
   type: SPELL
@@ -3080,22 +3080,6 @@ extend-spell:
   description:
     main:
       You call upon your blood's knowledge of the ancients to extend your magic. If your next action is to Cast a Spell with a duration of 1 minute on a single target, and the spell isn't of the highest spell level you can cast, the spell instead lasts 10 minutes. You can have only one active spell at a time extended in this way.
-fabricate:
-  name: FABRICATE
-  type: focus
-  level: 1
-  rarity: 1
-  traits: [conjuration]
-  casting: [aS, aV]
-  duration: 1 minute
-  description:
-    main:
-      You create a temporary standard-quality object. It must be
-      of vegetable matter and 1 Bulk or less. It can't rely on intricate
-      craftsmanship or complex moving parts, never functions as a cost
-      or the like, and can't be made of special materials or materials with
-      a rarity of uncommon or higher. It is obviously temporary conjured,
-      and its aesthetic matches your style of craftsmanship or artistry.
 fabricated-truth:
   name: FABRICATED TRUTH
   type: SPELL
@@ -3459,18 +3443,18 @@ fireball:
 flame-barrier:
   name: FLAME BARRIER
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [abjuration, fire]
+  traits: [abjuration, cleric]
+  domain: fire
   casting: [rV]
-  trigger: An effect deals fire damage to either you or an ally within range.
-  range: 60 feet
+  trigger: An effect would deal fire damage to either you or an ally within range.
+  range: 30 feet
   description:
     main:
-      You or one ally gains fire resistance from the triggering effect
-      equal to twice your level. The resistance applies only against
-      damage you take from the triggering attack, not to any
-      enhancements or conditions.
+      You swiftly deflect incoming flames. The target gains fire resistance 15 against the triggering effect.
+  heightened:
+    "+2": The resistance increases by 5
 flame-strike:
   name: FLAME STRIKE
   type: SPELL
@@ -3778,18 +3762,19 @@ glibness:
 glimpse-the-truth:
   name: GLIMPSE THE TRUTH
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [divination]
+  domain: truth
+  traits: [cleric, divination, revelation]
   casting: [aS]
+  area: 30-foot emanation
   duration: 1 round
   description:
     main:
-      You see things within 30 feet as they truly are. The GM attempts
-      a special secret dispel check against any illusion in the area, but
-      only for the purpose of determining whether you see through it (for
-      instance, if the check succeeds against an illusory disguise spell, you
-      see the creature's true form but it doesn't end the illusory disguise).
+      Divine insight lets you see things as they truly are. The GM attempts a secret counteract check against each illusion that is at least partially within the area. Instead of counteracting the illusion, you see through it (for instance, if the check succeeds against an illusory disguise spell, you see the creature's true form but illusory disguise doesn't end).
+      The area moves with you for the duration of the spell, and the GM attempts a secret counteract check each time a new illusion is within the area.
+  heightened:
+    7th: You can allow everyone to see through illusions you succeed against, not just yourself.
 glitterdust:
   name: GLITTERDUST
   type: SPELL
@@ -4129,21 +4114,6 @@ harm:
     "+1":
       the amount of healing or damage increases by 1d8,
       and the extra healing for the 2-action version increases by 8.
-harmonize:
-  name: HARMONIZE
-  type: focus
-  level: 3
-  rarity: 1
-  traits: [enchantment]
-  casting: [fV]
-  trigger: You finish casting a composition.
-  description:
-    main:
-      The triggering spell becomes a harmonized composition.
-      A harmonized composition doesn't end if you cast another
-      composition, and you can cast another composition on the same
-      turn as a harmonized composition. Casting another harmonized
-      composition ends any harmonized composition you have in effect.
 haste:
   name: HASTE
   type: SPELL
@@ -4229,18 +4199,6 @@ healer-s-blessing:
       The target regains additional Hit Points from healer's blessing only the first time it regains HP from a given healing spell, so a spell that heals the creature repeatedly over a duration would restore additional Hit Points only once.
   heightened:
     "+1": The additional healing increases by 2 HP.
-healing-font:
-  name: HEALING FONT
-  type: focus
-  level: 2
-  rarity: 1
-  traits: [necromancy]
-  casting: [fS]
-  trigger: You use channel energy to cast a heal spell.
-  description:
-    main:
-      You draw power from your pool of Spell Points to cast heal, and
-      thus this casting of heal doesn't expend a use of channel energy.
 hellfire-plume:
   name: HELLFIRE PLUME
   type: focus
@@ -4865,7 +4823,7 @@ ki-rush:
   name: KI RUSH
   type: focus
   level: 1
-  rarity: 0
+  rarity: 1
   traits: [monk, transmutation]
   casting: [aV]
   description:
@@ -4875,7 +4833,7 @@ ki-strike:
   name: KI STRIKE
   type: focus
   level: 1
-  rarity: 0
+  rarity: 1
   traits: [monk, transmutation]
   casting: [aV]
   description:
@@ -4915,16 +4873,15 @@ know-direction:
 know-the-enemy:
   name: KNOW THE ENEMY
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [divination, fortune]
-  casting: [fS]
-  trigger: You hit a creature with a melee Strike.
+  domain: knowledge
+  traits: [cleric, divination, fortune]
+  casting: [rS]
+  trigger: You roll initiative and can see a creature, you succeed at an attack roll against a creature, or a creature fails a saving throw against one of your spells.
   description:
     main:
-      Roll the appropriate skill check to identify the creature's abilities
-      as if you had spent a Recall Knowledge action. You can use
-      lorekeeper's fortune on this check.
+      Use a Recall Knowledge action, rolling the appropriate skill check to identify the triggering creature's abilities. You can roll your check twice and use the better result.
 lay-on-hands:
   name: LAY ON HANDS
   type: focus
@@ -5111,15 +5068,24 @@ litany-of-righteousness:
 localized-quake:
   name: LOCALIZED QUAKE
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [earth, transmutation]
+  domain: earth
+  traits: [cleric, earth, transmutation]
   casting: [aS, aV]
-  area: 15-foot aura
+  area: 15-foot emanation or 15-foot cone
+  save: Reflex
   description:
     main:
-      You shake the earth, and each enemy in the area standing on
-      solid ground must succeed at a Reflex save or fall prone.
+      You shake the earth, toppling nearby creatures. Choose whether the spell's area is a 15-foot emanation or a 15-foot cone when you cast it. Each creature in the area standing on solid ground may take 4d6 bludgeoning damage and must attempt a Reflex saving throw.
+    subsections:
+      save:
+        type: dl
+        content:
+          crit: The creature is unaffected.
+          success: The creature takes half damage.
+          failure: The creature takes full damage and falls prone.
+          crit-fail: The creature takes full damage and falls prone.
 locate:
   name: LOCATE
   type: SPELL
@@ -5179,20 +5145,6 @@ longstrider:
       You gain a +10-foot status bonus to your Speed.
   heightened:
     2nd: The duration increases to 8 hours.
-lorekeeper-s-fortune:
-  name: LOREKEEPER'S FORTUNE
-  type: focus
-  level: 1
-  rarity: 1
-  traits: [divination, fortune]
-  casting: [fV]
-  trigger: You spend a Seek or Recall Knowledge action.
-  description:
-    main:
-      Roll the Perception or Religion check you attempt as part of
-      that action twice and take the higher result. If you're trained in
-      Arcana, Nature, or Occult, you can also use this spell on those
-      checks attempted as part of a Recall Knowledge action.
 loremaster-s-etude:
   name: LOREMASTER'S ETUDE
   type: focus
@@ -5209,15 +5161,15 @@ loremaster-s-etude:
 lucky-break:
   name: LUCKY BREAK
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [divination, fortune]
+  domain: luck
+  traits: [cleric, divination, fortune]
   casting: [rV]
   trigger:
-    You fail (but don't critically fail) an attack roll, saving throw, skill
-    check, or Perception check.
+    You fail (but don't critically fail) a saving throw
   description:
-    main: Reroll the check and use the better of the two results.
+    main: Reroll the saving throw and use the better result. You then become temporarily immune for 10 minutes.
 mage-armor:
   name: MAGE ARMOR
   type: SPELL
@@ -5364,6 +5316,22 @@ magic-weapon:
       The weapon glimmers with magic and energy. The target
       becomes a +1 striking weapon, gaining a +1 item bonus to attack
       rolls and increasing the number of weapon damage dice to two.
+malignant-sustenance:
+  name: Malignant Sustenance
+  type: focus
+  level: 4
+  rarity: 1
+  traits: [cleric, necromancy, negative]
+  domain: undeath
+  casting: [aS, aV]
+  range: touch
+  target: 1 willing undead creature
+  duration: 1 minute
+  description:
+    main:
+      You embed a seed of negative energy in an undead creature, restoring its unnatural vigor. The target gains fast healing 7. This healing comes from negative energy, so it heals the undead rather than damaging it.
+  heightened:
+    "+1": The fast healing increases by 2.
 magnificent-mansion:
   name: MAGNIFICENT MANSION
   type: SPELL
@@ -5453,18 +5421,6 @@ massacre:
           crit-fail: The creature dies.
   heightened:
     10th: The spell can affect creatures up to 19th level. Increase the damage to 10d6 on a success, and to 115 on a failure.
-master-s-illusion:
-  name: MASTER'S ILLUSION
-  type: focus
-  level: 2
-  rarity: 1
-  traits: [illusion]
-  casting: [aM, aV]
-  range: 30 feet
-  target: up to six willing creatures
-  duration: 10 minutes
-  description:
-    main: The targets gain the effects of a 1st-level illusory disguise for the listed duration.
 maze:
   name: MAZE
   type: SPELL
@@ -5550,22 +5506,6 @@ message:
       original message.
   heightened:
     3rd: The spell's range increases to 500 feet.
-metamagician-s-shortcut:
-  name: METAMAGICIAN'S SHORTCUT
-  type: focus
-  level: 3
-  rarity: 1
-  traits: [enchantment]
-  casting: [aS, aV]
-  duration: 1 hour
-  description:
-    main:
-      When you cast this spell, choose a metamagic feat you have.
-      The next time you trigger that feat, you don't need to add a
-      Somatic Casting action to the spell you cast. Metamagician's
-      shortcut ends when this happens. You can't have more than one
-      metamagician's shortcut active at a time, and if you cast it again
-      the previous one ends.
 meteor-swarm:
   name: METEOR SWARM
   type: SPELL
@@ -5769,16 +5709,6 @@ moment-of-renewal:
   description:
     main:
       The targets experience a day's worth of recovery in an instant. Any detrimental effects that would be gone after 24 hours end, though this doesn't shorten the duration of any active spells affecting the targets. The targets regain Hit Points and recover from conditions as if they had taken 24 hours of rest, but they do not make their daily preparations again or gain any benefits of rest other than healing. The targets are then temporarily immune for 1 day.
-money-talks:
-  name: MONEY TALKS
-  type: focus
-  level: 2
-  rarity: 1
-  traits: [transmutation]
-  casting: [fS]
-  trigger: You Cast a Spell that has a cost with a value measured in gp.
-  description:
-    main: You can substitute an equal value of gp for the spell's cost.
 monstrosity-form:
   name: MONSTROSITY FORM
   type: SPELL
@@ -5856,37 +5786,20 @@ moonbeam:
           success: The beam deals full damage, and the target is dazzled for 1 round.
   heightened:
     "+1": The ray's damage increases by 1d6.
-moonlight-glow:
-  name: MOONLIGHT GLOW
-  type: focus
-  level: 1
-  rarity: 1
-  traits: [evocation, light]
-  casting: [aS, aV]
-  area: 60-foot burst centered on you
-  duration: 10 minutes
-  description:
-    main:
-      You cause the area to shimmer with moonlight. This counts as
-      dim light, but any magical script or arcane symbols in the area
-      glow a slightly brighter blue, granting a +1 circumstance bonus
-      to Perception checks to Seek them. Magical ink visible only in
-      moonlight also appears in an area of moonlight glow.
 mystic-beacon:
   name: MYSTIC BEACON
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [evocation]
+  domain: magic
+  traits: [cleric, evocation]
   casting: [aS]
   range: 30 feet
-  target: one willing creature
+  target: 1 willing creature
+  duration: until the start of your next turn
   description:
     main:
-      The next damaging or healing spell the target casts before the
-      start of your next turn deals or heals damage as if the spell were
-      heightened 1 level higher than its actual level; the spell otherwise
-      functions at its actual level.
+      The next damaging or healing spell the target casts before the start of your next turn deals damage or restores Hit Points as if the spell were heightened 1 level higher than its actual level. The spell otherwise functions at its actual level. Once the target casts the spell, mystic beacon ends.
 nature-incarnate:
   name: NATURE INCARNATE
   type: SPELL
@@ -5921,25 +5834,17 @@ nature-incarnate:
 nature-s-bounty:
   name: NATURE'S BOUNTY
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [conjuration, plant]
-  casting-time: 10 minutes
-  casting: [M, S, V]
-  requirements: You can cast this spell only in a natural area that supports significant plant life.
+  domain: nature
+  traits: [cleric, conjuration, plant, positive]
+  casting: [aS]
+  requirements: You have a free hand.
   description:
     main:
-      You call forth nature's bounty, providing enough clean water and
-      fresh fruits and vegetables to sustain one human for a day. If you
-      have a pool of Spell Points, you can spend more Spell Points to
-      sustain an additional human for each additional Spell Point you
-      spend. Most Medium creatures eat the same amount as a human
-      each day. Most Small creatures eat 1/4 as much as a human (1/16
-      as much for most Tiny creatures, and so on), and most Large
-      creatures eat 10 times as much as a human (100 times as much
-      for Huge creatures and so on).
+      A palm-sized raw fruit or vegetable appears in your open hand. You choose the specific type of food. A creature can consume the food with an Interact action to regain 3d10+12 Hit Points and be nourished as if it had eaten a meal. If uneaten, the food rots and crumbles to dust after 1 minute.
   heightened:
-    "+3": The initial casting and each additional Spell Point produce enough food for an additional human.
+    "+1": The Hit Points restored increase by 6.
 nature-s-enmity:
   name: NATURE'S ENMITY
   type: SPELL
@@ -6117,25 +6022,6 @@ overwhelming-presence:
           failure: The target must pay tribute six times.
           crit-fail:
             As failure, and the target must spend all its actions paying tribute if possible.
-paladin-s-sacrifice:
-  name: PALADIN'S SACRIFICE
-  type: focus
-  level: 6
-  rarity: 1
-  traits: [abjuration]
-  casting: [rS]
-  trigger:
-    The targeted creature is hit or critically hit by a Strike, or the target fails
-    or critically fails a saving throw against an effect that doesn't
-    affect you.
-  range: 30 feet
-  target: one ally
-  description:
-    main:
-      You take all the effects of the hit, critical hit, failed save, or
-      critically failed save instead of the ally. These effects ignore any
-      resistances, immunities, or other abilities you have that might
-      mitigate them in any way.
 paralyze:
   name: PARALYZE
   type: SPELL
@@ -6231,16 +6117,16 @@ passwall:
 perfected-form:
   name: PERFECTED FORM
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [abjuration, fortune]
+  domain: perfection
+  traits: [abjuration, cleric, fortune]
   casting: [rS]
   trigger:
-    You fail orcritically fail a saving throw against a petrification
-    or polymorph effect.
+    You fail a saving throw against a morph, petrification, or polymorph effect.
   description:
     main:
-      Reroll the saving throw and use whichever result was better.
+      Reroll the saving throw and use the better result.
 perfected-mind:
   name: PERFECTED MIND
   type: focus
@@ -6456,6 +6342,22 @@ polar-ray:
       takes 10d8 cold damage and is drained 2.
   heightened:
     "+1": The damage increases by 2d8.
+positive-luminance:
+  name: Positive Luminance
+  type: focus
+  level: 4
+  rarity: 1
+  domain: sun
+  traits: [cleric, light, necromancy, positive]
+  casting: [aS]
+  duration: 1 minute
+  description:
+    main:
+      Drawing life force into yourself, you become a beacon of positive energy. You glow with bright light in a 10-foot emanation, and you gain an internal pool of light called a luminance reservoir, which begins with a value of 4. At the start of each of your turns, you can use a free action to increase the luminance reservoir by 4. If you do, the radius of your light increases by 10 feet.
+      If an undead creature damages you with an attack or spell while it's within the area of your light, that creature takes positive damage equal to half your luminance reservoir value. It takes this damage only the first time it damages you in a round.
+      You can Dismiss this Spell. When you do, you can target a creature within your light and direct the positive energy into it. The target must be a willing living creature or an undead creature. This heals a living target or damages an undead target by an amount equal to your luminance reservoir's value. When you cast positive luminance, any other positive luminance spell you already had in effect ends.
+  heightened:
+    "+1": Both the initial value of your luminance reservoir and the amount you gain each turn increase by 1.
 possession:
   name: POSSESSION
   type: SPELL
@@ -6555,24 +6457,22 @@ power-word-stun:
           "16th or Higher": The target is stunned 1.
   heightened:
     "+1": The levels at which each outcome applies increase by 2.
-prepare-for-battle:
-  name: PREPARE FOR BATTLE
+precious-metals:
+  name: Precious Metals
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [enchantment, mental]
-  casting-time: 1 minute
-  casting: [M, S, V]
-  range: 10 feet
-  target: you and one ally
-  duration: 24 hours
+  casting: [aM]
+  range: touch
+  target: 1 metal weapon, up to 10 pieces of metal or metal-tipped ammunition, 1 suit of metal armor, or up to 1 bulk of metal material (such as coins)
+  duration: 1 minute
+  domain: wealth
   description:
     main:
-      You converse with an ally to stoke her zeal for battle, or sing
-      songs of righteous anger to set up a sympathetic bond. The next
-      time you and that ally roll initiative, you both use the higher of
-      your two initiative rolls. If you roll initiative, if you use this boon
-      again, or if either of you rests, the spell ends.
+      Your deity blesses base metals to transform them into precious materials. The target item transforms from its normal metal into cold iron, copper, gold, iron, silver, or steel (the details for these metals are found on pages 577–579). An item transmuted in this way deals damage according to its new material. For example, a steel sword transmuted to cold iron would deal additional damage to a creature with a weakness to cold iron.
+      This change is clearly magical and temporary, so the item's monetary value doesn't change; you couldn't transmute copper coins to gold and use those coins to purchase something or as a cost for a spell.
+  heightened:
+    8th: Add adamantine (page 578) and mithral (page 579) to the list of metals you can transform the item into.
 prestidigitation:
   name: PRESTIDIGITATION
   type: SPELL
@@ -6798,20 +6698,6 @@ protection:
       This spell gains the trait that opposes the alignment you chose—if you choose chaos,
       this spell gains the lawful trait, and vice versa; if you choose evil,
       this spell gains the good trait, and vice versa.
-protective-aura:
-  name: PROTECTIVE AURA
-  type: focus
-  level: 2
-  rarity: 1
-  traits: [abjuration]
-  casting: [aM, aS, aV]
-  area: 15-foot aura
-  duration: 1 minute
-  description:
-    main:
-      You create a 15-foot-radius protective aura. You gain resistance
-      equal to half your level to all damage. Your allies also gain this
-      resistance while they are within the aura.
 protective-ward:
   name: PROTECTIVE WARD
   type: focus
@@ -6840,6 +6726,21 @@ protector-s-sacrifice:
       You aren't subject to any conditions or other effects of whatever damaged your ally (such as poison from a venomous bite). Your ally is still subject to those effects even if you redirect all of the triggering damage to yourself.
   heightened:
     "+1": The damage you redirect increases by 3.
+protector-s-sphere:
+  name: Protector's Sphere
+  type: focus
+  level: 4
+  rarity: 1
+  domain: protection
+  traits: [abjuration, cleric]
+  casting: [aS, aV]
+  area: 15-foot emanation
+  duration: sustained up to 1 minute
+  description:
+    main:
+      A protective aura emanates out from you, safeguarding you and your allies. You gain resistance 3 to all damage. Your allies also gain this resistance while they are within the area.
+  heightened:
+    "+1": The damage you redirect increases by 1.
 prying-eye:
   name: PRYING EYE
   type: SPELL
@@ -6854,6 +6755,30 @@ prying-eye:
     main:
       You create an invisible, floating eye, 1 inch in diameter, at a location you can see within 500 feet. It sees in all directions with your normal visual senses and continuously transmits what it sees to you.
       The first time you Sustain the Spell each round, you can either move the eye up to 30 feet, seeing only things in front of the eye, or move it up to 10 feet, seeing everything in all directions around it. There is no limit to how far from you the eye can move, but the spell ends immediately if you and the eye ever cease to be on the same plane of existence. You can attempt Seek actions through the eye if you want to attempt Perception checks with it. Any damage dealt to the eye destroys it and ends the spell.
+pulse-of-the-city:
+  name: Pulse of the City
+  type: focus
+  level: 4
+  rarity: 1
+  traits: [cleric, divination, scrying]
+  domain: cities
+  casting: [aM, aS, aV]
+  range: 25 miles
+  description:
+    main:
+      You tap into the zeitgeist of the nearest settlement in range (if any). You learn the name of the settlement, and you can utter a special word to learn a brief summary of one significant event happening in the settlement. Choose one of the following words, which indicates the type of people involved and type of event you learn about.
+      ${subsection.words}
+      When uttering your word, you can exclude events you already know about, whether you know about them from this spell or from other experiences. If you cast pulse of the city again within 24 hours, you can say “echo” instead of another word to get an update on the event you learned about the last time you Cast the Spell.
+      Pulse of the city reveals only publicly available or observable information. You never learn clandestine movements or other details people are specifically trying to hide. The spell is also notoriously bad at overcoming magic meant to avoid detection; it automatically fails to reveal information about events involving creatures, places, or objects affected by spells that could prevent or counteract pulse of the city (such as nondetection).
+    subsections:
+      words:
+        type: dl
+        content:
+          Wardens: city guards, barristers, and judges (criminal reports, busts, changes in routines, legal trials)
+          Titles: nobles and politicians (high society weddings, elite soirees, political rallies)
+          Masses: common folk and merchants (gathering mobs, major sales)
+  heightened:
+    5th: The range increases to 100 miles.
 punishing-winds:
   name: PUNISHING WINDS
   type: SPELL
@@ -7077,6 +7002,21 @@ read-omens:
   description:
     main:
       You peek into the future. Choose a particular goal, event, or activity that will occur within 1 week. You learn a cryptic clue or piece of advice that could help with the chosen event, often in the form of a rhyme or omen.
+rebuke-death:
+  name: Rebuke Death
+  type: focus
+  level: 4
+  rarity: 1
+  domain: healing
+  traits: [cleric, healing, necromancy, positive]
+  casting: [aS, or more]
+  area: 20-foot emanation
+  target: 1 living creature per action spent to cast this spell
+  description:
+    main:
+      You snatch creatures from the jaws of death. You can spend 1 to 3 actions Casting this Spell, and you can target a number of creatures equal to the actions spent. Each target regains 3d6 Hit Points. If the target had the dying condition, coming back from dying due to this healing doesn't increase its wounded condition.
+  heightened:
+    "+1": Increase the healing by 1d6.
 regenerate:
   name: REGENERATE
   type: SPELL
@@ -7280,30 +7220,18 @@ restore-senses:
 retributive-pain:
   name: RETRIBUTIVE PAIN
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [abjuration, mental, nonlethal]
+  domain: pain
+  traits: [abjuration, cleric, mental, nonlethal]
   casting: [rS]
-  trigger: A creature in retributive pain's range deals damage to you.
+  trigger:  A creature in range damages you.
   range: 30 feet
-  target: one creature
+  target: the triggering creature
+  save: basic Fortitude
   description:
     main:
-      You vengefully reflect a portion of your pain upon your tormentor.
-      The mental damage you deal is equal to half the damage the
-      target dealt to you with the triggering effect, to a maximum of 10
-      mental damage. This damage decreases or increases depending
-      on the target's Fortitude save. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: Half damage.
-          crit: No damage.
-          failure: Full damage.
-          crit-fail: Double damage (this can exceed 10 mental damage)
-  heightened:
-    "+1": The maximum mental damage increases by 5.
+      You vengefully reflect your pain upon your tormentor. The target takes mental damage equal to half the amount it dealt to you when it triggered the spell.
 retrocognition:
   name: RETROCOGNITION
   type: SPELL
@@ -7349,28 +7277,6 @@ revival:
     main:
       A burst of healing energy soothes living creatures and temporarily rouses those recently slain. All living targets regain 10d8+40 Hit Points. In addition, you return any number of dead targets to life temporarily, with the same effects and limitations as raise dead. The raised creatures have a number of temporary Hit Points equal to the Hit Points you gave living creatures, but no normal Hit Points. The raised creatures can't regain Hit Points or gain temporary Hit Points in other ways, and once revival's duration ends, they lose all temporary Hit Points and die.
       Revival can't resurrect creatures killed by disintegrate or a death effect. It has no effect on undead.
-ridiculous-notion:
-  name: RIDICULOUS NOTION
-  type: focus
-  level: 5
-  rarity: 1
-  traits: [emotion, enchantment, mental]
-  casting: [aV]
-  area: 30-foot aura
-  duration: 1 round
-  description:
-    main:
-      You speak a phrase so absurd that it can cause creatures to
-      laugh. Each target must attempt a Will saving throw. A target
-      is bolstered against your ridiculous notion once it succeeds at its
-      save or once the duration ends if it fails the save. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: Unaffected.
-          failure: The target breaks into a paroxysm of laughter. It's slowed 1 and can't make reactions.
-          crit-fail: The target laughs so hard it falls prone and can't use any actions, reactions, or free actions.
 righteous-might:
   name: RIGHTEOUS MIGHT
   type: SPELL
@@ -7418,23 +7324,18 @@ rope-trick:
 safeguard-secret:
   name: SAFEGUARD SECRET
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [abjuration, mental]
+  domain: secrecy
+  traits: [abjuration, cleric, mental]
   casting-time: 1 minute
   casting: [S, V]
   range: 10 feet
-  target: you and any willing allies
+  target: you and any number of willing allies
   description:
     main:
-      Choose one piece of information that at least some of the targets
-      know; affected allies must remain within range for the full minute
-      during which you cast the spell. This grants those who know the
-      piece of knowledge you have chosen a +4 conditional bonus to skill
-      checks (typically Deception checks) to conceal this knowledge and
-      to saving throws against spells that specifically attempt to obtain
-      this knowledge from them or against effects that would force them
-      to reveal it. These bonuses last until you use this power again.
+      You ensure a secret remains safe from prying spies. Choose one piece of information that at least some of the targets know; you can target a creature only if it remains within range for the full minute during which you Cast the Spell. The spell grants those who know the piece of knowledge you have chosen a +4 status bonus to skill checks (typically Deception checks) to conceal this knowledge and to saving throws against spells that specifically attempt to obtain this knowledge from them and effects that would force them to reveal it.
+      If you Cast this Spell again, any previous safeguard secret you had cast ends.
 sanctified-ground:
   name: SANCTIFIED GROUND
   type: SPELL
@@ -7711,6 +7612,30 @@ shapechange:
   description:
     main:
       Harnessing your mastery of transformative magic, you take on a mutable form. You transform yourself into any form you could choose with a polymorph spell in your spell repertoire or that you could prepare of 8th level or lower (including any 8th-level or lower heightened versions of spells you know). You choose the type of creature as you Cast the Spell rather than when you prepare it. You can change your form to any other form you could choose with this spell by using a single action, which has the concentrate trait. You can Dismiss this spell.
+shared-nightmare:
+  name: Shared Nightmare
+  type: focus
+  level: 4
+  rarity: 1
+  domain: nightmares
+  traits: [cleric, emotion, enchantment, incapacitation, mental]
+  casting: [aS, aV]
+  range: 30 feet
+  target: 1 creature
+  save: Will
+  duration: varies
+  description:
+    main:
+      Merging minds with the target, you swap disorienting visions from one another's nightmares. One of you will become confused, but which it'll be depends on the target's Will save.
+      ${subsection.save}
+    subsections:
+      save:
+        type: dl
+        content:
+          crit: You are confused for 1 round.
+          success: At the start of your next turn, you spend your first action with the confused condition, then act normally.
+          failure: As success, but the target is affected instead of you, spending its first action each turn confused. The duration is 1 minute.
+          crit-fail: The target is confused for 1 minute.
 shatter:
   name: Shatter
   type: spell
@@ -7889,22 +7814,6 @@ silence:
   heightened:
     4th:
       The spell effect emanates from the touched creature, silencing all sound in or passing through a 10- foot radius and preventing any auditory and sonic effects in the affected area. While within the radius, creatures are subject to the same effects as the target. Depending upon the position of the effect, a creature might notice the lack of sound reaching it (blocking off the noise coming from a party, for example).
-skin-of-thorns:
-  name: SKIN OF THORNS
-  type: focus
-  level: 1
-  rarity: 1
-  traits: [enchantment, mental]
-  casting: [aS, aV]
-  duration: 1 minute
-  description:
-    main:
-      Your body sprouts a coat of brambly thorns. Adjacent creatures
-      that hit you with a melee attack, as well as creatures that hit
-      you with unarmed strikes, take 1 piercing damage each time
-      they do.
-  heightened:
-    "+1": The piercing damage increases by 1.
 sleep:
   name: SLEEP
   type: SPELL
@@ -8850,22 +8759,28 @@ synesthesia:
 take-its-course:
   name: TAKE ITS COURSE
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [necromancy]
+  domain: indulgence
+  traits: [cleric, necromancy]
   casting: [aS, aV]
   range: touch
-  target: one diseased or poisoned creature touched
+  target: 1 creature
   description:
     main:
-      You advance one of the target's toxins to progress to the point that
-      the target needs to attempt its next saving throw. If the target is
-      affected by more than one toxin, you can choose from among the
-      toxins you are aware of; otherwise choose randomly. Against an
-      unwilling creature, you must hit it with a melee touch Strike. On a
-      willing or unconscious creature or on a critical hit against an unwilling
-      creature, you can grant the creature either a +2 conditional bonus or
-      a -2 conditional penalty to its saving throw against the toxin.
+      When someone has overindulged, you can hasten them past the worst of their affliction or intensify their misery. This spell attempts to progress a disease affliction, a poison affliction, or persistent poison damage affecting the target. If the target is affected by more than one of these, you can choose from among those you are aware of; otherwise the GM chooses randomly. An unwilling target can attempt a Will save to negate take its course.
+      The effect of this spell depends on whether you're attempting to end an affliction or persistent poison damage, and whether you are attempting to help or hinder the target's recovery.
+      ${subsection.effects}
+    subsections:
+      effects:
+        type: dl
+        content:
+          Affliction:
+            The target immediately attempts its next saving throw against the affliction. You can grant the creature your choice of a +2 status bonus or a –2 status penalty to its saving throw against the affliction.
+          "Persistent Poison":
+            You can cause the target take the persistent poison damage immediately when you Cast this Spell (in addition to taking it at the end of its next turn). Whether or not you do so, the target attempts an additional flat check against the persistent poison damage. You can set the DC of that flat check to 5 or 20 instead of the normal DC.
+  heightened:
+    7th: You can attempt to progress any number of the target's eligible afflictions and persistent poison damage.
 talking-corpse:
   name: TALKING CORPSE
   type: SPELL
@@ -9075,22 +8990,20 @@ tempest-surge:
 tempt-fate:
   name: TEMPT FATE
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [divination, fortune]
-  casting: [fS]
+  domain: fate
+  traits: [cleric, divination, fortune]
+  casting: [rS]
   trigger: You or an ally within range attempts a saving throw.
   range: 120 feet
-  target: you or a willing ally in range
+  target: the triggering creature
   description:
     main:
-      If the triggering saving throw's result is a success, it counts
-      as a critical success. If it's a failure, it counts as a critical
-      failure, and the critical failure can't be reduced by abilities
-      that usually reduce critical failure, such as improved evasion.
-      If the triggering ability did not have both a critical success and
-      critical failure condition, tempt fate fails and your Spell Point
-      is refunded.
+      You twist the forces of fate to make a moment dire or uneventful, with no in-between. The target gains a +1 status bonus to the triggering saving throw. If the saving throw's result is a success, it becomes a critical success. If it's a failure, it becomes a critical failure, and the critical failure can't be reduced by abilities that usually reduce critical failure, such as improved evasion.
+      If the triggering ability did not have both a critical success and critical failure condition, tempt fate fails, but you don't expend the Focus Point for Casting this Spell.
+  heightened:
+    8th: The bonus on the saving throw is +2
 tentacular-limbs:
   name: TENTACULAR LIMBS
   type: focus
@@ -9104,33 +9017,6 @@ tentacular-limbs:
       Your arms turn into long, pliable tentacles, increasing your reach when you're delivering touch range spells and making unarmed Strikes with your arms (such as fist and claw Strikes) to 10 feet. This doesn't change the reach of your melee weapon attacks. During the duration, whenever you Cast a Spell, you can add an additional action to that spell's casting to temporarily extend your reach to 20 feet to deliver that spell.
   heightened:
     "+2": When you add an additional action to a spell to temporarily extend your reach, your reach increases by an additional 10 feet to deliver that spell.
-thunder-shield:
-  name: THUNDER SHIELD
-  type: focus
-  level: 4
-  rarity: 1
-  traits: [air, electricity, evocation]
-  casting: [aS, aV]
-  duration: sustained, up to 1 minute or until dismissed
-  description:
-    main:
-      You become surrounded by a cloud of swirling fog, punctuated
-      by occasional sparks of lightning and thunderous booms. You
-      become concealed, but take a -2 penalty to Stealth checks.
-      You deal electricity damage equal to 3d6 plus your spellcasting
-      ability modifier to any creature that hits you with an unarmed
-      attack or with a non-reach weapon. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: Half damage.
-          crit: No damage.
-          failure: Full damage and the target is deafened for 1 round.
-          crit-fail: Double damage and the target is deafened for 1 round.
-  heightened:
-    6th: The damage increases to 5d6.
-    8th: The damage increases to 7d6.
 tidal-surge:
   name: TIDAL SURGE
   type: focus
@@ -9224,27 +9110,29 @@ touch-of-obedience:
           success: The target is stupefied 1 until the end of your current turn.
           failure: The target is stupefied 1 until the end of your next turn.
           crit-fail: The target is stupefied 1 for 1 minute.
-touch-of-shadows:
-  name: TOUCH OF SHADOWS
+touch-of-the-moon:
+  name: Touch of the Moon
   type: focus
-  level: 1
+  level: 4
   rarity: 1
-  traits: [attack, evocation, shadows]
+  domain: moon
+  traits: [cleric, enchantment, light]
   casting: [aS]
   range: touch
-  target: one creature
+  target: 1 creature
+  duration: 1 minute
   description:
     main:
-      You cloud your target's vision in swirling shadows
-      with a melee touch attack. The effect depends on your attack roll.
-      ${subsection.outcomes}
+      When you touch the target, a symbol of the moon appears on its forehead, glowing with soft moonlight. The target glows with dim light in a 20-foot radius. It also gets a benefit based on a phase of the moon, starting with the new moon and changing to the next phase at the end of each of its turns.
+      ${subsection.moons}
     subsections:
-      outcomes:
+      moons:
         type: dl
         content:
-          success: The target is dazzled for 1 round.
-          crit: The target is dazzled for 1 minute.
-          failure: The target is unaffected.
+          "New Moon": The target receives no benefit.
+          "Waxing Moon": The target gains a +1 status bonus to attack rolls and a +4 status bonus to damage rolls.
+          "Full Moon": The target gains a +1 status bonus to attack rolls, AC, and saving throws and a +4 status bonus to damage rolls.
+          "Waning Moon": The target gains a +1 status bonus to AC and saving throws. After this phase, return to the new moon.
 touch-of-undeath--cleric-:
   name: Touch of Undeath (cleric)
   type: focus
@@ -9295,6 +9183,20 @@ touch-of-undeath--sorcerer-:
           failure: Effects as described in the text.
   heightened:
     "+1": The status bonus to the Hit Points restored increases by 2.
+traveler-s-transit:
+  name: Traveler's Transit
+  type: focus
+  level: 4
+  rarity: 1
+  duration: 1 minute
+  domain: travel
+  traits: [cleric, evocation]
+  casting: [aS, aV]
+  description:
+    main:
+      You add power to your muscles, allowing you to swim or climb walls with ease. When you cast this spell, you gain either a climb Speed or a swim Speed. The Speed is equal to your land Speed.
+  heightened:
+    5th: You can choose to gain a fly Speed
 tree-shape:
   name: TREE SHAPE
   type: SPELL
@@ -9321,6 +9223,30 @@ tree-stride:
     6th: The tree you exit can be up to 50 miles away.
     8th: The tree you exit can be up to 500 miles away.
     9th: The tree you exit can be anywhere on the same planet.
+trickster-s-twin:
+  name: Trickster's Twin
+  type: focus
+  level: 4
+  rarity: 1
+  domain: trickery
+  casting: [aS, aV]
+  traits: [cleric, illusion, visual]
+  range: 30 feet
+  target: 1 creature
+  save: Will
+  duration: 1 minute
+  description:
+    main:
+      You rarely settle for being in just one place. Choose a location within 100 feet of the target that the target can see. You create an illusion of yourself there that only it can see and that mimics all your actions. The target must attempt a Will save.
+      ${subsection.save}
+    subsections:
+      save:
+        type: dl
+        content:
+          crit: The target is unaffected.
+          success: The target believes you're in the designated location and can't see you in your actual location. The target automatically disbelieves the illusion when you use an action that doesn't make sense in the illusion's position, or if the target attacks, touches, Seeks, or otherwise engages with the illusion. If you use a hostile action against the target, the spell ends.
+          failure: As success, but the target must succeed at a Will save to disbelieve the illusion when one of the listed events occurs.
+          crit-fail: As success, but the target must critically succeed at a Will save to disbelieve when one of the listed events occurs.
 triple-time:
   name: TRIPLE TIME
   type: SPELL
@@ -9395,19 +9321,6 @@ uncontrollable-dance:
           crit: The target is unaffected.
           failure: The spell's duration is 1 minute, and the target must spend at least 2 actions each turn dancing.
           crit-fail: The spell's duration is 1 minute, and the target must spend all its actions each turn dancing.
-undead-s-bane:
-  name: UNDEAD'S BANE
-  type: focus
-  level: 1
-  rarity: 1
-  traits: [necromancy]
-  casting: [fV]
-  trigger: You cast a heal spell to damage undead creatures.
-  description:
-    main:
-      Increase the amount the amount of damage dealt by your level
-      (apply this increase after halving, if applicable). If you're healing
-      living creatures and damaging undead, only the damage increases.
 undetectable-alignment:
   name: UNDETECTABLE ALIGNMENT
   type: SPELL
@@ -9485,30 +9398,17 @@ unimpeded-stride:
 unity:
   name: UNITY
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [abjuration, fortune]
+  domain: family
+  traits: [abjuration, cleric, fortune]
   casting: [rV]
-  trigger: You and one or more allies within range are targeted by a spell or ability that allows a saving throw.
+  trigger: You and 1 or more allies within range are targeted by a spell or ability that allows a saving throw.
+  target: each ally targeted by the triggering spell
   range: 30 feet
   description:
     main:
-      You allow your allies within range to use your saving throw
-      modifier instead of their own. Each ally decides individually
-      which modifier to use.
-unlife-s-blessing:
-  name: UNLIFE'S BLESSING
-  type: focus
-  level: 1
-  rarity: 1
-  traits: [necromancy]
-  casting: [fS]
-  trigger: You cast a harm spell to heal an undead creature.
-  description:
-    main:
-      Increase the amount healed by 2 Hit Points per die. If you're both
-      healing undead and damaging living creatures, the healing is
-      increased by that amount but the damage is not.
+      You put up a united defense. Each ally can use your saving throw modifier instead of its own against the triggering spell. Each ally decides individually which modifier to use.
 unrelenting-observation:
   name: UNRELENTING OBSERVATION
   type: SPELL
@@ -9828,17 +9728,6 @@ walking-nightmare:
           success: The target is frightened 1.
           failure: The target is frightened 2.
           crit-fail: The target is frightened 3.
-walk-on-air:
-  name: WALK ON AIR
-  type: focus
-  level: 2
-  rarity: 1
-  traits: [air, conjuration]
-  casting: [aS]
-  description:
-    main:
-      You Stride, gaining the benefits of the air walk spell
-      until the end of your turn, after which you fall normally.
 wall-of-fire:
   name: WALL OF FIRE
   type: SPELL
@@ -9941,18 +9830,6 @@ wall-of-wind:
           crit: The creature can move through the wall normally this turn.
           failure: The wall stops the movement of the flying creature, and any remaining movement from its current action is wasted.
           crit-fail: As failure, and the creature is pushed 10 feet away from the wall.
-wanderer-s-guide:
-  name: WANDERER'S GUIDE
-  type: focus
-  level: 2
-  rarity: 0
-  traits: [divination]
-  casting-time: 1 minute
-  casting: [M,S,V]
-  duration: until your next daily preparations
-  description:
-    main:
-      You call upon the beyond to guide your route. When you Cast this Spell, choose a destination; you receive an inspired route to that destination, allowing you and allies who travel overland with you to reduce the movement penalty from difficult terrain by half for the duration, as long as you don't deviate from the inspired route. This doesn't have any effect on movement during encounters. If you use this ability again before the duration is over, this effect ends and is replaced by that of the new route.
 warp-mind:
   name: WARP MIND
   type: SPELL
@@ -9992,25 +9869,6 @@ warped-terrain:
   heightened:
     4th:
       You can make the illusion appear in the air rather than on a surface, causing it to function as difficult terrain for flying creatures.
-watching-the-watchers:
-  name: WATCHING THE WATCHERS
-  type: focus
-  level: 2
-  rarity: 1
-  traits: [detection, divination]
-  casting-time: 1 minute
-  casting: [M, S, V]
-  requirements: You are in a city.
-  duration: 1 hour
-  description:
-    main:
-      You tap into the pulse of the city and its wardens, gaining
-      knowledge of their movements. You instantly learn the location
-      of the nearest openly visible city guard activity within the city,
-      outside the regular patrols and activities, and the spell ends.
-      If the city guard isn't currently engaged in such an activity, the
-      spell reports the next one that occurs during the duration and
-      the spell ends.
 water-breathing:
   name: WATER BREATHING
   type: SPELL
@@ -10259,23 +10117,6 @@ wild-winds-stance:
     main:
       You take on the stance of the flowing winds, sending out waves of energy at a distance. You can make wind crash unarmed Strikes as ranged Strikes against targets within 30 feet. These deal 1d6 bludgeoning damage, use the brawling group, and have the agile, nonlethal, propulsive, and unarmed traits. Wind crash Strikes ignore concealment and all cover.
       While in wild winds stance, you gain a +2 circumstance bonus to AC against ranged attacks..
-wind-jump:
-  name: WIND JUMP
-  type: focus
-  level: 5
-  rarity: 1
-  traits: [transmutation]
-  casting: [aV]
-  duration: 1 minute
-  description:
-    main:
-      You gain a fly Speed equal to your Speed. You must end your turn
-      on solid ground, or you fall.
-  heightened:
-    6th:
-      At the end of your turn, you can attempt a DC
-      30 Acrobatics check to find purchase in midair. If you succeed,
-      you don't fall.
 wind-walk:
   name: WIND WALK
   type: SPELL
@@ -10314,22 +10155,18 @@ wish:
 word-of-freedom:
   name: WORD OF FREEDOM
   type: focus
-  level: 2
+  level: 4
   rarity: 1
-  traits: [enchantment, mental]
-  casting: [aS, aV]
+  domain: freedom
+  traits: [cleric, enchantment, mental]
+  casting: [aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
+  duration: 1 round
   description:
     main:
-      "You either remove the grabbed condition from the target or
-      suppress one of the following conditions of your choice that's
-      affecting the target for 1 round: confused, entangled, frightened,
-      or paralyzed. You can Concentrate on the Spell each round to
-      continue to suppress the condition for 1 round, to a maximum
-      of 1 minute. If you don't remove the effect that provided the
-      condition, the condition returns after you stop Concentrating
-      on the Spell."
+      "You utter a liberating word of power that frees a creature. You suppress one of the following conditions of your choice: confused, frightened, grabbed, or paralyzed. The target isn't affected by the chosen condition, and if you suppress the grabbed condition, the target automatically breaks free from any grab affecting it when you Cast the Spell.
+      If you don't remove the effect that provided the condition, the condition returns after the spell ends. For example, if a spell was making the target confused for 1 minute, word of freedom would let the target act normally for a round, but the confused condition would return afterward."
 word-of-truth:
   name: WORD OF TRUTH
   type: focus
@@ -10368,6 +10205,20 @@ you-re-mine:
   heightened:
     7th:
       On a failure, the target is controlled for 1 round. On a critical failure, the target is controlled for up to 1 minute; it receives a new Will save at the end of each of its turns, and on a success, the spell ends.
+zeal-for-battle:
+  name: Zeal for Battle
+  type: focus
+  level: 4
+  rarity: 1
+  traits: [cleric, emotion, enchantment, fortune, mental]
+  domain: zeal
+  range: 10 feet
+  casting: [rV]
+  trigger: You and at least 1 ally are about to roll initiative.
+  target: you and the triggering ally
+  description:
+    main:
+      You stoke the righteous anger within yourself and an ally. You and the target ally each roll a d20 and use the higher result for both your initiative rolls. You each still use your own Perception modifier or other statistic to determine your results.
 zealous-conviction:
   name: Zealous Conviction
   type: spell

@@ -10,7 +10,7 @@ const rarities = ['common', 'uncommon', 'rare', 'unique'];
 const rarity_class = ['secondary', 'warning', 'danger', 'primary'];
 const spellProperties = [
   'area', 'duration', 'target', 'range', 'trigger', 'requirements',
-  'cost', 'casting-time', 'save'
+  'cost', 'casting-time', 'save', 'domain'
 ];
 
 
