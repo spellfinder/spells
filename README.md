@@ -43,10 +43,6 @@ You will need the following to work on the web application:
 The `scripts/start-dev.sh` script will take care of installing dependencies and
 spin up a development version of the app for you to play with.
 
-### All together
-
-
-
 ## Static build
 
 Static builds create a [Docker image](https://docs.docker.com) that can be
