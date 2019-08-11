@@ -705,12 +705,11 @@ bind-undead:
   rarity: 0
   casting: [aS, aV]
   range: 30 feet
-  target: one mindless undead creature with a level no greater than bind undead's spell level
+  target: 1 mindless undead creature with a level no greater than bind undead's spell level
   duration: 1 day
   description:
     main:
-      You control the target. It gains the minion trait. If you or an ally
-      acts hostile to the target, the spell ends.
+      With a word of necromantic power, you seize control of the target. It gains the minion trait. If you or an ally uses any hostile actions against the target, the spell ends.
 bit-of-luck:
   name: BIT OF LUCK
   type: POWER
@@ -835,10 +834,10 @@ blindness:
   casting: [aS, aV]
   range: 30 feet
   target: one creature
+  save: Fortitude
   description:
     main:
-      You blind the target. The effect is determined by the target's Fortitude
-      save. The target is bolstered against all castings of blindness.
+      You blind the target. The effect is determined by the target's Fortitude save. The target then becomes temporarily immune for 1 minute.
       ${subsection.save}
     subsections:
       save:
@@ -1224,12 +1223,10 @@ clairaudience:
   casting-time: 1 minute
   casting: [M, S, V]
   range: 500 feet
-  duration: 1 minute
+  duration: 10 minutes
   description:
     main:
-      You create an invisible floating ear at a location within range (even if
-      it's outside your line of sight or line of effect). It can't move, but you
-      can hear through the ear as if using your normal auditory senses.
+      You create an invisible floating ear at a location within range (even if it's outside your line of sight or line of effect). It can't move, but you can hear through the ear as if using your normal auditory senses.
 clairvoyance:
   name: CLAIRVOYANCE
   type: SPELL
@@ -2755,20 +2752,16 @@ dream-message:
   casting-time: 10 minutes
   casting: [S, V]
   range: planetary
-  target: one creature you know by name and have met in person
-  duration: 1 day or until dismissed
+  target: 1 creature you know by name and have met in person
+  duration: 1 day
   description:
     main:
-      You send a message to your target's dream. The message is oneway,
-      up to 1 minute of speech (roughly 150 words). If the target
-      is asleep, she receives the message instantly. If not, she receives
-      it the next time she sleeps. As soon as she receives it, the spell is
-      dismissed, and you know the message was sent.
+      You send a message to your target's dream. The message is one-way, up to 1 minute of speech (roughly 150 words). If the target is asleep, they receive the message instantly. If not, they receive it the next time they sleep. As soon as they receive it, the spell ends, and you know the message was sent.
   heightened:
     4th:
       You can target up to 10 creatures you know by
       name and have met in person. You must send the same message
-      to all of them; the spell is dismissed for each creature individually.
+      to all of them; the spell ends for each creature individually.
 dreaming-potential:
   name: DREAMING POTENTIAL
   type: POWER
@@ -2863,12 +2856,12 @@ earthbind:
   traits: [transmutation]
   casting: [aS, aV]
   range: 120 feet
-  target: one flying creature
-  duration: varies (see below)
+  target: 1 flying creature
+  duration: varies
+  save: Fortitude
   description:
     main:
-      You hamper a target's flight, with effects based on its Fortitude save.
-      If the creature reaches the ground, it doesn't take falling damage.
+      Using the weight of earth, you hamper a target's flight, with effects based on its Fortitude save. If the creature reaches the ground safely, it doesn't take falling damage.
       ${subsection.save}
     subsections:
       save:
@@ -3228,18 +3221,13 @@ enthrall:
   traits: [auditory, enchantment, emotion]
   casting: [aS, aV]
   range: 120 feet
-  target: creatures in range
-  duration: sustained, up to 10 minutes
+  target: all creatures in range
+  duration: sustained
+  save: Will
   description:
     main:
-      You speak or sing without interruption throughout the casting and
-      duration. Targets that notice your speech or song might give their
-      undivided attention, depending on their Will saves. The GM may
-      grant a circumstance bonus (to a maximum of +4) if the target is of
-      an opposing religion, ancestry, or political leaning, or is otherwise
-      unlikely to agree with what you're saying.
-      Each creature that enters range has to attempt a save when
-      you Concentrate on the Spell. If you're speaking, enthrall is lingual.
+      Your words fascinate your targets. You speak or sing without interruption throughout the casting and duration. Targets who notice your speech or song might give their undivided attention; each target must attempt a Will save. The GM might grant a circumstance bonus (to a maximum of +4) if the target is of an opposing religion, ancestry, or political leaning, or is otherwise unlikely to agree with what you're saying.
+      Each creature that comes within range has to attempt a save when you Sustain the Spell. If you're speaking, enthrall gains the linguistic trait.
       ${subsection.save}
     subsections:
       save:
@@ -3248,14 +3236,14 @@ enthrall:
           success:
             The target needn't pay attention but doesn't notice you
             tried to use magic (it might notice others are enthralled).
-          crit: The target is unaffected.
+          crit: The target is unaffected and notices that you tried to use magic.
           failure:
             The target is fascinated with you. It can attempt a Will
             save if it witnesses actions or speech with which it disagrees.
-            If it succeeds, it's no longer fascinated and bolstered to this
-            casting of enthrall. The fascination ends instantly if the
-            creature is subject to a hostile act or a successful Diplomacy
-            or Intimidation check against the spell's DC.
+            If it succeeds, it's no longer fascinated and is temporarily immune
+            for 1 hour. If the target is subject to a hostile act, or if another
+            creature succeeds at a Diplomacy or Intimidation check against it,
+            the fascination ends immediately.
           crit-fail:
             As failure, but the target can't attempt a save to
             end the fascination if it disagrees with you.
@@ -3518,13 +3506,13 @@ feet-to-fins:
   traits: [morph, transmutation]
   casting: [aS, aV]
   range: touch
-  target: one willing creature
+  target: 1 willing creature
   duration: 10 minutes
   description:
     main:
-      The target's feet transform into fins, improving mobility in the
-      water but reducing it on land. The target gains a swim Speed
-      equal to its land Speed. Its land Speed then becomes 5 feet.
+      The target's feet transform into fins, improving mobility in the water but reducing it on land. The target gains a swim Speed equal to its normal land Speed, but its land Speed becomes 5 feet.
+  heightened:
+    6th: The spell lasts until the next time you make your daily preparations.
 fey-disappearance:
   name: FEY DISAPPEARANCE
   type: POWER
@@ -3688,18 +3676,10 @@ fireball:
   casting: [aS, aV]
   range: 500 feet
   area: 20-foot burst
+  save: basic Reflex
   description:
     main:
-      A burst of fire explodes, dealing 8d6 fire damage;
-      creatures in the area must attempt a Reflex save. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: The creature takes half damage.
-          crit: The creature is unaffected.
-          failure: The creature takes full damage.
-          crit-fail: The creature takes double damage.
+      A roaring blast of fire appears at a spot you designate, dealing 6d6 fire damage.
   heightened:
     "+1": The damage increases by 2d6.
 flame-barrier:
@@ -4028,13 +4008,11 @@ ghostly-weapon:
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
-  target: one nonmagical weapon that is either unattended or wielded by you or a willing ally
-  duration: 1 minute
+  target: 1 non-magical weapon that is either unattended or wielded by you or a willing ally
+  duration: 5 minutes
   description:
     main:
-      The target weapon becomes translucent and ghostly, and can affect
-      material and incorporeal creatures and objects. It can be wielded by
-      a corporeal or incorporeal creature and counts as ghost touch.
+      The target weapon becomes translucent and ghostly, and it can affect material and incorporeal creatures and objects. It can be wielded by a corporeal or incorporeal creature and gains the effects of the ghost touch property rune.
 ghoulish-cravings:
   name: GHOULISH CRAVINGS
   type: SPELL
@@ -4171,27 +4149,12 @@ glyph-of-warding:
   casting: [M, S, V]
   range: touch
   target: one container or 10-foot-by-10-foot area
-  duration: unlimited until dismissed
+  duration: unlimited
   description:
     main:
-      While Casting this Spell, you also Cast a Spell of a lower spell level
-      to stored in the glyph. The stored spell must take 3 actions or
-      fewer to cast, have a hostile effect, and target one creature or have
-      an area. You can set the glyph with a password, a trigger stimulus,
-      or both. Any creature that opens the target container or enters the
-      target area without speaking the password or matching the trigger
-      stimulus activates the glyph, releasing the harmful spell within.
-      Once a spell is stored in the glyph, the glyph gains all the traits
-      of that spell. If the spell targets one or more creatures, it targets the
-      creature that set off the glyph. If the spell has an area, that area is
-      centered on the creature that set off the glyph. Glyph of warding's
-      duration ends when the glyph is triggered. The glyph counts as a
-      magical trap, using your spell DC for both the Perception check to
-      notice it and the Thievery check to disable it; both checks require
-      the creature attempting them to be trained in order to succeed.
-      You can dismiss glyph of warding with a Verbal Casting action.
-      The maximum number of glyphs of warding you can have active at
-      a time is equal to your spellcasting ability modifier.
+      You craft a trap by binding a hostile spell into a symbol. While Casting this Spell, you also Cast a Spell of a lower spell level to store in the glyph. The stored spell must take 3 actions or fewer to cast, have a hostile effect, and target one creature or have an area. You can set a password, a trigger, or both for the glyph. Any creature that moves, opens, or touches the target container or enters the target area that doesn't speak the password or that matches the trigger activates the glyph, releasing the harmful spell within.
+      Once a spell is stored in the glyph, the glyph gains all the traits of that spell. If the stored spell targets one or more creatures, it targets the creature that set off the glyph. If it has an area, that area is centered on the creature that set off the glyph. Glyph of warding's duration ends when the glyph is triggered. The glyph counts as a magical trap, using your spell DC for both the Perception check to notice it and the Thievery check to disable it; both checks require the creature attempting them to be trained in order to succeed.
+      You can Dismiss glyph of warding. The maximum number of glyphs of warding you can have active at a time is equal to your spellcasting ability modifier.
 goblin-pox:
   name: GOBLIN POX
   type: SPELL
@@ -4478,14 +4441,13 @@ haste:
   traits: [transmutation]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: 1 minute
   description:
     main:
-      The target acts faster. It gains the quick condition and can use the
-      extra action each round only for Strike and Stride actions.
+      Magic empowers the target to act faster. It gains the quickened condition and can use the extra action each round only for Strike and Stride actions.
   heightened:
-    7th: You can target up to 5 creatures.
+    7th: You can target up to 6 creatures.
 heal:
   name: HEAL
   type: SPELL
@@ -4776,22 +4738,18 @@ hypnotic-pattern:
   range: 120 feet
   area: 10-foot burst
   duration: sustained, up to 1 minute
+  save: Will
   description:
     main:
-      You create a pattern of shifting colors that hovers in the air.
-      Creatures are dazzled while inside the pattern. A creature must
-      attempt a Will saving throw if it is inside the pattern when you cast
-      it, when it enters the pattern, ends its turn within the pattern, or
-      uses a Seek or Interact action on the pattern. A creature currently
-      fascinated by the pattern doesn't need to attempt new saves.
+      You create a pattern of shifting colors that hovers in the air in a geometric cloud. Creatures are dazzled while inside the pattern. In addition, a creature must attempt a Will saving throw if it is inside the pattern when you cast it, when it enters the pattern, when it ends its turn within the pattern, or if it uses a Seek or Interact action on the pattern. A creature currently fascinated by the pattern doesn't attempt new saves.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Unaffected.
+          success: The target is unaffected.
           failure: The target is fascinated by the pattern.
-          crit-fail: The target is fascinated by the pattern. While it remains fascinated, it can't take reactions.
+          crit-fail: The target is fascinated by the pattern. While it remains fascinated, it can't use reactions.
 illusory-creature:
   name: ILLUSORY CREATURE
   type: SPELL
@@ -5119,24 +5077,15 @@ invisibility-sphere:
   rarity: 0
   traits: [illusion, visual]
   casting: [aM, aS]
-  area: 10-foot aura
+  area: 10-foot emanation
   target: you and any number of creatures in range
-  duration: 10 minutes or until dismissed
+  duration: 10 minutes
   description:
     main:
-      You and all targets are invisible except to each other as long as
-      you remain within the spell's area. If a creature made invisible
-      by this spell leaves the spell's area, it becomes visible and
-      remains so even if it returns to the spell's area. If any creature
-      made invisible by this spell acts in a hostile manner, the spell
-      is dismissed after that hostile action, reaction, free action, or
-      activity is completed.
-      While exploring, it's easy to move together and remain
-      invisible. This is untenable in a battle, however. Once an
-      encounter begins, creatures remain invisible until the end of the
-      first round, at which point the spell ends.
+      You and all targets are invisible except to each other as long as you remain within the spell's area. If a creature made invisible by this spell leaves the spell's area, it becomes visible and remains so even if it returns to the spell's area. If any creature made invisible by this spell uses a hostile action, the spell ends after the hostile action is completed.
+      While exploring, it's easy to move together slowly and remain invisible. This is untenable in a battle, however. Once an encounter begins, creatures remain invisible until at most the end of the first round, at which point the spell ends.
   heightened:
-    5th: The duration increases to 1 hour or until dismissed.
+    5th: The duration increases to 1 hour.
 item-facade:
   name: ITEM FACADE
   type: SPELL
@@ -5328,20 +5277,11 @@ levitate:
   traits: [evocation]
   casting: [aS, aV]
   range: touch
-  target: one unattended object or willing creature
-  duration: 1 minute
+  target: 1 unattended object or willing creature
+  duration: 5 minutes
   description:
     main:
-      You levitate the target 5 feet off the ground. For the duration,
-      you can spend a Somatic Casting action to move the target up
-      or down 10 feet. A creature floating in the air from levitate takes
-      a -2 circumstance penalty to attack rolls. A floating creature
-      can spend an Interact action to stabilize itself and negate these
-      penalties for the remainder of its turn. If the target is adjacent to
-      a fixed object or terrain of suitable stability, it can move across
-      the surface by climbing if the surface is vertical (like a wall) or
-      crawling if the surface is horizontal (such as a ceiling). The GM
-      determines which surfaces can be climbed or crawled across.
+      You defy gravity and levitate the target 5 feet off the ground. For the duration of the spell, you can move the target up or down 10 feet with a single action, which has the concentrate trait. A creature floating in the air from levitate takes a –2 circumstance penalty to attack rolls. A floating creature can spend an Interact action to stabilize itself and negate this penalty for the remainder of its turn. If the target is adjacent to a fixed object or terrain of suitable stability, it can move across the surface by climbing (if the surface is vertical, like a wall) or crawling (if the surface is horizontal, such as a ceiling). The GM determines which surfaces can be climbed or crawled across.
 life-siphon:
   name: LIFE SIPHON
   type: POWER
@@ -5380,19 +5320,11 @@ lightning-bolt:
   rarity: 0
   traits: [electricity, evocation]
   casting: [aS, aV]
-  area: 60-foot line
+  area: 120-foot line
+  save: basic Reflex
   description:
     main:
-      All creatures in the area must attempt a Reflex save to avoid
-      taking 5d12 electricity damage. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: Half damage.
-          crit: No damage.
-          failure: Full damage.
-          crit-fail: Double damage.
+      A bolt of lightning strikes outward from your hand, dealing 4d12 electricity damage.
   heightened:
     "+1": The damage increases by 1d12.
 lingering-composition:
@@ -5519,24 +5451,14 @@ locate:
   casting-time: 10 minutes
   casting: [M, S, V]
   range: 500 feet
-  target: one specific object or type of object
+  target: 1 specific object or type of object
   duration: sustained
   description:
     main:
-      You learn the direction to the target (if you picked a specific object,
-      such as “my grandmother's sword”) or the nearest target (if you
-      picked a type of objects, such as “swords”). If the target is a specific
-      object, you must have observed it directly with your own senses.
-      If it's general, you still need to have an accurate mental image of
-      the type of object. If there's lead or running water between you
-      and the target, you can't locate the object. If you picked a type of
-      object, this means you might find that is an object farther away if
-      a nearer one is behind lead or running water.
+      You learn the direction to the target (if you picked a specific object, such as “my mother's sword”) or the nearest target (if you picked a type of object, such as “swords”). If the target is a specific object, you must have observed it directly with your own senses. If it's a type of object, you still need to have an accurate mental image of the type of object. If there's lead or running water between you and the target, this spell can't locate the object. This means you might find a type of object farther away if the nearest one is behind lead or running water.
   heightened:
     5th:
-      You can target a specific creature or ancestry
-      instead of an object. You must have met the creature or a creature
-      of that ancestry up close in order to do so.
+      You can target a specific creature or ancestry instead of an object, but you must have met or seen up close the creature or ancestry you want to target.
 lock:
   name: LOCK
   type: SPELL
@@ -5898,18 +5820,11 @@ meld-into-stone:
   rarity: 0
   traits: [earth, transmutation]
   casting: [aS, aV]
-  duration: 10 minutes or until dismissed
+  duration: 10 minutes
   description:
     main:
-      You merge with an adjacent block of stone with enough volume
-      to fit you and your worn and held possessions. You must touch
-      this stone when you cast the spell. You can cast spells while in the
-      stone as long as they don't require line of effect beyond the stone,
-      and you can hear, but not see, what's going on outside the stone.
-      Significant physical damage to the stone while you are inside
-      expels you and deals 10d6 damage to you. Passwall expels you
-      without dealing damage and dismisses meld into stone. You can
-      dismiss this spell with a Verbal Casting action.
+      You merge with an adjacent block of stone with enough volume to fit you and your worn and held possessions. You must touch the stone when you Cast the Spell. You can hear, but not see, what's going on outside the stone, and you can cast spells while in the stone as long as they don't require line of effect beyond the stone.
+      Significant physical damage to the stone while you are inside it expels you and deals 10d6 damage to you. Passwall expels you without dealing damage and ends meld into stone. You can Dismiss this spell.
 mending:
   name: MENDING
   type: SPELL
@@ -6054,13 +5969,13 @@ mind-reading:
   traits: [detection, divination, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
-  duration: 1 minute
+  target: 1 creature
+  duration: 1 round or sustained up to 1 minute
+  save: Will
   description:
     main:
-      You read the target's mind, depending on its Will save. Once you
-      cast mind reading on a target, you can't target that creature again
-      until the duration ends. ${subsection.save}
+      With a cursory mental touch, you attempt to read the target's mind. It must attempt a Will save. The target then becomes temporarily immune to your mind reading for 1 hour.
+      ${subsection.save}
     subsections:
       save:
         type: dl
@@ -6076,9 +5991,9 @@ mind-reading:
             when you cast the spell, and you find out whether its
             Intelligence is higher than, equal to, or lower than yours.
           crit-fail:
-            Per failure, and for the duration of the spell, you
+            As failure, and for the duration of the spell, you
             can Concentrate on the Spell to detect the target's surface
-            thoughts again. The target doesn't get any additional saves.
+            thoughts again. The target doesn't receive any additional saves.
 mindlink:
   name: MINDLINK
   type: SPELL
@@ -6608,16 +6523,11 @@ nondetection:
   casting-time: 10 minutes
   casting: [M, S, V]
   range: touch
-  target: one creature or object
+  target: 1 creature or object
   duration: 8 hours
   description:
     main:
-      You make the target difficult to detect. Nondetection dispels
-      or attempts to dispel all detection, revelation, and scrying
-      divinations made against the target or the target's gear
-      throughout the duration. Successfully dispelling a divination that
-      targets an area or multiple targets negates the effects only for
-      nondetection's target.
+      You erect protective wards that make the target difficult to detect via magic. Nondetection attempts to counteract all detection, revelation, and scrying divinations made against the target or the target's gear throughout the duration, counting cantrips as 1st-level spells for this purpose. Successfully counteracting a divination that targets an area or multiple targets negates the effects only for nondetection's target.
 obscuring-mist:
   name: OBSCURING MIST
   type: SPELL
@@ -6719,32 +6629,30 @@ paralyze:
   type: SPELL
   level: 3
   rarity: 0
-  traits: [enchantment, mental]
+  traits: [enchantment, incapacitation, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one humanoid creature
+  target: 1 creature
   duration: varies
+  save: Will
   description:
     main:
-      You attempt to paralyze the target, potentially freezing it in
-      place, depending on the outcome of the target's Will save.
+      You block the target's motor impulses before they can leave its mind, threatening to freeze the target in place. The target must attempt a Will save.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The target is slowed 1 for 1 round.
+          success: The target is stunned 1.
           crit: The target is unaffected.
           failure: The target is paralyzed for 1 round.
           crit-fail:
             The target is paralyzed for 4 rounds. At the
-            start of each of its turns, it can attempt a new Will save to
+            end of each of its turns, it can attempt a new Will save to
             reduce the remaining duration by 1 round or end it entirely
             on a critical success.
   heightened:
-    4th: You can target a humanoid or non-humanoid creature.
-    7th: You can target up to 10 humanoid creatures.
-    9th: You can target up to 10 creatures, and they don't have to be humanoids.
+    7th: You can target up to 10 creatures.
 paranoia:
   name: PARANOIA
   type: SPELL
@@ -8504,18 +8412,11 @@ secret-page:
   casting-time: 1 minute
   casting: [M, S, V]
   range: touch
-  target: one page up to 3 square feet in size
+  target: 1 page up to 3 square feet in size
   duration: unlimited
   description:
     main:
-      You change the target's text to different text entirely. If the text is
-      a spellbook or a scroll, you can change it to show a spell you know
-      of secret page's level or lower, though the replacement spell cannot
-      be cast or used to prepare a spell. You can also transform the text
-      into some other text you have written or have access to. You can
-      specify a password that allows any creature touching the book to
-      change the text back and forth. You must choose the replacement
-      text and the password, if any, when you cast the spell.
+      You change the target's text to different text entirely. If the text is a spellbook or a scroll, you can change it to show a spell you know of secret page's level or lower. The replacement spell cannot be cast or used to prepare a spell. You can also transform the text into some other text you have written or have access to. You can specify a password that allows a creature touching the page to change the text back and forth. You must choose the replacement text and the password, if any, when you Cast the Spell.
 see-invisibility:
   name: SEE INVISIBILITY
   type: SPELL
@@ -8793,18 +8694,11 @@ shrink-item:
   casting-time: 10 minutes
   casting: [S, V]
   range: touch
-  target: one nonmagical object up to 20 cubic feet in volume and up to 80 Bulk
-  duration: 1 day or until dismissed
+  target: 1 non-magical object up to 20 cubic feet in volume and up to 80 Bulk
+  duration: 1 day
   description:
     main:
-      You shrink the target to roughly the size of a coin. This reduces
-      it to negligible Bulk. You can dismiss the spell with a Verbal
-      Casting action or by tossing the object onto a solid surface.
-      The object can't be used to attack or cause damage when it
-      returns to normal size. If there isn't room for the object to
-      return to normal size when the spell ends, the spell's duration
-      continues until the object is in a location large enough to
-      accommodate its normal size.
+      You shrink the target to roughly the size of a coin. This reduces it to negligible Bulk. You can Dismiss the spell, and the spell ends if you toss the object onto a solid surface. The object can't be used to attack or cause damage during the process of it returning to normal size. If there isn't room for the object to return to normal size when the spell ends, the spell's duration continues until the object is in a location large enough to accommodate its normal size.
 sigil:
   name: SIGIL
   type: SPELL
@@ -8903,16 +8797,17 @@ slow:
   range: 30 feet
   target: one creature
   duration: 1 minute
+  save: Fortitude
   description:
-    main: The target becomes slower, depending on its Fortitude save. ${subsection.save}
+    main: You dilate the flow of time around the target, slowing its actions. ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Slowed 1 for 1 round.
+          success: The target is slowed 1 for 1 round.
           crit: The target is unaffected.
-          failure: Slowed 1 for 1 minute.
-          crit-fail: Slowed 2 for 1 minute.
+          failure: The target is slowed 1 for 1 minute.
+          crit-fail: The target is slowed 2 for 1 minute.
   heightened:
     6th: You can target up to 10 creatures.
 solid-fog:
@@ -9357,20 +9252,19 @@ stinking-cloud:
   range: 120 feet
   area: 20-foot burst
   duration: 1 minute
+  save: Fortitude
   description:
     main:
-      You create a cloud of mist in the area that makes creatures within
-      concealed. (The concealment is not a poison effect.) A creature
-      that ends its turn within the cloud must attempt a Fortitude save.
+      You create a cloud of putrid mist in the area. The cloud functions as obscuring mist except it sickens creatures that end their turns within the cloud. (The concealed condition is not a poison effect.)
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Sick 1.
-          crit: The target is unaffected.
-          failure: Sick 1, and slowed 1 until it leaves the cloud.
-          crit-fail: Sick 2, and slowed 1 until it leaves the cloud.
+          success: The creature is sickened 1.
+          crit: The creature is unaffected.
+          failure: The creature is sickened 1, and slowed 1 while in the cloud.
+          crit-fail: The creature is sickened 2, and slowed 1 until it leaves the cloud.
 stone-tell:
   name: STONE TELL
   type: SPELL
@@ -10624,19 +10518,15 @@ vampiric-touch:
   type: SPELL
   level: 3
   rarity: 0
-  traits: [attack, death, necromancy, negative]
+  traits: [death, necromancy, negative]
   casting: [aS, aV]
   range: touch
-  target: one living creature
+  target: 1 living creature
   description:
     main:
-      You deal 4d6 negative damage to the target
-      (double damage on a critical hit). You gain
-      temporary Hit Points equal to the negative damage the target
-      takes (after applying resistances and the like). You lose any
-      remaining temporary Hit Points after 1 minute.
+      Your touch leeches the lifeblood out of a target to empower yourself. You deal 6d6 negative damage to the target. You gain temporary Hit Points equal to half the negative damage the target takes (after applying resistances and the like). You lose any remaining temporary Hit Points after 1 minute.
   heightened:
-    "+1": The damage increases by 1d6.
+    "+1": The damage increases by 2d6.
 veil:
   name: VEIL
   type: SPELL
@@ -11020,31 +10910,23 @@ wall-of-wind:
   duration: 1 minute
   description:
     main:
-      You create a 5-foot-thick, 60-foot-long, and 30-foot-high wall of
-      swirling winds within range. The wall stands vertically, but you can
-      shape its path. Though the wall of wind distorts the air, creatures
-      can see clearly though it and it does not hamper sight. The wall has
-      the following effects.
-      Physical ranged attacks, such as arrows, bolts, sling bullets,
-      and other similarly sized ammunition, can't pass through the
-      wall. Attacks from bigger ranged weapons, such as javelins,
-      take a -2 circumstance penalty to their attack rolls if their path
-      passes through the wall. Massive ranged weapons and spell
-      effects that don't create physical objects pass through the wall
-      without trouble.
-      Creatures attempting to move overland through the wall treat
-      it as difficult terrain. Gases, including creatures in gaseous form,
-      can't pass through the wall.
-      A creature that spends a move action to attempt to fly through
-      the wall must attempt a Fortitude save. ${subsection.save}
+      You create a barrier of gusting winds that hinders anything moving through it. The wall of swirling winds is 5 feet thick, 60 feet long, and 30 feet high. The wall stands vertically, but you can shape its path. Though the wall of wind distorts the air, it does not hamper sight. The wall has the following effects.
+      ${subsection.effects}
+      ${subsection.save}
     subsections:
+      effects:
+        type: list
+        content:
+          - Ammunition from physical ranged attacks—such as arrows, bolts, sling bullets, and other objects of similar size—can't pass through the wall. Attacks with bigger ranged weapons, such as javelins, take a –2 circumstance penalty to their attack rolls if their paths pass through the wall. Massive ranged weapons and spell effects that don't create physical objects pass through the wall with no penalty.
+          - The wall is difficult terrain to creatures attempting to move overland through it. Gases, including creatures in gaseous form, can't pass through the wall.
+          - A creature that attempts to fly through the wall using a move action must attempt a Fortitude save.
       save:
         type: dl
         content:
-          success: The flying creature treats the wall as difficult terrain this turn.
-          crit: The creature can move through the wall without treating it as difficult terrain this turn.
+          success: The flying creature can move through the wall this turn, but the wall is difficult terrain.
+          crit: The creature can move through the wall normally this turn.
           failure: The wall stops the movement of the flying creature, and any remaining movement from its current action is wasted.
-          crit-fail: Per failure, and the creature is pushed 10 feet away from the wall.
+          crit-fail: As failure, and the creature is pushed 10 feet away from the wall.
 wanderer-s-guide:
   name: WANDERER'S GUIDE
   type: POWER
