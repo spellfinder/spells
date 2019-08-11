@@ -439,25 +439,12 @@ antimagic-field:
   level: 8
   rarity: 2
   casting: [aM, aS, aV]
-  area: 10-foot aura
-  duration: sustained, up to 1 minute
+  area: 10-foot emanation
+  duration: sustained up to 1 minute
   description:
     main:
-      Spells can't penetrate the area, magic items cease to function within
-      it, and no one inside can cast spells or use magic abilities. Likewise,
-      spells—such as dispel magic—can't affect the field itself unless they
-      are of a higher level. Magic effects resume the moment they pass
-      outside the field. For example, a ray fired from one side of the field
-      could target a creature on the other side (as long as caster and
-      target are outside). A summoned creature winks out of existence
-      but reappears if the field moves or ends. Invested magic items cease
-      to function, but they remain invested and function when the item
-      exits; the ability boost from a potent item isn't suppressed. Spells of
-      a higher level than the antimagic field overcome its effects, and can
-      even be cast by a creature within the field.
-      The field disrupts only magic, so a +3 longsword still functions as
-      a master-quality longsword. Magically created creatures (such as
-      golems) function normally within an antimagic field.
+      You repel all magic from the target area, preventing spells and other magic from functioning. Spells can't penetrate the area, magic items cease to function within it, and no one inside can cast spells or use magic abilities. Likewise, spells— such as dispel magic—can't affect the field itself unless they are of a higher level. Magic effects resume the moment they pass outside the field. For example, a ray fired from one side of the field could target a creature on the other side (as long as caster and target are both outside the field). A summoned creature winks out of existence but reappears if the field moves or ends. Invested magic items cease to function, but they remain invested and resume functioning when they exit the field; the ability boost from an apex item isn't suppressed within the field. Spells of a higher level than the antimagic field overcome its effects, and can even be cast by a creature within the field.
+      The field disrupts only magic, so a +3 longsword still functions as a longsword. Magically created creatures (such as golems) function normally within an antimagic field.
 arcane-countermeasure:
   traits: [abjuration]
   name: ARCANE COUNTERMEASURE
@@ -2027,11 +2014,12 @@ disappearance:
   rarity: 0
   casting: [aM, aS]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: 10 minutes
-  traits: [auditory, illusion, visual]
+  traits: [illusion]
   description:
-    main: The target becomes invisible and is completely silent. This defeats all forms of blindsense and blindsight.
+    main:
+      You shroud a creature from others' senses. The target becomes undetected, not just to sight but to all senses, allowing the target to count as invisible no matter what precise and imprecise senses an observer might have. It's still possible for a creature to find the target by Seeking, looking for disturbed dust, hearing gaps in the sound spectrum, or finding some other way to discover the presence of an otherwise-undetectable creature.
 discern-lies:
   name: DISCERN LIES
   type: SPELL
@@ -2051,15 +2039,11 @@ discern-location:
   casting-time: 10 minutes
   casting: [M, S, V]
   range: unlimited
-  target: one creature or object
+  target: 1 creature or object
   description:
     main:
-      You discover the target's exact location by name (including the
-      building, community, and country) and plane of existence.
-      You can target a creature only if you've seen it in person or have
-      a significant belonging or a piece of its body. To target an object,
-      you must have touched it or have a fragment. Discern location
-      overcomes lower-level protections against detection and divination.
+      You learn the name of the target's exact location (including the building, community, and country) and plane of existence.
+      You can target a creature only if you've seen it in person, have one of its significant belongings, or have a piece of its body. To target an object, you must have touched it or have a fragment of it. Discern location automatically overcomes protections against detection and divination of lower level than this spell, even if they would normally have a chance to block it.
 disintegrate:
   name: DISINTEGRATE
   type: SPELL
@@ -2149,24 +2133,15 @@ divine-aura:
   rarity: 0
   traits: [abjuration]
   casting: [aS, aV]
-  area: 10-foot aura
-  target: allies in the aura
-  duration: sustained, up to 1 minute
+  area: 10-foot emanation
+  target: allies in the area
+  duration: sustained up to 1 minute
   description:
     main:
-      Divine power wards the targets, granting a +1 conditional bonus to
-      AC and saves while in the area.
-      Choose chaotic, evil, good, or lawful. If you choose chaos, this
-      spell gains the lawful trait and so on. The bonuses increase to +2
-      against attacks by creatures of the chosen alignment and effects
-      created by such creatures. The bonuses increase to +4 against
-      effects from such creatures that directly control the target and
-      attacks made by summoned creatures of the chosen alignment.
-      When a creature of the chosen alignment hits a target with a
-      melee attack, it must succeed at a Will save or be blinded for 1
-      minute. It's bolstered against all divine auras for the duration.
-      The first time you Concentrate on the Spell each round, the
-      radius grows 10 feet.
+      Divine power wards the targets, granting each a +1 status bonus to AC and saves while in the area.
+      Choose an alignment your deity has (chaotic, evil, good, or lawful). You can't cast this spell if you don't have a deity or your deity is true neutral. This spell gains the trait of the alignment you chose. The bonuses granted by the spell increase to +2 against attacks by—and effects created by—creatures with an alignment opposite to the spell (lawful if you chose chaotic, evil if you chose good). These bonuses increase to +4 against effects created by such creatures that attempt to impose the controlled condition on a target of your divine aura, as well as against attacks made by creatures summoned by anything opposite in alignment to your divine aura.
+      When a creature of opposite alignment hits a target with a melee attack, the creature must succeed at a Will save or be blinded for 1 minute. It's then temporarily immune for 1 minute.
+      The first time you Sustain the Spell each round, the divine aura's radius grows 10 feet.
 divine-decree:
   name: DIVINE DECREE
   type: SPELL
@@ -2199,13 +2174,10 @@ divine-inspiration:
   traits: [enchantment, mental]
   casting: [aS, aV]
   range: touch
-  target: one willing creature
+  target: 1 willing creature
   description:
     main:
-      You infuse a target with spiritual energy, refreshing its magic. If it
-      prepares spells, it recovers one 6th-level or lower spell it previously
-      cast today and can cast that spell again. If it spontaneously casts
-      spells, it recovers one of its 6th-level or lower spell slots.
+      You infuse a target with spiritual energy, refreshing its magic. If it prepares spells, it recovers one 6th-level or lower spell it previously cast today and can cast that spell again. If it spontaneously casts spells, it recovers one of its 6th-level or lower spell slots. If it has a focus pool, it regains its Focus Points, as if it had Refocused.
 divine-lance:
   name: DIVINE LANCE
   type: SPELL
@@ -2527,7 +2499,7 @@ dream-council:
   type: SPELL
   level: 8
   rarity: 0
-  traits: [illusion, mental]
+  traits: [illusion, mental, sleep]
   casting-time: 10 minutes
   casting: [S, V]
   range: planetary
@@ -2535,12 +2507,7 @@ dream-council:
   duration: 1 hour
   description:
     main:
-      Upon Casting this Spell, any targets—including you—can choose to
-      immediately fall asleep. The spell ends for any creatures that don't
-      choose to fall asleep. Sleepers join a shared dream, where they can
-      communicate with one another as though they were in the same
-      room. Individual targets leave this shared dream upon awakening,
-      and if all the targets awaken, the spell is dismissed.
+      When you Cast this Spell, any targets—including you—can choose to immediately fall asleep. The spell ends for any creatures that don't choose to fall asleep. Sleepers join a shared dream, where they can communicate with one another as though they were in the same room. Individual targets leave this shared dream upon awakening, and if all the targets awaken, the spell ends.
 dream-message:
   name: DREAM MESSAGE
   type: SPELL
@@ -2658,7 +2625,7 @@ earthquake:
   duration: 1 round
   description:
     main:
-      You shake the ground, topple creatures, and shatter structures.
+      You shake the ground, topple creatures into fissures, and collapse structures.
       ${subsection.effects}
       ${subsection.save}
       The GM might add additional effects in certain areas. Cliffs
@@ -2668,33 +2635,22 @@ earthquake:
       save:
         type: dl
         content:
-          success: The creature takes Half collapse damage and falls prone.
-          crit: Half collapse damage.
-          failure: Full collapse damage and falls prone.
-          crit-fail: Full collapse damage and falls into a fissure.
+          success: The creature takes half the collapse damage and falls prone.
+          crit: The creature takes half the collapse damage.
+          failure: The creature takes the full collapse damage and falls prone.
+          crit-fail: The creature takes the full collapse damage and falls into a fissure.
       effects:
         type: dl
         content:
           Shaking Ground:
-            The ground is difficult terrain, and creatures on
-            it take a -2 circumstance penalty to attack rolls and skill checks.
+            The ground is difficult terrain, and creatures on it take a –2 circumstance penalty to attack rolls, AC, and skill checks.
           Fissures:
-            Each creature on the ground must attempt a Reflex
-            save at the start of its turn to keep footing and avoid falling into
-            40-foot-deep fissures that open. The fissures are permanent,
-            and their walls require DC 15 Athletics to Climb.
+            Each creature on the ground must attempt a Reflex save at the start of its turn to keep its footing and avoid falling into 40-foot-deep fissures that open beneath it. The fissures are permanent, and their sides require DC 15 Athletics to Climb.
           Collapse:
-            Structures and ceilings might collapse. The GM rolls
-            a flat check for each (DC 16 for a sturdy structure, DC 14 for
-            an average structure and most natural formations, DC 9 for
-            a shoddy structure, or higher or lower as the GM sees fit). A
-            collapse deals 11d6 bludgeoning damage; each creature caught
-            in a collapse must attempt a Reflex save to escape it.
+            Structures and ceilings might collapse. The GM rolls a flat check for each (DC 16 for a sturdy structure, DC 14 for an average structure and most natural formations, DC 9 for a shoddy structure, all adjusted higher or lower as the GM sees fit). A collapse deals 11d6 bludgeoning damage; each creature caught in a collapse must attempt a Reflex save to avoid it.
   heightened:
     10th:
-      You create a massive earthquake that can
-      devastate a settlement. The range increases to half a mile and the
-      area to a quarter-mile burst.
+      You create a massive earthquake that can devastate a settlement. The range increases to half a mile and the area to a quarter-mile burst.
 echoing-nightmare:
   name: ECHOING NIGHTMARE
   type: SPELL
@@ -4318,23 +4274,10 @@ horrid-wilting:
   casting: [aS, aV]
   range: 500 feet
   target: any number of living creatures
+  save: basic Fortitude
   description:
     main:
-      You pull the moisture from the targets' bodies, dealing 12d10 negative
-      damage. Each target must attempt a Fortitude save to avoid
-      withering in this fashion. Creatures made of water (such as water
-      elementals) and plant creatures automatically treat their outcomes
-      as one degree of success worse. Creatures whose bodies contain
-      no significant moisture (such as earth elementals) are immune to
-      horrid wilting. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: Half damage.
-          crit: No damage.
-          failure: Full damage.
-          crit-fail: Double damage.
+      You pull the moisture from the targets' bodies, dealing 10d10 negative damage. Creatures made of water (such as water elementals) and plant creatures use the outcome for one degree of success worse than the result of their saving throw. Creatures whose bodies contain no significant moisture (such as earth elementals) are immune to horrid wilting.
   heightened:
     "+1": The damage increases by 1d10.
 house-of-imaginary-walls:
@@ -5410,23 +5353,13 @@ maze:
   traits: [conjuration, extradimensional, teleportation]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
-  duration: sustained, up to 10 minutes or until dismissed
+  target: 1 creature
+  duration: sustained
   description:
     main:
-      When you cast maze, you transport the target into an
-      extradimensional maze of eldritch origin. Once each turn, the
-      target can spend 1 action to attempt a Survival check or Perception
-      check against your spell DC to escape the maze.
-      The possible outcomes of the Survival check or Perception check are as follows.
+      You transport the target into an extradimensional maze of eldritch origin and trap it there. Once each turn, the target can spend 1 action to attempt a Survival check or Perception check against your spell DC to escape the maze. The possible outcomes are as follows.
       ${subsection.outcomes}
-      Teleportation magic doesn't help the creature escape unless
-      the magic can transport across planes, such as plane shift. When
-      the spell ends, either because the target escaped or the duration
-      ran out, the target returns in the space it occupied when it was
-      banished, or the nearest space if the original space is now filled.
-      It loses any remaining actions it would have on its current turn,
-      but it can spend reactions normally.
+      Teleportation magic doesn't help the creature escape unless the magic can transport across planes, such as plane shift. When the spell ends, either because the target escaped or the duration ran out, the target returns to the space it occupied when it was banished, or to the nearest space if the original is now filled.
     subsections:
       outcomes:
         type: dl
@@ -5435,11 +5368,11 @@ maze:
             The creature is on the right path to the exit. If the
             target was already on the right path, it escapes the maze
             and the spell ends.
-          crit: The creature escapes and the spell ends.
+          crit: The target escapes and the spell ends.
           failure: The creature makes no progress toward escape.
           crit-fail:
             The creature makes no progress toward
-            escape, and if it was on the right path it no longer is.
+            escape, and if it was on the right path, it no longer is.
 
 meld-into-stone:
   name: MELD INTO STONE
@@ -5551,13 +5484,11 @@ mind-blank:
   traits: [abjuration]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
-  duration: 24 hours
+  target: 1 creature
+  duration: until the next time you make your daily preparations
   description:
     main:
-      The target is immune to detection, revelation, and scrying unless
-      the effect is of a higher level than the mind blank spell. The target
-      also gains a +4 conditional bonus to saves against mental effects.
+      Powerful wards hide a creature from divination magic. The target gains a +4 status bonus to saves against mental effects. Mind blank attempts to counteract any detection, revelation, and scrying effects as if its spell level were 1 higher than its actual level. On a success, the divination effect functions normally except that it detects nothing about the target and its possessions. For instance, detect magic would still detect other magic in the area, but not any magic on the target.
 mind-probe:
   name: MIND PROBE
   type: SPELL
@@ -5734,16 +5665,10 @@ moment-of-renewal:
   traits: [healing, necromancy]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: up to 6 creatures
   description:
     main:
-      The target experiences a day's worth of recovery in an instant. Any
-      detrimental effects that would be gone after 24 hours end, though
-      this doesn't shorten the duration of any active spells affecting the
-      target. The target regains Hit Points and recovers from conditions
-      as if it had taken 24 hours of rest. The creature doesn't regain
-      spells for resting or get other benefits of rest other than healing.
-      The target is then bolstered against all moment of renewal spells.
+      The targets experience a day's worth of recovery in an instant. Any detrimental effects that would be gone after 24 hours end, though this doesn't shorten the duration of any active spells affecting the targets. The targets regain Hit Points and recover from conditions as if they had taken 24 hours of rest, but they do not make their daily preparations again or gain any benefits of rest other than healing. The targets are then temporarily immune for 1 day.
 money-talks:
   name: MONEY TALKS
   type: POWER
@@ -5761,77 +5686,34 @@ monstrosity-form:
   rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
-      "You transform into the shape of a legendary monster, assuming
-      a Huge battle form. You must have enough space to expand into
-      or the spell is lost. You count as an animal in addition to your
-      normal traits while in this form. Your gear is absorbed into your
-      form; your constant abilities of your gear still function, but you
-      can't activate any item abilities. When you transform, you gain
-      the following: ${subsection.stats}
-      The special statistics of your battle form can be adjusted only
-      by penalties, circumstance bonuses, and conditional bonuses.
-      Your battle form prevents you from casting spells, speaking, or
-      using most actions with the manipulate trait that require your
-      hands (the GM determines which manipulate actions you can
-      spend if there's doubt). You can dismiss this spell by using an
-      action (this action has the concentrate trait).
-      When you prepare this spell, choose the creature you wish to
-      turn into from the following options. When in battle form, you
-      gain the attacks, movement types, and special abilities listed.
+      "You transform into the shape of a legendary monster, assuming a Huge battle form. You must have enough space to expand into or the spell is lost. When you cast this spell, choose phoenix, purple worm, or sea serpent. While in this form, you gain the beast trait (for phoenix) or the animal trait (for purple worm or sea serpent). You can Dismiss the spell. You gain the following statistics and abilities regardless of which battle form you choose:
+      ${subsection.stats}
+      You also gain specific abilities based on the type of monster you choose:
       ${subsection.forms}"
     subsections:
       stats:
         type: list
         content:
-          - AC 36 (TAC 33) and ignore your armor's check penalty and
-            Speed reduction.
-          - One or more natural melee attacks, which are the only
-            types of attacks you can use. You're trained with them.
-            When attacking with them, your attack modifier is +26 and
-            the damage bonus is listed with your attacks. These are
-            Strength-based attacks (for the purposes of the enfeebled
-            condition, for example).
-          - 20 temporary Hit Points that go away when you leave your
-            battle form.
+          - AC = 20 + your level. Ignore your armor's check penalty and Speed reduction.
+          - 20 temporary Hit Points.
           - Darkvision.
-          - Athletics +27 (unless your own total modifier is higher).
+          - One or more unarmed melee attacks specific to the battle form you choose, which are the only attacks you can use. You're trained with them. Your attack modifier is +28, and you use the listed damage. These attacks are Strength based (for the purpose of the enfeebled condition, for example). If your unarmed attack modifier is higher, you can use it instead.
+          - Athletics modifier of +30, unless your own modifier is higher.
       forms:
         type: dl
         content:
           Phoenix:
-            "beak (reach 15 feet), Damage 2d6+12 piercing plus
-            2d4 fire and 2d4 persistent fire; talon (agile, reach 15 feet),
-            Damage 2d8+12 slashing; Speed 30 feet, fly 90 feet; Shroud
-            of Flame: You gain a divine fire aura that extends out 20
-            feet from you. A creature that enters or ends its turn within
-            the aura takes 2d6 fire damage. A creature can take this
-            damage only once per turn. You can spend 1 action with the
-            concentrate trait to activate or deactivate this aura."
+            "Speed 30 feet, fly Speed 90 feet; Melee [[A]] beak (reach 15 feet), Damage 2d6+12 piercing plus 2d4 fire and 2d4 persistent fire; Melee [[A]] talon (agile, reach 15 feet), Damage 2d8+12 slashing; Shroud of Flame (aura, evocation, fire, primal) 20 feet. You gain an aura of fire that extends out from you. A creature that enters or ends its turn within the aura takes 2d6 fire damage. A creature can take this damage only once per turn. You can use a single action, which has the concentrate trait, to activate or deactivate this aura."
           "Purple Worm":
-            "jaws (reach 10 feet), Damage 2d12+20
-            piercing; stinger (agile, reach 10 feet), Damage 2d8+15
-            piercing plus 2d6 persistent poison; body (reach 10 feet)
-            Damage 2d8+20 bludgeoning; Speed 40 feet, burrow 30
-            feet, swim 20 feet; Inexorable: You automatically recover
-            from the paralyzed, slowed, and stunned conditions at the
-            end of each of your turns. You're also immune to being
-            hampered and immobilized and ignore difficult terrain and
-            greater difficult terrain."
+            "Speed 40 feet, burrow Speed 30 feet, swim Speed 20 feet; Melee [[A]] jaws (reach 10 feet), Damage 2d12+20 piercing; Melee [[A]] stinger (agile, reach 10 feet), Damage 2d8+15 piercing plus 2d6 persistent poison; Melee [[A]] body (reach 10 feet) Damage 2d8+20 bludgeoning; Inexorable You automatically recover from the paralyzed, slowed, and stunned conditions at the end of each of your turns. You're also immune to being immobilized and ignore difficult terrain and greater difficult terrain."
           "Sea Serpent":
-            "jaws (reach 15 feet), Damage 2d12+20 piercing;
-            tail (reach 25 feet), Damage 2d8+20 bludgeoning; Speed 20
-            feet, swim 90 feet; Spine Rake: You can spend a move action
-            to extend your spines and swim or Stride. Each creature
-            you're adjacent to at any point during your movement takes
-            4d8+10 slashing damage (Reflex DC 30 for half damage, or
-            no damage on a critical success)."
+            "Speed 20 feet, swim Speed 90 feet; Melee [[A]] jaws (reach 15 feet), Damage 2d12+20 piercing; Melee [[A]] tail (reach 25 feet), Damage 2d8+20 bludgeoning; Spine Rake Two Actions (move) You extend your spines and Swim or Stride. Each creature you're adjacent to at any point during your movement takes 4d8+10 slashing damage (basic Reflex against your spell DC)."
   heightened:
     9th:
-      Your statistics are AC 29 (TAC 26); attack modifier of +28; add 1 additional damage die
-      on all Strikes; 25 temporary HP; Athletics +29.
+      You instead gain AC = 22 + your level, 25 temporary HP, attack modifier +31, increase damage by one damage die, and Athletics +33.
 moon-frenzy:
   name: MOON FRENZY
   type: SPELL
@@ -6508,13 +6390,13 @@ polar-ray:
   traits: [cold, evocation]
   casting: [aS, aV]
   range: 120 feet
-  target: one creature or object
+  target: 1 creature or object
   description:
     main:
       You fire a blue-white ray of freezing air and swirling sleet from
       your finger that can chill its target to the bones. You must
-      succeed at a ranged touch attack to affect the target, which then
-      takes 13d8 cold damage and is drained 2.
+      succeed at a spell attack roll to affect the target, which then
+      takes 10d8 cold damage and is drained 2.
   heightened:
     "+1": The damage increases by 2d8.
 possession:
@@ -6606,21 +6488,19 @@ power-word-stun:
   traits: [auditory, enchantment, mental]
   casting: [aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: varies
   description:
     main:
-      You utter a word of power that can make the target stunned
-      upon hearing it. Once targeted, the target is bolstered against all
-      castings of power word stun. The effect of the spell depends on
-      the target's level. ${subsection.level}
+      You stun the target with an arcane word of power. Once targeted, the target is then temporarily immune for 10 minutes. The effect of the spell depends on the target's level.
+      ${subsection.level}
     subsections:
       level:
         type: dl
         content:
-          "13th or Lower": Stunned for 1d6 rounds.
-          "14th-15th": Stunned for 1 round.
-          "16th or Higher": Slowed 1 for 1 round instead of stunned.
+          "13th or Lower": The target is stunned for 1d6 rounds.
+          "14th-15th": The target is stunned for 1 round.
+          "16th or Higher": The target is stunned 1.
   heightened:
     "+1": The levels at which each outcome applies increase by 2.
 prepare-for-battle:
@@ -6816,31 +6696,12 @@ prismatic-wall:
   traits: [abjuration, light]
   casting: [aM, aS, aV]
   range: 120 feet
-  duration: 1 hour or until dismissed
+  duration: 1 hour
   description:
     main:
-      You create an opaque wall of shimmering, multicolored light. The
-      wall is straight and vertical, stretching 60 feet across and 30 feet
-      high. You must form the wall in an unbroken open space so its
-      edges don't pass through any creatures or objects or the spell is
-      lost. You can pass through the wall and ignore its effects. The wall
-      sheds bright light out to 20 feet on each side. Creatures other than
-      you that come into the wall's light must succeed at a Will save or
-      be blinded for 1 minute. A creature that attempts a save is then
-      bolstered against that particular prismatic wall's blinding effect.
-      A prismatic wall has seven different colors, each with the effect
-      of a 5th-level chromatic wall spell of that color. A creature that
-      tries to pass through the wall must attempt a saving throw against
-      each component wall. The effects take place simultaneously, so
-      a creature turned to stone by the blue wall is still treated as a
-      creature for the indigo and violet walls.
-      The wall as a whole is immune to dispelling effects of the wall's
-      level or lower, but each color must be dispelled by its specific spell,
-      as described in chromatic wall. This must be done in order (red,
-      orange, yellow, green, blue, indigo, then violet). A given color can't
-      be affected until the previous color is dispelled. Dispelling a color
-      wall removes that color's effect from the wall, and dispelling them
-      all ends prismatic wall.
+      You create an opaque wall of shimmering, multicolored light. The wall is straight and vertical, stretching 60 feet long and 30 feet high. You must form the wall in an unbroken open space so its edges don't pass through any creatures or objects, or the spell is lost. You can pass through the wall and ignore its effects. The wall sheds bright light out to 20 feet on each side (and dim light to the next 20 feet). Creatures other than you that come into the wall's light must attempt a Will save; they're dazzled for 1 round on a success, blinded for 1 round on a failure, and blinded for 1 minute on a critical failure. They are then temporarily immune to the blinding effect for 1 hour.
+      A prismatic wall has seven different layers, each a different color. Red, orange, yellow, and green have the effect of a 5th-level chromatic wall (page 323) spell of that color, and the others have the effect of a 7th-level chromatic wall spell of that color. A creature that tries to pass through the wall must attempt a saving throw against each component wall. The effects take place simultaneously, so a creature turned to stone by the blue wall is still treated as a creature for the indigo and violet walls.
+      The wall as a whole is immune to counteracting effects of the wall's level or lower; each color must be counteracted by its specific spell, as described in chromatic wall. This must be done in order (red, orange, yellow, green, blue, indigo, then violet). A given color can't be affected until the previous color is counteracted. Counteracting a color wall removes that color's effect from the wall, and counteracting them all ends prismatic wall. You can Dismiss the spell.
 private-sanctum:
   name: PRIVATE SANCTUM
   type: SPELL
@@ -6958,20 +6819,11 @@ punishing-winds:
   casting: [aM, aS, aV]
   range: 100 feet
   area: 30-foot radius, 100-foot-tall cylinder
-  duration: sustained, up to 1 minute
+  duration: sustained up to 1 minute
   description:
     main:
-      Violent winds and a powerful downdraft fill the area, forming a
-      cyclone. All flying creatures in the area descend 40 feet. The entire
-      area is greater difficult terrain for flying and difficult terrain for
-      creatures on the ground or climbing. Any creature that ends its
-      turn flying within the area descends 20 feet. Any creature pushed
-      into a surface by this spell's winds takes falling damage.
-      The squares at the outside vertical edges of the cylinder prevent
-      creatures from leaving. They're greater difficult terrain, and any
-      creature attempting to push through must succeed at an Athletics
-      check (or Flying Maneuver) against your spell DC to get through. A
-      creature that fails ends its current action but can try again.
+      Violent winds and a powerful downdraft fill the area, forming a cyclone. All flying creatures in the area descend 40 feet. The entire area is greater difficult terrain for Flying creatures, and difficult terrain for creatures on the ground or Climbing. Any creature that ends its turn Flying within the area descends 20 feet. Any creature pushed into a surface by this spell's winds takes bludgeoning damage as though it had fallen.
+      The squares at the outside vertical edges of the cylinder prevent creatures from leaving. These squares are greater difficult terrain, and a creature attempting to push through must succeed at an Athletics check or Acrobatics check to Maneuver in Flight against your spell DC to get through. A creature that fails ends its current action but can try again.
 purify-food-and-drink:
   name: PURIFY FOOD AND DRINK
   type: SPELL
@@ -7645,30 +7497,25 @@ scintillating-pattern:
   type: SPELL
   level: 8
   rarity: 0
-  traits: [illusion, visual]
+  traits: [illusion, incapacitation, visual]
   casting: [aM, aS]
   range: 120 feet
   area: 20-foot burst
-  duration: sustained, up to 1 minute
+  duration: sustained up to 1 minute
+  save: Will
   description:
     main:
-      A field of vibrant, ever-changing colors manifests in the air.
-      Creatures are dazzled while inside the pattern. A creature must
-      attempt a Will saving throw if it is inside the pattern when you
-      cast it, enters the pattern, ends its turn within the pattern, or
-      uses a Seek or Interact action on the pattern. A creature currently
-      affected by the pattern doesn't need to attempt new saves.
+      A field of cascading, ever-changing colors manifests in the air. Creatures are dazzled while inside the pattern, as are those within 20 feet of the pattern's area. A creature must attempt a Will save if it is inside the pattern when you cast it, enters the pattern, ends its turn within the pattern, or uses a Seek or Interact action on the pattern. A creature currently affected by the pattern doesn't need to attempt new saves.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Unaffected.
-          failure: The target is confused for 1d4 rounds.
+          success: The creature is unaffected.
+          failure: The creature is confused for 1d4 rounds.
           crit-fail:
-            The target is stunned for 1d4 rounds. After the
-            stun ends, the target is confused for the remaining duration
-            of the spell.
+            The creature is stunned for 1d4 rounds. After the stunned condition ends,
+            the creature is confused for the remaining duration of the spell.
 scrying:
   name: SCRYING
   type: SPELL
@@ -8341,24 +8188,21 @@ spiritual-epidemic:
   traits: [curse, necromancy]
   casting: [aS, aV]
   range: 120 feet
-  target: one creature
+  target: 1 creature
   duration: varies
+  save: Will
   description:
     main:
-      You lay a curse on the target, sapping its spirit and leaving a
-      contagious trap in its spiritual essence for those who contact it.
-      The results depend on the target's Will save. Any creature that
-      casts a divine or occult spell on the target while it's affected must
-      also attempt a Will save as if targeted, and the curse continues
-      to spread in this way. ${subsection.save}
+      You curse the target, sapping its spirit and leaving a contagious trap in its essence. The target must attempt a Will save. Any creature that casts a divine or occult spell on the target while it's affected is targeted by spiritual epidemic and must also attempt a Will save. The curse continues to spread in this way.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Enfeebled 2 for 1 round.
+          success: The target is enfeebled 2 and stupefied 2 for 1 round.
           crit: The target is unaffected.
-          failure: Enfeebled 2 for 1 minute, enfeebled 1 permanently.
-          crit-fail: Enfeebled 3 for 1 minute, enfeebled 2 permanently.
+          failure: The target is enfeebled 2 and stupefied 2 for 1 minute and enfeebled 1 and stupefied 1 permanently.
+          crit-fail: The target is enfeebled 3 and stupefied 3 for 1 minute and enfeebled 2 and stupefied 2 permanently.
 spirit-link:
   name: Spirit Link
   type: spell
@@ -8384,6 +8228,20 @@ spirit-link:
       You can Dismiss this spell, and if you're ever at 0 Hit Points, spirit link ends automatically.
   heightened:
     "+1": The number of Hit Points transferred each time increases by 2.
+spirit-song:
+  name: Spirit Song
+  type: spell
+  level: 8
+  rarity: 0
+  casting: [aS, aV]
+  area: 60-foot cone
+  save: basic Fortitude
+  traits: [force, necromancy]
+  description:
+    main:
+      Your eldritch song sends pulsing waves of ethereal energy to attack creatures' spirits in the area, dealing 18d6 force damage. Because spirit song affects creatures' spirits, it can damage a target projecting its consciousness (such as via project image) or possessing another creature even if the target's body is elsewhere. The vibrating waves of spiritual song penetrate into, but not through, solid barriers, damaging incorporeal creatures hiding in solid objects in the area but not passing onward to damage creatures in other rooms. Possessed creatures aren't harmed by the song. The song doesn't harm creatures that have no spirit, such as constructs.
+  heightened:
+    "+1": The damage increases by 2d6
 spiritual-guardian:
   name: SPIRITUAL GUARDIAN
   type: SPELL
@@ -9505,26 +9363,23 @@ uncontrollable-dance:
   type: SPELL
   level: 8
   rarity: 0
-  traits: [enchantment, mental]
+  traits: [enchantment, incapacitation, mental]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: varies
+  save: Will
   description:
     main:
-      The target is overcome with an all-consuming urge to dance,
-      depending on its Will save. For the duration of the spell, the
-      target is flat-footed and can't use reactions. While affected, the
-      creature can't use any move actions other than to dance by using
-      the Stride action to move up to half its Speed.
+      The target is overcome with an all-consuming urge to dance. For the duration of the spell, the target is flat-footed and can't use reactions. While affected, the creature can't use actions with the move trait except to dance, using the Stride action to move up to half its Speed.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The spell's duration is 3 rounds, and the target must spend at least 1 action per turn dancing.
+          success: The spell's duration is 3 rounds, and the target must spend at least 1 action each turn dancing.
           crit: The target is unaffected.
-          failure: The spell's duration is 1 minute, and the target must spend at least 2 actions per turn dancing.
+          failure: The spell's duration is 1 minute, and the target must spend at least 2 actions each turn dancing.
           crit-fail: The spell's duration is 1 minute, and the target must spend all its actions each turn dancing.
 undead-s-bane:
   name: UNDEAD'S BANE
@@ -9657,34 +9512,21 @@ unrelenting-observation:
   casting: [aS, aV]
   range: 100 feet
   area: 20-foot burst
-  target: one creature or object and up to five willing creatures
-  duration: 1 hour
+  target: 1 creature or object and up to 5 other willing creatures
+  duration: varies
   description:
     main:
-      This spell grants perfect sight based on scrying, allowing subjects
-      to track the exact movements or position of one creature or object.
-      Choose one target creature or object in the area to be tracked. It
-      becomes the sensor for the spell. Up to five willing creatures of
-      your choice in the area can see a ghostly image of this creature or
-      object when it's out of their sight. They can perceive the creature
-      or object perfectly, allowing them to ignore invisibility or the
-      concealed condition, though physical barriers still provide cover.
-      The tracking creatures can see the tracked creature or object
-      through all barriers other than lead or running water, which block
-      their vision. Distance also doesn't matter, though the creature or
-      object might move so far away it becomes too small to perceive.
-      You don't scry any of the environment around the creature or
-      object, though you do see any gear a creature is wearing or
-      holding and can tell if it removes objects from its person.
-      If you try to track an unwilling creature, the effect depends
-      on its Will save. ${subsection.save}
+      This spell grants perfect sight based on scrying, allowing several willing targets to track the exact movements or position of one creature or object. Choose one target creature or object in the area to be tracked. It becomes the sensor for the spell. Up to five willing creatures of your choice in the area can see a ghostly image of this creature or object when it's out of their sight. They can perceive the creature or object perfectly, allowing them to ignore the concealed or invisible condition, though physical barriers still provide cover.
+      The tracking creatures can see the tracked creature or object through all barriers other than lead or running water, which block their vision. Distance doesn't matter, though the creature or object might move so far away it becomes too small to perceive. The tracking creatures don't see any of the environment around the target, though they do see any gear a creature is wearing or holding, and they can tell if it removes objects from its person.
+      If the target to be tracked is willing, the duration is 1 hour. If you try to track an unwilling creature, the target must attempt a Will save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The spell ends after 1 round.
+          success: As described, and the duration is 1 minute.
           crit: The creature or object is unaffected.
-          failure: The other targets track the creature or object.
+          failure: As described, and the duration is 1 hour.
 unseen-servant:
   name: UNSEEN SERVANT
   type: SPELL
@@ -10479,14 +10321,7 @@ wind-walk:
   duration: 8 hours
   description:
     main:
-      When you cast this spell, all targets transform into a vaguely
-      cloud-like form and are picked up by a wind moving in the
-      direction of your choice. You can Concentrate on the Spell to
-      change the wind's direction. The wind carries the targets at
-      a Speed of 20 miles per hour, but if any of the targets make
-      an attack, Cast a Spell, come under attack, or otherwise enter
-      encounter mode, the spell ends for all targets and they drift
-      gently to the ground.
+      When you cast this spell, each target transforms into a vaguely cloud-like form and is picked up by a wind moving in the direction of your choice. You can change the wind's direction by using a single action, which has the concentrate trait. The wind carries the targets at a Speed of 20 miles per hour, but if any of the targets make an attack, Cast a Spell, come under attack, or otherwise enter encounter mode, the spell ends for all targets just after they roll initiative, and they drift gently to the ground.
 wish:
   name: WISH
   type: SPELL
