@@ -51,7 +51,8 @@ def validate(data):
                     )
                 )
 
-        if 'cleric' in v['traits'] and 'domain' not in v:
+
+        if 'cleric' in v.get('traits', []) and 'domain' not in v:
             errors.append(
                 'Missing domain for cleric focus spell "{name}"'.format(
                     name=v['name']

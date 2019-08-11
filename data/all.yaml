@@ -3038,7 +3038,7 @@ enthrall:
             As failure, but the target can't attempt a save to
             end the fascination if it disagrees with you.
 eradicate-undeath:
-  name: Eradicat Undeath
+  name: Eradicate Undeath
   type: focus
   level: 4
   rarity: 1
@@ -5077,6 +5077,7 @@ localized-quake:
   description:
     main:
       You shake the earth, toppling nearby creatures. Choose whether the spell's area is a 15-foot emanation or a 15-foot cone when you cast it. Each creature in the area standing on solid ground may take 4d6 bludgeoning damage and must attempt a Reflex saving throw.
+      ${subsection.save}
     subsections:
       save:
         type: dl
@@ -6461,6 +6462,7 @@ precious-metals:
   type: focus
   level: 4
   rarity: 1
+  traits: [cleric, transmutation]
   casting: [aM]
   range: touch
   target: 1 metal weapon, up to 10 pieces of metal or metal-tipped ammunition, 1 suit of metal armor, or up to 1 bulk of metal material (such as coins)
