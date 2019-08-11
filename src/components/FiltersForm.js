@@ -86,7 +86,7 @@ class FiltersForm extends React.Component {
               <Form.Label>Type:</Form.Label>
               <Form.Control as="select" onChange={changeHandler} className="filters mx-1">
                 <option value="">All</option>
-                <option value="power">Power</option>
+                <option value="focus">Focus</option>
                 <option value="spell">Spell</option>
               </Form.Control>
             </Form.Group>

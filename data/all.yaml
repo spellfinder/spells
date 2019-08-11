@@ -447,7 +447,7 @@ antimagic-field:
 arcane-countermeasure:
   traits: [abjuration]
   name: ARCANE COUNTERMEASURE
-  type: POWER
+  type: focus
   level: 5
   rarity: 1
   casting: [rS]
@@ -465,7 +465,7 @@ arcane-countermeasure:
 artistic-flourish:
   traits: [transmutation]
   name: ARTISTIC FLOURISH
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   casting-time: 10 minutes
@@ -489,7 +489,7 @@ artistic-flourish:
 athletic-exploit:
   traits: [transmutation]
   name: ATHLETIC EXPLOIT
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   casting: [aS]
@@ -501,7 +501,7 @@ athletic-exploit:
 augment-summoning:
   traits: [conjuration]
   name: AUGMENT SUMMONING
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   casting: [fV]
@@ -690,7 +690,7 @@ bind-undead:
       With a word of necromantic power, you seize control of the target. It gains the minion trait. If you or an ally uses any hostile actions against the target, the spell ends.
 bit-of-luck:
   name: BIT OF LUCK
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [fortune, divination]
@@ -749,7 +749,7 @@ bless:
       Bless can counteract bane.
 blind-ambition:
   name: BLIND AMBITION
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [emotion, enchantment, mental]
@@ -862,7 +862,7 @@ burning-hands:
     "+1": The damage increases by 2d6.
 call-of-the-grave:
   name: CALL OF THE GRAVE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [arcane, attack, fear, necromancy, wizard]
@@ -904,7 +904,7 @@ calm-emotions:
           crit-fail: As failure, but hostility doesn't end the effect.
 captivating-adoration:
   name: CAPTIVATING ADORATION
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [emotion, enchantment, mental]
@@ -953,7 +953,7 @@ cataclysm:
           - A massive wildfire burns in a sudden inferno, dealing 3d10 fire damage.
 celestial-brand:
   name: CELESTIAL BRAND
-  type: POWER
+  type: focus
   level: 5
   rarity: 1
   traits: [curse, necromancy]
@@ -1037,7 +1037,7 @@ charm:
     '+8': The duration lasts until the next time you make your daily preparations, and you can target up to 10 creatures.
 charming-touch:
   name: CHARMING TOUCH
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [attack, evocation, enchantment, mental]
@@ -1063,7 +1063,7 @@ charming-touch:
     4th: You can target any type of creature, not just humanoids, as long as they would find you attractive.
 charming-words:
   name: CHARMING WORDS
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [auditory, enchantment, lingual, mental]
@@ -1311,7 +1311,7 @@ command:
     5th: You can target up to 10 creatures.
 commanding-lash:
   name: COMMANDING LASH
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [enchantment, mental]
@@ -1321,7 +1321,7 @@ commanding-lash:
     main: You issue a command to the target, as the spell command.
 competitive-edge:
   name: COMPETITIVE EDGE
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [emotion, enchantment, mental]
@@ -1589,7 +1589,7 @@ dancing-lights:
       remain within 120 feet of you and within 10 feet of all others, or it winks out.
 darkened-eyes:
   name: DARKENED EYES
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [darkness, transmutation]
@@ -1666,7 +1666,7 @@ daze:
       "+2": The damage increases by 1d6.
 dazzling-flash:
   name: DAZZLING FLASH
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [evocation, light]
@@ -1743,7 +1743,7 @@ death-ward:
       You shield a creature from the ravages of negative energy. It receives a +4 status bonus to saves against death and negative effects, gains negative resistance 10, and suppresses the effects of the doomed condition.
 death-s-call:
   name: DEATH'S CALL
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [necromancy]
@@ -1756,7 +1756,7 @@ death-s-call:
       death's call. The temporary HP last for 1 minute.
 delusional-pride:
   name: DELUSIONAL PRIDE
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [emotion, enchantment, mental]
@@ -1782,7 +1782,7 @@ delusional-pride:
           crit-fail: The effect lasts for 24 hours.
 destructive-aura:
   name: DESTRUCTIVE AURA
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [evocation]
@@ -1796,7 +1796,7 @@ destructive-aura:
     "+2": Reduce resistances by an additional 1.
 destructive-cry:
   name: DESTRUCTIVE CRY
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [evocation]
@@ -1882,7 +1882,7 @@ detect-scrying:
     6th: The duration is until the next time you make your daily preparations.
 diabolic-edict:
   name: DIABOLIC EDICT
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [auditory, enchantment, lingual]
@@ -1948,7 +1948,7 @@ dimensional-lock:
       You create a shimmering barrier that attempts to counteract teleportation effects and planar travel into or out of the area, including items that allow access to extradimensional spaces (such as a bag of holding). Dimensional lock tries to counteract any attempt to summon a creature into the area but doesn't stop the creature from departing when the summoning ends.
 dimensional-steps:
   name: DIMENSIONAL STEPS
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [conjuration, teleportation]
@@ -2235,7 +2235,7 @@ divine-vessel:
     9th: The temporary Hit Points increase to 60, the weakness increases to 15, and the duration increases to 10 minutes.
 divine-ward:
   name: DIVINE WARD
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [abjuration]
@@ -2276,7 +2276,7 @@ divine-wrath:
     "+1": The damage increases by 1d10.
 diviner-s-sight:
   name: DIVINER'S SIGHT
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [concentrate, divination, fortune]
@@ -2319,7 +2319,7 @@ dominate:
     10th: The duration is unlimited.
 downpour:
   name: DOWNPOUR
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [evocation, water]
@@ -2337,7 +2337,7 @@ downpour:
     "+1": The amount of fire resistance increases by 2.
 dragon-breath:
   name: DRAGON BREATH
-  type: POWER
+  type: focus
   level: 3
   rarity: 1
   traits: [evocation]
@@ -2378,7 +2378,7 @@ dragon-breath:
     "+1": The damage increases by 1d6.
 dragon-claws:
   name: DRAGON CLAWS
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [morph, transmutation]
@@ -2472,7 +2472,7 @@ dragon-form:
        Your battle form is Huge, you gain a +20-foot status bonus to your fly Speed, and your attacks have 10-foot reach (or 15-foot reach if they previously had 10-foot reach). You instead gain AC = 21 + your level, 15 temporary HP, an attack modifier of +28, a damage bonus of +12, Athletics +28, and a +14 status bonus to breath weapon damage.
 dragon-wings:
   name: DRAGON WINGS
-  type: POWER
+  type: focus
   level: 5
   rarity: 1
   traits: [morph, transmutation]
@@ -2491,7 +2491,7 @@ dragon-wings:
       The duration increases to 10 minutes. Spell Points increase the duration by 5 minutes.
 dread-aura:
   name: DREAD AURA
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [enchantment, emotion, fear, mental]
@@ -2773,7 +2773,7 @@ elemental-form:
       Your battle form is Huge and your attacks have 15-foot reach. You must have space to expand or the spell is lost. You instead gain AC = 22 + your level, 20 temporary HP, an attack modifier of +25, a damage bonus of +11, double the number of damage dice (including persistent damage), and Acrobatics or Athletics +25.
 elemental-tempest:
   name: ELEMENTAL TEMPEST
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [evocation]
@@ -2791,7 +2791,7 @@ elemental-tempest:
     6th:  The damage is 2d8 per triggering spell level.
 embrace-the-pit:
   name: EMBRACE THE PIT
-  type: POWER
+  type: focus
   level: 3
   rarity: 1
   traits: [evil, morph, transmutation]
@@ -2811,7 +2811,7 @@ embrace-the-pit:
         weakness to good damage by 5.
 empty-body:
   name: EMPTY BODY
-  type: POWER
+  type: focus
   level: 9
   rarity: 1
   traits: [conjuration, teleportation]
@@ -2839,7 +2839,7 @@ endure-elements:
     5th:  The target is protected from severe cold, severe heat, extreme cold, and extreme heat.
 enduring-might:
   name: ENDURING MIGHT
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [abjuration]
@@ -2851,7 +2851,7 @@ enduring-might:
       level plus your Strength modifier.
 energy-absorption:
   name: ENERGY ABSORPTION
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [abjuration]
@@ -3007,7 +3007,7 @@ ethereal-jaunt:
       You can target up to five additional willing creatures at a range of 30 feet. The duration is up to 10 minutes.
 fabricate:
   name: FABRICATE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [conjuration]
@@ -3047,7 +3047,7 @@ fabricated-truth:
           crit-fail: The target believes the statement with unlimited duration.
 face-in-the-crowd:
   name: FACE IN THE CROWD
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [illusion, visual]
@@ -3061,7 +3061,7 @@ face-in-the-crowd:
       the crowd, and ignore difficult terrain caused by the crowd.
 faerie-dust:
   name: FAERIE DUST
-  type: POWER
+  type: focus
   level: 1
   rarity: 0
   traits: [enchantment, mental]
@@ -3237,7 +3237,7 @@ feet-to-fins:
     6th: The spell lasts until the next time you make your daily preparations.
 fey-disappearance:
   name: FEY DISAPPEARANCE
-  type: POWER
+  type: focus
   level: 3
   rarity: 1
   traits: [enchantment]
@@ -3302,7 +3302,7 @@ finger-of-death:
     "+1": The damage increases by 10.
 fire-ray:
   name: FIRE RAY
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [evocation, fire]
@@ -3364,7 +3364,7 @@ fireball:
     "+1": The damage increases by 2d6.
 flame-barrier:
   name: FLAME BARRIER
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [abjuration, fire]
@@ -3495,7 +3495,7 @@ forbidding-ward:
     6th:  The status bonus increases to +2.
 force-bolt:
   name: FORCE BOLT
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [attack, evocation, force]
@@ -3518,7 +3518,7 @@ force-bolt:
     "+1": The damage increases by 1d4.
 forced-quiet:
   name: FORCED QUIET
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [abjuration]
@@ -3696,7 +3696,7 @@ glibness:
       Falsehoods pass your lips as smoothly as silk. You gain a +4 status bonus to Deception checks to Lie and against Perception checks to discern if you are telling the truth, and you add your level even if you're untrained. If the implausibility of your lies prompts a circumstance penalty or a DC increase, reduce that penalty or increase by half.
 glimpse-the-truth:
   name: GLIMPSE THE TRUTH
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [divination]
@@ -3749,7 +3749,7 @@ globe-of-invulnerability:
       You create an immobile globe around yourself that attempts to counteract any spell from outside the globe whose area or targets enter into the globe, as if the globe were a dispel magic spell 1 level lower than its actual spell level. If the counteract attempt succeeds, it prevents only the portion of the spell that would have entered the globe (so if the spell also has targets outside the globe, or part of its area is beyond the globe, those targets or that area is affected normally). You must form the sphere in an unbroken open space, so its edges don't pass through any creatures or objects, or the spell is lost (though creatures can enter the globe after the spell is cast).
 glutton-s-jaws:
   name: GLUTTON'S JAWS
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [necromancy]
@@ -3824,7 +3824,7 @@ goblin-pox:
           "Stage 3": sick 1 and can't reduce its sick value below 1 (1 day)
 goodberry:
   name: GOODBERRY
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [healing, necromancy]
@@ -4002,7 +4002,7 @@ hallucinatory-terrain:
       create illusory structures (but still doesn't disguise creatures).
 hand-of-the-apprentice:
   name: HAND OF THE APPRENTICE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [attack, evocation]
@@ -4051,7 +4051,7 @@ harm:
       and the extra healing for the 2-action version increases by 8.
 harmonize:
   name: HARMONIZE
-  type: POWER
+  type: focus
   level: 3
   rarity: 1
   traits: [enchantment]
@@ -4114,7 +4114,7 @@ heal:
       and the extra healing for the 2-action version increases by 8.
 heal-animal:
   name: HEAL ANIMAL
-  type: POWER
+  type: focus
   level: 1
   rarity: 0
   traits: [healing, necromancy, positive]
@@ -4137,7 +4137,7 @@ heal-animal:
     "+1": The amount of healing increases by 2d8.
 healer-s-blessing:
   name: HEALER'S BLESSING
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [necromancy]
@@ -4150,7 +4150,7 @@ healer-s-blessing:
       the healing increases by that amount but the damage does not.
 healing-font:
   name: HEALING FONT
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [necromancy]
@@ -4162,7 +4162,7 @@ healing-font:
       thus this casting of heal doesn't expend a use of channel energy.
 hellfire-plume:
   name: HELLFIRE PLUME
-  type: POWER
+  type: focus
   level: 5
   rarity: 1
   traits: [evil, evocation, fire]
@@ -4306,7 +4306,7 @@ humanoid-form:
       you gain the effects of the enlarge spell.
 hurtling-stone:
   name: HURTLING STONE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [attack, earth, evocation]
@@ -4629,7 +4629,7 @@ invisibility:
     4th: The spell lasts 1 minute, but it doesn't end if the target uses a hostile action.
 invisibility-cloak:
   name: INVISIBILITY CLOAK
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [illusion]
@@ -4703,7 +4703,7 @@ jump:
       Leap action.
 ki-blast:
   name: KI BLAST
-  type: POWER
+  type: focus
   level: 3
   rarity: 1
   traits: [attack, evocation, force]
@@ -4726,7 +4726,7 @@ ki-blast:
     "+1": The damage increases by 2d4.
 ki-rush:
   name: KI RUSH
-  type: POWER
+  type: focus
   level: 1
   rarity: 0
   traits: [transmutation]
@@ -4739,7 +4739,7 @@ ki-rush:
       during this movement and until the start of your next turn."
 ki-strike:
   name: KI STRIKE
-  type: POWER
+  type: focus
   level: 1
   rarity: 0
   traits: [transmutation]
@@ -4783,7 +4783,7 @@ know-direction:
       or a favorite tavern.
 know-the-enemy:
   name: KNOW THE ENEMY
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [divination, fortune]
@@ -4851,7 +4851,7 @@ levitate:
       You defy gravity and levitate the target 5 feet off the ground. For the duration of the spell, you can move the target up or down 10 feet with a single action, which has the concentrate trait. A creature floating in the air from levitate takes a –2 circumstance penalty to attack rolls. A floating creature can spend an Interact action to stabilize itself and negate this penalty for the remainder of its turn. If the target is adjacent to a fixed object or terrain of suitable stability, it can move across the surface by climbing (if the surface is vertical, like a wall) or crawling (if the surface is horizontal, such as a ceiling). The GM determines which surfaces can be climbed or crawled across.
 life-siphon:
   name: LIFE SIPHON
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [healing, necromancy]
@@ -4914,7 +4914,7 @@ lingering-composition:
           failure: The composition lasts 1 round, but you don't spend the Focus Point for casting this spell.
 litany-against-sloth:
   name: LITANY AGAINST SLOTH
-  type: POWER
+  type: focus
   level: 5
   rarity: 1
   traits: [champion, evocation, litany, good]
@@ -4980,7 +4980,7 @@ litany-of-righteousness:
     "+1": The weakness increases by 1.
 localized-quake:
   name: LOCALIZED QUAKE
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [earth, transmutation]
@@ -5051,7 +5051,7 @@ longstrider:
     2nd: The duration increases to 8 hours.
 lorekeeper-s-fortune:
   name: LOREKEEPER'S FORTUNE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [divination, fortune]
@@ -5078,7 +5078,7 @@ loremaster-s-etude:
       You call upon your muse's deep mysteries, granting the target a greater ability to think and recall information. Roll the triggering Recall Knowledge skill check twice and use the better result.
 lucky-break:
   name: LUCKY BREAK
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [divination, fortune]
@@ -5311,7 +5311,7 @@ massacre:
     10th: The spell can affect creatures up to 19th level. Increase the damage to 10d6 on a success, and to 115 on a failure.
 master-s-illusion:
   name: MASTER'S ILLUSION
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [illusion]
@@ -5408,7 +5408,7 @@ message:
     3rd: The spell's range increases to 500 feet.
 metamagician-s-shortcut:
   name: METAMAGICIAN'S SHORTCUT
-  type: POWER
+  type: focus
   level: 3
   rarity: 1
   traits: [enchantment]
@@ -5627,7 +5627,7 @@ moment-of-renewal:
       The targets experience a day's worth of recovery in an instant. Any detrimental effects that would be gone after 24 hours end, though this doesn't shorten the duration of any active spells affecting the targets. The targets regain Hit Points and recover from conditions as if they had taken 24 hours of rest, but they do not make their daily preparations again or gain any benefits of rest other than healing. The targets are then temporarily immune for 1 day.
 money-talks:
   name: MONEY TALKS
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [transmutation]
@@ -5692,7 +5692,7 @@ moon-frenzy:
       The temporary Hit Points increase to 20, the silver weakness to 20, and the damage dealt by the attacks to four dice.
 moonbeam:
   name: MOONBEAM
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [attack, evocation, fire, light]
@@ -5711,7 +5711,7 @@ moonbeam:
     "+1": The ray's damage increases by 1d6.
 moonlight-glow:
   name: MOONLIGHT GLOW
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [evocation, light]
@@ -5727,7 +5727,7 @@ moonlight-glow:
       moonlight also appears in an area of moonlight glow.
 mystic-beacon:
   name: MYSTIC BEACON
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [evocation]
@@ -5773,7 +5773,7 @@ nature-incarnate:
             "Speed 50 feet; resistance 5 to physical damage; Melee [[A]] jaws (reach 30 feet), Damage 6d10+10 piercing; Melee [[A]] claw s (agile, reach 30 feet), Damage 6d8+8 slashing; Melee [[A]] foot (agile , reach 15 feet), Damage 6d6+10 bludgeoning; Unstoppable You are immune to being immobilized and ignore difficult terrain and greater difficult terrain; TrampleThree Actions You move up to double your Speed and move through the spaces of Huge or smaller creatures, trampling each creature whose space you enter. A trampled creature takes foot damage with a basic Reflex save against your spell DC."
 nature-s-bounty:
   name: NATURE'S BOUNTY
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [conjuration, plant]
@@ -5948,7 +5948,7 @@ overwhelming-presence:
             As failure, and the target must spend all its actions paying tribute if possible.
 paladin-s-sacrifice:
   name: PALADIN'S SACRIFICE
-  type: POWER
+  type: focus
   level: 6
   rarity: 1
   traits: [abjuration]
@@ -6059,7 +6059,7 @@ passwall:
       The tunnel can be up to 20 feet deep. The areas of the wall that contain your tunnel's entrance appear completely normal (unless viewed with true seeing or a similar effect), despite the tunnel's existence. The tunnel's entrance functions as a solid wall, but you can specify a password or a trigger (page 305), allowing creatures to enter the tunnel freely.
 perfected-form:
   name: PERFECTED FORM
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [abjuration, fortune]
@@ -6072,7 +6072,7 @@ perfected-form:
       Reroll the saving throw and use whichever result was better.
 perfected-mind:
   name: PERFECTED MIND
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [abjuration]
@@ -6208,7 +6208,7 @@ phantom-steed:
       can walk on water, and ignores areas of natural difficult terrain.
 physical-boost:
   name: PHYSICAL BOOST
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [transmutation]
@@ -6392,7 +6392,7 @@ power-word-stun:
     "+1": The levels at which each outcome applies increase by 2.
 prepare-for-battle:
   name: PREPARE FOR BATTLE
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [enchantment, mental]
@@ -6615,7 +6615,7 @@ protection:
       this spell gains the good trait, and vice versa.
 protective-aura:
   name: PROTECTIVE AURA
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [abjuration]
@@ -6629,7 +6629,7 @@ protective-aura:
       resistance while they are within the aura.
 protective-ward:
   name: PROTECTIVE WARD
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [abjuration]
@@ -6712,7 +6712,7 @@ purple-worm-sting:
           "Stage 3": 6d6 poison damage and enfeebled 2 (1 round)
 pushing-gust:
   name: PUSHING GUST
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [air, conjuration]
@@ -6731,7 +6731,7 @@ pushing-gust:
           crit-fail: Per failure and the target is also knocked prone.
 quivering-palm:
   name: QUIVERING PALM
-  type: POWER
+  type: focus
   level: 8
   rarity: 1
   traits: [attack, necromancy]
@@ -6851,7 +6851,7 @@ read-aura:
     6th: You can target any number of objects.
 read-fate:
   name: READ FATE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [divination, prediction]
@@ -7086,7 +7086,7 @@ restore-senses:
       The spell's range increases to 30 feet, and you can target up to 10 creatures. You can choose the effect to counteract separately for each selected creature.
 retributive-pain:
   name: RETRIBUTIVE PAIN
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [abjuration, mental, nonlethal]
@@ -7158,7 +7158,7 @@ revival:
       Revival can't resurrect creatures killed by disintegrate or a death effect. It has no effect on undead.
 ridiculous-notion:
   name: RIDICULOUS NOTION
-  type: POWER
+  type: focus
   level: 5
   rarity: 1
   traits: [emotion, enchantment, mental]
@@ -7224,7 +7224,7 @@ rope-trick:
       If the rope is detached or destroyed, or if a creature attempts to enter the space that would put it over its capacity, the space begins to unravel. It disappears in 1d4 rounds, depositing the creatures within safely on the ground below.
 safeguard-secret:
   name: SAFEGUARD SECRET
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [abjuration, mental]
@@ -7285,7 +7285,7 @@ sanctuary:
             to attack the target for the rest of sanctuary's duration.
 savor-the-sting:
   name: SAVOR THE STING
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [attack, enchantment, mental, nonlethal]
@@ -7559,7 +7559,7 @@ shield-other:
       You forge a temporary link between the target's life essence and your own. The target takes half damage from all effects that deal Hit Point damage, and you take the remainder of the damage. When you take damage through this link, you don't apply any resistances, weaknesses, or other abilities you have to that damage; you simply take that amount of damage. The spell ends if the target is ever more than 30 feet away from you. If either you or the target is reduced to 0 Hit Points, any damage from this spell is resolved and then the spell ends.
 shifting-form:
   name: SHIFTING FORM
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [morph, transmutation]
@@ -7689,7 +7689,7 @@ silence:
       The spell effect emanates from the touched creature, silencing all sound in or passing through a 10- foot radius and preventing any auditory and sonic effects in the affected area. While within the radius, creatures are subject to the same effects as the target. Depending upon the position of the effect, a creature might notice the lack of sound reaching it (blocking off the noise coming from a party, for example).
 skin-of-thorns:
   name: SKIN OF THORNS
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [enchantment, mental]
@@ -7788,7 +7788,7 @@ soothe:
     "+1": The amount of healing increases by 1d10+4.
 soothing-ballad:
   name: SOOTHING BALLAD
-  type: POWER
+  type: focus
   level: 7
   rarity: 1
   traits: [bard, composition, emotion, enchantment, healing, mental]
@@ -7812,7 +7812,7 @@ soothing-ballad:
     "+1": When used to heal, soothing ballad restores 1d8 more Hit Points.
 soothing-words:
   name: SOOTHING WORDS
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [emotion, enchantment, mental]
@@ -8182,7 +8182,7 @@ stoneskin:
     10th: The resistance increases to 20.
 storm-lord:
   name: STORM LORD
-  type: POWER
+  type: focus
   level: 9
   rarity: 1
   traits: [air, electricity, evocation]
@@ -8263,7 +8263,7 @@ storm-of-vengeance:
     10th: The range increases to 2,200 feet and the cloud is a 1,000-foot burst.
 stormwind-flight:
   name: STORMWIND FLIGHT
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [morph, transmutation]
@@ -8305,7 +8305,7 @@ subconscious-suggestion:
     9th: You can target up to 10 creatures.
 sudden-shift:
   name: SUDDEN SHIFT
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [abjuration, move]
@@ -8550,7 +8550,7 @@ sunburst:
     "+1": The fire damage increases by 1d10, and the positive damage against undead increases by 1d10.
 swamp-of-sloth:
   name: SWAMP OF SLOTH
-  type: POWER
+  type: focus
   level: 3
   rarity: 1
   traits: [conjuration]
@@ -8574,7 +8574,7 @@ swamp-of-sloth:
     8th: The damage increases to 4d6.
 sweet-dreams:
   name: SWEET DREAMS
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [enchantment, mental]
@@ -8649,7 +8649,7 @@ synesthesia:
     9th: You can target up to five creatures.
 take-its-course:
   name: TAKE ITS COURSE
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [necromancy]
@@ -8859,7 +8859,7 @@ teleport:
       any planet within the same galaxy.
 tempest-surge:
   name: TEMPEST SURGE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [air, electricity, evocation]
@@ -8884,7 +8884,7 @@ tempest-surge:
     "+1": The damage increases by 1d10.
 tempt-fate:
   name: TEMPT FATE
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [divination, fortune]
@@ -8903,7 +8903,7 @@ tempt-fate:
       is refunded.
 tentacular-limbs:
   name: TENTACULAR LIMBS
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [morph, transmutation]
@@ -8917,7 +8917,7 @@ tentacular-limbs:
       change the reach of your melee weapon attacks.
 thunder-shield:
   name: THUNDER SHIELD
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [air, electricity, evocation]
@@ -8944,7 +8944,7 @@ thunder-shield:
     8th: The damage increases to 7d6.
 tidal-surge:
   name: TIDAL SURGE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [evocation, water]
@@ -9014,7 +9014,7 @@ touch-of-idiocy:
           crit-fail: The target is stupefied 4.
 touch-of-obedience:
   name: TOUCH OF OBEDIENCE
-  type: POWER
+  type: focus
   level: 1
   rarity: 0
   traits: [attack, enchantment, mental]
@@ -9035,7 +9035,7 @@ touch-of-obedience:
           failure: The target is unaffected.
 touch-of-shadows:
   name: TOUCH OF SHADOWS
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [attack, evocation, shadows]
@@ -9056,7 +9056,7 @@ touch-of-shadows:
           failure: The target is unaffected.
 touch-of-undeath:
   name: TOUCH OF UNDEATH
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [attack, necromancy, negative]
@@ -9184,7 +9184,7 @@ uncontrollable-dance:
           crit-fail: The spell's duration is 1 minute, and the target must spend all its actions each turn dancing.
 undead-s-bane:
   name: UNDEAD'S BANE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [necromancy]
@@ -9260,7 +9260,7 @@ unfettered-pack:
     9th: The targets also ignore greater difficult terrain from environmental properties.
 unimpeded-stride:
   name: UNIMPEDED STRIDE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [transmutation]
@@ -9274,7 +9274,7 @@ unimpeded-stride:
       either mundane or magical means.
 unity:
   name: UNITY
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [abjuration, fortune]
@@ -9288,7 +9288,7 @@ unity:
       which modifier to use.
 unlife-s-blessing:
   name: UNLIFE'S BLESSING
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [necromancy]
@@ -9341,7 +9341,7 @@ unseen-servant:
       Sustaining the Spell. The unseen servant gains the summoned trait.
 unusual-anatomy:
   name: UNUSUAL ANATOMY
-  type: POWER
+  type: focus
   level: 5
   rarity: 1
   traits: [polymorph, transmutation]
@@ -9418,7 +9418,7 @@ veil:
       The targets can appear as any creature of the same size, even specific individuals. You must have seen an individual to reproduce their appearance. The spell also disguises the targets' voices and scents; it gains the auditory trait.
 veil-of-confidence:
   name: VEIL OF CONFIDENCE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [enchantment, mental]
@@ -9480,7 +9480,7 @@ vibrant-pattern:
           crit-fail: The creature is blinded for 1 minute.
 vigilant-eye:
   name: VIGILANT EYE
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [divination]
@@ -9599,7 +9599,7 @@ wail-of-the-banshee:
           crit-fail: The target takes double damage and is drained 4.
 walk-on-air:
   name: WALK ON AIR
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [air, conjuration]
@@ -9712,7 +9712,7 @@ wall-of-wind:
           crit-fail: As failure, and the creature is pushed 10 feet away from the wall.
 wanderer-s-guide:
   name: WANDERER'S GUIDE
-  type: POWER
+  type: focus
   level: 2
   rarity: 0
   traits: [divination]
@@ -9747,7 +9747,7 @@ warp-mind:
           crit-fail: The target is confused permanently.
 warped-terrain:
   name: WARPED TERRAIN
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [illusion, visual]
@@ -9772,7 +9772,7 @@ warped-terrain:
       difficult terrain for flying creatures.
 watching-the-watchers:
   name: WATCHING THE WATCHERS
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [detection, divination]
@@ -9889,7 +9889,7 @@ weapon-storm:
     "+1": Add another damage die.
 weapon-surge:
   name: WEAPON SURGE
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [evocation]
@@ -9957,7 +9957,7 @@ weird:
             The target is so afraid, it might instantly die. It must attempt a Fortitude saving throw. If the target succeeds, it takes double damage and is frightened 2, and it's also fleeing until the end of its next turn unless it critically succeeded. If it fails, it is reduced to 0 Hit Points and dies.
 wholeness-of-body:
   name: WHOLENESS OF BODY
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [healing, necromancy, positive]
@@ -9978,7 +9978,7 @@ wholeness-of-body:
     "+1": If you choose to regain Hit Points, the Hit Points regained increase by 2d8.
 wild-morph:
   name: WILD MORPH
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [morph, transmutation]
@@ -10025,7 +10025,7 @@ wild-morph:
     10th: Your wild claws or wild jaws work like a +5 magic weapon and deal 4d6 persistent damage on a hit.
 wild-winds-gust:
   name: WILD WINDS GUST
-  type: POWER
+  type: focus
   level: 7
   rarity: 1
   traits: [attack, evocation]
@@ -10040,7 +10040,7 @@ wild-winds-gust:
       the attacks.
 wild-winds-stance:
   name: WILD WINDS STANCE
-  type: POWER
+  type: focus
   level: 4
   rarity: 1
   traits: [evocation, open, stance]
@@ -10058,7 +10058,7 @@ wild-winds-stance:
       AC against ranged attacks.
 wind-jump:
   name: WIND JUMP
-  type: POWER
+  type: focus
   level: 5
   rarity: 1
   traits: [transmutation]
@@ -10110,7 +10110,7 @@ wish:
           - Reverse certain effects that refer to the wish spell.
 word-of-freedom:
   name: WORD OF FREEDOM
-  type: POWER
+  type: focus
   level: 2
   rarity: 1
   traits: [enchantment, mental]
@@ -10129,7 +10129,7 @@ word-of-freedom:
       on the Spell."
 word-of-truth:
   name: WORD OF TRUTH
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
   traits: [divination]
