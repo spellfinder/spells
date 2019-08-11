@@ -97,14 +97,15 @@ acid-arrow:
   rarity: 0
   casting: [aS, aV]
   range: 120 feet
-  target: one creature or object
+  target: 1 creature or object
   description:
     main:
-      Make a ranged touch attack against the target. On a hit, you deal acid damage equal to 2d8 plus your
-      spellcasting ability modifier plus 1d6 persistent acid damage. On a critical hit, double the damage, but
-      not the persistent damage.
+      You conjure an arrow of acid that continues corroding the target after it hits.
+      Make a spell attack against the target. On a hit, you deal 3d8 acid damage plus
+      1d6 persistent acid damage. On a critical hit, double the initial damage, but not
+      the persistent damage.
   heightened:
-    '+2': 1d8 extra damage and 1d6 extra persistent damage
+    '+2': The initial damage increases by 2d8, and the persistent acid damage increases by 1d6.
 
 acid-splash:
   name: Acid Splash
@@ -643,13 +644,17 @@ bane:
   rarity: 0
   traits: [enchantment, mental]
   casting: [aS, aV]
-  area: 30-foot aura
-  target: enemies in the aura
-  duration: sustained, up to 1 minute
+  area: 5-foot emanation
+  target: enemies in the area
+  duration: 1 minute
+  save: Will
   description:
     main:
-      Divine censure makes it difficult for your enemies to attack. Targets
-      take a -1 conditional penalty to attack rolls. Bane can dispel bless.
+      You fill the minds of your enemies with doubt. Targets that fail their Will saves take
+      a -1 status penalty to attack rolls as long as they are in the area. Once per turn,
+      starting the turn after you cast bane, you can use a single action, which has the
+      concentrate trait, to increase the emanation's radius by 5 feet and force enemies in
+      the area that weren't yet affected to attempt another saving throw. Bane can counteract bless.
 banishment:
   name: BANISHMENT
   type: SPELL
@@ -797,13 +802,16 @@ bless:
   rarity: 0
   casting: [aS, aV]
   traits: [enchantment, mental]
-  area: 30-foot aura
-  target: you and allies in the aura
-  duration: sustained, up to 1 minute
+  area: 5-foot emanation
+  target: you and allies in the area
+  duration: 1 minute
   description:
     main:
-      Blessings from beyond make your companions potent. They gain a
-      +1 conditional bonus to attack rolls. Bless can dispel bane.
+      Blessings from beyond help your companions strike true.
+      You and your allies in the area gain a +1 status bonus to attack rolls.
+      Once per turn, starting the turn after you cast bless, you can use a single action,
+      which has the concentrate trait, to increase the emanation's radius by 5 feet.
+      Bless can counteract bane.
 blind-ambition:
   name: BLIND AMBITION
   type: POWER
@@ -884,10 +892,13 @@ blur:
   traits: [illusion, visual]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: 1 minute
   description:
-    main: The target's form appears blurry and it is concealed.
+    main:
+      The target's form appears blurry. It becomes concealed.
+      As the nature of this effect still leaves the target's location obvious,
+      the target can't use this concealment to Hide or Sneak.
 breath-of-life:
   name: BREATH OF LIFE
   type: SPELL
@@ -1926,15 +1937,15 @@ detect-alignment:
   rarity: 1
   traits: [detection, divination]
   casting: [aS, aV]
-  area: 30-foot aura
+  area: 30-foot emanation
   description:
     main:
       Your eyes glow as you sense aligned auras. Choose chaotic, evil,
       good, or lawful. You detect auras of that alignment. You receive
       no information beyond presence or absence. You can choose not
       to detect creatures or effects you're aware have that alignment.
-      Only divine spellcasters, undead, and beings from the Outer
-      Sphere have an alignment aura if they are 6th level or higher.
+      Only creatures of 5th level or higher - unless divine spellcasters,
+      undead, or beings from the Outer Sphere - have alignment auras.
   heightened:
     2nd: You also learn each aura's location and strength.
 detect-magic:
@@ -1971,16 +1982,16 @@ detect-poison:
   traits: [detection, divination]
   casting: [aS, aV]
   range: 30 feet
-  target: one object or creature
+  target: 1 object or creature
   description:
     main:
       You detect whether a creature is venomous or poisonous, or
       an object is poison or has been poisoned. You do not ascertain
       whether the target is poisonous in multiple ways, nor do you
-      learn the type or types of poison. Certain substances like lead and
-      alcohol are poisons and thus can mask other poisons.
+      learn the type or types of poison. Certain substances, like lead and
+      alcohol, are poisons and thus can mask other poisons.
   heightened:
-          2nd:  You determine the number and types of poison.
+    2nd:  You learn the number and types of poison.
 detect-scrying:
   name: DETECT SCRYING
   type: SPELL
@@ -2303,10 +2314,10 @@ disrupting-weapons:
   target: up to two weapons, each of which must be unattended or wielded by you or a willing ally
   duration: 1 minute
   description:
-    main: Targets' attacks deal an extra 1d4 positive damage to undead.
+    main: You infuse weapons with positive energy. Attacks with these weapons deal an extra 1d4 positive damage to undead.
   heightened:
-    3rd:  Target up to three weapons, 2d4 damage.
-    5th:  Target up to four weapons, 3d4 damage.
+    3rd:  The damage increases to 2d4 damage.
+    5th:  Target up to three weapons, and the damage increases to 3d4 damage.
 divine-aura:
   name: DIVINE AURA
   type: SPELL
@@ -4488,37 +4499,32 @@ harm:
   rarity: 0
   traits: [necromancy, negative]
   casting: [aS, or more]
-  range: touch, Range 30 feet, or Area 30-foot aura (see text)
-  target: one living creature or willing undead creature
+  range: varies
+  target: 1 living creature or 1 willing undead creature
   description:
     main:
       You channel negative energy to harm the living or heal the undead.
-      You restore Hit Points equal to 1d8 plus your spellcasting ability
-      modifier to a willing undead target, or deal that amount of negative
-      damage to a living target. The number of actions spent Casting this
-      Spell determines its targets, range, area, and other parameters.\
+       If the target is a living creature, you deal 1d8 negative damage to it,
+      and it gets a basic Fortitude save.
+       If the target is a willing undead creature, you restore that amount of Hit Points.
+      The number of actions you spend when Casting this Spell determines its targets,
+      range, area, and other parameters.
       ${subsection.effects}
     subsections:
       effects:
         type: dl
         content:
-          "Somatic Casting":
-            The spell has a range of touch. You must
-            succeed at a melee touch attack to damage a living target.
+          "Somatic Casting": The spell has a range of touch.
           "Somatic Casting, Verbal Casting":
-            The spell has a range of 30 feet and doesn't require a touch attack
-            when targeting a living creature. A living target must attempt a
-            Fortitude save, taking half damage on a success, no damage on a
-            critical success, or double damage on a critical failure.
+            The spell has a range of 30 feet. If you're healing an undead creature,
+            increase the Hit Points restored by 8.
           "Material Casting, Somatic Casting, Verbal Casting":
-            You disperse negative energy in a 30-foot aura. This has the
-            same effect as the two-action version, but it targets all living
-            and undead creatures in the burst and reduces the amount of
-            healing or damage to your spellcasting ability modifier.
+             You disperse negative energy in a 30-foot emanation.
+             This targets all living and undead creatures in the area.
   heightened:
     "+1":
       the amount of healing or damage increases by 1d8,
-      or by 2d8 if you're using the 1- or 2-action version to heal undead.
+      and the extra healing for the 2-action version increases by 8.
 harmonize:
   name: HARMONIZE
   type: POWER
@@ -4557,37 +4563,32 @@ heal:
   rarity: 0
   traits: [healing, necromancy, positive]
   casting: [aS, or more]
-  range: touch, Range 30 feet, or Area 30-foot aura (see text)
+  range: varies
   target: one willing living creature or one undead creature
   description:
     main:
-      You channel positive energy to heal the living or damage the
-      undead. You restore Hit Points equal to 1d8 plus your spellcasting
-      ability modifier to a willing living target, or deal that amount of
-      positive damage to an undead target. The number of actions you
-      spend when Casting this Spell determines its targets, range, area,
-      and other parameters. ${subsection.effects}
+      You channel positive energy to heal the living or damage the undead.
+       If the target is a willing living creature, restore 1d8 Hit Points.
+       If the target is undead, you deal that amount of positive damage to it,
+       and it gets a basic Fortitude save.
+      The number of actions you spend when Casting this Spell determines its targets,
+      range, area, and other parameters.
+      ${subsection.effects}
     subsections:
       effects:
         type: dl
         content:
-          "Somatic Casting":
-            The spell has a range of touch. You must
-            succeed at a melee touch attack to damage an undead target.
+          "Somatic Casting": The spell has a range of touch.
           "Somatic Casting, Verbal Casting":
-            The spell has a range of 30 feet and doesn't require a touch attack
-            when targeting an undead creature. An undead target must attempt a
-            Fortitude save, taking half damage on a success, no damage on a
-            critical success, or double damage on a critical failure.
+            The spell has a range of 30 feet. If you're healing a living creature,
+            increase the Hit Points restored by 8.
           "Material Casting, Somatic Casting, Verbal Casting":
-            You disperse positive energy in a 30-foot aura. This has the
-            same effect as the two-action version, but it targets all living
-            and undead creatures in the burst and reduces the amount of
-            healing or damage to your spellcasting ability modifier.
+             You disperse positive energy in a 30-foot emanation.
+             This targets all living and undead creatures in the burst.
   heightened:
     "+1":
-      The amount of healing or damage increases by 1d8,
-      or by 2d8 if you're using the 1- or 2-action version to heal the living.
+      the amount of healing or damage increases by 1d8,
+      and the extra healing for the 2-action version increases by 8.
 heal-animal:
   name: HEAL ANIMAL
   type: POWER
@@ -7687,19 +7688,18 @@ protection:
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: 1 minute
   description:
     main:
-      Choose chaotic, evil, good, or lawful when you cast this spell. If
-      you choose chaos, this spell gains the lawful trait and vice versa.
-      If you choose evil, this spell gains the good trait and vice versa.
-      The target gains a +1 conditional bonus to their Armor Class
-      against attacks by creatures of the chosen alignment and on
-      saving throws against effects created by such creatures. This
-      bonus increases to +3 against effects from such creatures that
-      would directly control the target and against attacks made by
+      You ward a creature against a specified alignment. Choose chaotic, evil, good, or lawful
+      when you cast this spell. The target gains a +1 status bonus to Armor Class and saving throws
+      against creatures and effects of the chosen alignment. This bonus increases to +3 against effects
+      from such creatures that would directly control the target and against attacks made by
       summoned creatures of the chosen alignment.
+      This spell gains the trait that opposes the alignment you chose—if you choose chaos,
+      this spell gains the lawful trait, and vice versa; if you choose evil,
+      this spell gains the good trait, and vice versa.
 protective-aura:
   name: PROTECTIVE AURA
   type: POWER
@@ -7784,8 +7784,8 @@ purify-food-and-drink:
   description:
     main:
       You remove toxins and contaminations from food and drink,
-      making them safe to consume. This doesn't prevent natural
-      decay or spoilage. One cubic foot of liquid is roughly 8 gallons.
+      making them safe to consume. The spell doesn't prevent future contamination,
+      natural decay or spoilage. One cubic foot of liquid is roughly 8 gallons.
 purple-worm-sting:
   name: PURPLE WORM STING
   type: SPELL
@@ -8549,20 +8549,20 @@ sanctuary:
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
-  target: one creature
-  duration: 1 minute or until dismissed
+  target: 1 creature
+  duration: 1 minute
   description:
     main:
-      Creatures attempting to attack the target must attempt a Will
-      save each time, with outcomes depending on their saves. If the
-      target acts in a hostile manner, the spell is dismissed.
+      You ward a creature with protective energy that deters enemy attacks.
+      Creatures attempting to attack the target must attempt a Will save each time.
+      If the target uses a hostile action, the spell ends.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success: The creature can attempt its attack and any other attacks against the target this turn.
-          crit: Sanctuary is dismissed.
+          crit: Sanctuary ends.
           failure:
             The creature can't attack the target and wastes the action.
             It can't attempt further attacks against the target this turn.
@@ -9431,6 +9431,31 @@ spiritual-epidemic:
           crit: The target is unaffected.
           failure: Enfeebled 2 for 1 minute, enfeebled 1 permanently.
           crit-fail: Enfeebled 3 for 1 minute, enfeebled 2 permanently.
+spirit-link:
+  name: Spirit Link
+  type: spell
+  level: 1
+  rarity: 0
+  casting: [aS, aV]
+  traits: [healing, necromancy]
+  range: 30 feet
+  target: 1 willing creature
+  duration: 10 minutes
+  description:
+    main:
+      You form a spiritual link with another creature, allowing you to take in its pain.
+      When you Cast this Spell and at the start of each of your turns,
+      if the target is below maximum Hit Points, it regains 2 Hit Points
+      (or the difference between its current and maximum Hit Points, if that's lower).
+      You lose as many Hit Points as the target regained.
+      This is a spiritual transfer, so no effects apply that would increase the Hit Points
+      the target regains or decrease the Hit Points you lose. This transfer also ignores any
+      temporary Hit Points you or the target have. Since this effect doesn't involve positive
+      or negative energy, spirit link works even if you or the target is undead.
+      While the duration persists, you gain no benefit from regeneration or fast healing.
+      You can Dismiss this spell, and if you're ever at 0 Hit Points, spirit link ends automatically.
+  heightened:
+    "+1": The number of Hit Points transferred each time increases by 2.
 spiritual-guardian:
   name: SPIRITUAL GUARDIAN
   type: SPELL
