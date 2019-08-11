@@ -5815,14 +5815,14 @@ magic-fang:
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
-  target: one willing ally
+  target: 1 willing ally
   duration: 1 minute
   description:
     main:
-      Choose one of the target's unarmed attacks that deals 1 die of
-      damage. You cause that unarmed attack to shine with primal energy.
-      The unarmed attack counts a +1 magic weapon, gaining a +1 item
-      bonus to attack rolls and dealing another die of damage on a hit.
+      Choose one of the target's unarmed attacks that deals one damage die.
+      You cause that unarmed attack to shine with primal energy.
+      he unarmed attack becomes a +1 striking unarmed attack, gaining a +1
+      item bonus to attack rolls and increasing the number of damage dice to two.
 magic-missile:
   name: MAGIC MISSILE
   type: SPELL
@@ -6935,17 +6935,16 @@ pass-without-trace:
   duration: 1 hour
   description:
     main:
-      You reduce the tracks you leave behind, adding a +4 conditional
-      bonus to the DC needed to track you, or setting the DC of
-      tracking you equal to the spell's DC, whichever is higher. You can
-      gain only one of these two benefits; casting pass without trace
-      multiple times doesn't improve the DC further.
+      You obscure the tracks you leave behind and make it harder for others to find you.
+      The DC of checks to Track you gains a +4 status bonus or is equal to your spell DC,
+      whichever results in a higher DC. You can benefit from only one pass without
+      trace spell at a time.
   heightened:
     2nd: The duration increases to 8 hours.
     4th:
       The duration increases to 8 hours. The spell
-      has a 20-foot range and a 20-foot aura area, affecting up to 10
-      creatures of your choice within that area.
+      has a range of 20 feet and an area of a 20-foot emanation,
+      affecting up to 10 creatures of your choice within that area.
 passwall:
   name: PASSWALL
   type: SPELL
@@ -8928,17 +8927,17 @@ shillelagh:
   traits: [plant, transmutation]
   casting: [aS, aV]
   range: touch
-  target: one nonmagical club or staff you are holding
+  target: 1 non-magical club or staff you hold
   duration: 1 minute
   description:
     main:
       The target grows vines and leaves, brimming with primal energy.
-      The target gains the effects of a +1 weapon potency rune in
-      your hands, gaining a +1 item bonus to attack rolls and dealing
-      another die of damage on a hit. Additionally, as long as you are
-      on your home plane, attacks you make with the target against
-      aberrations, extraplanar creatures, and undead deal a third die
-      of damage on a hit.
+      The target becomes a +1 striking weapon while in your hands,
+      gaining a +1 item bonus to attack rolls and increasing the number
+      of weapon damage dice to two. Additionally, as long as you are on your
+      home plane, attacks you make with the target against aberrations,
+      extraplanar creatures, and undead increase the number of weapon damage
+      dice to three.
 shocking-grasp:
   name: SHOCKING GRASP
   type: SPELL
@@ -9850,47 +9849,20 @@ summon-construct:
     8th: Level 11.
     9th: Level 13.
     10th: Level 15.
-summon-monster:
-  name: SUMMON MONSTER
-  type: SPELL
+summon-plant-or-fungus:
+  name: Summon Plant or Fungus
+  type: spell
   level: 1
   rarity: 0
-  traits: [conjuration]
   casting: [aM, aS, aV]
+  duration: sustained up to 1 minute
   range: 30 feet
-  duration: sustained, up to 1 minute or until dismissed
+  traits: [conjuration]
   description:
     main:
-      You summon a level 0 creature from the summon monster list. This
-      creature fights for you until the spell ends. The creature gains the
-      summoned trait. The spell automatically ends if the monster's Hit
-      Points drop to 0. Summoned creatures have 2 actions per turn
-      (which they use when you Concentrate on the Spell) and can't
-      use reactions. The creature attacks your enemies to the best of
-      its abilities. If you can communicate with it, you can attempt to
-      command it as part of your action to Concentrate on a Spell, but
-      the GM determines the degree to which it follows your commands.
-      Heightening the spell increases the maximum level of monster
-      you can summon. You can always summon a monster of a lower
-      level than the spell allows. ${subsection.monsters}
-    subsections:
-      monsters:
-        type: table
-        content:
-          headers:
-            - Spell level
-            - Monsters
-          rows:
-            - [1st, "Level 0: Animated broom, bloodseeker, bobcat, dog, dire rat, fire beetle, pig, pony, viper"]
-            - [2nd, "Level 1: Animated bureau, imp devil, mephit elemental, quasit demon"]
-            - [3rd, "Level 2: Animated armor, lemure devil, sloth demon"]
-            - [4th, "Level 3: Animated statue, hell hound, minor elemental"]
-            - [5th, "Level 5: Lesser elemental; Level 4: bearded devil"]
-            - [6th, "Level 7: Blood demon, major elemental; Level 6: lust demon, nightmare, salamander"]
-            - [7th, "Level 9: Bone devil, efreeti genie, greater elemental, wrath demon; Level 8: erinyes devil"]
-            - [8th, "Level 11: Elder elemental, toad demon; Level 10: barbed devil, slaver demon"]
-            - [9th, "Level 13: Ice devil, treachery demon; Level 12: slime demon, valkyrie"]
-            - [10th, "Level 15: Phoenix; Level 14: boar demon"]
+      You conjure a plant or fungus to fight for you.
+      This works like summon animal, except you summon a common creature
+      that has the plant or fungus trait and whose level is –1.
   heightened:
     2nd: Level 1.
     3rd: Level 2.
