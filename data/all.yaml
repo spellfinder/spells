@@ -2828,6 +2828,7 @@ elemental-motion:
   description:
     main:
       You call upon your element to propel you, improving your Speed depending on your element. This spell has your element's trait.
+      ${subsection.elements}
     subsections:
       elements:
         type: dl
@@ -5849,8 +5850,10 @@ moonbeam:
       ${subsection.outcomes}
     subsections:
       outcomes:
-        crit: The beam deals double damage, and the target is dazzled for 1 minute.
-        success: The beam deals full damage, and the target is dazzled for 1 round.
+        type: dl
+        content:
+          crit: The beam deals double damage, and the target is dazzled for 1 minute.
+          success: The beam deals full damage, and the target is dazzled for 1 round.
   heightened:
     "+1": The ray's damage increases by 1d6.
 moonlight-glow:
@@ -6827,6 +6830,7 @@ protector-s-sacrifice:
   level: 1
   rarity: 1
   domain: protection
+  traits: [abjuration, cleric]
   casting: [rS]
   trigger: An ally withtin 30 feet takes damage
   range: 30 feet
@@ -9257,12 +9261,13 @@ touch-of-undeath--cleric-:
       You attack the target's life force with undeath, dealing 1d6 negative damage. The target must attempt a Fortitude save.
       ${subsection.save}
     subsections:
-      type: dl
-      content:
-        crit: The target is unaffected.
-        success: The target takes half damage.
-        failure: The target takes full damage, and positive effects heal it only half as much as normal for 1 round.
-        crit-fail: The target takes double damage, and positive effects heal it only half as much as normal for 1 minute.
+      save:
+        type: dl
+        content:
+          crit: The target is unaffected.
+          success: The target takes half damage.
+          failure: The target takes full damage, and positive effects heal it only half as much as normal for 1 round.
+          crit-fail: The target takes double damage, and positive effects heal it only half as much as normal for 1 minute.
   heightened:
     "+1": The damage increases by 1d6.
 touch-of-undeath--sorcerer-:

@@ -30,7 +30,7 @@ def to_id(name):
 
 def validate(data):
     errors = []
-    key_re = re.compile(r'^[a-z]+(-[a-z]+)*$')
+    key_re = re.compile(r'^[a-z]+(-+[a-z]+)*-?$')
     for k, v in data.items():
         if not key_re.match(k):
             errors.append('Invalid key name: {}'.format(k))
