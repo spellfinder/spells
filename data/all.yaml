@@ -6215,7 +6215,7 @@ mindlink:
   traits: [divination, mental]
   casting: [aS, aV]
   range: touch
-  target: one willing creature
+  target: 1 willing creature
   description:
     main:
       You link your mind to the target's mind and mentally impart to
@@ -7104,27 +7104,27 @@ phantom-pain:
   traits: [illusion, mental, nonlethal]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: 1 minute
+  save: Will
   description:
     main:
-      Pain wracks the target, dealing 1d4 mental damage and 2d4
+      Illusory pain wracks the target, dealing 2d4 mental damage and 1d4
       persistent mental damage. The target must attempt a Will
-      saving throw. ${subsection.save}
+      save. ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success:
-            Full damage, but no persistent damage and the spell ends immediately.
+            The target takes full initial damage but no persistent damage, and the spell ends immediately.
           crit: The target is unaffected.
           failure:
-            Full damage, and the target is sick 1. If the target
-            recovers from being sick, its persistent mental damage
-            ends as well and the spell ends.
-          crit-fail: Per failure, but the target is sick 2.
+            The target takes full initial and persistent damage, and the target is sickened 1.
+            If the target recovers from being sickened, the persistent damage ends and the spell ends.
+          crit-fail: As failure, but the target is sickened 2.
   heightened:
-    "+1": The damage increases by 2d4 and the persistent damage by 1.
+    "+1": The damage increases by 2d4 and the persistent damage by 1d4.
 phantom-steed:
   name: PHANTOM STEED
   type: SPELL
@@ -9133,19 +9133,18 @@ soothe:
   type: SPELL
   level: 1
   rarity: 0
-  traits: [healing, mental, necromancy, positive]
+  traits: [emotion, enchantment, healing, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one willing or unconscious living creature
+  target: 1 willing living creature
   duration: 1 minute
   description:
     main:
       You grace the target's mind, boosting its mental defenses and healing
-      its wounds. The target regains Hit Points equal to 1d6 plus your
-      spellcasting ability modifier when you Cast the Spell and gains a +1
-      conditional bonus to saves against mental effects for the duration.
+      its wounds. The target regains  1d10+4 Hit Points when you Cast the Spell
+      and gains a +2 status bonus to saves against mental effects for the duration.
   heightened:
-    "+1": The amount of healing increases by 2d6.
+    "+1": The amount of healing increases by 1d10+4.
 soothing-ballad:
   name: SOOTHING BALLAD
   type: POWER
