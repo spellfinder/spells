@@ -30,7 +30,7 @@ def to_id(name):
 
 def validate(data):
     errors = []
-    key_re = re.compile(r'^[a-z]+(-[a-z]+)*$')
+    key_re = re.compile(r'^[a-z]+(-+[a-z]+)*-?$')
     for k, v in data.items():
         if not key_re.match(k):
             errors.append('Invalid key name: {}'.format(k))
@@ -51,7 +51,21 @@ def validate(data):
                     )
                 )
 
+        if 'cleric' in v['traits'] and 'domain' not in v:
+            errors.append(
+                'Missing domain for cleric focus spell "{name}"'.format(
+                    name=v['name']
+                )
+            )
+
         for name, sub in (v['description'].get('subsections') or {}).items():
+            if not isinstance(sub, dict):
+                errors.append(
+                    'Invalid subsection "{sub}" is not a dictionary.'.format(
+                        sub=name
+                    )
+                )
+                continue
             if sorted(sub.keys()) != ['content', 'type']:
                 errors.append(
                     'Invalid subsection "{sub}" format in {k}:'
@@ -60,10 +74,10 @@ def validate(data):
                         sub=name
                     )
                 )
-            if sub['type'] not in ('list', 'dl', 'table'):
+            if sub.get('type') not in ('list', 'dl', 'table'):
                 errors.append(
                     'Invalid subsection type in "{k}: {sub}": {type}'.format(
-                        k=k, sub=name, type=sub['type'],
+                        k=k, sub=name, type=sub.get('type'),
                     )
                 )
 
