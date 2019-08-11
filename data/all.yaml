@@ -682,16 +682,12 @@ bind-soul:
   traits: [evil, necromancy]
   requirements: black sapphire with a gp value of at least the target's level × 100
   range: 30 feet
-  target: one creature that died within the last minute
+  target: 1 creature that died within the last minute
   duration: unlimited
   description:
     main:
-      You wrench the target's soul and imprison it in a black sapphire.
-      The soul can't be returned to life through any means, even a
-      miracle or wish. If the gem is destroyed or soul bind is dispelled on
-      the gem, the soul is free. The gem has AC 16, TAC 12, and Hardness
-      10. A gem can't hold more than one soul, and attempting to put
-      another soul into it wastes the spell.
+      You wrench the target's soul away before it can pass on to the afterlife and imprison it in a black sapphire.
+      While the soul is in the gem, the target can't be returned to life through any means, even powerful magic such as wish. If the gem is destroyed or bind soul is counteracted on the gem, the soul is freed. The gem has AC 16 and Hardness 10. A gem can't hold more than one soul, and any attempt wastes the spell.
 bind-undead:
   traits: [necromancy]
   name: BIND UNDEAD
@@ -1507,31 +1503,23 @@ crusade:
   type: SPELL
   level: 9
   rarity: 1
-  traits: [enchantment, lingual, mental]
+  traits: [enchantment, linguistic, mental]
   casting: [aS, aV]
   range: 60 feet
   target: up to 4 creatures
-
-  duration: 5 minutes
+  duration: 10 minutes
   description:
     main:
-      Pronounce a cause. It can be to attain an item, claim a patch of
-      land, slay a creature, war with a group, or be entirely peaceful. Your
-      cause can't force the targets to harm one another or themselves.
-      They become completely dedicated to that cause, depending on
-      their levels. They choose their own actions, but they favor direct
-      action over inaction or indirect action. ${subsection.effects}
-      The spell ends for all creatures if you or one of your allies acts
-      hostile toward a target, or the cause is complete. The GM might
-      determine this spell has alignment traits befitting the cause.
+      You issue a divine mandate to the targets. you pronounce a cause. It can be to attain an item, claim a patch of land, slay a creature, war with a group, or be entirely peaceful. Your cause can't force the targets to harm one another or themselves. The targets become completely dedicated to that cause, depending on their levels. They choose their own actions, but they favor direct action over inaction or indirect action.
+      ${subsection.effects}
+      The spell ends for all creatures if you or one of your allies uses a hostile action against a target, or when the cause is completed. The GM might determine this spell has alignment traits befitting the cause.
     subsections:
       effects:
         type: dl
         content:
-          13th or Lower: The target is so dedicated to the cause that it will pursue it to the death (unless you say otherwise).
-          14th: The target is dedicated to the cause, but the spell ends for the target if it's reduced to 50 Hit Points or fewer.
-          15th: As 14th, plus the target can attempt a Will save at the end of each turn to end the spell for itself.
-
+          13th or Lower: The target is so dedicated to the cause that it pursues the cause to the death (unless you say otherwise).
+          14th: The target is dedicated to the cause, but the spell ends for the target if it's reduced to half its maximum Hit Points or fewer.
+          15th: As 14th, plus the target can attempt a Will save at the end of each of its turns to end the spell for itself.
   heightened:
     10th: The level limit for each category increases by 2.
 crushing-despair:
@@ -2068,12 +2056,10 @@ disjunction:
   traits: [abjuration]
   casting: [aS, aV]
   range: 120 feet
-  target: one magic item
+  target: 1 magic item
   description:
     main:
-      Crackling energy disjoins the target. You attempt to dispel it. If
-      you succeed, it's deactivated for 1 week. On a critical success, it's
-      destroyed. If it's an artifact or similar item, you automatically fail.
+      Crackling energy disjoins the target. You attempt to counteract it (page 458). If you succeed, it's deactivated for 1 week. On a critical success, it's destroyed. If it's an artifact or similar item, you automatically fail.
 dispel-magic:
   name: DISPEL MAGIC
   type: SPELL
@@ -3544,26 +3530,18 @@ foresight:
   traits: [divination, mental, prediction]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: 1 hour
   description:
     main:
-      "You gain a sixth sense that warns you of danger that might
-      befall the target of the spell. If you choose a creature other than
-      yourself as the target, you create a psychic link through which
-      you can inform the target of danger. This link is a mental effect.
-      While foresight is in effect, the target gains a +2 conditional
-      bonus to initiative rolls and can't be flat-footed. In addition, you
-      gain the following reaction.
-      Foresight Trigger: The target of foresight defends against a
-      hostile creature or other danger. Effect: The target rolls two dice and
-      uses the higher result if it's being forced to roll (like with a saving
-      throw), or the attacker or danger must roll twice and use the lower
-      result (like with an attack or skill check). This is a fortune effect if the
-      target is rolling twice, or a misfortune effect if the hostile force is.
-      Due to the amount of information this spell requires you to
-      process, you can't have more than one foresight spell in effect at
-      a time. Casting foresight again dismisses the previous foresight."
+      You gain a sixth sense that warns you of danger that might befall the target of the spell. If you choose a creature other than yourself as the target, you create a psychic link through which you can inform the target of danger. This link is a mental effect. Due to the amount of information this spell requires you to process, you can't have more than one foresight spell in effect at a time. Casting foresight again ends the previous foresight. While foresight is in effect, the target gains a +2 status bonus to initiative rolls and isn't flat-footed against undetected creatures or when flanked. In addition, you gain the following reaction.
+      ${subsection.foresight}
+    subsections:
+      foresight:
+        type: dl
+        content:
+          "Foresight [[R]] Trigger":
+            "The target of foresight defends against a hostile creature or other danger. Effect If the hostile creature or danger forces the target to roll dice (a saving throw, for example), the target rolls twice and uses the higher result, and this spell gains the fortune trait. But if the hostile creature or danger is rolling against the target (an attack roll or skill check, for example), that hostile creature or danger rolls twice and uses the lower result, and this spell gains the misfortune trait."
 freedom-of-movement:
   name: FREEDOM OF MOVEMENT
   type: SPELL
@@ -4502,25 +4480,12 @@ implosion:
   traits: [evocation]
   casting: [aS, aV]
   range: 30 feet
-  target: one corporeal creature
-  duration: sustained, up to 1 minute
+  target: 1 corporeal creature
+  duration: sustained up to 1 minute
+  save: basic Fortitude
   description:
     main:
-      You crush the target by causing it to collapse in on itself, dealing
-      100 damage. The target must attempt a Fortitude save. Each time
-      you Concentrate on the Spell, you must choose a new target to
-      be subject to the same effect. You can't affect more than one
-      creature per turn with implosion. You can't target a creature
-      that's incorporeal, gaseous, or liquid, or that otherwise lacks a
-      solid form. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: Half damage.
-          crit: No damage.
-          failure: Full damage.
-          crit-fail: Double damage.
+      You crush the target by causing it to collapse in on itself, dealing 75 damage. Each time you Sustain the Spell, you must choose a new target to be subject to the same effect; the same creature can never be targeted more than once with a single casting of this spell. You also can't affect more than one creature per turn with implosion. You can't target a creature that's incorporeal, gaseous, or liquid, or one that otherwise lacks a solid form.
   heightened:
     "+1": The damage increases by 10.
 insect-form:
@@ -5333,6 +5298,29 @@ mask-of-terror:
       spends an action or reaction that affects multiple targets
       simultaneously, it needs to attempt only one save against mask
       of terror.
+massacre:
+  name: Massacre
+  type: spell
+  level: 9
+  rarity: 0
+  traits: [death, necromancy, negative]
+  save: Fortitude
+  area: 60-foot line
+  casting: [aS, aV]
+  description:
+    main:
+      You unleash a wave of necromantic energy to snuff out the life force of those in its path. Each creature of 17th level or lower in the line must attempt a Fortitude save. If the damage from massacre reduces a creature to 0 Hit Points, that creature dies instantly. If massacre doesn't kill even a single creature, the negative energy violently explodes back toward you, dealing an additional 30 negative damage to every creature in the line (even those above 17th level) and 30 negative damage to you.
+      ${subsection.save}
+    subsections:
+      save:
+        type: dl
+        content:
+          crit: The creature is unaffected.
+          success: The creature takes 9d6 negative damage.
+          failure: The creature takes 100 negative damage.
+          crit-fail: The creature dies.
+  heightened:
+    10th: The spell can affect creatures up to 19th level. Increase the damage to 10d6 on a success, and to 115 on a failure.
 master-s-illusion:
   name: MASTER'S ILLUSION
   type: POWER
@@ -5454,28 +5442,13 @@ meteor-swarm:
   traits: [evocation, fire]
   casting: [aS, aV]
   range: 500 feet
-  area: four 40-foot bursts
+  area: 4 40-foot bursts
+  save: basic Reflex
   description:
     main:
-      You call down four blazing meteors that explode. Each meteor deals
-      4d10 bludgeoning damage to any creatures in the 10-foot burst at
-      the center of each area of effect; the meteor then explodes, dealing
-      19d6 fire damage to any creatures in each 40-foot burst. The
-      meteors' central 10-foot bursts can't overlap, and a creature takes
-      the same amount of fire damage no matter how many overlapping
-      explosions it's caught in. Each creature in the area can attempt a
-      Reflex saving throw, which applies to both types of damage.
-      ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: Half damage.
-          crit: No damage.
-          failure: Full damage.
-          crit-fail: Double damage.
+      You call down four meteors that explode in a fiery blast. Each meteor deals 6d10 bludgeoning damage to any creatures in the 10-foot burst at the center of its area of effect before exploding, dealing 14d6 fire damage to any creatures in its 40-foot burst. The meteors' central 10-foot bursts can't overlap, and a creature takes the same amount of fire damage no matter how many overlapping explosions it's caught in. The saving throw applies to both the bludgeoning and the fire damage.
   heightened:
-    "+1": The fire damage increases by 1d6 and the bludgeoning damage by 1d10.
+    "+1": The bludgeoning damage increases by 1d10, and the fire damage increases by 2d6.
 mind-blank:
   name: MIND BLANK
   type: SPELL
@@ -5884,35 +5857,20 @@ nature-s-enmity:
   traits: [enchantment]
   casting: [aS, aV]
   range: 100 feet
-  target: up to five creatures
+  target: up to 5 creatures
   duration: 10 minutes
   description:
     main:
-      Animals, plants and weather in the area turn against the targets.
-      Each target suffers from the following effects. ${subsection.effects}
-      The GM might determine that you can't subject some
-      creatures to the ire of nature. For example, a primal spellcaster
-      of your level or higher or an avatar of nature might be immune
-      to these effects.
+      Animals and plants in the area turn against the targets. Each target suffers from the following effects as long as it remains in the area.
+      ${subsection.effects}
+      The GM might decide that you can't subject some creatures, such as an emissary of a nature deity, to the ire of nature.
     subsections:
       effects:
         type: list
         content:
-          - Vegetation springs up from any surface, making targets
-            entangled any time they're adjacent to a plant or a surface
-            of stone or earth.
-          - Aggressive animals attack unpredictably then depart. At
-            the start of its turn, each target rolls a DC 8 flat check. On
-            a failure, it's attacked by swarming creatures that deal 2d10
-            slashing damage. The target can attempt a Reflex save, taking
-            half damage on a success, no damage on a critical success, or
-            double damage on a critical failure. The target is flat-footed
-            for 1 round on any result other than a critical success.
-          - The target also loses any connection to nature or natural
-            creatures. Any animal or plant creature becomes hostile to
-            it, even a companion creature like an animal companion.
-            The target also has to succeed at a DC 5 flat check when
-            casting any primal spell or the spell fails.
+          - Vegetation springs up from every surface, giving each target a –10-foot circumstance penalty to its Speed any time it's adjacent to the plants.
+          - Aggressive animals attack unpredictably. At the start of its turn, each target rolls a DC 8 flat check. On a failure, it's attacked by swarming creatures that deal 2d10 slashing damage. The target attempts a basic Reflex save, and it is flat-footed for 1 round on any outcome other than a critical success.
+          - The target loses any connection to nature or natural creatures. The target has to succeed at a DC 5 flat check when casting any primal spell or the spell fails. Furthermore, animal or plant creatures become hostile to it, even one with a strong bond to the target, such as an animal companion.
 negate-aroma:
   name: NEGATE AROMA
   type: SPELL
@@ -6024,36 +5982,26 @@ overwhelming-presence:
   type: SPELL
   level: 9
   rarity: 0
-  traits: [auditory, enchantment, mental, visual]
+  traits: [auditory, enchantment, incapacitation, mental, visual]
   casting: [aS, aV]
-  area: 40-foot burst; Targets any number of creatures
+  area: 40-foot burst
+  target: any number of creatures
+  save: Will
   duration: until full tribute is paid
   description:
     main:
-      You surround yourself with a supernatural
-      splendor, appearing to be a god or similarly majestic being. You
-      choose the particular majestic aspects of your new appearance.
-      This causes the targets to pay tribute to you by bowing or
-      spending some other action in keeping with your appearance.
-      The number of times they must do this depends on the outcome
-      of their Will saves.
+      You surround yourself with supernatural splendor, appearing to be a god or similarly majestic being. You choose the aspects of your new majestic appearance. This causes the targets to pay tribute to you by bowing or using some other action in keeping with your appearance. The number of times a target must do this depends on the result of their Will save. 
       ${subsection.save}
-      Paying tribute is a manipulate action or move action, as
-      chosen by the creature paying tribute. A creature under this
-      effect must pay tribute to you at least once on each of its turns
-      if possible. While under this spell, a creature is fascinated by
-      you and can't act in a hostile fashion toward you. The target is
-      bolstered against your overwhelming presence.
+      Paying tribute is a manipulate action or move action, as chosen by the creature paying tribute. A creature under this effect must pay tribute to you at least once on each of its turns if possible. While affected by this spell, a creature is fascinated by you and can't use hostile actions against you. The target is then temporarily immune for 1 minute.
     subsections:
       save:
         type: dl
         content:
-          success: The target must pay tribute two times.
+          success: The target must pay tribute twice.
           crit: The target is unaffected.
           failure: The target must pay tribute six times.
           crit-fail:
-            Per failure, and the target must spend all
-            actions paying tribute if possible.
+            As failure, and the target must spend all its actions paying tribute if possible.
 paladin-s-sacrifice:
   name: PALADIN'S SACRIFICE
   type: POWER
@@ -6458,28 +6406,23 @@ power-word-kill:
   traits: [auditory, death, enchantment, mental]
   casting: [aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: varies
   description:
     main:
-      You utter a word of power that potentially kills
-      the target upon hearing it. Once targeted, the target is bolstered
-      against all castings of power word kill. The effect of the spell
-      depends on the target's level. ${subsection.level}
+      You utter the most powerful arcane word of power. Once targeted, the target is then temporarily immune for 10 minutes. The effect of the spell depends on the target's level.
+      ${subsection.level}
     subsections:
       level:
         type: dl
         content:
           "14th or Lower": The target dies instantly.
           "15th":
-            If the target had 65 Hit Points or fewer, it dies instantly;
-            otherwise, it drops to 0 Hit Points and gains dying 1 or
-            increases its dying condition by 1 if it's already dying.
+            If the target has 50 Hit Points or fewer, it dies instantly; otherwise, it drops to 0 Hit Points and becomes dying 1, or increases its dying condition by 1 if it's already dying.
           "16th or Higher":
-            The target takes 65 damage; if this brings the
-            target to 0 Hit Points, the target dies instantly.
+             The target takes 50 damage; if this brings the target to 0 Hit Points, the target dies instantly.
   heightened:
-    "+1": The levels at which each outcome applies increase by 2.
+    10th: The levels at which each outcome applies increase by 2.
 power-word-stun:
   name: POWER WORD STUN
   type: SPELL
@@ -6648,16 +6591,13 @@ prismatic-sphere:
   type: SPELL
   level: 9
   rarity: 0
-  traits: [abjuration]
+  traits: [abjuration, light]
   casting: [aS, aV]
   range: 10 feet
   duration: 1 hour
   description:
     main:
-      This multicolored sphere functions like a prismatic wall but is
-      shaped in a 10-foot burst centered on a corner within your space.
-      You must form the sphere in an unbroken open space so its edges
-      don't pass through any creatures or objects or the spell is lost.
+      You create a seven-layered sphere to protect an area. This multicolored sphere functions like a prismatic wall but is shaped in a 10-foot burst centered on a corner of your space. You must form the sphere in an unbroken open space so its edges don't pass through any creatures or objects, or the spell is lost.
 prismatic-spray:
   name: PRISMATIC SPRAY
   type: SPELL
@@ -7179,44 +7119,12 @@ resplendent-mansion:
   casting-time: 1 minute
   casting: [M, S, V]
   range: 500 feet
-  duration: 24 hours (see text)
+  duration: until the next time you make your daily preparations
   description:
     main:
-      You conjure a towering mansion up to four stories tall and up to
-      300 feet on a side. While casting the spell, you hold an image of
-      the mansion and its desired appearance in your mind. The mansion
-      can contain as many or as few rooms as you desire, and it is
-      decorated as you imagine it. You can imagine a purpose for each
-      room of the mansion, and the proper accouterments appear within.
-      Any furniture or other mundane fixtures function normally for
-      anyone inside the mansion, but they cease to exist if taken beyond
-      its walls. No fixture created with this spell can create magical
-      effects, but magical devices brought into the mansion function
-      normally.
-      Your mansion contains the same types of foodstuffs and
-      servants as created by the magnificent mansion spell.
-      Each of the mansion's exterior doorways and windows are
-      protected by alarm spells. You choose whether each alarm is
-      audible or mental as you cast the spell, and each has a different
-      sound (for an audible alarm) or sensation (for a mental one),
-      allowing you to instantly determine which portal has been used.
-      When you prepare spells, you can choose not to recover the
-      spell slot or daily spell you used to cast this spell. If you do, the
-      mansion remains for another 24 hours.
-      The mansion must be created on a plot of land free of other
-      structures. It adapts to the natural terrain, adopting the structural
-      requirements for being built there. The mansion adjusts around small
-      features such as ponds or spires of rock, but can't be created on
-      water or other nonsolid surfaces. If created on snow, sand dunes, or
-      other soft surfaces with a solid surface underneath, the foundation
-      reaches the solid ground. If created on a solid but unstable surface,
-      such as a swamp or an area plagued by tremors, there's a 10% chance
-      each day the mansion begins to sink or collapse.
-      The mansion doesn't harm creatures within the area when it
-      appears, and it can't be created within a crowd or in a densely
-      populated area. Any creature inadvertently caught inside the
-      mansion when the spell is cast ends up unharmed inside the
-      complete mansion and always has a clear path of escape.
+      You conjure a towering mansion up to four stories tall and up to 300 feet on a side. While Casting the Spell, you hold an image of the mansion and its desired appearance in your mind. The mansion can contain as many or as few rooms as you desire, and it is decorated as you imagine it. You can imagine a purpose for each room of the mansion, and the proper accouterments appear within. Any furniture or other mundane fixtures function normally for anyone inside the mansion, but they cease to exist if taken beyond its walls. No fixture created with this spell can create magical effects, but magical devices brought into the mansion function normally.
+      Your mansion contains the same types and quantities of foodstuffs and servants as created by the magnificent mansion spell.
+      Each of the mansion's exterior doorways and windows are protected by alarm spells. You choose whether each alarm is audible or mental as you Cast the Spell, and each has a different sound (for an audible alarm) or sensation (for a mental one), allowing you to instantly determine which portal has been used.
 restoration:
   name: RESTORATION
   type: SPELL
@@ -7686,10 +7594,10 @@ shapechange:
   rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
-      You shape the wood into a rough shape of your choice. The shaping power is too crude to produce with intricate parts, fine details, moving pieces, or the like. You cannot use this spell to enhance the value of the wooden object you are shaping.
+      Harnessing your mastery of transformative magic, you take on a mutable form. You transform yourself into any form you could choose with a polymorph spell in your spell repertoire or that you could prepare of 8th level or lower (including any 8th-level or lower heightened versions of spells you know). You choose the type of creature as you Cast the Spell rather than when you prepare it. You can change your form to any other form you could choose with this spell by using a single action, which has the concentrate trait. You can Dismiss this spell.
 shatter:
   name: Shatter
   type: spell
@@ -8423,40 +8331,32 @@ storm-of-vengeance:
   casting: [aM, aS, aV]
   range: 800 feet
   area: 360-foot burst
-  duration: sustained, up to 10 rounds
+  duration: sustained up to 1 minute
   description:
     main:
-      A massive storm cloud forms in the air in a 360-foot burst. Beneath
-      it, rain begins to fall, and whipping winds impose a -4 circumstance
-      penalty to physical ranged attacks and weapon ranged attacks.
-      When you cast this spell and the first time each round you
-      Concentrate on the Spell, you can choose one of the following
-      storm effects. You can't choose the same one twice in a row.
+      A massive storm cloud forms in the air in a 360-foot burst. Beneath it, rain begins to fall, and gales impose a –4 circumstance penalty to physical ranged attacks and weapon ranged attacks, and the air in the area becomes greater difficult terrain for flying creatures. When you Cast this Spell and the first time each round you Sustain the Spell, you can choose one of the following storm effects. You can't choose the same effect twice in a row.
       ${subsection.effects}
     subsections:
       effects:
         type: dl
         content:
           "Acid Rain": Each creature in the storm takes 4d8 acid damage with no saving throw.
-          "Hail":
-            The storm deals 4d10 bludgeoning damage to creatures
-            beneath it. A successful Fortitude save reduces the damage
-            to half (no damage on a critical success).
+          Hail:
+            The storm deals 4d10 bludgeoning damage to creatures beneath it (basic Fortitude save).
           Lightning:
             Up to 10 bolts of lightning strike down, targeting
             creatures of your choice in the storm. No more than one bolt
-            can target any one creature. Each bolt deals 4d12 electricity
-            damage ( half damage on a successful Reflex save, no damage
-            on a critical success, and double damage on a critical failure).
+            can target any one creature. Each bolt deals 7d6 electricity
+            damage (basic Reflex save).
           "Rain and Wind":
             Heavy rain and whipping wind reduce
             visibility and mobility, making the area under the storm
-            cloud concealed and difficult terrain.
+            cloud difficult terrain and making everything seen within or through the area concealed.
           Thunderclap:
             Each creature in the storm must succeed at
-            a Fortitude save or be deafened for 10 minutes. A creature
-            that succeeds is bolstered against thunderclaps from the
-            same storm of vengeance spell.
+            a Fortitude save or be deafened for 10 minutes.
+            A creature that succeeds is temporarily immune to thunderclaps
+            from storm of vengeance for 1 hour.
   heightened:
     10th: The range increases to 2,200 feet and the cloud is a 1,000-foot burst.
 stormwind-flight:
@@ -8998,6 +8898,20 @@ telepathic-bond:
     main:
       The targets can communicate telepathically with any or all of the
       other targets from any point on the same planet.
+telepathic-demand:
+  name: Telepathic Demand
+  type: spell
+  level: 9
+  rarity: 0
+  traits: [enchantment, incapacitation, linguistic, mental]
+  casting: [aM, aS, aV]
+  range: planetary
+  target: 1 creature you've telepathically contacted before
+  save: Will
+  duration: varies
+  description:
+    main:
+      You send the target a message of 25 words or fewer, and it can respond immediately with its own message of 25 words or fewer. Your message is insidious and has the effect of suggestion, with the message substituting for the spoken suggestion. On a successful save, the target is temporarily immune for 1 day, and on a critical success, the target is temporarily immune for 1 month. You can target a creature only if you have previously been in telepathic contact with it before, such as via the telepathy spell.
 telepathy:
   name: TELEPATHY
   type: SPELL
@@ -9413,26 +9327,21 @@ unfathomable-song:
   type: SPELL
   level: 9
   rarity: 0
-  traits: [auditory, emotion, enchantment, fear, mental]
+  traits: [auditory, emotion, enchantment, fear, incapacitation, mental]
   casting: [aS, aV]
   range: 120 feet
-  target: up to five creatures
-  duration: sustained, up to 1 minute
+  target: up to 5 creatures
+  duration: sustained up to 1 minute
   description:
     main:
-      Fleeting notes of a strange and unnatural song
-      fill the air, overtaking the mind. Each target must
-      attempt a Will save when you cast the spell, and again each
-      time you Concentrate on the Spell. A creature needs to attempt
-      only save against the song each round, and you have to keep
-      the same targets when you Concentrate on the Spell.
+      Fleeting notes of a strange and unnatural song fill the air, overtaking the mind. Each target must attempt a Will save when you cast the spell, and again each time you Sustain the Spell. A creature needs to attempt only one save against the song each round, and you have to keep the same targets when you Sustain the Spell.
       ${subsection.save} ${subsection.rolltable}
     subsections:
       save:
         type: dl
         content:
-          success: Unaffected this round, but can be affected on subsequent rounds.
-          crit: Unaffected, can't be affected on subsequent rounds, and bolstered against unfathomable song.
+          success: The target is unaffected this round, but it can be affected on subsequent rounds.
+          crit: The target is unaffected, can't be affected on subsequent rounds, and is temporarily immune for 1 minute.
           failure: Roll 1d4 on the table below.
           crit-fail: Roll 1d4+1 on the table below.
       rolltable:
@@ -9784,22 +9693,23 @@ wail-of-the-banshee:
   type: SPELL
   level: 9
   rarity: 0
-  traits: [auditory, death, necromancy]
+  traits: [auditory, death, necromancy, negative]
   casting: [aS, aV]
-  area: 40-foot aura; Targets any number of creatures
+  area: 40-foot emanation
+  target: any number of creatures
+  save: Fortitude
   description:
     main:
-      Your scream chills the souls of enemies that hear it.
-      Each living enemy in the burst takes 9d10 damage and is drained
-      1d4, depending on its Fortitude save. ${subsection.save}
+      Your scream chills the souls of enemies that hear it. Each living enemy in the area takes 8d10 negative damage and must attempt a Fortitude save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Full damage and no drain.
-          crit: No damage or drain.
-          failure: Full damage and drain.
-          crit-fail: Double damage and drained 4.
+          success: The target takes full damage.
+          crit: The target is unaffected.
+          failure: The target takes full damage and is drained 1d4.
+          crit-fail: The target takes double damage and is drained 4.
 walk-on-air:
   name: WALK ON AIR
   type: POWER
@@ -10055,42 +9965,16 @@ weapon-of-judgment:
   casting: [aS, aV]
   requirements: You have a deity.
   range: 100 feet
-  target: one creature
+  target: 1 creature
   duration: 1 minute
   description:
     main:
-      An immense weapon of force appears, hovering in the air above
-      the target. The weapon has the ghostly visual appearance of
-      your deity's favored weapon. Name war or peace when you cast
-      this spell.
-      If you name war, the weapon Strikes the target at the end of
-      each of its turns that the target failed to act in a hostile manner
-      against a particular creature. You mentally choose one creature
-      when you name war, and the target instinctively knows which
-      creature it is. This must be a creature both you and the target
-      can see.
-      If you name peace, the weapon Strikes the target each time
-      the target acts in a hostile manner against you or one of your
-      allies. You mentally choose up to five allies when you name
-      peace, and the target instinctively knows who those allies are.
-      The weapon Strikes only once per act, even if the act targets
-      multiple allies.
-      Attacks with the weapon use your attack modifier with that
-      type of weapon, but they substitute your spellcasting ability
-      modifier instead of the normal ability score. Regardless of its
-      appearance, the weapon deals force damage equal to 3d10 plus
-      your spellcasting ability modifier. The weapon takes a multiple
-      attack penalty, but has its own rather than using yours.
-      When you Strike with the weapon, you can deal damage of
-      the normal damage type of the weapon instead of force damage
-      (or any of the available damage types for a versatile weapon). No
-      other attributes of the weapon apply, and even a ranged weapon
-      attacks adjacent creatures only. A weapon of judgment counts as
-      a weapon for the purposes of triggers, resistances, and so forth.
-      The weapon doesn't take up space, grant flanking, or have any
-      other attributes a creature would. The weapon can't make any
-      kind of attack other than a normal Strike, and feats or spells that
-      affect weapons do not apply to this weapon.
+      An immense weapon of force appears, hovering in the air above the target. The weapon has the ghostly visual appearance of your deity's favored weapon. Name war or peace when you cast this spell.
+      If you name “war,” mentally choose one creature. This must be a creature both you and the target can see. The target instinctively knows which creature this is. At the end of each of the target's turns, if the target did not use a hostile action against the creature you chose during that turn, the weapon Strikes the target.
+      If you name “peace,” mentally choose up to five allies. The target instinctively knows who those allies are. The weapon Strikes the target each time the target uses a hostile action against you or one of your allies. The weapon Strikes only once per action, even if the action targets multiple allies (such as for a fireball or a <%FEATS%Whirlwind Strike%%>Whirlwind Strike).
+      Strikes with the weapon are melee weapon attacks, but they use your spell attack modifier. Regardless of its appearance, the weapon deals force damage equal to 3d10 plus your spellcasting ability modifier. The weapon takes a multiple attack penalty, which increases throughout the target's turn, but its penalty is separate from yours.
+      When the weapon Strikes, you can deal damage of the normal damage type of the weapon instead of force damage (or any of the available damage types, for a versatile weapon). No other statistics or attributes of the weapon apply, and even a ranged weapon attacks adjacent creatures only. A weapon of judgment is a weapon for the purposes of triggers, resistances, and so forth.
+      The weapon doesn't take up space, grant flanking, or have any other attributes a creature would. The weapon can't make any attack other than its Strike, and feats or spells that affect weapons do not apply to this weapon.
   heightened:
     10th: The force damage increases by 1d10.
 weapon-storm:
@@ -10170,26 +10054,20 @@ weird:
   casting: [aS, aV]
   range: 120 feet
   target: any number of creatures
+  save: Will
   description:
     main:
-      You fill the targets' minds with terrifying images
-      of fearsome creatures, each drawn from the
-      target's worst fears. Only the targets can see their
-      assailants. For each target, the effects of the weird are based on
-      the target's Will saving throw.
+      You fill the targets' minds with terrifying images of fearsome creatures, each drawn from the targets' worst fears. Only the targets can see their assailants. Each target takes 16d6 mental damage and must attempt a Will save.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Unaffected.
-          failure: The target takes 21d6 mental damage and is frightened 2.
+          crit: The target is unaffected.
+          success: The target takes half damage and is frightened 1.
+          failure: The target takes full damage and is frightened 2.
           crit-fail:
-            The target is so afraid, it might instantly die.
-            It must attempt a Fortitude saving throw. On a successful
-            Fortitude save, the target still takes the effects of Failure
-            above and is fleeing until the end of its next turn. If if fails,
-            it is reduced to 0 Hit Points and dies.
+            The target is so afraid, it might instantly die. It must attempt a Fortitude saving throw. If the target succeeds, it takes double damage and is frightened 2, and it's also fleeing until the end of its next turn unless it critically succeeded. If it fails, it is reduced to 0 Hit Points and dies.
 wholeness-of-body:
   name: WHOLENESS OF BODY
   type: POWER
