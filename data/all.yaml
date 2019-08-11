@@ -985,6 +985,19 @@ chain-lightning:
       You discharge a powerful bolt of lightning at the target, dealing 8d12 electricity damage. The target must attempt a basic Reflex save. The electricity arcs to another creature within 30 feet of the first target, jumps to another creature within 30 feet of that target, and so on. You can end the chain at any point. You can't target the same creature more than once, and you must have line of effect to all targets. Roll the damage only once, and apply it to each target (halving or doubling as appropriate for its saving throw outcome). The chain ends if any one of the targets critically succeeds at its save.
   heightened:
     "+1": The damage increases by 1d12.
+champion-s-sacrifice:
+  name: Champion's sacrifice
+  type: focus
+  level: 6
+  rarity: 1
+  traits: [abjuration, champion]
+  casting: [rV]
+  trigger: An ally is hit by a Strike, or an ally fails a saving throw against an effect that doesn't affect you.
+  range: 30 feet
+  target: 1 ally
+  description:
+    main:
+      You form a link with an ally, allowing you to take harm in their stead. All the effects of the hit or failed save are applied to you instead of the ally. For example, if the target critically fails a saving throw against a fireball, you would take double damage. These effects ignore any resistances, immunities, or other abilities you have that might mitigate them in any way, although those of the target apply before you take the effect.
 charm:
   name: CHARM
   type: SPELL
@@ -4189,21 +4202,15 @@ heroism:
     8th: The status bonus increases to +3.
 hero-s-defiance:
   name: HERO'S DEFIANCE
-  type: POWER
+  type: focus
   level: 10
   rarity: 1
-  traits: [healing, necromancy, positive]
+  traits: [champion, healing, necromancy, positive]
   casting: [fV]
-  trigger:
-    An attack would bring you to 0 Hit Points, and the attack
-    isn't disintegrate and doesn't have the death trait.
+  trigger: An attack would bring you to 0 Hit Points.
   description:
     main:
-      You shout in defiance of your fate. Just before applying the
-      attack's damage, you recover Hit Points equal to 19d4 plus your
-      spellcasting ability modifier. If this is enough to prevent the attack
-      from bringing you to 0 Hit Points, you don't become unconscious or
-      dying. Either way, you can't use hero's defiance again for 1 minute.
+      You shout in defiance, filling you with a sudden burst of healing. Just before applying the attack's damage, you recover 10d4+20 Hit Points. If this is enough to prevent the attack from bringing you to 0 Hit Points, you don't become unconscious or dying. Either way, cheating death is difficult, and you can't use hero's defiance again until you Refocus or the next time you prepare. Hero's defiance cannot be used against effects with the death trait or that would leave no remains, such as disintegrate.
 hideous-laughter:
   name: HIDEOUS LAUGHTER
   type: SPELL
@@ -4789,25 +4796,18 @@ know-the-enemy:
       lorekeeper's fortune on this check.
 lay-on-hands:
   name: LAY ON HANDS
-  type: POWER
+  type: focus
   level: 1
   rarity: 1
-  traits: [healing, necromancy, positive]
+  traits: [champion, healing, necromancy, positive]
   casting: [aS]
   range: touch
-  target: one willing living creature or one undead creature
+  target: 1 willing living creature or 1 undead creature
   description:
     main:
-      Your hands become infused with positive energy as you lay them
-      on the target, healing a living target or damaging an undead target.
-      If you use lay on hands on a willing living target, you restore Hit
-      Points equal to 1d6 plus your spellcasting ability modifier, and if
-      the target is an ally, he gains a +1 conditional bonus to AC for 1
-      round. Against an undead target, you deal the same amount of
-      positive damage if you succeed at a melee touch attack, and the
-      target takes a -1 conditional penalty to AC for 1 round.
+      Your hands become infused with positive energy, healing a living creature or damaging an undead creature with a touch. If you use lay on hands on a willing living target, you restore 6 Hit Points; if the target is one of your allies, they also gain a +2 status bonus to AC for 1 round. Against an undead target, you deal 1d6 damage and it must attempt a basic Fortitude save; if it fails, it also takes a –2 status penalty to AC for 1 round.
   heightened:
-    "+1": The amount of healing (or damage to undead) increases by 2d6.
+    "+1": The amount of healing increases by 6, and the damage to an undead target increases by 1d6.
 leng-s-sting:
   name: LENG'S STING
   type: SPELL
@@ -4917,79 +4917,65 @@ litany-against-sloth:
   type: POWER
   level: 5
   rarity: 1
-  traits: [evocation, litany, good]
+  traits: [champion, evocation, litany, good]
   casting: [aV]
   range: 30 feet
-  target: one evil creature
+  target: 1 evil creature
   duration: 1 round
+  save: Will
   description:
     main:
-      Your litany rails against the sin of sloth, slowing your target's
-      reactions depending on its Will save. A particularly slothful
-      creature, such as a dretch, treats the outcome of the saving
-      throw as one degree of success worse. The target is bolstered
-      against your litanies. ${subsection.save}
+      Your litany rails against the sin of sloth, interfering with the target's ability to react. The target must attempt a Will save. A particularly slothful creature, such as a sloth demon, uses the outcome one degree of success worse than the result of its saving throw. The target becomes temporarily immune to all of your litanies for 1 minute.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success:
-            The target takes a -1 conditional penalty to all attack rolls
-            attempted as part of reactions (such as Attacks of Opportunity).
+          success: The target can't use reactions.
           crit: The target is unaffected.
-          failure: The target can't spend reactions.
-          crit-fail: The target can't spend reactions and is slowed 1.
+          failure: The target can't use reactions and is slowed 1.
+          crit-fail: The target can't use reactions and is slowed 2.
 litany-against-wrath:
   name: LITANY AGAINST WRATH
-  type: POWER
+  type: focus
   level: 3
   rarity: 1
-  traits: [evocation, litany, good]
+  traits: [champion, evocation, litany, good]
   casting: [aV]
   range: 30 feet
-  target: one evil creature
+  target: 1 evil creature
   duration: 1 round
+  save: Will
   description:
     main:
-      Your litany rails against the sin of wrath, punishing the target
-      for attacking good creatures depending on its Reflex save.
-      A particularly wrathful creature, such as a vrock, treats the
-      outcome of the saving throw as one degree of success worse.
-      The target is bolstered against your litanies. ${subsection.save}
+      Your litany rails against the sin of wrath, punishing the target for attacking good creatures. The target must attempt a Will save. A particularly wrathful creature, such as a wrath demon, uses the outcome one degree of success worse than the result of its saving throw. The target then becomes temporarily immune to all of your litanies for 1 minute.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success:
-            The first time the target spends an action or performs
-            an activity that damages at least one good creature, it takes
-            3d6 good damage.
+            The first time the target uses an action that deals damage to at least one good creature, the target takes 3d6 good damage.
           crit: The target is unaffected.
           failure:
-            Each time the target spends an action or performs an
-            activity that damages at least one good creature, it takes
-            3d6 good damage.
+            Each time the target uses an action that deals damage to at least one good creature, the target takes 3d6 good damage.
           crit-fail:
-            The target is weakened 1. Each time the target
-            spends an action or performs an activity that damages at
-            least one good creature, it takes 3d6 good damage.
+            The target is enfeebled 2. Each time it uses an action that deals damage to at least one good creature, the target takes 3d6 good damage.
   heightened:
     "+1": The damage increases by 1d6.
 litany-of-righteousness:
   name: LITANY OF RIGHTEOUSNESS
-  type: POWER
+  type: focus
   level: 7
   rarity: 1
-  traits: [evocation, litany, good]
+  traits: [champion, evocation, litany, good]
   casting: [aV]
   range: 30 feet
-  target: one evil creature
+  target: 1 evil creature
   duration: 1 round
   description:
     main:
-      You denounce an evildoer, rendering it susceptible to the power
-      of good. The target gains weakness 5 to good. The target is
-      bolstered against your litanies.
+      Your litany denounces an evildoer, rendering it susceptible to the powers of good. The target gains weakness 7 to good. The target then becomes temporarily immune to all of your litanies for 1 minute.
   heightened:
     "+1": The weakness increases by 1.
 localized-quake:
@@ -6483,20 +6469,6 @@ primal-herd:
           - The following unarmed melee attacks, which are the only attacks the target can use. They’re trained with them. When attacking with these attacks, the target uses their attack modifier with the proficiency and item bonuses of their most favorable weapon or unarmed Strike, and the damage is listed for each attack. These attacks are Strength based (for the purpose of the enfeebled condition, for example). If the target’s unarmed attack modifier is higher, they can use it instead. Melee [[A]] tusk (reach 15 feet), Damage 4d8+19 piercing; Melee [[A]] trunk (agile, reach 15 feet), Damage 4d6+16 bludgeoning; Melee [[A]] foot (agile, reach 15 feet), Damage 4d6+13 bludgeoning.
           - Athletics modifier of +30, unless the target’s own modifier is higher.
           - Trample [[A]][[A]][[A]] yot move up to twice your Speed and move through the space of Large or smaller creatures, trampling each creature whose space you enter. A trampled creature takes damage from its foot Strike based on a basic Reflex save (DC = 19 + the target’s level).
-      forms:
-        type: dl
-        content:
-          Mammoth:
-            "tusk (reach 15 feet), Damage 6d8+9 piercing;
-            trunk (agile, reach 15 feet), Damage 6d6+9 bludgeoning;
-            foot (agile, reach 15 feet), Damage 6d6+3 bludgeoning;
-            Speed 40 feet; Trample: As a 3-action activity, you can
-            move up to twice your Speed and move through the space
-            of Large or smaller creatures, trampling each creature
-            whose space you enter. A trampled creature takes foot
-            damage based on a Reflex save against your spell DC (half
-            damage on a success, no damage on a critical success, full
-            damage on a failure, double damage on a critical failure)."
 primal-phenomenon:
   name: PRIMAL PHENOMENON
   type: SPELL
