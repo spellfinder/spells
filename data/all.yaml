@@ -2,7 +2,7 @@ aberrant-whispers:
   name: Aberrant Whispers
   traits: [auditory, enchantment, mental]
   level: 3
-  type: power
+  type: focus
   rarity: 1
   casting: [aS, aV]
   area: 15-foot aura
@@ -21,6 +21,17 @@ aberrant-whispers:
           success: "The target is unaffected"
           failure: "The target is stupefied 2"
           crit-fail: The target is confused
+abundant-step:
+  name: Abundant Step
+  traits: [conjuration, monk, teleportation]
+  level: 4
+  rarity: 1
+  type: focus
+  casting: [aS]
+  range: 15 feet or more
+  description:
+    main:
+      You move so fast you blur across planar boundaries. You teleport up to a distance equal to your Speed within your line of sight.
 abyssal-plague:
   name: Abyssal Plague
   traits: [attack, chaotic, disease, evil, necromancy]
@@ -2819,7 +2830,7 @@ empty-body:
   duration: 1 minute
   description:
     main:
-      You turn ethereal as ethereal jaunt but don't need to concentrate.
+      You turn ethereal, with the effects of ethereal jaunt, but you don't need to concentrate.
 endure-elements:
   name: ENDURE ELEMENTS
   type: SPELL
@@ -4720,14 +4731,14 @@ ki-blast:
   type: focus
   level: 3
   rarity: 1
-  traits: [attack, evocation, force]
-  casting: [aS, aV]
-  area: 30-foot cone
+  traits: [evocation, force, monk]
+  casting: [aSV, or more]
+  area: 15-foot cone or more
+  save: Fortitude
   description:
     main:
-      You unleash your ki as a powerful blast of force
-      that deals 4d4 force damage. Each creature in the area must
-      attempt a Fortitude saving throw. ${subsection.save}
+      You unleash your ki as a powerful blast of force that deals 2d6 force damage. If you use 2 actions to cast ki blast, increase the size of the cone to 30 feet and the damage to 3d6. If you use 3 actions to cast ki blast, increase the size of the cone to 60 feet and the damage to 4d6. Each creature in the area must attempt a Fortitude saving throw.
+      ${subsection.save}
     subsections:
       save:
         type: dl
@@ -4735,37 +4746,31 @@ ki-blast:
           success: The creature takes half damage.
           crit: The creature is unaffected.
           failure: The creature takes full damage and is pushed 5 feet.
-          crit-fail: Double damage and pushed 10 feet.
+          crit-fail: The creature takes double damage and pushed 10 feet.
   heightened:
-    "+1": The damage increases by 2d4.
+    "+1": The damage increases by 1d6, or by 2d6 if you use 2 or 3 actions.
 ki-rush:
   name: KI RUSH
   type: focus
   level: 1
   rarity: 0
-  traits: [transmutation]
+  traits: [monk, transmutation]
   casting: [aV]
   description:
     main:
-      "Accelerated by the magic of your ki, you move with incredible speed
-      and become so swift you’re a blur. Move twice: two Strides, two Steps,
-      or one Stride and one Step (in either order). You gain concealment
-      during this movement and until the start of your next turn."
+      "Accelerated by your ki, you move with such speed you become a blur. Move two times: two Strides, two Steps, or one Stride and one Step (in either order). You gain the concealed condition during this movement and until the start of your next turn."
 ki-strike:
   name: KI STRIKE
   type: focus
   level: 1
   rarity: 0
-  traits: [transmutation]
+  traits: [monk, transmutation]
   casting: [aV]
   description:
     main:
-      "You focus your ki into magical attacks. Make an unarmed Strike or
-      Flurry of Blows (this doesn’t change the limit on using Flurry of Blows
-      once per round). The Strike or Strikes get a +1 conditional bonus to
-      attack rolls and deal 1d6 extra damage. This damage can be any of
-      the following types of your choice, chosen each time you Strike: force,
-      lawful (only if you’re lawful), negative, or positive."
+      "You focus your ki into magical attacks. Make an unarmed Strike or Flurry of Blows (this doesn't change the limit on using only one flourish per turn). You gain a +1 status bonus to your attack rolls with the Strikes, and the Strikes deal 1d6 extra damage. This damage can be any of the following types of your choice, chosen each time you Strike: force, lawful (only if you're lawful), negative, or positive."
+  heightened:
+    "+4": The extra damage increases by 1d6.
 knock:
   name: KNOCK
   type: SPELL
@@ -6768,28 +6773,26 @@ quivering-palm:
   type: focus
   level: 8
   rarity: 1
-  traits: [attack, necromancy]
+  traits: [monk, necromancy]
   casting: [aS, aV]
   duration: 1 month
+  save: Fortitude
   description:
     main:
-      Make a melee unarmed Strike, dealing damage normally. If you
-      succeed and the target is alive; any time during the duration you
-      can spend a Verbal action to speak a word of death that could
-      instantly slay it, depending on its Fortitude save.
+      Make a melee unarmed Strike. If you hit and the target is alive, anytime during the duration, you can spend a single action, which has the auditory and concentrate traits, to speak a word of death that could instantly slay it. The target must attempt a Fortitude save.
       ${subsection.save}
-      If you cast quivering palm again, any previous quivering
-      palm you had cast ends.
+      If you cast quivering palm again, the effects of any quivering palm you had previously cast end.
     subsections:
       save:
         type: dl
         content:
-          success: The target survives, the spell ends, and the target is bolstered against it.
+          crit: The target survives, the spell ends, and the target is then temporarily immune for 24 hours.
+          success: The target is stunned 1 and takes 40 damage, the spell ends, and the target is then temporarily immune for 24 hours.
           failure:
-            The target is stunned for 1 round but survives. The
-            spell's duration continues, but the target is bolstered
-            against being killed by quivering palm for 24 hours.
+            The target is stunned 3 and takes 80 damage. The spell's duration continues, but the target is then temporarily immune for 24 hours against being killed by quivering palm.
           crit-fail: The target dies.
+  heightened:
+    "+1": The damage increases by 10 on a failure, or 5 on a success.
 raise-dead:
   name: RAISE DEAD
   type: SPELL
@@ -9966,7 +9969,7 @@ wholeness-of-body:
   type: focus
   level: 2
   rarity: 1
-  traits: [healing, necromancy, positive]
+  traits: [healing, monk, necromancy, positive]
   casting: [aV]
   description:
     main:
@@ -9976,12 +9979,10 @@ wholeness-of-body:
       effects:
         type: list
         content:
-          - You regain Hit Points equal to 1d8 plus your spellcasting
-            ability modifier.
-          - You attempt to cure one toxin afflicting you; attempt to
-            counteract the condition.
+          - You regain 8 Hit Points.
+          - You attempt to cure one poison or disease afflicting you; attempt to counteract the affliction.
   heightened:
-    "+1": If you choose to regain Hit Points, the Hit Points regained increase by 2d8.
+    "+1": If you choose to regain Hit Points, the Hit Points regained increase by 8.
 wild-morph:
   name: WILD MORPH
   type: focus
@@ -10040,19 +10041,13 @@ wild-winds-stance:
   type: focus
   level: 4
   rarity: 1
-  traits: [evocation, open, stance]
+  traits: [air, evocation, monk, stance]
   casting: [aS]
   duration: until you leave the stance
   description:
     main:
-      You take on the stance of the flowing winds,
-      sending out waves of energy to attack at a distance. You can
-      make wind crash unarmed Strikes as ranged Strikes against
-      targets within 30 feet. These deal 1d4 bludgeoning damage, use
-      the brawling group, and have the agile, nonlethal, propulsive,
-      and unarmed traits. Wind crash Strikes ignore screening.
-      While in wild winds stance, you gain a +1 conditional bonus to
-      AC against ranged attacks.
+      You take on the stance of the flowing winds, sending out waves of energy at a distance. You can make wind crash unarmed Strikes as ranged Strikes against targets within 30 feet. These deal 1d6 bludgeoning damage, use the brawling group, and have the agile, nonlethal, propulsive, and unarmed traits. Wind crash Strikes ignore concealment and all cover.
+      While in wild winds stance, you gain a +2 circumstance bonus to AC against ranged attacks..
 wind-jump:
   name: WIND JUMP
   type: focus
