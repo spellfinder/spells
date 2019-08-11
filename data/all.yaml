@@ -349,52 +349,44 @@ animal-form:
   rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
-      "You transform into a Medium animal battle form. You count as an animal in addition to your normal traits.
-      Your gear is absorbed into you; the constant abilities of your gear still function, but you can't activate it.
-      When you transform, you gain the following: ${subsection.stats}
+      "You call upon primal energy to transform yourself into a Medium animal battle form. When you first cast this spell, choose ape, bear, bull, canine, cat, deer, frog, shark, or snake. You can decide the specific type of animal (such as lion or snow leopard for cat), but this has no effect on the form's Size or statistics. While in this form, you gain the animal trait. You can Dismiss the spell.
+      You gain the following statistics and abilities regardless of which battle form you choose: ${subsection.stats}
       These special statistics can be adjusted only by penalties, circumstance bonuses, and conditional bonuses.
-      Your battle form prevents casting spells, speaking, or using most actions with the manipulate trait that require
-      hands. (The GM decides if there's doubt.) You can dismiss the spell with a concentrate action.
-      If you prepare this spell, choose from the options below. You gain the attacks, Speeds, and special abilities
-      listed. You can choose the specific type of animal (such as lion or snow leopard for cat). This has no effect
-      on size or statistics.
+      You also gain specific abilities based on the type of animal you choose:
       ${subsection.forms}"
     subsections:
       stats:
         type: list
         content:
-          - AC 19 (TAC 17), ignore armor's check penalty and reduced Speed.
+          - AC = 16 + your level. Ignore your armor's check penalty and Speed reduction.
           - One or more unarmed melee attacks, which are the only types of attacks you can use.
-            You're trained with them. Your attack modifier is +7 and your damage bonus is +1. These are Strength based
-            (for the purpose of enfeebled, for example).
-          - 5 temporary Hit Points while you have the form.
-          - Low-light vision.
-          - Athletics bonus of +7 unless your own is higher.
+            You're trained with them. Your attack modifier is +9 and your damage bonus is +1. These attacks are Strength based
+            (for the purpose of the enfeebled condition, for example). If your unarmed attack bonus is higher, you can use it instead.
+          - 5 temporary Hit Points.
+          - Low-light vision and imprecise scent 30 feet.
+          - Athletics bonus of +9 unless your own is higher.
       forms:
         type: dl
         content:
           Ape: Speed 25 feet, climb Speed 20 feet; scent 30 feet; fist, Damage 2d6 bludgeoning
-          Bear: Speed 25 feet; scent 30 feet; jaws, Damage 2d8 piercing; claw (agile), Damage 1d8 slashing.
-          Bull: Speed 30 feet; scent 30 feet; horn, Damage 2d8 piercing.
-          Canine: Speed 40 feet; scent 30 feet; jaws, Damage 2d8 piercing.
+          Bear: Speed 30 feet; jaws, Damage 2d8 piercing; claw (agile), Damage 1d8 slashing.
+          Bull: Speed 30 feet; horn, Damage 2d8 piercing.
+          Canine: Speed 40 feet; jaws, Damage 2d8 piercing.
           Cat: Speed 40 feet; scent 30 feet; jaws, Damage 2d6 piercing; claw (agile), Damage 1d10 slashing.
-          Deer: Speed 45 feet; scent 30 feet; antler, Damage 2d6 piercing.
-          Frog: Speed 25 feet, swim, Speed 25 feet; scent 30 feet; jaws, Damage 2d6 bludgeoning; tongue (reach 15 feet), Damage 2d4 bludgeoning.
-          Shark: swim Speed 35 feet; scent 30 feet; jaws, Damage 2d8 piercing.
-          Snake: Speed 20 feet, climb Speed 20 feet, swim Speed 20 feet; scent 30 feet; fangs, Damage 2d4 piercing plus 1d6 poison
+          Deer: Speed 50 feet; antler, Damage 2d6 piercing.
+          Frog: Speed 25 feet, swim Speed 25 feet; jaws, Damage 2d6 bludgeoning; tongue (reach 15 feet), Damage 2d4 bludgeoning.
+          Shark: swim Speed 35 feet; scent 30 feet; jaws, Damage 2d8 piercing; breathe underwater but not in air
+          Snake: Speed 20 feet, climb Speed 20 feet, swim Speed 20 feet; fangs, Damage 2d4 piercing plus 1d6 poison
   heightened:
     3rd:
-      Your statistics are AC 23 (TAC 21); attack modifier +11; damage bonus +5; 10 temporary HP; Athletics +12
+      You instead gain 10 temporary HP, AC = 17 + your level, attack modifier +14, damage bonus +5, and Athletics +14.
     4th:
-      Your battle form is Large and your attacks have 10-foot reach. You must have enough space to expand or the spell
-      is lost. Your statistics are AC 25 (TAC 22); attack modifier +14; damage bonus +9; 15 temporary HP; Athletics +14.
+      Your battle form is Large and your attacks have 10-foot reach. You must have enough space to expand into or the spell is lost. You instead gain 15 temporary HP, AC = 18 + your level, attack modifier +16, damage bonus +9, and Athletics +16.
     5th:
-      Your battle form is Huge and your attacks have 15-foot reach. You must have enough space to expand or the spell
-      is lost. Your statistics are AC 27 (TAC 24); attack modifier of +16; damage bonus +7 and double the number of
-      damage dice; 20 temporary HP; Athletics +18.
+      Your battle form is Huge and your attacks have 15-foot reach. You must have enough space to expand into or the spell is lost. You instead gain 20 temporary HP, AC = 18 + your level, attack modifier +18, damage bonus +7 and double the number of damage dice, and Athletics +20.
 animal-messenger:
   traits: [enchantment, mental]
   name: ANIMAL MESSENGER
@@ -404,16 +396,10 @@ animal-messenger:
   casting-time: 1 minute
   casting: [M, S, V]
   range: 120 feet
-  duration: 1 week
+  duration: until delivered
   description:
     main:
-      You offer a gift of food, and an ordinary Tiny wild animal within
-      range approaches to eat it. You imprint the image, direction, and
-      distance of an obvious place or landmark well known to you within
-      the animal. Optionally, you can attach a small object or note up to
-      light Bulk to it. The animal does its best to reach the destination; if
-      it does, it waits nearby until the duration expires, allowing other
-      nonhostile creatures to approach it and remove the attached object.
+      You offer a gift of food, and an ordinary Tiny wild animal within range approaches to eat it. You imprint the image, direction, and distance of an obvious place or landmark well known to you within the animal. Optionally, you can attach a small object or note up to light Bulk to it. The animal does its best to reach the destination; if it makes it there, it waits nearby until the duration expires, allowing other nonhostile creatures to approach it and remove the attached object.
       If there are no Tiny wild animals in range, the spell is lost.
 ant-haul:
   name: ANT HAUL
@@ -685,14 +671,13 @@ barkskin:
   traits: [abjuration, plant]
   casting: [aS, aV]
   range: touch
-  target: one creature
-  duration: 1 minute
+  target: 1 willing creature
+  duration: 10 minutes
   description:
     main:
-      The target's skin is covered in bark. The target gains resistance 1 to
-      bludgeoning and piercing damage and weakness 2 to fire.
+      The target's skin becomes covered in bark. The target gains resistance 2 to bludgeoning and piercing damage and weakness 3 to fire. After the target takes fire damage, it can Dismiss the spell as a free action triggered by taking the damage; doing so doesn't reduce the fire damage the target was dealt.
   heightened:
-    "+2": The resistances increase by 2 and weakness by 3.
+    "+2": The resistances increase by 2, and the weakness increases by 3.
 bind-soul:
   name: BIND SOUL
   type: SPELL
@@ -3230,15 +3215,11 @@ entangle:
   traits: [plant, transmutation]
   casting: [aS, aV]
   range: 120 feet
-  area: squares in a 20-foot-radius burst that contain plants
+  area: all squares in a 20-foot-radius burst that contain plants
   duration: 1 minute
   description:
     main:
-      Plants in the area entangle creatures. Each round a creature starts
-      its turn in the area, it must attempt a Reflex save. On a failure, it is
-      entangled until it leaves the area, and on a critical failure, it is also
-      immobile for 1 round. Creatures can attempt Acrobatics or Athletics
-      checks at entangle's DC to remove these effects.
+      Plants in the area entangle creatures. The area counts as difficult terrain. Each round that a creature starts its turn in the area, it must attempt a Reflex save. On a failure, it takes a –10-foot circumstance penalty to its Speeds until it leaves the area, and on a critical failure, it is also immobilized for 1 round. Creatures can attempt to Escape at entangle's DC to remove these effects.
 enthrall:
   name:  ENTHRALL
   type: SPELL
@@ -6772,34 +6753,25 @@ paranoia:
   traits: [illusion, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: 1 minute
+  save: Will
   description:
     main:
-      The target is stricken by intense paranoia towards all creatures
-      around it, with effects determined by the outcome of its Will
-      saving throw. ${subsection.save}
+      You cause the target to see all other creatures as dire threats. The target is stricken by intense paranoia toward all creatures around it and must attempt a Will save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success:
-            The target believes everyone it sees is a potential
-            threat. It becomes unfriendly to all creatures that were
-            previously allies, treating only itself as an ally. The spell
-            ends after 1 round.
+            The target believes everyone it sees is a potential threat. It becomes unfriendly to all creatures to which it wasn't already hostile, even those that were previously allies. It treats no one as an ally. The spell ends after 1 round.
           crit: The target is unaffected.
-          failure: Per success, but the effect lasts the full minute.
+          failure: As success, but the effect lasts 1 minute.
           crit-fail:
-            Per failure, except the target believes that
-            everyone it sees is a mortal enemy. It uses its reactions
-            and free actions against these enemies regardless of
-            whether they were previously its allies, as determined by
-            the GM. It otherwise acts as rationally as normal and will
-            likely prefer to attack enemies that are actively attacking
-            or hindering it.
+            As failure, except the target believes that everyone it sees is a mortal enemy. It uses its reactions and free actions against everyone, regardless of whether they were previously its allies, as determined by the GM. It otherwise acts as rationally as it normally does and likely prefers to attack creatures that are actively attacking or hindering it over those leaving it alone.
   heightened:
-    6th: You can target up to five creatures.
+    6th: You can target up to 5 creatures.
 pass-without-trace:
   name: PASS WITHOUT TRACE
   type: SPELL
@@ -8675,8 +8647,7 @@ shape-wood:
   target: an unworked piece of wood up to 20 cubic feet in volume
   description:
     main:
-      You shape the wood into a rough shape of your choice; it can't
-      include intricate parts, fine details, moving pieces, or the like.
+      You shape the wood into a rough shape of your choice. The shaping power is too crude to produce with intricate parts, fine details, moving pieces, or the like. You cannot use this spell to enhance the value of the wooden object you are shaping.
 shapechange:
   name: SHAPECHANGE
   type: SPELL
@@ -8687,13 +8658,21 @@ shapechange:
   duration: 1 minute or until dismissed
   description:
     main:
-      You transform yourself into any form you could choose with a
-      different polymorph spell you know of 7th level or lower. You
-      choose the type of creature as you cast the spell rather than
-      when you prepare it. You can Concentrate on the Spell to change
-      your form to any other form you could choose with this spell.
-      You can dismiss this spell by using an action (this action has the
-      concentrate trait).
+      You shape the wood into a rough shape of your choice. The shaping power is too crude to produce with intricate parts, fine details, moving pieces, or the like. You cannot use this spell to enhance the value of the wooden object you are shaping.
+shatter:
+  name: Shatter
+  type: spell
+  level: 2
+  rarity: 0
+  traits: [evocation, sonic]
+  cast: [aS, aV]
+  range: 30 feet
+  target: 1 unattended object
+  description:
+    main:
+      A high-frequency sonic attack shatters a nearby object. You deal 2d10 sonic damage to the object, ignoring the object's Hardness if it is 4 or lower.
+  heightened:
+    '+1': The damage increases by 1d10, and the Hardness the spell ignores increases by 2.
 shield:
   name: SHIELD
   type: SPELL
@@ -9042,10 +9021,7 @@ speak-with-animals:
   duration: 10 minutes
   description:
     main:
-      You can ask questions of, receive answers from, and use the
-      Diplomacy skill with animals. The spell doesn't make them more
-      friendly than normal. Wary and cunning animals are likely to be
-      terse and evasive; less intelligent ones often make inane comments.
+      You can ask questions of, receive answers from, and use the Diplomacy skill with animals. The spell doesn't make them more friendly than normal. Cunning animals are likely to be terse and evasive, while less intelligent ones often make inane comments.
 speak-with-plants:
   name: SPEAK WITH PLANTS
   type: SPELL
@@ -10312,15 +10288,7 @@ tree-shape:
   duration: 8 hours
   description:
     main:
-      You transform into a Large tree. Perception checks don't reveal
-      your true nature, but a successful Nature or Survival check against
-      your spell DC reveals that the tree is new to the area. While in tree
-      form, you can observe everything around you, but you can't act
-      other than by using an action (this action has the concentrate trait)
-      to end the spell, which ends your turn. As a tree, your AC is 20;
-      your TAC is 12; and only conditional bonuses, conditional penalties,
-      circumstance bonuses, and circumstance penalties affect you. You
-      treat successes and critical successes on Reflex saves as failures.
+      You transform into a Large tree. Perception checks don't reveal your true nature, but a successful Nature or Survival check against your spell DC reveals that you appear to be a tree that is strangely new to the area. While in tree form, you can observe everything around you, but you can't act other than to end the spell, and your turn, by using a single action, which has the concentrate trait. As a tree, your AC is 20, and only status bonuses, status penalties, circumstance bonuses, and circumstance penalties affect you. Any successes and critical successes you roll on Reflex saves are failures.
 tree-stride:
   name: TREE STRIDE
   type: SPELL
