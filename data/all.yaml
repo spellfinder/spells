@@ -532,15 +532,9 @@ augury:
   casting: [M, S, V]
   description:
     main:
-      You ask about the results of a particular course of
-      action. The spell can predict results up to 30 minutes into the future,
-      and reveals the GM's best guess among the following outcomes.
+      You gain a vague glimpse of the future. During the casting of this spell, ask about the results of a particular course of action. The spell can predict results up to 30 minutes into the future and reveals the GM's best guess among the following outcomes
       ${subsection.outcomes}
-      The GM rolls a secret DC 6 flat check. On a failure, the result
-      is always "nothing." This makes it impossible to tell whether a
-      "nothing" result is accurate. If anyone casts augury on the same
-      topic, use the secret roll result from the first casting. It's possible
-      to get a different result if circumstances change.
+      The GM rolls a secret DC 6 flat check. On a failure, the result is always “nothing.” This makes it impossible to tell whether a “nothing” result is accurate. If anyone asks about the same topic as the first casting of augury during an additional casting, the GM uses the secret roll result from the first casting. If circumstances change, though, it's possible to get a different result.
     subsections:
       outcomes:
         type: dl
@@ -955,22 +949,24 @@ calm-emotions:
   type: SPELL
   level: 2
   rarity: 0
-  traits: [emotion, enchantment, mental]
+  traits: [emotion, enchantment, incapacitation, mental]
   casting: [aS, aV]
   range: 120 feet
   area: 10-foot burst
   duration: sustained, up to 1 minute
+  save: Will
   description:
-    main: Creatures in the area become calm, depending on their Will saves. ${subsection.save}
+    main:
+      You forcibly calm creatures in the area, soothing them into a nonviolent state; each creature must attempt a Will save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Calming urges give a -1 conditional penalty to attack rolls.
+          success: Calming urges impose a -1 status penalty to the creature's attack rolls.
           crit: The creature is unaffected.
           failure:
-            You suppress emotion effects and prevent the creature from acting hostile.
-            If it is subject to hostility from any other creature, it ceases to be affected by calm emotions.
+            Any emotion effects that would affect the creature are suppressed and the creature can't use hostile actions. If the target is subject to hostility from any other creature, it ceases to be affected by calm emotions.
           crit-fail: As failure, but hostility doesn't end the effect.
 captivating-adoration:
   name: CAPTIVATING ADORATION
@@ -1830,17 +1826,17 @@ death-knell:
   traits: [attack, death, necromancy]
   casting: [aS, aV]
   range: touch
-  target: one living creature at 0 HP
+  target: 1 living creature that has 0 HP
+  save: Will
   description:
     main:
-      You snuff out a creature at the brink of death, based
-      on its Will save. If this kills it, you gain 10 temporary HP and a +1
-      conditional bonus to attack and damage rolls for 10 minutes. ${subsection.save}
+      You snuff the life out of a creature on the brink of death. The target must attempt a Will save. If this kills it, you gain 10 temporary HP and a +1 status bonus to attack and damage rolls for 10 minutes.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The target increases its dying value by 1.
+          success: The target's dying value increases by 1.
           crit: The target is unaffected.
           failure: The target dies.
 death-ward:
@@ -3201,17 +3197,14 @@ enhance-victuals:
   casting-time: 1 minute
   casting: [M, S, V]
   range: touch
-  target: 1 nonmagical pint of water or pound of food
+  duration: 1 hour
+  target: up to 1 gallon of non-magical water or up to 5 pounds of food
   description:
     main:
-      You transform the target into delicious fare, changing water into
-      wine or another fine beverage or enhancing food's taste and
-      ingredients to make it a gourmet treat. The transformation also
-      attempts to counteract toxins in the food or water. If you have Spell
-      Points, you can add an additional pint or pound for each additional
-      Spell Point you spend. The feast vanishes if not consumed.
+      You transform the target into delicious fare, changing water into wine or another fine beverage or enhancing the food's taste and ingredients to make it a gourmet treat.
+      Prior to the transformation, the spell attempts to counteract any poisons in the food or water. The food turns back to normal if not consumed before the duration expires, though any poisons that were counteracted are still gone.
   heightened:
-    "+1": Initial and additional pints or pounds increase by 1.
+    "+1": The number of gallons of water you can target increases by 1, or the number of pounds of food you can target increases by 5.
 enlarge:
   name: ENLARGE
   type: SPELL
@@ -3407,13 +3400,10 @@ faerie-fire:
   casting: [aS, aV]
   range: 120 feet
   area: 10-foot burst
-  duration: 1 minute
+  duration: 5 minutes
   description:
     main:
-      All creatures in the area are limned in colorful, heatless fire of a
-      color of your choice. Visible creatures can't be concealed while
-      affected by faerie fire. If the creatures are invisible, they are
-      concealed while affected by faerie fire, rather than being unseen.
+      All creatures in the area when you cast the spell are limned in colorful, heatless fire of a color of your choice for the duration. Visible creatures can't be concealed while affected by faerie fire. If the creatures are invisible, they are concealed while affected by faerie fire, rather than being undetected.
 false-life:
   name: FALSE LIFE
   type: SPELL
@@ -4072,33 +4062,32 @@ ghoulish-cravings:
   traits: [attack, disease, evil, necromancy]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
+  save: Fortitude
   description:
     main:
-      You touch the target to afflict it with ghoul fever;
-      the target must attempt a Fortitude save. ${subsection.save}
+      You touch the target to afflict it with ghoul fever, infesting it with hunger and a steadily decreasing connection to positive energy; the target must attempt a Fortitude save.
+      ${subsection.save}
       ${subsection.disease}
     subsections:
       save:
         type: dl
         content:
           success:
-            The target takes a -2 conditional penalty to saving
-            throws against ghoul fever for 1 day or until she contracts
-            it, whichever comes first.
-          crit: unaffected
-          failure: The target is afflicted with ghoul fever at stage 1.
-          crit-fail: The target is afflicted with ghoul fever at stage 2.
+            The target is afflicted with ghoul fever at stage 1.
+          crit: The target is unaffected
+          failure: The target is afflicted with ghoul fever at stage 2.
+          crit-fail: The target is afflicted with ghoul fever at stage 3.
       disease:
         type: dl
         content:
           "Ghoul Fever": (disease) Level 3
           "Stage 1": carrier with no ill effect (1 day)
-          "Stage 2": 3d8 damage and regains half as many Hit Points from all healing (1 day)
+          "Stage 2": 3d8 negative damage and the creature regains half as many Hit Points from all healing (1 day)
           "Stage 3": as stage 2 (1 day)
-          "Stage 4": 3d8 damage and gains no benefit from healing (1 day)
+          "Stage 4": 3d8 negative damage and the creature gains no benefit from healing (1 day)
           "Stage 5": as stage 4 (1 day)
-          "Stage 6": dead, and rises as a ghoul at the next midnight.
+          "Stage 6": the creature dies and rises as a ghoul at the next midnight.
 glimpse-the-truth:
   name: GLIMPSE THE TRUTH
   type: POWER
@@ -7955,14 +7944,10 @@ remove-fear:
   traits: [enchantment]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   description:
     main:
-      You can counteract a single fear effect that the target suffers
-      from. This can also remove nonmagical fear effects if the source's
-      level is equal to or lower than double remove fear's level.
-      This frees only the target, not any other creatures under the
-      fear effect.
+      With a touch, you ease a creature's fears. You can attempt to counteract a single fear effect that the target suffers from. This frees only the target, not any other creatures under the fear effect.
   heightened:
     6th: The spell's range increases to 30 feet, and you can target up to 10 creatures.
 remove-paralysis:
@@ -7973,13 +7958,10 @@ remove-paralysis:
   traits: [healing, necromancy]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   description:
     main:
-      You can counteract a single effect inflicting paralysis on the
-      creature. This does not cure someone who suffers paralysis from
-      some natural state or effect, such a being paralyzed from birth or
-      paralysis caused by nonmagical wounds or toxins.
+      A surge of energy frees a paralyzed creature. You can attempt to counteract a single effect imposing the paralyzed condition on the target. This does not cure someone who is paralyzed from some natural state or effect, such as paralysis caused by non-magical wounds or toxins.
   heightened:
     6th: The spell's range increases to 30 feet, and you can target up to 10 creatures.
 repulsion:
@@ -8113,38 +8095,24 @@ restoration:
   casting-time: 10 minutes
   casting: [S, V]
   range: touch
-  target: one creature
+  target: 1 creature
   description:
     main:
-      When you cast restoration, choose to either reduce a condition or
-      lessen the effect of a toxin. A creature can benefit from only one
-      restoration spell each day, and it can't benefit from restoration more
-      than once to reduce the stage of the same exposure to a given toxin.
+      Restorative magic counters the effects of toxins or conditions that prevent a creature from functioning at its best. When you cast restoration, choose to either reduce a condition or lessen the effect of a toxin. A creature can benefit from only one restoration spell each day, and it can't benefit from restoration more than once to reduce the stage of the same exposure to a given toxin.
       ${subsection.choices}
     subsections:
       choices:
         type: dl
         content:
           "Reduce a Condition":
-            Reduce the value of the target's
-            enfeebled, sluggish, or stupefied condition by 2. You can
-            instead reduce two of the listed conditions by 1 each.
+            Reduce the value of the target's clumsy, enfeebled, or stupefied condition by 2. You can instead reduce two of the listed conditions by 1 each.
           "Lessen a Toxin":
-            Reduce the stage of one toxin the target
-            suffers from by one stage. This can't reduce the stage below
-            stage 1 or cure the affliction.
+            Reduce the stage of one toxin the target suffers from by one stage. This can't reduce the stage below stage 1 or cure the affliction.
   heightened:
     4th:
-      Add drained to the list of conditions you can
-      reduce. When you lessen a toxin, reduce the stage by two. You
-      also gain a third option that allows you to reduce the target's
-      enervated value by 1. You can't use this to reduce a permanent
-      enervated condition.
+      Add drained to the list of conditions you can reduce. When you lessen a toxin, reduce the stage by two. You also gain a third option that allows you to reduce the target's doomed value by 1. You can't use this to reduce a permanent doomed condition.
     6th:
-      Per the 4th-level restoration, but you can
-      reduce a permanent enervated condition if you add a Material
-      Casting action while casting the spell, during which you provide
-      100 gp worth of diamond dust as a cost.
+      As the 4th-level restoration, but you can reduce a permanent doomed condition if you add a spellcasting action and a material component while Casting the Spell, during which you provide 100 gp worth of diamond dust as a cost.
 restore-senses:
   name: RESTORE SENSES
   type: SPELL
@@ -8153,19 +8121,13 @@ restore-senses:
   traits: [healing, necromancy]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   description:
     main:
-      You can counteract a single effect making the target blinded
-      or deafened. This can counteract both temporary magic and
-      permanent consequences of magic, but it doesn't cure someone
-      who is missing the sense from some natural state or effect, such
-      as from birth or from a nonmagical wound or toxin.
+      You attempt to counteract a single effect imposing the blinded or deafened conditions on the target, restoring its vision or hearing. This can counteract both temporary magic and permanent consequences of magic, but it doesn't cure someone who does not have the sense due to some natural state or effect, such as from birth or from a non-magical wound or toxin.
   heightened:
     6th:
-      The spell's range increases to 30 feet, and
-      you can target up to 10 creatures. You can choose the effect to
-      counteract separately for each selected creature.
+      The spell's range increases to 30 feet, and you can target up to 10 creatures. You can choose the effect to counteract separately for each selected creature.
 retributive-pain:
   name: RETRIBUTIVE PAIN
   type: POWER
@@ -8763,17 +8725,11 @@ shield-other:
   traits: [necromancy]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
-  duration: 10 minutes or until dismissed
+  target: 1 creature
+  duration: 10 minutes
   description:
     main:
-      The target's essence and your own become linked. The
-      target takes half damage from all sources that deal Hit Point
-      damage, and you take the remainder of the damage. When you
-      take damage through this link, don't apply any resistances,
-      weaknesses, and the like that you have to that damage; you
-      simple take that amount of damage. The spell is dismissed if the
-      target is ever more than 30 feet away from you.
+      You forge a temporary link between the target's life essence and your own. The target takes half damage from all effects that deal Hit Point damage, and you take the remainder of the damage. When you take damage through this link, you don't apply any resistances, weaknesses, or other abilities you have to that damage; you simply take that amount of damage. The spell ends if the target is ever more than 30 feet away from you. If either you or the target is reduced to 0 Hit Points, any damage from this spell is resolved and then the spell ends.
 shifting-form:
   name: SHIFTING FORM
   type: POWER
@@ -8907,21 +8863,10 @@ silence:
   duration: 1 minute
   description:
     main:
-      The target makes no sound, preventing creatures from
-      noticing it using hearing. The target can't use sonic attacks,
-      nor can it use actions with the auditory trait. (This prevents it
-      from casting spells that include Verbal Casting actions.)
+      The target makes no sound, preventing creatures from noticing it using hearing or other senses alone. The target can't use sonic attacks, nor can it use actions with the auditory trait. This prevents it from casting spells that include verbal components.
   heightened:
     4th:
-      The silence effect emanates from the
-      touched creature, silencing all sound in or passing through a
-      10-foot radius and preventing any auditory and sonic effects
-      in the affected area. While within the radius, creatures are
-      subject to the effects listed above. Depending upon the
-      position of the effect, a creature might be able to notice the
-      lack of sound reaching it. For example, if the silence effect
-      blocks a corridor leading to a noisy party, a creature might
-      notice those sounds abruptly cease.
+      The spell effect emanates from the touched creature, silencing all sound in or passing through a 10- foot radius and preventing any auditory and sonic effects in the affected area. While within the radius, creatures are subject to the same effects as the target. Depending upon the position of the effect, a creature might notice the lack of sound reaching it (blocking off the noise coming from a party, for example).
 skin-of-thorns:
   name: SKIN OF THORNS
   type: POWER
@@ -9073,20 +9018,20 @@ sound-burst:
   casting: [aS, aV]
   range: 30 feet
   area: 10-foot burst
+  save: Fortitude
   description:
     main:
-      You deal 3d8 sonic damage to creatures in the area, depending
-      on their Fortitude saves. ${subsection.save}
+      A cacophonous noise blasts out, dealing 2d10 sonic damage. Each creature must attempt a Fortitude save.
     subsections:
       save:
         type: dl
         content:
-          success: Half damage.
-          crit: No damage.
-          failure: Full damage and deafened for 1 round.
-          crit-fail: Double damage and deafened for 1 minute.
+          success: The creature takes half damage.
+          crit: The creature is unaffected.
+          failure: FThe creature takes full damage and is deafened for 1 round.
+          crit-fail: The creature takes double damage and is deafened and stunned 1 for 1 minute.
   heightened:
-    "+1": The damage increases by 1d8.
+    "+1": The damage increases by 1d10.
 speak-with-animals:
   name: SPEAK WITH ANIMALS
   type: SPELL
@@ -9386,35 +9331,15 @@ spiritual-weapon:
   rarity: 0
   traits: [attack, evocation, force]
   casting: [aS, aV]
-  requirements: You must have a deity.
+  requirements: You have a deity.
   range: 120 feet
   duration: sustained, up to 1 minute
   description:
     main:
-      A weapon made of pure magical force manifests and attacks foes
-      you designate within range. This weapon is ghostly and appears
-      as your deity's favored weapon.
-      When you cast the spell, the weapon appears next to a foe
-      of your choice within range and makes a Strike against it. Each
-      time you Concentrate on the Spell, you can move the weapon to
-      a new target within range (if you choose to do so) and make a
-      Strike with it. The spiritual weapon uses and contributes to your
-      multiple attack penalty.
-      Attacks with the weapon use your attack modifier with
-      that type of weapon, but substitute your spellcasting ability
-      modifier instead of the normal ability modifier. Regardless of its
-      appearance, the weapon deals force damage equal to 1d8 plus
-      your spellcasting ability modifier. When you Strike with the
-      weapon, you can deal damage of the normal damage type of the
-      weapon instead of force damage (or any of the available damage
-      types for a versatile weapon). No other attributes of the weapon
-      apply, and even a ranged weapon attacks adjacent creatures only.
-      A spiritual weapon counts as a weapon for triggers, resistances,
-      and so forth.
-      The weapon doesn't take up space, grant flanking, or have any
-      other attributes a creature would. The weapon can't make any
-      kind of attack other than a normal Strike, and feats or spells that
-      affect weapons do not apply to this weapon.
+      A weapon made of pure magical force materializes and attacks foes you designate within range. This weapon has a ghostly appearance and manifests as your deity's favored weapon.
+      When you cast the spell, the weapon appears next to a foe you choose within range and makes a Strike against it. Each time you Sustain the Spell, you can move the weapon to a new target within range (if needed) and Strike with it. The spiritual weapon uses and contributes to your multiple attack penalty.
+      The weapon's Strikes are melee spell attacks. Regardless of its appearance, the weapon deals force damage equal to 1d8 plus your spellcasting ability modifier. You can deal damage of the type normally dealt by the weapon instead of force damage (or any of the available damage types for a versatile weapon). No other statistics or traits of the weapon apply, and even a ranged weapon attacks adjacent creatures only. Despite making a spell attack, the spiritual weapon is a weapon for purposes of triggers, resistances, and so forth.
+      The weapon doesn't take up space, grant flanking, or have any other attributes a creature would. The weapon can't make any attack other than its Strike, and feats or spells that affect weapons do not apply to it.
   heightened:
     "+2": The weapon's damage increases by 1d8.
 stabilize:
@@ -9439,13 +9364,11 @@ status:
   traits: [detection, divination]
   casting: [aS, aV]
   range: touch
-  target: one willing living creature
+  target: 1 willing living creature
   duration: 1 day
   description:
     main:
-      As long as you and the target are on the same plane of existence
-      and both alive, you know the target's direction from you, its
-      distance from you, and any conditions affecting it.
+      As long as you and the target are on the same plane of existence and both alive, you remain aware of its present state. You know the target's direction from you, distance from you, and any conditions affecting it.
   heightened:
     4th: The spell's range increases to 30 feet, and you can target up to 10 creatures.
 stinking-cloud:
@@ -10516,12 +10439,11 @@ undetectable-alignment:
   casting-time: 1 minute
   casting: [M, S, V]
   range: touch
-  target: one creature or object
+  target: 1 creature or object
   duration: 1 day
   description:
     main:
-      The target registers as neutral to all effects that would detect
-      its alignment.
+      You shroud a creature in wards that hide its alignment. The target appears to be neutral to all effects that would detect its alignment.
 unfathomable-song:
   name: UNFATHOMABLE SONG
   type: SPELL
