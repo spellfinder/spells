@@ -1331,7 +1331,6 @@ commanding-lash:
   requirements: Your most recent action dealt damage to a target
   traits: [cleric, enchantment, incapacitation, mental]
   casting: [aV]
-  requirements: Your last action must have been a Strike that dealt damage to a target.
   save: Will
   range: 100 feet
   duration: until the end of your target's next turn
