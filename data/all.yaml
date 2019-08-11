@@ -1,18 +1,18 @@
 aberrant-whispers:
   name: Aberrant Whispers
-  traits: [auditory, enchantment, mental]
+  traits: [auditory, enchantment, mental, sorcerer]
   level: 3
   type: focus
   rarity: 1
-  casting: [aS, aV]
-  area: 15-foot aura
-  target: each enemy in the area
+  casting: [aV, or more]
+  area: 5-foot emanation or more
+  target: each foe in the area
   duration: 1 round
+  save: Will
   description:
     main:
-      You utter phrases in an unknown tongue, assaulting the minds of those nearby.
-      The effect is based on the result of the target's Will save. Regardless of the
-      result of each target's save, each target is bolstered against castings of aberrant whispers.
+      You utter phrases in an unknown tongue, assaulting the minds of those nearby. Each target must attempt a Will save. Regardless of the result of its save, each target is then temporarily immune for 1 minute. You can increase the number of actions it takes to Cast the Spell (to a maximum of 3 actions total).
+      For each additional action, increase the emanation's radius by 5 feet, to a maximum of 10 extra feet for 3 actions.
       ${subsection.save}
     subsections:
       save:
@@ -20,7 +20,9 @@ aberrant-whispers:
         content:
           success: "The target is unaffected"
           failure: "The target is stupefied 2"
-          crit-fail: The target is confused
+          crit-fail: The target is confused.
+  heightened:
+    "+3": The initial radius increases by 5 feet.
 abundant-step:
   name: Abundant Step
   traits: [conjuration, monk, teleportation]
@@ -64,20 +66,19 @@ abyssal-plague:
           "Stage 2": drained increases by 2 (1 day)
 abyssal-wrath:
   name: Abyssal Wrath
-  traits: [evocation]
+  traits: [evocation, sorcerer]
   level: 5
   rarity: 1
-  type: power
+  type: focus
   casting: [aS, aV]
   area: 60-foot cone
-
+  save: basic Reflex
   description:
     main:
       You evoke the power of an Abyssal realm. The damage types of the spell (one energy and one physical)
       are based on the result of rolling on the table below. The spell gains the corresponding traits.
       ${subsection.rolltable}
-      You deal 2d10 damage of the corresponding damage types to each creature in the cone; the creature must
-      attempt a Reflex save. ${subsection.save}
+      You deal 4d6 damage of each of the corresponding damage types to each creature in the cone (8d6 total damage).
     subsections:
       rolltable:
         type: table
@@ -92,15 +93,8 @@ abyssal-wrath:
             - [2, Depths, Acid and demonic shells, Acid ans slashing]
             - [3, Frozen, Frigid air and ice, Bludgeoning and cold]
             - [4, Volcanic, Jagged volcanic rocks and magma, Fire and piercing]
-      save:
-        type: dl
-        content:
-          success: The creature takes half damage
-          crit: The creature is unaffected
-          failure: The creature takes full damage of each damage type
-          crit-fail: It takes double damage of each damage type
   heightened:
-    '+2': The damage is increased by 1d10
+    '+1': The damage is increased by 1d6
 acid-arrow:
   name: Acid Arrow
   traits: [acid, attack, evocation]
@@ -313,6 +307,20 @@ anathematic-reprisal:
       You deal 4d6 mental damage to the target, but a basic Will save can reduce this damage. If it fails, it is also stupefied 1 for 1 round. The creature is then temporarily immune for 1 minute.
   heightened:
     "+1": The damage increases by 1d6.
+ancestral-memories:
+  name: Ancestral Memories
+  type: power
+  level: 1
+  rarity: 1
+  casting: [aV]
+  traits: [divination, sorcerer]
+  duration: 1 minute
+  description:
+    main:
+      The memories of long-dead spellcasters grant you knowledge in a specific skill. Choose any non-Lore skill, or a Lore skill related to the ancient empire from which your bloodline sprang. You temporarily become trained in that skill and might gain other memories associated with an ancestor who was trained in that skill. If you attempt a task or activity that lasts beyond this spell's duration, use the lower proficiency modifier.
+  heightened:
+    6th:
+      You temporarily become an expert in the skill you choose.
 ancestral-surge:
   name: Ancestral Surge
   traits: [enchantment]
@@ -327,33 +335,31 @@ ancestral-surge:
       1 Spell Point and Concentrate on a Spell to extend its duration by 1 round.
 angelic-halo:
   name: Angelic Halo
-  traits: [abjuration, good]
-  casting: [aS, aV]
+  traits: [abjuration, good, sorcerer]
+  casting: [aV]
   duration: 1 minute
+  area: 15-foot emanation
   type: power
   level: 1
   rarity: 1
   description:
-    main: You gain the effects of protection against evil.
+    main:
+      You gain an angelic halo with an aura that increases allies' healing from the heal spell. Heal spells gain a +2 status bonus to Hit Points healed to your allies in the area.
   heightened:
-    3rd: The effect of the spell increases to that of a circle of protection against evil, centered on you for 1 minute.
-    5th: The spell's duration increases to 1 hour
+    "+1": The status bonus increases by 2.
 angelic-wings:
   name: Angelic Wings
   type: power
   level: 3
   rarity: 1
-  traits: [evocation, light]
+  traits: [evocation, light, sorcerer]
   duration: 3 rounds
   casting: [aS, aV]
   description:
     main:
-      Wings of pure light spread out from your back, granting you a fly Speed of 30 feet. Your wings cast bright light
-      in a 30-foot radius. When the duration would end, if you have Spell Points, you can spend 1 Spell Point to increase
-      the duration by 3 rounds. When it ends, you float to the ground, with feather fall's effects.
+      Wings of pure light spread out from your back, granting you a fly Speed equal to your Speed. Your wings cast bright light in a 30-foot radius. When this spell's duration would end, if you're still flying, you float to the ground, as feather fall.
   heightened:
-    5th: The base duration, and the extra duration for spending 1 Spell Point, increase to 1 minute.
-    7th: The base duration increases to 10 minutes. The extra duration for spending 1 Spell Point increases to 5 minutes.
+    5th: The duration increases to 1 minute.
 animal-form:
   name: Animal Form
   type: spell
@@ -456,23 +462,19 @@ antimagic-field:
       You repel all magic from the target area, preventing spells and other magic from functioning. Spells can't penetrate the area, magic items cease to function within it, and no one inside can cast spells or use magic abilities. Likewise, spells— such as dispel magic—can't affect the field itself unless they are of a higher level. Magic effects resume the moment they pass outside the field. For example, a ray fired from one side of the field could target a creature on the other side (as long as caster and target are both outside the field). A summoned creature winks out of existence but reappears if the field moves or ends. Invested magic items cease to function, but they remain invested and resume functioning when they exit the field; the ability boost from an apex item isn't suppressed within the field. Spells of a higher level than the antimagic field overcome its effects, and can even be cast by a creature within the field.
       The field disrupts only magic, so a +3 longsword still functions as a longsword. Magically created creatures (such as golems) function normally within an antimagic field.
 arcane-countermeasure:
-  traits: [abjuration]
+  traits: [abjuration, sorcerer]
   name: ARCANE COUNTERMEASURE
   type: focus
   level: 5
   rarity: 1
   casting: [rS]
-  trigger: A creature within range that you can see casts a spell.
+  trigger: A creature within range that you can see Casts a spell.
   range: 120 feet
   target: the spell cast by the triggering creature
   description:
     main:
-      You undermine the target spell, making it easier to defend against.
-      You reduce the spell's level by 1, and targets gain a +1 conditional
-      bonus to any saving throws, skill checks, AC, or DC against it.
-      You can't reduce the spell's level below its minimum (if any).
-      For example, a 5th-level cone of cold would remain 5th-level, but a
-      5th-level fireball would become 4th-level.
+      You undermine the target spell, making it easier to defend against. You reduce the spell's level by 1, and targets of the spell gain a +2 status bonus to any saving throws, skill checks, AC, or DC against it.
+      You can't reduce the spell's level below its minimum. For example, a 5th-level cone of cold would remain 5th-level, but a 5th-level fireball would become 4th-level. Targets still gain all the other benefits, even if you don't reduce the spell's level.
 artistic-flourish:
   traits: [transmutation]
   name: ARTISTIC FLOURISH
@@ -967,20 +969,20 @@ celestial-brand:
   type: focus
   level: 5
   rarity: 1
-  traits: [curse, necromancy]
-  casting: [aS, aV]
+  traits: [curse, necromancy, sorcerer]
+  casting: [aS]
   range: 30 feet
-  target: one non-good creature
+  target: 1 evil creature
   duration: 1 round
   description:
     main:
       A blazing symbol appears on the target, marking it for divine justice.
-      You and your allies receive a +1 conditional bonus to your
-      attack rolls and skill checks against it. Anytime a good creature
-      damages it, it deals 2d4 additional good damage. The target is
-      bolstered against all castings of celestial brand.
+      You and your allies receive a +1 status bonus to your
+      attack rolls and skill checks against it. Anytime a good creature damages it,
+      the good creature deals an additional 1d4 good damage.
+      The target is then temporarily immune for 1 minute.
   heightened:
-    "+2": The good damage increases by 1d4.
+    "+2": The good damage increases by 1.
 chain-lightning:
   name: CHAIN LIGHTNING
   type: SPELL
@@ -1896,18 +1898,14 @@ diabolic-edict:
   type: focus
   level: 1
   rarity: 1
-  traits: [auditory, enchantment, lingual]
+  traits: [enchantment, sorcerer]
   casting: [aV]
   range: 30 feet
-  target: one willing living creature
+  target: 1 willing living creature
   duration: 1 round
   description:
     main:
-      "You issue a diabolic edict, demanding the target perform a particular
-      task and offering rewards for its fulfillment. It gains a +1 conditional
-      bonus to attack rolls and skill checks related to performing the task.
-      If it refuses to perform the task you proclaimed, it instead takes a -1
-      conditional penalty to all its attack rolls and skill checks."
+      "You issue a diabolic edict, demanding the target perform a particular task and offering rewards for its fulfillment. It gains a +1 status bonus to attack rolls and skill checks related to performing the task. If it refuses to perform the task you proclaimed, it instead takes a –1 status penalty to all its attack rolls and skill checks."
 dimension-door:
   name: DIMENSION DOOR
   type: SPELL
@@ -2351,24 +2349,16 @@ dragon-breath:
   type: focus
   level: 3
   rarity: 1
-  traits: [evocation]
+  traits: [evocation, sorcerer]
   casting: [aS, aV]
   area: 30-foot cone or 60-foot line originating from you
+  save: basic Reflex or or Fortitude
   description:
     main:
       You spew energy from your mouth, dealing 5d6 damage. The
       area, damage type, and save depend on the dragon type in your
-      bloodline. The spell gains the trait matching its damage type.
-      Each creature in the area must attempt a save.
-      ${subsection.save} ${subsection.dragontype}
+      bloodline. ${subsection.dragontype}
     subsections:
-      save:
-        type: dl
-        content:
-          success: The creature takes half damage.
-          crit: The creature is unaffected.
-          failure: The creature takes full damage.
-          crit-fail: The creature takes double damage.
       dragontype:
         type: table
         content:
@@ -2383,26 +2373,21 @@ dragon-breath:
             - [Green, 30-foot cone of poison, Fortitude]
             - [Gold or red, 30-foot cone of fire, Reflex]
             - [Silver or white, 30-foot cone of cold, Reflex]
-
-
   heightened:
-    "+1": The damage increases by 1d6.
+    "+1": The damage increases by 2d6.
 dragon-claws:
   name: DRAGON CLAWS
   type: focus
   level: 1
   rarity: 1
-  traits: [morph, transmutation]
+  traits: [morph, sorcerer, transmutation]
   casting: [aV]
   duration: 1 minute
   description:
     main:
-      Vicious claws grow from your fingers. They are agile, finesse
-      unarmed attacks, and you're trained in them. They deal 1d4
-      slashing damage and 1d4 damage of a type determined by the
-      dragon in your bloodline. Scales also cover part of your body,
-      giving you resistance 5 to the same damage type (see table above).
+      Vicious claws grow from your fingers. They are finesse unarmed attacks that deal 1d4 slashing damage and 1d6 extra damage of a type determined by the dragon in your bloodline.
       ${subsection.dragontype}
+      Your scales from blood magic glow with faint energy, giving you resistance 5 to the same damage type.
     subsections:
       dragontype:
         type: table
@@ -2420,12 +2405,8 @@ dragon-claws:
             - [Silver or white, 30-foot cone of cold, Reflex]
 
   heightened:
-    3rd:
-      The claws count as +1 magic, granting a +1 item
-      bonus to attack rolls and adding a damage die; you gain 7 resistance.
-    5th:  The claws count as +2; you gain 10 resistance.
-    7th:  The claws count as +3; you gain 12 resistance.
-    9th:  The claws count as +4; you gain 15 resistance.
+    5th:  The extra damage increases to 2d6, and the resistance increases to 10.
+    9th:  The extra damage increases to 3d6, and the resistance increases to 15.
 
 dragon-form:
   name: DRAGON FORM
@@ -2486,20 +2467,30 @@ dragon-wings:
   type: focus
   level: 5
   rarity: 1
-  traits: [morph, transmutation]
+  traits: [morph, sorcerer, transmutation]
   casting: [aS, aV]
   duration: 1 minute
   description:
     main:
-      Leathery wings sprout from your back, giving you a fly Speed of 60
-      feet. When the duration would end, if you have Spell Points, you can
-      spend 1 Spell Point to increase the duration by 1 minute. When it
-      ends, you float to the ground, with the effect of feather fall.
-      If you have Spell Points, you can increase the cost by 1 Spell
-      Point to gain the effects of dragon claws as long as the wings last.
+      Leathery wings sprout from your back, giving you a fly Speed of 60 feet or your Speed, whichever is faster. When this spell's duration would end, if you're still flying, you float to the ground, as feather fall. You can increase the Focus Point cost by 1 to gain the effects of dragon claws as long as the wings last.
   heightened:
-    7th:
-      The duration increases to 10 minutes. Spell Points increase the duration by 5 minutes.
+    8th:
+      The duration increases to 10 minutes.
+drain-life:
+  name: Drain Life
+  type: focus
+  level: 3
+  rarity: 1
+  traits: [necromancy, negative, sorcerer]
+  casting: [aS]
+  range: 30 feet
+  target: 1 creature
+  save: basic Fortitude
+  description:
+    main:
+      You close your hand and pull life energy from another creature into yourself. This deals 3d4 negative damage; the target must attempt a basic Fortitude save. You gain temporary Hit Points equal to the damage the target takes, after resolving its save and applying your blood magic if applicable. If the target's Hit Points were lower than the damage you dealt, you gain temporary Hit Points equal to their remaining Hit Points instead. The temporary Hit Points last for 1 minute.
+  heightened:
+    "+1": The damage increases by 1d4.
 dread-aura:
   name: DREAD AURA
   type: focus
@@ -2738,6 +2729,21 @@ electric-arc:
       damage equal to 1d4 plus your spellcasting ability modifier.
   heightened:
     "+1": The damage increases by 1d4.
+elemental-blast:
+  name: Elemental Blast
+  type: focus
+  level: 5
+  rarity: 1
+  traits: [evocation, sorcerer]
+  casting: [aS, aV]
+  range: 30 feet (burst only)
+  area: 10-foot raduis burst, 30-foot cones, or 60-foot line
+  save: basic Reflex
+  description:
+    main:
+      You gather elemental energy and blast your foes in one of the various listed shapes of your choosing, dealing 8d6 bludgeoning damage (or fire damage if your element is fire). This spell has your element's trait.
+  heightened:
+    "+1": The damage increases by 2d6
 elemental-form:
   name: ELEMENTAL FORM
   type: SPELL
@@ -2782,6 +2788,28 @@ elemental-form:
       Your battle form is Large and your attacks have 10-foot reach. You must have space to expand or the spell is lost. You instead gain AC = 22 + your level, 15 temporary HP, an attack modifier of +23, a damage bonus of +13, and Acrobatics or Athletics +23.
     7th:
       Your battle form is Huge and your attacks have 15-foot reach. You must have space to expand or the spell is lost. You instead gain AC = 22 + your level, 20 temporary HP, an attack modifier of +25, a damage bonus of +11, double the number of damage dice (including persistent damage), and Acrobatics or Athletics +25.
+elemental-motion:
+  name: Elemental Motion
+  type: focus
+  level: 3
+  rarity: 1
+  traits: [evocation, sorcerer]
+  casting: [aS, aV]
+  duration: 1 minute
+  description:
+    main:
+      You call upon your element to propel you, improving your Speed depending on your element. This spell has your element's trait.
+    subsections:
+      elements:
+        type: dl
+        content:
+          Air: You gain a fly Speed equal to your Speed.
+          Earth: You gain a burrow Speed of 10 feet.
+          Fire: You gain a fly Speed equal to your Speed.
+          Water: You gain a swim Speed equal to your Speed and can breathe underwater.
+  heightened:
+    6th: You also gain a +10-foot status bonus to your Speeds.
+    9th: The status bonus increases to +20 feet.
 elemental-tempest:
   name: ELEMENTAL TEMPEST
   type: focus
@@ -2800,26 +2828,34 @@ elemental-tempest:
       deals multiple eligible types). This dismisses the spell.
   heightened:
     6th:  The damage is 2d8 per triggering spell level.
+elemental-toss:
+  name: Elemental Toss
+  type: focus
+  level: 1
+  rarity: 1
+  traits: [attack, evocation, sorcerer]
+  casting: [aS]
+  range: 30 feet
+  target: 1 creature
+  description:
+    main:
+      With a flick of your wrist, you fling a chunk of your elemental matter at your foe. Make a spell attack roll, dealing 1d8 bludgeoning damage (or fire damage if your element is fire) on a success, and double damage on a critical success. This spell has your element's trait.
+  heightened:
+    "+1": The damage increases by 1d8.
 embrace-the-pit:
   name: EMBRACE THE PIT
   type: focus
   level: 3
   rarity: 1
-  traits: [evil, morph, transmutation]
+  traits: [evil, morph, sorcerer, transmutation]
   duration: 1 minute
-  casting: [aS, aV]
+  casting: [aV]
   description:
     main:
-      "Horns grow from your skull and your skin takes on
-      features of the devil responsible for your diabolic bloodline. You gain
-      resistance 5 to evil, fire, and poison, and resistance 1 to physical
-      damage (except silver). You gain weakness 5 to good damage, and can
-      take good damage even if you are good."
+      "Devil horns grow from your skull, and your skin takes on features of the devil responsible for your diabolic bloodline. You gain resistance 5 to evil, fire, and poison, and resistance 1 to physical damage (except silver). You can take good damage, even if you aren't evil, and you gain weakness 5 to good damage."
   heightened:
-    "+2":
-        Increase the resistance to evil, fire, and poison by
-        5, the resistance to physical damage (except silver) by 1, and the
-        weakness to good damage by 5.
+    "+1":
+        The resistance to evil, fire, and poison increases by 5, the resistance to physical damage (except silver) by 2, and the weakness to good damage by 5.
 empty-body:
   name: EMPTY BODY
   type: focus
@@ -3016,6 +3052,16 @@ ethereal-jaunt:
   heightened:
     9th:
       You can target up to five additional willing creatures at a range of 30 feet. The duration is up to 10 minutes.
+extend-spell:
+  name: Extend Spell
+  type: focus
+  level: 3
+  rarity: 1
+  traits: [divination, metamagic, sorcerer]
+  casting: [aV]
+  description:
+    main:
+      You call upon your blood's knowledge of the ancients to extend your magic. If your next action is to Cast a Spell with a duration of 1 minute on a single target, and the spell isn't of the highest spell level you can cast, the spell instead lasts 10 minutes. You can have only one active spell at a time extended in this way.
 fabricate:
   name: FABRICATE
   type: focus
@@ -3074,16 +3120,18 @@ faerie-dust:
   name: FAERIE DUST
   type: focus
   level: 1
-  rarity: 0
-  traits: [enchantment, mental]
-  casting: [aS, aV]
+  rarity: 1
+  traits: [enchantment, mental, sorcerer]
+  casting: [aSV, or more]
   range: 30 feet
-  area: 5-foot burst
+  area: 5-foot burst or more
   duration: 1 round
+  save: Will
   description:
     main:
-      Sparkling magical dust fills the spell's area, making those within
-      drowsy. Each creature in the area must attempt a Will save. ${subsection.save}
+      You sprinkle magical dust in the spell's area, making those within easier to trick. Each creature in the area must attempt a Will save.
+      ${subsection.save}
+      For each additional action you use Casting the Spell, the burst's radius increases by 5 feet.
     subsections:
       save:
         type: dl
@@ -3091,10 +3139,11 @@ faerie-dust:
           success: The creature is unaffected.
           failure:
             The creature can't use reactions and takes a -2
-            conditional penalty to Perception checks.
+            conditional penalty to Perception checks and Will saves
           crit-fail:
-            The target falls asleep. It automatically awakens
-            when the spell ends.
+            As failure, and the creature also takes a –1 status penalty to Perception checks and Will saves for 1 minute.
+  heightened:
+    "+3": The initial radius increases by 5 feet.
 faerie-fire:
   name: FAERIE FIRE
   type: SPELL
@@ -3246,22 +3295,33 @@ feet-to-fins:
       The target's feet transform into fins, improving mobility in the water but reducing it on land. The target gains a swim Speed equal to its normal land Speed, but its land Speed becomes 5 feet.
   heightened:
     6th: The spell lasts until the next time you make your daily preparations.
+fey-glamour:
+  name: Fey Glamour
+  type: focus
+  level: 5
+  rarity: 1
+  traits: [illusion, sorcerer]
+  casting: [aS, aV]
+  range: 30 feet
+  area: 30-foot burst or target
+  target: up to 10 creatures
+  duration: 10 minutes
+  description:
+    main:
+      You call upon fey glamours to cloak an area or the targets in illusion. This has the effect of either illusory scene on the area or veil on the creatures, as if heightened to a level 1 level lower than fey glamour, using fey glamour's range and duration.
 fey-disappearance:
   name: FEY DISAPPEARANCE
   type: focus
   level: 3
   rarity: 1
-  traits: [enchantment]
-  casting: [aS, aV]
-  duration: 1 round
+  traits: [enchantment, sorcerer]
+  casting: [aS]
+  duration: until the end of your next turn
   description:
     main:
-      You can ignore natural difficult terrain (such as underbrush). Once
-      this spell comes into effect, you can immediately Step or Stride.
-      If you have a pool of Spell Points, you can increase the cost
-      of fey disappearance by 2 Spell Points to also turn invisible for
-      the spell's duration, before taking your Step or Stride. Acting in a
-      hostile manner doesn't dismiss this invisibility.
+      You become invisible and ignore natural difficult terrain (such as underbrush). Any hostile action you use ends this invisibility, but you still ignore natural difficult terrain.
+  heightened:
+    5th: If you use a hostile action, the invisibility doesn't end.
 field-of-life:
   name: FIELD OF LIFE
   type: SPELL
@@ -3763,30 +3823,14 @@ glutton-s-jaws:
   type: focus
   level: 1
   rarity: 1
-  traits: [necromancy]
-  casting: [aS, aV]
+  traits: [morph, necromancy, sorcerer]
+  casting: [aSV]
   duration: 1 minute
   description:
     main:
-      Your mouth transforms into a shadowy maw bristling with pointed
-      teeth. These jaws grant you an unarmed attack you're trained in,
-      dealing 1d6 piercing damage. They have the finesse trait.
-      Attacks with your jaws have the following enhancement.
-      Enhancement If the target was living, gain 1d4 temporary HP.
+      Your mouth transforms into a shadowy maw bristling with pointed teeth. These jaws are an unarmed attack with the forceful trait dealing 1d8 piercing damage. If you hit with your jaws and deal damage, you gain 1d6 temporary Hit Points.
   heightened:
-    2nd:
-      Your jaws gain the effects of a +1 weapon
-      potency rune (a +1 item bonus to attack rolls and an additional
-      damage die) and the temporary Hit Points increase to 2d4.
-    4th:
-      The jaws gain the effects of a +2 weapon
-      potency rune and the temporary Hit Points increase to 3d4.
-    6th:
-      The jaws gain the effects of a +3 weapon
-      potency rune and the temporary Hit Points increase to 4d4.
-    8th:
-      The jaws gain the effects of a +4 weapon
-      potency rune and the temporary Hit Points increase to 5d4.
+    "+2": The temporary Hit Points increase by 1d6.
 glyph-of-warding:
   name: GLYPH OF WARDING
   type: SPELL
@@ -3849,6 +3893,30 @@ goodberry:
       You imbue the target berry with the bounty of nature, allowing it to heal and sustain far beyond its normal capacity. A living creature that eats the berry with an Interact action gains as much nourishment as from a square meal for a typical human and regains 1d8+5 Hit Points. If it's not consumed during the duration, or if you cast goodberry again, the berry withers away.
   heightened:
     "+1": You can target an additional berry.
+grasping-grave:
+  name: Grasping Grave
+  type: focus
+  level: 5
+  rarity: 1
+  traits: [necromancy, sorcerer]
+  casting: [aS, aV]
+  range: 60 feet
+  area: 20-foot radius on the ground
+  save: Reflex
+  description:
+    main:
+      Hundreds of skeletal arms erupt from the ground in the area, clawing at creatures within and attempting to hold them in place. The skeletal arms deal 6d6 slashing damage. Each creature in the area must attempt a Reflex save.
+      ${subsection.save}
+    subsections:
+      save:
+        type: dl
+        content:
+          crit: The creature is unaffected.
+          success: The creature takes half damage.
+          failure: The creature takes full damage and a –10-foot circumstance penalty to its Speeds for 1 round.
+          crit-fail: The creature takes double damage and is immobilized for 1 round or until it Escapes.
+  heightened:
+    "+1": The damage increases by 2d6.
 grim-tendrils:
   name: GRIM TENDRILS
   type: SPELL
@@ -4169,25 +4237,16 @@ hellfire-plume:
   type: focus
   level: 5
   rarity: 1
-  traits: [evil, evocation, fire]
+  traits: [evil, evocation, fire, sorcerer]
   casting: [aS, aV]
   range: 60 feet
   area: 10-foot radius, 60-foot-tall cylinder
+  save: basic Reflex
   description:
     main:
-      You call a plume of hellfire that erupts from below,
-      dealing 5d4 fire damage and 5d4 evil damage. Each creature in the
-      area must attempt a Reflex save. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: The creature takes half damage.
-          crit: The creature is unaffected.
-          failure: The creature takes full damage.
-          crit-fail: The creature takes double damage.
+      You call forth a plume of hellfire that erupts from below, dealing 4d6 fire damage and 4d6 evil damage.
   heightened:
-    "+1": The damage increases by 1d4 fire damage and 1d4 good damage
+    "+1": The fire damage increases by 1d6, and the evil damage increases by 1d6.
 heroism:
   name: HEROISM
   type: SPELL
@@ -4271,6 +4330,29 @@ horrid-wilting:
       You pull the moisture from the targets' bodies, dealing 10d10 negative damage. Creatures made of water (such as water elementals) and plant creatures use the outcome for one degree of success worse than the result of their saving throw. Creatures whose bodies contain no significant moisture (such as earth elementals) are immune to horrid wilting.
   heightened:
     "+1": The damage increases by 1d10.
+horrific-visage:
+  name: Horrific Visage
+  type: focus
+  level: 3
+  rarity: 1
+  traits: [emotion, fear, illusion, mental, sorcerer, visual]
+  casting: [aS, aV]
+  area: 30-foot-radius emanation centered on you
+  save: Will
+  description:
+    main:
+      You briefly transform your features into the horrific visage of a hag, striking fear into your enemies. Foes in the area must attempt a Will save.
+      ${subsection.save}
+    subsections:
+      save:
+        type: dl
+        content:
+          success: The foe is unaffected.
+          failure: The foe is frightened 1.
+          crit-fail: The foe is frightened 2.
+  heightened:
+    5th:
+      Foes in the area are frightened 1 on a success, frightened 2 on a failure, and frightened 3 and fleeing for 1 round on a critical failure. They are still unaffected on a critical success.
 house-of-imaginary-walls:
   name: HOUSE OF IMAGINARY WALLS
   type: SPELL
@@ -4707,6 +4789,29 @@ item-facade:
   heightened:
     2nd: The duration is 24 hours.
     3rd: The duration is unlimited.
+jealous-hex:
+  name: Jealous Hex
+  type: focus
+  level: 1
+  rarity: 1
+  traits: [curse, necromancy, sorcerer]
+  casting: [aV]
+  range: 30 feet
+  target: 1 creature
+  save: Will
+  duration: up to 1 minute
+  description:
+    main:
+      "You draw forth a hag's innate jealousy to deny a target its greatest attribute. The target gains an adverse condition depending on its highest ability modifier: Strength (enfeebled); Dexterity (clumsy); Constitution (drained); or Intelligence, Wisdom, or Charisma (stupefied). On a tie, the creature decides which of the conditions associated with the tied ability modifiers to take. The target must attempt a Will save.
+      ${subsection.save}
+      At the start of each of your turns, the target can attempt another Will save, ending the effect on a success."
+    subsections:
+      save:
+        type: dl
+        content:
+          success: The target is unaffected.
+          failure: The condition's value is 1.
+          crit-fail: The condition's value is 2.
 jump:
   name: JUMP
   type: SPELL
@@ -8572,25 +8677,17 @@ swamp-of-sloth:
   type: focus
   level: 3
   rarity: 1
-  traits: [conjuration]
-  casting: [aM, aV, aS]
+  traits: [conjuration, sorcerer]
+  casting: [aSV, to aaaSV]
   range: 120 feet
-  area: 20-foot burst
+  area: 5-foot burst or more
   duration: 1 minute
+  save: basic Fortitude
   description:
     main:
-      Ground in the area turns swampy and fetid, like an Abyssal
-      mire. The area is difficult terrain, but not deep enough to
-      require or allow swimming. The sludge at the bottom of the
-      morass animates into Diminutive sludge beasts with a demonic
-      appearance. These don't function as normal creatures, but they
-      swarm over creatures in the swamp and exude a noxious stench.
-      The swamp deals 1d6 poison damage to any creature that ends
-      its turn there, depending on its Fortitude save.
+      Ground in the area turns swampy and fetid. The area is difficult terrain. The sludge at the bottom of the morass animates into diminutive sludge beasts that have a demonic appearance. These don't function as normal creatures, but they swarm over creatures in the swamp and exude a noxious stench. The swamp deals 1d6 poison damage; creatures that end their turn in the area must attempt a basic Fortitude save. You can increase the number of actions it takes to Cast the Spell. For each additional action, increase the burst's radius by 5 feet.
   heightened:
-    4th: The damage increases to 2d6.
-    6th: The damage increases to 3d6.
-    8th: The damage increases to 4d6.
+    "+2": The damage increases by 1d6, and the initial radius increases by 5 feet.
 sweet-dreams:
   name: SWEET DREAMS
   type: focus
@@ -8915,15 +9012,14 @@ tentacular-limbs:
   type: focus
   level: 1
   rarity: 1
-  traits: [morph, transmutation]
-  casting: [aS, aV]
+  traits: [morph, sorcerer, transmutation]
+  casting: [aS]
   duration: 1 minute
   description:
     main:
-      Your arms turn into long, pliable tentacles, increasing your reach
-      with melee touch attacks and unarmed Strikes you make with
-      your arms (such as fist and claw Strikes) to 10 feet. This doesn't
-      change the reach of your melee weapon attacks.
+      Your arms turn into long, pliable tentacles, increasing your reach when you're delivering touch range spells and making unarmed Strikes with your arms (such as fist and claw Strikes) to 10 feet. This doesn't change the reach of your melee weapon attacks. During the duration, whenever you Cast a Spell, you can add an additional action to that spell's casting to temporarily extend your reach to 20 feet to deliver that spell.
+  heightened:
+    "+2": When you add an additional action to a spell to temporarily extend your reach, your reach increases by an additional 10 feet to deliver that spell.
 thunder-shield:
   name: THUNDER SHIELD
   type: focus
@@ -9068,29 +9164,26 @@ touch-of-undeath:
   type: focus
   level: 2
   rarity: 1
-  traits: [attack, necromancy, negative]
+  traits: [necromancy, negative, sorcerer]
   casting: [aS]
   range: touch
-  target: one living creature
+  target: 1 living creature touched
+  save: Will
+  duration: 1 minute
   description:
     main:
-      You attack the target's life force with the taint of
-      undeath via a melee touch attack, dealing 2d8 negative damage.
-      The effect depends on your attack roll. ${subsection.outcomes}
+      You instill within a creature the touch of the grave. For the duration, harm spells treat the creature as undead and heal spells treat the creature as living. In addition, harm spells gain a +2 status bonus to the Hit Points restored to the target. If the target wishes to avoid the spell, it can attempt a Will save to reduce the effects.
+      ${subsection.save}
     subsections:
-      outcomes:
+      save:
         type: dl
         content:
+          crit: The target is unaffected.
           success:
-            The target takes full damage, and positive effects
-            heal the target only half as much as normal for 1 round.
-          crit:
-            The target takes double damage, and positive
-            effects can't heal the target for 1 round and heal the target
-            only half as much as normal for 1 minute.
-          failure: The target is unaffected.
+            The target heals half as much from heal and takes half as much damage from harm for 1 round.
+          failure: Effects as described in the text.
   heightened:
-    "+1": The damage increases by 1d8.
+    "+1": The status bonus to the Hit Points restored increases by 2.
 tree-shape:
   name: TREE SHAPE
   type: SPELL
@@ -9353,7 +9446,7 @@ unusual-anatomy:
   type: focus
   level: 5
   rarity: 1
-  traits: [polymorph, transmutation]
+  traits: [polymorph, sorcerer, transmutation]
   casting: [aS, aV]
   duration: 1 minute
   description:
@@ -9365,19 +9458,13 @@ unusual-anatomy:
       effects:
         type: list
         content:
-          - You gain resistance 10 to precision damage and resistance
-            10 to extra damage from critical hits. If the resistance
-            is greater than the extra damage, it reduces the extra
-            damage to 0 but doesn't reduce the attack's normal
-            damage. Any creature attacking you should calculate the
-            normal damage and extra damage separately while your
-            anatomy is altered.
+          - You gain resistance 10 to precision damage and resistance 10 to extra damage from critical hits. If the resistance is greater than the extra damage, it reduces the extra damage to 0 but doesn't reduce the attack's normal damage.
           - You gain darkvision.
           - Acid oozes from your skin. Any creature that hits you with
             an unarmed attack or with a non-reach weapon takes 2d6
             acid damage.
   heightened:
-    "+2": The resistances increase by 5 and the acid damage by 1d6.
+    "+2": The resistances increase by 5, and the acid damage by 1d6.
 vampiric-exsanguination:
   name: VAMPIRIC EXSANGUINATION
   type: SPELL
@@ -10133,6 +10220,31 @@ word-of-truth:
       so on. The statement must be 25 words or fewer. A symbol of
       your deity glows above your head, and anyone who sees you
       and hears your statement knows that you believe it to be true.
+you-re-mine:
+  name: You're Mine
+  type: focus
+  level: 5
+  rarity: 1
+  traits: [emotion, enchantment, incapacitation, mental, sorcerer]
+  range: 30 feet
+  target: 1 creature
+  duration: 1 round
+  save: Will
+  description:
+    main:
+      You manipulate the target's emotions, potentially allowing you to control it for a brief instant. The target must attempt a Will save.
+      ${subsection.save}
+    subsections:
+      save:
+        type: dl
+        content:
+          crit: The target is unaffected
+          success: The target is stunned 1.
+          failure: On the target's next turn, it's stunned 1 and you partially control it, causing it to take a single action of your choice. If it has actions left, it can act normally.
+          crit-fail: The target is controlled for 1 round.
+  heightened:
+    7th:
+      On a failure, the target is controlled for 1 round. On a critical failure, the target is controlled for up to 1 minute; it receives a new Will save at the end of each of its turns, and on a success, the spell ends.
 zealous-conviction:
   name: Zealous Conviction
   type: spell
