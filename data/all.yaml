@@ -512,17 +512,17 @@ athletic-exploit:
       reduction from armor or encumbrance.
 
 augment-summoning:
-  traits: [conjuration]
+  traits: [conjuration, wizard]
   name: AUGMENT SUMMONING
   type: focus
   level: 1
   rarity: 1
-  casting: [fV]
-  trigger: You complete an arcane spell that summons a creature.
+  casting: [aV]
+  target: 1 creature you summoned
+  range: 30 feet
   description:
     main:
-      The summoned creature gains a +1 conditional bonus to attack
-      rolls, AC, and saving throws for the duration of the triggering spell.
+      You augment the abilities of a summoned creature. The target gains a +1 status bonus to all checks (this also applies to the creature's DCs, including its AC) for the duration of its summoning, up to 1 minute.
 augury:
   traits: [divination, prediction]
   name: AUGURY
@@ -878,18 +878,18 @@ call-of-the-grave:
   type: focus
   level: 1
   rarity: 1
-  traits: [arcane, attack, fear, necromancy, wizard]
+  traits: [arcane, attack, necromancy, wizard]
   casting: [aS, aV]
   range: 30 feet
   target: one living creature
   description:
-    main: You fire a dreadful ray. Make a ranged touch attack. ${subsection.outcomes}
+    main: You fire a ray of sickening energy. Make a spell attack roll. ${subsection.outcomes}
     subsections:
       outcomes:
         type: dl
         content:
-          success: The target becomes frightened 1.
-          crit: The target becomes frightened 2.
+          success: The target becomes sickened 1.
+          crit: The target becomes sickened 2 and slowed 1 as long as it's sickened.
           failure: The target is unaffected.
 calm-emotions:
   name: CALM EMOTIONS
@@ -1079,20 +1079,20 @@ charming-words:
   type: focus
   level: 1
   rarity: 1
-  traits: [auditory, enchantment, lingual, mental]
+  traits: [auditory, emotion, enchantment, incapacitation, linguistic, wizard]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: until the start of your next turn
+  save: Will
   description:
     main:
-      You whisper enchanting words with effects
-      depending on the target's Will save. The target is bolstered.
+      You whisper enchanting words to deflect your foe's ire. The target must attempt a Will save.
     subsections:
-    failure: The target can't act hostile toward you.
-    crit-fail: The target is stunned.
-    success: The target is unaffected.
-    crit: You enrage the target; it gains a +2 circumstance bonus to attack rolls, spell rolls, and spell DCs against you.
+    failure: The target can't use hostile actions against you.
+    crit-fail: The target is stunned 1 and can't use hostile actions against you.
+    success: The target takes a –1 circumstance penalty to attack rolls and damage rolls against you.
+    crit: The target is unaffected.
 chill-touch:
   name: CHILL TOUCH
   type: SPELL
@@ -1960,17 +1960,14 @@ dimensional-steps:
   type: focus
   level: 4
   rarity: 1
-  traits: [conjuration, teleportation]
+  traits: [conjuration, teleportation, wizard]
   casting: [aS]
-  range: 10 feet or more
+  range: 20 feet
   description:
     main:
-      You teleport up to 10 feet within your line of sight.
-      If you have Spell Points, you can increase the cost by 1 Spell
-      Point to increase the maximum distance by 10 feet.
+      You teleport to a location up to 20 feet away within your line of sight.
   heightened:
-    6th: The initial and increased distance are 15 feet.
-    8th: The initial and increased distance are 20 feet.
+    "+1": The distance you can teleport increases by 5 feet
 dinosaur-form:
   name: DINOSAUR FORM
   type: SPELL
@@ -2288,17 +2285,14 @@ diviner-s-sight:
   type: focus
   level: 1
   rarity: 1
-  traits: [concentrate, divination, fortune]
+  traits: [concentrate, divination, fortune, wizard]
   casting: [aV]
   range: 30 feet
-  target: one willing living creature
-  duration: end of your next turn or until dismissed
+  target: 1 willing living creature
+  duration: until the end of your next turn
   description:
     main:
-      You glimpse into the target's future. Roll a d20. When the target
-      attempts a Perception check, saving throw, or skill check, it can use
-      the number you rolled instead of rolling, and the spell is dismissed.
-      Casting it again dismisses any active diviner's sight.
+      You glimpse into the target's future. Roll a d20; when the target attempts a non-secret saving throw or skill check, it can use the number you rolled instead of rolling, and the spell ends. Alternatively, you can instead reveal the result of the die roll for one of the target's secret checks during the duration, and the spell ends. Casting it again ends any active diviner's sight you have cast, as well as any active diviner's sight on the target.
 dominate:
   name: DOMINATE
   type: SPELL
@@ -2496,16 +2490,13 @@ dread-aura:
   type: focus
   level: 4
   rarity: 1
-  traits: [enchantment, emotion, fear, mental]
+  traits: [enchantment, emotion, fear, mental, wizard]
   casting: [aS, aV]
-  area: 30-foot-radius aura centered on you
-  duration: 1 round
+  area: 30-foot-radius emanation centered on you
+  duration: sustained up to 1 minute
   description:
     main:
-      You emit an aura of terror. Foes in the area are
-      frightened 1 and unable to reduce the condition.
-      If you have Spell Points, you can spend 1 Spell Point to
-      Concentrate on the Spell and extend its duration, for up to 1 minute.
+      You emit an aura of terror. Foes in the area are frightened 1 and unable to reduce the condition.
 dream-council:
   name: DREAM COUNCIL
   type: SPELL
@@ -2815,19 +2806,11 @@ elemental-tempest:
   type: focus
   level: 4
   rarity: 1
-  traits: [evocation]
-  casting: [fV]
-  trigger: You cast an evocation wizard spell that deals acid, cold, electricity, or fire damage.
-  duration: 1 minute or until dismissed
+  traits: [evocation, metamagic, wizard]
+  casting: [aV]
   description:
     main:
-      You emit light like a torch. If hit by an attack from an adjacent foe,
-      you can use a reaction to deal 1d8 damage per level of the triggering
-      spell. The damage type is the same as that of the triggering spell,
-      and the spell gains that trait (choose one if the triggering spell
-      deals multiple eligible types). This dismisses the spell.
-  heightened:
-    6th:  The damage is 2d8 per triggering spell level.
+      Your spellcasting surrounds you in a storm of elemental energy. If the next action you take is to Cast a Spell from your wizard spell slots that's an evocation spell dealing acid, cold, electricity, or fire damage, a 10-foot emanation of energy surrounds you as you cast the spell. Foes in the area take 1d6 damage per spell level of the spell you just cast of the same damage type the spell deals (choose one if it deals multiple types). Combine the damage from both elemental tempest and the other spell against foes who take damage from both before applying bonuses, penalties, resistance, weakness, and the like.
 elemental-toss:
   name: Elemental Toss
   type: focus
@@ -2901,18 +2884,14 @@ energy-absorption:
   type: focus
   level: 4
   rarity: 1
-  traits: [abjuration]
+  traits: [abjuration, wizard]
   casting: [rV]
-  trigger: An effect deals acid, cold, electricity, or fire damage to you.
+  trigger: An effect would deal acid, cold, electricity, or fire damage to you.
   description:
     main:
-      You gain resistance 10 to acid, cold, electricity, or fire damage
-      from the triggering effect (one type of your choice). The resistance
-      applies only to the triggering effect's initial damage.
+      You gain resistance 15 to acid, cold, electricity, or fire damage from the triggering effect (one type of your choice). The resistance applies only to the triggering effect's initial damage.
   heightened:
-    3rd:  The resistance increases to 15.
-    6th:  The resistance increases to 20.
-    8th:  The resistance increases to 25.
+    "+1": The resistance increases by 5.
 energy-aegis:
   name: ENERGY AEGIS
   type: SPELL
@@ -3569,24 +3548,15 @@ force-bolt:
   type: focus
   level: 1
   rarity: 1
-  traits: [attack, evocation, force]
-  casting: [aS, aV]
+  traits: [attack, evocation, force, wizard]
+  casting: [aS]
   range: 30 feet
-  target: one creature or object
+  target: 1 creature or object
   description:
     main:
-      You fire a dart of force from your fingertips. Make
-      a ranged touch attack against the target to deal force damage
-      equal to 1d4 plus your spellcasting ability modifier. ${subsection.hit}
-    subsections:
-      hit:
-        type: dl
-        content:
-          success: The target takes full damage.
-          crit: The target takes double damage.
-          failure: The target is unaffected.
+      You fire an unerring dart of force from your fingertips. It automatically hits and deals 1d4+1 force damage to the target.
   heightened:
-    "+1": The damage increases by 1d4.
+    "+2": The damage increases by 1d4+1.
 forced-quiet:
   name: FORCED QUIET
   type: focus
@@ -4079,17 +4049,13 @@ hand-of-the-apprentice:
   type: focus
   level: 1
   rarity: 1
-  traits: [attack, evocation]
-  casting: [aS, aV]
-  range: 30 feet
-  target: one creature
+  traits: [attack, evocation, wizard]
+  casting: [aS]
+  range: 500 feet
+  target: 1 creature
   description:
     main:
-      You hurl a held melee weapon at the target, making a ranged Strike
-      using your proficiency with the weapon or with spells, whichever
-      is worse. Add your spellcasting ability modifier to damage, rather
-      than your Strength modifier. Whether the attack succeeds or fails,
-      the weapon flies back to you and returns to your hand.
+      You hurl a held melee weapon with which you are trained at the target, making a spell attack roll. On a success, you deal the weapon's damage as if you had hit with a melee Strike, but adding your spellcasting ability modifier to damage, rather than your Strength modifier. On a critical success, you deal double damage, and you add the weapon's critical specialization effect. Regardless of the outcome, the weapon flies back to you and returns to your hand.
 harm:
   name: HARM
   type: SPELL
@@ -4739,18 +4705,15 @@ invisibility-cloak:
   type: focus
   level: 4
   rarity: 1
-  traits: [illusion]
-  casting: [aM, aS]
-  duration: sustained or until dismissed, up to 1 minute
+  traits: [illusion, wizard]
+  casting: [aS, aS]
+  duration: 1 minute
   description:
     main:
-      You become invisible, with the same restrictions as the 2nd-level
-      invisibility spell.
-      If you have a pool of Spell Points, you can continue concentrating
-      on your invisibility cloak after the 1-minute limit by spending 1
-      Spell Point to extend the limit by another minute.
+      You become invisible, with the same restrictions as the 2nd-level invisibility spell.
   heightened:
-    6th: The cloak provides the effects of a 4th-level invisibility spell.
+    6th: The duration increases to 10 minutes.
+    8th: The duration increases to 1 hour.
 invisibility-sphere:
   name: INVISIBILITY SPHERE
   type: SPELL
@@ -4978,11 +4941,10 @@ life-siphon:
   type: focus
   level: 4
   rarity: 1
-  traits: [healing, necromancy]
+  traits: [healing, necromancy, wizard]
   casting: [rV]
   trigger:
-    You cast a wizard spell of the necromancy school that you
-    expend one of your wizard spell slots to cast.
+    You expend one of your wizard spell slots to cast a wizard spell of the necromancy school.
   description:
     main:
       You use some of the spell's magic to heal yourself, regaining 1d8
@@ -6335,16 +6297,14 @@ physical-boost:
   type: focus
   level: 1
   rarity: 1
-  traits: [transmutation]
-  casting: [aS, aV]
+  traits: [transmutation, wizard]
+  casting: [aV]
   range: touch
-  target: one living creature
-  duration: until the end of the target's next turn or until dismissed
+  target: 1 living creature
+  duration: until the end of the target's next turn
   description:
     main:
-      You temporarily improve the target's physique. The target gains a
-      1d4 conditional bonus to the next Acrobatics, Athletics, or Stealth
-      roll it attempts. Once it uses this bonus, the spell is dismissed.
+      You temporarily improve the target's physique. The target gains a +2 status bonus to the next Acrobatics check, Athletics check, Fortitude save, or Reflex save it attempts.
 plane-shift:
   name: PLANE SHIFT
   type: SPELL
@@ -6776,14 +6736,13 @@ protective-ward:
   type: focus
   level: 1
   rarity: 1
-  traits: [abjuration]
-  casting: [aS, aV]
-  area: 10-foot-radius burst centered on you
+  traits: [abjuration, wizard]
+  casting: [aS]
+  area: 10-foot-radius emanation centered on you
   duration: sustained up to 1 minute
   description:
     main:
-      You emanate a shimmering aura of protection magic. You and any
-      allies in the aura gain a +1 conditional bonus to your Armor Class.
+      You emanate a shimmering aura of protective magic. You and any allies in the area gain a +1 status bonus to AC. Each time you Sustain the Spell, the emanation's radius increases by 5 feet, to a maximum of 30 feet.
 prying-eye:
   name: PRYING EYE
   type: SPELL
@@ -7704,24 +7663,22 @@ shifting-form:
   type: focus
   level: 4
   rarity: 1
-  traits: [morph, transmutation]
-  casting: [aS, aV]
-  duration: 1 minute or until dismissed
+  traits: [morph, transmutation, wizard]
+  casting: [aS]
+  duration: 1 minute
   description:
     main:
-      You gain one of the following abilities of your choice. You can dismiss
-      this spell by using an action (this action has the concentrate trait).
+      You gain one of the following abilities of your choice. You can Dismiss this spell.
       ${subsection.stats}
     subsections:
       stats:
         type: list
         content:
-          - Accelerated 10.
-          - Swim Speed equal to half your Speed.
-          - Darkvision.
-          - You gain a pair of claws. These are agile unarmed attacks that
-            deal 2d6 slashing damage. You're an expert with these attacks.
-          - Scent 60 feet.
+          - You gain a 20-foot status bonus to your Speed.
+          - You gain a climb or swim Speed equal to half your Speed.
+          - You gain darkvision.
+          - You gain a pair of claws. These are agile finesse unarmed attacks that deal 1d8 slashing damage.
+          - You gain scent 60 feet (imprecise).
 shillelagh:
   name: SHILLELAGH
   type: SPELL
@@ -9579,19 +9536,13 @@ vigilant-eye:
   type: focus
   level: 4
   rarity: 1
-  traits: [divination]
-  casting: [aS, aV]
-  range: sight or 1 foot
-  duration: 10 minutes or more
+  traits: [divination, wizard]
+  casting: [aS]
+  range: 500 feet
+  duration: 1 hour
   description:
     main:
-      You create an invisible eye sensor, as if you had cast clairvoyance.
-      When created, this eye must be either in your line of sight or
-      within 1 foot of a surface you touch (such as on the other side
-      of a door).
-      If you have a pool of Spell Points, when the spell's duration
-      ends, you can spend 1 Spell Point as a free action to extend the
-      duration for another minute.
+      You create an invisible eye sensor, as clairvoyance. When created, this eye must be in your line of sight. When the spell's duration ends, you can spend 1 Focus Point as a free action to extend the duration for another hour, though as normal, it ends immediately during your next daily preparations.
 visions-of-danger:
   name: VISIONS OF DANGER
   type: SPELL
@@ -9846,26 +9797,17 @@ warped-terrain:
   type: focus
   level: 1
   rarity: 1
-  traits: [illusion, visual]
-  casting: [aS, aV]
+  traits: [illusion, visual, wizard]
+  casting: [a to aaaSV]
   range: 60 feet
-  area: 5-foot burst
+  area: 5-foot burst or more
   duration: 1 minute
   description:
     main:
-      You create an illusion that makes a surface appear hazardous.
-      Any surface in that area (typically the ground) is filled with
-      illusory hazards. Any creature moving through the illusion
-      treats the squares as difficult terrain. A creature can attempt
-      a Seek action to disbelieve the effect (see page 194). If it
-      succeeds, it ignores the effect for the remaining duration.
-      Casting warped terrain again ends any previous warped terrain
-      you created.
+      You create illusory hazards that cover all surfaces in the area (typically the ground). Any creature moving through the illusion treats the squares as difficult terrain. A creature can attempt to disbelieve the effect as normal after using a Seek action or otherwise spending actions interacting with the illusion. If it successfully disbelieves, it ignores the effect for the remaining duration. For each additional action you use casting the spell, the burst's radius increases by 5 feet, to a maximum of 10 extra feet for 3 actions.
   heightened:
     4th:
-      You can make the warped terrain appear
-      in the air rather than on a surface, causing it to function as
-      difficult terrain for flying creatures.
+      You can make the illusion appear in the air rather than on a surface, causing it to function as difficult terrain for flying creatures.
 watching-the-watchers:
   name: WATCHING THE WATCHERS
   type: focus
