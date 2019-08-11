@@ -155,51 +155,37 @@ aerial-form:
   casting: [aS, aV]
   duration: 1 minute or until dismissed
   description:
-    main: "You transform into a Medium flying animal battle form. You count as an animal in addition to your normal traits.
-      Your gear is absorbed into you; the constant abilities of your gear still function, but you can't activate it.
-      When you transform, you gain the following:
-        ${subsection.stats}
-      These special statistics can be adjusted only by penalties,
-      circumstance bonuses, and conditional bonuses. Your battle form
-      prevents casting spells, speaking, or taking most manipulate
-      actions that require hands. (The GM decides if there's doubt.) You
-      can dismiss the spell with a concentrate action. When you prepare
-      this spell, choose from the options below. You gain the attacks,
-      Speeds, and special abilities listed. You can choose the specific
-      type of animal (such as an owl or eagle for bird). This has no effect
-      on the Size or statistics ${subsection.forms}"
+    main:
+      "You harness your mastery of primal forces to reshape your body into a Medium flying animal battle form. When you cast this spell, choose bat, bird, pterosaur, or wasp. You can decide the specific type of animal (such as an owl or eagle for bird), but this has no effect on the form's Size or statistics. While in this form, you gain the animal trait. You can Dismiss the spell. You gain the following statistics and abilities regardless of which battle form you choose:
+      ${subsection.stats}
+      You also gain specific abilities based on the form you choose:
+      ${subsection.forms}"
     subsections:
       forms:
         type: dl
         content:
           Bat:
-            Speed 20 feet, fly Speed 30 feet; echolocation 40 feet (auditory blindsight); fangs
+            Speed 20 feet, fly Speed 30 feet; precise echolocation 40 feet; fangs
             Damage 2d8 piercing; wing (agile), Damage 2d6 bludgeoning.
           Bird:
             Speed 10 feet, fly Speed 50 feet; beak, Damage 2d8 piercing; talon (agile), Damage 1d10 slashing.
           Pterosaur:
-            Speed 10 feet, fly Speed 40 feet; scent; beak, Damage 3d6 piercing.
+            Speed 10 feet, fly Speed 40 feet; imprecise scent 30 feet; beak, Damage 3d6 piercing.
           Wasp:
             Speed 20 feet, fly Speed 40 feet; stinger, Damage 1d8 piercing plus 1d6 persistent poison.
       stats:
         type: list
         content:
-          - AC 26 (TAC 25), ignore armor's check penalty and reduced Speed.
-          - One or more unarmed melee attacks, which are the only types of attacks you can use. You're trained with them.
-            Your attack modifier is +13 and your damage bonus is +5. These are Dexterity based (for the purpose of sluggish,
-            for example).
-          - 5 temporary Hit Points while you have the form.
+          - AC = 18 + your level. Ignore your armor's check penalty and Speed reduction.
+          - 5 temporary Hit Points.
           - Low-light vision.
-          - Acrobatics bonus of +14 unless your own bonus is higher.
+          - One or more unarmed melee attacks specific to the battle form you choose, which are the only attacks you can use. You're trained with them. Your attack modifier is +16, and your damage bonus is +5. These attacks are Dexterity based (for the purpose of the clumsy condition, for example). If your attack modifier for Dexterity-based unarmed attacks is higher, you can use it instead.
+          - Acrobatics modifier of +16, unless your own modifier is higher.
   heightened:
     5th:
-      Your battle form is Large and your fly Speed is accelerated 10. You must have enough space to expand or the
-      spell is lost. Your statistics are AC 28 (TAC 26); attack modifier of +15; damage bonus +8; 10 temporary HP;
-      Acrobatics +18.
+      Your battle form is Large and your fly Speed gains a +10-foot status bonus. You must have enough space to expand into or the spell is lost. You instead gain 10 temporary HP, attack modifier +18, damage bonus +8, and Acrobatics +20.
     6th:
-      Your battle form is Huge, your attacks have 10-foot reach, and your fly Speed is accelerated 15 feet. You must
-      have enough space or the spell is lost. Your statistics are AC 31 (TAC 28); attack modifier +19; damage bonus
-      +4 and double damage dice (including persistent damage); 15 temporary HP; Acrobatics +20.
+      Your battle form is Huge, your fly Speed gains a +15-foot status bonus, and your attacks have 10-foot reach. You must have enough space to expand into or the spell is lost. You instead gain AC = 21 + your level, 15 temporary HP, attack modifier +21, damage bonus +4 and double damage dice (including persistent damage), and Acrobatics +23.
 agile-feet:
   name: Agile Feet
   traits: [transmutation]
@@ -228,18 +214,17 @@ air-bubble:
       The effect ends as soon as the target returns to an environment where it can breathe normally.
 air-walk:
   name: Air Walk
-  traits: [transmutation]
+  traits: [air, transmutation]
   type: spell
   level: 4
   rarity: 0
   casting: [aS, aV]
   range: touch
-  target: one creature
-  duration: 1 minute
+  target: 1 creature
+  duration: 5 minutes
   description:
     main:
-      The target can walk on air as if it were solid ground. It can ascend
-      and descend in this way at a maximum of a 45-degree angle.
+      The target can walk on air as if it were solid ground. It can ascend and descend in this way at a maximum of a 45-degree angle.
 alarm:
   name: Alarm
   traits: [abjuration]
@@ -301,6 +286,22 @@ alter-reality:
           - Duplicate any non-occult spell of 7th level or lower.
           - Produce any effect whose power is equivalent to any occult
             spell 9th level or lower, or non-occult spell 7th level or lower.
+anathematic-reprisal:
+  name: Anathematic Reprisal
+  type: spell
+  traits: [enchantment, mental]
+  casting: [rSV]
+  range: 30 feet
+  target: the triggering creature
+  level: 4
+  rarity: 0
+  description:
+    main:
+      You punish a creature that transgresses against your deity, drawing upon the anguish you feel upon seeing one of your deity's anathema committed.
+      You can cast this spell only when a creature actively commits a unique act of anathema. For example, if creating undead were anathema to your deity, you could use anathematic reprisal on a necromancer who had just created undead in front of you, but not on an undead creature just for existing.
+      You deal 4d6 mental damage to the target, but a basic Will save can reduce this damage. If it fails, it is also stupefied 1 for 1 round. The creature is then temporarily immune for 1 minute.
+  heightened:
+    "+1": The damage increases by 1d6.
 ancestral-surge:
   name: Ancestral Surge
   traits: [enchantment]
@@ -871,11 +872,9 @@ blink:
   duration: 1 minute
   description:
     main:
-      You blink quickly between the Material and Ethereal Planes. You gain
-      resistance 5 to all damage (overcome by force). You can Concentrate
-      on the Spell to vanish and reappear 10 feet in a random direction
-      determined by the GM; the movement doesn't trigger reactions. At
-      the end of your turn, you vanish and reappear as above.
+      You blink quickly between the Material Plane and the Ethereal Plane. You gain resistance 5 to all damage (except force). You can Sustain the Spell to vanish and reappear 10 feet away in a random direction determined by the GM; the movement doesn't trigger reactions. At the end of your turn, you vanish and reappear as above.
+  heightened:
+    "+2": The resistance increases by 3.
 blur:
   name: BLUR
   type: SPELL
@@ -1258,12 +1257,10 @@ clairvoyance:
   casting-time: 1 minute
   casting: [M, S, V]
   range: 500 feet
-  duration: 1 minute
+  duration: 10 minutes
   description:
     main:
-      You create an invisible floating eye at a location within range (even if
-      it's outside your line of sight or line of effect). The eye can't move, but
-      you can see in all directions as if using your normal visual senses.
+      You create an invisible floating eye at a location within range (even if it's outside your line of sight or line of effect). The eye can't move, but you can see in all directions from that point as if using your normal visual senses.
 cloak-of-colors:
   name: CLOAK OF COLORS
   type: SPELL
@@ -1462,21 +1459,21 @@ confusion:
   traits: [emotion, enchantment, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
-
-  duration: 1 minute or until dismissed
+  target: 1 creature
+  save: Will
+  duration: 1 minute
   description:
     main:
-      You befuddle your target with strange impulses, causing it to act
-      randomly. The effects are determined by the target's Will save. ${subsection.save}
+      You befuddle your target with strange impulses, causing it to act randomly. The effects are determined by the target's Will save. You can Dismiss the spell.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Babbles incoherently and is slowed 1 for 1 round.
+          success: The target babbles incoherently and is stunned 1.
           crit: The target is unaffected.
-          failure: Confused for 1 minute. It can attempt a new save at the end of each of its turns to end the confusion.
-          crit-fail: Confused for 1 minute with no save to end early.
+          failure: The target is confused for 1 minute. It can attempt a new save at the end of each of its turns to end the confusion.
+          crit-fail: The target is confused for 1 minute, with no save to end early.
   heightened:
     8th: You can target up to 10 creatures.
 contingency:
@@ -1595,14 +1592,9 @@ creation:
   duration: 1 hour
   description:
     main:
-      You create a temporary standard-quality object. It must be of
-      vegetable matter and 5 cubic feet or smaller. It can't rely on
-      intricate artistry or complex moving parts, never functions
-      as a cost or the like, and can't be made of special materials or
-      materials with a rarity of uncommon or higher. It is obviously
-      temporary conjured.
+      You conjure a temporary object from eldritch energy. It must be of vegetable matter (such as wood or paper) and 5 cubic feet or smaller. It can't rely on intricate artistry or complex moving parts, never fulfills a cost or the like, and can't be made of precious materials or materials with a rarity of uncommon or higher. It is obviously temporarily conjured, and thus can't be sold or passed off as a genuine item.
   heightened:
-    5th: The item is expert quality and can use minerals.
+    5th: The item is metal and can include common minerals, like feldspar or quartz.
 crisis-of-faith:
   name: CRISIS OF FAITH
   type: SPELL
@@ -1990,15 +1982,13 @@ detect-scrying:
   rarity: 1
   traits: [detection, divination]
   casting: [aS, aV]
-  area: 30-foot aura
-  duration: 10 minutes
+  area: 30-foot emanation
+  duration: 1 hour
   description:
     main:
-      You detect the presence of scrying effects in the area. If detect
-      scrying is higher level than a scrying effect, you gain a glimpse of the
-      scrying creature and learn its approximate distance and direction.
+      By tapping into trace divinatory auras, you detect the presence of scrying effects in the area. If detect scrying is higher level than a scrying effect, you gain a glimpse of the scrying creature and learn its approximate distance and direction.
   heightened:
-    6th: The duration increases to 24 hours.
+    6th: The duration is until the next time you make your daily preparations.
 diabolic-edict:
   name: DIABOLIC EDICT
   type: POWER
@@ -2023,18 +2013,13 @@ dimension-door:
   rarity: 0
   traits: [conjuration, teleportation]
   casting: [aS, aV]
-  range: 60 feet
+  range: 120 feet
   description:
     main:
-      You instantly transport yourself and any items you're wearing
-      and holding from your current space to a clear space within range
-      you can see. If this would bring another creature with you—even if
-      you're carrying it in an extradimensional container—the spell is lost.
+      Opening a door that bypasses normal space, you instantly transport yourself and any items you're wearing and holding from your current space to a clear space within range you can see. If this would bring another creature with you—even if you're carrying it in an extradimensional container—the spell is lost.
   heightened:
     5th:
-      The range increases to 1 mile. You don't need to
-      be able to see your destination, as long as you have been there
-      in the past and know its relative location and distance from you.
+      The range increases to 1 mile. You don't need to be able to see your destination, as long as you have been there in the past and know its relative location and distance from you. You are temporarily immune for 1 hour.
 dimensional-anchor:
   name: DIMENSIONAL ANCHOR
   type: SPELL
@@ -2045,19 +2030,18 @@ dimensional-anchor:
   range: 30 feet
   target: one creature
   duration: varies
+  save: Will
   description:
     main:
-      You interfere with the target's ability to travel dimensions. The
-      target is immune to teleportation and any effect that would move
-      it to a different plane. The duration is determined by its Will save.
+      You interfere with the target's ability to teleport and travel between dimensions. Dimensional anchor attempts to counteract any teleportation effect, or any effect that would move the target to a different plane. The duration is determined by the target's Will save.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The effect lasts for 1 round.
-          crit: No effect.
-          failure: The effect lasts for 1 minute.
+          success: The effect lasts for 1 minute.
+          crit: The target is unaffected
+          failure: The effect lasts for 10 minutes.
           crit-fail: The effects lasts for 1 hour.
 dimensional-lock:
   name: DIMENSIONAL LOCK
@@ -2101,63 +2085,44 @@ dinosaur-form:
   rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
-      "You transform into a Large animal battle form. You must have
-      space to expand or the spell is lost. You count as an animal in
-      addition to your normal traits. Your gear is absorbed into you; the
-      constant abilities of your gear still function, but you can't activate
-      it. When you transform, you gain the following:
+      "You channel the primal forces of nature to transform into a Large animal battle form, specifically that of a powerful and terrifying dinosaur. You must have space to expand or the spell is lost. When you cast this spell, choose ankylosaurus, brontosaurus, deinonychus, stegosaurus, triceratops, or tyrannosaurus. You can decide the specific type of animal, but this has no effect on the form's Size or statistics. While in this form, you gain the animal and dinosaur traits. You can Dismiss the spell.
+      You gain the following statistics and abilities regardless of which battle form you choose:
       ${subsection.stats}
-      These special statistics can be adjusted only by penalties,
-      circumstance bonuses, and conditional bonuses. Your battle form
-      prevents casting spells, speaking, or using most actions with the
-      manipulate trait that require hands (the GM decides if there's
-      doubt). You can dismiss the spell with a concentrate action.
-      If you prepare this spell, choose from the following options.
-      You gain the attacks, Speeds, and special abilities listed. You can
-      choose the specific type of animal (such as allosaurus instead of
-      tyrannosaurus). This has no effect on size or statistics. ${subsection.forms}"
+      You also gain specific abilities based on the form you choose:
+      ${subsection.forms}"
     subsections:
       stats:
         type: list
         content:
-          - AC 25 (TAC 22), ignore armor's check penalty and reduced Speed.
-          - One or more natural melee attacks, which are the only types of
-            attacks you can use. You're trained with them. Your attack modifier
-            is +14; your damage bonus is +9. These are Strength based.
-          - 15 temporary Hit Points while you have the form.
-          - Low-light vision and scent.
-          - Athletics bonus of +14 unless your own bonus is higher.
+          - AC = 18 + your level. Ignore your armor's check penalty and Speed reduction.
+          - 15 temporary Hit Points.
+          - Low-light vision and imprecise scent 30 feet.
+          - One or more unarmed melee attacks specific to the battle form you choose, which are the only attacks you can use. You're trained with them. Your attack modifier is +16, and your damage bonus is +9. These attacks are Strength based (for the purpose of the enfeebled condition, for example). If your unarmed attack modifier is higher, you can use it instead.
+          - Athletics modifier of +18, unless your own modifier is higher.
       forms:
         type: dl
         content:
           "Ankylosaurus":
-            Speed 25 feet; +1 conditional bonus to AC, but not
-            TAC; tail (backswing, reach 10 feet), Damage 2d6 bludgeoning; foot, Damage 2d6 bludgeoning.
-          "Brachiosaurus":
+            Speed 25 feet; tail (back swing, reach 10 feet), Damage 2d6 bludgeoning; foot, Damage 2d6 bludgeoning.
+          "Brontosaurus":
             Speed 25 feet; tail (reach 15 feet), Damage 2d6 bludgeoning; foot (2d8 bludgeoning).
           "Deinonychus":
             Speed 40 feet; talon (agile), Damage 2d4 piercing plus 1 persistent bleed;
             jaws, Damage 1d10 piercing.
-          "Stegosaurus": Speed 30 feet; tail (reach 10), Damage 2d8 piercing.
+          "Stegosaurus": Speed 30 feet; tail (reach 10 feet), Damage 2d8 piercing.
           "Triceratops":
-            Speed 30 feet; horn (2d8 piercing plus 1d6 persistent bleed on a critical hit);
-            foot (2d6 bludgeoning).
+            Speed 30 feet; horn, Damage 2d8 piercing plus 1d6 persistent bleed on a critical hit;
+            foot, Damage 2d6 bludgeoning.
           "Tyrannosaurus":
-            Speed 30 feet; jaws (deadly, reach 10), Damage 1d12 piercing; tail (reach 10), Damage 1d10 bludgeoning.
+            Speed 30 feet; jaws (deadly, reach 10 feet), Damage 1d12 piercing; tail (reach 10 feet), Damage 1d10 bludgeoning.
   heightened:
     5th:
-      Your battle form is Huge and your attacks have
-      15-foot reach, or 20 if they started with 15. Your statistics are AC
-      27 (TAC 24); attack modifier +16; damage bonus +6 and double
-      damage dice; 20 temporary HP; Athletics +17.
+      Your battle form is Huge and your attacks have 15-foot reach, or 20-foot reach if they started with 15-foot reach. You instead gain 20 temporary HP, an attack modifier of +18, a damage bonus of +6, double the damage dice, and Athletics +21.
     7th:
-      Your battle form is Gargantuan and your attacks
-      have 20-foot reach, or 25 if they started with 15. Your statistics
-      are AC 33 (TAC 29); attack modifier +23; damage bonus +18 and
-      double damage dice; 25 temporary HP; Athletics +24.
+      Your battle form is Gargantuan and your attacks have 20-foot reach, or 25-foot reach if they started with 15-foot reach. You instead gain AC = 21 + your level, 25 temporary HP, an attack modifier of +25, a damage bonus of +15, double the damage dice, and Athletics +25.
 dirge-of-doom:
   name: DIRGE OF DOOM
   type: SPELL
@@ -2191,7 +2156,7 @@ discern-lies:
   casting: [aS, aV]
   duration: 10 minutes
   description:
-    main: You gain a +4 conditional bonus to Perception vs. lies.
+    main: Falsehoods ring in your ears like discordant notes. You gain a +4 status bonus to Perception checks when someone Lies.
 discern-location:
   name: DISCERN LOCATION
   type: SPELL
@@ -2440,25 +2405,21 @@ divine-wrath:
   casting: [aS, aV]
   range: 120 feet
   area: 20-foot burst
+  save: Fortitude
   description:
     main:
-      Choose an alignment your deity has (chaotic, evil, good, or lawful).
-      You can't cast this spell if you don't have a deity or
-      your deity is true neutral. You deal 5d8 damage of that alignment,
-      depending on the Fortitude saves of creatures in the area.
-      Creatures that match the alignment are unaffected. Those that
-      neither match nor oppose it treat their result as one degree better.
+      You can channel the fury of your deity against foes of opposed alignment. Choose an alignment your deity has (chaotic, evil, good, or lawful). You can't cast this spell if you don't have a deity or your deity is true neutral. This spell gains the trait of the alignment you chose. You deal 4d10 damage of the alignment you chose; each creature in the area must attempt a Fortitude save. Creatures that match the alignment you chose are unaffected. Those that neither match nor oppose it treat the result of their saving throw as one degree better.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success: The creature takes half damage.
-          crit: The creature takes no damage.
-          failure: The creature takes full damage and is sick 1.
-          crit-fail: Full damage, sick 2, and slowed 1 while sick.
+          crit: The creature is unaffected.
+          failure: The creature takes full damage and is sickened 1.
+          crit-fail: The creature takes full damage and is sickened 2; While it is sickened, it is also slowed 1.
   heightened:
-    "+1": The damage increases by 1d8.
+    "+1": The damage increases by 1d10.
 diviner-s-sight:
   name: DIVINER'S SIGHT
   type: POWER
@@ -3682,10 +3643,7 @@ fire-shield:
   duration: 1 minute
   description:
     main:
-      You wreathe yourself in flames, gaining cold resistance 5.
-      Additionally, adjacent creatures that hit you with a melee attack,
-      as well as creatures that touch you or hit you with an unarmed
-      attack, take 2d6 fire damage each time they do.
+      You wreathe yourself in ghostly flames, gaining cold resistance 5. Additionally, adjacent creatures that hit you with a melee attack, as well as creatures that touch you or hit you with an unarmed attack, take 2d6 fire damage each time they do.
   heightened:
     "+2": The cold resistance increases by 5 and the fire damage increases by 1d6.
 fireball:
@@ -3829,10 +3787,10 @@ fly:
   traits: [transmutation]
   casting: [aS, aV]
   range: touch
-  target: one creature
-  duration: 1 minute
+  target: 1 creature
+  duration: 5 minutes
   description:
-    main: The target gains a fly Speed of 30 feet.
+    main: The target can soar through the air, gaining a fly Speed equal to its Speed or 20 feet, whichever is greater.
   heightened:
     7th:  The duration increases to 1 hour.
 forbidding-ward:
@@ -3941,15 +3899,11 @@ freedom-of-movement:
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
-  target: one creature touched
-  duration: 1 minute
+  target: 1 creature touched
+  duration: 10 minutes
   description:
     main:
-      While under this spell's effect, the target ignores all effects that
-      would entangle or hamper her. When she attempts to escape
-      an effect that has her immobilized, grabbed, or restrained, she
-      automatically succeeds unless it's a magical effect of a higher
-      level than the freedom of movement spell.
+      You repel effects that would hinder a creature or slow its movement. While under this spell's effect, the target ignores effects that would give them a circumstance penalty to Speed. When they attempt to Escape an effect that has them immobilized, grabbed, or restrained, they automatically succeed unless the effect is magical and of a higher level than the freedom of movement spell.
 gaseous-form:
   name: GASEOUS FORM
   type: SPELL
@@ -3958,16 +3912,11 @@ gaseous-form:
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   range: touch
-  target: one willing creature
-  duration: 1 minute
+  target: 1 willing creature
+  duration: 5 minutes
   description:
     main:
-      The target transforms into a vaporous state. In this state, the
-      target is amorphous and loses any item bonus to AC. It gains
-      resistance 8 to physical damage and is immune to precision
-      damage. It can't cast spells or use actions that have the attack
-      or manipulate trait. It gains a fly Speed of 10 feet and can slip
-      through tiny cracks.
+      The target transforms into a vaporous state. In this state, the target is amorphous and loses any item bonus to AC. It gains resistance 8 to physical damage and is immune to precision damage. It can't cast spells, activate items, or use actions that have the attack or manipulate trait. It gains a fly Speed of 10 feet and can slip through tiny cracks. The target can Dismiss the spell.
 gate:
   name: GATE
   type: SPELL
@@ -4068,6 +4017,17 @@ ghoulish-cravings:
           "Stage 4": 3d8 negative damage and the creature gains no benefit from healing (1 day)
           "Stage 5": as stage 4 (1 day)
           "Stage 6": the creature dies and rises as a ghoul at the next midnight.
+glibness:
+  name: Glibness
+  type: spell
+  level: 4
+  rarity: 1
+  casting: [aS, aV]
+  duration: 10 minutes
+  traits: [enchantment, mental]
+  description:
+    main:
+      Falsehoods pass your lips as smoothly as silk. You gain a +4 status bonus to Deception checks to Lie and against Perception checks to discern if you are telling the truth, and you add your level even if you're untrained. If the implausibility of your lies prompts a circumstance penalty or a DC increase, reduce that penalty or increase by half.
 glimpse-the-truth:
   name: GLIMPSE THE TRUTH
   type: POWER
@@ -4117,20 +4077,10 @@ globe-of-invulnerability:
   traits: [abjuration]
   casting: [aS, aV]
   area: 10-foot burst centered on one corner of your space
-  duration: 1 minute
+  duration: 10 minutes
   description:
     main:
-      You create an immobile globe around you that attempts to dispel
-      any spell from outside the globe whose area or targets enter into
-      the globe, as if the globe were a dispel magic spell 1 level lower
-      than its actual spell level. Even if the dispel attempt succeeds, it
-      prevents only the portion of the spell that would have entered the
-      globe (so if the spell also had targets outside the globe or part of
-      its area were beyond the globe, those targets or area would still
-      be affected normally). You must form the sphere in an unbroken
-      open space so its edges don't pass through any creatures or
-      objects or the spell is lost (though creatures can enter the area
-      afterward normally).
+      You create an immobile globe around yourself that attempts to counteract any spell from outside the globe whose area or targets enter into the globe, as if the globe were a dispel magic spell 1 level lower than its actual spell level. If the counteract attempt succeeds, it prevents only the portion of the spell that would have entered the globe (so if the spell also has targets outside the globe, or part of its area is beyond the globe, those targets or that area is affected normally). You must form the sphere in an unbroken open space, so its edges don't pass through any creatures or objects, or the spell is lost (though creatures can enter the globe after the spell is cast).
 glutton-s-jaws:
   name: GLUTTON'S JAWS
   type: POWER
@@ -4378,14 +4328,11 @@ hallucinatory-terrain:
   casting: [M, S, V]
   range: 500 feet
   area: 50-foot burst
-  duration: 24 hours
+  duration: until the next time you make your daily preparations
   description:
     main:
-      You create an illusion that causes natural terrain to look, sound,
-      feel, and smell like a different kind of terrain. This doesn't
-      disguise any structures or creatures in the area.
-      Any creature that touches the illusion or uses the Seek action
-      to examine it can attempt to disbelieve your illusion.
+      You create an illusion that causes natural terrain to look, sound, feel, and smell like a different kind of terrain. This doesn't disguise any structures or creatures in the area.
+      Any creature that touches the illusion or uses the Seek action to examine it can attempt to disbelieve your illusion.
   heightened:
     5th:
       Your image can also disguise structures or
@@ -4632,6 +4579,22 @@ hideous-laughter:
           crit-fail:
             The target falls prone and can't use actions or reactions for
             1 round. It then suffers the failure effects.
+holy-cascade:
+  name: Holy Cascade
+  type: spell
+  level: 4
+  rarity: 0
+  traits: [evocation, good, positive, water]
+  cast: [aS, aV]
+  cost: one vial of holy water
+  range: 500 feet
+  area: 20-foot burst
+  save: basic Reflex
+  description:
+    main:
+      You call upon sacred energy to amplify a vial of holy water, tossing it an incredible distance. It explodes in an enormous burst that deals 3d6 bludgeoning damage to creatures in the area from the cascade of water. The water deals an additional 6d6 positive damage to undead and 6d6 good damage to fiends.
+  heightened:
+    "+1": The bludgeoning damage increases by 1d6, and the additional positive and good damage each increase by 2d6.
 horrid-wilting:
   name: HORRID WILTING
   type: SPELL
@@ -4734,6 +4697,19 @@ hydraulic-push:
           crit: The target takes 6d6 bludgeoning damage and is knocked back 10 feet.
   heightened:
     "+1": The damage increases by 2d6
+hydraulic-torrent:
+  name: Hydraulic Torrent
+  type: spell
+  level: 4
+  rarity: 0
+  casting: [aS, aV]
+  area: 60-foot line
+  save: Fortitude
+  description:
+    main:
+      A swirling torrent of water manifests along a straight line, battering those that are its path and possibly pushing them away from you. The torrent deals 8d6 bludgeoning damage. Each creature in the area must attempt a basic Fortitude save. Creatures that fail the save are also knocked back 5 feet (10 feet on a critical failure).
+  heightened:
+    "+1": The damage increases by 2d6.
 hypercognition:
   name: HYPERCOGNITION
   type: SPELL
@@ -6088,13 +6064,13 @@ modify-memory:
   traits: [divination, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
-  duration: permanent
+  target: 1 creature
+  duration: unlimited
+  save: Will
   description:
     main:
-      You alter the target's memories, either erasing a memory,
-      enhancing a memory's clarity, altering a memory, or adding a false
-      memory. The target can attempt a Will save to resist the spell.
+      You alter the target's memories, either erasing a memory, enhancing a memory's clarity, altering a memory, or adding a false memory. The target can attempt a Will save to resist the spell.
+      Any memories you've altered remain changed as long as the spell is active. If the target moves out of range before the 5 minutes is up, you can't alter any further memories.
       ${subsection.save}
     subsections:
       save:
@@ -6103,28 +6079,15 @@ modify-memory:
           success:
             The target is unaffected but thinks your spell was
             something harmless instead of modify memory, unless
-            it identifies the spell (usually by spending the Identify
-            Magic action).
+            it identifies the spell.
           crit:
             The target is unaffected and realizes you tried
             to alter its memory.
           failure:
-            During the first 5 minutes of the spell's duration, you
-            can Concentrate on the Spell to modify a memory once
-            each round. When you do, you imagine up to 6 seconds of
-            memory to modify, to a maximum of 5 continuous minutes
-            of memory.
-            Any memories you've altered remain changed as long as the spell
-            is active. If the target moves out of range before the 5 minutes is
-            up, you can't alter any further memories.
+            During the first 5 minutes of the spell's duration, you can Sustain the Spell to modify a memory once each round. When you do, you imagine up to 6 seconds of memory to modify, to a maximum of 5 continuous minutes of memory.
   heightened:
     6th:
-      You can cast the spell on a willing target in
-      order to suppress all memory of a particular topic, detailed in 50
-      words or fewer. The spell patches these omissions with indistinct
-      haze. Instead of having a duration, the effects last indefinitely
-      even in the absence of magic and can be removed only by
-      powerful spells such as alter reality.
+      You can cast the spell on a willing target to suppress all memory of a particular topic, detailed in 50 words or fewer. The effect is permanent, and it patches these omissions with an indistinct haze.
 moment-of-renewal:
   name: MOMENT OF RENEWAL
   type: SPELL
@@ -6480,28 +6443,26 @@ nightmare:
   name: NIGHTMARE
   type: SPELL
   level: 4
-  rarity: 1
+  rarity: 0
   traits: [illusion, mental]
   casting-time: 10 minutes
   casting: [M, S, V]
   range: planetary
-  target: one creature you know by name
-  duration: 1 day or until dismissed
+  target: 1 creature you know by name
+  duration: 1 day
+  save: Will
   description:
     main:
-      You send disturbing nightmares to your target. The next time the
-      target falls asleep, it must attempt a Will saving throw against
-      the nightmare. If you know the target only by name and have
-      never met them, the target gets a +4 circumstance bonus to the
-      Will saving throw. ${subsection.save}
+      You send disturbing nightmares to your target. The next time the target falls asleep, it must attempt a Will save. If you know the target only by name and have never met them, the target gets a +4 circumstance bonus to the Will save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The target suffers no adverse effects from the nightmare, other than its memories.
-          crit: The target suffers no adverse effects and is inoculated for 1 week.
-          failure: The target awakens fatigued.
-          crit-fail: The target awakens fatigued and is drained 2 until no longer fatigued.
+          success: The target experiences the nightmares but suffers no adverse effects other than unpleasant memories.
+          crit: The target suffers no adverse effects and is temporarily immune for 1 week.
+          failure: The target experiences the nightmares and awakens fatigued.
+          crit-fail: The target experiences the nightmares, awakens fatigued, and is drained 2 until it is no longer fatigued.
 nondetection:
   name: NONDETECTION
   type: SPELL
@@ -6537,27 +6498,22 @@ outcast-s-curse:
   traits: [attack, curse, enchantment, mental, misfortune]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   description:
     main:
-      You afflict the target with a curse that makes its
-      presence off-putting and grating, depending on the
-      outcome of its Will save. ${subsection.save}
+      You afflict the target with a curse that makes its presence abrasive and off -putting. The target must attempt a Will save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Per failure, but the effect ends on its own after 1 minute instead.
+          success:
+            For 10 minutes, the target must roll twice and use the worse result whenever attempting a Deception, Diplomacy, Intimidation, or Performance check, and creatures they encounter have an initial attitude toward them of one step worse (for instance, unfriendly instead of indifferent).
           crit: The target is unaffected.
           failure:
-            The target must roll twice and use the worse result
-            whenever attempting a Deception, Diplomacy, Intimidation,
-            or Performance check, and all creatures she encounters have
-            an initial attitude toward her of one step worse (for instance,
-            unfriendly instead of indifferent). The effect is permanent.
+            As success, but the effect is permanent.
           crit-fail:
-            Per failure, but all creatures the target encounters
-            have an initial attitude towards her of two steps worse.
+            As failure, and creatures that the target encounters have an initial attitude toward them of two steps worse.
 overwhelming-presence:
   name: OVERWHELMING PRESENCE
   type: SPELL
@@ -6814,30 +6770,23 @@ phantasmal-killer:
   traits: [death, emotion, fear, illusion, mental]
   casting: [aS, aV]
   range: 120 feet
-  target: one living creature
+  target: 1 living creature
+  save: Will
   description:
     main:
-      You create a phantasmal image of the most
-      fearsome creature imaginable to the target. Only
-      the spell's target can see the killer, though you can
-      see the vague shape of the illusion as it races forth to attack. The
-      effect of the killer is based on the outcome of the target's Will
-      saving throw. ${subsection.save}
+      You create a phantasmal image of the most fearsome creature imaginable to the target. Only the spell's target can see the killer, though you can see the vague shape of the illusion as it races forth to attack. The effect of the killer is based on the outcome of the target's Will save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The target is frightened 1.
+          success: The target takes 4d6 mental damage and is frightened 1.
           crit: The target is unaffected.
-          failure: The target takes 11d6 mental damage and is frightened 2.
+          failure: The target takes 8d6 mental damage and is frightened 2.
           crit-fail:
-            The target is so afraid it might instantly die.
-            It must attempt a Fortitude saving throw; if the target
-            fails, it is reduced to 0 Hit Points and dies. On a successful
-            Fortitude save, the target still takes 16d6 mental damage,
-            is fleeing until the end of its next turn, and is frightened 4.
+            The target is so afraid it might die. It must attempt a Fortitude save; if the target fails, it dies. On a successful Fortitude save, the target takes 12d6 mental damage, is fleeing until the end of its next turn, and is frightened 4. This effect has the incapacitation trait.
   heightened:
-    "+1": The damage on a failure increases by 2d6 and on a critical failure by 3d6.
+    "+1": The damage increases by 2d6 on a failure and by 3d6 on a critical failure.
 phantom-pain:
   name: PHANTOM PAIN
   type: SPELL
@@ -7370,11 +7319,7 @@ private-sanctum:
   duration: 24 hours
   description:
     main:
-      The area looks like a bank of impenetrable black fog. Sensory
-      stimuli (such as sounds, smells, and light) don't pass from inside
-      the area to outside the area. Scrying spells can't perceive any
-      stimuli from the area, and mind-reading effects don't work in
-      the area.
+      From outside, the area looks like a bank of impenetrable black fog. Sensory stimuli (such as sounds, smells, and light) don't pass from inside the area to outside the area. Scrying spells can't perceive any stimuli from the area, and mind-reading effects don't work in the area.
 produce-flame:
   name: PRODUCE FLAME
   type: SPELL
@@ -7745,10 +7690,7 @@ read-omens:
   casting: [M, S, V]
   description:
     main:
-      Choose a particular goal, event, or activity that will
-      occur within 1 week. You learn a cryptic clue or piece of advice
-      that could help with the chosen event, often in the form of a
-      rhyme or omen.
+      You peek into the future. Choose a particular goal, event, or activity that will occur within 1 week. You learn a cryptic clue or piece of advice that could help with the chosen event, often in the form of a rhyme or omen.
 regenerate:
   name: REGENERATE
   type: SPELL
@@ -7782,14 +7724,10 @@ remove-curse:
   casting-time: 10 minutes
   casting: [M, S, V]
   range: touch
-  target: one creature
+  target: 1 creature
   description:
     main:
-      You attempt to remove one curse afflicting the target. Treat this
-      as counteracting the curse (see page 319). If the curse comes
-      from a cursed item or other external source, a success indicates
-      that the target creature can rid itself of the cursed item, but
-      doesn't remove the curse from the item.
+      Your touch grants a reprieve to a cursed creature. You attempt to counteract one curse afflicting the target. If the curse comes from a cursed item or other external source, a success indicates that the target creature can rid itself of the cursed item, but it doesn't remove the curse from the item.
 remove-disease:
   name: REMOVE DISEASE
   type: SPELL
@@ -7871,21 +7809,14 @@ resilient-sphere:
   duration: 1 minute
   description:
     main:
-      You create an immobile sphere of force around the target's space
-      to either trap or protect it, blocking anything that would cross
-      through the sphere. The sphere has AC 5, TAC 5, and Hardness
-      10. It can take 2 extra Dents and is destroyed when broken.
-      Disintegrate destroys the sphere instantly. The spell's duration
-      ends when the sphere is destroyed. If the target is unwilling, the
-      effects of the sphere depend on the target's Reflex save.
+      You create an immobile sphere of force to either trap or protect the target, blocking anything that would pass through the sphere. The sphere has AC 5, Hardness 10, and 40 Hit Points. It's immune to critical hits and precision damage. Disintegrate destroys the sphere instantly. If the target is unwilling, the effects of the sphere depend on the target's Reflex save.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success:
-            The target disrupts the sphere's integrity, so the
-            sphere functions normally but begins with 3 Dents.
+            The sphere functions normally but has only 10 Hit Points instead of 40.
           crit:
             The target disrupts the sphere, causing it to
             collapse entirely.
@@ -8185,30 +8116,17 @@ rope-trick:
   type: SPELL
   level: 4
   rarity: 1
-  traits: [conjuration, extradimensional, space]
+  traits: [conjuration, extradimensional]
   casting-time: 10 minutes
   casting: [M, S, V]
   range: touch
-  target: one touched piece of rope from 5 to 30 feet long
+  target: 1 touched piece of rope from 5 to 30 feet long
   duration: 8 hours
   description:
     main:
-      You cause the target rope to rise vertically into the air. Where it
-      ends, an extradimensional space springs up, connected to the top
-      of the rope. This space can be reached only by climbing the rope.
-      The entrance to the space can't be seen, and it can be
-      pinpointed only by the presence of the rope. The rope can't
-      be removed or hidden, though it can be detached from the
-      extradimensional space by pulling it with 16,000 pounds of
-      weight, critically succeeding at an Athletics check against the
-      spell's DC, or destroying the rope. The space holds up to eight
-      Medium creatures and their gear. A Large creature counts as
-      two Medium creatures, a Huge creature counts as four Medium
-      creatures, and a Gargantuan creature fills the space on its own.
-      If the rope is detached or destroyed or if a creature attempts
-      to enter the space that would put it over its capacity, the space
-      begins to unravel. It disappears in 1d4 rounds, depositing the
-      creatures within safely on the ground below.
+      You cause the target rope to rise vertically into the air. Where it ends, an extradimensional space opens, connected to the top of the rope. This space can be reached only by climbing the rope.
+      The entrance to the space can't be seen, and it can be pinpointed only by the presence of the rope. The rope can't be removed or hidden, though it can be detached from the extradimensional space by pulling it with 16,000 pounds of weight, critically succeeding at an Athletics check against the spell's DC, or destroying the rope. The space holds up to eight Medium creatures and their gear. A Large creature counts as two Medium creatures, a Huge creature counts as four Medium creatures, and a Gargantuan creature fills the space on its own.
+      If the rope is detached or destroyed, or if a creature attempts to enter the space that would put it over its capacity, the space begins to unravel. It disappears in 1d4 rounds, depositing the creatures within safely on the ground below.
 safeguard-secret:
   name: SAFEGUARD SECRET
   type: POWER
@@ -8507,17 +8425,15 @@ shape-stone:
   target: cube of stone 10 feet across or smaller
   description:
     main:
-      You shape the stone into a rough shape of your choice; it can't
-      include intricate parts, fine details, moving pieces, or the like.
-      Any creature standing atop the stone when you reshape it must
-      attempt an Acrobatics check. ${subsection.outcomes}
+      You shape the stone into a rough shape of your choice. The shaping process is too crude to produce intricate parts, fine details, moving pieces, or the like. Any creatures standing atop the stone when you reshape it must each attempt a Reflex save or Acrobatics check.
+      ${subsection.outcomes}
     subsections:
       outcomes:
         type: dl
         content:
-          success: Unaffected.
-          failure: The creature falls prone.
-          crit-fail: The creature falls off the stone (if applicable) and falls prone.
+          success: The creature is unaffected.
+          failure: The creature falls prone atop the stone.
+          crit-fail: The creature falls off the stone (if applicable) and lands prone.
 shape-wood:
   name: SHAPE WOOD
   type: SPELL
@@ -8800,9 +8716,9 @@ solid-fog:
   casting: [aM, aS, aV]
   range: 120 feet
   area: 20-foot burst
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
-    main: Per obscuring mist, except that the area is also difficult terrain.
+    main: You conjure a bank of fog so thick it impedes movement as well as sight. This functions as obscuring mist, except that the area is also difficult terrain. You can Dismiss the spell.
 soothe:
   name: SOOTHE
   type: SPELL
@@ -8909,13 +8825,7 @@ speak-with-plants:
   duration: 10 minutes
   description:
     main:
-      You can ask questions of and receive answers from plants, but the
-      spell doesn't make them more friendly or intelligent than normal.
-      Most normal plants have a limited and distinctive view of the world
-      around them, so they don't recognize details about creatures or
-      know anything about the world beyond their immediate vicinity.
-      Wary and cunning plant monsters are likely to be terse and
-      evasive, while less intelligent ones often make inane comments.
+      You can ask questions of and receive answers from plants, but the spell doesn't make them more friendly or intelligent than normal. Most normal plants have a distinctive view of the world around them, so they don't recognize details about creatures or know anything about the world beyond their immediate vicinity. Cunning plant monsters are likely to be terse and evasive, while less intelligent ones often make inane comments.
 spectral-hand:
   name: SPECTRAL HAND
   type: SPELL
@@ -8936,16 +8846,11 @@ spell-immunity:
   traits: [abjuration]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: 24 hours
   description:
     main:
-      Choose a spell and name it aloud as part of the Verbal Casting
-      action. Spell immunity attempts to dispel that spell (see page
-      197) whenever spell immunity's target is the target of the named
-      spell or in that spell's area. Successfully dispelling a spell that
-      targets an area or multiple targets with spell immunity negates
-      the effects only for spell immunity's target.
+      You ward a creature against the effects of a single spell. Choose a spell and name it aloud as part of the verbal component. Spell immunity attempts to counteract that spell whenever spell immunity's target is the target of the named spell or in that spell's area. Successfully counteracting a spell that targets an area or multiple targets with spell immunity negates the effects only for the target affected by spell immunity.
 spell-turning:
   name: SPELL TURNING
   type: SPELL
@@ -9285,21 +9190,18 @@ stoneskin:
   type: SPELL
   level: 4
   rarity: 0
-  traits: [abjuration]
+  traits: [abjuration, earth]
   casting: [aS, aV]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: 20 minutes
   description:
     main:
-      The target's skin hardens like stone. It gains resistance 5 to
-      physical damage (any bludgeoning, piercing, or slashing damage)
-      and weakness 5 to adamantine. Each time the target is hit by
-      a bludgeoning, piercing, or slashing attack, stoneskin's duration
-      decreases by 1 minute.
+      The target's skin hardens like stone. It gains resistance 5 to physical damage, except adamantine. Each time the target is hit by a bludgeoning, piercing, or slashing attack, stoneskin's duration decreases by 1 minute.
   heightened:
-    6th: The resistance and weakness increase to 10.
-    8th: The resistance and weakness increase to 15.
+    6th: The resistance increases to 10.
+    8th: The resistance increases to 15.
+    10th: The resistance increases to 20.
 storm-lord:
   name: STORM LORD
   type: POWER
@@ -9421,18 +9323,16 @@ suggestion:
   type: SPELL
   level: 4
   rarity: 0
-  traits: [enchantment, linguistic, mental]
+  traits: [enchantment, incapacitation, linguistic, mental]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: varies
+  save: Will
   description:
     main:
-      You suggest a course of action to the target, which must
-      be phrased in such a way as to seem like a logical course
-      of action to the target and can't be self-destructive or
-      obviously against the target's self-interest. The target's
-      response depends on its Will save. ${subsection.save}
+      Your honeyed words are difficult for creatures to resist. You suggest a course of action to the target, which must be phrased in such a way as to seem like a logical course of action to the target and can't be self-destructive or obviously against the target's self-interest. The target must attempt a Will save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
@@ -9440,12 +9340,8 @@ suggestion:
           success: The target is unaffected and thinks you were talking to them normally, not casting a spell on them.
           crit: The target is unaffected and knows you tried to control it.
           failure:
-            The target immediately follows your suggestion. The
-            spell has a duration of 1 minute, or until the target has
-            completed a finite suggestion or the suggestion becomes
-            self-destructive or has other obvious negative effects, at
-            which point the spell is dismissed.
-          crit-fail: Per failure, but the duration is 1 hour or until dismissed.
+            The target immediately follows your suggestion. The spell has a duration of 1 minute, or until the target has completed a finite suggestion or the suggestion becomes self-destructive or has other obvious negative effects.
+          crit-fail: Per failure, but the base duration is 1 hour.
   heightened:
     8th: You can target up to 10 creatures.
 summon-animal:
@@ -9703,40 +9599,24 @@ talking-corpse:
   casting-time: 10 minutes
   casting: [M, S, V]
   range: touch
-  target: one corpse
+  target: 1 corpse
   duration: 10 minutes
+  save: Will
   description:
     main:
-      You grant the corpse a semblance of life, which it uses to speak
-      the answers to three questions. This uses the physical body's
-      latent memories rather than calling back the deceased's spirit,
-      so the corpse must be mostly intact. The more damage it has
-      taken, the more inaccurate or patchwork its answers, and it
-      must have a throat and mouth to speak at all. If anyone has
-      previously cast this spell on the corpse in the last week, the spell
-      automatically fails. The corpse can attempt a Will save to resist
-      the questions as if it were the original creature at its time of
-      death, with the following effects.
+      You grant the target corpse a semblance of life, which it uses to speak the answers to three questions posed to it. This spell calls on the physical body's latent memories rather than summoning back the deceased's spirit, so the corpse must be mostly intact for the spell to function. The more damage the corpse has taken, the more inaccurate or patchwork its answers are, and it must have a throat and mouth to speak at all. If anyone has previously cast this spell on the corpse in the last week, the spell automatically fails. The corpse can attempt a Will save to resist answering the questions using the statistics of the original creature at its time of death, with the following effects.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: The target can lie or refuse to answer your questions.
+          success: The target can provide false information or refuse to answer your questions.
           crit:
-            The target can lie or refuse to answer your
-            questions, and the target's spirit haunts you throughout
-            the day, bothering you and causing you to be unable to gain
-            any rest for 1 day.
+            The target can lie or refuse to answer your questions, and the target's spirit haunts you for 24 hours, bothering you and causing you to be unable to gain any rest for that time.
           failure:
-            The target must answer truthfully, but its answers can
-            be brief, cryptic, and repetitive. It can still mislead you or
-            attempt to stall so that the spell's duration runs out before
-            you can ask all your questions.
+            The target must answer truthfully, but its answers can be brief, cryptic, and repetitive. It can still mislead you or attempt to stall so that the spell's duration runs out before you can ask all your questions.
           crit-fail:
-            Per failure, but the target's answers are more
-            direct and less repetitive, though still cryptic. It takes a -2
-            conditional penalty to Deception checks to deceive you.
+            As failure, but the target's answers are more direct and less repetitive, though still cryptic. It takes a –2 status penalty to Deception checks to deceive or mislead you.
 tanglefoot:
   name: TANGLEFOOT
   type: SPELL
@@ -9866,11 +9746,7 @@ telepathy:
   duration: 10 minutes
   description:
     main:
-      You can communicate telepathically with all
-      creatures within 30 feet. The communication is two-way once
-      you have established a connection by communicating with a
-      creature. You can communicate only with creatures that share
-      a language with you.
+      You can communicate telepathically with creatures within 30 feet. Once you establish a connection by communicating with a creature, the communication is two-way. You can communicate only with creatures that share a language with you.
   heightened:
     6th:
       Telepathy loses the linguistic trait. You can
@@ -10520,31 +10396,15 @@ veil:
   casting: [aS, aV]
   range: 30 feet
   target: up to 10 creatures
-  duration: 1 hour or until dismissed
+  duration: 1 hour
   description:
     main:
-      You disguise the targets as other creatures of the same body
-      shape and roughly similar height (within 6 inches) and weight
-      (within 50 pounds). The disguise can hide the targets' identities
-      or let them appear to be of another ancestry, but it's not good
-      enough to impersonate specific individuals. The spell doesn't
-      change voice, scent, or mannerisms. You choose the disguise for
-      each target, so you could make one appear to be a dwarf and
-      another an elf, for example.
-      Casting veil counts as setting up a disguise for the purpose of
-      the Impersonate action. It ignores any circumstance penalties
-      the targets might take for being disguised as a dissimilar
-      creature, and it also gives the targets a +4 conditional bonus to
-      Deception checks to prevent others from seeing through their
-      disguises. You can dismiss any or all of these disguises with a
-      Verbal Casting action.
+      You disguise the targets as other creatures of the same body shape and roughly similar height (within 6 inches) and weight (within 50 pounds). The disguise can hide the targets' identities or let them appear to be of another ancestry, but it's not precise enough to impersonate specific individuals. The spell doesn't change voice, scent, or mannerisms. You choose the disguise for each target; for example, you could make one target appear to be a dwarf and another an elf.
+      Casting veil counts as setting up a disguise for the purpose of the Impersonate action. It allows the target to ignore any circumstance penalties they might take for being disguised as dissimilar creatures, and it gives the targets a +4 status bonus to Deception checks to prevent others from seeing through their disguises, and add their level even if untrained. You can Dismiss any or all of these disguises.
   heightened:
     5th: The spell also disguises the targets' voices and scents, gaining the auditory trait.
     7th:
-      The targets can appear as any creature of the
-      same size, even specific individuals. You must have seen an
-      individual to reproduce their appearance. The spell also disguises
-      the targets' voices and scents, gaining the auditory trait.
+      The targets can appear as any creature of the same size, even specific individuals. You must have seen an individual to reproduce their appearance. The spell also disguises the targets' voices and scents; it gains the auditory trait.
 veil-of-confidence:
   name: VEIL OF CONFIDENCE
   type: POWER
@@ -10663,6 +10523,20 @@ visions-of-danger:
           crit-fail: Double damage.
   heightened:
     "+1": The mental damage increases by 1d8.
+vital-beacon:
+  name: Vital Beacon
+  type: spell
+  level: 4
+  rarity: 0
+  traits: [healing, necromancy, positive]
+  casting: [S, V]
+  casting-time: 1 minute
+  duration: until your next daily preparations
+  description:
+    main:
+      Vitality radiates outward from you, allowing others to supplicate and receive healing. Once per round, either you or an ally can use an Interact action to supplicate and lay hands upon you to regain Hit Points. Each time the beacon heals someone, it decreases in strength. It restores 4d10 Hit Points to the first creature, 4d8 Hit Points to the second, 4d6 Hit Points to the third, and 4d4 Hit Points to the fourth, after which the spell ends. You can have only one vital beacon active at a time.
+  heightened:
+    "+1": The beacon restores one additional die of Hit Points each time it heals, using the same die size as the others for that step.
 volcanic-eruption:
   name: VOLCANIC ERUPTION
   type: SPELL
@@ -10768,14 +10642,7 @@ wall-of-fire:
   duration: 1 minute
   description:
     main:
-      You create either a 5-foot-thick, 60-foot-long, 10-foot-high wall
-      of flame in a straight line or a 5-foot-thick, 10-foot-radius ring of
-      flame. The wall stands vertically in either form
-      if you wish, the
-      wall can be of a shorter length or height. Everything on each
-      side of the wall is concealed from creatures on the opposite
-      side. Any creature crossing the wall or occupying the wall's
-      area at the start of its turn takes 4d6 fire damage.
+      You raise a blazing wall that burns creatures passing through it. You create either a 5-foot-thick wall of flame in a straight line up to 60 feet long and 10 feet high, or a 5-foot-thick, 10-foot-radius ring of flame with the same height. The wall stands vertically in either form; if you wish, the wall can be of a shorter length or height. Everything on each side of the wall is concealed from creatures on the opposite side. Any creature that crosses the wall or is occupying the wall's area at the start of its turn takes 4d6 fire damage.
   heightened:
     "+1": The fire damage increases by 1d6.
 wall-of-force:
@@ -11093,27 +10960,19 @@ weapon-storm:
   traits: [evocation]
   casting: [aS, aV]
   area: 30-foot cone or 10-foot aura
+  save: Reflex
   description:
     main:
-      Your Somatic Casting action for this spell is a swing with one
-      weapon you're holding that you're trained with, so you can use
-      the Somatic Casting action even if you don't have a hand free.
-      The weapon magically multiplies into duplicates that swipe at all
-      creatures in either a cone or an aura, dealing five dice of damage
-      to creatures in the area. This damage has the same type as the
-      chosen weapon and uses the same die size. Determine the die
-      size as if you were attacking with the weapon; for instance, if
-      you were wielding a two-hand weapon in both hands, you'd use
-      its two-hand damage die. Each creature in the area must attempt
-      a Reflex save. ${subsection.save}
+      You swing a weapon you're holding, and the weapon magically multiplies into duplicates that swipe at all creatures in either a cone or an emanation. This flurry deals four dice of damage to creatures in the area. This damage has the same type as the weapon and uses the same die size. Determine the die size as if you were attacking with the weapon; for instance, if you were wielding a two-hand weapon in both hands, you'd use its two-hand damage die.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Half damage.
-          crit: Unaffected.
-          failure: Full damage.
-          crit-fail: Double damage, plus the weapon's critical specialization effect.
+          success: The target takes half damage.
+          crit: The creature is unaffected.
+          failure: The target takes full damage.
+          crit-fail: Double damage, and is subject to the weapon's critical specialization effect.
   heightened:
     "+1": Add another damage die.
 weapon-surge:
