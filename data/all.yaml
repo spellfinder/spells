@@ -271,14 +271,12 @@ alter-reality:
   casting: [aM, aS, aV]
   type: spell
   level: 10
-  rarity: 1
+  rarity: 0
   description:
     main:
-      "You use your occult lore and the power of your mind to manipulate the spiritual multiverse, resulting in any
-      of the following effects:
-        ${subsection.effects}
-      At the GM's discretion, you can try to produce greater effects,
-      but this is dangerous and the spell may have only a partial effect."
+      "You use your occult lore and the power of your mind to manipulate the spiritual multiverse, resulting in any of the following effects:
+      ${subsection.effects}
+      At the GM's discretion, you can try to produce greater effects, but this is dangerous and the spell may have only a partial effect."
     subsections:
       effects:
         type: list
@@ -287,6 +285,7 @@ alter-reality:
           - Duplicate any non-occult spell of 7th level or lower.
           - Produce any effect whose power is equivalent to any occult
             spell 9th level or lower, or non-occult spell 7th level or lower.
+          - Reverse certain effects that refer to the wish spell
 anathematic-reprisal:
   name: Anathematic Reprisal
   type: spell
@@ -539,58 +538,46 @@ avatar:
   rarity: 1
   traits: [polymorph, transmutation]
   casting: [aS, aV]
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
-    main: "You transform into an avatar of your deity, assuming a Huge
-      battle form. You must have space to expand or the spell is lost.
-      You count as a deity in addition to your normal traits. Your gear
-      is absorbed into you; the constant abilities of your gear still
-      function, but you can't activate it. When you transform, you gain
-      the following: ${subsection.stats}
-      These statistics can be adjusted only by penalties, circumstance
-      bonuses, and conditional bonuses. This form prevents spellcasting
-      and most manipulate actions that require hands (the GM decides if
-      there's doubt). You can dismiss the spell with a concentrate action.
-      When in battle form, you gain the attacks, Speeds, and special
-      abilities listed for your deity below. ${subsection.gods}"
+    main:
+      "You transform into an avatar of your deity, assuming a Huge battle form. You must have space to expand or the spell is lost. You have hands in this battle form and can take manipulate actions. You can Dismiss this spell.
+      You gain the following statistics and abilities regardless of which deity's battle form you assume:
+      ${subsection.stats}
+      You also gain the specific abilities listed for your deity below:
+      ${subsection.gods}"
     subsections:
       stats:
         type: list
         content:
-          - AC 42 (TAC 39), ignore armor's check penalty and reduced Speed.
-          - One or more attacks, which are the only types of attacks you
-            can use. You're trained with them. Your attack modifier is +31
-            and the damage bonus is listed. Melee attacks are Strength
-            based (for the purposes of enfeebled, for example) unless they
-            have the finesse trait, and all ranged attacks are Dexterity
-            based. They target the enemy's AC. Even if they deal positive or
-            negative damage, they don't heal creatures.
-          - 30 temporary Hit Points while you have the form.
+          - AC = 25 + your level. Ignore your armor's check penalty and Speed reduction.
+          - 30 temporary Hit Points.
           - Darkvision.
-          - Athletics bonus of +31 unless your own bonus is higher.
+          - One or more attacks specific to your deity's battle form, which are the only attacks you can use. You're trained with them. Your attack modifier is +33, and you use the listed damage. Melee attacks are Strength based (for the purposes of the enfeebled condition, for example) unless they have the finesse trait, and all ranged attacks are Dexterity based. Attacks that deal positive or negative damage don't heal creatures.
+          - Athletics modifier of +35, unless your own is higher.
       gods:
         type: dl
         content:
-          Abadar: Speed 50 feet, immune to hampered and immobilized, burrow Speed 30 feet; crossbow (range 120 feet, reload 1), Damage 6d10+3 piercing.
-          Asmodeus: Speed 70 feet, immune to hampered, air walk; mace (reach 15 feet), Damage 6d10+6 bludgeoning; hellfire (range 120 feet), Damage 6d6+3 fire.
-          Calistria: Speed 30 feet, fly Speed 70 feet; whip (disarm, finesse nonlethal, reach 20 feet), Damage 6d4+6 slashing; savored sting (range 60 feet), Damage 6d6+3 poison.
-          Cayden Cailean: Speed 70 feet, ignore difficult terrain (and greater), air walk; rapier (deadly, reach 15), Damage 6d6+6 piercing; ale splash (range 120 feet), Damage 6d6+3 poison.
-          Desna: Speed 30 feet, fly Speed 70 feet; starknife (agile, deadly, finesse, reach 15, silver, thrown 60), Damage 6d4+6 piercing; moonbeam (range 120 feet, silver), Damage 6d6+3 fire.
-          Erastil: Speed 70 feet, ignore difficult terrain (and greater), air walk; longbow (deadly, range 150), Damage 6d8+3 piercing.
-          Gorum: Speed 70 feet, immune to hampered and immobilized; greatsword (versatile P, reach 15), Damage 6d12+6 slashing.
-          Gozreh: fly Speed 70 feet, swim Speed 70 feet, no land Speed; ignore difficult terrain (and greater); wind (versatile electricity, range 120 feet), Damage 6d6+3 bludgeoning; waves Damage 6d8+6 bludgeoning (bull rush, reach 15, thrown 20).
-          Iomedae: Speed 70 feet, immune to hampered, air walk; shield (15 Hardness, can't be dented or broken); longsword (versatile piercing, reach 15 feet), Damage 6d8+6 slashing.
-          Irori: Speed 80 feet, immune to hampered, air walk; unfettered strike (agile, versatile S or P, finesse, reach 15), Damage 6d8+6 bludgeoning; wind strike (range 60), Damage 6d4+6 bludgeoning.
-          Lamashtu: Speed 30 feet, fly Speed 70 feet; falchion (forceful, reach 15 feet), Damage 6d10+6 slashing; waters of Lamashtu, (range 120 feet), Damage 6d6+3 poison.
-          Nethys: Speed 70 feet, immune hampered, air walk; raw magic (versatile cold, electricity, fire, range 120), Damage 6d6 force.
-          Norgorber: Speed 70 feet, ignore difficult terrain and greater difficult terrain, air walk; short sword (agile, finesse, versatile slashing, reach 15 feet), Damage 6d6+6 piercing; blackfinger toss (range 120 feet), Damage 6d6+3 poison.
-          Pharasma: Speed 70 feet, immune to hampered, airwalk; dagger (agile, finesse, reach 15 feet, thrown 40 feet), Damage 6d6+6 slashing; spiral blast (range 120 feet, damages only undead, Damage 6d8+3 positive).
-          Rovagug: Speed 50 feet, immune to hampered and immobilized, burrow Speed 30 feet; jaws (reach 15 feet), Damage 6d12+6 piercing; leg (agile, versatile piercing, reach 15 feet), Damage 6d8+6 bludgeoning.
-          Sarenrae: Speed 30 feet, fly Speed 70 feet; scimitar (forceful, nonlethal, reach 15 feet), Damage 6d6+6 slashing; everflame (nonlethal, range 120 feet), Damage 6d6+3 fire.
-          Shelyn: Speed 70 feet, ignore difficultterrain and greater difficult terrain, air walk; glaive (deadly, nonlethal, reach 20 feet), Damage 6d8+6 slashing; melody of inner beauty, (nonlethal, range 120 feet), Damage 6d6+3 sonic.
-          Torag: Speed 50 feet, immune to hampered and immobilized, burrow Speed 30 feet; shield (15 Hardness, can't be dented or broken); warhammer (bull rush, reach 15 feet), Damage 6d8+6 bludgeoning.
-          Urgathoa: Speed 70 feet, immune to hampered, air walk; scythe (deadly, trip, reach 15 feet), Damage 6d10+6 slashing; pallid plague (range 120 feet), Damage 6d6+3 negative.
-          Zon-Kuthon: Speed 70 feet, ignore difficult terrain and greater difficult terrain, air walk; spiked chain (disarm, trip, reach 15 feet), Damage 6d8+6 slashing; midnight pain (mental, nonlethal, range 120 feet), Damage 6d6+3.
+          Abadar: Speed 50 feet, burrow Speed 30 feet, immune to immobilized; Ranged[[A]] crossbow (range increment 120 feet, reload 1), Damage 6d10+3 piercing.
+          Asmodeus: Speed 70 feet, air walk; Melee [[A]] mace (reach 15 feet), Damage 6d10+6 bludgeoning; Ranged [[A]] hell fire (range 120 feet), Damage 6d6+3 fire.
+          Calistria: Speed 30 feet, fly Speed 70 feet; Melee [[A]] whip (disarm, finesse, nonlethal, reach 20 feet), Damage 6d4+6 slashing; Ranged [[A]] savored sting (range 60 feet), Damage 6d6+3 poison.
+          Cayden Cailean: Speed 70 feet, air walk, ignore difficult terrain and greater difficult terrain; Melee [[A]] rapier (deadly, reach 15 feet), Damage 6d6+6 piercing; Ranged [[A]] ale splash (range 120 feet), Damage 6d6+3 poison.
+          Desna: Speed 30 feet, fly Speed 70 feet; Melee [[A]] starknife (agile, deadly, finesse, reach 15 feet, silver, thrown 60 feet), Damage 6d4+6 piercing; Ranged [[A]] moonbeam (range 120 feet, silver), Damage 6d6+3 fire.
+          Erastil: Speed 70 feet, air walk, ignore difficult terrain and greater difficult terrain; Ranged[[A]] longbow (deadly d8, range increment 150 feet), Damage 6d8+3 piercing.
+          Gorum: Speed 70 feet, immune to immobilized; Melee [[A]] greatsword (versatile P, reach 15 feet), Damage 6d12+6 slashing.
+          Gozreh: no land Speed, fly Speed 70 feet, swim Speed 70 feet; ignore difficult terrain and greater difficult terrain; Melee [[A]] waves (bull rush, reach 15 feet, thrown 20 feet), Damage 6d8+6 bludgeoning; Ranged [[A]] wind (versatile electricity, range 120 feet), Damage 6d6+3 bludgeoning.
+          Iomedae: Speed 70 feet, air walk; shield (15 Hardness, can't be damaged); Melee [[A]] longsword (versatile P, reach 15 feet), Damage 6d8+6 slashing.
+          Irori: Speed 80 feet, air walk; Melee [[A]] unfettered strike (agile, versatile P or S, finesse, reach 15 feet), Damage 6d8+6 bludgeoning; Ranged [[A]] wind strike (range 60 feet), Damage 6d4+6 bludgeoning.
+          Lamashtu: Speed 30 feet, fly Speed 70 feet; Melee [[A]] falchion (forceful, reach 15 feet), Damage 6d10+6 slashing; Ranged [[A]] waters of Lamashtu (range 120 feet), Damage 6d6+3 poison.
+          Nethys: Speed 70 feet, air walk; Ranged [[A]] raw magic (range 120 feet; versatile cold, electricity, or fire), Damage 6d6 force.
+          Norgorber: Speed 70 feet, air walk, ignore difficult terrain and greater difficult terrain; Melee [[A]] shortsword (agile, finesse, versatile S, reach 15 feet), Damage 6d6+6 piercing; Ranged [[A]] blackfinger toss (range 120 feet), Damage 6d6+3 poison.
+          Pharasma: Speed 70 feet, air walk; Melee [[A]] dagger (agile, finesse, reach 15 feet, thrown 40 feet), Damage 6d6+6 slashing; Ranged [[A]] spiral blast (range 120 feet, damages only undead), Damage 6d8+3 positive.
+          Rovagug: Speed 50 feet, burrow Speed 30 feet, immune to immobilized; Melee[[A]] jaws(reach 15 feet), Damage 6d12+6 piercing; Melee[[A]] le g (agile, versatile P, reach 15 feet), Damage 6d8+6 bludgeoning.
+          Sarenrae: Speed 30 feet, fly Speed 70 feet; Melee [[A]] scimitar (forceful, nonlethal, reach 15 feet), Damage 6d6+6 slashing; Ranged [[A]] everflame (nonlethal, range 120 feet), Damage 6d6+3 fire.
+          Shelyn: Speed 70 feet, air walk, ignore difficult terrain and greater difficult terrain; Melee [[A]] glaive (deadly d8, nonlethal, reach 20 feet), Damage 6d8+6 slashing; Ranged [[A]] melody of inner beauty, (nonlethal, range 120 feet), Damage 6d6+3 sonic.
+          Torag: Speed 50 feet, burrow Speed 30 feet, immune to immobilized; shield (15 Hardness, can't be damaged); Melee [[A]] warhammer (bull rush, reach 15 feet), Damage 6d8+6 bludgeoning.
+          Urgathoa: Speed 70 feet, air walk; Melee[[A]] scythe (deadly d10, trip, reach 15 feet), Damage 6d10+6 slashing; Ranged [[A]] pallid plague (range 120 feet), Damage 6d6+3 negative.
+          Zon-Kuthon: Speed 70 feet, air walk, ignore difficult terrain and greater difficult terrain; Melee [[A]] spiked chain (disarm, trip, reach 15 feet), Damage 6d8+6 slashing; Ranged [[A]] midnight pain (mental, nonlethal, range 120 feet), Damage 6d6+3 mental.
 
 baleful-polymorph:
   name: BALEFUL POLYMORPH
@@ -939,6 +926,31 @@ captivating-adoration:
           crit: The creature is unaffected.
           failure: The creature is fascinated.
           crit-fail: The creature is fascinated and its attitude toward you improves by one step.
+cataclysm:
+  name: Cataclysm
+  type: spell
+  level: 10
+  rarity: 0
+  traits: [acid, air, cold, earth, electricity, evocation, fire, water]
+  casting: [aS, aV]
+  range: 1000 feet
+  area: 60-foot burst
+  save: basic Reflex
+  description:
+    main:
+      You call upon the unimaginable power of world-ending cataclysms, ripping a small piece of each cataclysm and combining them together into one horrifically powerful attack. The following effects come down upon all creatures in the area. Treat the resistances of creatures in the area as if they were 10 lower for the purpose of determining the cataclysm's damage. Each creature attempts one basic Reflex save that applies to all six types of damage.
+      ${subsection.effects}
+    subsections:
+      effects:
+        type: list
+        content:
+          - Flesh-dissolving acid rain deals 3d10 acid damage.
+          - A roaring earthquake shakes and bludgeons creatures on the ground, dealing 3d10 bludgeoning damage.
+          - A blast of freezing wind deals 3d10 cold damage.
+          - Incredible lightning lashes the area, dealing 3d10 electricity damage.
+          - Beating winds churn across the sky, dealing 3d10 bludgeoning damage to creatures flying in the area.
+          - An instant tsunami sweeps over creatures in the area, dealing 3d10 bludgeoning damage with the water trait (doubled for creatures swimming in the area).
+          - A massive wildfire burns in a sudden inferno, dealing 3d10 fire damage.
 celestial-brand:
   name: CELESTIAL BRAND
   type: POWER
@@ -3001,33 +3013,26 @@ fabricated-truth:
   name: FABRICATED TRUTH
   type: SPELL
   level: 10
-  rarity: 1
-  traits: [enchantment, mental]
+  rarity: 0
+  traits: [enchantment, incapacitation, mental]
   casting: [aM, aS, aV]
   range: 100 feet
   target: up to 5 creatures
   duration: varies
+  save: Will
   description:
     main:
-      Choose a single fact you want all targets to believe. Their experiences
-      color how they react to this “truth” and how their behavior changes.
-      If the fact changes what they perceive, they treat the change as a
-      sudden revelation. The fact could be narrow, such as “a dragon is
-      circling overhead and wants to kill me”; wide-reaching, such as “all
-      humanoids are disguised abominations”; or conceptual, such as “if I
-      don't live a kinder life, I'll be punished in the afterlife.”
-      The effect depends on the targets' Will saves. If a target is
-      already subject to fabricated truth, your spell tries to dispel it. If
-      the check fails, the target can't get an outcome worse than success.
+      Choose a single statement you want the targets to believe. The fact could be narrow, such as “a dragon is circling overhead and wants to kill me”; wide-reaching, such as “all humanoids are disguised abominations”; or conceptual, such as “if I don't live a kinder life, I'll be punished in the afterlife.” The targets' experiences color how they react to this “truth” and how their behavior changes. If the statement changes what they perceive, they treat the change as a sudden revelation.
+      The effect of the spell depends on the targets' Will saves. If a target is already subject to fabricated truth, your spell tries to counteract it. If the counteract check fails, the outcome of the target's saving throw can't be worse than a success.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: It doesn't believe the fact or realize you tried to trick it.
-          crit: As success, but it knows you tried to trick it.
-          failure: It believes the fact for a duration of 1 week.
-          crit-fail: It believes the fact with unlimited duration.
+          success: The target doesn't believe the statement or realize you tried to trick it.
+          crit: The target doesn't believe the statement, and it knows you tried to trick it.
+          failure: The target believes the statement for a duration of 1 week.
+          crit-fail: The target believes the statement with unlimited duration.
 face-in-the-crowd:
   name: FACE IN THE CROWD
   type: POWER
@@ -3576,17 +3581,10 @@ gate:
   traits: [conjuration, teleportation]
   casting: [aS, aV]
   range: 120 feet
-  duration: sustained, up to 1 minute
+  duration: sustained up to 1 minute
   description:
     main:
-      You tear open a rift to another plane, creating a portal that
-      creatures can use to travel both ways for the duration. This
-      portal is vertical and circular, with a radius of 40 feet. The gate
-      appears at a location of your choice on the destination plane,
-      assuming you have a clear idea of both the destination's location
-      on the plane and what the destination looks like. If you attempt
-      to create a gate into or out of the realm of deity or another
-      powerful being, that being can prevent the gate from forming.
+      You tear open a rift to another plane, creating a portal that creatures can travel through in either direction. This portal is vertical and circular, with a radius of 40 feet. The portal appears at a location of your choice on the destination plane, assuming you have a clear idea of both the destination's location on the plane and what the destination looks like. If you attempt to create a gate into or out of the realm of a deity or another powerful being, that being can prevent the gate from forming.
 gentle-repose:
   name: GENTLE REPOSE
   type: SPELL
@@ -5538,20 +5536,14 @@ miracle:
   name: MIRACLE
   type: SPELL
   level: 10
-  rarity: 1
+  rarity: 0
   traits: [divination]
   casting: [aM, aS, aV]
   description:
     main:
-      You form a direct connection with your divine source and request
-      intercession. Your divine source always refuses a request out of
-      line with its nature and might choose to grant a different request
-      (potentially more powerful or better fitting its nature) than the
-      one you asked for. A miracle can do any of the following things.
+      You request aid directly from your divine source. Your divine source always refuses a request out of line with its nature, and it might grant a different request (potentially more powerful or better fitting its nature) than the one you asked for. A casting of miracle can do any of the following things.
       ${subsection.options}
-      The GM might allow you to try using miracle to produce
-      greater effects than these, but doing so may be dangerous, or
-      the spell may have only a partial effect.
+      The GM might allow you to try using miracle to produce greater effects than these, but doing so may be dangerous, or the spell may have only a partial effect.
     subsections:
       options:
         type: list
@@ -5560,6 +5552,7 @@ miracle:
           - Duplicate any non-divine spell of 7th level or lower.
           - Produce any effect whose power level is in line with the
             above effects.
+          - Reverse certain effects that refer to the wish spell.
 mirror-image:
   name: MIRROR IMAGE
   type: SPELL
@@ -5761,72 +5754,33 @@ nature-incarnate:
   name: NATURE INCARNATE
   type: SPELL
   level: 10
-  rarity: 1
+  rarity: 0
   traits: [polymorph, transmutation]
   casting: [aS, aV]
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
-      "You transform into an incarnation of nature, assuming a battle
-      form: Medium for a green man and Gargantuan (30-foot-by-30-foot
-      space) for a kaiju. You must have enough space to expand into or
-      the spell is lost. You count as a plant if you choose green man or as
-      a beast if you choose kaiju in addition to your normal traits while
-      in this form. Your gear is absorbed into your form; your constant
-      abilities of your gear still function, but you can't activate any item
-      abilities. When you transform, you gain the following:
+      "The primal power of the world flows through you. You transform into an incarnation of nature, either a green man or a kaiju. Your battle form is Medium for a green man or Gargantuan (30-foot-by-30-foot space) for a kaiju. You must have enough space to expand into or the spell is lost. While in this form, you gain the plant trait (for a green man) or the beast trait (for a kaiju). You can Dismiss the spell.
+      You gain the following statistics and abilities regardless of which battle form you choose:
       ${subsection.stats}
-      The special statistics of your battle form can be adjusted only
-      by penalties, circumstance bonuses, and conditional bonuses.
-      Your battle form prevents you from casting spells or using most
-      actions with the manipulate trait that require your hands (the GM
-      determines which manipulate actions you can spend if there's
-      doubt). You can dismiss this spell with a concentrate action.
-      When in battle form, you gain the attacks, movement types,
-      and special abilities listed below for the form you chose.
+      You also gain specific abilities based on the type of incarnation you choose:
       ${subsection.forms}"
     subsections:
       stats:
         type: list
         content:
-          - AC 43 (TAC 39) and ignore your armor's check penalty and
-            Speed reduction.
-          - One or more natural attacks, which are the only types
-            of attacks you can use. You're trained with them. When
-            attacking with them, your attack modifier is +31 and the
-            damage bonus is listed with your attacks. Melee attacks
-            you gain are Strength-based attacks (for the purposes of
-            the enfeebled condition, for example), and ranged attacks
-            you gain are Dexterity-based attacks. They all target the
-            enemy's AC.
-          - 30 temporary Hit Points that go away when you leave your
-            battle form.
+          - AC = 25 + your level. Ignore your armor's check penalty and Speed reduction.
+          - 30 temporary Hit Points.
           - Darkvision.
-          - Athletics +32 (unless your own total modifier is higher).
+          - One or more attacks specific to the battle form you choose, which are the only attacks you can use. You're trained with them. Your attack modifier is +34, and you use the listed damage. These attacks are Strength based (for the purpose of the enfeebled condition, for example). If your unarmed attack modifier is higher, you can use it instead.
+          - Athletics modifier of +36, unless your own modifier is higher.
       forms:
         type: dl
         content:
           "Green Man":
-            "vines (versatile piercing, reach 30 feet),
-            Damage 6d8+12 bludgeoning; thorns (range 100 feet),
-            Damage 6d6+6 piercing; Speed 40 feet, climb 40 feet; Green
-            Caress: Enemies other than plants within 60 feet must
-            succeed at a Fortitude save against your spell DC or become
-            sluggish 1 for 1 round (sluggish 2 on a critical failure)."
+            "Speed 40 feet, climb Speed 40 feet; Melee [[A]] vines (reach 30 feet, versatile P), Damage 6d8+12 bludgeoning; Ranged [[A]] thorns (range 100 feet), Damage 6d6+6 piercing; Green Caress (aura, primal, transmutation) 60 feet. Enemies other than plants must succeed at a Fortitude save against your spell DC or become clumsy 1 for 1 round (clumsy 2 on a critical failure)."
           "Kaiju":
-            "jaws (reach 30 feet), Damage 6d10+10 piercing;
-            claws (agile, reach 30 feet), Damage 6d8+8 slashing; foot
-            (agile, reach 15 feet), Damage 6d6+10 bludgeoning; Speed
-            50 feet; Resistance 5 to physical damage; Unstoppable:
-            You are immune to being hampered and immobilized
-            and ignore difficult terrain and greater difficult terrain;
-            Trample: As a 3-action activity, you can move up to double
-            your Speed and move through the space of Huge or
-            smaller creatures, trampling each creature whose space
-            you enter. A trampled creature takes foot damage based
-            on a Reflex save against your spell DC (half damage on a
-            success, no damage on a critical success, double damage
-            on a critical failure)."
+            "Speed 50 feet; resistance 5 to physical damage; Melee [[A]] jaws (reach 30 feet), Damage 6d10+10 piercing; Melee [[A]] claw s (agile, reach 30 feet), Damage 6d8+8 slashing; Melee [[A]] foot (agile , reach 15 feet), Damage 6d6+10 bludgeoning; Unstoppable You are immune to being immobilized and ignore difficult terrain and greater difficult terrain; TrampleThree Actions You move up to double your Speed and move through the spaces of Huge or smaller creatures, trampling each creature whose space you enter. A trampled creature takes foot damage with a basic Reflex save against your spell DC."
 nature-s-bounty:
   name: NATURE'S BOUNTY
   type: POWER
@@ -6508,44 +6462,23 @@ primal-herd:
   traits: [polymorph, transmutation]
   casting: [aS, aV]
   range: 30 feet
-  target: you and up to five willing targets
-  duration: 1 minute or until dismissed
+  target: you and up to 5 willing targets
+  duration: 1 minute
   description:
     main:
-      "You transform the targets into a herd of mammoths, and they
-      assume a Huge battle form. Each target must have enough space
-      to expand into or the spell fails for that target. Targets count as
-      animals in addition to their normal traits while in this form. The
-      targets' gear is absorbed into their forms; the constant abilities of
-      the gear still function, but targets can't activate any item abilities.
-      When targets transform, each target gains the following abilities:
-      ${subsection.stats}
-      The special statistics of the battle form can be adjusted only
-      by penalties, circumstance bonuses, and conditional bonuses.
-      The battle form prevents the targets from casting spells, or
-      spending most manipulate actions that require hands (the GM
-      determines which manipulate actions you can spend if there's
-      doubt). Each target can dismiss the spell's effects on her own by
-      using an action (this action has the concentrate trait).
-      When in battle form, each target gains the attacks, movement
-      types, and special abilities listed below. ${subsection.forms}"
+      "Summoning the power of the natural world, you transform the targets into a herd of mammoths, and they each assume a Huge battle form. Each target must have enough space to expand into or the spell fails for that target. Each target gains the animal trait. Each target can Dismiss the spell’s effects on themself. Each target gains the following while transformed:
+      ${subsection.stats}"
     subsections:
       stats:
         type: list
         content:
-          - AC 41 (TAC 38) and ignores armor's check penalty and
-            Speed reduction.
-          - New attacks, which are the only types of attacks they
-            can use. They're trained with them. When attacking with
-            them, they use their attack modifier with the proficiency
-            and item bonus of their most favorable weapon or unarmed
-            Strike, and the damage bonus is listed with the attacks. All
-            attacks are Strength-based attacks (for the purposes of the
-            enfeebled condition, for example).
-          - 20 temporary Hit Points that go away when they leave
-            their battle form.
+          - AC = 22 + the target’s level. Ignore any armor check penalty and Speed reduction.
+          - 20 temporary Hit Points.
+          - Speed 40 feet.
           - Low-light vision.
-          - Athletics +28 (unless their own total modifiers are higher).
+          - The following unarmed melee attacks, which are the only attacks the target can use. They’re trained with them. When attacking with these attacks, the target uses their attack modifier with the proficiency and item bonuses of their most favorable weapon or unarmed Strike, and the damage is listed for each attack. These attacks are Strength based (for the purpose of the enfeebled condition, for example). If the target’s unarmed attack modifier is higher, they can use it instead. Melee [[A]] tusk (reach 15 feet), Damage 4d8+19 piercing; Melee [[A]] trunk (agile, reach 15 feet), Damage 4d6+16 bludgeoning; Melee [[A]] foot (agile, reach 15 feet), Damage 4d6+13 bludgeoning.
+          - Athletics modifier of +30, unless the target’s own modifier is higher.
+          - Trample [[A]][[A]][[A]] yot move up to twice your Speed and move through the space of Large or smaller creatures, trampling each creature whose space you enter. A trampled creature takes damage from its foot Strike based on a basic Reflex save (DC = 19 + the target’s level).
       forms:
         type: dl
         content:
@@ -6564,20 +6497,14 @@ primal-phenomenon:
   name: PRIMAL PHENOMENON
   type: SPELL
   level: 10
-  rarity: 1
+  rarity: 0
   traits: [divination]
   casting: [aM, aS, aV]
   description:
     main:
-      You form a direct connection with the natural world and request
-      intercession. Nature always refuses unnatural requests and
-      might choose to grant a different request (potentially more
-      powerful or better fitting its nature) than the one you asked for.
-      A primal phenomenon spell can do any of the following things.
+      You request a direct intercession from the natural world. Nature always refuses unnatural requests and might grant a different request (potentially more powerful or better fitting its character) than the one you asked for. A primal phenomenon spell can do any of the following things.
       ${subsection.effects}
-      At the GM's discretion, you can try to use primal phenomenon
-      to produce greater effects than these, but doing so may be
-      dangerous or the spell may have only a partial effect.
+      At the GM's discretion, you can try to use primal phenomenon to produce greater effects than these, but doing so may be dangerous, or the spell may have only a partial effect.
     subsections:
       effects:
         type: list
@@ -6586,6 +6513,7 @@ primal-phenomenon:
           - Duplicate any non-primal spell of 7th level or lower.
           - Produce any effect whose power level is in line with the
             above effects.
+          - Reverse certain effects that refer to the wish spell.
 prismatic-sphere:
   name: PRISMATIC SPHERE
   type: SPELL
@@ -6995,6 +6923,19 @@ regenerate:
       An infusion of positive energy grants a creature continuous healing. The target temporarily gains regeneration 15, which restores 15 Hit Points to it at the start of each of its turns. While it has regeneration, the target can't die from damage and its dying value can't exceed 3, though if its wounded value becomes 4 or higher, it stays unconscious until its wounds are treated. If the target takes acid or fire damage, its regeneration deactivates until after the end of its next turn.
       Each time the creature regains Hit Points from regeneration, it also regrows one damaged or ruined organ (if any). During the spell's duration, the creature can also reattach severed body parts by spending an Interact action to hold the body part to the area it was severed from.
     9th: The regeneration increases to 20.
+remake:
+  name: Remake
+  type: spell
+  level: 10
+  rarity: 1
+  traits: [conjuration]
+  casting: [M, S, V]
+  casting-time: 1 hour
+  range: 5 feet
+  description:
+    main:
+      You fully re-create an object from nothing, even if the object was destroyed. To do so, you must be able to picture the object in your mind. Additionally, the material component must be a remnant of the item, no matter how small or insignificant (even a speck of dust that remains from disintegrate is enough). The spell fails if your imagination relied on too much guesswork; if the object would be too large to fit in a 5-foot cube; if the object still exists and you were simply not aware of it; or if the object is an artifact, has a level over 20, or has similar vast magical power.
+      The item reassembles in perfect condition. Even if your mental image was of a damaged or weathered object, the new one is in this perfected form. If the object was magical, this spell typically restores its constant magical properties, but not any temporary ones, such as charges or one-time uses. An item with charges or uses per day has all of its uses expended when remade, but it replenishes them normally thereafter.
 remove-curse:
   name: REMOVE CURSE
   type: SPELL
@@ -7234,19 +7175,11 @@ revival:
   casting: [aS, aV]
   range: 30 feet
   target: dead creatures and living creatures of your choice in range
-  duration: sustained, up to 10 rounds
+  duration: sustained up to 1 minute
   description:
     main:
-      All living targets regain Hit Points equal to 9d8 plus your
-      spellcasting ability modifier. In addition, you return any number
-      of dead targets to life temporarily, with the same effects as raise
-      dead and the same limitations. The resurrected creatures have a
-      number of temporary Hit Points equal to the amount of healing
-      you gave living creatures (instead of having full HP). The revived
-      creatures can't regain Hit Points, and once revival's duration
-      ends, they lose all temporary Hit Points and die. Revival can't
-      resurrect creatures killed by disintegrate or a death effect. It has
-      no effect on undead.
+      A burst of healing energy soothes living creatures and temporarily rouses those recently slain. All living targets regain 10d8+40 Hit Points. In addition, you return any number of dead targets to life temporarily, with the same effects and limitations as raise dead. The raised creatures have a number of temporary Hit Points equal to the Hit Points you gave living creatures, but no normal Hit Points. The raised creatures can't regain Hit Points or gain temporary Hit Points in other ways, and once revival's duration ends, they lose all temporary Hit Points and die.
+      Revival can't resurrect creatures killed by disintegrate or a death effect. It has no effect on undead.
 ridiculous-notion:
   name: RIDICULOUS NOTION
   type: POWER
@@ -9073,20 +9006,7 @@ time-stop:
   casting: [aM, aS, aV]
   description:
     main:
-      You temporarily stop time for everything but you, allowing
-      you to use an incredible number of actions in a short period
-      of time. Immediately after casting time stop, you can use up to
-      9 actions in three sets of up to 3 actions each. After each set
-      of actions, 1 round passes, but only for you, effects specifically
-      targeting or affecting you, and effects you create during the
-      stoppage. All other creatures and objects are invulnerable to
-      your attacks, and you can't target or affect them with anything.
-      Once you have finished your actions, time begins to flow again
-      for the rest of the world. If you had created an effect whose
-      duration extends past the end of the spell, such as a wall of fire,
-      it immediately affects others again as normal, though it doesn't
-      have any of the effects that normally happen when you first
-      cast the spell.
+      You temporarily stop time for everything but yourself, allowing you to use several actions in what appears to others to be no time at all. Immediately after casting time stop, you can use up to 9 actions in 3 sets of up to 3 actions each. After each set of actions, 1 round passes, but only for you, effects specifically targeting or affecting you, and effects you create during the stoppage. All other creatures and objects are invulnerable to your attacks, and you can't target or affect them with anything. Once you have finished your actions, time begins to flow again for the rest of the world. If you created an effect with a duration that extends beyond the time stop's duration, such as wall of fire, it immediately affects others again, but it doesn't have any of the effects that happen only when you first cast the spell.
 tongues:
   name: TONGUES
   type: SPELL
@@ -10204,17 +10124,14 @@ wish:
   name: WISH
   type: SPELL
   level: 10
-  rarity: 1
+  rarity: 0
   traits: [divination]
   casting: [aM, aS, aV]
   description:
     main:
-      You pronounce a wish, making your greatest desire come true.
-      A wish spell can produce any one of the following effects.
+      You state a wish, making your greatest desire come true. A wish spell can produce any one of the following effects.
       ${subsection.effects}
-      The GM might allow you to try using wish to produce greater
-      effects than these, but doing so might be dangerous or the spell
-      might have only a partial effect.
+      The GM might allow you to try using wish to produce greater effects than these, but doing so might be dangerous or the spell might have only a partial effect.
     subsections:
       effects:
         type: list
@@ -10223,6 +10140,7 @@ wish:
           - Duplicate any non-arcane spell of 7th level or lower.
           - Produce any effect whose power level is in line with the
             above effects.
+          - Reverse certain effects that refer to the wish spell.
 word-of-freedom:
   name: WORD OF FREEDOM
   type: POWER
