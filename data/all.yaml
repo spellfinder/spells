@@ -1389,23 +1389,11 @@ contingency:
   rarity: 1
   traits: [abjuration]
   casting-time: 10 minutes
-  casting: [M, S, V0]
+  casting: [M, S, V]
   duration: 24 hours
   description:
     main:
-      You prepare a spell to trigger later. While casting contingency, you
-      also cast another spell of 4th level or lower with a casting time of
-      no more than three actions. You must pay any appropriate costs
-      for the spell. This companion spell must be one that can affect
-      you. You must make any decisions for the spell when you set the
-      contingency, such as choosing damage type for resist energy.
-      During the casting, choose a trigger under which the spell will
-      be cast, using the same restrictions as the trigger for a readied
-      action. You can cause the companion spell to come into effect
-      as a reaction with that trigger. It affects only you, even if it
-      would normally affect more creatures. If you define complicated
-      conditions, as determined by the GM, the trigger might fail.
-      If you cast contingency, the newer one supersedes the older.
+      You prepare a spell that will trigger later. While casting contingency, you also cast another spell of 4th level or lower with a casting time of no more than 3 actions. This companion spell must be one that can affect you. You must make any decisions for the spell when you cast contingency, such as choosing a damage type for resist energy. During the casting, choose a trigger under which the spell will be cast, using the same restrictions as for the trigger of a Ready action. Once contingency is cast, you can cause the companion spell to come into effect as a reaction with that trigger. It affects only you, even if it would affect more creatures. If you define complicated conditions, as determined by the GM, the trigger might fail. If you cast contingency again, the newer casting supersedes the older.
   heightened:
     8th: You can choose a spell of 5th level or lower.
     9th: You can choose a spell of 6th level or lower.
@@ -1955,17 +1943,10 @@ dimensional-lock:
   traits: [abjuration]
   casting: [aS, aV]
   range: 120 feet
-  target: 30-foot burst
-
-  duration: 1 day
+  target: 60-foot burst
   description:
     main:
-      You create a shimmering barrier that attempts to dispel all
-      teleportation effects and planar travel into or out of the area,
-      including items that allow access to extradimensional spaces
-      (such as a bag of holding). Dimensional lock dispels any attempt
-      to summon a creature into the area but doesn't stop the creature
-      from departing when the summoning ends.
+      You create a shimmering barrier that attempts to counteract teleportation effects and planar travel into or out of the area, including items that allow access to extradimensional spaces (such as a bag of holding). Dimensional lock tries to counteract any attempt to summon a creature into the area but doesn't stop the creature from departing when the summoning ends.
 dimensional-steps:
   name: DIMENSIONAL STEPS
   type: POWER
@@ -2194,17 +2175,12 @@ divine-decree:
   traits: [evocation]
   casting: [aS, aV]
   range: 40 feet
-  area: 40-foot aura
+  area: 40-foot emanation
   duration: varies
+  save: Fortitude
   description:
     main:
-      You utter potent words linked to your faith. Choose an alignment
-      your deity has (chaotic, evil, good, or lawful). You can't cast this spell
-      if you don't have a deity or your deity is true neutral. You deal 9d6
-      damage to creatures in the area; each creature
-      must attempt a Will save. Creatures that match the alignment are
-      unaffected. Those that neither match nor oppose it don't suffer
-      effects other than damage and treat their result as one degree better.
+      You utter a potent litany from your faith, a mandate that harms those who oppose your ideals. Choose an alignment your deity has (chaotic, evil, good, or lawful). You can't cast this spell if you don't have a deity or your deity is true neutral. This spell gains the trait of the alignment you chose. You deal 7d10 damage to creatures in the area; each creature must attempt a Fortitude save. Creatures with an alignment that matches the one you chose are unaffected by the spell. Those that neither match nor oppose it treat the result of their saving throw as one degree better and don't suffer effects other than damage.
       ${subsection.save}
     subsections:
       save:
@@ -2212,15 +2188,9 @@ divine-decree:
         content:
           success: The creature takes half damage.
           crit: The creature is unaffected.
-          failure: It takes full damage and is enfeebled 2 for 1 minute.
+          failure: The creature takes full damage and is enfeebled 2 for 1 minute.
           crit-fail:
-            It takes double damage and is enfeebled 2 for 1
-            minute. A 10th-level creature or lower must attempt a second
-            save. On a failure, it's paralyzed for 1 minute; on a critical failure,
-            it dies. If you're on your home plane, a creature that critically
-            fails is banished with the effect of a failed banishment save.
-  heightened:
-    "+1": The damage increases by 1d6 and the level of creatures that must attempt a second save on a critical failure by 2.
+            The creature takes double damage and is enfeebled 2 for 1 minute. On your home plane, a creature that critically fails is banished with the effect of a failed banishment save. A 10th-level creature or lower must attempt a Will save. On a failure, it's paralyzed for 1 minute; on a critical failure, it dies.
 divine-inspiration:
   name: DIVINE INSPIRATION
   type: SPELL
@@ -2257,19 +2227,30 @@ divine-lance:
     "+1": The damage increases by 1d4.
 divine-vessel:
   name: DIVINE VESSEL
-  type: POWER
-  level: 1
-  rarity: 1
-  traits: [enchantment]
-  casting: [fS]
-  trigger: You cast a noncantrip spell that targets a single ally.
+  type: spell
+  level: 7
+  rarity: 0
+  traits: [morph, necromancy]
+  casting: [aS, aV]
+  duration: 1 minute
   description:
     main:
-      Add one Somatic Casting action to the triggering spell. Its target
-      gains a +1 conditional bonus to saves as long as the spell lasts
-      and as long as you Concentrate on the Spell, to a maximum of 1
-      minute. If the original spell already requires concentration, you can
-      maintain the conditional bonus with the same action.
+      You accept otherworldly energies into your body; while you are still recognizably yourself, you gain the features of one of your deity's servitors. Choose an alignment your deity has (chaotic, evil, good, or lawful). You can't cast this spell if you don't have a deity or your deity is true neutral. This spell gains the trait of the alignment you chose.
+      If you were Medium or smaller, you become Large, as the effects of enlarge. You must have space to expand into, or the spell is lost. You also gain the following benefits.
+      ${subsection.stats}
+    subsections:
+      stats:
+        type: list
+        content:
+          - 40 temporary Hit Points.
+          - A fly Speed equal to your Speed.
+          - Weakness 10 to the alignment opposite the one you chose.
+          - A +1 status bonus to saves against spells.
+          - Darkvision.
+          - Your unarmed attacks and weapons deal 1 additional damage of the chosen alignment type.
+          - One or more unarmed melee attacks. If you chose good or lawful, your fist attacks deal 2d8 damage. If you chose chaotic, you gain a bite unarmed attack that deals 2d10 piercing damage. If you chose evil, you gain a claws unarmed attack that deals 2d8 slashing damage and has the agile and finesse traits.
+  heightened:
+    9th: The temporary Hit Points increase to 60, the weakness increases to 15, and the duration increases to 10 minutes.
 divine-ward:
   name: DIVINE WARD
   type: POWER
@@ -2615,43 +2596,28 @@ duplicate-foe:
   level: 7
   rarity: 0
   traits: [conjuration]
-  casting: [M, S, V]
+  casting: [aM, aS, aV]
   range: 30 feet
-  target: one enemy of level 16 or lower
-  duration: sustained, up to 1 minute or until dismissed
+  target: 1 enemy of level 15 or lower
+  save: Fortitude
+  duration: sustained up to 1 minute
   description:
     main:
-      You try to create a temporary duplicate of an enemy. The target
-      can attempt a Fortitude save to disrupt the spell. The duplicate
-      appears in an unoccupied space adjacent to the target and has the
-      target's attack modifier, AC, saving throw modifiers, Perception,
-      and skill modifiers, but it has only 70 Hit Points and lacks the
-      target's special abilities, including immunities, resistances, and
-      weaknesses. It has no magic items except weapon potency runes.
-      The duplicate gains the minion trait, and it can only Stride
-      and Strike. Its Strikes deal the target's normal damage but don't
-      apply added effects, since it doesn't have special abilities.
-      The spell automatically ends if its HP drop to 0.
-      The duplicate attacks your enemies to the best of its abilities.
-      You can attempt to command it as if you used Command a Minion
-      as part of your action to Concentrate on the Spell, but the GM
-      determines whether the creature follows your command.
-      The duplicate is imperfect, so each turn after it takes its
-      actions, it loses 8d6 Hit Points. It's not a living creature, and it
-      can never regain its lost Hit Points in any way. ${subsection.save}
+      You try to create a temporary duplicate of an enemy to fight on your behalf. The target can attempt a Fortitude save to disrupt the spell. The duplicate appears in an unoccupied space adjacent to the target and has the target's attack modifier, AC, saving throw modifiers, Perception, and skill modifiers, but it has only 70 Hit Points and lacks the target's special abilities, including immunities, resistances, and weaknesses. It has no magic items except weapon potency runes.
+      The duplicate gains the minion trait, and it can only Stride and Strike. Its Strikes deal the target's normal damage but don't apply added effects, since it doesn't have special abilities. The spell automatically ends if the duplicate's Hit Points drop to 0.
+      The duplicate attacks your enemies to the best of its abilities. You can also try to give it additional instructions; when you Sustain the Spell, you can also Command a Minion as part of your action, but the GM determines whether the duplicate follows your command.
+      The duplicate is unstable, so each turn after it takes its actions, it loses 4d6 Hit Points. It's not a living creature, and it can never regain its lost Hit Points in any way.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success:
-            The duplicate deals half damage with its Strikes and is
-            destroyed at the end of the second round after it takes actions.
+            The duplicate deals half damage with its Strikes and the duration is reduced to a maximum of 2 rounds.
           crit: You fail to create a duplicate.
           failure: The duplicate works as described.
   heightened:
-    "+1":
-      The level of creature you can target increases by 2.
-      The duplicate has 10 more HP and loses 1d6 more each turn.
+    "+1": The level of creature you can target increases by 2. The duplicate has 10 more HP.
 earthbind:
   name: EARTHBIND
   type: SPELL
@@ -2729,7 +2695,6 @@ earthquake:
       You create a massive earthquake that can
       devastate a settlement. The range increases to half a mile and the
       area to a quarter-mile burst.
-
 echoing-nightmare:
   name: ECHOING NIGHTMARE
   type: SPELL
@@ -2755,6 +2720,31 @@ echoing-nightmare:
             The target is confused for 3 rounds. It can attempt a new Will save at
             the end of each of its turns to end the effect.
           crit-fail: The target is confused for 1 minute.
+eclipse-burst:
+  name: Eclipse Burst
+  type: spell
+  level: 7
+  rarity: 0
+  traits: [cold, darkness, necromancy, negative]
+  save: Reflex
+  cast: [aS, aV]
+  area: 60-foot burst
+  range: 500 feet
+  description:
+    main:
+      A globe of freezing darkness explodes in the area, dealing 8d10 cold damage to creatures and objects in the area, plus 8d4 additional negative damage to living creatures. Creatures and objects in the area must attempt a Reflex save.
+      If the globe overlaps with an area of magical light or affects a creature affected by magical light, eclipse burst attempts to counteract the light effect.
+      ${subsection.save}
+    subsections:
+      save:
+        type: dl
+        content:
+          crit: The creature or object is unaffected.
+          success: The creature or object takes half damage.
+          failure: The creature or object takes full damage.
+          crit-fail: The creature or object takes double damage. If it's a creature, it becomes blinded by the darkness for an unlimited duration.
+  heightened:
+    "+1": The cold damage increases by 1d10 and the negative damage against the living increases by 1d4.
 electric-arc:
   name: ELECTRIC ARC
   type: SPELL
@@ -2919,12 +2909,12 @@ energy-aegis:
   casting-time: 1 minute
   casting: [M, S, V]
   range: touch
-  target: one creature
+  target: 1 creature
   duration: 24 hours
   description:
     main:
-      You protect the target with a powerful, long-lasting barrier. It gains
-      resistance 5 to acid, cold, electricity, fire, force, and sonic.
+      You protect the target with a powerful, long-lasting barrier. The target
+      gains resistance 5 to acid, cold, electricity, fire, force, and sonic.
   heightened:
     9th:  The resistances increase to 10.
 enervation:
@@ -3039,26 +3029,16 @@ ethereal-jaunt:
   rarity: 1
   traits: [conjuration, teleportation]
   casting: [aS, aV]
-  duration: sustained, up to 1 minute
+  duration: sustained up to 1 minute
   description:
     main:
-      You travel to the Ethereal Plane, which overlaps the Material Plane.
-      Material Plane creatures can't see you and you can move through
-      things on the Material Plane. You move at half your normal Speeds,
-      but can move in any directions (including up and down).
-      You can see onto the Material Plane within a radius of 60 feet; it
-      is gray, hazy, and concealed from you. You can't affect the Material
-      Plane, and you can't be affected by the Material Plane except by
-      force effects and abjurations.
-      When the spell ends, you return to the Material Plane. If you're
-      in the air, you fall (unless you can fly), and if you're inside an object,
-      you're pushed into the nearest open space and take 1d6 damage
-      per 5 feet you were pushed.
+      You travel to the Ethereal Plane, which overlaps the Material Plane. Material Plane creatures can't see you, and you can move through things on the Material Plane. You move at half your normal Speeds, but can move in any direction (including up and down).
+      You can see onto the Material Plane within a radius of 60 feet; it is gray, hazy, and concealed from you. You can't affect the Material Plane, and you can't be affected by the Material Plane except by force effects and abjurations originating there.
+      When the spell ends, you return to the Material Plane. If you're in the air, you fall (unless you can fly), and if you're inside an object, you're pushed into the nearest open space and take 1d6 damage per 5 feet you were pushed.
       If you cast this spell when not on the Material Plane, it is lost.
   heightened:
     9th:
-      You can target up to five additional willing
-      creatures at a range of 30 feet. The maximum duration is 10 minutes.
+      You can target up to five additional willing creatures at a range of 30 feet. The duration is up to 10 minutes.
 fabricate:
   name: FABRICATE
   type: POWER
@@ -3336,22 +3316,11 @@ fiery-body:
   duration: 1 minute
   description:
     main:
-      You become living flame, giving you fire immunity,
-      resistance 10 to precision damage, and weakness 5 to cold and
-      to water. Any creature that touches you or damages you with an
-      unarmed attack or non-reach melee weapon takes 3d6 fire damage.
-      Your unarmed attacks deal 1d4 additional fire damage, and
-      your fire spells deal one additional die of fire damage (of the
-      same damage die the spell uses). You can cast produce flame as
-      an innate spell with a single Somatic Casting action.
-      In fire form, you have a fly Speed of 40 feet and don't need
-      to breathe.
+      You become living flame, giving you fire immunity, resistance 10 to precision damage, and weakness 5 to cold and to water. Any creature that touches you or damages you with an unarmed attack or non-reach melee weapon takes 3d6 fire damage.
+      Your unarmed attacks deal 1d4 additional fire damage, and your fire spells deal one additional die of fire damage (of the same damage die the spell uses). You can cast produce flame as an innate spell; the casting is reduced from 2 actions to 1. In fire form, you have a fly Speed of 40 feet and don't need to breathe.
   heightened:
     9th:
-      You have resistance 15 to precision damage,
-      creatures touching you take 4d6 fire damage instead of 3d6,
-      your unarmed attacks deal 2d4 fire damage, and you have a fly
-      Speed of 60 feet.
+      Creatures touching you take 4d6 fire damage instead of 3d6, your unarmed attacks deal 2d4 additional fire damage, and you have a fly Speed of 60 feet.
 finger-of-death:
   name: FINGER OF DEATH
   type: SPELL
@@ -3360,22 +3329,11 @@ finger-of-death:
   traits: [death, necromancy]
   casting: [aS, aV]
   range: 30 feet
-  target: one living creature
+  target: 1 living creature
+  save: basic Fortitude
   description:
     main:
-      You point your finger toward the target and speak
-      a word of slaying. You deal 65 negative damage to the target, and
-      the target must attempt a Fortitude save. If the damage from finger
-      of death reduces the target to 0 Hit Points, the target dies instantly.
-      ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: The target takes half damage.
-          crit: The target is unaffected.
-          failure: The target takes full damage.
-          crit-fail: The target dies instantly.
+      You point your finger toward the target and speak a word of slaying. You deal 70 negative damage to the target. If the damage from finger of death reduces the target to 0 Hit Points, the target dies instantly.
   heightened:
     "+1": The damage increases by 10.
 fire-ray:
@@ -5378,29 +5336,9 @@ magnificent-mansion:
   duration: 24 hours
   description:
     main:
-      You conjure an extradimensional demiplane consisting of a
-      spacious dwelling with a single entrance. The entrance connects
-      back to the plane where you cast the spell, appearing where you
-      choose within the spell's range. It appears as a faint, shimmering,
-      vertical rectangle 5 feet wide and 10 feet high. You designate who
-      can enter when you cast the spell. Once you enter the portal, you
-      can shut the entrance, making it invisible. You and creatures you
-      designated can reopen the door at will with the Interact action, just
-      like opening a physical door. Other creatures must use extraplanar
-      travel, such as plane shift, in order to enter the mansion.
-      Inside, the demiplane appears to be a mansion with a
-      magnificent foyer and numerous opulent chambers. The mansion
-      can have any floor plan you imagine as you cast the spell,
-      provided it fits within a space 40 feet wide, 40 feet deep, and 30
-      feet tall. While the entrance is closed, effects from outside the
-      mansion fail to penetrate it, and vice versa. You can use scrying
-      magic and similar effects to observe the outside only if they're
-      capable of crossing planes.
-      A staff of up to 24 servants attends to anyone within the
-      mansion. These are like the servant created by the unseen
-      servant spell, though they're visible, with an appearance you
-      determine during casting. The mansion is stocked with enough
-      food to serve a nine-course banquet to 150 people.
+      You conjure an extradimensional demiplane consisting of a spacious dwelling with a single entrance. The entrance connects to the plane where you Cast the Spell, appearing anywhere within the spell's range as a faint, shimmering, vertical rectangle 5 feet wide and 10 feet high. You designate who can enter when you cast the spell. Once inside, you can shut the entrance, making it invisible. You and the creatures you designated can reopen the door at will, just like opening a physical door.
+      Inside, the demiplane appears to be a mansion featuring a magnificent foyer and numerous opulent chambers. The mansion can have any floor plan you imagine as you Cast the Spell, provided it fits within a space 40 feet wide, 40 feet deep, and 30 feet tall. While the entrance to the mansion is closed, effects from outside the mansion fail to penetrate it, and vice versa, except for plane shift, which can be used to enter the mansion. You can use scrying magic and similar effects to observe the outside only if they're capable of crossing planes.
+      A staff of up to 24 servants attends to anyone within the mansion. These are like the servant created by the unseen servant spell, though they're visible, with an appearance you determine during casting. The mansion is stocked with enough food to serve a nine-course banquet to 150 people.
 mariner-s-curse:
   name: MARINER'S CURSE
   type: SPELL
@@ -5432,26 +5370,20 @@ mask-of-terror:
   traits: [emotion, fear, illusion, mental, visual]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: 1 minute
   description:
     main:
-      The target appears to be a gruesome and terrifying creature to anyone observing it. The effect is
-      unique to each observer, so a human viewing the target might
-      see a demon with bloody fangs and a demon observing the target
-      might see a glowing angelic visage.
-      When any creature attempts a hostile action or reaction against
-      the target, the creature must attempt a Will save. Once it does, it
-      doesn't need to attempt another save against mask of terror for
-      any actions or reactions it spends until the end of its next turn.
+      The target appears to be a gruesome and terrifying creature. The effect is unique to each observer, so a human viewing the target might see a demon with bloody fangs, but a demon observing the target might see a glowing angelic visage.
+      When any creature attempts a hostile action against the target, the creature must attempt a Will save. It is then temporarily immune until the end of its next turn.
       ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success: The creature is unaffected.
-          failure: The creature becomes frightened 2 before taking its action or reaction.
-          crit-fail: The creature becomes frightened 2 and its action or reaction fails and is wasted.
+          failure: The creature becomes frightened 2 before taking its action.
+          crit-fail: The creature becomes frightened 2 and its action fails and is wasted.
   heightened:
     8th:
       You can target up to 5 creatures. If a creature
@@ -6524,26 +6456,11 @@ plane-shift:
   casting-time: 10 minutes
   casting: [M, S, V]
   range: touch
-  target: one willing creature, or up to eight willing creatures joining hands
+  target: 1 willing creature, or up to 8 willing creatures joining hands
   description:
     main:
-      The target or targets move to another dimensional plane,
-      such as the Plane of Fire, the Shadow Plane, Hell, or the
-      Abyss. Attempting to reach a particular plane requires specific
-      knowledge of the plane and a magic tuning fork created from
-      material from that plane; while the tuning forks for most
-      prominent planes are uncommon, just like the spell plane
-      shift, more obscure planes and demiplanes often have rare
-      tuning forks.
-      The spell is highly imprecise, and you appear 1d20×25 miles
-      from the last place one of the targets (of your choice) was located
-      the last time that target traveled to the plane. If it's the first time
-      traveling to a particular plane for all targets, you appear at a
-      random location on the plane, though you can use other means of
-      transit, such as teleport, to travel while on the new plane. Plane
-      shift doesn't provide a means of return travel, though casting
-      plane shift again allows you to return to your previous plane
-      unless there are extenuating circumstances.
+      You and your allies traverse the barriers between planes of existence. The targets move to another plane, such as the Plane of Fire, the Shadow Plane, or the Abyss. You must have specific knowledge of the destination plane and use a magic tuning fork created from material from that plane as a focus for the spell. While the tuning forks for most prominent planes are uncommon, just like the spell plane shift, more obscure planes and demiplanes often have rare tuning forks.
+      The spell is highly imprecise, and you appear 1d20x25 miles from the last place one of the targets (of your choice) was located the last time that target traveled to the plane. If it's the first time traveling to a particular plane for all targets, you appear at a random location on the plane. Plane shift doesn't provide a means of return travel, though casting plane shift again allows you to return to your previous plane unless there are extenuating circumstances.
 plant-form:
   name: PLANT FORM
   type: SPELL
@@ -6605,36 +6522,29 @@ possession:
   type: SPELL
   level: 7
   rarity: 1
-  traits: [mental, necromancy, possession]
+  traits: [incapacitation, mental, necromancy, possession]
   casting: [aS, aV]
   range: 30 feet
-  target: one living creature
+  target: 1 living creature
   duration: sustained up to 1 minute
   description:
     main:
-      You send your mind and soul into the target's body, attempting
-      to take control, and the target must attempt a Will save. You
-      can choose to take the effects of a lower degree of success if
-      you prefer. While you're possessing a target, your true body is
-      unconscious and can't wake up normally. ${subsection.save}
+      You send your mind and soul into the target's body, attempting to take control. The target must attempt a Will save. You can choose to use the effects of a degree of success more favorable to the target if you prefer.
+      While you're possessing a target, your own body is unconscious and can't wake up normally. You can sense everything the possessed target does. You can Dismiss this spell. If the possessed body dies, the spell ends and you must succeed at a Fortitude save against your spell DC or be paralyzed for 1 hour, or 24 hours on a critical failure. If the spell ends during an encounter, you act just before the possessed creature's initiative count.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: You possess the target but can't control it, riding along in its body while the spell lasts.
+          success: You possess the target but can't control it. You ride along in the body while the spell lasts.
           crit: The target is unaffected.
           failure:
-            You possess the target and take partial control of it. Both
-            you and the target can spend actions using the target's body.
+            You possess the target and take partial control of it. You no longer have a separate turn; instead, you might control the target. At the start of each of the target's turns, it attempts another Will save. If it fails, it's controlled by you on that turn; if it succeeds, it chooses its own actions; and if it critically succeeds, it forces you out and the spell ends.
           crit-fail:
-            You possess the target and take total control.
-            Only you can spend actions using the target's body, and the
-            target can only watch as you manipulate it like a puppet.
+            You possess the target fully, and it can only watch as you manipulate it like a puppet. The target is controlled by you.
   heightened:
     9th:
-      You can Concentrate on the Spell for up to 10
-      minutes. If you wish, you can physically enter the creature's
-      body, protecting your physical body while the spell lasts.
+      The duration is 10 minutes, and you can physically enter the creature's body, protecting your physical body while the spell lasts.
 power-word-blind:
   name: POWER WORD BLIND
   type: SPELL
@@ -6643,21 +6553,19 @@ power-word-blind:
   traits: [auditory, enchantment, mental]
   casting: [aV]
   range: 30 feet
-  target: one creature
+  target: 1 creature
   duration: varies
   description:
     main:
-      You utter a word of power that can make the target blinded
-      upon hearing it. Once targeted, the target is bolstered against all
-      castings of power word blind. The effect of the spell depends on
-      the target's level. ${subsection.level}
+      You utter an arcane word of power that can make the target blinded upon hearing it. Once targeted, the target is then temporarily immune for 10 minutes. The effect of the spell depends on the target's level. 
+      ${subsection.level}
     subsections:
       level:
         type: dl
         content:
-          "12th or Lower": Blinded permanently.
-          "13th-14th": Blinded for 1d4 minutes.
-          "15th or Higher": Dazzled for 1 minute.
+          "11th or Lower": The target is blinded permanently.
+          "12th-13th": The target is blinded for 1d4 minutes.
+          "14th or Higher": The target is dazzled for 1 minute.
   heightened:
     "+1": The levels at which each outcome applies increase by 2.
 power-word-kill:
@@ -6875,18 +6783,13 @@ prismatic-spray:
   type: SPELL
   level: 7
   rarity: 0
-  traits: [evocation]
+  traits: [evocation, light]
   casting: [aS, aV]
   area: 30-foot cone
   description:
     main:
-      A spray of rainbow light beams cascades from your open hand.
-      Each creature in the area must roll 1d8 on the table below to see
-      which beam affects it, then roll a saving throw of the indicated
-      type. The table notes any additional traits that apply to each type
-      of ray. If a creature is struck by multiple beams, it uses the same
-      d20 result for all its saving throws. For all rays, a successful saving
-      throw negates the effect for that creature. ${subsection.rolltable}
+      A spray of rainbow light beams cascades from your open hand. Each creature in the area must roll 1d8 on the table below to see which beam affects it, then attempt a saving throw of the indicated type. The table notes any additional traits that apply to each type of ray. If a creature is struck by multiple beams, it uses the same d20 result for all its saving throws. For all rays, a successful saving throw negates the effect for that creature.
+      ${subsection.rolltable}
     subsections:
       rolltable:
         type: table
@@ -6897,14 +6800,14 @@ prismatic-spray:
             - Save
             - Effect (Traits)
           rows:
-            - [1, Red, Reflex, 40 fire damage (fire)]
-            - [2, Orange, Reflex, 50 acid damage (acid)]
-            - [3, Yellow, Reflex, 65 electricity damage (electricity)]
-            - [4, Green, Fortitude, 25 poison damage and enfeebled 1 for 1 minute (poison)]
-            - [5, Blue, Fortitude, Affected as if by flesh to stone]
-            - [6, Indigo, Will, "Confused, per the warp mind spell (mental)"]
-            - [7, Violet, Will, "Slowed 1 for 1 minute sent to another plane, per plane shift, on a critical failure (teleportation)"]
-            - [8, Potent beam, —, "Affected by two beams— roll twice, rerolling any duplicates or 8s"]
+            - [1, Red, Reflex, "50 fire damage (fire)"]
+            - [2, Orange, Reflex, "60 acid damage (acid)"]
+            - [3, Yellow, Reflex, "70 electricity damage (electricity)"]
+            - [4, Green, Fortitude, "30 poison damage and enfeebled 1 for 1 minute (poison)"]
+            - [5, Blue, Fortitude, "Affected as if by flesh to stone"]
+            - [6, Indigo, Will, "Confused, as the warp mind spell (mental)"]
+            - [7, Violet, Will, "Slowed for 1 minute; if a critical failure, sent to another plane, as plane shift (teleportation)"]
+            - [8, "Potent beam", "—", "Affected by two beams - roll twice, rerolling any duplicates or results of 8"]
 prismatic-wall:
   name: PRISMATIC WALL
   type: SPELL
@@ -6982,14 +6885,7 @@ project-image:
   duration: sustained up to 1 minute
   description:
     main:
-      You project an illusory image of yourself. You must stay within
-      range of the image, and if at any point you can't see the image,
-      the spell ends. Whenever you Cast a Spell other than an aura
-      spell, you can cause the spell effect to originate from either
-      yourself or the image. Because the image is an illusion, it can't
-      truly benefit from spells, though any visual manifestations of the
-      spell appear. The image has AC equal to your TAC and the same
-      saves as you. If it is hit by an attack or fails a save, the spell ends.
+      You project an illusory image of yourself. You must stay within range of the image, and if at any point you can't see the image, the spell ends. Whenever you Cast a Spell other than one whose area is an emanation, you can cause the spell effect to originate from either yourself or the image. Because the image is an illusion, it can't benefit from spells, though visual manifestations of the spell appear. The image has the same AC and saves as you. If it is hit by an attack or fails a save, the spell ends.
   heightened:
     "+2": The maximum duration you can Concentrate on the Spell increases to 10 minutes.
 protection:
@@ -7297,24 +7193,15 @@ regenerate:
   type: SPELL
   level: 7
   rarity: 0
-  traits: [healing, necromancy]
+  traits: [healing, necromancy, positive]
   casting: [aS, aV]
   range: touch
-  target: one willing or unconscious living creature
+  target: 1 willing living creature
   duration: 1 minute
   description:
     main:
-      The target temporarily gains regeneration 15, which restores
-      15 Hit Points to it at the start of each of its turns. While it has
-      regeneration, the target can't die from damage and its dying
-      value can't exceed 3. If the target takes acid or fire damage, its
-      regeneration deactivates until after the end of its next turn.
-      Each time the creature regains Hit Points from regeneration,
-      it also regrows one damaged or ruined organ (if any). During
-      the spell's duration, the creature can also reattach severed
-      body parts by spending an Interact action to hold the body part
-      to the stump.
-  heightened:
+      An infusion of positive energy grants a creature continuous healing. The target temporarily gains regeneration 15, which restores 15 Hit Points to it at the start of each of its turns. While it has regeneration, the target can't die from damage and its dying value can't exceed 3, though if its wounded value becomes 4 or higher, it stays unconscious until its wounds are treated. If the target takes acid or fire damage, its regeneration deactivates until after the end of its next turn.
+      Each time the creature regains Hit Points from regeneration, it also regrows one damaged or ruined organ (if any). During the spell's duration, the creature can also reattach severed body parts by spending an Interact action to hold the body part to the area it was severed from.
     9th: The regeneration increases to 20.
 remove-curse:
   name: REMOVE CURSE
@@ -7555,31 +7442,15 @@ retrocognition:
   traits: [divination]
   casting-time: 1 minute
   casting: [M, S, V]
-  duration: sustained, up to 10 minutes
+  duration: sustained
   description:
     main:
-      This spell allows you to gain impressions from past events
-      that occurred in your current location. Retrocognition reveals
-      impressions from events that occurred over the course of the
-      last day throughout the first minute of the duration, followed
-      by impressions from the next day back the next minute you
-      concentrate, and so on. If you witness a traumatic or turbulent
-      event through an impression, you lose concentration on the spell
-      unless you succeed at a Will save with a DC of 30-35, depending
-      on the severity of the event. The GM determines whether an event
-      is traumatic and chooses the DC.
+      Opening your mind to occult echoes, you gain impressions from past events that occurred in your current location. Retrocognition reveals psychic impressions from events that occurred over the course of the last day throughout the first minute of the duration, followed by impressions from the next day back the next minute, and so on. These echoes don't play out like a vision but instead reveal impressions of emotions and metaphors that provide cryptic clues and details of the past. If you witness a traumatic or turbulent event through an impression, the spell ends unless you succeed at a Will save with a DC of at least 30 and possibly as much as 50, depending on the severity of the event. The GM determines whether an event is traumatic and chooses the DC.
   heightened:
     8th:
-      You gain impressions of events that occurred
-      over the previous year for each minute you concentrate, instead
-      of the previous day, though the details diminish, making it harder
-      to distinguish impressions from all but the most major events.
+      You gain impressions of events that occurred over the previous year for each minute you concentrate, instead of the previous day, though the details diminish, making it harder to distinguish impressions from all but the most major events.
     9th:
-      You gain impressions of events that occurred
-      over the previous century for each minute you concentrate,
-      instead of the previous day, though the details diminish, making
-      it almost impossible to distinguish impressions from all but the
-      most major events.
+      You gain impressions of events that occurred over the previous century for each minute you concentrate, instead of the previous day, though the details diminish, making it almost impossible to distinguish impressions from all but the most major events.
 reverse-gravity:
   name: REVERSE GRAVITY
   type: SPELL
@@ -7592,19 +7463,8 @@ reverse-gravity:
   duration: 1 minute
   description:
     main:
-      You reverse gravity in the area. Creatures and objects that aren't
-      secured to the ground immediately fall upward to the top of
-      the area. A creature might be able to Grab an Edge to arrest its fall
-      if it falls past an appropriate edge. If a creature falls against a solid
-      object (such as a ceiling), it takes the appropriate amount of falling
-      damage and lands on the surface. Once an object or creature
-      reaches the top of the area, it floats, caught between the normal
-      and reversed gravity. The creature can move along the plane
-      where the two forms of gravity meet. Creatures that can levitate or
-      fly can use those abilities to mitigate the effects of reverse gravity.
-      When reverse gravity ends, all creatures and objects caught in
-      the area fall back down. Likewise, anything that moves beyond
-      the bounds of the spell's area is subjected to normal gravity again.
+      You reverse gravity in the area. Creatures and objects that aren't secured to the ground immediately fall upward to the top of the area. A creature might be able to Grab an Edge to arrest its fall if it falls past an appropriate surface. If a creature falls against a solid object (such as a ceiling), it takes the appropriate amount of falling damage and lands on the surface. Once an object or creature reaches the top of the area, it floats, caught between the normal and reversed gravity. The creature can move along the plane where the two forms of gravity meet. Creatures that can levitate or fly can use those abilities to mitigate the effects of reverse gravity.
+      When reverse gravity ends, all creatures and objects caught in the area fall back down. Likewise, anything that moves beyond the spell's area is subjected to normal gravity again.
 revival:
   name: REVIVAL
   type: SPELL
@@ -8387,17 +8247,8 @@ spell-turning:
   duration: 1 hour
   description:
     main:
-      This abjuration reflects spells cast at you back at their caster.
-      When a spell targets you, you can spend a reaction to have spell
-      turning attempt to reflect it. This works like dispelling the spell,
-      but if the spell is successfully dispelled, the effect is turned back
-      on the caster. Whether or not the dispel attempt is successful,
-      spell turning ends. Spell turning can't affect spells that aren't
-      targeted (such as area spells).
-      If spell turning reflects a spell back at a caster who also is
-      under the effect of spell turning, his spell turning can attempt to
-      reflect his own spell back at you again; if he does so, his dispel
-      attempt automatically succeeds.
+      This abjuration reflects spells cast at you back at their caster. When a spell targets you, you can spend a reaction to attempt to reflect it. This uses the rules for counteracting the spell, but if the spell is successfully counteracted, the effect is turned back on the caster. Whether or not the counteract attempt is successful, spell turning then ends. Spell turning can't affect spells that aren't targeted (such as area spells).
+      If spell turning reflects a spell back at a caster who is also under the effect of spell turning, their spell turning can attempt to reflect their own spell back at you again; if they do so, their counteract attempt automatically succeeds.
 spellwrack:
   name: SPELLWRACK
   type: SPELL
@@ -9021,26 +8872,22 @@ sunburst:
   casting: [aS, aV]
   range: 500 feet
   area: 60-foot burst
+  save: Reflex
   description:
     main:
-      A globe of searing sunlight explodes in the area,
-      dealing 9d8 fire damage to creatures and objects
-      in the area, plus 9d8 additional positive damage to undead
-      creatures. Creatures and objects in the area must attempt a
-      Reflex save. ${subsection.save}
-      If the globe overlaps with an area of magical darkness or affects
-      a creature affected by magical darkness, sunburst attempts to
-      dispel the darkness effect.
+      A powerful globe of searing sunlight explodes in the area, dealing 8d10 fire damage to creatures and objects in the area, plus 8d10 additional positive damage to undead creatures. Each creature and object in the area must attempt a Reflex save.
+      ${subsection.save}
+      If the globe overlaps with an area of magical darkness, sunburst attempts to counteract the darkness effect.
     subsections:
       save:
         type: dl
         content:
-          success: Half damage.
-          crit: No damage.
-          failure: Full damage.
-          crit-fail: Full damage and blinded permanently.
+          success: The creature or object takes half damage.
+          crit: The creature or object is unaffected.
+          failure: The creature or object takes full damage.
+          crit-fail: The creature or object takes full damage. If it's a creature, it becomes blinded permanently.
   heightened:
-    "+1": The fire damage increases by 1d8 and the positive damage against undead increases by 1d8.
+    "+1": The fire damage increases by 1d10, and the positive damage against undead increases by 1d10.
 swamp-of-sloth:
   name: SWAMP OF SLOTH
   type: POWER
@@ -9640,6 +9487,19 @@ true-strike:
       turn, roll the attack twice and use the better result. The attack
       ignores circumstance penalties to the attack roll and any flat check
       due to the target being concealed or hidden.
+true-target:
+  name: True Target
+  type: spell
+  level: 7
+  rarity: 0
+  traits: [divination, fortune, prediction]
+  casting: [aV]
+  range: 60 feet
+  target: 1 creature
+  duration: until the start of your next turn
+  description:
+    main:
+      You delve into the possible futures of the next few seconds to understand all the ways your target might avoid harm, then cast out a vision of that future to those around you. On the first attack roll made against the target during true target's duration, the attacker rolls twice and uses the better result. The attacker also ignores circumstance penalties to the attack roll and any flat check required due to the target being concealed or hidden.
 uncontrollable-dance:
   name: UNCONTROLLABLE DANCE
   type: SPELL
@@ -9744,10 +9604,7 @@ unfettered-pack:
   duration: 1 hour
   description:
     main:
-      Targets can't be entangled or hampered by vegetation, rubble,
-      winds, or other properties of the environment, whether or not
-      the environment is magical. They also ignore difficult terrain
-      from such environmental properties.
+      You free those who travel alongside you from environmental hindrances. Targets don't take circumstance penalties to Speed from vegetation, rubble, winds, or other properties of the environment, whether or not the environment is magical, and they ignore difficult terrain from such environmental properties.
   heightened:
     9th: The targets also ignore greater difficult terrain from environmental properties.
 unimpeded-stride:
@@ -10011,25 +9868,10 @@ visions-of-danger:
   range: 500 feet
   area: 30-foot burst
   duration: 1 minute
+  save: Will
   description:
     main:
-      An illusion of horrific otherworldly creatures appears within the
-      spell's area. The creatures look like Tiny swarming monsters,
-      with a specific appearance of your choice, such as hellish flies or
-      animated saw blades. Any creature that's inside the burst when
-      it's created, enters the burst, or ends its turn inside the burst
-      must attempt a Will save to avoid taking 11d8 mental damage. A
-      creature that tries to Interact with the monsters or observes one
-      with a Seek action can attempt to disbelieve the illusion.
-      ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: Half damage.
-          crit: No damage, and the target can immediately attempt to disbelieve.
-          failure: Full damage.
-          crit-fail: Double damage.
+      An illusion of horrific creatures fills the spell's area. The creatures look like Tiny swarming monsters with a specific appearance of your choice, such as Hellish flies or animated saw blades. The burst deals 8d8 mental damage to each creature that's inside the burst when it's created, enters the burst, or starts its turn inside the burst. A creature that critically succeeds at its will save can immediately attempt to disbelieve the illusion. A creature that tries to Interact with the monsters or observes one with a Seek action can attempt to disbelieve the illusion. Creatures that disbelieve the illusion take no damage from the illusion thereafter.
   heightened:
     "+1": The mental damage increases by 1d8.
 vital-beacon:
@@ -10057,32 +9899,19 @@ volcanic-eruption:
   area: 5-foot radius, 80-foot-tall cylinder
   description:
     main:
-      The ground opens up, spraying a column of lava high into the
-      air in a vertical cylinder, dealing 17d6 fire damage. Creatures in
-      the area must attempt a Reflex save or take 17d6 fire damage.
-      The lava rapidly cools, and creatures in the area might become
-      partially encased in rock depending on their Reflex saves. A
-      creature encased in rock is sluggish 1, is hampered 5 feet,
-      and when flying treats all normal terrain as difficult terrain. A
-      flying creature immediately descends 20 feet the moment it's
-      encased, but doesn't take falling damage from this movement.
-      A creature encased in rock can attempt to Break Open or
-      Escape against your spell DC to end the effect. Otherwise, the
-      creature remains encased until it takes a total of 50 damage,
-      freeing it from the rock. ${subsection.save}
-      Additionally, creatures in the area that critically succeed at
-      their saves and creature that are within 5 feet of the lava column
-      automatically takes 2d6 fire damage from the intense heat.
+      The ground opens up, spraying a column of lava high into the air in a vertical cylinder, dealing 14d6 fire damage to creatures in the area. The lava rapidly cools and encases creatures in the area. A creature encased in rock is clumsy 1 and takes a –10-foot status penalty to its Speeds. All normal terrain is difficult terrain to a flying creature, and such creatures immediately descend 20 feet the moment they're encased, but they don't take damage from this fall. A creature encased in rock can attempt to Escape against your spell DC to end the effect. Otherwise, the creature remains encased until it takes a total of 50 damage, freeing it from the rock.
+      Additionally, creatures in the area and those within 5 feet of the lava column automatically take 3d6 fire damage from the intense heat, regardless of the results of their saving throws.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
-          success: Half damage and not encased.
-          crit: No damage and not encased.
-          failure: Full damage and encased.
-          crit-fail: Double damage and encased.
+          success: The creature takes half damage.
+          crit: The creature is unaffected.
+          failure: The creature takes full damage and is encased.
+          crit-fail: The creature takes double damage and is encased.
   heightened:
-    "+1": The damage dealt in the area increases by 2d6, and the damage dealt by the intense heat increases by 1d6.
+    "+1": The damage in the area increases by 2d6, and the damage from the intense heat increases by 1d6.
 waking-nightmare:
   name: WAKING NIGHTMARE
   type: SPELL
@@ -10259,23 +10088,21 @@ warp-mind:
   type: SPELL
   level: 7
   rarity: 0
-  traits: [emotion, enchantment, mental]
+  traits: [emotion, enchantment, incapacitation, mental]
   casting: [aS, aV]
   range: 120 feet
-  target: one creature
+  target: 1 creature
+  save: Will
   description:
     main:
-      The target's mind is thrown into confusion, depending on its Will saving throw.
+      You scramble a creature's mental faculties and sensory input. The target must attempt a Will saving throw. Regardless of the result of that save, the target is then temporarily immune for 10 minutes.
       ${subsection.save}
-      The effect of warp mind is instantaneous and therefore can't be
-      dispelled until it runs its course, though it can be counteracted
-      by alter reality, miracle, primal phenomenon, restoration,
-      or wish.
+      Warp mind's effects happen instantly, so dispel magic and other effects that counteract spells can't counteract them. However, alter reality, miracle, primal phenomenon, restoration, or wish can still counteract the effects.
     subsections:
       save:
         type: dl
         content:
-          success: The target is confused for 1 round.
+          success: The target spends the first action on its next turn with the confused condition.
           crit: The target is unaffected.
           failure: The target is confused for 1 minute.
           crit-fail: The target is confused permanently.
