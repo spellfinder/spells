@@ -3827,20 +3827,15 @@ goodberry:
   type: focus
   level: 1
   rarity: 1
-  traits: [healing, necromancy]
-  casting-time: 10 minutes
+  traits: [druid, healing, necromancy]
+  casting-time: 1 hour
   casting: [S, V]
   range: touch
-  target: one freshly-picked berry
+  target: 1 freshly-picked berry
   duration: 1 day
   description:
     main:
-      You imbue the target berry with the bounty of nature, allowing
-      it to heal and sustain far beyond its normal capacity. A living
-      creature that eats the berry with an Interact action gains as much
-      nourishment as a square meal for a typical human and regains 1d6
-      Hit Points plus your spellcasting ability modifier. If not consumed
-      during the duration, the berry withers away.
+      You imbue the target berry with the bounty of nature, allowing it to heal and sustain far beyond its normal capacity. A living creature that eats the berry with an Interact action gains as much nourishment as from a square meal for a typical human and regains 1d8+5 Hit Points. If it's not consumed during the duration, or if you cast goodberry again, the berry withers away.
   heightened:
     "+1": You can target an additional berry.
 grim-tendrils:
@@ -4116,25 +4111,23 @@ heal-animal:
   name: HEAL ANIMAL
   type: focus
   level: 1
-  rarity: 0
-  traits: [healing, necromancy, positive]
+  rarity: 1
+  traits: [druid, healing, necromancy, positive]
   casting: [aS, or more]
-  range: touch or Range 30 feet (see text)
-  target: one willing living animal creature
+  range: touch or 30 feet (see text)
+  target: 1 willing living animal creature
   description:
     main:
-      You channel positive energy to heal the target, restoring Hit Points
-      equal to 1d8 plus your spellcasting action modifier to the target. The
-      number of actions spent Casting this Spell determines its range.
+      You heal an animal's wounds, restoring 1d8 Hit Points to the target. The number of actions spent Casting this Spell determines its effect.
       ${subsection.effects}
     subsections:
       effects:
         type: dl
         content:
           "Somatic Casting": The spell has a range of touch.
-          "Somatic Casting, Verbal Casting": The spell has a range of 30 feet.
+          "Somatic Casting, Verbal Casting": The spell has a range of 30 feet and restores an additional 8 Hit Points to the target.
   heightened:
-    "+1": The amount of healing increases by 2d8.
+    "+1": The amount of healing increases by 1d8, and the additional healing for the 2-action version increases by 8.
 healer-s-blessing:
   name: HEALER'S BLESSING
   type: focus
@@ -4480,6 +4473,27 @@ illusory-scene:
     6th:
       Creatures or objects in your scene can speak. You must speak the specific lines for each actor when creating your program. The spell disguises your voice for each actor.
     8th: As the 6th-level version, and the duration is unlimited.
+impaling-briars:
+  name: Impaling Briars
+  type: focus
+  level: 8
+  rarity: 1
+  traits: [conjuration, druid, plant]
+  casting: [aS, aV]
+  area: ground within a 100-foot emanation
+  duration: sustained up to 1 minute
+  description:
+    main:
+      The ground within the area transforms into a mass of dangerous briars that assault and impede your foes. Each round when you Sustain the Spell, you can select one of the following effects to occur in the area.
+      ${subsection.effects}
+      In addition, once per round you can direct the briars to impale any target in the area (or flying up to 20 feet above the area) that you can see by using a single action, which has the concentrate and manipulate traits. Make a spell attack roll. On a success, the target takes 10d6 piercing damage and takes a –10-foot circumstance penalty to all Speeds for 1 round; on a critical success, the target is immobilized for 1 round unless it Escapes.
+    subsections:
+      effects:
+        type: dl
+        content:
+          Ensnare: The briars clump around your foes, attempting to hold them in place. A foe within the area (or flying at most 20 feet above the area) must attempt a Reflex save. On a failure, it takes a –10-foot circumstance penalty to all Speeds for 1 round, and on a critical failure, it is immobilized for 1 round unless it Escapes.
+          Impede: The briars twist and writhe, making the entire area difficult terrain.
+          Wall: A wall of thorns appears in the area, lasting for 1 round. The wall is greater difficult terrain instead of difficult terrain.
 implosion:
   name: IMPLOSION
   type: SPELL
@@ -6490,6 +6504,26 @@ primal-phenomenon:
           - Produce any effect whose power level is in line with the
             above effects.
           - Reverse certain effects that refer to the wish spell.
+primal-summons:
+  name: Primal Summons
+  type: focus
+  level: 6
+  rarity: 1
+  traits: [conjuration, druid]
+  casting: [fV]
+  description:
+    main:
+      You enhance a summoned creature with the power of the elements. If your next action is to cast either summon animal or summon plant or fungus, choose air, earth, fire, or water, and the creature you summon gains the corresponding abilities.
+      ${subsection.abilities}
+    subsections:
+      abilities:
+        type: dl
+        content:
+          Air: The creature gains a fly Speed of 60 feet.
+          Earth: The creature gains a burrow Speed of 20 feet, reduces its land Speed by 10 feet (minimum 5 feet), and gains resistance 5 to physical damage.
+          Fire: The creature's attacks deal 1d6 extra fire damage, and it gains resistance 10 to fire and weakness 5 to cold and water.
+          Water: The creature gains a swim Speed of 60 feet, can spend 1 action after a melee attack to attempt a Shove (ignoring multiple attack penalty), and gains resistance 5 to fire.
+
 prismatic-sphere:
   name: PRISMATIC SPHERE
   type: SPELL
@@ -8185,45 +8219,30 @@ storm-lord:
   type: focus
   level: 9
   rarity: 1
-  traits: [air, electricity, evocation]
+  traits: [air, druid, electricity, evocation]
   casting: [aS, aV]
-  area: 100-foot spread
+  area: 100-foot emanation
+  requirements: You are outdoors and above ground
   duration: sustained, up to 1 minute or until dismissed
   description:
     main:
-      The sky above you darkens in a matter of moments, swirling with
-      ominous clouds punctuated by flashes of lighting. Each round
-      when you concentrate on this spell, you can select one of the
-      following effects to occur in the area.
+      The sky above you darkens in a matter of moments, swirling with ominous clouds punctuated by flashes of lighting. Each round when you Sustain the Spell, you can select one of the following effects to occur in the area.
       ${subsection.effects}
-      In addition, once per round you can use a Somatic Casting action
-      to call down a bolt of lightning from above, striking any target in
-      range that you can see. You deal 10d6 electricity damage to the
-      target, depending on their Reflex save.
-      ${subsection.save}
-      If you cast this spell underground or inside a structure, it has
-      no effect.
+      In addition, once per round you can use a single action, which has the concentrate and manipulate traits, to call down a bolt of lightning, striking any target in range that you can see. You deal 10d6 electricity damage to the target; it must attempt a basic Reflex save. On a failure, it is also deafened for 1 round.
     subsections:
       effects:
         type: dl
         content:
           Calm: No additional effect.
-          Fog: Heavy fog rolls in, concealing the area per obscuring mist.
+          Fog: Heavy fog rolls in, concealing the area with the effects of obscuring mist.
           Rain:
             Torrential rain falls from the clouds above, dousing
-            ordinary flames. Creatures in the area take a -2 penalty to
+            ordinary flames. Creatures in the area take a -2 circumstance penalty to
             Acrobatics and Perception checks.
           Wind:
             Powerful winds buffet the area in all directions.
-            Ranged attacks take a -4 penalty and all flying is against
+            Ranged attacks take a -4 circumstance penalty, and all flying is against
             the wind and counts as moving through difficult terrain.
-      save:
-        type: dl
-        content:
-          success: Half damage.
-          crit: No damage.
-          failure: Full damage and the target is deafened for 1 round.
-          crit-fail: Double damage and the target is deafened for 1 round.
 storm-of-vengeance:
   name: STORM OF VENGEANCE
   type: SPELL
@@ -8266,18 +8285,15 @@ stormwind-flight:
   type: focus
   level: 4
   rarity: 1
-  traits: [morph, transmutation]
+  traits: [air, druid, transmutation]
   casting: [aS, aV]
   duration: 1 minute
   description:
     main:
-      Powerful winds carry you through the air, giving you a fly Speed
-      of 30 feet. When this spell's duration would end, if you have Spell
-      Points, you can spend 1 Spell Point to increase the duration by
-      1 minute. Otherwise, if you're still flying, you float to the ground,
-      per feather fall.
+      Powerful winds carry you smoothly through the air, giving you a fly Speed
+      equal to your speed. When this spell's duration would end, if you're still flying, you float to the ground, as feather fall.
   heightened:
-    6th: Your fly Speed from stormwind flight doesn't count flying against the wind as difficult terrain.
+    6th: When you fly using stormwind flight, you don't count flying against the wind as difficult terrain.
 subconscious-suggestion:
   name: Subconscious Suggestion
   type: spell
@@ -8862,26 +8878,16 @@ tempest-surge:
   type: focus
   level: 1
   rarity: 1
-  traits: [air, electricity, evocation]
+  traits: [air, druid, electricity, evocation]
   casting: [aS, aV]
   range: 30 feet
-  target: one creature
+  save: Reflex
+  target: 1 creature
   description:
     main:
-      You surround a foe in a swirling storm of violent
-      winds, roiling clouds, and crackling lightning. The storm deals
-      1d10 electricity damage to the target, depending on their Reflex
-      saving throw. ${subsection.save}
-    subsections:
-      save:
-        type: dl
-        content:
-          success: Half damage.
-          crit: No damage.
-          failure: Full damage, and the target is sluggish 1 for 1 round.
-          crit-fail: Double damage, and the target is sluggish 2 for 1 round.
+      You surround a foe in a swirling storm of violent winds, roiling clouds, and crackling lightning. The storm deals 1d12 electricity damage. The target must attempt a basic Reflex save. On a failure, the target also is clumsy 2 for 1 round and takes 1 persistent electricity damage.
   heightened:
-    "+1": The damage increases by 1d10.
+    "+1": The damage increases by 1d12, and the persistent electricity damage on a failure increases by 1.
 tempt-fate:
   name: TEMPT FATE
   type: focus
@@ -9981,48 +9987,39 @@ wild-morph:
   type: focus
   level: 1
   rarity: 1
-  traits: [morph, transmutation]
+  traits: [druid, morph, transmutation]
   casting: [aS, aV]
-  duration: 1 minute or until dismissed
+  duration: 1 minute
   description:
     main:
-      You morph your body based on your wild order training, choosing one
-      of the following effects based on your wild order feats.
+      You morph your body based on your training, choosing one of the following effects based on your wild order feats.
       ${subsection.effects}
     subsections:
       effects:
         type: list
         content:
-          - If you have Wild Shape, you can morph your hands into wild
-            claws. Your hands transform into incredibly sharp claws.
-            These claws are an unarmed attack you’re trained in, dealing
-            1d6 slashing damage (agile, finesse). You can still hold and use
-            items with your hands while they’re transformed by this spell,
-            but you cannot hold an item while attacking. If you have Insect
-            Shape, you can instead transform your mouth into wild jaws, an
-            unarmed attack with the same damage and traits.
-          - If you have Elemental Shape, you can morph your body to be
-            partially composed of elemental matter, granting you resistance
-            5 to critical hits and precision damage.
-          - If you have Plant Shape, you can morph your arms into long
-            vines, increasing your reach to 10 feet (or 15 feet with a reach
-            weapon).
-          - If you have Soaring Shape, you can grow wings from your back.
-            These wings allow you to fly with a fly Speed of 30 feet.
+          - If you have Wild Shape, you can morph your hands into wild claws. Your hands transform into incredibly sharp claws. These claws are an unarmed attack you're trained in and deal 1d6 slashing damage each (agile, finesse). You can still hold and use items with your hands while they're transformed by this spell, but you cannot hold an item while attacking. If you have Insect Shape, you can instead transform your mouth into wild jaws, an unarmed attack you're trained in that deals 1d8 piercing damage.
+          - If you have Elemental Shape, you can morph your body to be partially composed of elemental matter, granting you resistance 5 to critical hits and precision damage.
+          - If you have Plant Shape, you can morph your arms into long vines, increasing your reach to 10 feet (or 15 feet with a reach weapon).
+          - If you have Soaring Shape, you can cast the spell as a two-action activity (somatic, verbal) to grow wings from your back. These wings allow you to fly with a fly Speed of 30 feet.
   heightened:
-    2nd:
-      Your wild claws or wild jaws radiate primal energy.
-      They work like a +1 magic weapon, granting a +1 item bonus to attack
-      rolls and dealing another die of damage on a hit.
-    4th: Your wild claws or wild jaws work like a +2 magic weapon.
-    5th:
-      Your wild claws or wild jaws work like a +2 magic
-      weapon. Wild claws leave terrible, ragged wounds that deal 1d6
-      persistent bleed damage on a hit, and wild jaws are envenomed,
-      dealing 1d6 persistent poison damage on a hit.
-    6th: Your wild claws or wild jaws work like a +3 magic weapon and deal 2d6 persistent damage on a hit.
-    8th: Your wild claws or wild jaws work like a +4 magic weapon and deal 3d6 persistent damage on a hit.
-    10th: Your wild claws or wild jaws work like a +5 magic weapon and deal 4d6 persistent damage on a hit.
+    6th:
+      You can choose up to two of the effects from the list. Wild claws leave terrible, ragged wounds that also deal 2d6 persistent bleed damage on a hit, and wild jaws are envenomed, also dealing 2d6 persistent poison damage on a hit.
+    10th:
+      You can choose up to three of the effects from the list. Wild claws deal 4d6 persistent bleed damage on a hit, and wild jaws deal 4d6 persistent poison damage on a hit.
+wild-shape:
+  name: Wild Shape
+  type: focus
+  level: 1
+  rarity: 1
+  traits: [druid, polymorph, transmutation]
+  cast: [aS, aV]
+  duration: 1 minute (or longer)
+  description:
+    main:
+      You infuse yourself with primal essence and transform yourself into another form. You can polymorph into any form listed in pest form, which lasts 10 minutes. All other wild shape forms last 1 minute. You can add more forms to your wild shape list with druid feats; your feat might grant you some or all of the forms from a given polymorph spell. When you transform into a form granted by a spell, you gain all the effects of the form you chose from a version of the spell heightened to wild shape's level. Wild shape allows you to use your own shapeshifting training more easily than most polymorph spells. When you choose to use your own attack modifier while polymorphed instead of the form's default attack modifier, you gain a +2 status bonus to your attack rolls.
+  heightened:
+    2nd: You can also wild shape into the forms listed in animal form.
 wild-winds-gust:
   name: WILD WINDS GUST
   type: focus
