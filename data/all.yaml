@@ -8896,13 +8896,14 @@ sound-burst:
   description:
     main:
       A cacophonous noise blasts out, dealing 2d10 sonic damage. Each creature must attempt a Fortitude save.
+      ${subsection.save}
     subsections:
       save:
         type: dl
         content:
           success: The creature takes half damage.
           crit: The creature is unaffected.
-          failure: FThe creature takes full damage and is deafened for 1 round.
+          failure: The creature takes full damage and is deafened for 1 round.
           crit-fail: The creature takes double damage and is deafened and stunned 1 for 1 minute.
   heightened:
     "+1": The damage increases by 1d10.
@@ -9514,7 +9515,7 @@ summon-construct:
     9th: Level 13.
     10th: Level 15.
 summon-elemental:
-  name: Summon Construct
+  name: Summon Elemental
   type: SPELL
   level: 2
   rarity: 0
@@ -10099,9 +10100,11 @@ touch-of-idiocy:
       ${subsection.save}
     subsections:
       save:
-        success: The target is unaffected.
-        failure: The target is stupefied 2.
-        crit-fail: The target is stupefied 4.
+        type: dl
+        content:
+          success: The target is unaffected.
+          failure: The target is stupefied 2.
+          crit-fail: The target is stupefied 4.
 touch-of-obedience:
   name: TOUCH OF OBEDIENCE
   type: POWER
