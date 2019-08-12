@@ -1,6 +1,6 @@
 # PF2e Spell Finder
 
-A spell list for Pathfinder 2E (Playtest) with filters, search, and sort functionality.
+A spell list for Pathfinder 2E with filters, search, and sort functionality.
 
 The latest version can be consulted [here](https://spellfinder.joffrey.eu/)
 

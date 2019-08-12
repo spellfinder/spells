@@ -2,12 +2,12 @@ import React from 'react';
 
 function Header() {
   return (
-    <header className="text-white bg-primary rounded-bottom mb-3 p-2">
+    <header className="text-white rounded-bottom mb-3 p-2">
       <h1>
-        Spell finder{' '}
-        <small><a className="text-white" href="http://paizo.com/pathfinderplaytest">Pathfinder Playtest</a></small>
+        𝕊𝕡𝕖𝕝𝕝𝕗𝕚𝕟𝕕𝕖𝕣{' '}
+        <small><a className="text-white subtitle" href="https://paizo.com/pathfinder">for Pathfinder 2E</a></small>
       </h1>
-      <div><a className="text-white" href="/Changelog.txt">v3.0.0 (Changelog)</a></div>
+      <div style={{'text-align': 'right'}}><a className="text-white" href="/Changelog.txt">v3.0.0 (Changelog)</a></div>
     </header>
   );
 }
