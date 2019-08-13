@@ -439,6 +439,7 @@ appearance-of-wealth:
   type: focus
   level: 1
   rarity: 1
+  casting: [aM, aV]
   range: 30 feet
   area: 5-foot burst
   save: Will
@@ -1108,7 +1109,7 @@ chilling-darkness:
   level: 3
   rarity: 0
   traits: [attack, cold, darkness, evil, evocation]
-  cast: [aS, aV]
+  casting: [aS, aV]
   range: 120 feet
   target: 1 creature
   description:
@@ -2730,7 +2731,7 @@ eclipse-burst:
   rarity: 0
   traits: [cold, darkness, necromancy, negative]
   save: Reflex
-  cast: [aS, aV]
+  casting: [aS, aV]
   area: 60-foot burst
   range: 500 feet
   description:
@@ -4271,7 +4272,7 @@ holy-cascade:
   level: 4
   rarity: 0
   traits: [evocation, good, positive, water]
-  cast: [aS, aV]
+  casting: [aS, aV]
   cost: one vial of holy water
   range: 500 feet
   area: 20-foot burst
@@ -7643,7 +7644,7 @@ shatter:
   level: 2
   rarity: 0
   traits: [evocation, sonic]
-  cast: [aS, aV]
+  casting: [aS, aV]
   range: 30 feet
   target: 1 unattended object
   description:
@@ -10084,7 +10085,7 @@ wild-shape:
   level: 1
   rarity: 1
   traits: [druid, polymorph, transmutation]
-  cast: [aS, aV]
+  casting: [aS, aV]
   duration: 1 minute (or longer)
   description:
     main:
@@ -10188,6 +10189,7 @@ you-re-mine:
   rarity: 1
   traits: [emotion, enchantment, incapacitation, mental, sorcerer]
   range: 30 feet
+  casting: [aS, aV]
   target: 1 creature
   duration: 1 round
   save: Will

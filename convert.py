@@ -13,7 +13,7 @@ def get_yaml_data():
     return raw_data
 
 mandatory_keys = [
-    'name', 'type', 'level', 'description', 'traits'
+    'name', 'type', 'level', 'description', 'traits', 'casting'
 ]
 
 type_checks = {
