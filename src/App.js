@@ -33,7 +33,7 @@ class App extends React.Component {
         o.traits.forEach(trait => traits.add(trait))
       })
       this.setState({
-        filteredSpells: Object.entries(all),
+        filteredSpells: Object.entries(all).sort(sortMethods['alpha-asc']),
         spellData: all,
         traits: Array.from(traits).sort(),
       });
