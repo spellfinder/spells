@@ -74,7 +74,7 @@ class FiltersForm extends React.Component {
               <Form.Control onChange={changeHandler} className="filters mx-1" type="text"/>
             </Form.Group>
             <Form.Group controlId="spellList">
-              <Form.Label>Spell list:</Form.Label>
+              <Form.Label>Tradition:</Form.Label>
               <Form.Control as="select" onChange={changeHandler} className="filters mx-1">
                 <option key="" value="">All</option>
                 {this.props.spellLists.map(list => (
