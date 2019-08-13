@@ -1,3 +1,9 @@
+v3.0.1
+------
+
+- Added casting entries where they were missing, which was causing app
+  crashes when expanding certain spells
+
 v3.0.0
 ------
 
