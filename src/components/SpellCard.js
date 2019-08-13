@@ -10,20 +10,19 @@ const rarities = ['common', 'uncommon', 'rare', 'unique'];
 const rarity_class = ['secondary', 'warning', 'danger', 'primary'];
 const spellProperties = [
   'area', 'duration', 'target', 'range', 'trigger', 'requirements',
-  'cost', 'casting-time', 'save', 'domain'
+  'cost', 'save', 'domain'
 ];
 
 
-function translateCasting(casting) {
-  return casting.map(function(item) {
-    return item.replace(
-      /a([VSM])/g, '[[A]] $1'
-    ).replace(
-      /f([VSM])/g, '[[F]] $1'
-    ).replace(
-      /r([VSM])/g, '[[R]] $1'
-    )
-  }).join(', ')
+function translateCast(cast) {
+  const actions = cast.actions && cast.actions.replace(
+    /a/g, '🔶'
+  ).replace(
+    /r/g, '↩'
+  ).replace(
+    /f/g, '🔷'
+  )
+  return `${actions || cast.time} (${cast.components.join(', ')})`
 }
 
 
@@ -97,7 +96,7 @@ class SpellCard extends React.Component {
     return (
       <>
         {renderedProps}
-        <li className="list-inline-item"><strong>{'casting: '}</strong>{translateCasting(spellData.casting)}</li>
+        <li className="list-inline-item"><strong>{'cast: '}</strong>{translateCast(spellData.cast)}</li>
       </>
     );
   }
