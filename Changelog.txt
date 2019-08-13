@@ -1,3 +1,10 @@
+v3.2.0
+------
+
+- Updated the "spell list" nomenclature to "tradition".
+- Traditions that have access to a given spell are now displayed as
+  part of the spell card.
+
 v3.1.0
 ------
 
