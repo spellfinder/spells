@@ -7,7 +7,7 @@ function Header() {
         𝕊𝕡𝕖𝕝𝕝𝕗𝕚𝕟𝕕𝕖𝕣{' '}
         <small><a className="text-white subtitle" href="https://paizo.com/pathfinder">for Pathfinder 2E</a></small>
       </h1>
-      <div style={{'text-align': 'right'}}><a className="text-white" href="/Changelog.txt">v3.0.0 (Changelog)</a></div>
+      <div style={{'text-align': 'right'}}><a className="text-white" href="/Changelog.txt">v3.1.0 (Changelog)</a></div>
     </header>
   );
 }
