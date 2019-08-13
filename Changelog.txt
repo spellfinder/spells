@@ -1,3 +1,9 @@
+v3.1.0
+------
+
+- Casting information uses a new format that better reflects the new
+  conventions.
+
 v3.0.0
 ------
 
