@@ -77,6 +77,9 @@ abyssal-plague:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 abyssal-wrath:
   name: Abyssal Wrath
   traits: [evocation, sorcerer]
@@ -134,6 +137,9 @@ acid-arrow:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 acid-splash:
   name: Acid Splash
   traits: [acid, cantrip, evocation]
@@ -160,6 +166,9 @@ acid-splash:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 aerial-form:
   name: Aerial Form
   traits: [polymorph, transmutation]
@@ -214,6 +223,9 @@ aerial-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 agile-feet:
   name: Agile Feet
   traits: [cleric, transmutation]
@@ -249,6 +261,10 @@ air-bubble:
     components:
     - V
     actions: r
+  traditions:
+  - primal
+  - divine
+  - arcane
 air-walk:
   name: Air Walk
   traits: [air, transmutation]
@@ -266,13 +282,15 @@ air-walk:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 alarm:
   name: Alarm
   traits: [abjuration]
   type: spell
   level: 1
   rarity: 0
-  casting-time: 10 minutes
   requirements: 3gp silver bell focus
   range: touch
   area: 20-foot burst
@@ -296,6 +314,11 @@ alarm:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 allegro:
   name: Allegro
   traits: [bard, cantrip, composition, emotion, enchantment, mental]
@@ -338,6 +361,8 @@ alter-reality:
     - S
     - V
     actions: aaa
+  traditions:
+  - occult
 anathematic-reprisal:
   name: Anathematic Reprisal
   type: spell
@@ -362,6 +387,8 @@ anathematic-reprisal:
     - S
     - V
     actions: r
+  traditions:
+  - divine
 ancestral-memories:
   name: Ancestral Memories
   type: focus
@@ -483,13 +510,14 @@ animal-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 animal-messenger:
   traits: [enchantment, mental]
   name: ANIMAL MESSENGER
   type: SPELL
   level: 2
   rarity: 0
-  casting-time: 1 minute
   range: 120 feet
   duration: until delivered
   description:
@@ -506,13 +534,14 @@ animal-messenger:
     - S
     - V
     time: 1 minute
+  traditions:
+  - primal
 animal-vision:
   name: Animal Vision
   type: spell
   level: 3
   rarity: 0
   traits: [divination, mental]
-  casting-time: 1 minute
   range: 120 feet
   target: 1 animal
   duration: 1 hour
@@ -548,6 +577,9 @@ ant-haul:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 antimagic-field:
   traits: [abjuration]
   name: ANTIMAGIC FIELD
@@ -578,6 +610,8 @@ antimagic-field:
     - S
     - V
     actions: aaa
+  traditions:
+  - occult
 appearance-of-wealth:
   name: Appearance of Wealth
   traits: [cleric, illusion]
@@ -697,7 +731,6 @@ augury:
   type: SPELL
   level: 2
   rarity: 0
-  casting-time: 10 minutes
   description:
     main: "You gain a vague glimpse of the future. During the casting of this spell,\
       \ ask about the results of a particular course of action. The spell can predict\
@@ -722,6 +755,9 @@ augury:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - divine
+  - occult
 avatar:
   name: AVATAR
   type: SPELL
@@ -820,6 +856,8 @@ avatar:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 baleful-polymorph:
   name: BALEFUL POLYMORPH
   type: SPELL
@@ -852,6 +890,9 @@ baleful-polymorph:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 bane:
   name: BANE
   type: SPELL
@@ -874,6 +915,9 @@ bane:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 banishment:
   name: BANISHMENT
   type: SPELL
@@ -906,6 +950,11 @@ banishment:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 barkskin:
   name: BARKSKIN
   type: SPELL
@@ -927,6 +976,8 @@ barkskin:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 bind-soul:
   name: BIND SOUL
   type: SPELL
@@ -950,6 +1001,9 @@ bind-soul:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 bind-undead:
   traits: [necromancy]
   name: BIND UNDEAD
@@ -969,6 +1023,10 @@ bind-undead:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 bit-of-luck:
   name: BIT OF LUCK
   type: focus
@@ -1016,6 +1074,9 @@ black-tentacles:
     - S
     - V
     actions: aaa
+  traditions:
+  - arcane
+  - occult
 blade-barrier:
   name: BLADE BARRIER
   type: SPELL
@@ -1042,6 +1103,8 @@ blade-barrier:
     - S
     - V
     actions: aaa
+  traditions:
+  - divine
 bless:
   name: BLESS
   type: SPELL
@@ -1061,6 +1124,9 @@ bless:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 blind-ambition:
   name: BLIND AMBITION
   type: focus
@@ -1119,6 +1185,11 @@ blindness:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 blink:
   name: BLINK
   type: SPELL
@@ -1139,6 +1210,9 @@ blink:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 blur:
   name: BLUR
   type: SPELL
@@ -1157,6 +1231,9 @@ blur:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 breath-of-life:
   name: BREATH OF LIFE
   type: SPELL
@@ -1175,6 +1252,8 @@ breath-of-life:
     components:
     - V
     actions: r
+  traditions:
+  - divine
 burning-hands:
   name: BURNING HANDS
   type: SPELL
@@ -1193,6 +1272,9 @@ burning-hands:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 call-of-the-grave:
   name: CALL OF THE GRAVE
   type: focus
@@ -1244,6 +1326,9 @@ calm-emotions:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 captivating-adoration:
   name: CAPTIVATING ADORATION
   type: focus
@@ -1312,6 +1397,9 @@ cataclysm:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 celestial-brand:
   name: CELESTIAL BRAND
   type: focus
@@ -1357,6 +1445,9 @@ chain-lightning:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 champion-s-sacrifice:
   name: Champion's sacrifice
   type: focus
@@ -1418,6 +1509,10 @@ charm:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
+  - occult
 charming-touch:
   name: CHARMING TOUCH
   type: focus
@@ -1510,6 +1605,10 @@ chill-touch:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 chilling-darkness:
   name: Chilling Darkness
   type: spell
@@ -1533,6 +1632,8 @@ chilling-darkness:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 chromatic-wall:
   name: CHROMATIC WALL
   type: SPELL
@@ -1598,6 +1699,9 @@ chromatic-wall:
     - S
     - V
     actions: aaa
+  traditions:
+  - arcane
+  - occult
 circle-of-protection:
   name: CIRCLE OF PROTECTION
   type: SPELL
@@ -1624,13 +1728,15 @@ circle-of-protection:
     - S
     - V
     actions: aaa
+  traditions:
+  - divine
+  - occult
 clairaudience:
   name: CLAIRAUDIENCE
   type: SPELL
   level: 3
   rarity: 0
   traits: [divination, scrying]
-  casting-time: 1 minute
   range: 500 feet
   duration: 10 minutes
   description:
@@ -1643,13 +1749,15 @@ clairaudience:
     - S
     - V
     time: 1 minute
+  traditions:
+  - arcane
+  - occult
 clairvoyance:
   name: CLAIRVOYANCE
   type: SPELL
   level: 4
   rarity: 0
   traits: [divination, scrying]
-  casting-time: 1 minute
   range: 500 feet
   duration: 10 minutes
   description:
@@ -1663,6 +1771,9 @@ clairvoyance:
     - S
     - V
     time: 1 minute
+  traditions:
+  - arcane
+  - occult
 cloak-of-colors:
   name: CLOAK OF COLORS
   type: SPELL
@@ -1690,6 +1801,9 @@ cloak-of-colors:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 cloak-of-shadow:
   name: Cloak of Shadow
   type: focus
@@ -1740,6 +1854,9 @@ cloudkill:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - arcane
 collective-transposition:
   name: COLLECTIVE TRANSPOSITION
   type: SPELL
@@ -1768,6 +1885,9 @@ collective-transposition:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 color-spray:
   name: COLOR SPRAY
   type: SPELL
@@ -1793,6 +1913,9 @@ color-spray:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 command:
   name: COMMAND
   type: SPELL
@@ -1825,6 +1948,10 @@ command:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 commanding-lash:
   name: COMMANDING LASH
   type: focus
@@ -1888,6 +2015,9 @@ comprehend-language:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 cone-of-cold:
   name: CONE OF COLD
   type: SPELL
@@ -1906,6 +2036,9 @@ cone-of-cold:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 confusion:
   name: CONFUSION
   type: SPELL
@@ -1936,13 +2069,15 @@ confusion:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 contingency:
   name: CONTINGENCY
   type: SPELL
   level: 7
   rarity: 1
   traits: [abjuration]
-  casting-time: 10 minutes
   duration: 24 hours
   description:
     main: You prepare a spell that will trigger later. While casting contingency,
@@ -1966,6 +2101,8 @@ contingency:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - arcane
 continual-flame:
   name: CONTINUAL FLAME
   type: SPELL
@@ -1989,6 +2126,11 @@ continual-flame:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 control-water:
   name: CONTROL WATER
   type: SPELL
@@ -2006,6 +2148,9 @@ control-water:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 counter-performance:
   name: COUNTER PERFORMANCE
   type: FOCUS
@@ -2029,7 +2174,6 @@ create-food:
   level: 2
   rarity: 0
   traits: [conjuration]
-  casting-time: 1 hour
   range: 30 feet
   description:
     main: You create enough food to feed six Medium creatures for a day. This food
@@ -2047,6 +2191,10 @@ create-food:
     - S
     - V
     time: 1 hour
+  traditions:
+  - primal
+  - divine
+  - arcane
 create-water:
   name: CREATE WATER
   type: SPELL
@@ -2062,13 +2210,16 @@ create-water:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
 creation:
   name: CREATION
   type: SPELL
   level: 4
   rarity: 0
   traits: [conjuration]
-  casting-time: 1 minute
   range: 0 feet
   duration: 1 hour
   description:
@@ -2086,6 +2237,9 @@ creation:
     - S
     - V
     time: 1 minute
+  traditions:
+  - primal
+  - arcane
 crisis-of-faith:
   name: CRISIS OF FAITH
   type: SPELL
@@ -2119,6 +2273,8 @@ crisis-of-faith:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 crusade:
   name: CRUSADE
   type: SPELL
@@ -2155,6 +2311,8 @@ crusade:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 crushing-despair:
   name: CRUSHING DESPAIR
   type: SPELL
@@ -2185,6 +2343,9 @@ crushing-despair:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 dancing-lights:
   name: DANCING LIGHTS
   type: SPELL
@@ -2203,6 +2364,10 @@ dancing-lights:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
+  - occult
 darkened-eyes:
   name: DARKENED EYES
   type: focus
@@ -2261,6 +2426,11 @@ darkness:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 darkvision:
   name: DARKVISION
   type: SPELL
@@ -2279,6 +2449,11 @@ darkvision:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 daze:
   name: DAZE
   type: SPELL
@@ -2301,6 +2476,10 @@ daze:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 dazzling-flash:
   name: DAZZLING FLASH
   type: focus
@@ -2354,6 +2533,11 @@ deafness:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 death-knell:
   name: DEATH KNELL
   type: SPELL
@@ -2379,6 +2563,9 @@ death-knell:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 death-ward:
   name: DEATH WARD
   type: SPELL
@@ -2398,6 +2585,10 @@ death-ward:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - occult
 death-s-call:
   name: DEATH'S CALL
   type: focus
@@ -2512,6 +2703,9 @@ detect-alignment:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 detect-magic:
   name: DETECT MAGIC
   type: SPELL
@@ -2539,6 +2733,11 @@ detect-magic:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 detect-poison:
   name: DETECT POISON
   type: SPELL
@@ -2559,6 +2758,9 @@ detect-poison:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 detect-scrying:
   name: DETECT SCRYING
   type: SPELL
@@ -2579,6 +2781,9 @@ detect-scrying:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 diabolic-edict:
   name: DIABOLIC EDICT
   type: focus
@@ -2620,6 +2825,9 @@ dimension-door:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 dimensional-anchor:
   name: DIMENSIONAL ANCHOR
   type: SPELL
@@ -2648,6 +2856,10 @@ dimensional-anchor:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 dimensional-lock:
   name: DIMENSIONAL LOCK
   type: SPELL
@@ -2667,6 +2879,10 @@ dimensional-lock:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 dimensional-steps:
   name: DIMENSIONAL STEPS
   type: focus
@@ -2740,6 +2956,8 @@ dinosaur-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 dirge-of-doom:
   name: DIRGE OF DOOM
   type: SPELL
@@ -2776,6 +2994,9 @@ disappearance:
     - M
     - S
     actions: aa
+  traditions:
+  - arcane
+  - occult
 discern-lies:
   name: DISCERN LIES
   type: SPELL
@@ -2791,13 +3012,16 @@ discern-lies:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 discern-location:
   name: DISCERN LOCATION
   type: SPELL
   level: 8
   rarity: 1
   traits: [detection, divination]
-  casting-time: 10 minutes
   range: unlimited
   target: 1 creature or object
   description:
@@ -2814,6 +3038,10 @@ discern-location:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - divine
+  - arcane
+  - occult
 disintegrate:
   name: DISINTEGRATE
   type: SPELL
@@ -2838,6 +3066,8 @@ disintegrate:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
 disjunction:
   name: DISJUNCTION
   type: SPELL
@@ -2855,6 +3085,9 @@ disjunction:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 dispel-magic:
   name: DISPEL MAGIC
   type: SPELL
@@ -2874,6 +3107,11 @@ dispel-magic:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 disperse-into-air:
   name: Disperse into Air
   type: focus
@@ -2921,6 +3159,11 @@ disrupt-undead:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 disrupting-weapons:
   name: DISRUPTING WEAPONS
   type: SPELL
@@ -2942,6 +3185,8 @@ disrupting-weapons:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 divine-aura:
   name: DIVINE AURA
   type: SPELL
@@ -2971,6 +3216,8 @@ divine-aura:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 divine-decree:
   name: DIVINE DECREE
   type: SPELL
@@ -3008,6 +3255,8 @@ divine-decree:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 divine-inspiration:
   name: DIVINE INSPIRATION
   type: SPELL
@@ -3027,6 +3276,8 @@ divine-inspiration:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 divine-lance:
   name: DIVINE LANCE
   type: SPELL
@@ -3087,6 +3338,8 @@ divine-vessel:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 divine-ward:
   name: DIVINE WARD
   type: focus
@@ -3139,6 +3392,8 @@ divine-wrath:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 diviner-s-sight:
   name: DIVINER'S SIGHT
   type: focus
@@ -3190,6 +3445,9 @@ dominate:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 downpour:
   name: DOWNPOUR
   type: focus
@@ -3376,6 +3634,9 @@ dragon-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 dragon-wings:
   name: DRAGON WINGS
   type: focus
@@ -3472,7 +3733,6 @@ dream-council:
   level: 8
   rarity: 0
   traits: [illusion, mental, sleep]
-  casting-time: 10 minutes
   range: planetary
   target: up to 12 creatures you know by name and have met in person
   duration: 1 hour
@@ -3488,13 +3748,15 @@ dream-council:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - arcane
+  - occult
 dream-message:
   name: DREAM MESSAGE
   type: SPELL
   level: 3
   rarity: 0
   traits: [enchantment, mental]
-  casting-time: 10 minutes
   range: planetary
   target: 1 creature you know by name and have met in person
   duration: 1 day
@@ -3512,13 +3774,16 @@ dream-message:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - divine
+  - arcane
+  - occult
 dreaming-potential:
   name: DREAMING POTENTIAL
   type: spell
   level: 5
   rarity: 0
   traits: [enchantment, mental]
-  casting-time: 10 minutes
   range: touch
   target: 1 willing sleeping creature
   duration: 8 hours
@@ -3559,6 +3824,9 @@ drop-dead:
     components:
     - S
     actions: r
+  traditions:
+  - arcane
+  - occult
 duplicate-foe:
   name: DUPLICATE FOE
   type: SPELL
@@ -3602,6 +3870,9 @@ duplicate-foe:
     - S
     - V
     actions: aaa
+  traditions:
+  - arcane
+  - occult
 earthbind:
   name: EARTHBIND
   type: SPELL
@@ -3631,6 +3902,9 @@ earthbind:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 earthquake:
   name: EARTHQUAKE
   type: SPELL
@@ -3677,6 +3951,9 @@ earthquake:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 echoing-nightmare:
   name: ECHOING NIGHTMARE
   type: SPELL
@@ -3735,6 +4012,10 @@ eclipse-burst:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
 electric-arc:
   name: ELECTRIC ARC
   type: SPELL
@@ -3754,6 +4035,9 @@ electric-arc:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 elemental-blast:
   name: Elemental Blast
   type: focus
@@ -3828,6 +4112,9 @@ elemental-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 elemental-motion:
   name: Elemental Motion
   type: focus
@@ -3933,7 +4220,6 @@ endure-elements:
   level: 2
   rarity: 0
   traits: [abjuration]
-  casting-time: 10 minutes
   range: touch
   target: 1 willing creature
   duration: until the next time you make your daily preparations
@@ -3950,6 +4236,10 @@ endure-elements:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - divine
+  - arcane
 enduring-might:
   name: ENDURING MIGHT
   type: focus
@@ -3991,7 +4281,6 @@ energy-aegis:
   level: 7
   rarity: 0
   traits: [abjuration]
-  casting-time: 1 minute
   range: touch
   target: 1 creature
   duration: 24 hours
@@ -4006,13 +4295,17 @@ energy-aegis:
     - S
     - V
     time: 1 minute
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 enhance-victuals:
   name: ENHANCE VICTUALS
   type: spell
   level: 2
   rarity: 0
   traits: [transmutation]
-  casting-time: 1 minute
   range: touch
   duration: 1 hour
   target: up to 1 gallon of non-magical water or up to 5 pounds of food
@@ -4057,6 +4350,9 @@ enlarge:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 entangle:
   name: ENTANGLE
   type: SPELL
@@ -4078,6 +4374,8 @@ entangle:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 enthrall:
   name: ENTHRALL
   type: SPELL
@@ -4116,6 +4414,9 @@ enthrall:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 eradicate-undeath:
   name: Eradicate Undeath
   type: focus
@@ -4162,6 +4463,9 @@ ethereal-jaunt:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 extend-spell:
   name: Extend Spell
   type: focus
@@ -4216,6 +4520,8 @@ fabricated-truth:
     - S
     - V
     actions: aaa
+  traditions:
+  - occult
 face-in-the-crowd:
   name: FACE IN THE CROWD
   type: focus
@@ -4285,6 +4591,10 @@ faerie-fire:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - occult
 false-life:
   name: FALSE LIFE
   type: SPELL
@@ -4302,13 +4612,15 @@ false-life:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 false-vision:
   name: FALSE VISION
   type: SPELL
   level: 5
   rarity: 1
   traits: [illusion]
-  casting-time: 10 minutes
   range: touch
   area: 100-foot burst
   duration: until the next time you make your daily preparations
@@ -4326,6 +4638,9 @@ false-vision:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - arcane
+  - occult
 fatal-aria:
   name: FATAL ARIA
   type: focus
@@ -4378,6 +4693,11 @@ fear:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 feather-fall:
   name: FEATHER FALL
   type: SPELL
@@ -4398,6 +4718,9 @@ feather-fall:
     components:
     - V
     actions: r
+  traditions:
+  - primal
+  - arcane
 feeblemind:
   name: FEEBLEMIND
   type: SPELL
@@ -4428,6 +4751,9 @@ feeblemind:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 feet-to-fins:
   name: FEET TO FINS
   type: SPELL
@@ -4448,6 +4774,9 @@ feet-to-fins:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 fey-glamour:
   name: Fey Glamour
   type: focus
@@ -4507,6 +4836,9 @@ field-of-life:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 fiery-body:
   name: FIERY BODY
   type: SPELL
@@ -4531,6 +4863,9 @@ fiery-body:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 finger-of-death:
   name: FINGER OF DEATH
   type: SPELL
@@ -4551,6 +4886,9 @@ finger-of-death:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 fire-ray:
   name: FIRE RAY
   type: focus
@@ -4605,6 +4943,8 @@ fire-seeds:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 fire-shield:
   name: FIRE SHIELD
   type: SPELL
@@ -4624,6 +4964,9 @@ fire-shield:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 fireball:
   name: FIREBALL
   type: SPELL
@@ -4643,6 +4986,9 @@ fireball:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 flame-barrier:
   name: FLAME BARRIER
   type: focus
@@ -4683,6 +5029,8 @@ flame-strike:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 flaming-sphere:
   name: FLAMING SPHERE
   type: SPELL
@@ -4709,6 +5057,9 @@ flaming-sphere:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 fleet-step:
   name: FLEET STEP
   type: SPELL
@@ -4723,6 +5074,9 @@ fleet-step:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 flesh-to-stone:
   name: FLESH TO STONE
   type: SPELL
@@ -4755,6 +5109,9 @@ flesh-to-stone:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 floating-disk:
   name: FLOATING DISK
   type: SPELL
@@ -4775,6 +5132,9 @@ floating-disk:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 fly:
   name: FLY
   type: SPELL
@@ -4794,6 +5154,10 @@ fly:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
+  - occult
 forbidding-ward:
   name: FORBIDDING WARD
   type: SPELL
@@ -4815,6 +5179,9 @@ forbidding-ward:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 force-bolt:
   name: FORCE BOLT
   type: focus
@@ -4900,6 +5267,10 @@ foresight:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 freedom-of-movement:
   name: FREEDOM OF MOVEMENT
   type: SPELL
@@ -4920,6 +5291,10 @@ freedom-of-movement:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
 gaseous-form:
   name: GASEOUS FORM
   type: SPELL
@@ -4940,6 +5315,10 @@ gaseous-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
+  - occult
 gate:
   name: GATE
   type: SPELL
@@ -4961,6 +5340,10 @@ gate:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 gentle-repose:
   name: GENTLE REPOSE
   type: SPELL
@@ -4984,6 +5367,11 @@ gentle-repose:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 ghost-sound:
   name: GHOST SOUND
   type: SPELL
@@ -5005,6 +5393,9 @@ ghost-sound:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 ghostly-weapon:
   name: GHOSTLY WEAPON
   type: SPELL
@@ -5024,6 +5415,9 @@ ghostly-weapon:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 ghoulish-cravings:
   name: GHOULISH CRAVINGS
   type: SPELL
@@ -5062,6 +5456,9 @@ ghoulish-cravings:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 glibness:
   name: Glibness
   type: spell
@@ -5134,6 +5531,9 @@ glitterdust:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 globe-of-invulnerability:
   name: GLOBE OF INVULNERABILITY
   type: SPELL
@@ -5157,6 +5557,10 @@ globe-of-invulnerability:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 glutton-s-jaws:
   name: GLUTTON'S JAWS
   type: focus
@@ -5181,7 +5585,6 @@ glyph-of-warding:
   level: 3
   rarity: 0
   traits: [abjuration]
-  casting-time: 10 minutes
   range: touch
   target: one container or 10-foot-by-10-foot area
   duration: unlimited
@@ -5208,6 +5611,11 @@ glyph-of-warding:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 goblin-pox:
   name: GOBLIN POX
   type: SPELL
@@ -5240,13 +5648,15 @@ goblin-pox:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 goodberry:
   name: GOODBERRY
   type: focus
   level: 1
   rarity: 1
   traits: [druid, healing, necromancy]
-  casting-time: 1 hour
   range: touch
   target: 1 freshly-picked berry
   duration: 1 day
@@ -5324,6 +5734,9 @@ grim-tendrils:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 grease:
   name: GREASE
   type: SPELL
@@ -5361,6 +5774,9 @@ grease:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 guidance:
   name: GUIDANCE
   type: SPELL
@@ -5380,6 +5796,10 @@ guidance:
     components:
     - V
     actions: a
+  traditions:
+  - primal
+  - divine
+  - occult
 gust-of-wind:
   name: GUST OF WIND
   type: SPELL
@@ -5411,6 +5831,9 @@ gust-of-wind:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 hallucination:
   name: HALLUCINATION
   type: SPELL
@@ -5456,13 +5879,15 @@ hallucination:
     - M
     - S
     actions: aa
+  traditions:
+  - arcane
+  - occult
 hallucinatory-terrain:
   name: HALLUCINATORY TERRAIN
   type: SPELL
   level: 4
   rarity: 1
   traits: [illusion]
-  casting-time: 10 minutes
   range: 500 feet
   area: 50-foot burst
   duration: until the next time you make your daily preparations
@@ -5480,6 +5905,10 @@ hallucinatory-terrain:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - arcane
+  - occult
 hand-of-the-apprentice:
   name: HAND OF THE APPRENTICE
   type: focus
@@ -5530,6 +5959,8 @@ harm:
     components:
     - S
     actions: a to aaa
+  traditions:
+  - divine
 haste:
   name: HASTE
   type: SPELL
@@ -5549,6 +5980,10 @@ haste:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
+  - occult
 heal:
   name: HEAL
   type: SPELL
@@ -5580,6 +6015,9 @@ heal:
     components:
     - S
     actions: a to aaa
+  traditions:
+  - primal
+  - divine
 heal-animal:
   name: HEAL ANIMAL
   type: focus
@@ -5666,6 +6104,9 @@ heroism:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 hero-s-defiance:
   name: HERO'S DEFIANCE
   type: focus
@@ -5713,6 +6154,9 @@ hideous-laughter:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 holy-cascade:
   name: Holy Cascade
   type: spell
@@ -5736,6 +6180,8 @@ holy-cascade:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 horrid-wilting:
   name: HORRID WILTING
   type: SPELL
@@ -5758,6 +6204,9 @@ horrid-wilting:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 horrific-visage:
   name: Horrific Visage
   type: focus
@@ -5838,6 +6287,10 @@ humanoid-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
+  - occult
 hurtling-stone:
   name: HURTLING STONE
   type: focus
@@ -5882,6 +6335,9 @@ hydraulic-push:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 hydraulic-torrent:
   name: Hydraulic Torrent
   type: spell
@@ -5903,6 +6359,8 @@ hydraulic-torrent:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 hypercognition:
   name: HYPERCOGNITION
   type: SPELL
@@ -5918,6 +6376,8 @@ hypercognition:
     components:
     - V
     actions: a
+  traditions:
+  - occult
 hypnotic-pattern:
   name: HYPNOTIC PATTERN
   type: SPELL
@@ -5948,6 +6408,9 @@ hypnotic-pattern:
     - M
     - S
     actions: aa
+  traditions:
+  - arcane
+  - occult
 illusory-creature:
   name: ILLUSORY CREATURE
   type: SPELL
@@ -5994,6 +6457,9 @@ illusory-creature:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 illusory-disguise:
   name: ILLUSORY DISGUISE
   type: SPELL
@@ -6025,6 +6491,9 @@ illusory-disguise:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 illusory-object:
   name: ILLUSORY OBJECT
   type: SPELL
@@ -6051,13 +6520,15 @@ illusory-object:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 illusory-scene:
   name: ILLUSORY SCENE
   type: SPELL
   level: 5
   rarity: 0
   traits: [auditory, illusion, visual]
-  casting-time: 10 minutes
   range: 500 feet
   area: 30-foot burst
   duration: 1 hour
@@ -6093,6 +6564,9 @@ illusory-scene:
     - V
     - S
     time: 10 minutes
+  traditions:
+  - arcane
+  - occult
 impaling-briars:
   name: Impaling Briars
   type: focus
@@ -6152,6 +6626,9 @@ implosion:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 insect-form:
   name: INSECT FORM
   type: SPELL
@@ -6208,6 +6685,8 @@ insect-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 inspire-competence:
   name: INSPIRE COMPETENCE
   type: SPELL
@@ -6312,6 +6791,9 @@ invisibility:
     - M
     - S
     actions: aa
+  traditions:
+  - arcane
+  - occult
 invisibility-cloak:
   name: INVISIBILITY CLOAK
   type: focus
@@ -6355,6 +6837,9 @@ invisibility-sphere:
     - M
     - S
     actions: aa
+  traditions:
+  - arcane
+  - occult
 item-facade:
   name: ITEM FACADE
   type: SPELL
@@ -6380,6 +6865,9 @@ item-facade:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 jealous-hex:
   name: Jealous Hex
   type: focus
@@ -6427,6 +6915,9 @@ jump:
     components:
     - S
     actions: a
+  traditions:
+  - primal
+  - arcane
 ki-blast:
   name: KI BLAST
   type: focus
@@ -6510,6 +7001,9 @@ knock:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 know-direction:
   name: KNOW DIRECTION
   type: SPELL
@@ -6527,6 +7021,10 @@ know-direction:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - occult
 know-the-enemy:
   name: KNOW THE ENEMY
   type: focus
@@ -6596,6 +7094,11 @@ leng-s-sting:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 levitate:
   name: LEVITATE
   type: SPELL
@@ -6621,6 +7124,9 @@ levitate:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 life-siphon:
   name: LIFE SIPHON
   type: focus
@@ -6657,6 +7163,11 @@ light:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 lightning-bolt:
   name: LIGHTNING BOLT
   type: SPELL
@@ -6675,6 +7186,9 @@ lightning-bolt:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 lingering-composition:
   name: LINGERING COMPOSITION
   type: focus
@@ -6813,7 +7327,6 @@ locate:
   level: 3
   rarity: 1
   traits: [detection, divination]
-  casting-time: 10 minutes
   range: 500 feet
   target: 1 specific object or type of object
   duration: sustained
@@ -6835,6 +7348,10 @@ locate:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - divine
+  - arcane
+  - occult
 lock:
   name: LOCK
   type: SPELL
@@ -6863,6 +7380,10 @@ lock:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 longstrider:
   name: LONGSTRIDER
   type: SPELL
@@ -6880,6 +7401,9 @@ longstrider:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 loremaster-s-etude:
   name: LOREMASTER'S ETUDE
   type: focus
@@ -6936,6 +7460,9 @@ mage-armor:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 mage-hand:
   name: MAGE HAND
   type: SPELL
@@ -6962,13 +7489,15 @@ mage-hand:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 magic-aura:
   name: MAGIC AURA
   type: SPELL
   level: 1
   rarity: 1
   traits: [illusion]
-  casting-time: 1 minute
   range: touch
   target: 1 object of 3 Bulk or less
   duration: until the next time you make your daily preparations
@@ -6991,6 +7520,9 @@ magic-aura:
     - S
     - V
     time: 1 minute
+  traditions:
+  - arcane
+  - occult
 magic-fang:
   name: MAGIC FANG
   type: SPELL
@@ -7010,6 +7542,8 @@ magic-fang:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 magic-missile:
   name: MAGIC MISSILE
   type: SPELL
@@ -7033,6 +7567,9 @@ magic-missile:
     components:
     - V
     actions: a
+  traditions:
+  - arcane
+  - occult
 magic-mouth:
   name: MAGIC MOUTH
   type: SPELL
@@ -7052,6 +7589,9 @@ magic-mouth:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 magic-s-vessel:
   name: Magic's Vessel
   type: focus
@@ -7091,6 +7631,10 @@ magic-weapon:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 malignant-sustenance:
   name: Malignant Sustenance
   type: focus
@@ -7118,7 +7662,6 @@ magnificent-mansion:
   level: 7
   rarity: 1
   traits: [conjuration, extradimensional]
-  casting-time: 1 minute
   range: 30 feet
   duration: 24 hours
   description:
@@ -7145,6 +7688,9 @@ magnificent-mansion:
     - S
     - V
     time: 1 minute
+  traditions:
+  - arcane
+  - occult
 mariner-s-curse:
   name: MARINER'S CURSE
   type: SPELL
@@ -7174,6 +7720,10 @@ mariner-s-curse:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
+  - occult
 mask-of-terror:
   name: MASK OF TERROR
   type: SPELL
@@ -7207,6 +7757,10 @@ mask-of-terror:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
+  - occult
 massacre:
   name: Massacre
   type: spell
@@ -7239,6 +7793,10 @@ massacre:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
 maze:
   name: MAZE
   type: SPELL
@@ -7273,6 +7831,9 @@ maze:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 meld-into-stone:
   name: MELD INTO STONE
   type: SPELL
@@ -7293,13 +7854,15 @@ meld-into-stone:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 mending:
   name: MENDING
   type: SPELL
   level: 1
   rarity: 0
   traits: [transmutation]
-  casting-time: 10 minutes
   range: touch
   target: non-magical object of light Bulk or less
   description:
@@ -7316,6 +7879,11 @@ mending:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 message:
   name: MESSAGE
   type: SPELL
@@ -7339,6 +7907,10 @@ message:
     components:
     - V
     actions: a
+  traditions:
+  - divine
+  - arcane
+  - occult
 meteor-swarm:
   name: METEOR SWARM
   type: SPELL
@@ -7364,6 +7936,9 @@ meteor-swarm:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 mind-blank:
   name: MIND BLANK
   type: SPELL
@@ -7386,13 +7961,15 @@ mind-blank:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 mind-probe:
   name: MIND PROBE
   type: SPELL
   level: 5
   rarity: 1
   traits: [divination, linguistic, mental]
-  casting-time: 1 minute
   range: 30 feet
   target: 1 creature
   duration: 1 minute
@@ -7421,6 +7998,9 @@ mind-probe:
     - S
     - V
     time: 1 minute
+  traditions:
+  - arcane
+  - occult
 mind-reading:
   name: MIND READING
   type: SPELL
@@ -7454,6 +8034,9 @@ mind-reading:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 mindlink:
   name: MINDLINK
   type: SPELL
@@ -7471,6 +8054,8 @@ mindlink:
     - S
     - V
     actions: aa
+  traditions:
+  - occult
 miracle:
   name: MIRACLE
   type: SPELL
@@ -7498,6 +8083,8 @@ miracle:
     - S
     - V
     actions: aaa
+  traditions:
+  - divine
 mirror-image:
   name: MIRROR IMAGE
   type: SPELL
@@ -7523,13 +8110,15 @@ mirror-image:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 misdirection:
   name: MISDIRECTION
   type: SPELL
   level: 2
   rarity: 0
   traits: [illusion]
-  casting-time: 1 minute
   range: 30 feet
   target: 2 creatures or objects
   duration: 1 day or until dismissed
@@ -7545,6 +8134,9 @@ misdirection:
     - S
     - V
     time: 1 minute
+  traditions:
+  - arcane
+  - occult
 mislead:
   name: MISLEAD
   type: SPELL
@@ -7575,6 +8167,9 @@ mislead:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 modify-memory:
   name: MODIFY MEMORY
   type: SPELL
@@ -7611,6 +8206,8 @@ modify-memory:
     - S
     - V
     actions: aa
+  traditions:
+  - occult
 moment-of-renewal:
   name: MOMENT OF RENEWAL
   type: SPELL
@@ -7631,6 +8228,9 @@ moment-of-renewal:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 monstrosity-form:
   name: MONSTROSITY FORM
   type: SPELL
@@ -7691,6 +8291,9 @@ monstrosity-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 moon-frenzy:
   name: MOON FRENZY
   type: SPELL
@@ -7726,6 +8329,8 @@ moon-frenzy:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 moonbeam:
   name: MOONBEAM
   type: focus
@@ -7822,6 +8427,8 @@ nature-incarnate:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 nature-s-bounty:
   name: NATURE'S BOUNTY
   type: focus
@@ -7875,6 +8482,8 @@ nature-s-enmity:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 negate-aroma:
   name: NEGATE AROMA
   type: SPELL
@@ -7897,6 +8506,9 @@ negate-aroma:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 neutralize-poison:
   name: NEUTRALIZE POISON
   type: SPELL
@@ -7913,13 +8525,15 @@ neutralize-poison:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 nightmare:
   name: NIGHTMARE
   type: SPELL
   level: 4
   rarity: 0
   traits: [illusion, mental]
-  casting-time: 10 minutes
   range: planetary
   target: 1 creature you know by name
   duration: 1 day
@@ -7946,13 +8560,15 @@ nightmare:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - arcane
+  - occult
 nondetection:
   name: NONDETECTION
   type: SPELL
   level: 3
   rarity: 1
   traits: [abjuration]
-  casting-time: 10 minutes
   range: touch
   target: 1 creature or object
   duration: 8 hours
@@ -7969,6 +8585,10 @@ nondetection:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - arcane
+  - occult
 obscuring-mist:
   name: OBSCURING MIST
   type: SPELL
@@ -7988,6 +8608,9 @@ obscuring-mist:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - arcane
 outcast-s-curse:
   name: OUTCAST'S CURSE
   type: SPELL
@@ -8016,6 +8639,10 @@ outcast-s-curse:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 overstuff:
   name: Overstuff
   type: focus
@@ -8080,6 +8707,9 @@ overwhelming-presence:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 paralyze:
   name: PARALYZE
   type: SPELL
@@ -8110,6 +8740,9 @@ paralyze:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 paranoia:
   name: PARANOIA
   type: SPELL
@@ -8147,6 +8780,8 @@ paranoia:
     - S
     - V
     actions: aa
+  traditions:
+  - occult
 pass-without-trace:
   name: PASS WITHOUT TRACE
   type: SPELL
@@ -8169,6 +8804,8 @@ pass-without-trace:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 passwall:
   name: PASSWALL
   type: SPELL
@@ -8196,6 +8833,9 @@ passwall:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 perfected-form:
   name: PERFECTED FORM
   type: focus
@@ -8260,6 +8900,9 @@ pest-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 phantasmal-calamity:
   name: PHANTASMAL CALAMITY
   type: SPELL
@@ -8284,6 +8927,9 @@ phantasmal-calamity:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 phantasmal-killer:
   name: PHANTASMAL KILLER
   type: SPELL
@@ -8316,6 +8962,9 @@ phantasmal-killer:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 phantom-pain:
   name: PHANTOM PAIN
   type: SPELL
@@ -8347,13 +8996,14 @@ phantom-pain:
     - S
     - V
     actions: aa
+  traditions:
+  - occult
 phantom-steed:
   name: PHANTOM STEED
   type: SPELL
   level: 2
   rarity: 0
   traits: [conjuration]
-  casting-time: 10 minutes
   range: 30 feet
   duration: 8 hours or until dismissed
   description:
@@ -8375,6 +9025,10 @@ phantom-steed:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - arcane
+  - occult
 physical-boost:
   name: PHYSICAL BOOST
   type: focus
@@ -8398,7 +9052,6 @@ plane-shift:
   level: 7
   rarity: 1
   traits: [conjuration, teleportation]
-  casting-time: 10 minutes
   range: touch
   target: 1 willing creature, or up to 8 willing creatures joining hands
   description:
@@ -8420,6 +9073,11 @@ plane-shift:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 plant-form:
   name: PLANT FORM
   type: SPELL
@@ -8471,6 +9129,8 @@ plant-form:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 polar-ray:
   name: POLAR RAY
   type: SPELL
@@ -8490,6 +9150,9 @@ polar-ray:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 positive-luminance:
   name: Positive Luminance
   type: focus
@@ -8562,6 +9225,8 @@ possession:
     - S
     - V
     actions: aa
+  traditions:
+  - occult
 power-word-blind:
   name: POWER WORD BLIND
   type: SPELL
@@ -8588,6 +9253,8 @@ power-word-blind:
     components:
     - V
     actions: a
+  traditions:
+  - arcane
 power-word-kill:
   name: POWER WORD KILL
   type: SPELL
@@ -8617,6 +9284,8 @@ power-word-kill:
     components:
     - V
     actions: a
+  traditions:
+  - arcane
 power-word-stun:
   name: POWER WORD STUN
   type: SPELL
@@ -8643,6 +9312,8 @@ power-word-stun:
     components:
     - V
     actions: a
+  traditions:
+  - arcane
 precious-metals:
   name: Precious Metals
   type: focus
@@ -8704,6 +9375,11 @@ prestidigitation:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 primal-herd:
   name: PRIMAL HERD
   type: SPELL
@@ -8748,6 +9424,8 @@ primal-herd:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 primal-phenomenon:
   name: PRIMAL PHENOMENON
   type: SPELL
@@ -8776,6 +9454,8 @@ primal-phenomenon:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
 primal-summons:
   name: Primal Summons
   type: focus
@@ -8822,6 +9502,9 @@ prismatic-sphere:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 prismatic-spray:
   name: PRISMATIC SPRAY
   type: SPELL
@@ -8861,6 +9544,9 @@ prismatic-spray:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 prismatic-wall:
   name: PRISMATIC WALL
   type: SPELL
@@ -8898,13 +9584,15 @@ prismatic-wall:
     - S
     - V
     actions: aaa
+  traditions:
+  - arcane
+  - occult
 private-sanctum:
   name: PRIVATE SANCTUM
   type: SPELL
   level: 4
   rarity: 1
   traits: [abjuration]
-  casting-time: 10 minutes
   range: touch
   area: 100-foot burst
   duration: 24 hours
@@ -8919,6 +9607,9 @@ private-sanctum:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - arcane
+  - occult
 produce-flame:
   name: PRODUCE FLAME
   type: SPELL
@@ -8942,6 +9633,9 @@ produce-flame:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 project-image:
   name: PROJECT IMAGE
   type: SPELL
@@ -8965,6 +9659,9 @@ project-image:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 protection:
   name: PROTECTION
   type: SPELL
@@ -8989,6 +9686,9 @@ protection:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 protective-ward:
   name: PROTECTIVE WARD
   type: focus
@@ -9053,7 +9753,6 @@ prying-eye:
   level: 5
   rarity: 0
   traits: [divination, scrying]
-  casting-time: 1 minute
   range: see text
   duration: sustained
   description:
@@ -9073,6 +9772,10 @@ prying-eye:
     - S
     - V
     time: 1 minute
+  traditions:
+  - divine
+  - arcane
+  - occult
 pulse-of-the-city:
   name: Pulse of the City
   type: focus
@@ -9141,6 +9844,8 @@ punishing-winds:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
 purify-food-and-drink:
   name: PURIFY FOOD AND DRINK
   type: SPELL
@@ -9158,6 +9863,9 @@ purify-food-and-drink:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 purple-worm-sting:
   name: PURPLE WORM STING
   type: SPELL
@@ -9190,6 +9898,9 @@ purple-worm-sting:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 pushing-gust:
   name: PUSHING GUST
   type: focus
@@ -9254,7 +9965,6 @@ raise-dead:
   level: 6
   rarity: 1
   traits: [healing, necromancy]
-  casting-time: 10 minutes
   cost: "diamonds worth a total value of the target's level (minimum 1) \xD7 200 gp"
   range: 10 feet
   target: 1 dead creature of level 13 or lower
@@ -9287,6 +9997,8 @@ raise-dead:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - divine
 ray-of-enfeeblement:
   name: RAY OF ENFEEBLEMENT
   type: SPELL
@@ -9316,6 +10028,10 @@ ray-of-enfeeblement:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 ray-of-frost:
   name: RAY OF FROST
   type: SPELL
@@ -9341,13 +10057,15 @@ ray-of-frost:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 read-aura:
   name: READ AURA
   type: SPELL
   level: 0
   rarity: 0
   traits: [cantrip, detection, divination]
-  casting-time: 1 minute
   range: 30 feet
   target: one object
   description:
@@ -9364,6 +10082,11 @@ read-aura:
     - S
     - V
     time: 1 minute
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 read-fate:
   name: READ FATE
   type: focus
@@ -9371,7 +10094,6 @@ read-fate:
   level: 1
   rarity: 1
   traits: [cleric, divination, prediction]
-  casting-time: 1 minute
   range: 10 feet
   target: 1 creature other than you
   description:
@@ -9397,7 +10119,6 @@ read-omens:
   level: 4
   rarity: 1
   traits: [divination, prediction]
-  casting-time: 10 minutes
   description:
     main: You peek into the future. Choose a particular goal, event, or activity that
       will occur within 1 week. You learn a cryptic clue or piece of advice that could
@@ -9408,6 +10129,9 @@ read-omens:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - divine
+  - occult
 rebuke-death:
   name: Rebuke Death
   type: focus
@@ -9454,13 +10178,15 @@ regenerate:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 remake:
   name: Remake
   type: spell
   level: 10
   rarity: 1
   traits: [conjuration]
-  casting-time: 1 hour
   range: 5 feet
   description:
     main: You fully re-create an object from nothing, even if the object was destroyed.
@@ -9482,13 +10208,17 @@ remake:
     - S
     - V
     time: 1 hour
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 remove-curse:
   name: REMOVE CURSE
   type: SPELL
   level: 4
   rarity: 0
   traits: [healing, necromancy]
-  casting-time: 10 minutes
   range: touch
   target: 1 creature
   description:
@@ -9502,13 +10232,15 @@ remove-curse:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - divine
+  - occult
 remove-disease:
   name: REMOVE DISEASE
   type: SPELL
   level: 3
   rarity: 0
   traits: [healing, necromancy]
-  casting-time: 10 minutes
   range: touch
   target: 1 creature
   description:
@@ -9520,6 +10252,9 @@ remove-disease:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - divine
 remove-fear:
   name: REMOVE FEAR
   type: SPELL
@@ -9539,6 +10274,10 @@ remove-fear:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - occult
 remove-paralysis:
   name: REMOVE PARALYSIS
   type: SPELL
@@ -9559,6 +10298,10 @@ remove-paralysis:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - occult
 repulsion:
   name: REPULSION
   type: SPELL
@@ -9590,6 +10333,10 @@ repulsion:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 resilient-sphere:
   name: RESILIENT SPHERE
   type: SPELL
@@ -9618,6 +10365,9 @@ resilient-sphere:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 resist-energy:
   name: RESIST ENERGY
   type: SPELL
@@ -9639,13 +10389,17 @@ resist-energy:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 resplendent-mansion:
   name: RESPLENDENT MANSION
   type: SPELL
   level: 9
   rarity: 0
   traits: [conjuration]
-  casting-time: 1 minute
   range: 500 feet
   duration: until the next time you make your daily preparations
   description:
@@ -9669,13 +10423,15 @@ resplendent-mansion:
     - S
     - V
     time: 1 minute
+  traditions:
+  - arcane
+  - occult
 restoration:
   name: RESTORATION
   type: SPELL
   level: 2
   rarity: 0
   traits: [healing, necromancy]
-  casting-time: 10 minutes
   range: touch
   target: 1 creature
   description:
@@ -9706,6 +10462,10 @@ restoration:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - divine
+  - occult
 restore-senses:
   name: RESTORE SENSES
   type: SPELL
@@ -9728,6 +10488,10 @@ restore-senses:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - occult
 retributive-pain:
   name: RETRIBUTIVE PAIN
   type: focus
@@ -9752,7 +10516,6 @@ retrocognition:
   level: 7
   rarity: 0
   traits: [divination]
-  casting-time: 1 minute
   duration: sustained
   description:
     main: Opening your mind to occult echoes, you gain impressions from past events
@@ -9779,6 +10542,8 @@ retrocognition:
     - S
     - V
     time: 1 minute
+  traditions:
+  - occult
 reverse-gravity:
   name: REVERSE GRAVITY
   type: SPELL
@@ -9806,6 +10571,9 @@ reverse-gravity:
     - S
     - V
     actions: aaa
+  traditions:
+  - arcane
+  - occult
 revival:
   name: REVIVAL
   type: SPELL
@@ -9830,6 +10598,8 @@ revival:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 righteous-might:
   name: RIGHTEOUS MIGHT
   type: SPELL
@@ -9875,13 +10645,14 @@ righteous-might:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 rope-trick:
   name: ROPE TRICK
   type: SPELL
   level: 4
   rarity: 1
   traits: [conjuration, extradimensional]
-  casting-time: 10 minutes
   range: touch
   target: 1 touched piece of rope from 5 to 30 feet long
   duration: 8 hours
@@ -9905,6 +10676,9 @@ rope-trick:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - arcane
+  - occult
 safeguard-secret:
   name: SAFEGUARD SECRET
   type: focus
@@ -9912,7 +10686,6 @@ safeguard-secret:
   rarity: 1
   domain: secrecy
   traits: [abjuration, cleric, mental]
-  casting-time: 1 minute
   range: 10 feet
   target: you and any number of willing allies
   description:
@@ -9935,7 +10708,6 @@ sanctified-ground:
   level: 3
   rarity: 0
   traits: [abjuration, consecration]
-  casting-time: 1 minute
   cost: 1 vial of holy water
   area: 30-foot burst centered on you
   description:
@@ -9949,6 +10721,8 @@ sanctified-ground:
     - S
     - V
     time: 1 minute
+  traditions:
+  - divine
 sanctuary:
   name: SANCTUARY
   type: SPELL
@@ -9978,6 +10752,9 @@ sanctuary:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 savor-the-sting:
   name: SAVOR THE STING
   type: focus
@@ -10057,13 +10834,15 @@ scintillating-pattern:
     - M
     - S
     actions: aa
+  traditions:
+  - arcane
+  - occult
 scrying:
   name: SCRYING
   type: SPELL
   level: 6
   rarity: 1
   traits: [divination, scrying]
-  casting-time: 10 minutes
   range: planetary
   target: 1 creature
   duration: sustained up to 10 minutes
@@ -10095,6 +10874,9 @@ scrying:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - arcane
+  - occult
 searing-light:
   name: SEARING LIGHT
   type: SPELL
@@ -10126,13 +10908,15 @@ searing-light:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 secret-page:
   name: SECRET PAGE
   type: SPELL
   level: 3
   rarity: 0
   traits: [illusion, visual]
-  casting-time: 1 minute
   range: touch
   target: 1 page up to 3 square feet in size
   duration: unlimited
@@ -10150,6 +10934,9 @@ secret-page:
     - S
     - V
     time: 1 minute
+  traditions:
+  - arcane
+  - occult
 see-invisibility:
   name: SEE INVISIBILITY
   type: SPELL
@@ -10167,6 +10954,10 @@ see-invisibility:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 sending:
   name: SENDING
   type: SPELL
@@ -10184,6 +10975,10 @@ sending:
     - S
     - V
     actions: aaa
+  traditions:
+  - divine
+  - arcane
+  - occult
 shadow-blast:
   name: SHADOW BLAST
   type: SPELL
@@ -10206,6 +11001,9 @@ shadow-blast:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 shadow-siphon:
   name: SHADOW SIPHON
   type: SPELL
@@ -10226,13 +11024,15 @@ shadow-siphon:
     components:
     - V
     actions: r
+  traditions:
+  - arcane
+  - occult
 shadow-walk:
   name: SHADOW WALK
   type: SPELL
   level: 5
   rarity: 1
   traits: [conjuration, shadow, teleportation]
-  casting-time: 1 minute
   range: touch
   target: you and up to 9 willing creatures touched
   duration: 8 hours
@@ -10256,6 +11056,9 @@ shadow-walk:
     - S
     - V
     time: 1 minute
+  traditions:
+  - arcane
+  - occult
 shape-stone:
   name: SHAPE STONE
   type: SPELL
@@ -10281,6 +11084,9 @@ shape-stone:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 shape-wood:
   name: SHAPE WOOD
   type: SPELL
@@ -10299,6 +11105,8 @@ shape-wood:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 shapechange:
   name: SHAPECHANGE
   type: SPELL
@@ -10319,6 +11127,9 @@ shapechange:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 shared-nightmare:
   name: Shared Nightmare
   type: focus
@@ -10368,6 +11179,9 @@ shatter:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - occult
 shield:
   name: SHIELD
   type: SPELL
@@ -10392,6 +11206,10 @@ shield:
     components:
     - V
     actions: a
+  traditions:
+  - divine
+  - arcane
+  - occult
 shield-other:
   name: SHIELD OTHER
   type: SPELL
@@ -10414,6 +11232,8 @@ shield-other:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 shifting-form:
   name: SHIFTING FORM
   type: focus
@@ -10459,6 +11279,8 @@ shillelagh:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 shocking-grasp:
   name: SHOCKING GRASP
   type: SPELL
@@ -10482,6 +11304,9 @@ shocking-grasp:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 shrink:
   name: SHRINK
   type: SPELL
@@ -10503,13 +11328,15 @@ shrink:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 shrink-item:
   name: SHRINK ITEM
   type: SPELL
   level: 3
   rarity: 0
   traits: [polymorph, transmutation]
-  casting-time: 10 minutes
   range: touch
   target: 1 non-magical object up to 20 cubic feet in volume and up to 80 Bulk
   duration: 1 day
@@ -10525,6 +11352,8 @@ shrink-item:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - arcane
 sigil:
   name: SIGIL
   type: SPELL
@@ -10550,6 +11379,11 @@ sigil:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 silence:
   name: SILENCE
   type: SPELL
@@ -10576,6 +11410,9 @@ silence:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 sleep:
   name: SLEEP
   type: SPELL
@@ -10610,6 +11447,9 @@ sleep:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 slow:
   name: SLOW
   type: SPELL
@@ -10637,6 +11477,10 @@ slow:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
+  - occult
 solid-fog:
   name: SOLID FOG
   type: SPELL
@@ -10656,6 +11500,9 @@ solid-fog:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - arcane
 soothe:
   name: SOOTHE
   type: SPELL
@@ -10676,6 +11523,8 @@ soothe:
     - S
     - V
     actions: aa
+  traditions:
+  - occult
 soothing-ballad:
   name: SOOTHING BALLAD
   type: focus
@@ -10749,6 +11598,9 @@ sound-burst:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 speak-with-animals:
   name: SPEAK WITH ANIMALS
   type: SPELL
@@ -10766,6 +11618,8 @@ speak-with-animals:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 speak-with-plants:
   name: SPEAK WITH PLANTS
   type: SPELL
@@ -10785,6 +11639,8 @@ speak-with-plants:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 spectral-hand:
   name: SPECTRAL HAND
   type: SPELL
@@ -10806,6 +11662,9 @@ spectral-hand:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 spell-immunity:
   name: SPELL IMMUNITY
   type: SPELL
@@ -10827,6 +11686,10 @@ spell-immunity:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 spell-turning:
   name: SPELL TURNING
   type: SPELL
@@ -10849,6 +11712,8 @@ spell-turning:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
 spellwrack:
   name: SPELLWRACK
   type: SPELL
@@ -10880,6 +11745,10 @@ spellwrack:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 spider-climb:
   name: SPIDER CLIMB
   type: SPELL
@@ -10900,6 +11769,9 @@ spider-climb:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 spider-sting:
   name: SPIDER STING
   type: SPELL
@@ -10932,6 +11804,9 @@ spider-sting:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 spirit-blast:
   name: SPIRIT BLAST
   type: SPELL
@@ -10955,6 +11830,9 @@ spirit-blast:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 spiritual-epidemic:
   name: SPIRITUAL EPIDEMIC
   type: SPELL
@@ -10986,6 +11864,9 @@ spiritual-epidemic:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 spirit-link:
   name: Spirit Link
   type: spell
@@ -11014,6 +11895,9 @@ spirit-link:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 spirit-song:
   name: Spirit Song
   type: spell
@@ -11039,6 +11923,8 @@ spirit-song:
     - S
     - V
     actions: aa
+  traditions:
+  - occult
 spiritual-guardian:
   name: SPIRITUAL GUARDIAN
   type: SPELL
@@ -11082,6 +11968,8 @@ spiritual-guardian:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 spiritual-weapon:
   name: SPIRITUAL WEAPON
   type: SPELL
@@ -11115,6 +12003,9 @@ spiritual-weapon:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 splash-of-art:
   name: Splash of Art
   type: focus
@@ -11153,6 +12044,9 @@ stabilize:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 status:
   name: STATUS
   type: SPELL
@@ -11173,6 +12067,10 @@ status:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - occult
 stinking-cloud:
   name: STINKING CLOUD
   type: SPELL
@@ -11201,6 +12099,9 @@ stinking-cloud:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 stone-tell:
   name: STONE TELL
   type: SPELL
@@ -11222,6 +12123,9 @@ stone-tell:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 stone-to-flesh:
   name: STONE TO FLESH
   type: SPELL
@@ -11240,6 +12144,9 @@ stone-to-flesh:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
 stoneskin:
   name: STONESKIN
   type: SPELL
@@ -11262,6 +12169,9 @@ stoneskin:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 storm-lord:
   name: STORM LORD
   type: focus
@@ -11339,6 +12249,8 @@ storm-of-vengeance:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
 stormwind-flight:
   name: STORMWIND FLIGHT
   type: focus
@@ -11395,6 +12307,9 @@ subconscious-suggestion:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 sudden-shift:
   name: SUDDEN SHIFT
   type: focus
@@ -11446,6 +12361,9 @@ suggestion:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 summon-animal:
   name: Summon Animal
   type: spell
@@ -11474,6 +12392,9 @@ summon-animal:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - arcane
 summon-celestial:
   name: Summon Celestial
   type: SPELL
@@ -11501,6 +12422,8 @@ summon-celestial:
     - S
     - V
     actions: aaa
+  traditions:
+  - divine
 summon-construct:
   name: Summon Construct
   type: SPELL
@@ -11529,6 +12452,8 @@ summon-construct:
     - S
     - V
     actions: aaa
+  traditions:
+  - arcane
 summon-dragon:
   name: Summon Dragon
   type: spell
@@ -11553,6 +12478,8 @@ summon-dragon:
     - M
     - V
     actions: aaa
+  traditions:
+  - arcane
 summon-elemental:
   name: Summon Elemental
   type: SPELL
@@ -11580,6 +12507,9 @@ summon-elemental:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - arcane
 summon-entity:
   name: Summon Entity
   type: SPELL
@@ -11604,6 +12534,8 @@ summon-entity:
     - S
     - V
     actions: aaa
+  traditions:
+  - occult
 summon-fiend:
   name: Summon Fiend
   type: SPELL
@@ -11631,6 +12563,8 @@ summon-fiend:
     - S
     - V
     actions: aaa
+  traditions:
+  - divine
 summon-giant:
   name: Summon Giant
   type: SPELL
@@ -11655,6 +12589,8 @@ summon-giant:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
 summon-plant-or-fungus:
   name: Summon Plant or Fungus
   type: spell
@@ -11683,6 +12619,8 @@ summon-plant-or-fungus:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
 sunburst:
   name: SUNBURST
   type: SPELL
@@ -11715,6 +12653,8 @@ sunburst:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 swamp-of-sloth:
   name: SWAMP OF SLOTH
   type: focus
@@ -11796,6 +12736,8 @@ synaptic-pulse:
     - S
     - V
     actions: aa
+  traditions:
+  - occult
 synesthesia:
   name: SYNESTHESIA
   type: SPELL
@@ -11836,6 +12778,8 @@ synesthesia:
     - S
     - V
     actions: aa
+  traditions:
+  - occult
 take-its-course:
   name: TAKE ITS COURSE
   type: focus
@@ -11881,7 +12825,6 @@ talking-corpse:
   level: 4
   rarity: 1
   traits: [necromancy]
-  casting-time: 10 minutes
   range: touch
   target: 1 corpse
   duration: 10 minutes
@@ -11917,6 +12860,9 @@ talking-corpse:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - divine
+  - occult
 tanglefoot:
   name: TANGLEFOOT
   type: SPELL
@@ -11948,6 +12894,9 @@ tanglefoot:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 tangling-creepers:
   name: TANGLING CREEPERS
   type: SPELL
@@ -11973,6 +12922,8 @@ tangling-creepers:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
 telekinetic-haul:
   name: TELEKINETIC HAUL
   type: SPELL
@@ -11991,6 +12942,9 @@ telekinetic-haul:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 telekinetic-maneuver:
   name: TELEKINETIC MANEUVER
   type: SPELL
@@ -12008,6 +12962,9 @@ telekinetic-maneuver:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 telekinetic-projectile:
   name: TELEKINETIC PROJECTILE
   type: SPELL
@@ -12036,13 +12993,15 @@ telekinetic-projectile:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 telepathic-bond:
   name: TELEPATHIC BOND
   type: SPELL
   level: 5
   rarity: 1
   traits: [divination, mental]
-  casting-time: 1 minute
   range: touch
   target: you and up to four willing creatures touched
   duration: 8 hours
@@ -12055,6 +13014,9 @@ telepathic-bond:
     - S
     - V
     time: 1 minute
+  traditions:
+  - arcane
+  - occult
 telepathic-demand:
   name: Telepathic Demand
   type: spell
@@ -12079,6 +13041,10 @@ telepathic-demand:
     - S
     - V
     actions: aaa
+  traditions:
+  - divine
+  - arcane
+  - occult
 telepathy:
   name: TELEPATHY
   type: SPELL
@@ -12099,13 +13065,15 @@ telepathy:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 teleport:
   name: TELEPORT
   type: SPELL
   level: 6
   rarity: 1
   traits: [conjuration, teleportation]
-  casting-time: 10 minutes
   range: 100 miles
   target: you and up to 4 targets touched, either willing creatures or objects roughly
     the size of a creature.
@@ -12135,6 +13103,9 @@ teleport:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - arcane
+  - occult
 tempest-surge:
   name: TEMPEST SURGE
   type: focus
@@ -12252,6 +13223,9 @@ time-stop:
     - S
     - V
     actions: aaa
+  traditions:
+  - arcane
+  - occult
 tongues:
   name: TONGUES
   type: SPELL
@@ -12273,6 +13247,9 @@ tongues:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 touch-of-idiocy:
   name: TOUCH OF IDIOCY
   type: SPELL
@@ -12296,6 +13273,9 @@ touch-of-idiocy:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 touch-of-obedience:
   name: TOUCH OF OBEDIENCE
   type: focus
@@ -12451,13 +13431,14 @@ tree-shape:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 tree-stride:
   name: TREE STRIDE
   type: SPELL
   level: 5
   rarity: 0
   traits: [conjuration, teleportation]
-  casting-time: 1 minute
   description:
     main: You step into a living tree with a trunk big enough for you to fit inside
       it and instantly teleport to any tree of the same species within 5 miles that
@@ -12475,6 +13456,8 @@ tree-stride:
     - S
     - V
     time: 1 minute
+  traditions:
+  - primal
 trickster-s-twin:
   name: Trickster's Twin
   type: focus
@@ -12544,6 +13527,11 @@ true-seeing:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 true-strike:
   name: TRUE STRIKE
   type: SPELL
@@ -12560,6 +13548,9 @@ true-strike:
     components:
     - V
     actions: a
+  traditions:
+  - arcane
+  - occult
 true-target:
   name: True Target
   type: spell
@@ -12580,6 +13571,9 @@ true-target:
     components:
     - V
     actions: a
+  traditions:
+  - arcane
+  - occult
 uncontrollable-dance:
   name: UNCONTROLLABLE DANCE
   type: SPELL
@@ -12611,13 +13605,15 @@ uncontrollable-dance:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 undetectable-alignment:
   name: UNDETECTABLE ALIGNMENT
   type: SPELL
   level: 2
   rarity: 1
   traits: [abjuration]
-  casting-time: 1 minute
   range: touch
   target: 1 creature or object
   duration: 1 day
@@ -12630,6 +13626,9 @@ undetectable-alignment:
     - S
     - V
     time: 1 minute
+  traditions:
+  - divine
+  - occult
 unfathomable-song:
   name: UNFATHOMABLE SONG
   type: SPELL
@@ -12672,6 +13671,8 @@ unfathomable-song:
     - S
     - V
     actions: aa
+  traditions:
+  - occult
 unfettered-pack:
   name: UNFETTERED PACK
   type: SPELL
@@ -12693,6 +13694,8 @@ unfettered-pack:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 unimpeded-stride:
   name: UNIMPEDED STRIDE
   type: focus
@@ -12767,6 +13770,9 @@ unrelenting-observation:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 unseen-servant:
   name: UNSEEN SERVANT
   type: SPELL
@@ -12786,6 +13792,9 @@ unseen-servant:
     - S
     - V
     actions: aaa
+  traditions:
+  - arcane
+  - occult
 unusual-anatomy:
   name: UNUSUAL ANATOMY
   type: focus
@@ -12836,6 +13845,10 @@ vampiric-exsanguination:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 vampiric-touch:
   name: VAMPIRIC TOUCH
   type: SPELL
@@ -12856,6 +13869,10 @@ vampiric-touch:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - arcane
+  - occult
 veil:
   name: VEIL
   type: SPELL
@@ -12889,6 +13906,9 @@ veil:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 veil-of-confidence:
   name: VEIL OF CONFIDENCE
   type: focus
@@ -12929,6 +13949,11 @@ ventriloquism:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
+  - occult
 vibrant-pattern:
   name: VIBRANT PATTERN
   type: SPELL
@@ -12959,6 +13984,9 @@ vibrant-pattern:
     - M
     - S
     actions: aa
+  traditions:
+  - arcane
+  - occult
 vibrant-thorns:
   name: Vibrant Thorns
   type: focus
@@ -13024,13 +14052,14 @@ visions-of-danger:
     - S
     - V
     actions: aaa
+  traditions:
+  - occult
 vital-beacon:
   name: Vital Beacon
   type: spell
   level: 4
   rarity: 0
   traits: [healing, necromancy, positive]
-  casting-time: 1 minute
   duration: until your next daily preparations
   description:
     main: Vitality radiates outward from you, allowing others to supplicate and receive
@@ -13048,6 +14077,9 @@ vital-beacon:
     - S
     - V
     time: 1 minute
+  traditions:
+  - primal
+  - divine
 volcanic-eruption:
   name: VOLCANIC ERUPTION
   type: SPELL
@@ -13085,6 +14117,8 @@ volcanic-eruption:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
 waking-nightmare:
   name: WAKING NIGHTMARE
   type: SPELL
@@ -13137,6 +14171,9 @@ wail-of-the-banshee:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 walking-nightmare:
   name: Walking Nightmare
   type: focus
@@ -13191,6 +14228,9 @@ wall-of-fire:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - arcane
 wall-of-force:
   name: WALL OF FORCE
   type: SPELL
@@ -13219,6 +14259,9 @@ wall-of-force:
     - S
     - V
     actions: aaa
+  traditions:
+  - arcane
+  - occult
 wall-of-ice:
   name: WALL OF ICE
   type: SPELL
@@ -13251,6 +14294,9 @@ wall-of-ice:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - arcane
 wall-of-stone:
   name: WALL OF STONE
   type: SPELL
@@ -13276,6 +14322,9 @@ wall-of-stone:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - arcane
 wall-of-thorns:
   name: WALL OF THORNS
   type: SPELL
@@ -13307,6 +14356,8 @@ wall-of-thorns:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
 wall-of-wind:
   name: WALL OF WIND
   type: SPELL
@@ -13351,6 +14402,9 @@ wall-of-wind:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - arcane
 warp-mind:
   name: WARP MIND
   type: SPELL
@@ -13381,6 +14435,9 @@ warp-mind:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 warped-terrain:
   name: WARPED TERRAIN
   type: focus
@@ -13412,7 +14469,6 @@ water-breathing:
   level: 2
   rarity: 0
   traits: [transmutation]
-  casting-time: 1 minute
   range: 30 feet
   target: up to 5 creatures
   duration: 1 hour
@@ -13426,6 +14482,10 @@ water-breathing:
     - S
     - V
     time: 1 minute
+  traditions:
+  - primal
+  - divine
+  - arcane
 water-walk:
   name: WATER WALK
   type: SPELL
@@ -13447,13 +14507,16 @@ water-walk:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - divine
+  - arcane
 weakening-ground:
   name: WEAKENING GROUND
   type: SPELL
   level: 7
   rarity: 0
   traits: [abjuration, consecration]
-  casting-time: 1 minute
   cost: 1 vial of holy water
   area: 30-foot burst centered on you
   duration: 24 hours
@@ -13471,6 +14534,8 @@ weakening-ground:
     - S
     - V
     time: 1 minute
+  traditions:
+  - divine
 weapon-of-judgment:
   name: WEAPON OF JUDGMENT
   type: SPELL
@@ -13514,6 +14579,8 @@ weapon-of-judgment:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
 weapon-storm:
   name: WEAPON STORM
   type: SPELL
@@ -13545,6 +14612,9 @@ weapon-storm:
     - S
     - V
     actions: aa
+  traditions:
+  - primal
+  - arcane
 weapon-surge:
   name: WEAPON SURGE
   type: focus
@@ -13609,6 +14679,9 @@ web:
     - S
     - V
     actions: aaa
+  traditions:
+  - primal
+  - arcane
 weird:
   name: WEIRD
   type: SPELL
@@ -13639,6 +14712,9 @@ weird:
     - S
     - V
     actions: aa
+  traditions:
+  - arcane
+  - occult
 wholeness-of-body:
   name: WHOLENESS OF BODY
   type: focus
@@ -13769,7 +14845,6 @@ wind-walk:
   level: 8
   rarity: 0
   traits: [air, transmutation]
-  casting-time: 10 minutes
   range: touch
   target: you and up to five creatures touched
   duration: 8 hours
@@ -13787,6 +14862,9 @@ wind-walk:
     - S
     - V
     time: 10 minutes
+  traditions:
+  - primal
+  - divine
 wish:
   name: WISH
   type: SPELL
@@ -13812,6 +14890,8 @@ wish:
     - S
     - V
     actions: aaa
+  traditions:
+  - arcane
 word-of-freedom:
   name: WORD OF FREEDOM
   type: focus
@@ -13928,6 +15008,9 @@ zealous-conviction:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult
 zone-of-truth:
   name: ZONE OF TRUTH
   type: SPELL
@@ -13962,3 +15045,6 @@ zone-of-truth:
     - S
     - V
     actions: aa
+  traditions:
+  - divine
+  - occult

@@ -5,7 +5,7 @@ import Header from './components/Header';
 import FiltersForm from './components/FiltersForm';
 import SortForm from './components/SortForm';
 import SpellList from './components/SpellList';
-import { getAllSpells, getByList } from './lib/data'
+import { getAllSpells } from './lib/data'
 
 const sortMethods = {
   'alpha-asc': (a, b) => (a[0] > b[0]) ? 1 : -1,
@@ -21,7 +21,6 @@ class App extends React.Component {
 
     this.state = {
       currentSortCriteria: 'alpha-asc',
-      spellLists: [],
       traits: [],
     }
   }
@@ -38,10 +37,6 @@ class App extends React.Component {
         traits: Array.from(traits).sort(),
       });
     })
-
-    getByList().then(
-      byList => this.setState({ spellsByList: byList, spellLists: Object.keys(byList) })
-    )
   }
 
   reorderList(criteria) {
@@ -62,13 +57,15 @@ class App extends React.Component {
       if (o.name.toLowerCase().indexOf(filters.spellName.toLowerCase()) < 0) {
         continue;
       }
-      if (filters.spellList && this.state.spellsByList[filters.spellList].indexOf(k) < 0) {
-        continue;
+      if (filters.spellList) {
+        if (!o.traditions || o.traditions.indexOf(filters.spellList) < 0) {
+          continue;
+        }
       }
       if (filters.spellType && filters.spellType !== o.type.toLowerCase()) {
         continue;
       }
-      if (filters.spellRarity >= 0 && filters.spellRarity != o.rarity) {
+      if (filters.spellRarity >= 0 && parseInt(filters.spellRarity) !== o.rarity) {
         continue;
       }
       if (filters.spellTraits.length) {
@@ -90,7 +87,6 @@ class App extends React.Component {
         <Header />
         <FiltersForm
           traits={this.state.traits}
-          spellLists={this.state.spellLists}
           onChange={this.filterList.bind(this)}
         />
         <SortForm onChange={this.reorderList.bind(this)} />

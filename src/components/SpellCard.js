@@ -96,6 +96,11 @@ class SpellCard extends React.Component {
     return (
       <>
         {renderedProps}
+        {spellData.traditions && (
+          <li className="list-inline-item">
+            <strong>{'tradition: '}</strong>{spellData.traditions.sort().join(', ')}
+          </li>
+        )}
         <li className="list-inline-item"><strong>{'cast: '}</strong>{translateCast(spellData.cast)}</li>
       </>
     );

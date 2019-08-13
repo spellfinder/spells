@@ -17,7 +17,6 @@ COPY public ./public/
 COPY LICENSE Changelog.txt ./public/
 COPY src ./src/
 COPY --from=converter /app/all.json ./public/data/
-COPY --from=converter /app/data/by-list.json ./public/data/
 RUN yarn build
 
 FROM node:10-alpine AS run
