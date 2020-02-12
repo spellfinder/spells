@@ -78,7 +78,7 @@ class FiltersForm extends React.Component {
               <Form.Control as="select" onChange={changeHandler} className="filters mx-1">
                 <option key="" value="">All</option>
                 <option key="arcane" value="arcane">arcane</option>
-                <option key="divine" value="divine">divne</option>
+                <option key="divine" value="divine">divine</option>
                 <option key="occult" value="occult">occult</option>
                 <option key="primal" value="primal">primal</option>
               </Form.Control>
