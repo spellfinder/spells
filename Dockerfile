@@ -9,7 +9,6 @@ RUN python convert.py ./all.json
 
 FROM node:10-alpine AS build
 WORKDIR /app
-RUN npm install -g yarn
 COPY package.json yarn.lock ./
 RUN yarn install
 RUN mkdir -p public/data/ src/
