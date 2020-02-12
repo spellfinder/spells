@@ -142,7 +142,7 @@ acid-arrow:
   - arcane
 acid-splash:
   name: Acid Splash
-  traits: [acid, cantrip, evocation]
+  traits: [acid, attack, cantrip, evocation]
   level: 0
   rarity: 0
   type: spell
@@ -12536,6 +12536,32 @@ summon-entity:
     actions: aaa
   traditions:
   - occult
+summon-fey:
+  name: Summon Fey
+  type: SPELL
+  level: 1
+  rarity: 0
+  duration: sustained up to 1 minute
+  range: 30 feet
+  traits: [conjuration]
+  description:
+    main: You conjure a fey to fight for you. This works like summon animal, except you
+      summon a common creature that has the fey trait and whose level is –1.
+  heightened:
+    2nd: Level 1.
+    3rd: Level 2.
+    4th: Level 3.
+    5th: Level 5.
+    6th: Level 7.
+    7th: Level 9.
+    8th: Level 11.
+    9th: Level 13.
+    10th: Level 15.
+  cast:
+    components: [M, S, V]
+  actions: aaa
+  traditions:
+    [occult, primal]
 summon-fiend:
   name: Summon Fiend
   type: SPELL
