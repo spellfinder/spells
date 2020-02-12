@@ -1,3 +1,9 @@
+v3.2.1
+------
+
+- Added Summon Fey spell
+- Added missing "attack" trait to Acid Splash cantrip
+
 v3.2.0
 ------
 
